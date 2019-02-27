@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using MySql.Data;
+using MySql.Data.MySqlClient;
+
+
 namespace ConcessionaireReports
 {
     public partial class ConcessionaireReportsForm : Form
@@ -52,6 +56,26 @@ namespace ConcessionaireReports
         private void ConcessionaireReportsForm_Load(object sender, EventArgs e)
         {
             tabControlConcessionaireReports.DrawMode = TabDrawMode.OwnerDrawFixed;
+
+            string connStr = "server=localhost;user=root;database=mrwdbcsys;port=3306;password=";
+            MySqlConnection conn = new MySqlConnection(connStr);
+
+            try
+            {
+                conn.Open();
+                textBox1.Text = "MySQL version : " + conn.ServerVersion;
+            }
+            catch (MySqlException ex)
+            {
+                textBox1.Text = "error: " + ex;
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            this.reportViewerAccountPerBook.RefreshReport();
         }
 
         private void buttonAccountPerBookSearch_Click(object sender, EventArgs e)

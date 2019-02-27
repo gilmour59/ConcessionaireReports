@@ -52,31 +52,33 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.buttonSummaryAccountsClassificationSearch = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.buttonNewConnectionSearch = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dateTimePickerNewConnectionTo = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerNewConnectionFrom = new System.Windows.Forms.DateTimePicker();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.buttonAccountByStatusSearch = new System.Windows.Forms.Button();
+            this.comboBoxAccountByStatusZone = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dateTimePickerAccountByStatusAsOf = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
-            this.comboBoxAccountByStatusZone = new System.Windows.Forms.ComboBox();
-            this.buttonAccountByStatusSearch = new System.Windows.Forms.Button();
-            this.buttonNewConnectionSearch = new System.Windows.Forms.Button();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.buttonSeniorCitizenSearch = new System.Windows.Forms.Button();
             this.comboBoxSeniorCitizenBook = new System.Windows.Forms.ComboBox();
             this.comboBoxSeniorCitizenZone = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.buttonSeniorCitizenSearch = new System.Windows.Forms.Button();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.comboBoxAccountPerMeterSizeMeterStatus = new System.Windows.Forms.ComboBox();
             this.buttonAccountPerMeterSizeSearch = new System.Windows.Forms.Button();
             this.comboBoxAccountPerMeterSizeMeterSize = new System.Windows.Forms.ComboBox();
             this.comboBoxAccountPerMeterSizeZone = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.comboBoxAccountPerMeterSizeMeterStatus = new System.Windows.Forms.ComboBox();
+            this.reportViewerAccountPerBook = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControlConcessionaireReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -111,6 +113,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.reportViewerAccountPerBook);
             this.tabPage1.Controls.Add(this.buttonAccountPerBookSearch);
             this.tabPage1.Controls.Add(this.comboBoxAccountPerBookMeterStatus);
             this.tabPage1.Controls.Add(this.comboBoxAccountPerBookBook);
@@ -353,6 +357,16 @@
             this.tabPage5.Text = "New Connection Summary";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // buttonNewConnectionSearch
+            // 
+            this.buttonNewConnectionSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNewConnectionSearch.Location = new System.Drawing.Point(648, 24);
+            this.buttonNewConnectionSearch.Name = "buttonNewConnectionSearch";
+            this.buttonNewConnectionSearch.Size = new System.Drawing.Size(74, 38);
+            this.buttonNewConnectionSearch.TabIndex = 16;
+            this.buttonNewConnectionSearch.Text = "Search";
+            this.buttonNewConnectionSearch.UseVisualStyleBackColor = true;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -403,35 +417,34 @@
             this.tabPage6.Text = "Account List By Status";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // tabPage7
+            // buttonAccountByStatusSearch
             // 
-            this.tabPage7.Controls.Add(this.buttonSeniorCitizenSearch);
-            this.tabPage7.Controls.Add(this.comboBoxSeniorCitizenBook);
-            this.tabPage7.Controls.Add(this.comboBoxSeniorCitizenZone);
-            this.tabPage7.Controls.Add(this.label12);
-            this.tabPage7.Controls.Add(this.label13);
-            this.tabPage7.Location = new System.Drawing.Point(154, 4);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(824, 481);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "Senior Citizen Accounts";
-            this.tabPage7.UseVisualStyleBackColor = true;
+            this.buttonAccountByStatusSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAccountByStatusSearch.Location = new System.Drawing.Point(584, 16);
+            this.buttonAccountByStatusSearch.Name = "buttonAccountByStatusSearch";
+            this.buttonAccountByStatusSearch.Size = new System.Drawing.Size(74, 38);
+            this.buttonAccountByStatusSearch.TabIndex = 16;
+            this.buttonAccountByStatusSearch.Text = "Search";
+            this.buttonAccountByStatusSearch.UseVisualStyleBackColor = true;
             // 
-            // tabPage8
+            // comboBoxAccountByStatusZone
             // 
-            this.tabPage8.Controls.Add(this.comboBoxAccountPerMeterSizeMeterStatus);
-            this.tabPage8.Controls.Add(this.buttonAccountPerMeterSizeSearch);
-            this.tabPage8.Controls.Add(this.comboBoxAccountPerMeterSizeMeterSize);
-            this.tabPage8.Controls.Add(this.comboBoxAccountPerMeterSizeZone);
-            this.tabPage8.Controls.Add(this.label14);
-            this.tabPage8.Controls.Add(this.label15);
-            this.tabPage8.Controls.Add(this.label16);
-            this.tabPage8.Location = new System.Drawing.Point(154, 4);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(824, 481);
-            this.tabPage8.TabIndex = 7;
-            this.tabPage8.Text = "Account List Per Meter Size";
-            this.tabPage8.UseVisualStyleBackColor = true;
+            this.comboBoxAccountByStatusZone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxAccountByStatusZone.FormattingEnabled = true;
+            this.comboBoxAccountByStatusZone.Location = new System.Drawing.Point(200, 24);
+            this.comboBoxAccountByStatusZone.Name = "comboBoxAccountByStatusZone";
+            this.comboBoxAccountByStatusZone.Size = new System.Drawing.Size(50, 24);
+            this.comboBoxAccountByStatusZone.TabIndex = 5;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(152, 32);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(42, 16);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "Zone:";
             // 
             // label10
             // 
@@ -451,44 +464,29 @@
             this.dateTimePickerAccountByStatusAsOf.Size = new System.Drawing.Size(200, 24);
             this.dateTimePickerAccountByStatusAsOf.TabIndex = 2;
             // 
-            // label11
+            // tabPage7
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(152, 32);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(42, 16);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "Zone:";
+            this.tabPage7.Controls.Add(this.buttonSeniorCitizenSearch);
+            this.tabPage7.Controls.Add(this.comboBoxSeniorCitizenBook);
+            this.tabPage7.Controls.Add(this.comboBoxSeniorCitizenZone);
+            this.tabPage7.Controls.Add(this.label12);
+            this.tabPage7.Controls.Add(this.label13);
+            this.tabPage7.Location = new System.Drawing.Point(154, 4);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(824, 481);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Senior Citizen Accounts";
+            this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // comboBoxAccountByStatusZone
+            // buttonSeniorCitizenSearch
             // 
-            this.comboBoxAccountByStatusZone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxAccountByStatusZone.FormattingEnabled = true;
-            this.comboBoxAccountByStatusZone.Location = new System.Drawing.Point(200, 24);
-            this.comboBoxAccountByStatusZone.Name = "comboBoxAccountByStatusZone";
-            this.comboBoxAccountByStatusZone.Size = new System.Drawing.Size(50, 24);
-            this.comboBoxAccountByStatusZone.TabIndex = 5;
-            // 
-            // buttonAccountByStatusSearch
-            // 
-            this.buttonAccountByStatusSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAccountByStatusSearch.Location = new System.Drawing.Point(584, 16);
-            this.buttonAccountByStatusSearch.Name = "buttonAccountByStatusSearch";
-            this.buttonAccountByStatusSearch.Size = new System.Drawing.Size(74, 38);
-            this.buttonAccountByStatusSearch.TabIndex = 16;
-            this.buttonAccountByStatusSearch.Text = "Search";
-            this.buttonAccountByStatusSearch.UseVisualStyleBackColor = true;
-            // 
-            // buttonNewConnectionSearch
-            // 
-            this.buttonNewConnectionSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNewConnectionSearch.Location = new System.Drawing.Point(648, 24);
-            this.buttonNewConnectionSearch.Name = "buttonNewConnectionSearch";
-            this.buttonNewConnectionSearch.Size = new System.Drawing.Size(74, 38);
-            this.buttonNewConnectionSearch.TabIndex = 16;
-            this.buttonNewConnectionSearch.Text = "Search";
-            this.buttonNewConnectionSearch.UseVisualStyleBackColor = true;
+            this.buttonSeniorCitizenSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSeniorCitizenSearch.Location = new System.Drawing.Point(528, 16);
+            this.buttonSeniorCitizenSearch.Name = "buttonSeniorCitizenSearch";
+            this.buttonSeniorCitizenSearch.Size = new System.Drawing.Size(74, 38);
+            this.buttonSeniorCitizenSearch.TabIndex = 6;
+            this.buttonSeniorCitizenSearch.Text = "Search";
+            this.buttonSeniorCitizenSearch.UseVisualStyleBackColor = true;
             // 
             // comboBoxSeniorCitizenBook
             // 
@@ -528,15 +526,30 @@
             this.label13.TabIndex = 3;
             this.label13.Text = "Zone:";
             // 
-            // buttonSeniorCitizenSearch
+            // tabPage8
             // 
-            this.buttonSeniorCitizenSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSeniorCitizenSearch.Location = new System.Drawing.Point(528, 16);
-            this.buttonSeniorCitizenSearch.Name = "buttonSeniorCitizenSearch";
-            this.buttonSeniorCitizenSearch.Size = new System.Drawing.Size(74, 38);
-            this.buttonSeniorCitizenSearch.TabIndex = 6;
-            this.buttonSeniorCitizenSearch.Text = "Search";
-            this.buttonSeniorCitizenSearch.UseVisualStyleBackColor = true;
+            this.tabPage8.Controls.Add(this.comboBoxAccountPerMeterSizeMeterStatus);
+            this.tabPage8.Controls.Add(this.buttonAccountPerMeterSizeSearch);
+            this.tabPage8.Controls.Add(this.comboBoxAccountPerMeterSizeMeterSize);
+            this.tabPage8.Controls.Add(this.comboBoxAccountPerMeterSizeZone);
+            this.tabPage8.Controls.Add(this.label14);
+            this.tabPage8.Controls.Add(this.label15);
+            this.tabPage8.Controls.Add(this.label16);
+            this.tabPage8.Location = new System.Drawing.Point(154, 4);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(824, 481);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "Account List Per Meter Size";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxAccountPerMeterSizeMeterStatus
+            // 
+            this.comboBoxAccountPerMeterSizeMeterStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxAccountPerMeterSizeMeterStatus.FormattingEnabled = true;
+            this.comboBoxAccountPerMeterSizeMeterStatus.Location = new System.Drawing.Point(496, 24);
+            this.comboBoxAccountPerMeterSizeMeterStatus.Name = "comboBoxAccountPerMeterSizeMeterStatus";
+            this.comboBoxAccountPerMeterSizeMeterStatus.Size = new System.Drawing.Size(96, 24);
+            this.comboBoxAccountPerMeterSizeMeterStatus.TabIndex = 10;
             // 
             // buttonAccountPerMeterSizeSearch
             // 
@@ -596,14 +609,20 @@
             this.label16.TabIndex = 5;
             this.label16.Text = "Zone:";
             // 
-            // comboBoxAccountPerMeterSizeMeterStatus
+            // reportViewerAccountPerBook
             // 
-            this.comboBoxAccountPerMeterSizeMeterStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxAccountPerMeterSizeMeterStatus.FormattingEnabled = true;
-            this.comboBoxAccountPerMeterSizeMeterStatus.Location = new System.Drawing.Point(496, 24);
-            this.comboBoxAccountPerMeterSizeMeterStatus.Name = "comboBoxAccountPerMeterSizeMeterStatus";
-            this.comboBoxAccountPerMeterSizeMeterStatus.Size = new System.Drawing.Size(96, 24);
-            this.comboBoxAccountPerMeterSizeMeterStatus.TabIndex = 10;
+            this.reportViewerAccountPerBook.Location = new System.Drawing.Point(20, 60);
+            this.reportViewerAccountPerBook.Name = "reportViewerAccountPerBook";
+            this.reportViewerAccountPerBook.ServerReport.BearerToken = null;
+            this.reportViewerAccountPerBook.Size = new System.Drawing.Size(782, 402);
+            this.reportViewerAccountPerBook.TabIndex = 3;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(29, 7);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 4;
             // 
             // ConcessionaireReportsForm
             // 
@@ -686,6 +705,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerAccountPerBook;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
