@@ -151,6 +151,7 @@
             // 
             // comboBoxAccountPerBookMeterStatus
             // 
+            this.comboBoxAccountPerBookMeterStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAccountPerBookMeterStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxAccountPerBookMeterStatus.FormattingEnabled = true;
             this.comboBoxAccountPerBookMeterStatus.Location = new System.Drawing.Point(488, 26);
@@ -160,6 +161,7 @@
             // 
             // comboBoxAccountPerBookBook
             // 
+            this.comboBoxAccountPerBookBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAccountPerBookBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxAccountPerBookBook.FormattingEnabled = true;
             this.comboBoxAccountPerBookBook.Location = new System.Drawing.Point(296, 26);
@@ -169,6 +171,7 @@
             // 
             // comboBoxAccountPerBookZone
             // 
+            this.comboBoxAccountPerBookZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAccountPerBookZone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxAccountPerBookZone.FormattingEnabled = true;
             this.comboBoxAccountPerBookZone.Location = new System.Drawing.Point(150, 26);

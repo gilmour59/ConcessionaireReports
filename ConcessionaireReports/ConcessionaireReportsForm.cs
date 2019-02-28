@@ -70,50 +70,54 @@ namespace ConcessionaireReports
                     MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetZones", conn);
                     adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                     adapter.Fill(dsZones);
-                    comboBoxAccountPerBookZone.DataSource = dsZones.Tables[0];
-                    comboBoxAccountPerBookZone.DisplayMember = "zone_code";
+
                     comboBoxAccountPerBookZone.ValueMember = "zone_code";
+                    comboBoxAccountPerBookZone.DisplayMember = "zone_code";
+                    comboBoxAccountPerBookZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox
+
+                    conn.Close();
                 }
             }
             catch (MySqlException ex)
             {
                 error.Text = "error: " + ex; //Change This to pop up
             }
-
             this.reportViewerAccountPerBook.RefreshReport();
         }
 
         private void buttonAccountPerBookSearch_Click(object sender, EventArgs e)
         {
-            MySqlConnection conn = new MySqlConnection(connStr);
-            MySqlCommand cmd = new MySqlCommand();
-
-            try
+            using (MySqlConnection conn = new MySqlConnection(connStr))
             {
-                conn.Open();
-                cmd.Connection = conn;
+                MySqlCommand cmd = new MySqlCommand();
 
-                cmd.CommandText = "sp_GetAccountPerBook_";
-                cmd.CommandType = CommandType.StoredProcedure;
+                try
+                {
+                    conn.Open();
+                    cmd.Connection = conn;
 
-                cmd.Parameters.AddWithValue("@bookCode", comboBoxAccountPerBookBook); //needs value
-                cmd.Parameters["@bookCode"].Direction = ParameterDirection.Input;
+                    cmd.CommandText = "sp_GetAccountPerBook_";
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@zoneCode", comboBoxAccountPerBookZone); //needs value
-                cmd.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
+                    cmd.Parameters.AddWithValue("@bookCode", comboBoxAccountPerBookBook); //needs value
+                    cmd.Parameters["@bookCode"].Direction = ParameterDirection.Input;
 
-                cmd.Parameters.AddWithValue("@statusCode", comboBoxAccountPerBookMeterStatus); //needs value
-                cmd.Parameters["@statusCode"].Direction = ParameterDirection.Input;
+                    cmd.Parameters.AddWithValue("@zoneCode", comboBoxAccountPerBookZone); //needs value
+                    cmd.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
 
-            }
-            catch (MySqlException ex)
-            {
-                error.Text = "error: " + ex; //Change This to pop up
-            }
-            finally
-            {
-                conn.Close();
-            }
+                    cmd.Parameters.AddWithValue("@statusCode", comboBoxAccountPerBookMeterStatus); //needs value
+                    cmd.Parameters["@statusCode"].Direction = ParameterDirection.Input;
+
+                }
+                catch (MySqlException ex)
+                {
+                    error.Text = "error: " + ex; //Change This to pop up
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            } 
 
             this.reportViewerAccountPerBook.RefreshReport();
         }
@@ -124,14 +128,25 @@ namespace ConcessionaireReports
             {
                 using (MySqlConnection conn = new MySqlConnection(connStr))
                 {
-                    DataSet dsBooksOfZone = new DataSet();
                     conn.Open();
+
+                    DataSet dsBooksOfZone = new DataSet();
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetBooksOfZone", conn))
                     {
                         adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                         adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountPerBookZone.SelectedValue.ToString());
                         adapter.Fill(dsBooksOfZone);
+
+                        comboBoxAccountPerBookBook.ValueMember = "book_code";
+                        comboBoxAccountPerBookBook.DisplayMember = "book_code";
+
+                        DataRow rowBook = dsBooksOfZone.Tables[0].NewRow();
+                        rowBook[0] = "ALL";
+                        dsBooksOfZone.Tables[0].Rows.InsertAt(rowBook, 0);
+
                         comboBoxAccountPerBookBook.DataSource = dsBooksOfZone.Tables[0];
+
+                        conn.Close();
                     }
                 }
             }
