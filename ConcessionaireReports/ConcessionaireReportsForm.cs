@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Microsoft.Reporting.WinForms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
@@ -87,38 +87,51 @@ namespace ConcessionaireReports
 
         private void buttonAccountPerBookSearch_Click(object sender, EventArgs e)
         {
-            using (MySqlConnection conn = new MySqlConnection(connStr))
+            try
             {
-                MySqlCommand cmd = new MySqlCommand();
-
-                try
+                using (MySqlConnection conn = new MySqlConnection(connStr))
                 {
                     conn.Open();
-                    cmd.Connection = conn;
 
-                    cmd.CommandText = "sp_GetAccountPerBook_";
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetAccountPerBook_", conn))
+                    {
+                        AccountPerBookReport ds = new AccountPerBookReport();
 
-                    cmd.Parameters.AddWithValue("@bookCode", comboBoxAccountPerBookBook); //needs value
-                    cmd.Parameters["@bookCode"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxAccountPerBookBook.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountPerBookZone.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
 
-                    cmd.Parameters.AddWithValue("@zoneCode", comboBoxAccountPerBookZone); //needs value
-                    cmd.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
+                        string meterStatus = comboBoxAccountPerBookMeterStatus.SelectedValue.ToString();
+                        if (meterStatus == "ALL")
+                        {
+                            adapter.SelectCommand.Parameters.AddWithValue("@flag", meterStatus);
+                            adapter.SelectCommand.Parameters["@flag"].Direction = ParameterDirection.Input;
+                            adapter.SelectCommand.Parameters.AddWithValue("@status_code", null);
+                            adapter.SelectCommand.Parameters["@status_code"].Direction = ParameterDirection.Input;
+                        }
+                        else
+                        {
+                            adapter.SelectCommand.Parameters.AddWithValue("@status_code", meterStatus);
+                            adapter.SelectCommand.Parameters["@status_code"].Direction = ParameterDirection.Input;
+                            adapter.SelectCommand.Parameters.AddWithValue("@flag", null);
+                            adapter.SelectCommand.Parameters["@flag"].Direction = ParameterDirection.Input;
+                        }                       
+                        adapter.Fill(ds, ds.Tables[0].TableName);
 
-                    cmd.Parameters.AddWithValue("@statusCode", comboBoxAccountPerBookMeterStatus); //needs value
-                    cmd.Parameters["@statusCode"].Direction = ParameterDirection.Input;
-
-                }
-                catch (MySqlException ex)
-                {
-                    error.Text = "error: " + ex; //Change This to pop up
-                }
-                finally
-                {
+                        ReportDataSource rds = new ReportDataSource("AccountPerBookReport", ds.Tables[0]);
+                        reportViewerAccountPerBook.LocalReport.DataSources.Clear();
+                        reportViewerAccountPerBook.LocalReport.DataSources.Add(rds);
+                        reportViewerAccountPerBook.LocalReport.Refresh();
+                    }
                     conn.Close();
                 }
+            }
+            catch (MySqlException ex)
+            {
+                error.Text = "error: " + ex; //Change This to pop up
             } 
-
             this.reportViewerAccountPerBook.RefreshReport();
         }
 
@@ -129,10 +142,11 @@ namespace ConcessionaireReports
                 using (MySqlConnection conn = new MySqlConnection(connStr))
                 {
                     conn.Open();
-
-                    DataSet dsBooksOfZone = new DataSet();
+                    
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetBooksOfZone", conn))
                     {
+                        DataSet dsBooksOfZone = new DataSet();
+
                         adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                         adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountPerBookZone.SelectedValue.ToString());
                         adapter.Fill(dsBooksOfZone);
@@ -145,9 +159,25 @@ namespace ConcessionaireReports
                         dsBooksOfZone.Tables[0].Rows.InsertAt(rowBook, 0);
 
                         comboBoxAccountPerBookBook.DataSource = dsBooksOfZone.Tables[0];
-
-                        conn.Close();
                     }
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetMeterStatus", conn))
+                    {
+                        DataSet dsMeterStatus = new DataSet();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.Fill(dsMeterStatus);
+
+                        comboBoxAccountPerBookMeterStatus.ValueMember = "ms_desc";
+                        comboBoxAccountPerBookMeterStatus.DisplayMember = "ms_desc";
+
+                        DataRow rowMeterStatus = dsMeterStatus.Tables[0].NewRow();
+                        rowMeterStatus[0] = "ALL";
+                        dsMeterStatus.Tables[0].Rows.InsertAt(rowMeterStatus, 0);
+
+                        comboBoxAccountPerBookMeterStatus.DataSource = dsMeterStatus.Tables[0];
+                    }
+                    conn.Close();
                 }
             }
             catch (MySqlException ex)

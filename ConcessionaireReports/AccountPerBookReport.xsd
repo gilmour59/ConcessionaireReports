@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AccountPerBookReport" targetNamespace="http://tempuri.org/AccountPerBookReport.xsd" xmlns:mstns="http://tempuri.org/AccountPerBookReport.xsd" xmlns="http://tempuri.org/AccountPerBookReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="AccountPerBookReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="AccountPerBookReport" msprop:Generator_UserDSName="AccountPerBookReport">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="AccountPerBook" msprop:Generator_TableClassName="AccountPerBookDataTable" msprop:Generator_TableVarName="tableAccountPerBook" msprop:Generator_TablePropName="AccountPerBook" msprop:Generator_RowDeletingName="AccountPerBookRowDeleting" msprop:Generator_RowChangingName="AccountPerBookRowChanging" msprop:Generator_RowEvHandlerName="AccountPerBookRowChangeEventHandler" msprop:Generator_RowDeletedName="AccountPerBookRowDeleted" msprop:Generator_UserTableName="AccountPerBook" msprop:Generator_RowChangedName="AccountPerBookRowChanged" msprop:Generator_RowEvArgName="AccountPerBookRowChangeEvent" msprop:Generator_RowClassName="AccountPerBookRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="header_name" msprop:Generator_ColumnVarNameInTable="columnheader_name" msprop:Generator_ColumnPropNameInRow="header_name" msprop:Generator_ColumnPropNameInTable="header_nameColumn" msprop:Generator_UserColumnName="header_name" type="xs:string" minOccurs="0" />
+              <xs:element name="header_address" msprop:Generator_ColumnVarNameInTable="columnheader_address" msprop:Generator_ColumnPropNameInRow="header_address" msprop:Generator_ColumnPropNameInTable="header_addressColumn" msprop:Generator_UserColumnName="header_address" type="xs:string" minOccurs="0" />
+              <xs:element name="ref_no" msprop:Generator_ColumnVarNameInTable="columnref_no" msprop:Generator_ColumnPropNameInRow="ref_no" msprop:Generator_ColumnPropNameInTable="ref_noColumn" msprop:Generator_UserColumnName="ref_no" type="xs:string" minOccurs="0" />
+              <xs:element name="account_number" msprop:Generator_ColumnVarNameInTable="columnaccount_number" msprop:Generator_ColumnPropNameInRow="account_number" msprop:Generator_ColumnPropNameInTable="account_numberColumn" msprop:Generator_UserColumnName="account_number" type="xs:string" minOccurs="0" />
+              <xs:element name="concessionaire_name" msprop:Generator_ColumnVarNameInTable="columnconcessionaire_name" msprop:Generator_ColumnPropNameInRow="concessionaire_name" msprop:Generator_ColumnPropNameInTable="concessionaire_nameColumn" msprop:Generator_UserColumnName="concessionaire_name" type="xs:string" minOccurs="0" />
+              <xs:element name="address" msprop:Generator_ColumnVarNameInTable="columnaddress" msprop:Generator_ColumnPropNameInRow="address" msprop:Generator_ColumnPropNameInTable="addressColumn" msprop:Generator_UserColumnName="address" type="xs:string" minOccurs="0" />
+              <xs:element name="meter_sn" msprop:Generator_ColumnVarNameInTable="columnmeter_sn" msprop:Generator_ColumnPropNameInRow="meter_sn" msprop:Generator_ColumnPropNameInTable="meter_snColumn" msprop:Generator_UserColumnName="meter_sn" type="xs:string" minOccurs="0" />
+              <xs:element name="meter_stat" msprop:Generator_ColumnVarNameInTable="columnmeter_stat" msprop:Generator_ColumnPropNameInRow="meter_stat" msprop:Generator_ColumnPropNameInTable="meter_statColumn" msprop:Generator_UserColumnName="meter_stat" type="xs:string" minOccurs="0" />
+              <xs:element name="meter_code" msprop:Generator_ColumnVarNameInTable="columnmeter_code" msprop:Generator_ColumnPropNameInRow="meter_code" msprop:Generator_ColumnPropNameInTable="meter_codeColumn" msprop:Generator_UserColumnName="meter_code" type="xs:string" minOccurs="0" />
+              <xs:element name="seq_no" msprop:Generator_ColumnVarNameInTable="columnseq_no" msprop:Generator_ColumnPropNameInRow="seq_no" msprop:Generator_ColumnPropNameInTable="seq_noColumn" msprop:Generator_UserColumnName="seq_no" type="xs:string" minOccurs="0" />
+              <xs:element name="book_id" msprop:Generator_ColumnVarNameInTable="columnbook_id" msprop:Generator_ColumnPropNameInRow="book_id" msprop:Generator_ColumnPropNameInTable="book_idColumn" msprop:Generator_UserColumnName="book_id" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
