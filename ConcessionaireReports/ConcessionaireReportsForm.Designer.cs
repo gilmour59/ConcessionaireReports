@@ -30,6 +30,7 @@
         {
             this.tabControlConcessionaireReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.reportViewerAccountPerBook = new Microsoft.Reporting.WinForms.ReportViewer();
             this.buttonAccountPerBookSearch = new System.Windows.Forms.Button();
             this.comboBoxAccountPerBookMeterStatus = new System.Windows.Forms.ComboBox();
             this.comboBoxAccountPerBookBook = new System.Windows.Forms.ComboBox();
@@ -77,8 +78,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.reportViewerAccountPerBook = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.error = new System.Windows.Forms.Label();
             this.tabControlConcessionaireReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -113,7 +113,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.error);
             this.tabPage1.Controls.Add(this.reportViewerAccountPerBook);
             this.tabPage1.Controls.Add(this.buttonAccountPerBookSearch);
             this.tabPage1.Controls.Add(this.comboBoxAccountPerBookMeterStatus);
@@ -129,6 +129,14 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Account List Per Book";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // reportViewerAccountPerBook
+            // 
+            this.reportViewerAccountPerBook.Location = new System.Drawing.Point(20, 60);
+            this.reportViewerAccountPerBook.Name = "reportViewerAccountPerBook";
+            this.reportViewerAccountPerBook.ServerReport.BearerToken = null;
+            this.reportViewerAccountPerBook.Size = new System.Drawing.Size(782, 402);
+            this.reportViewerAccountPerBook.TabIndex = 3;
             // 
             // buttonAccountPerBookSearch
             // 
@@ -167,6 +175,7 @@
             this.comboBoxAccountPerBookZone.Name = "comboBoxAccountPerBookZone";
             this.comboBoxAccountPerBookZone.Size = new System.Drawing.Size(50, 24);
             this.comboBoxAccountPerBookZone.TabIndex = 1;
+            this.comboBoxAccountPerBookZone.SelectedIndexChanged += new System.EventHandler(this.comboBoxAccountPerBookZone_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -609,20 +618,14 @@
             this.label16.TabIndex = 5;
             this.label16.Text = "Zone:";
             // 
-            // reportViewerAccountPerBook
+            // error
             // 
-            this.reportViewerAccountPerBook.Location = new System.Drawing.Point(20, 60);
-            this.reportViewerAccountPerBook.Name = "reportViewerAccountPerBook";
-            this.reportViewerAccountPerBook.ServerReport.BearerToken = null;
-            this.reportViewerAccountPerBook.Size = new System.Drawing.Size(782, 402);
-            this.reportViewerAccountPerBook.TabIndex = 3;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(29, 7);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.error.AutoSize = true;
+            this.error.Location = new System.Drawing.Point(48, 7);
+            this.error.Name = "error";
+            this.error.Size = new System.Drawing.Size(41, 13);
+            this.error.TabIndex = 4;
+            this.error.Text = "label17";
             // 
             // ConcessionaireReportsForm
             // 
@@ -706,7 +709,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerAccountPerBook;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label error;
     }
 }
 

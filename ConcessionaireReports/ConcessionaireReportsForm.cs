@@ -16,6 +16,8 @@ namespace ConcessionaireReports
 {
     public partial class ConcessionaireReportsForm : Form
     {
+        private string connStr;
+
         public ConcessionaireReportsForm()
         {
             InitializeComponent();
@@ -57,18 +59,56 @@ namespace ConcessionaireReports
         {
             tabControlConcessionaireReports.DrawMode = TabDrawMode.OwnerDrawFixed;
 
-            string connStr = "server=localhost;user=root;database=mrwdbcsys;port=3306;password=";
+            connStr = "server=localhost;user=root;database=mrwdbcsys;port=3306;password=";
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    DataSet dsZones = new DataSet();
+                    conn.Open();
+                    MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetZones", conn);
+                    adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    adapter.Fill(dsZones);
+                    comboBoxAccountPerBookZone.DataSource = dsZones.Tables[0];
+                    comboBoxAccountPerBookZone.DisplayMember = "zone_code";
+                    comboBoxAccountPerBookZone.ValueMember = "zone_code";
+                }
+            }
+            catch (MySqlException ex)
+            {
+                error.Text = "error: " + ex; //Change This to pop up
+            }
+
+            this.reportViewerAccountPerBook.RefreshReport();
+        }
+
+        private void buttonAccountPerBookSearch_Click(object sender, EventArgs e)
+        {
             MySqlConnection conn = new MySqlConnection(connStr);
+            MySqlCommand cmd = new MySqlCommand();
 
             try
             {
                 conn.Open();
-                textBox1.Text = "MySQL version : " + conn.ServerVersion;
+                cmd.Connection = conn;
+
+                cmd.CommandText = "sp_GetAccountPerBook_";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@bookCode", comboBoxAccountPerBookBook); //needs value
+                cmd.Parameters["@bookCode"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@zoneCode", comboBoxAccountPerBookZone); //needs value
+                cmd.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
+
+                cmd.Parameters.AddWithValue("@statusCode", comboBoxAccountPerBookMeterStatus); //needs value
+                cmd.Parameters["@statusCode"].Direction = ParameterDirection.Input;
+
             }
             catch (MySqlException ex)
             {
-                textBox1.Text = "error: " + ex;
-
+                error.Text = "error: " + ex; //Change This to pop up
             }
             finally
             {
@@ -78,9 +118,27 @@ namespace ConcessionaireReports
             this.reportViewerAccountPerBook.RefreshReport();
         }
 
-        private void buttonAccountPerBookSearch_Click(object sender, EventArgs e)
+        private void comboBoxAccountPerBookZone_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    DataSet dsBooksOfZone = new DataSet();
+                    conn.Open();
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetBooksOfZone", conn))
+                    {
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountPerBookZone.SelectedValue.ToString());
+                        adapter.Fill(dsBooksOfZone);
+                        comboBoxAccountPerBookBook.DataSource = dsBooksOfZone.Tables[0];
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                error.Text = "error: " + ex; //Change This to pop up
+            }
         }
     }
 }
