@@ -96,6 +96,8 @@ namespace ConcessionaireReports
                 MessageBox.Show("error: " + ex, "Error!");
             }
             this.reportViewerAccountPerBook.RefreshReport();
+            this.reportViewerAccountPerBarangay.RefreshReport();
+            this.reportViewerAccountPerBarangay.RefreshReport();
         }
 
         private void buttonAccountPerBookSearch_Click(object sender, EventArgs e)
@@ -255,39 +257,28 @@ namespace ConcessionaireReports
                         AccountPerBarangayReport ds = new AccountPerBarangayReport();
 
                         adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxAccountPerBookBook.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountPerBookZone.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@townId", comboBoxAccountPerBarangayTown.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@townId"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@brgyId", comboBoxAccountPerBarangayBarangay.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@brgyId"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@connectedCode", 4);
+                        adapter.SelectCommand.Parameters["@connectedCode"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@disconnectedCode", 5);
+                        adapter.SelectCommand.Parameters["@disconnectedCode"].Direction = ParameterDirection.Input;
 
-                        int meterStatus = comboBoxAccountPerBookMeterStatus.SelectedIndex;
-                        if (meterStatus == 0)
-                        {
-                            adapter.SelectCommand.Parameters.AddWithValue("@flag", "ALL");
-                            adapter.SelectCommand.Parameters["@flag"].Direction = ParameterDirection.Input;
-                            adapter.SelectCommand.Parameters.AddWithValue("@status_code", null);
-                            adapter.SelectCommand.Parameters["@status_code"].Direction = ParameterDirection.Input;
-                        }
-                        else
-                        {
-                            adapter.SelectCommand.Parameters.AddWithValue("@status_code", ((meterStatus == 1) ? 4 : 5));
-                            adapter.SelectCommand.Parameters["@status_code"].Direction = ParameterDirection.Input;
-                            adapter.SelectCommand.Parameters.AddWithValue("@flag", null);
-                            adapter.SelectCommand.Parameters["@flag"].Direction = ParameterDirection.Input;
-                        }
                         adapter.Fill(ds, ds.Tables[0].TableName);
 
-                        ReportDataSource rds = new ReportDataSource("AccountPerBookReport", ds.Tables[0]);
-                        reportViewerAccountPerBook.LocalReport.DataSources.Clear();
-                        reportViewerAccountPerBook.LocalReport.DataSources.Add(rds);
+                        ReportDataSource rds = new ReportDataSource("AccountPerBarangayReport", ds.Tables[0]);
+                        reportViewerAccountPerBarangay.LocalReport.DataSources.Clear();
+                        reportViewerAccountPerBarangay.LocalReport.DataSources.Add(rds);
 
                         ReportParameter[] param = new ReportParameter[]
                         {
-                            new ReportParameter("ReportParameterZone", comboBoxAccountPerBookZone.SelectedValue.ToString()),
-                            new ReportParameter("ReportParameterBook", comboBoxAccountPerBookBook.SelectedValue.ToString())
+                            new ReportParameter("ReportParameterTown", comboBoxAccountPerBarangayTown.SelectedValue.ToString()),
+                            new ReportParameter("ReportParameterBarangay", comboBoxAccountPerBarangayBarangay.SelectedValue.ToString())
                         };
-                        reportViewerAccountPerBook.LocalReport.SetParameters(param);
-                        reportViewerAccountPerBook.LocalReport.Refresh();
+                        reportViewerAccountPerBarangay.LocalReport.SetParameters(param);
+                        reportViewerAccountPerBarangay.LocalReport.Refresh();
                     }
                     conn.Close();
                 }
@@ -296,7 +287,7 @@ namespace ConcessionaireReports
             {
                 MessageBox.Show("error: " + ex, "Error!");
             }
-            this.reportViewerAccountPerBook.RefreshReport();
+            this.reportViewerAccountPerBarangay.RefreshReport();
         }
     }
 }

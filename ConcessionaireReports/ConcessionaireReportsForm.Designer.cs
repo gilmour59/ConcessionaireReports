@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.AccountPerBookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AccountPerBookReport = new ConcessionaireReports.AccountPerBookReport();
             this.tabControlConcessionaireReports = new System.Windows.Forms.TabControl();
@@ -84,6 +84,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.reportViewerAccountPerBarangay = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.AccountPerBarangayReport = new ConcessionaireReports.AccountPerBarangayReport();
+            this.AccountPerBarangayBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.AccountPerBookBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountPerBookReport)).BeginInit();
             this.tabControlConcessionaireReports.SuspendLayout();
@@ -95,6 +97,8 @@
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountPerBarangayReport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountPerBarangayBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // AccountPerBookBindingSource
@@ -148,9 +152,9 @@
             // 
             // reportViewerAccountPerBook
             // 
-            reportDataSource6.Name = "AccountPerBookReport";
-            reportDataSource6.Value = this.AccountPerBookBindingSource;
-            this.reportViewerAccountPerBook.LocalReport.DataSources.Add(reportDataSource6);
+            reportDataSource1.Name = "AccountPerBookReport";
+            reportDataSource1.Value = this.AccountPerBookBindingSource;
+            this.reportViewerAccountPerBook.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewerAccountPerBook.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.AccountPerBookRDLC.rdlc";
             this.reportViewerAccountPerBook.Location = new System.Drawing.Point(20, 60);
             this.reportViewerAccountPerBook.Name = "reportViewerAccountPerBook";
@@ -648,15 +652,25 @@
             // 
             // reportViewerAccountPerBarangay
             // 
-            reportDataSource5.Name = "AccountPerBookReport";
-            reportDataSource5.Value = this.AccountPerBookBindingSource;
-            this.reportViewerAccountPerBarangay.LocalReport.DataSources.Add(reportDataSource5);
-            this.reportViewerAccountPerBarangay.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.AccountPerBookRDLC.rdlc";
-            this.reportViewerAccountPerBarangay.Location = new System.Drawing.Point(20, 60);
+            reportDataSource2.Name = "AccountPerBarangayReport";
+            reportDataSource2.Value = this.AccountPerBarangayBindingSource;
+            this.reportViewerAccountPerBarangay.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewerAccountPerBarangay.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.AccountPerBarangayRDLC.rdlc";
+            this.reportViewerAccountPerBarangay.Location = new System.Drawing.Point(21, 63);
             this.reportViewerAccountPerBarangay.Name = "reportViewerAccountPerBarangay";
             this.reportViewerAccountPerBarangay.ServerReport.BearerToken = null;
-            this.reportViewerAccountPerBarangay.Size = new System.Drawing.Size(782, 402);
+            this.reportViewerAccountPerBarangay.Size = new System.Drawing.Size(783, 399);
             this.reportViewerAccountPerBarangay.TabIndex = 10;
+            // 
+            // AccountPerBarangayReport
+            // 
+            this.AccountPerBarangayReport.DataSetName = "AccountPerBarangayReport";
+            this.AccountPerBarangayReport.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // AccountPerBarangayBindingSource
+            // 
+            this.AccountPerBarangayBindingSource.DataMember = "AccountPerBarangay";
+            this.AccountPerBarangayBindingSource.DataSource = this.AccountPerBarangayReport;
             // 
             // ConcessionaireReportsForm
             // 
@@ -686,6 +700,8 @@
             this.tabPage7.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountPerBarangayReport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountPerBarangayBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -741,10 +757,12 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewerAccountPerBook;
         private System.Windows.Forms.BindingSource AccountPerBookBindingSource;
         private AccountPerBookReport AccountPerBookReport;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerAccountPerBook;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerAccountPerBarangay;
+        private System.Windows.Forms.BindingSource AccountPerBarangayBindingSource;
+        private AccountPerBarangayReport AccountPerBarangayReport;
     }
 }
 
