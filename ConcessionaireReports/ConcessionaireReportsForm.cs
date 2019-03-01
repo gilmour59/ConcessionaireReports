@@ -76,6 +76,10 @@ namespace ConcessionaireReports
                         comboBoxAccountPerBookZone.ValueMember = "zone_code";
                         comboBoxAccountPerBookZone.DisplayMember = "zone_code";
                         comboBoxAccountPerBookZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox
+
+                        comboBoxAccountPerClassificationZone.ValueMember = "zone_code";
+                        comboBoxAccountPerClassificationZone.DisplayMember = "zone_code";
+                        comboBoxAccountPerClassificationZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox
                     }
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetTowns", conn))
@@ -88,6 +92,17 @@ namespace ConcessionaireReports
                         comboBoxAccountPerBarangayTown.DisplayMember = "town_name";
                         comboBoxAccountPerBarangayTown.DataSource = dsTowns.Tables[0]; //this triggers the SelectedIndex property of a combobox
                     }
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetClassification", conn))
+                    {
+                        DataSet dsClassifications = new DataSet();
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.Fill(dsClassifications);
+
+                        comboBoxAccountPerClassificationClassification.ValueMember = "classification_id";
+                        comboBoxAccountPerClassificationClassification.DisplayMember = "class_desc";
+                        comboBoxAccountPerClassificationClassification.DataSource = dsClassifications.Tables[0]; //this triggers the SelectedIndex property of a combobox
+                    }
                     conn.Close();
                 }
             }
@@ -97,6 +112,7 @@ namespace ConcessionaireReports
             }
             this.reportViewerAccountPerBook.RefreshReport();
             this.reportViewerAccountPerBarangay.RefreshReport();
+            this.reportViewerAccountPerClassification.RefreshReport();
         }
 
         private void buttonAccountPerBookSearch_Click(object sender, EventArgs e)
@@ -287,6 +303,54 @@ namespace ConcessionaireReports
                 MessageBox.Show("error: " + ex, "Error!");
             }
             this.reportViewerAccountPerBarangay.RefreshReport();
+        }
+
+        private void buttonAccountPerClassificationSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetAccountPerClass_", conn))
+                    {
+                        AccountPerClassificationReport ds = new AccountPerClassificationReport();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountPerClassificationZone.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@classId", Convert.ToByte(comboBoxAccountPerClassificationClassification.SelectedValue.ToString()));
+                        adapter.SelectCommand.Parameters["@classId"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@class_desc", comboBoxAccountPerClassificationClassification.Text);
+                        adapter.SelectCommand.Parameters["@class_desc"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@connectedCode", 4);
+                        adapter.SelectCommand.Parameters["@connectedCode"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@disconnectedCode", 5);
+                        adapter.SelectCommand.Parameters["@disconnectedCode"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, ds.Tables[0].TableName);
+
+                        ReportDataSource rds = new ReportDataSource("AccountPerBarangayReport", ds.Tables[0]);
+                        reportViewerAccountPerBarangay.LocalReport.DataSources.Clear();
+                        reportViewerAccountPerBarangay.LocalReport.DataSources.Add(rds);
+
+                        ReportParameter[] param = new ReportParameter[]
+                        {
+                            new ReportParameter("ReportParameterTown", comboBoxAccountPerBarangayTown.Text),
+                            new ReportParameter("ReportParameterBarangay", (comboBoxAccountPerBarangayBarangay.SelectedIndex == 0 || comboBoxAccountPerBarangayBarangay.SelectedIndex == 1 ? "ALL" : comboBoxAccountPerBarangayBarangay.Text))
+                        };
+                        reportViewerAccountPerBarangay.LocalReport.SetParameters(param);
+                        reportViewerAccountPerBarangay.LocalReport.Refresh();
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            this.reportViewerAccountPerClassification.RefreshReport();
         }
     }
 }

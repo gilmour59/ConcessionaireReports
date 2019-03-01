@@ -85,6 +85,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AccountPerBookReport.xsd</DependentUpon>
     </Compile>
+    <Compile Include="AccountPerClassificationReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountPerClassificationReport.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ConcessionaireReportsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +101,7 @@
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="AccountPerBarangayRDLC.rdlc" />
     <EmbeddedResource Include="AccountPerBookRDLC.rdlc" />
+    <EmbeddedResource Include="AccountPerClassificationRDLC.rdlc" />
     <EmbeddedResource Include="ConcessionaireReportsForm.resx">
       <DependentUpon>ConcessionaireReportsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +135,17 @@
     </None>
     <None Include="AccountPerBookReport.xss">
       <DependentUpon>AccountPerBookReport.xsd</DependentUpon>
+    </None>
+    <None Include="AccountPerClassificationReport.xsc">
+      <DependentUpon>AccountPerClassificationReport.xsd</DependentUpon>
+    </None>
+    <None Include="AccountPerClassificationReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AccountPerClassificationReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AccountPerClassificationReport.xss">
+      <DependentUpon>AccountPerClassificationReport.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
