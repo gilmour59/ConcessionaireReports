@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AccountPerBarangayReport" targetNamespace="http://tempuri.org/AccountPerBarangayReport.xsd" xmlns:mstns="http://tempuri.org/AccountPerBarangayReport.xsd" xmlns="http://tempuri.org/AccountPerBarangayReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="AccountPerBarangayReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="AccountPerBarangayReport" msprop:Generator_UserDSName="AccountPerBarangayReport">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="AccountPerBarangay" msprop:Generator_TableClassName="AccountPerBarangayDataTable" msprop:Generator_TableVarName="tableAccountPerBarangay" msprop:Generator_TablePropName="AccountPerBarangay" msprop:Generator_RowDeletingName="AccountPerBarangayRowDeleting" msprop:Generator_RowChangingName="AccountPerBarangayRowChanging" msprop:Generator_RowEvHandlerName="AccountPerBarangayRowChangeEventHandler" msprop:Generator_RowDeletedName="AccountPerBarangayRowDeleted" msprop:Generator_UserTableName="AccountPerBarangay" msprop:Generator_RowChangedName="AccountPerBarangayRowChanged" msprop:Generator_RowEvArgName="AccountPerBarangayRowChangeEvent" msprop:Generator_RowClassName="AccountPerBarangayRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="header_name" msprop:Generator_ColumnVarNameInTable="columnheader_name" msprop:Generator_ColumnPropNameInRow="header_name" msprop:Generator_ColumnPropNameInTable="header_nameColumn" msprop:Generator_UserColumnName="header_name" type="xs:string" minOccurs="0" />
+              <xs:element name="header_address" msprop:Generator_ColumnVarNameInTable="columnheader_address" msprop:Generator_ColumnPropNameInRow="header_address" msprop:Generator_ColumnPropNameInTable="header_addressColumn" msprop:Generator_UserColumnName="header_address" type="xs:string" minOccurs="0" />
+              <xs:element name="DataColumn1" msprop:Generator_ColumnVarNameInTable="columnDataColumn1" msprop:Generator_ColumnPropNameInRow="DataColumn1" msprop:Generator_ColumnPropNameInTable="DataColumn1Column" msprop:Generator_UserColumnName="DataColumn1" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

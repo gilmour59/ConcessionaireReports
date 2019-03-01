@@ -37,7 +37,7 @@ namespace ConcessionaireReports
             if (e.State == DrawItemState.Selected)
             {
                 // Draw a different background color, and don't paint a focus rectangle.
-                _textBrush = new SolidBrush(Color.Red);
+                _textBrush = new SolidBrush(Color.Blue);
                 g.FillRectangle(Brushes.Gray, e.Bounds);
             }
             else
@@ -46,7 +46,7 @@ namespace ConcessionaireReports
                 e.DrawBackground();
             }
             // Use our own font.
-            Font _tabFont = new Font("Arial", (float)10.0, FontStyle.Bold, GraphicsUnit.Pixel);
+            Font _tabFont = new Font("Comic Sans MS", (float)13.0, FontStyle.Bold, GraphicsUnit.Pixel);
 
             // Draw string. Center the text.
             StringFormat _stringFlags = new StringFormat();
@@ -65,22 +65,35 @@ namespace ConcessionaireReports
             {
                 using (MySqlConnection conn = new MySqlConnection(connStr))
                 {
-                    DataSet dsZones = new DataSet();
                     conn.Open();
-                    MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetZones", conn);
-                    adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                    adapter.Fill(dsZones);
 
-                    comboBoxAccountPerBookZone.ValueMember = "zone_code";
-                    comboBoxAccountPerBookZone.DisplayMember = "zone_code";
-                    comboBoxAccountPerBookZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetZones", conn))
+                    {
+                        DataSet dsZones = new DataSet();
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.Fill(dsZones);
 
+                        comboBoxAccountPerBookZone.ValueMember = "zone_code";
+                        comboBoxAccountPerBookZone.DisplayMember = "zone_code";
+                        comboBoxAccountPerBookZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox
+                    }
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetTowns", conn))
+                    {
+                        DataSet dsTowns = new DataSet();
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.Fill(dsTowns);
+
+                        comboBoxAccountPerBarangayTown.ValueMember = "town_id";
+                        comboBoxAccountPerBarangayTown.DisplayMember = "town_name";
+                        comboBoxAccountPerBarangayTown.DataSource = dsTowns.Tables[0]; //this triggers the SelectedIndex property of a combobox
+                    }
                     conn.Close();
                 }
             }
             catch (MySqlException ex)
             {
-                error.Text = "error: " + ex; //Change This to pop up
+                MessageBox.Show("error: " + ex, "Error!");
             }
             this.reportViewerAccountPerBook.RefreshReport();
         }
@@ -103,17 +116,17 @@ namespace ConcessionaireReports
                         adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountPerBookZone.SelectedValue.ToString());
                         adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
 
-                        string meterStatus = comboBoxAccountPerBookMeterStatus.SelectedValue.ToString();
-                        if (meterStatus == "ALL")
+                        int meterStatus = comboBoxAccountPerBookMeterStatus.SelectedIndex;
+                        if (meterStatus == 0)
                         {
-                            adapter.SelectCommand.Parameters.AddWithValue("@flag", meterStatus);
+                            adapter.SelectCommand.Parameters.AddWithValue("@flag", "ALL");
                             adapter.SelectCommand.Parameters["@flag"].Direction = ParameterDirection.Input;
                             adapter.SelectCommand.Parameters.AddWithValue("@status_code", null);
                             adapter.SelectCommand.Parameters["@status_code"].Direction = ParameterDirection.Input;
                         }
                         else
                         {
-                            adapter.SelectCommand.Parameters.AddWithValue("@status_code", meterStatus);
+                            adapter.SelectCommand.Parameters.AddWithValue("@status_code", ((meterStatus == 1) ? 4 : 5));
                             adapter.SelectCommand.Parameters["@status_code"].Direction = ParameterDirection.Input;
                             adapter.SelectCommand.Parameters.AddWithValue("@flag", null);
                             adapter.SelectCommand.Parameters["@flag"].Direction = ParameterDirection.Input;
@@ -123,6 +136,13 @@ namespace ConcessionaireReports
                         ReportDataSource rds = new ReportDataSource("AccountPerBookReport", ds.Tables[0]);
                         reportViewerAccountPerBook.LocalReport.DataSources.Clear();
                         reportViewerAccountPerBook.LocalReport.DataSources.Add(rds);
+
+                        ReportParameter[] param = new ReportParameter[]
+                        {
+                            new ReportParameter("ReportParameterZone", comboBoxAccountPerBookZone.SelectedValue.ToString()),
+                            new ReportParameter("ReportParameterBook", comboBoxAccountPerBookBook.SelectedValue.ToString())
+                        };
+                        reportViewerAccountPerBook.LocalReport.SetParameters(param);
                         reportViewerAccountPerBook.LocalReport.Refresh();
                     }
                     conn.Close();
@@ -130,7 +150,7 @@ namespace ConcessionaireReports
             }
             catch (MySqlException ex)
             {
-                error.Text = "error: " + ex; //Change This to pop up
+                MessageBox.Show("error: " + ex, "Error!");
             } 
             this.reportViewerAccountPerBook.RefreshReport();
         }
@@ -182,8 +202,101 @@ namespace ConcessionaireReports
             }
             catch (MySqlException ex)
             {
-                error.Text = "error: " + ex; //Change This to pop up
+                MessageBox.Show("error: " + ex, "Error!");
             }
+        }
+
+        private void comboBoxAccountPerBarangayTown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetBarangaysOfTown", conn))
+                    {
+                        DataSet dsBarangaysOfTown = new DataSet();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@townId", comboBoxAccountPerBarangayTown.SelectedValue.ToString());
+                        adapter.Fill(dsBarangaysOfTown);
+
+                        comboBoxAccountPerBarangayBarangay.ValueMember = "barangay_id";
+                        comboBoxAccountPerBarangayBarangay.DisplayMember = "brgy_name";
+
+                        DataRow rowBook = dsBarangaysOfTown.Tables[0].NewRow();
+                        rowBook[0] = "00"; //barangay_id
+                        rowBook[1] = "Select Here"; // brgy_name 
+                        dsBarangaysOfTown.Tables[0].Rows.InsertAt(rowBook, 0);
+
+                        comboBoxAccountPerBarangayBarangay.DataSource = dsBarangaysOfTown.Tables[0];
+                    }
+
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+        }
+
+        private void buttonAccountPerBarangaySearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetAccountPerBrgy_", conn))
+                    {
+                        AccountPerBarangayReport ds = new AccountPerBarangayReport();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxAccountPerBookBook.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountPerBookZone.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
+
+                        int meterStatus = comboBoxAccountPerBookMeterStatus.SelectedIndex;
+                        if (meterStatus == 0)
+                        {
+                            adapter.SelectCommand.Parameters.AddWithValue("@flag", "ALL");
+                            adapter.SelectCommand.Parameters["@flag"].Direction = ParameterDirection.Input;
+                            adapter.SelectCommand.Parameters.AddWithValue("@status_code", null);
+                            adapter.SelectCommand.Parameters["@status_code"].Direction = ParameterDirection.Input;
+                        }
+                        else
+                        {
+                            adapter.SelectCommand.Parameters.AddWithValue("@status_code", ((meterStatus == 1) ? 4 : 5));
+                            adapter.SelectCommand.Parameters["@status_code"].Direction = ParameterDirection.Input;
+                            adapter.SelectCommand.Parameters.AddWithValue("@flag", null);
+                            adapter.SelectCommand.Parameters["@flag"].Direction = ParameterDirection.Input;
+                        }
+                        adapter.Fill(ds, ds.Tables[0].TableName);
+
+                        ReportDataSource rds = new ReportDataSource("AccountPerBookReport", ds.Tables[0]);
+                        reportViewerAccountPerBook.LocalReport.DataSources.Clear();
+                        reportViewerAccountPerBook.LocalReport.DataSources.Add(rds);
+
+                        ReportParameter[] param = new ReportParameter[]
+                        {
+                            new ReportParameter("ReportParameterZone", comboBoxAccountPerBookZone.SelectedValue.ToString()),
+                            new ReportParameter("ReportParameterBook", comboBoxAccountPerBookBook.SelectedValue.ToString())
+                        };
+                        reportViewerAccountPerBook.LocalReport.SetParameters(param);
+                        reportViewerAccountPerBook.LocalReport.Refresh();
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            this.reportViewerAccountPerBook.RefreshReport();
         }
     }
 }

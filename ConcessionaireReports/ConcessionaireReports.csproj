@@ -69,6 +69,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountPerBarangayReport.cs">
+      <DependentUpon>AccountPerBarangayReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AccountPerBarangayReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountPerBarangayReport.xsd</DependentUpon>
+    </Compile>
     <Compile Include="AccountPerBookReport.cs">
       <DependentUpon>AccountPerBookReport.xsd</DependentUpon>
     </Compile>
@@ -99,6 +107,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="AccountPerBarangayReport.xsc">
+      <DependentUpon>AccountPerBarangayReport.xsd</DependentUpon>
+    </None>
+    <None Include="AccountPerBarangayReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AccountPerBarangayReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AccountPerBarangayReport.xss">
+      <DependentUpon>AccountPerBarangayReport.xsd</DependentUpon>
+    </None>
     <None Include="AccountPerBookReport.xsc">
       <DependentUpon>AccountPerBookReport.xsd</DependentUpon>
     </None>

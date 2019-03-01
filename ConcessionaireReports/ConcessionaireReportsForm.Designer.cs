@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.AccountPerBookBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.AccountPerBookReport = new ConcessionaireReports.AccountPerBookReport();
             this.tabControlConcessionaireReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.error = new System.Windows.Forms.Label();
             this.reportViewerAccountPerBook = new Microsoft.Reporting.WinForms.ReportViewer();
             this.buttonAccountPerBookSearch = new System.Windows.Forms.Button();
             this.comboBoxAccountPerBookMeterStatus = new System.Windows.Forms.ComboBox();
@@ -81,8 +83,9 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.AccountPerBookReport = new ConcessionaireReports.AccountPerBookReport();
-            this.AccountPerBookBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewerAccountPerBarangay = new Microsoft.Reporting.WinForms.ReportViewer();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountPerBookBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountPerBookReport)).BeginInit();
             this.tabControlConcessionaireReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -92,9 +95,17 @@
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AccountPerBookReport)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AccountPerBookBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // AccountPerBookBindingSource
+            // 
+            this.AccountPerBookBindingSource.DataMember = "AccountPerBook";
+            this.AccountPerBookBindingSource.DataSource = this.AccountPerBookReport;
+            // 
+            // AccountPerBookReport
+            // 
+            this.AccountPerBookReport.DataSetName = "AccountPerBookReport";
+            this.AccountPerBookReport.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabControlConcessionaireReports
             // 
@@ -119,7 +130,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.error);
             this.tabPage1.Controls.Add(this.reportViewerAccountPerBook);
             this.tabPage1.Controls.Add(this.buttonAccountPerBookSearch);
             this.tabPage1.Controls.Add(this.comboBoxAccountPerBookMeterStatus);
@@ -136,20 +146,11 @@
             this.tabPage1.Text = "Account List Per Book";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // error
-            // 
-            this.error.AutoSize = true;
-            this.error.Location = new System.Drawing.Point(48, 7);
-            this.error.Name = "error";
-            this.error.Size = new System.Drawing.Size(41, 13);
-            this.error.TabIndex = 4;
-            this.error.Text = "label17";
-            // 
             // reportViewerAccountPerBook
             // 
-            reportDataSource1.Name = "AccountPerBookReport";
-            reportDataSource1.Value = this.AccountPerBookBindingSource;
-            this.reportViewerAccountPerBook.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource6.Name = "AccountPerBookReport";
+            reportDataSource6.Value = this.AccountPerBookBindingSource;
+            this.reportViewerAccountPerBook.LocalReport.DataSources.Add(reportDataSource6);
             this.reportViewerAccountPerBook.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.AccountPerBookRDLC.rdlc";
             this.reportViewerAccountPerBook.Location = new System.Drawing.Point(20, 60);
             this.reportViewerAccountPerBook.Name = "reportViewerAccountPerBook";
@@ -231,6 +232,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.reportViewerAccountPerBarangay);
             this.tabPage2.Controls.Add(this.buttonAccountPerBarangaySearch);
             this.tabPage2.Controls.Add(this.comboBoxAccountPerBarangayBarangay);
             this.tabPage2.Controls.Add(this.comboBoxAccountPerBarangayTown);
@@ -247,36 +249,40 @@
             // buttonAccountPerBarangaySearch
             // 
             this.buttonAccountPerBarangaySearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAccountPerBarangaySearch.Location = new System.Drawing.Point(608, 16);
+            this.buttonAccountPerBarangaySearch.Location = new System.Drawing.Point(608, 10);
             this.buttonAccountPerBarangaySearch.Name = "buttonAccountPerBarangaySearch";
             this.buttonAccountPerBarangaySearch.Size = new System.Drawing.Size(74, 38);
             this.buttonAccountPerBarangaySearch.TabIndex = 9;
             this.buttonAccountPerBarangaySearch.Text = "Search";
             this.buttonAccountPerBarangaySearch.UseVisualStyleBackColor = true;
+            this.buttonAccountPerBarangaySearch.Click += new System.EventHandler(this.buttonAccountPerBarangaySearch_Click);
             // 
             // comboBoxAccountPerBarangayBarangay
             // 
+            this.comboBoxAccountPerBarangayBarangay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAccountPerBarangayBarangay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxAccountPerBarangayBarangay.FormattingEnabled = true;
-            this.comboBoxAccountPerBarangayBarangay.Location = new System.Drawing.Point(424, 26);
+            this.comboBoxAccountPerBarangayBarangay.Location = new System.Drawing.Point(424, 20);
             this.comboBoxAccountPerBarangayBarangay.Name = "comboBoxAccountPerBarangayBarangay";
             this.comboBoxAccountPerBarangayBarangay.Size = new System.Drawing.Size(125, 24);
             this.comboBoxAccountPerBarangayBarangay.TabIndex = 7;
             // 
             // comboBoxAccountPerBarangayTown
             // 
+            this.comboBoxAccountPerBarangayTown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAccountPerBarangayTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxAccountPerBarangayTown.FormattingEnabled = true;
-            this.comboBoxAccountPerBarangayTown.Location = new System.Drawing.Point(168, 26);
+            this.comboBoxAccountPerBarangayTown.Location = new System.Drawing.Point(168, 20);
             this.comboBoxAccountPerBarangayTown.Name = "comboBoxAccountPerBarangayTown";
             this.comboBoxAccountPerBarangayTown.Size = new System.Drawing.Size(121, 24);
             this.comboBoxAccountPerBarangayTown.TabIndex = 8;
+            this.comboBoxAccountPerBarangayTown.SelectedIndexChanged += new System.EventHandler(this.comboBoxAccountPerBarangayTown_SelectedIndexChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(347, 29);
+            this.label5.Location = new System.Drawing.Point(347, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 16);
             this.label5.TabIndex = 4;
@@ -286,7 +292,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(117, 29);
+            this.label6.Location = new System.Drawing.Point(117, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 16);
             this.label6.TabIndex = 5;
@@ -640,15 +646,17 @@
             this.label16.TabIndex = 5;
             this.label16.Text = "Zone:";
             // 
-            // AccountPerBookReport
+            // reportViewerAccountPerBarangay
             // 
-            this.AccountPerBookReport.DataSetName = "AccountPerBookReport";
-            this.AccountPerBookReport.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // AccountPerBookBindingSource
-            // 
-            this.AccountPerBookBindingSource.DataMember = "AccountPerBook";
-            this.AccountPerBookBindingSource.DataSource = this.AccountPerBookReport;
+            reportDataSource5.Name = "AccountPerBookReport";
+            reportDataSource5.Value = this.AccountPerBookBindingSource;
+            this.reportViewerAccountPerBarangay.LocalReport.DataSources.Add(reportDataSource5);
+            this.reportViewerAccountPerBarangay.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.AccountPerBookRDLC.rdlc";
+            this.reportViewerAccountPerBarangay.Location = new System.Drawing.Point(20, 60);
+            this.reportViewerAccountPerBarangay.Name = "reportViewerAccountPerBarangay";
+            this.reportViewerAccountPerBarangay.ServerReport.BearerToken = null;
+            this.reportViewerAccountPerBarangay.Size = new System.Drawing.Size(782, 402);
+            this.reportViewerAccountPerBarangay.TabIndex = 10;
             // 
             // ConcessionaireReportsForm
             // 
@@ -660,6 +668,8 @@
             this.Name = "ConcessionaireReportsForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.ConcessionaireReportsForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.AccountPerBookBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountPerBookReport)).EndInit();
             this.tabControlConcessionaireReports.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -676,8 +686,6 @@
             this.tabPage7.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AccountPerBookReport)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AccountPerBookBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -734,9 +742,9 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerAccountPerBook;
-        private System.Windows.Forms.Label error;
         private System.Windows.Forms.BindingSource AccountPerBookBindingSource;
         private AccountPerBookReport AccountPerBookReport;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerAccountPerBarangay;
     }
 }
 
