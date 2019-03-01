@@ -273,8 +273,8 @@ namespace ConcessionaireReports
 
                         ReportParameter[] param = new ReportParameter[]
                         {
-                            new ReportParameter("ReportParameterTown", comboBoxAccountPerBarangayTown.SelectedValue.ToString()),
-                            new ReportParameter("ReportParameterBarangay", comboBoxAccountPerBarangayBarangay.SelectedValue.ToString())
+                            new ReportParameter("ReportParameterTown", comboBoxAccountPerBarangayTown.Text),
+                            new ReportParameter("ReportParameterBarangay", (comboBoxAccountPerBarangayBarangay.SelectedIndex == 0 || comboBoxAccountPerBarangayBarangay.SelectedIndex == 1 ? "ALL" : comboBoxAccountPerBarangayBarangay.Text))
                         };
                         reportViewerAccountPerBarangay.LocalReport.SetParameters(param);
                         reportViewerAccountPerBarangay.LocalReport.Refresh();
