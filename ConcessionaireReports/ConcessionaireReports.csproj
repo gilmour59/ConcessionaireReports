@@ -69,39 +69,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountPerBarangayReport.cs">
-      <DependentUpon>AccountPerBarangayReport.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="AccountPerBarangayReport.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AccountPerBarangayReport.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="AccountPerBookReport.cs">
-      <DependentUpon>AccountPerBookReport.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="AccountPerBookReport.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AccountPerBookReport.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="AccountPerClassificationReport.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AccountPerClassificationReport.xsd</DependentUpon>
-    </Compile>
     <Compile Include="ConcessionaireReportsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ConcessionaireReportsForm.Designer.cs">
       <DependentUpon>ConcessionaireReportsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSetConcessionaireReports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetConcessionaireReports.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <EmbeddedResource Include="AccountPerBarangayRDLC.rdlc" />
-    <EmbeddedResource Include="AccountPerBookRDLC.rdlc" />
-    <EmbeddedResource Include="AccountPerClassificationRDLC.rdlc" />
     <EmbeddedResource Include="ConcessionaireReportsForm.resx">
       <DependentUpon>ConcessionaireReportsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,38 +95,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="AccountPerBarangayReport.xsc">
-      <DependentUpon>AccountPerBarangayReport.xsd</DependentUpon>
+    <EmbeddedResource Include="RDLC\ReportAccountPerBarangay.rdlc" />
+    <EmbeddedResource Include="RDLC\ReportAccountPerBook.rdlc" />
+    <EmbeddedResource Include="RDLC\ReportAccountPerClassification.rdlc" />
+    <None Include="DataSetConcessionaireReports.xsc">
+      <DependentUpon>DataSetConcessionaireReports.xsd</DependentUpon>
     </None>
-    <None Include="AccountPerBarangayReport.xsd">
+    <None Include="DataSetConcessionaireReports.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AccountPerBarangayReport.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetConcessionaireReports.Designer.cs</LastGenOutput>
     </None>
-    <None Include="AccountPerBarangayReport.xss">
-      <DependentUpon>AccountPerBarangayReport.xsd</DependentUpon>
-    </None>
-    <None Include="AccountPerBookReport.xsc">
-      <DependentUpon>AccountPerBookReport.xsd</DependentUpon>
-    </None>
-    <None Include="AccountPerBookReport.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AccountPerBookReport.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="AccountPerBookReport.xss">
-      <DependentUpon>AccountPerBookReport.xsd</DependentUpon>
-    </None>
-    <None Include="AccountPerClassificationReport.xsc">
-      <DependentUpon>AccountPerClassificationReport.xsd</DependentUpon>
-    </None>
-    <None Include="AccountPerClassificationReport.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AccountPerClassificationReport.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="AccountPerClassificationReport.xss">
-      <DependentUpon>AccountPerClassificationReport.xsd</DependentUpon>
+    <None Include="DataSetConcessionaireReports.xss">
+      <DependentUpon>DataSetConcessionaireReports.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -176,5 +138,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

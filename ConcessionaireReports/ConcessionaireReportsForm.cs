@@ -125,7 +125,7 @@ namespace ConcessionaireReports
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetAccountPerBook_", conn))
                     {
-                        AccountPerBookReport ds = new AccountPerBookReport();
+                        DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
 
                         adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                         adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxAccountPerBookBook.SelectedValue.ToString());
@@ -148,9 +148,9 @@ namespace ConcessionaireReports
                             adapter.SelectCommand.Parameters.AddWithValue("@flag", null);
                             adapter.SelectCommand.Parameters["@flag"].Direction = ParameterDirection.Input;
                         }                       
-                        adapter.Fill(ds, ds.Tables[0].TableName);
+                        adapter.Fill(ds, "AccountPerBook");
 
-                        ReportDataSource rds = new ReportDataSource("AccountPerBookReport", ds.Tables[0]);
+                        ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountPerBook"]);
                         reportViewerAccountPerBook.LocalReport.DataSources.Clear();
                         reportViewerAccountPerBook.LocalReport.DataSources.Add(rds);
 
@@ -269,7 +269,7 @@ namespace ConcessionaireReports
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetAccountPerBrgy_", conn))
                     {
-                        AccountPerBarangayReport ds = new AccountPerBarangayReport();
+                        DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
 
                         adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                         adapter.SelectCommand.Parameters.AddWithValue("@townId", comboBoxAccountPerBarangayTown.SelectedValue.ToString());
@@ -281,9 +281,9 @@ namespace ConcessionaireReports
                         adapter.SelectCommand.Parameters.AddWithValue("@disconnectedCode", 5);
                         adapter.SelectCommand.Parameters["@disconnectedCode"].Direction = ParameterDirection.Input;
 
-                        adapter.Fill(ds, ds.Tables[0].TableName);
+                        adapter.Fill(ds, "AccountPerBarangay");
 
-                        ReportDataSource rds = new ReportDataSource("AccountPerBarangayReport", ds.Tables[0]);
+                        ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountPerBarangay"]);
                         reportViewerAccountPerBarangay.LocalReport.DataSources.Clear();
                         reportViewerAccountPerBarangay.LocalReport.DataSources.Add(rds);
 
@@ -315,7 +315,7 @@ namespace ConcessionaireReports
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetAccountPerClass_", conn))
                     {
-                        AccountPerClassificationReport ds = new AccountPerClassificationReport();
+                        DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
 
                         adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                         adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountPerClassificationZone.SelectedValue.ToString());
@@ -329,9 +329,9 @@ namespace ConcessionaireReports
                         adapter.SelectCommand.Parameters.AddWithValue("@disconnectedCode", 5);
                         adapter.SelectCommand.Parameters["@disconnectedCode"].Direction = ParameterDirection.Input;
 
-                        adapter.Fill(ds, ds.Tables[0].TableName);
+                        adapter.Fill(ds, "AccountPerClassification");
 
-                        ReportDataSource rds = new ReportDataSource("AccountPerBarangayReport", ds.Tables[0]);
+                        ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountPerClassification"]);
                         reportViewerAccountPerBarangay.LocalReport.DataSources.Clear();
                         reportViewerAccountPerBarangay.LocalReport.DataSources.Add(rds);
 
