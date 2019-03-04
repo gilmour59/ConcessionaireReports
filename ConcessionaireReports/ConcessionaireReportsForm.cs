@@ -332,16 +332,16 @@ namespace ConcessionaireReports
                         adapter.Fill(ds, "AccountPerClassification");
 
                         ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountPerClassification"]);
-                        reportViewerAccountPerBarangay.LocalReport.DataSources.Clear();
-                        reportViewerAccountPerBarangay.LocalReport.DataSources.Add(rds);
+                        reportViewerAccountPerClassification.LocalReport.DataSources.Clear();
+                        reportViewerAccountPerClassification.LocalReport.DataSources.Add(rds);
 
                         ReportParameter[] param = new ReportParameter[]
                         {
-                            new ReportParameter("ReportParameterTown", comboBoxAccountPerBarangayTown.Text),
-                            new ReportParameter("ReportParameterBarangay", (comboBoxAccountPerBarangayBarangay.SelectedIndex == 0 || comboBoxAccountPerBarangayBarangay.SelectedIndex == 1 ? "ALL" : comboBoxAccountPerBarangayBarangay.Text))
+                            new ReportParameter("ReportParameterZone", comboBoxAccountPerClassificationZone.Text),
+                            new ReportParameter("ReportParameterClassification", comboBoxAccountPerClassificationClassification.Text)
                         };
-                        reportViewerAccountPerBarangay.LocalReport.SetParameters(param);
-                        reportViewerAccountPerBarangay.LocalReport.Refresh();
+                        reportViewerAccountPerClassification.LocalReport.SetParameters(param);
+                        reportViewerAccountPerClassification.LocalReport.Refresh();
                     }
                     conn.Close();
                 }
