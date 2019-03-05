@@ -98,6 +98,7 @@
     <EmbeddedResource Include="RDLC\ReportAccountPerBarangay.rdlc" />
     <EmbeddedResource Include="RDLC\ReportAccountPerBook.rdlc" />
     <EmbeddedResource Include="RDLC\ReportAccountPerClassification.rdlc" />
+    <EmbeddedResource Include="RDLC\ReportSummaryAccountsPerClass.rdlc" />
     <None Include="DataSetConcessionaireReports.xsc">
       <DependentUpon>DataSetConcessionaireReports.xsd</DependentUpon>
     </None>

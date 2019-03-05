@@ -113,6 +113,7 @@ namespace ConcessionaireReports
             this.reportViewerAccountPerBook.RefreshReport();
             this.reportViewerAccountPerBarangay.RefreshReport();
             this.reportViewerAccountPerClassification.RefreshReport();
+            this.reportViewerSummaryAccountsPerClass.RefreshReport();
         }
 
         private void buttonAccountPerBookSearch_Click(object sender, EventArgs e)
