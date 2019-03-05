@@ -75,6 +75,9 @@
     <Compile Include="ConcessionaireReportsForm.Designer.cs">
       <DependentUpon>ConcessionaireReportsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSetConcessionaireReports.cs">
+      <DependentUpon>DataSetConcessionaireReports.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetConcessionaireReports.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

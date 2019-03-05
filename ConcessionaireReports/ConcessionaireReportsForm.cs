@@ -103,6 +103,17 @@ namespace ConcessionaireReports
                         comboBoxAccountPerClassificationClassification.DisplayMember = "class_desc";
                         comboBoxAccountPerClassificationClassification.DataSource = dsClassifications.Tables[0]; //this triggers the SelectedIndex property of a combobox
                     }
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetAccountSummaryPerClass", conn))
+                    {
+                        DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.Fill(ds, "SummaryAccountPerClass");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["SummaryAccountPerClass"]);
+                        reportViewerSummaryAccountsPerClass.LocalReport.DataSources.Clear();
+                        reportViewerSummaryAccountsPerClass.LocalReport.DataSources.Add(rds);
+                    }
                     conn.Close();
                 }
             }

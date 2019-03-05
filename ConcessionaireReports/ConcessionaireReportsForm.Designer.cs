@@ -32,6 +32,7 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.AccountPerBookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetConcessionaireReports = new ConcessionaireReports.DataSetConcessionaireReports();
             this.AccountPerBarangayBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -61,6 +62,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.reportViewerSummaryAccountsPerClass = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.buttonNewConnectionSearch = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -87,7 +89,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.reportViewerSummaryAccountsPerClass = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.SummaryAccountPerClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.AccountPerBookBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetConcessionaireReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountPerBarangayBindingSource)).BeginInit();
@@ -101,6 +103,7 @@
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SummaryAccountPerClassBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // AccountPerBookBindingSource
@@ -414,6 +417,18 @@
             this.tabPage4.Text = "Summary of Accounts Per Classification";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // reportViewerSummaryAccountsPerClass
+            // 
+            reportDataSource4.Name = "DataSetConcessionaireReports";
+            reportDataSource4.Value = this.SummaryAccountPerClassBindingSource;
+            this.reportViewerSummaryAccountsPerClass.LocalReport.DataSources.Add(reportDataSource4);
+            this.reportViewerSummaryAccountsPerClass.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportSummaryAccountsPerClass.rdlc";
+            this.reportViewerSummaryAccountsPerClass.Location = new System.Drawing.Point(23, 24);
+            this.reportViewerSummaryAccountsPerClass.Name = "reportViewerSummaryAccountsPerClass";
+            this.reportViewerSummaryAccountsPerClass.ServerReport.BearerToken = null;
+            this.reportViewerSummaryAccountsPerClass.Size = new System.Drawing.Size(776, 435);
+            this.reportViewerSummaryAccountsPerClass.TabIndex = 0;
+            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.buttonNewConnectionSearch);
@@ -680,13 +695,10 @@
             this.label16.TabIndex = 5;
             this.label16.Text = "Zone:";
             // 
-            // reportViewerSummaryAccountsPerClass
+            // SummaryAccountPerClassBindingSource
             // 
-            this.reportViewerSummaryAccountsPerClass.Location = new System.Drawing.Point(23, 24);
-            this.reportViewerSummaryAccountsPerClass.Name = "reportViewerSummaryAccountsPerClass";
-            this.reportViewerSummaryAccountsPerClass.ServerReport.BearerToken = null;
-            this.reportViewerSummaryAccountsPerClass.Size = new System.Drawing.Size(776, 435);
-            this.reportViewerSummaryAccountsPerClass.TabIndex = 0;
+            this.SummaryAccountPerClassBindingSource.DataMember = "SummaryAccountPerClass";
+            this.SummaryAccountPerClassBindingSource.DataSource = this.DataSetConcessionaireReports;
             // 
             // ConcessionaireReportsForm
             // 
@@ -718,6 +730,7 @@
             this.tabPage7.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SummaryAccountPerClassBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -780,6 +793,7 @@
         private System.Windows.Forms.BindingSource AccountPerBarangayBindingSource;
         private System.Windows.Forms.BindingSource AccountPerClassificationBindingSource;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerSummaryAccountsPerClass;
+        private System.Windows.Forms.BindingSource SummaryAccountPerClassBindingSource;
     }
 }
 
