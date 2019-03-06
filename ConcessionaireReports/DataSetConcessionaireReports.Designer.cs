@@ -2009,6 +2009,46 @@ namespace ConcessionaireReports {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class NewConnectionSummaryDataTable : global::System.Data.TypedTableBase<NewConnectionSummaryRow> {
             
+            private global::System.Data.DataColumn columnheader_name;
+            
+            private global::System.Data.DataColumn columnheader_address;
+            
+            private global::System.Data.DataColumn columntitle;
+            
+            private global::System.Data.DataColumn columnsub_title;
+            
+            private global::System.Data.DataColumn columnconcessionaire_name;
+            
+            private global::System.Data.DataColumn columnaddress;
+            
+            private global::System.Data.DataColumn columnref_no;
+            
+            private global::System.Data.DataColumn columnaccount_number;
+            
+            private global::System.Data.DataColumn columnjo_number;
+            
+            private global::System.Data.DataColumn columnbrand;
+            
+            private global::System.Data.DataColumn columnmeter_no;
+            
+            private global::System.Data.DataColumn columnresidential;
+            
+            private global::System.Data.DataColumn columncommercial;
+            
+            private global::System.Data.DataColumn columndate_connected;
+            
+            private global::System.Data.DataColumn columnchecked_by;
+            
+            private global::System.Data.DataColumn columninit_reading;
+            
+            private global::System.Data.DataColumn columnzone_id;
+            
+            private global::System.Data.DataColumn columnbook_id;
+            
+            private global::System.Data.DataColumn columnclassification_id;
+            
+            private global::System.Data.DataColumn columnmeter_size_id;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public NewConnectionSummaryDataTable() {
@@ -2040,6 +2080,166 @@ namespace ConcessionaireReports {
             protected NewConnectionSummaryDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn header_nameColumn {
+                get {
+                    return this.columnheader_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn header_addressColumn {
+                get {
+                    return this.columnheader_address;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn titleColumn {
+                get {
+                    return this.columntitle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sub_titleColumn {
+                get {
+                    return this.columnsub_title;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn concessionaire_nameColumn {
+                get {
+                    return this.columnconcessionaire_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn addressColumn {
+                get {
+                    return this.columnaddress;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ref_noColumn {
+                get {
+                    return this.columnref_no;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn account_numberColumn {
+                get {
+                    return this.columnaccount_number;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn jo_numberColumn {
+                get {
+                    return this.columnjo_number;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn brandColumn {
+                get {
+                    return this.columnbrand;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn meter_noColumn {
+                get {
+                    return this.columnmeter_no;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn residentialColumn {
+                get {
+                    return this.columnresidential;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn commercialColumn {
+                get {
+                    return this.columncommercial;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn date_connectedColumn {
+                get {
+                    return this.columndate_connected;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn checked_byColumn {
+                get {
+                    return this.columnchecked_by;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn init_readingColumn {
+                get {
+                    return this.columninit_reading;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn zone_idColumn {
+                get {
+                    return this.columnzone_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn book_idColumn {
+                get {
+                    return this.columnbook_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn classification_idColumn {
+                get {
+                    return this.columnclassification_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn meter_size_idColumn {
+                get {
+                    return this.columnmeter_size_id;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2079,9 +2279,49 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public NewConnectionSummaryRow AddNewConnectionSummaryRow() {
+            public NewConnectionSummaryRow AddNewConnectionSummaryRow(
+                        string header_name, 
+                        string header_address, 
+                        string title, 
+                        string sub_title, 
+                        string concessionaire_name, 
+                        string address, 
+                        string ref_no, 
+                        string account_number, 
+                        string jo_number, 
+                        string brand, 
+                        string meter_no, 
+                        string residential, 
+                        string commercial, 
+                        string date_connected, 
+                        string checked_by, 
+                        string init_reading, 
+                        string zone_id, 
+                        string book_id, 
+                        string classification_id, 
+                        string meter_size_id) {
                 NewConnectionSummaryRow rowNewConnectionSummaryRow = ((NewConnectionSummaryRow)(this.NewRow()));
-                object[] columnValuesArray = new object[0];
+                object[] columnValuesArray = new object[] {
+                        header_name,
+                        header_address,
+                        title,
+                        sub_title,
+                        concessionaire_name,
+                        address,
+                        ref_no,
+                        account_number,
+                        jo_number,
+                        brand,
+                        meter_no,
+                        residential,
+                        commercial,
+                        date_connected,
+                        checked_by,
+                        init_reading,
+                        zone_id,
+                        book_id,
+                        classification_id,
+                        meter_size_id};
                 rowNewConnectionSummaryRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowNewConnectionSummaryRow);
                 return rowNewConnectionSummaryRow;
@@ -2104,11 +2344,71 @@ namespace ConcessionaireReports {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
+                this.columnheader_name = base.Columns["header_name"];
+                this.columnheader_address = base.Columns["header_address"];
+                this.columntitle = base.Columns["title"];
+                this.columnsub_title = base.Columns["sub_title"];
+                this.columnconcessionaire_name = base.Columns["concessionaire_name"];
+                this.columnaddress = base.Columns["address"];
+                this.columnref_no = base.Columns["ref_no"];
+                this.columnaccount_number = base.Columns["account_number"];
+                this.columnjo_number = base.Columns["jo_number"];
+                this.columnbrand = base.Columns["brand"];
+                this.columnmeter_no = base.Columns["meter_no"];
+                this.columnresidential = base.Columns["residential"];
+                this.columncommercial = base.Columns["commercial"];
+                this.columndate_connected = base.Columns["date_connected"];
+                this.columnchecked_by = base.Columns["checked_by"];
+                this.columninit_reading = base.Columns["init_reading"];
+                this.columnzone_id = base.Columns["zone_id"];
+                this.columnbook_id = base.Columns["book_id"];
+                this.columnclassification_id = base.Columns["classification_id"];
+                this.columnmeter_size_id = base.Columns["meter_size_id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
+                this.columnheader_name = new global::System.Data.DataColumn("header_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnheader_name);
+                this.columnheader_address = new global::System.Data.DataColumn("header_address", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnheader_address);
+                this.columntitle = new global::System.Data.DataColumn("title", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntitle);
+                this.columnsub_title = new global::System.Data.DataColumn("sub_title", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsub_title);
+                this.columnconcessionaire_name = new global::System.Data.DataColumn("concessionaire_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnconcessionaire_name);
+                this.columnaddress = new global::System.Data.DataColumn("address", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnaddress);
+                this.columnref_no = new global::System.Data.DataColumn("ref_no", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnref_no);
+                this.columnaccount_number = new global::System.Data.DataColumn("account_number", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnaccount_number);
+                this.columnjo_number = new global::System.Data.DataColumn("jo_number", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnjo_number);
+                this.columnbrand = new global::System.Data.DataColumn("brand", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbrand);
+                this.columnmeter_no = new global::System.Data.DataColumn("meter_no", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmeter_no);
+                this.columnresidential = new global::System.Data.DataColumn("residential", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnresidential);
+                this.columncommercial = new global::System.Data.DataColumn("commercial", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncommercial);
+                this.columndate_connected = new global::System.Data.DataColumn("date_connected", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndate_connected);
+                this.columnchecked_by = new global::System.Data.DataColumn("checked_by", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnchecked_by);
+                this.columninit_reading = new global::System.Data.DataColumn("init_reading", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columninit_reading);
+                this.columnzone_id = new global::System.Data.DataColumn("zone_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnzone_id);
+                this.columnbook_id = new global::System.Data.DataColumn("book_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbook_id);
+                this.columnclassification_id = new global::System.Data.DataColumn("classification_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnclassification_id);
+                this.columnmeter_size_id = new global::System.Data.DataColumn("meter_size_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmeter_size_id);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3635,6 +3935,568 @@ namespace ConcessionaireReports {
             internal NewConnectionSummaryRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tableNewConnectionSummary = ((NewConnectionSummaryDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string header_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableNewConnectionSummary.header_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'header_name\' in table \'NewConnectionSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNewConnectionSummary.header_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string header_address {
+                get {
+                    try {
+                        return ((string)(this[this.tableNewConnectionSummary.header_addressColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'header_address\' in table \'NewConnectionSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNewConnectionSummary.header_addressColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string title {
+                get {
+                    try {
+                        return ((string)(this[this.tableNewConnectionSummary.titleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'title\' in table \'NewConnectionSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNewConnectionSummary.titleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sub_title {
+                get {
+                    try {
+                        return ((string)(this[this.tableNewConnectionSummary.sub_titleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'sub_title\' in table \'NewConnectionSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNewConnectionSummary.sub_titleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string concessionaire_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableNewConnectionSummary.concessionaire_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'concessionaire_name\' in table \'NewConnectionSummary\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNewConnectionSummary.concessionaire_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string address {
+                get {
+                    try {
+                        return ((string)(this[this.tableNewConnectionSummary.addressColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'address\' in table \'NewConnectionSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNewConnectionSummary.addressColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string ref_no {
+                get {
+                    try {
+                        return ((string)(this[this.tableNewConnectionSummary.ref_noColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ref_no\' in table \'NewConnectionSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNewConnectionSummary.ref_noColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string account_number {
+                get {
+                    try {
+                        return ((string)(this[this.tableNewConnectionSummary.account_numberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'account_number\' in table \'NewConnectionSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNewConnectionSummary.account_numberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string jo_number {
+                get {
+                    try {
+                        return ((string)(this[this.tableNewConnectionSummary.jo_numberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'jo_number\' in table \'NewConnectionSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNewConnectionSummary.jo_numberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string brand {
+                get {
+                    try {
+                        return ((string)(this[this.tableNewConnectionSummary.brandColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'brand\' in table \'NewConnectionSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNewConnectionSummary.brandColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string meter_no {
+                get {
+                    try {
+                        return ((string)(this[this.tableNewConnectionSummary.meter_noColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'meter_no\' in table \'NewConnectionSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNewConnectionSummary.meter_noColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string residential {
+                get {
+                    try {
+                        return ((string)(this[this.tableNewConnectionSummary.residentialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'residential\' in table \'NewConnectionSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNewConnectionSummary.residentialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string commercial {
+                get {
+                    try {
+                        return ((string)(this[this.tableNewConnectionSummary.commercialColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'commercial\' in table \'NewConnectionSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNewConnectionSummary.commercialColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string date_connected {
+                get {
+                    try {
+                        return ((string)(this[this.tableNewConnectionSummary.date_connectedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'date_connected\' in table \'NewConnectionSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNewConnectionSummary.date_connectedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string checked_by {
+                get {
+                    try {
+                        return ((string)(this[this.tableNewConnectionSummary.checked_byColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'checked_by\' in table \'NewConnectionSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNewConnectionSummary.checked_byColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string init_reading {
+                get {
+                    try {
+                        return ((string)(this[this.tableNewConnectionSummary.init_readingColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'init_reading\' in table \'NewConnectionSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNewConnectionSummary.init_readingColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string zone_id {
+                get {
+                    try {
+                        return ((string)(this[this.tableNewConnectionSummary.zone_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'zone_id\' in table \'NewConnectionSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNewConnectionSummary.zone_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string book_id {
+                get {
+                    try {
+                        return ((string)(this[this.tableNewConnectionSummary.book_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'book_id\' in table \'NewConnectionSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNewConnectionSummary.book_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string classification_id {
+                get {
+                    try {
+                        return ((string)(this[this.tableNewConnectionSummary.classification_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'classification_id\' in table \'NewConnectionSummary\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableNewConnectionSummary.classification_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string meter_size_id {
+                get {
+                    try {
+                        return ((string)(this[this.tableNewConnectionSummary.meter_size_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'meter_size_id\' in table \'NewConnectionSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNewConnectionSummary.meter_size_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isheader_nameNull() {
+                return this.IsNull(this.tableNewConnectionSummary.header_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setheader_nameNull() {
+                this[this.tableNewConnectionSummary.header_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isheader_addressNull() {
+                return this.IsNull(this.tableNewConnectionSummary.header_addressColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setheader_addressNull() {
+                this[this.tableNewConnectionSummary.header_addressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IstitleNull() {
+                return this.IsNull(this.tableNewConnectionSummary.titleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SettitleNull() {
+                this[this.tableNewConnectionSummary.titleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Issub_titleNull() {
+                return this.IsNull(this.tableNewConnectionSummary.sub_titleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setsub_titleNull() {
+                this[this.tableNewConnectionSummary.sub_titleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isconcessionaire_nameNull() {
+                return this.IsNull(this.tableNewConnectionSummary.concessionaire_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setconcessionaire_nameNull() {
+                this[this.tableNewConnectionSummary.concessionaire_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsaddressNull() {
+                return this.IsNull(this.tableNewConnectionSummary.addressColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetaddressNull() {
+                this[this.tableNewConnectionSummary.addressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isref_noNull() {
+                return this.IsNull(this.tableNewConnectionSummary.ref_noColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setref_noNull() {
+                this[this.tableNewConnectionSummary.ref_noColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isaccount_numberNull() {
+                return this.IsNull(this.tableNewConnectionSummary.account_numberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setaccount_numberNull() {
+                this[this.tableNewConnectionSummary.account_numberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isjo_numberNull() {
+                return this.IsNull(this.tableNewConnectionSummary.jo_numberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setjo_numberNull() {
+                this[this.tableNewConnectionSummary.jo_numberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsbrandNull() {
+                return this.IsNull(this.tableNewConnectionSummary.brandColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetbrandNull() {
+                this[this.tableNewConnectionSummary.brandColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Ismeter_noNull() {
+                return this.IsNull(this.tableNewConnectionSummary.meter_noColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setmeter_noNull() {
+                this[this.tableNewConnectionSummary.meter_noColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsresidentialNull() {
+                return this.IsNull(this.tableNewConnectionSummary.residentialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetresidentialNull() {
+                this[this.tableNewConnectionSummary.residentialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IscommercialNull() {
+                return this.IsNull(this.tableNewConnectionSummary.commercialColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetcommercialNull() {
+                this[this.tableNewConnectionSummary.commercialColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isdate_connectedNull() {
+                return this.IsNull(this.tableNewConnectionSummary.date_connectedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setdate_connectedNull() {
+                this[this.tableNewConnectionSummary.date_connectedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Ischecked_byNull() {
+                return this.IsNull(this.tableNewConnectionSummary.checked_byColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setchecked_byNull() {
+                this[this.tableNewConnectionSummary.checked_byColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isinit_readingNull() {
+                return this.IsNull(this.tableNewConnectionSummary.init_readingColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setinit_readingNull() {
+                this[this.tableNewConnectionSummary.init_readingColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iszone_idNull() {
+                return this.IsNull(this.tableNewConnectionSummary.zone_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setzone_idNull() {
+                this[this.tableNewConnectionSummary.zone_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isbook_idNull() {
+                return this.IsNull(this.tableNewConnectionSummary.book_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setbook_idNull() {
+                this[this.tableNewConnectionSummary.book_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isclassification_idNull() {
+                return this.IsNull(this.tableNewConnectionSummary.classification_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setclassification_idNull() {
+                this[this.tableNewConnectionSummary.classification_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Ismeter_size_idNull() {
+                return this.IsNull(this.tableNewConnectionSummary.meter_size_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setmeter_size_idNull() {
+                this[this.tableNewConnectionSummary.meter_size_idColumn] = global::System.Convert.DBNull;
             }
         }
         
