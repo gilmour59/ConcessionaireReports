@@ -84,26 +84,142 @@
     <ReportSection>
       <Body>
         <ReportItems>
+          <Line Name="Line10">
+            <Top>1.55278cm</Top>
+            <Left>0.31136cm</Left>
+            <Height>0cm</Height>
+            <Width>19.88505cm</Width>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Line>
+          <Textbox Name="Textbox17">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>="Total Accounts: " &amp; Count(Fields!account_number.Value,"DataSetConcessionaireReports")</Value>
+                    <Style>
+                      <FontFamily>calibri</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox17</rd:DefaultName>
+            <Top>1.65861cm</Top>
+            <Left>4.97558cm</Left>
+            <Height>0.49417cm</Height>
+            <Width>3.54628cm</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>="Connected: " &amp; SUM(IIF(Fields!meter_stat.Value = "Connected", 1, 0),"DataSetConcessionaireReports")</Value>
+                    <Style>
+                      <FontFamily>Calibri</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>1.65861cm</Top>
+            <Left>8.55714cm</Left>
+            <Height>0.49417cm</Height>
+            <Width>3.54628cm</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>="Disconnected: " &amp; Sum(IIF(Fields!meter_stat.Value = "Disconnected", 1, 0), "DataSetConcessionaireReports")</Value>
+                    <Style>
+                      <FontFamily>Calibri</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>1.65861cm</Top>
+            <Left>12.1387cm</Left>
+            <Height>0.49417cm</Height>
+            <Width>3.54628cm</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
           <Tablix Name="Tablix2">
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.60041cm</Width>
+                  <Width>0.85cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.04681cm</Width>
+                  <Width>3.64675cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5.39441cm</Width>
+                  <Width>5.16626cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5.06741cm</Width>
+                  <Width>5.57904cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.13017cm</Width>
+                  <Width>2.1065cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.64583cm</Width>
+                  <Width>2.55cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -119,7 +235,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Seq. No.</Value>
+                                  <Value>Seq.</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
                                     <FontWeight>Bold</FontWeight>
@@ -325,6 +441,7 @@
                                   <Value>=Fields!seq_no.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -354,9 +471,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!account_number.Value</Value>
+                                  <Value>=Fields!ref_no.Value &amp; " / " &amp; Fields!account_number.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -389,6 +507,7 @@
                                   <Value>=Fields!concessionaire_name.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -421,6 +540,7 @@
                                   <Value>=Fields!address.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -443,7 +563,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="meter_stat1">
+                        <Textbox Name="meter_stat">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -453,13 +573,14 @@
                                   <Value>=Fields!meter_stat.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>meter_stat1</rd:DefaultName>
+                          <rd:DefaultName>meter_stat</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -485,6 +606,7 @@
                                   <Value>=Fields!date_connected.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
                                     <Format>d</Format>
                                   </Style>
                                 </TextRun>
@@ -504,6 +626,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -528,140 +651,21 @@
                 </TablixMember>
                 <TablixMember>
                   <Group Name="Details" />
-                  <TablixMembers>
-                    <TablixMember />
-                  </TablixMembers>
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSetConcessionaireReports</DataSetName>
             <Top>0.17639cm</Top>
-            <Left>0.31136cm</Left>
+            <Left>0.29786cm</Left>
             <Height>1.2cm</Height>
-            <Width>19.88505cm</Width>
+            <Width>19.89855cm</Width>
+            <ZIndex>4</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
             </Style>
           </Tablix>
-          <Line Name="Line10">
-            <Top>1.55278cm</Top>
-            <Left>0.31136cm</Left>
-            <Height>0cm</Height>
-            <Width>19.88505cm</Width>
-            <ZIndex>1</ZIndex>
-            <Style>
-              <Border>
-                <Style>Solid</Style>
-              </Border>
-            </Style>
-          </Line>
-          <Textbox Name="Textbox17">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>="Total Accounts: " &amp; Count(Fields!account_number.Value,"DataSetConcessionaireReports")</Value>
-                    <Style>
-                      <FontFamily>calibri</FontFamily>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox17</rd:DefaultName>
-            <Top>1.65861cm</Top>
-            <Left>4.97558cm</Left>
-            <Height>0.49417cm</Height>
-            <Width>3.54628cm</Width>
-            <ZIndex>2</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox1">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>="Connected: " &amp; SUM(IIF(Fields!meter_stat.Value = "Connected", 1, 0),"DataSetConcessionaireReports")</Value>
-                    <Style>
-                      <FontFamily>Calibri</FontFamily>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>1.65861cm</Top>
-            <Left>8.55714cm</Left>
-            <Height>0.49417cm</Height>
-            <Width>3.54628cm</Width>
-            <ZIndex>3</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox2">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>="Disconnected: " &amp; Sum(IIF(Fields!meter_stat.Value = "Disconnected", 1, 0), "DataSetConcessionaireReports")</Value>
-                    <Style>
-                      <FontFamily>Calibri</FontFamily>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>1.65861cm</Top>
-            <Left>12.1387cm</Left>
-            <Height>0.49417cm</Height>
-            <Width>3.54628cm</Width>
-            <ZIndex>4</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
         </ReportItems>
         <Height>0.94455in</Height>
         <Style />

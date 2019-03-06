@@ -80,22 +80,22 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.56535cm</Width>
+                  <Width>0.85cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.06467cm</Width>
+                  <Width>3.64675cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>5.56626cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5.17845cm</Width>
+                  <Width>6.06966cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.27274cm</Width>
+                  <Width>1.7cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.28855cm</Width>
+                  <Width>2.10334cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -111,7 +111,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Seq. No.</Value>
+                                  <Value>Seq.</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
                                     <FontWeight>Bold</FontWeight>
@@ -317,6 +317,7 @@
                                   <Value>=Fields!seq_no.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -346,9 +347,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!account_number.Value</Value>
+                                  <Value>=Fields!ref_no.Value &amp; " / " &amp; Fields!account_number.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -381,6 +383,7 @@
                                   <Value>=Fields!concessionaire_name.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -413,6 +416,7 @@
                                   <Value>=Fields!address.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -445,6 +449,7 @@
                                   <Value>=Fields!meter_sn.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -477,6 +482,7 @@
                                   <Value>=Fields!meter_stat.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
