@@ -1642,6 +1642,8 @@ namespace ConcessionaireReports {
             
             private global::System.Data.DataColumn columnclass_meter_code;
             
+            private global::System.Data.DataColumn columnTotalCon;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public SummaryAccountPerClassDataTable() {
@@ -1757,6 +1759,14 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn TotalConColumn {
+                get {
+                    return this.columnTotalCon;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1792,7 +1802,7 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SummaryAccountPerClassRow AddSummaryAccountPerClassRow(string header_name, string header_address, byte classification_id, string class_desc, byte meter_size_id, string meter_size_desc, string connected, string disconnected, string Total, string class_meter_code) {
+            public SummaryAccountPerClassRow AddSummaryAccountPerClassRow(string header_name, string header_address, byte classification_id, string class_desc, byte meter_size_id, string meter_size_desc, int connected, int disconnected, int Total, string class_meter_code, int TotalCon) {
                 SummaryAccountPerClassRow rowSummaryAccountPerClassRow = ((SummaryAccountPerClassRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         header_name,
@@ -1804,7 +1814,8 @@ namespace ConcessionaireReports {
                         connected,
                         disconnected,
                         Total,
-                        class_meter_code};
+                        class_meter_code,
+                        TotalCon};
                 rowSummaryAccountPerClassRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSummaryAccountPerClassRow);
                 return rowSummaryAccountPerClassRow;
@@ -1837,6 +1848,7 @@ namespace ConcessionaireReports {
                 this.columndisconnected = base.Columns["disconnected"];
                 this.columnTotal = base.Columns["Total"];
                 this.columnclass_meter_code = base.Columns["class_meter_code"];
+                this.columnTotalCon = base.Columns["TotalCon"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1854,14 +1866,16 @@ namespace ConcessionaireReports {
                 base.Columns.Add(this.columnmeter_size_id);
                 this.columnmeter_size_desc = new global::System.Data.DataColumn("meter_size_desc", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmeter_size_desc);
-                this.columnconnected = new global::System.Data.DataColumn("connected", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnconnected = new global::System.Data.DataColumn("connected", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnconnected);
-                this.columndisconnected = new global::System.Data.DataColumn("disconnected", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columndisconnected = new global::System.Data.DataColumn("disconnected", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndisconnected);
-                this.columnTotal = new global::System.Data.DataColumn("Total", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTotal = new global::System.Data.DataColumn("Total", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotal);
                 this.columnclass_meter_code = new global::System.Data.DataColumn("class_meter_code", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnclass_meter_code);
+                this.columnTotalCon = new global::System.Data.DataColumn("TotalCon", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalCon);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3397,10 +3411,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string connected {
+            public int connected {
                 get {
                     try {
-                        return ((string)(this[this.tableSummaryAccountPerClass.connectedColumn]));
+                        return ((int)(this[this.tableSummaryAccountPerClass.connectedColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'connected\' in table \'SummaryAccountPerClass\' is DBNull.", e);
@@ -3413,10 +3427,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string disconnected {
+            public int disconnected {
                 get {
                     try {
-                        return ((string)(this[this.tableSummaryAccountPerClass.disconnectedColumn]));
+                        return ((int)(this[this.tableSummaryAccountPerClass.disconnectedColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'disconnected\' in table \'SummaryAccountPerClass\' is DBNull.", e);
@@ -3429,10 +3443,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Total {
+            public int Total {
                 get {
                     try {
-                        return ((string)(this[this.tableSummaryAccountPerClass.TotalColumn]));
+                        return ((int)(this[this.tableSummaryAccountPerClass.TotalColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Total\' in table \'SummaryAccountPerClass\' is DBNull.", e);
@@ -3457,6 +3471,22 @@ namespace ConcessionaireReports {
                 }
                 set {
                     this[this.tableSummaryAccountPerClass.class_meter_codeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int TotalCon {
+                get {
+                    try {
+                        return ((int)(this[this.tableSummaryAccountPerClass.TotalConColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TotalCon\' in table \'SummaryAccountPerClass\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryAccountPerClass.TotalConColumn] = value;
                 }
             }
             
@@ -3578,6 +3608,18 @@ namespace ConcessionaireReports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setclass_meter_codeNull() {
                 this[this.tableSummaryAccountPerClass.class_meter_codeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsTotalConNull() {
+                return this.IsNull(this.tableSummaryAccountPerClass.TotalConColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetTotalConNull() {
+                this[this.tableSummaryAccountPerClass.TotalConColumn] = global::System.Convert.DBNull;
             }
         }
         
