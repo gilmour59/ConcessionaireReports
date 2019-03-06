@@ -84,22 +84,22 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.64451cm</Width>
+                  <Width>1.60041cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.03799cm</Width>
+                  <Width>3.04876cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.31579cm</Width>
+                  <Width>5.37772cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.18005cm</Width>
+                  <Width>5.04687cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.1755cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.82004cm</Width>
+                  <Width>2.63579cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -481,6 +481,7 @@
                                   <Value>=Fields!date_connected.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
+                                    <Format>d</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -528,9 +529,9 @@
             </TablixRowHierarchy>
             <DataSetName>DataSetConcessionaireReports</DataSetName>
             <Top>0.17639cm</Top>
-            <Left>0.41719cm</Left>
+            <Left>0.31136cm</Left>
             <Height>1.2cm</Height>
-            <Width>16.49838cm</Width>
+            <Width>19.88505cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -558,45 +559,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>1.65861cm</Top>
-            <Left>10.51591cm</Left>
+            <Left>8.52186cm</Left>
             <Height>0.49417cm</Height>
             <Width>3.54628cm</Width>
             <ZIndex>1</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox2">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>="Disconnected: " &amp; Sum(IIF(Fields!meter_stat.Value = "Disconnected", 1, 0), "DataSetConcessionaireReports")</Value>
-                    <Style>
-                      <FontFamily>Calibri</FontFamily>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>1.65861cm</Top>
-            <Left>6.93435cm</Left>
-            <Height>0.49417cm</Height>
-            <Width>3.54628cm</Width>
-            <ZIndex>2</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -628,10 +594,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
             <Top>1.65861cm</Top>
-            <Left>3.3528cm</Left>
+            <Left>4.9403cm</Left>
             <Height>0.49417cm</Height>
             <Width>3.54628cm</Width>
-            <ZIndex>3</ZIndex>
+            <ZIndex>2</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -644,21 +610,56 @@
           </Textbox>
           <Line Name="Line10">
             <Top>1.55278cm</Top>
-            <Left>0.41719cm</Left>
+            <Left>0.31136cm</Left>
             <Height>0cm</Height>
-            <Width>16.49838cm</Width>
-            <ZIndex>4</ZIndex>
+            <Width>19.88505cm</Width>
+            <ZIndex>3</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
               </Border>
             </Style>
           </Line>
+          <Textbox Name="Textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>="Disconnected: " &amp; Sum(IIF(Fields!meter_stat.Value = "Disconnected", 1, 0), "DataSetConcessionaireReports")</Value>
+                    <Style>
+                      <FontFamily>Calibri</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>1.65861cm</Top>
+            <Left>12.10342cm</Left>
+            <Height>0.49417cm</Height>
+            <Width>3.54628cm</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
-        <Height>0.94791in</Height>
+        <Height>0.93749in</Height>
         <Style />
       </Body>
-      <Width>6.79167in</Width>
+      <Width>8.08334in</Width>
       <Page>
         <PageHeader>
           <Height>2.57639cm</Height>
@@ -687,7 +688,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox16</rd:DefaultName>
               <Top>1.27056cm</Top>
-              <Left>4.88504cm</Left>
+              <Left>6.47254cm</Left>
               <Height>0.6cm</Height>
               <Width>7.47417cm</Width>
               <Style>
@@ -720,7 +721,7 @@
                 </Paragraph>
               </Paragraphs>
               <Top>1.87056cm</Top>
-              <Left>4.88504cm</Left>
+              <Left>6.47254cm</Left>
               <Height>0.6cm</Height>
               <Width>7.47417cm</Width>
               <ZIndex>1</ZIndex>
@@ -755,7 +756,7 @@
               </Paragraphs>
               <rd:DefaultName>header_address</rd:DefaultName>
               <Top>0.63528cm</Top>
-              <Left>4.88504cm</Left>
+              <Left>6.47254cm</Left>
               <Height>0.6cm</Height>
               <Width>7.47417cm</Width>
               <ZIndex>2</ZIndex>
@@ -793,7 +794,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>header_name</rd:DefaultName>
-              <Left>4.88504cm</Left>
+              <Left>6.47254cm</Left>
               <Height>0.6cm</Height>
               <Width>7.47417cm</Width>
               <ZIndex>3</ZIndex>
@@ -894,7 +895,7 @@
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Left>0.13048cm</Left>
+              <Left>2.03548cm</Left>
               <Height>0.83312cm</Height>
               <Width>16.81843cm</Width>
               <Style>
@@ -912,10 +913,10 @@
         </PageFooter>
         <PageHeight>27.94cm</PageHeight>
         <PageWidth>21.59cm</PageWidth>
-        <LeftMargin>2cm</LeftMargin>
-        <RightMargin>2cm</RightMargin>
-        <TopMargin>2cm</TopMargin>
-        <BottomMargin>2cm</BottomMargin>
+        <LeftMargin>0.55cm</LeftMargin>
+        <RightMargin>0.3cm</RightMargin>
+        <TopMargin>1cm</TopMargin>
+        <BottomMargin>0.4cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>

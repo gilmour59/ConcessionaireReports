@@ -37,6 +37,7 @@
             this.DataSetConcessionaireReports = new ConcessionaireReports.DataSetConcessionaireReports();
             this.AccountPerBarangayBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AccountPerClassificationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SummaryAccountPerClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlConcessionaireReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.reportViewerAccountPerBook = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -89,11 +90,11 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.SummaryAccountPerClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.AccountPerBookBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetConcessionaireReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountPerBarangayBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountPerClassificationBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SummaryAccountPerClassBindingSource)).BeginInit();
             this.tabControlConcessionaireReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -103,7 +104,6 @@
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SummaryAccountPerClassBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // AccountPerBookBindingSource
@@ -125,6 +125,11 @@
             // 
             this.AccountPerClassificationBindingSource.DataMember = "AccountPerClassification";
             this.AccountPerClassificationBindingSource.DataSource = this.DataSetConcessionaireReports;
+            // 
+            // SummaryAccountPerClassBindingSource
+            // 
+            this.SummaryAccountPerClassBindingSource.DataMember = "SummaryAccountPerClass";
+            this.SummaryAccountPerClassBindingSource.DataSource = this.DataSetConcessionaireReports;
             // 
             // tabControlConcessionaireReports
             // 
@@ -695,11 +700,6 @@
             this.label16.TabIndex = 5;
             this.label16.Text = "Zone:";
             // 
-            // SummaryAccountPerClassBindingSource
-            // 
-            this.SummaryAccountPerClassBindingSource.DataMember = "SummaryAccountPerClass";
-            this.SummaryAccountPerClassBindingSource.DataSource = this.DataSetConcessionaireReports;
-            // 
             // ConcessionaireReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -714,6 +714,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DataSetConcessionaireReports)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountPerBarangayBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountPerClassificationBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SummaryAccountPerClassBindingSource)).EndInit();
             this.tabControlConcessionaireReports.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -730,7 +731,6 @@
             this.tabPage7.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SummaryAccountPerClassBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
