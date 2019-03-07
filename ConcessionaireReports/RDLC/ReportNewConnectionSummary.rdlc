@@ -542,7 +542,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>ref_no</rd:DefaultName>
@@ -557,6 +559,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -689,7 +692,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1333,7 +1335,7 @@
         </Field>
         <Field Name="ref_no">
           <DataField>ref_no</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="account_number">
           <DataField>account_number</DataField>
@@ -1353,11 +1355,11 @@
         </Field>
         <Field Name="residential">
           <DataField>residential</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Byte</rd:TypeName>
         </Field>
         <Field Name="commercial">
           <DataField>commercial</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Byte</rd:TypeName>
         </Field>
         <Field Name="date_connected">
           <DataField>date_connected</DataField>
@@ -1385,6 +1387,10 @@
         </Field>
         <Field Name="meter_size_id">
           <DataField>meter_size_id</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="submitted_by">
+          <DataField>submitted_by</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>

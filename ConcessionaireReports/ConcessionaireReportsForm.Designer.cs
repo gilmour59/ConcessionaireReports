@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource12 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource13 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource14 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource15 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource11 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.AccountPerBookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetConcessionaireReports = new ConcessionaireReports.DataSetConcessionaireReports();
             this.AccountPerBarangayBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -74,6 +74,7 @@
             this.dateTimePickerNewConnectionTo = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerNewConnectionFrom = new System.Windows.Forms.DateTimePicker();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.reportViewerAccountByStatus = new Microsoft.Reporting.WinForms.ReportViewer();
             this.buttonAccountByStatusSearch = new System.Windows.Forms.Button();
             this.comboBoxAccountByStatusZone = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -181,9 +182,9 @@
             // 
             // reportViewerAccountPerBook
             // 
-            reportDataSource12.Name = "DataSetConcessionaireReports";
-            reportDataSource12.Value = this.AccountPerBookBindingSource;
-            this.reportViewerAccountPerBook.LocalReport.DataSources.Add(reportDataSource12);
+            reportDataSource1.Name = "DataSetConcessionaireReports";
+            reportDataSource1.Value = this.AccountPerBookBindingSource;
+            this.reportViewerAccountPerBook.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewerAccountPerBook.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountPerBook.rdlc";
             this.reportViewerAccountPerBook.Location = new System.Drawing.Point(26, 66);
             this.reportViewerAccountPerBook.Name = "reportViewerAccountPerBook";
@@ -281,9 +282,9 @@
             // 
             // reportViewerAccountPerBarangay
             // 
-            reportDataSource13.Name = "DataSetConcessionaireReports";
-            reportDataSource13.Value = this.AccountPerBarangayBindingSource;
-            this.reportViewerAccountPerBarangay.LocalReport.DataSources.Add(reportDataSource13);
+            reportDataSource2.Name = "DataSetConcessionaireReports";
+            reportDataSource2.Value = this.AccountPerBarangayBindingSource;
+            this.reportViewerAccountPerBarangay.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewerAccountPerBarangay.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountPerBarangay.rdlc";
             this.reportViewerAccountPerBarangay.Location = new System.Drawing.Point(27, 65);
             this.reportViewerAccountPerBarangay.Name = "reportViewerAccountPerBarangay";
@@ -360,9 +361,9 @@
             // 
             // reportViewerAccountPerClassification
             // 
-            reportDataSource14.Name = "DataSetConcessionaireReports";
-            reportDataSource14.Value = this.AccountPerClassificationBindingSource;
-            this.reportViewerAccountPerClassification.LocalReport.DataSources.Add(reportDataSource14);
+            reportDataSource3.Name = "DataSetConcessionaireReports";
+            reportDataSource3.Value = this.AccountPerClassificationBindingSource;
+            this.reportViewerAccountPerClassification.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewerAccountPerClassification.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountPerClassification.rdlc";
             this.reportViewerAccountPerClassification.Location = new System.Drawing.Point(25, 60);
             this.reportViewerAccountPerClassification.Name = "reportViewerAccountPerClassification";
@@ -433,9 +434,9 @@
             // 
             // reportViewerSummaryAccountsPerClass
             // 
-            reportDataSource15.Name = "DataSetConcessionaireReports";
-            reportDataSource15.Value = this.SummaryAccountPerClassBindingSource;
-            this.reportViewerSummaryAccountsPerClass.LocalReport.DataSources.Add(reportDataSource15);
+            reportDataSource4.Name = "DataSetConcessionaireReports";
+            reportDataSource4.Value = this.SummaryAccountPerClassBindingSource;
+            this.reportViewerSummaryAccountsPerClass.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewerSummaryAccountsPerClass.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportSummaryAccountsPerClass.rdlc";
             this.reportViewerSummaryAccountsPerClass.Location = new System.Drawing.Point(23, 24);
             this.reportViewerSummaryAccountsPerClass.Name = "reportViewerSummaryAccountsPerClass";
@@ -460,9 +461,9 @@
             // 
             // reportViewerNewConnectionSummary
             // 
-            reportDataSource11.Name = "DataSetConcessionaireReports";
-            reportDataSource11.Value = this.NewConnectionSummaryBindingSource;
-            this.reportViewerNewConnectionSummary.LocalReport.DataSources.Add(reportDataSource11);
+            reportDataSource5.Name = "DataSetConcessionaireReports";
+            reportDataSource5.Value = this.NewConnectionSummaryBindingSource;
+            this.reportViewerNewConnectionSummary.LocalReport.DataSources.Add(reportDataSource5);
             this.reportViewerNewConnectionSummary.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportNewConnectionSummary.rdlc";
             this.reportViewerNewConnectionSummary.Location = new System.Drawing.Point(30, 75);
             this.reportViewerNewConnectionSummary.Name = "reportViewerNewConnectionSummary";
@@ -524,6 +525,7 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.reportViewerAccountByStatus);
             this.tabPage6.Controls.Add(this.buttonAccountByStatusSearch);
             this.tabPage6.Controls.Add(this.comboBoxAccountByStatusZone);
             this.tabPage6.Controls.Add(this.label11);
@@ -536,6 +538,14 @@
             this.tabPage6.Text = "Account List By Status";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+            // reportViewerAccountByStatus
+            // 
+            this.reportViewerAccountByStatus.Location = new System.Drawing.Point(25, 67);
+            this.reportViewerAccountByStatus.Name = "reportViewerAccountByStatus";
+            this.reportViewerAccountByStatus.ServerReport.BearerToken = null;
+            this.reportViewerAccountByStatus.Size = new System.Drawing.Size(779, 394);
+            this.reportViewerAccountByStatus.TabIndex = 17;
+            // 
             // buttonAccountByStatusSearch
             // 
             this.buttonAccountByStatusSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -545,9 +555,11 @@
             this.buttonAccountByStatusSearch.TabIndex = 16;
             this.buttonAccountByStatusSearch.Text = "Search";
             this.buttonAccountByStatusSearch.UseVisualStyleBackColor = true;
+            this.buttonAccountByStatusSearch.Click += new System.EventHandler(this.buttonAccountByStatusSearch_Click);
             // 
             // comboBoxAccountByStatusZone
             // 
+            this.comboBoxAccountByStatusZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAccountByStatusZone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxAccountByStatusZone.FormattingEnabled = true;
             this.comboBoxAccountByStatusZone.Location = new System.Drawing.Point(200, 24);
@@ -569,7 +581,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(288, 32);
+            this.label10.Location = new System.Drawing.Point(315, 32);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(41, 16);
             this.label10.TabIndex = 3;
@@ -577,10 +589,12 @@
             // 
             // dateTimePickerAccountByStatusAsOf
             // 
+            this.dateTimePickerAccountByStatusAsOf.CustomFormat = "MM/dd/yyyy";
             this.dateTimePickerAccountByStatusAsOf.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerAccountByStatusAsOf.Location = new System.Drawing.Point(336, 24);
+            this.dateTimePickerAccountByStatusAsOf.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerAccountByStatusAsOf.Location = new System.Drawing.Point(363, 24);
             this.dateTimePickerAccountByStatusAsOf.Name = "dateTimePickerAccountByStatusAsOf";
-            this.dateTimePickerAccountByStatusAsOf.Size = new System.Drawing.Size(200, 24);
+            this.dateTimePickerAccountByStatusAsOf.Size = new System.Drawing.Size(129, 24);
             this.dateTimePickerAccountByStatusAsOf.TabIndex = 2;
             // 
             // tabPage7
@@ -825,6 +839,7 @@
         private System.Windows.Forms.BindingSource SummaryAccountPerClassBindingSource;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerNewConnectionSummary;
         private System.Windows.Forms.BindingSource NewConnectionSummaryBindingSource;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerAccountByStatus;
     }
 }
 

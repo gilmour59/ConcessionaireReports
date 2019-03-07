@@ -82,6 +82,10 @@ namespace ConcessionaireReports
                         comboBoxAccountPerClassificationZone.ValueMember = "zone_code";
                         comboBoxAccountPerClassificationZone.DisplayMember = "zone_code";
                         comboBoxAccountPerClassificationZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox
+
+                        comboBoxAccountByStatusZone.ValueMember = "zone_code";
+                        comboBoxAccountByStatusZone.DisplayMember = "zone_code";
+                        comboBoxAccountByStatusZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox
                     }
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetTowns", conn))
@@ -128,6 +132,7 @@ namespace ConcessionaireReports
             this.reportViewerAccountPerClassification.RefreshReport();
             this.reportViewerSummaryAccountsPerClass.RefreshReport();
             this.reportViewerNewConnectionSummary.RefreshReport();
+            this.reportViewerAccountByStatus.RefreshReport();
         }
 
         private void buttonAccountPerBookSearch_Click(object sender, EventArgs e)
@@ -405,6 +410,40 @@ namespace ConcessionaireReports
         private void dateTimePickerNewConnectionTo_ValueChanged(object sender, EventArgs e)
         {
             dateTimePickerNewConnectionFrom.MaxDate = dateTimePickerNewConnectionTo.Value.Date;
+        }
+
+        private void buttonAccountByStatusSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetAccountListByStatus_", conn))
+                    {
+                        DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@asOfDate", dateTimePickerAccountByStatusAsOf.Value.Date);
+                        adapter.SelectCommand.Parameters["@asOfDate"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountByStatusZone.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "AccountByStatus");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountByStatus"]);
+                        reportViewerAccountByStatus.LocalReport.DataSources.Clear();
+                        reportViewerAccountByStatus.LocalReport.DataSources.Add(rds);
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            this.reportViewerAccountByStatus.RefreshReport();
         }
     }
 }
