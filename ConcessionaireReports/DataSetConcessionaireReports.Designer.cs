@@ -1442,7 +1442,7 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public AccountPerClassificationRow AddAccountPerClassificationRow(string header_name, string header_address, string class_desc, string connected, string disconnected, int ref_no, string account_number, string concessionaire_name, string address, string meter_sn, string meter_stat, System.DateTime date_connected, string seq_no) {
+            public AccountPerClassificationRow AddAccountPerClassificationRow(string header_name, string header_address, string class_desc, string connected, string disconnected, int ref_no, string account_number, string concessionaire_name, string address, string meter_sn, string meter_stat, System.DateTime date_connected, int seq_no) {
                 AccountPerClassificationRow rowAccountPerClassificationRow = ((AccountPerClassificationRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         header_name,
@@ -1522,7 +1522,7 @@ namespace ConcessionaireReports {
                 base.Columns.Add(this.columnmeter_stat);
                 this.columndate_connected = new global::System.Data.DataColumn("date_connected", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndate_connected);
-                this.columnseq_no = new global::System.Data.DataColumn("seq_no", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnseq_no = new global::System.Data.DataColumn("seq_no", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnseq_no);
             }
             
@@ -3847,10 +3847,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string seq_no {
+            public int seq_no {
                 get {
                     try {
-                        return ((string)(this[this.tableAccountPerClassification.seq_noColumn]));
+                        return ((int)(this[this.tableAccountPerClassification.seq_noColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'seq_no\' in table \'AccountPerClassification\' is DBNull.", e);
