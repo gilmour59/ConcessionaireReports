@@ -524,7 +524,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1183,7 +1182,8 @@
                   <Value>="Residential: " &amp; SUM(ReportItems!residential.Value)</Value>
                   <Style>
                     <FontFamily>calibri</FontFamily>
-                    <FontSize>9pt</FontSize>
+                    <FontSize>9.5pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1216,7 +1216,8 @@
                   <Value>="New Connection Total: " &amp; Count(ReportItems!ref_no.Value)</Value>
                   <Style>
                     <FontFamily>calibri</FontFamily>
-                    <FontSize>9pt</FontSize>
+                    <FontSize>9.5pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1249,7 +1250,8 @@
                   <Value>="Commercial: " &amp; SUM(ReportItems!commercial.Value)</Value>
                   <Style>
                     <FontFamily>calibri</FontFamily>
-                    <FontSize>9pt</FontSize>
+                    <FontSize>9.5pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
               </TextRuns>
