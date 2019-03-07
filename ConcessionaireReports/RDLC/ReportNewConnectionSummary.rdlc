@@ -568,7 +568,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Expre</Value>
+                              <Value>=Fields!zone_id.Value &amp; "-" &amp; Fields!book_id.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -660,25 +660,24 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="date_connected">
+                    <Textbox Name="Textbox4">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>expre</Value>
+                              <Value>=Fields!classification_id.Value &amp; "-" &amp; Fields!meter_size_id.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
-                                <Format>d</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>date_connected</rd:DefaultName>
+                      <rd:DefaultName>Textbox4</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -690,6 +689,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
