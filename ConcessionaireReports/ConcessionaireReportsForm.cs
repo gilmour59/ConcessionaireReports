@@ -57,6 +57,8 @@ namespace ConcessionaireReports
 
         private void ConcessionaireReportsForm_Load(object sender, EventArgs e)
         {
+            dateTimePickerNewConnectionFrom.MaxDate = dateTimePickerNewConnectionTo.Value.Date;
+
             tabControlConcessionaireReports.DrawMode = TabDrawMode.OwnerDrawFixed;
 
             connStr = "server=localhost;user=root;database=mrwdbcsys;port=3306;password=";
@@ -398,6 +400,11 @@ namespace ConcessionaireReports
                 MessageBox.Show("error: " + ex, "Error!");
             }
             this.reportViewerNewConnectionSummary.RefreshReport();
+        }
+
+        private void dateTimePickerNewConnectionTo_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerNewConnectionFrom.MaxDate = dateTimePickerNewConnectionTo.Value.Date;
         }
     }
 }
