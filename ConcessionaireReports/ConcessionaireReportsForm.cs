@@ -125,6 +125,7 @@ namespace ConcessionaireReports
             this.reportViewerAccountPerBarangay.RefreshReport();
             this.reportViewerAccountPerClassification.RefreshReport();
             this.reportViewerSummaryAccountsPerClass.RefreshReport();
+            this.reportViewerNewConnectionSummary.RefreshReport();
         }
 
         private void buttonAccountPerBookSearch_Click(object sender, EventArgs e)
@@ -363,6 +364,40 @@ namespace ConcessionaireReports
                 MessageBox.Show("error: " + ex, "Error!");
             }
             this.reportViewerAccountPerClassification.RefreshReport();
+        }
+
+        private void buttonNewConnectionSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetNewConnectionSummary_", conn))
+                    {
+                        DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@asOfFrom", dateTimePickerNewConnectionFrom.Value.Date);
+                        adapter.SelectCommand.Parameters["@asOfFrom"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@asOfTo", dateTimePickerNewConnectionTo.Value.Date);
+                        adapter.SelectCommand.Parameters["@asOfTo"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "NewConnectionSummary");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["NewConnectionSummary"]);
+                        reportViewerNewConnectionSummary.LocalReport.DataSources.Clear();
+                        reportViewerNewConnectionSummary.LocalReport.DataSources.Add(rds);
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            this.reportViewerNewConnectionSummary.RefreshReport();
         }
     }
 }

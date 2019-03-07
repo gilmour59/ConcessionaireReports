@@ -2049,6 +2049,8 @@ namespace ConcessionaireReports {
             
             private global::System.Data.DataColumn columnmeter_size_id;
             
+            private global::System.Data.DataColumn columnsubmitted_by;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public NewConnectionSummaryDataTable() {
@@ -2244,6 +2246,14 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn submitted_byColumn {
+                get {
+                    return this.columnsubmitted_by;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2291,15 +2301,16 @@ namespace ConcessionaireReports {
                         string jo_number, 
                         string brand, 
                         string meter_no, 
-                        string residential, 
-                        string commercial, 
-                        string date_connected, 
+                        byte residential, 
+                        byte commercial, 
+                        System.DateTime date_connected, 
                         string checked_by, 
                         string init_reading, 
                         string zone_id, 
                         string book_id, 
                         string classification_id, 
-                        string meter_size_id) {
+                        string meter_size_id, 
+                        string submitted_by) {
                 NewConnectionSummaryRow rowNewConnectionSummaryRow = ((NewConnectionSummaryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         header_name,
@@ -2321,7 +2332,8 @@ namespace ConcessionaireReports {
                         zone_id,
                         book_id,
                         classification_id,
-                        meter_size_id};
+                        meter_size_id,
+                        submitted_by};
                 rowNewConnectionSummaryRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowNewConnectionSummaryRow);
                 return rowNewConnectionSummaryRow;
@@ -2364,6 +2376,7 @@ namespace ConcessionaireReports {
                 this.columnbook_id = base.Columns["book_id"];
                 this.columnclassification_id = base.Columns["classification_id"];
                 this.columnmeter_size_id = base.Columns["meter_size_id"];
+                this.columnsubmitted_by = base.Columns["submitted_by"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2391,11 +2404,11 @@ namespace ConcessionaireReports {
                 base.Columns.Add(this.columnbrand);
                 this.columnmeter_no = new global::System.Data.DataColumn("meter_no", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmeter_no);
-                this.columnresidential = new global::System.Data.DataColumn("residential", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnresidential = new global::System.Data.DataColumn("residential", typeof(byte), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnresidential);
-                this.columncommercial = new global::System.Data.DataColumn("commercial", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columncommercial = new global::System.Data.DataColumn("commercial", typeof(byte), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncommercial);
-                this.columndate_connected = new global::System.Data.DataColumn("date_connected", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columndate_connected = new global::System.Data.DataColumn("date_connected", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndate_connected);
                 this.columnchecked_by = new global::System.Data.DataColumn("checked_by", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnchecked_by);
@@ -2409,6 +2422,8 @@ namespace ConcessionaireReports {
                 base.Columns.Add(this.columnclassification_id);
                 this.columnmeter_size_id = new global::System.Data.DataColumn("meter_size_id", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmeter_size_id);
+                this.columnsubmitted_by = new global::System.Data.DataColumn("submitted_by", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsubmitted_by);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4116,10 +4131,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string residential {
+            public byte residential {
                 get {
                     try {
-                        return ((string)(this[this.tableNewConnectionSummary.residentialColumn]));
+                        return ((byte)(this[this.tableNewConnectionSummary.residentialColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'residential\' in table \'NewConnectionSummary\' is DBNull.", e);
@@ -4132,10 +4147,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string commercial {
+            public byte commercial {
                 get {
                     try {
-                        return ((string)(this[this.tableNewConnectionSummary.commercialColumn]));
+                        return ((byte)(this[this.tableNewConnectionSummary.commercialColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'commercial\' in table \'NewConnectionSummary\' is DBNull.", e);
@@ -4148,10 +4163,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string date_connected {
+            public System.DateTime date_connected {
                 get {
                     try {
-                        return ((string)(this[this.tableNewConnectionSummary.date_connectedColumn]));
+                        return ((global::System.DateTime)(this[this.tableNewConnectionSummary.date_connectedColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'date_connected\' in table \'NewConnectionSummary\' is DBNull.", e);
@@ -4256,6 +4271,22 @@ namespace ConcessionaireReports {
                 }
                 set {
                     this[this.tableNewConnectionSummary.meter_size_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string submitted_by {
+                get {
+                    try {
+                        return ((string)(this[this.tableNewConnectionSummary.submitted_byColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'submitted_by\' in table \'NewConnectionSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNewConnectionSummary.submitted_byColumn] = value;
                 }
             }
             
@@ -4497,6 +4528,18 @@ namespace ConcessionaireReports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setmeter_size_idNull() {
                 this[this.tableNewConnectionSummary.meter_size_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Issubmitted_byNull() {
+                return this.IsNull(this.tableNewConnectionSummary.submitted_byColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setsubmitted_byNull() {
+                this[this.tableNewConnectionSummary.submitted_byColumn] = global::System.Convert.DBNull;
             }
         }
         

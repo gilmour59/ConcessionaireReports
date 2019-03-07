@@ -33,6 +33,7 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.AccountPerBookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetConcessionaireReports = new ConcessionaireReports.DataSetConcessionaireReports();
             this.AccountPerBarangayBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -90,6 +91,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.reportViewerNewConnectionSummary = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.NewConnectionSummaryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.AccountPerBookBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetConcessionaireReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountPerBarangayBindingSource)).BeginInit();
@@ -104,6 +107,7 @@
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NewConnectionSummaryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // AccountPerBookBindingSource
@@ -436,6 +440,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.reportViewerNewConnectionSummary);
             this.tabPage5.Controls.Add(this.buttonNewConnectionSearch);
             this.tabPage5.Controls.Add(this.label9);
             this.tabPage5.Controls.Add(this.label8);
@@ -457,6 +462,7 @@
             this.buttonNewConnectionSearch.TabIndex = 16;
             this.buttonNewConnectionSearch.Text = "Search";
             this.buttonNewConnectionSearch.UseVisualStyleBackColor = true;
+            this.buttonNewConnectionSearch.Click += new System.EventHandler(this.buttonNewConnectionSearch_Click);
             // 
             // label9
             // 
@@ -700,6 +706,23 @@
             this.label16.TabIndex = 5;
             this.label16.Text = "Zone:";
             // 
+            // reportViewerNewConnectionSummary
+            // 
+            reportDataSource5.Name = "DataSetConcessionaireReports";
+            reportDataSource5.Value = this.NewConnectionSummaryBindingSource;
+            this.reportViewerNewConnectionSummary.LocalReport.DataSources.Add(reportDataSource5);
+            this.reportViewerNewConnectionSummary.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportNewConnectionSummary.rdlc";
+            this.reportViewerNewConnectionSummary.Location = new System.Drawing.Point(30, 75);
+            this.reportViewerNewConnectionSummary.Name = "reportViewerNewConnectionSummary";
+            this.reportViewerNewConnectionSummary.ServerReport.BearerToken = null;
+            this.reportViewerNewConnectionSummary.Size = new System.Drawing.Size(768, 383);
+            this.reportViewerNewConnectionSummary.TabIndex = 0;
+            // 
+            // NewConnectionSummaryBindingSource
+            // 
+            this.NewConnectionSummaryBindingSource.DataMember = "NewConnectionSummary";
+            this.NewConnectionSummaryBindingSource.DataSource = this.DataSetConcessionaireReports;
+            // 
             // ConcessionaireReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -731,6 +754,7 @@
             this.tabPage7.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NewConnectionSummaryBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -794,6 +818,8 @@
         private System.Windows.Forms.BindingSource AccountPerClassificationBindingSource;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerSummaryAccountsPerClass;
         private System.Windows.Forms.BindingSource SummaryAccountPerClassBindingSource;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerNewConnectionSummary;
+        private System.Windows.Forms.BindingSource NewConnectionSummaryBindingSource;
     }
 }
 
