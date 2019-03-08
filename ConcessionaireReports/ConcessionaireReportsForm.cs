@@ -435,6 +435,14 @@ namespace ConcessionaireReports
                         ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountByStatus"]);
                         reportViewerAccountByStatus.LocalReport.DataSources.Clear();
                         reportViewerAccountByStatus.LocalReport.DataSources.Add(rds);
+
+                        ReportParameter[] param = new ReportParameter[]
+                        {
+                            new ReportParameter("ReportParameterZone", comboBoxAccountByStatusZone.Text),
+                            new ReportParameter("ReportParameterAsOf", dateTimePickerAccountByStatusAsOf.Value.Date.ToString("MM/dd/yyyy"))
+                        };
+                        reportViewerAccountByStatus.LocalReport.SetParameters(param);
+                        reportViewerAccountByStatus.LocalReport.Refresh();
                     }
                     conn.Close();
                 }
