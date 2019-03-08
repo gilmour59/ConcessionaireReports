@@ -176,7 +176,6 @@ namespace ConcessionaireReports
             this.reportViewerAccountByStatus.RefreshReport();
             this.reportViewerSeniorCitizenAccounts.RefreshReport();
             this.reportViewerAccountPerMeterSize.RefreshReport();
-            this.reportViewerAccountPerMeterSize.RefreshReport();
         }
 
         private void buttonAccountPerBookSearch_Click(object sender, EventArgs e)
