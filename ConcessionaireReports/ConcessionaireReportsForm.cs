@@ -88,7 +88,29 @@ namespace ConcessionaireReports
                         //Account by Status Zone
                         comboBoxAccountByStatusZone.ValueMember = "zone_code";
                         comboBoxAccountByStatusZone.DisplayMember = "zone_code";
-                        comboBoxAccountByStatusZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox                      
+                        comboBoxAccountByStatusZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox
+
+                        //Account Per Meter Size Zone
+                        comboBoxAccountPerMeterSizeZone.ValueMember = "zone_code";
+                        comboBoxAccountPerMeterSizeZone.DisplayMember = "zone_code";
+                        comboBoxAccountPerMeterSizeZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox
+                    }
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetMeterSize", conn))
+                    {
+                        DataSet dsMeterSize = new DataSet();
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.Fill(dsMeterSize);
+
+                        //Meter Size 
+                        DataRow meterSizeRow = dsMeterSize.Tables[0].NewRow();
+                        meterSizeRow[0] = "ALL"; //value
+                        meterSizeRow[1] = "ALL"; //key
+                        dsMeterSize.Tables[0].Rows.InsertAt(meterSizeRow, 0);
+
+                        comboBoxAccountPerMeterSizeMeterSize.ValueMember = "size_code";
+                        comboBoxAccountPerMeterSizeMeterSize.DisplayMember = "meter_size_desc";
+                        comboBoxAccountPerMeterSizeMeterSize.DataSource = dsMeterSize.Tables[0]; //this triggers the SelectedIndex property of a combobox
                     }
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetZones", conn))
@@ -98,9 +120,9 @@ namespace ConcessionaireReports
                         adapter.Fill(dsZones);
 
                         //Senior Citizen Accounts Zone
-                        DataRow seniorCitizenAccountsZoneRow = dsZones.Tables[0].NewRow();
-                        seniorCitizenAccountsZoneRow[0] = "ALL";
-                        dsZones.Tables[0].Rows.InsertAt(seniorCitizenAccountsZoneRow, 0);
+                        DataRow zoneRow = dsZones.Tables[0].NewRow();
+                        zoneRow[0] = "ALL";
+                        dsZones.Tables[0].Rows.InsertAt(zoneRow, 0);
 
                         comboBoxSeniorCitizenZone.ValueMember = "zone_code";
                         comboBoxSeniorCitizenZone.DisplayMember = "zone_code";
@@ -154,8 +176,7 @@ namespace ConcessionaireReports
             this.reportViewerAccountByStatus.RefreshReport();
             this.reportViewerSeniorCitizenAccounts.RefreshReport();
             this.reportViewerAccountPerMeterSize.RefreshReport();
-            this.reportViewerSeniorCitizenAccounts.RefreshReport();
-            this.reportViewerSeniorCitizenAccounts.RefreshReport();
+            this.reportViewerAccountPerMeterSize.RefreshReport();
         }
 
         private void buttonAccountPerBookSearch_Click(object sender, EventArgs e)
@@ -551,6 +572,95 @@ namespace ConcessionaireReports
                 MessageBox.Show("error: " + ex, "Error!");
             }
             this.reportViewerSeniorCitizenAccounts.RefreshReport();
+        }
+
+        private void comboBoxAccountPerMeterSizeZone_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetMeterStatus", conn))
+                    {
+                        DataSet dsMeterStatus = new DataSet();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.Fill(dsMeterStatus);
+
+                        comboBoxAccountPerMeterSizeMeterStatus.ValueMember = "ms_desc";
+                        comboBoxAccountPerMeterSizeMeterStatus.DisplayMember = "ms_desc";
+
+                        DataRow rowMeterStatus = dsMeterStatus.Tables[0].NewRow();
+                        rowMeterStatus[0] = "ALL";
+                        dsMeterStatus.Tables[0].Rows.InsertAt(rowMeterStatus, 0);
+
+                        comboBoxAccountPerMeterSizeMeterStatus.DataSource = dsMeterStatus.Tables[0];
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+        }
+
+        private void buttonAccountPerMeterSizeSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetAccountPerMeterSize_", conn))
+                    {
+                        DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountPerMeterSizeZone.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@sizeCode", comboBoxAccountPerMeterSizeMeterSize.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@sizeCode"].Direction = ParameterDirection.Input;
+
+                        int meterStatus = comboBoxAccountPerMeterSizeMeterStatus.SelectedIndex;
+                        if (meterStatus == 0)
+                        {
+                            adapter.SelectCommand.Parameters.AddWithValue("@flag", "ALL");
+                            adapter.SelectCommand.Parameters["@flag"].Direction = ParameterDirection.Input;
+                            adapter.SelectCommand.Parameters.AddWithValue("@status_code", null);
+                            adapter.SelectCommand.Parameters["@status_code"].Direction = ParameterDirection.Input;
+                        }
+                        else
+                        {
+                            adapter.SelectCommand.Parameters.AddWithValue("@status_code", ((meterStatus == 1) ? 4 : 5));
+                            adapter.SelectCommand.Parameters["@status_code"].Direction = ParameterDirection.Input;
+                            adapter.SelectCommand.Parameters.AddWithValue("@flag", null);
+                            adapter.SelectCommand.Parameters["@flag"].Direction = ParameterDirection.Input;
+                        }
+                        adapter.Fill(ds, "AccountPerMeterSize");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountPerMeterSize"]);
+                        reportViewerAccountPerMeterSize.LocalReport.DataSources.Clear();
+                        reportViewerAccountPerMeterSize.LocalReport.DataSources.Add(rds);
+
+                        ReportParameter[] param = new ReportParameter[]
+                        {
+                            new ReportParameter("ReportParameterZone", comboBoxAccountPerMeterSizeZone.Text),
+                            new ReportParameter("ReportParameterMeterSize", comboBoxAccountPerMeterSizeMeterSize.SelectedValue.ToString())
+                        };
+                        reportViewerAccountPerMeterSize.LocalReport.SetParameters(param);
+                        reportViewerAccountPerMeterSize.LocalReport.Refresh();
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            this.reportViewerAccountPerMeterSize.RefreshReport();
         }
     }
 }

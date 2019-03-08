@@ -102,6 +102,7 @@
     <EmbeddedResource Include="RDLC\ReportAccountPerBarangay.rdlc" />
     <EmbeddedResource Include="RDLC\ReportAccountPerBook.rdlc" />
     <EmbeddedResource Include="RDLC\ReportAccountPerClassification.rdlc" />
+    <EmbeddedResource Include="RDLC\ReportAccountPerMeterSize.rdlc" />
     <EmbeddedResource Include="RDLC\ReportNewConnectionSummary.rdlc" />
     <EmbeddedResource Include="RDLC\ReportSeniorCitizenAccounts.rdlc" />
     <EmbeddedResource Include="RDLC\ReportSummaryAccountsPerClass.rdlc" />
