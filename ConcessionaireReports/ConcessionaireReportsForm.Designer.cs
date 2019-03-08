@@ -96,6 +96,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.reportViewerSeniorCitizenAccounts = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reportViewerAccountPerMeterSize = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.AccountPerBookBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetConcessionaireReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountPerBarangayBindingSource)).BeginInit();
@@ -611,6 +613,7 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.reportViewerSeniorCitizenAccounts);
             this.tabPage7.Controls.Add(this.buttonSeniorCitizenSearch);
             this.tabPage7.Controls.Add(this.comboBoxSeniorCitizenBook);
             this.tabPage7.Controls.Add(this.comboBoxSeniorCitizenZone);
@@ -675,6 +678,7 @@
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.reportViewerAccountPerMeterSize);
             this.tabPage8.Controls.Add(this.comboBoxAccountPerMeterSizeMeterStatus);
             this.tabPage8.Controls.Add(this.buttonAccountPerMeterSizeSearch);
             this.tabPage8.Controls.Add(this.comboBoxAccountPerMeterSizeMeterSize);
@@ -758,6 +762,22 @@
             this.label16.Size = new System.Drawing.Size(42, 16);
             this.label16.TabIndex = 5;
             this.label16.Text = "Zone:";
+            // 
+            // reportViewerSeniorCitizenAccounts
+            // 
+            this.reportViewerSeniorCitizenAccounts.Location = new System.Drawing.Point(26, 63);
+            this.reportViewerSeniorCitizenAccounts.Name = "reportViewerSeniorCitizenAccounts";
+            this.reportViewerSeniorCitizenAccounts.ServerReport.BearerToken = null;
+            this.reportViewerSeniorCitizenAccounts.Size = new System.Drawing.Size(772, 395);
+            this.reportViewerSeniorCitizenAccounts.TabIndex = 7;
+            // 
+            // reportViewerAccountPerMeterSize
+            // 
+            this.reportViewerAccountPerMeterSize.Location = new System.Drawing.Point(30, 70);
+            this.reportViewerAccountPerMeterSize.Name = "reportViewerAccountPerMeterSize";
+            this.reportViewerAccountPerMeterSize.ServerReport.BearerToken = null;
+            this.reportViewerAccountPerMeterSize.Size = new System.Drawing.Size(768, 385);
+            this.reportViewerAccountPerMeterSize.TabIndex = 11;
             // 
             // ConcessionaireReportsForm
             // 
@@ -859,6 +879,8 @@
         private System.Windows.Forms.BindingSource NewConnectionSummaryBindingSource;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerAccountByStatus;
         private System.Windows.Forms.BindingSource AccountByStatusBindingSource;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerSeniorCitizenAccounts;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerAccountPerMeterSize;
     }
 }
 

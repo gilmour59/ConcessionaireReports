@@ -133,6 +133,8 @@ namespace ConcessionaireReports
             this.reportViewerSummaryAccountsPerClass.RefreshReport();
             this.reportViewerNewConnectionSummary.RefreshReport();
             this.reportViewerAccountByStatus.RefreshReport();
+            this.reportViewerSeniorCitizenAccounts.RefreshReport();
+            this.reportViewerAccountPerMeterSize.RefreshReport();
         }
 
         private void buttonAccountPerBookSearch_Click(object sender, EventArgs e)
@@ -264,7 +266,7 @@ namespace ConcessionaireReports
 
                         DataRow rowBook = dsBarangaysOfTown.Tables[0].NewRow();
                         rowBook[0] = "00"; //barangay_id
-                        rowBook[1] = "Select Here"; // brgy_name 
+                        rowBook[1] = "ALL"; // brgy_name 
                         dsBarangaysOfTown.Tables[0].Rows.InsertAt(rowBook, 0);
 
                         comboBoxAccountPerBarangayBarangay.DataSource = dsBarangaysOfTown.Tables[0];
