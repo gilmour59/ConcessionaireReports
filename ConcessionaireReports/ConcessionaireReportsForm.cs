@@ -75,17 +75,36 @@ namespace ConcessionaireReports
                         adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                         adapter.Fill(dsZones);
 
+                        //Account Per Book Zone
                         comboBoxAccountPerBookZone.ValueMember = "zone_code";
                         comboBoxAccountPerBookZone.DisplayMember = "zone_code";
                         comboBoxAccountPerBookZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox
 
+                        //Account Per Classification Accounts Zone
                         comboBoxAccountPerClassificationZone.ValueMember = "zone_code";
                         comboBoxAccountPerClassificationZone.DisplayMember = "zone_code";
                         comboBoxAccountPerClassificationZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox
 
+                        //Account by Status Zone
                         comboBoxAccountByStatusZone.ValueMember = "zone_code";
                         comboBoxAccountByStatusZone.DisplayMember = "zone_code";
-                        comboBoxAccountByStatusZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox
+                        comboBoxAccountByStatusZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox                      
+                    }
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetZones", conn))
+                    {
+                        DataSet dsZones = new DataSet();
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.Fill(dsZones);
+
+                        //Senior Citizen Accounts Zone
+                        DataRow seniorCitizenAccountsZoneRow = dsZones.Tables[0].NewRow();
+                        seniorCitizenAccountsZoneRow[0] = "ALL";
+                        dsZones.Tables[0].Rows.InsertAt(seniorCitizenAccountsZoneRow, 0);
+
+                        comboBoxSeniorCitizenZone.ValueMember = "zone_code";
+                        comboBoxSeniorCitizenZone.DisplayMember = "zone_code";
+                        comboBoxSeniorCitizenZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox
                     }
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetTowns", conn))
@@ -135,6 +154,8 @@ namespace ConcessionaireReports
             this.reportViewerAccountByStatus.RefreshReport();
             this.reportViewerSeniorCitizenAccounts.RefreshReport();
             this.reportViewerAccountPerMeterSize.RefreshReport();
+            this.reportViewerSeniorCitizenAccounts.RefreshReport();
+            this.reportViewerSeniorCitizenAccounts.RefreshReport();
         }
 
         private void buttonAccountPerBookSearch_Click(object sender, EventArgs e)
@@ -454,6 +475,82 @@ namespace ConcessionaireReports
                 MessageBox.Show("error: " + ex, "Error!");
             }
             this.reportViewerAccountByStatus.RefreshReport();
+        }
+
+        private void comboBoxSeniorCitizenZone_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetBooksOfZone", conn))
+                    {
+                        DataSet dsBooksOfZone = new DataSet();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountPerBookZone.SelectedValue.ToString());
+                        adapter.Fill(dsBooksOfZone);
+
+                        comboBoxSeniorCitizenBook.ValueMember = "book_code";
+                        comboBoxSeniorCitizenBook.DisplayMember = "book_code";
+
+                        DataRow rowBook = dsBooksOfZone.Tables[0].NewRow();
+                        rowBook[0] = "ALL"; //Value
+                        dsBooksOfZone.Tables[0].Rows.InsertAt(rowBook, 0);
+
+                        comboBoxSeniorCitizenBook.DataSource = dsBooksOfZone.Tables[0];
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+        }
+
+        private void buttonSeniorCitizenSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetSeniorCitizenAccounts_", conn))
+                    {
+                        DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxSeniorCitizenZone.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxSeniorCitizenBook.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "SeniorCitizenAccounts");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["SeniorCitizenAccounts"]);
+                        reportViewerSeniorCitizenAccounts.LocalReport.DataSources.Clear();
+                        reportViewerSeniorCitizenAccounts.LocalReport.DataSources.Add(rds);
+
+                        ReportParameter[] param = new ReportParameter[]
+                        {
+                            new ReportParameter("ReportParameterZone", comboBoxSeniorCitizenZone.SelectedValue.ToString()),
+                            new ReportParameter("ReportParameterBook", comboBoxSeniorCitizenBook.SelectedValue.ToString())
+                        };
+                        reportViewerSeniorCitizenAccounts.LocalReport.SetParameters(param);
+                        reportViewerSeniorCitizenAccounts.LocalReport.Refresh();
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            this.reportViewerSeniorCitizenAccounts.RefreshReport();
         }
     }
 }

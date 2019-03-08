@@ -35,6 +35,7 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.AccountPerBookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetConcessionaireReports = new ConcessionaireReports.DataSetConcessionaireReports();
             this.AccountPerBarangayBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -89,6 +90,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.reportViewerAccountPerMeterSize = new Microsoft.Reporting.WinForms.ReportViewer();
             this.comboBoxAccountPerMeterSizeMeterStatus = new System.Windows.Forms.ComboBox();
             this.buttonAccountPerMeterSizeSearch = new System.Windows.Forms.Button();
             this.comboBoxAccountPerMeterSizeMeterSize = new System.Windows.Forms.ComboBox();
@@ -97,7 +99,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.reportViewerSeniorCitizenAccounts = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.reportViewerAccountPerMeterSize = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.SeniorCitizenAccountsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.AccountPerBookBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetConcessionaireReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountPerBarangayBindingSource)).BeginInit();
@@ -114,6 +116,7 @@
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SeniorCitizenAccountsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // AccountPerBookBindingSource
@@ -635,6 +638,7 @@
             this.buttonSeniorCitizenSearch.TabIndex = 6;
             this.buttonSeniorCitizenSearch.Text = "Search";
             this.buttonSeniorCitizenSearch.UseVisualStyleBackColor = true;
+            this.buttonSeniorCitizenSearch.Click += new System.EventHandler(this.buttonSeniorCitizenSearch_Click);
             // 
             // comboBoxSeniorCitizenBook
             // 
@@ -655,6 +659,7 @@
             this.comboBoxSeniorCitizenZone.Name = "comboBoxSeniorCitizenZone";
             this.comboBoxSeniorCitizenZone.Size = new System.Drawing.Size(50, 24);
             this.comboBoxSeniorCitizenZone.TabIndex = 5;
+            this.comboBoxSeniorCitizenZone.SelectedIndexChanged += new System.EventHandler(this.comboBoxSeniorCitizenZone_SelectedIndexChanged);
             // 
             // label12
             // 
@@ -692,6 +697,14 @@
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "Account List Per Meter Size";
             this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // reportViewerAccountPerMeterSize
+            // 
+            this.reportViewerAccountPerMeterSize.Location = new System.Drawing.Point(30, 70);
+            this.reportViewerAccountPerMeterSize.Name = "reportViewerAccountPerMeterSize";
+            this.reportViewerAccountPerMeterSize.ServerReport.BearerToken = null;
+            this.reportViewerAccountPerMeterSize.Size = new System.Drawing.Size(768, 385);
+            this.reportViewerAccountPerMeterSize.TabIndex = 11;
             // 
             // comboBoxAccountPerMeterSizeMeterStatus
             // 
@@ -765,19 +778,20 @@
             // 
             // reportViewerSeniorCitizenAccounts
             // 
-            this.reportViewerSeniorCitizenAccounts.Location = new System.Drawing.Point(26, 63);
+            reportDataSource7.Name = "DataSetConcessionaireReports";
+            reportDataSource7.Value = this.SeniorCitizenAccountsBindingSource;
+            this.reportViewerSeniorCitizenAccounts.LocalReport.DataSources.Add(reportDataSource7);
+            this.reportViewerSeniorCitizenAccounts.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportSeniorCitizenAccounts.rdlc";
+            this.reportViewerSeniorCitizenAccounts.Location = new System.Drawing.Point(24, 61);
             this.reportViewerSeniorCitizenAccounts.Name = "reportViewerSeniorCitizenAccounts";
             this.reportViewerSeniorCitizenAccounts.ServerReport.BearerToken = null;
-            this.reportViewerSeniorCitizenAccounts.Size = new System.Drawing.Size(772, 395);
+            this.reportViewerSeniorCitizenAccounts.Size = new System.Drawing.Size(780, 397);
             this.reportViewerSeniorCitizenAccounts.TabIndex = 7;
             // 
-            // reportViewerAccountPerMeterSize
+            // SeniorCitizenAccountsBindingSource
             // 
-            this.reportViewerAccountPerMeterSize.Location = new System.Drawing.Point(30, 70);
-            this.reportViewerAccountPerMeterSize.Name = "reportViewerAccountPerMeterSize";
-            this.reportViewerAccountPerMeterSize.ServerReport.BearerToken = null;
-            this.reportViewerAccountPerMeterSize.Size = new System.Drawing.Size(768, 385);
-            this.reportViewerAccountPerMeterSize.TabIndex = 11;
+            this.SeniorCitizenAccountsBindingSource.DataMember = "SeniorCitizenAccounts";
+            this.SeniorCitizenAccountsBindingSource.DataSource = this.DataSetConcessionaireReports;
             // 
             // ConcessionaireReportsForm
             // 
@@ -812,6 +826,7 @@
             this.tabPage7.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SeniorCitizenAccountsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -879,8 +894,9 @@
         private System.Windows.Forms.BindingSource NewConnectionSummaryBindingSource;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerAccountByStatus;
         private System.Windows.Forms.BindingSource AccountByStatusBindingSource;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewerSeniorCitizenAccounts;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerAccountPerMeterSize;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerSeniorCitizenAccounts;
+        private System.Windows.Forms.BindingSource SeniorCitizenAccountsBindingSource;
     }
 }
 
