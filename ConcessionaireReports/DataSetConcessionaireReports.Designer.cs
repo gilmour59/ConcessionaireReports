@@ -1031,7 +1031,7 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public AccountPerBarangayRow AddAccountPerBarangayRow(string header_name, string header_address, string connected, string disconnected, int ref_no, string account_number, string concessionaire_name, string address, string meter_sn, string meter_stat, System.DateTime date_connected, int seq_no) {
+            public AccountPerBarangayRow AddAccountPerBarangayRow(string header_name, string header_address, int connected, int disconnected, int ref_no, string account_number, string concessionaire_name, string address, string meter_sn, string meter_stat, System.DateTime date_connected, int seq_no) {
                 AccountPerBarangayRow rowAccountPerBarangayRow = ((AccountPerBarangayRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         header_name,
@@ -1089,9 +1089,9 @@ namespace ConcessionaireReports {
                 base.Columns.Add(this.columnheader_name);
                 this.columnheader_address = new global::System.Data.DataColumn("header_address", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnheader_address);
-                this.columnconnected = new global::System.Data.DataColumn("connected", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnconnected = new global::System.Data.DataColumn("connected", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnconnected);
-                this.columndisconnected = new global::System.Data.DataColumn("disconnected", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columndisconnected = new global::System.Data.DataColumn("disconnected", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndisconnected);
                 this.columnref_no = new global::System.Data.DataColumn("ref_no", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnref_no);
@@ -1442,7 +1442,7 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public AccountPerClassificationRow AddAccountPerClassificationRow(string header_name, string header_address, string class_desc, string connected, string disconnected, int ref_no, string account_number, string concessionaire_name, string address, string meter_sn, string meter_stat, System.DateTime date_connected, int seq_no) {
+            public AccountPerClassificationRow AddAccountPerClassificationRow(string header_name, string header_address, string class_desc, int connected, int disconnected, int ref_no, string account_number, string concessionaire_name, string address, string meter_sn, string meter_stat, System.DateTime date_connected, int seq_no) {
                 AccountPerClassificationRow rowAccountPerClassificationRow = ((AccountPerClassificationRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         header_name,
@@ -1504,9 +1504,9 @@ namespace ConcessionaireReports {
                 base.Columns.Add(this.columnheader_address);
                 this.columnclass_desc = new global::System.Data.DataColumn("class_desc", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnclass_desc);
-                this.columnconnected = new global::System.Data.DataColumn("connected", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnconnected = new global::System.Data.DataColumn("connected", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnconnected);
-                this.columndisconnected = new global::System.Data.DataColumn("disconnected", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columndisconnected = new global::System.Data.DataColumn("disconnected", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndisconnected);
                 this.columnref_no = new global::System.Data.DataColumn("ref_no", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnref_no);
@@ -2340,11 +2340,11 @@ namespace ConcessionaireReports {
                         byte commercial, 
                         System.DateTime date_connected, 
                         string checked_by, 
-                        string init_reading, 
+                        int init_reading, 
                         string zone_id, 
                         string book_id, 
-                        string classification_id, 
-                        string meter_size_id, 
+                        byte classification_id, 
+                        byte meter_size_id, 
                         string submitted_by) {
                 NewConnectionSummaryRow rowNewConnectionSummaryRow = ((NewConnectionSummaryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
@@ -2447,15 +2447,15 @@ namespace ConcessionaireReports {
                 base.Columns.Add(this.columndate_connected);
                 this.columnchecked_by = new global::System.Data.DataColumn("checked_by", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnchecked_by);
-                this.columninit_reading = new global::System.Data.DataColumn("init_reading", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columninit_reading = new global::System.Data.DataColumn("init_reading", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columninit_reading);
                 this.columnzone_id = new global::System.Data.DataColumn("zone_id", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnzone_id);
                 this.columnbook_id = new global::System.Data.DataColumn("book_id", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnbook_id);
-                this.columnclassification_id = new global::System.Data.DataColumn("classification_id", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnclassification_id = new global::System.Data.DataColumn("classification_id", typeof(byte), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnclassification_id);
-                this.columnmeter_size_id = new global::System.Data.DataColumn("meter_size_id", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnmeter_size_id = new global::System.Data.DataColumn("meter_size_id", typeof(byte), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmeter_size_id);
                 this.columnsubmitted_by = new global::System.Data.DataColumn("submitted_by", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsubmitted_by);
@@ -3329,10 +3329,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string connected {
+            public int connected {
                 get {
                     try {
-                        return ((string)(this[this.tableAccountPerBarangay.connectedColumn]));
+                        return ((int)(this[this.tableAccountPerBarangay.connectedColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'connected\' in table \'AccountPerBarangay\' is DBNull.", e);
@@ -3345,10 +3345,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string disconnected {
+            public int disconnected {
                 get {
                     try {
-                        return ((string)(this[this.tableAccountPerBarangay.disconnectedColumn]));
+                        return ((int)(this[this.tableAccountPerBarangay.disconnectedColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'disconnected\' in table \'AccountPerBarangay\' is DBNull.", e);
@@ -3699,10 +3699,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string connected {
+            public int connected {
                 get {
                     try {
-                        return ((string)(this[this.tableAccountPerClassification.connectedColumn]));
+                        return ((int)(this[this.tableAccountPerClassification.connectedColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'connected\' in table \'AccountPerClassification\' is DBNull.", e);
@@ -3715,10 +3715,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string disconnected {
+            public int disconnected {
                 get {
                     try {
-                        return ((string)(this[this.tableAccountPerClassification.disconnectedColumn]));
+                        return ((int)(this[this.tableAccountPerClassification.disconnectedColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'disconnected\' in table \'AccountPerClassification\' is DBNull" +
@@ -4603,10 +4603,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string init_reading {
+            public int init_reading {
                 get {
                     try {
-                        return ((string)(this[this.tableNewConnectionSummary.init_readingColumn]));
+                        return ((int)(this[this.tableNewConnectionSummary.init_readingColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'init_reading\' in table \'NewConnectionSummary\' is DBNull.", e);
@@ -4651,10 +4651,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string classification_id {
+            public byte classification_id {
                 get {
                     try {
-                        return ((string)(this[this.tableNewConnectionSummary.classification_idColumn]));
+                        return ((byte)(this[this.tableNewConnectionSummary.classification_idColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'classification_id\' in table \'NewConnectionSummary\' is DBNul" +
@@ -4668,10 +4668,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string meter_size_id {
+            public byte meter_size_id {
                 get {
                     try {
-                        return ((string)(this[this.tableNewConnectionSummary.meter_size_idColumn]));
+                        return ((byte)(this[this.tableNewConnectionSummary.meter_size_idColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'meter_size_id\' in table \'NewConnectionSummary\' is DBNull.", e);

@@ -34,6 +34,7 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.AccountPerBookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetConcessionaireReports = new ConcessionaireReports.DataSetConcessionaireReports();
             this.AccountPerBarangayBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -94,6 +95,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.AccountByStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.AccountPerBookBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetConcessionaireReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountPerBarangayBindingSource)).BeginInit();
@@ -109,6 +111,7 @@
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountByStatusBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // AccountPerBookBindingSource
@@ -540,6 +543,10 @@
             // 
             // reportViewerAccountByStatus
             // 
+            reportDataSource6.Name = "DataSetConcessionaireReports";
+            reportDataSource6.Value = this.AccountByStatusBindingSource;
+            this.reportViewerAccountByStatus.LocalReport.DataSources.Add(reportDataSource6);
+            this.reportViewerAccountByStatus.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountByStatus.rdlc";
             this.reportViewerAccountByStatus.Location = new System.Drawing.Point(25, 67);
             this.reportViewerAccountByStatus.Name = "reportViewerAccountByStatus";
             this.reportViewerAccountByStatus.ServerReport.BearerToken = null;
@@ -742,6 +749,11 @@
             this.label16.TabIndex = 5;
             this.label16.Text = "Zone:";
             // 
+            // AccountByStatusBindingSource
+            // 
+            this.AccountByStatusBindingSource.DataMember = "AccountByStatus";
+            this.AccountByStatusBindingSource.DataSource = this.DataSetConcessionaireReports;
+            // 
             // ConcessionaireReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -774,6 +786,7 @@
             this.tabPage7.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountByStatusBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -840,6 +853,7 @@
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerNewConnectionSummary;
         private System.Windows.Forms.BindingSource NewConnectionSummaryBindingSource;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerAccountByStatus;
+        private System.Windows.Forms.BindingSource AccountByStatusBindingSource;
     }
 }
 

@@ -559,7 +559,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1371,7 +1370,7 @@
         </Field>
         <Field Name="init_reading">
           <DataField>init_reading</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="zone_id">
           <DataField>zone_id</DataField>
@@ -1383,11 +1382,11 @@
         </Field>
         <Field Name="classification_id">
           <DataField>classification_id</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Byte</rd:TypeName>
         </Field>
         <Field Name="meter_size_id">
           <DataField>meter_size_id</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Byte</rd:TypeName>
         </Field>
         <Field Name="submitted_by">
           <DataField>submitted_by</DataField>
