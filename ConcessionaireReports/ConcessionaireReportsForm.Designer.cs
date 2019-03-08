@@ -41,6 +41,7 @@
             this.AccountPerClassificationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SummaryAccountPerClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.NewConnectionSummaryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.AccountByStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlConcessionaireReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.reportViewerAccountPerBook = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -95,13 +96,13 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.AccountByStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.AccountPerBookBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetConcessionaireReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountPerBarangayBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountPerClassificationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SummaryAccountPerClassBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NewConnectionSummaryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountByStatusBindingSource)).BeginInit();
             this.tabControlConcessionaireReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -111,7 +112,6 @@
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AccountByStatusBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // AccountPerBookBindingSource
@@ -143,6 +143,11 @@
             // 
             this.NewConnectionSummaryBindingSource.DataMember = "NewConnectionSummary";
             this.NewConnectionSummaryBindingSource.DataSource = this.DataSetConcessionaireReports;
+            // 
+            // AccountByStatusBindingSource
+            // 
+            this.AccountByStatusBindingSource.DataMember = "AccountByStatus";
+            this.AccountByStatusBindingSource.DataSource = this.DataSetConcessionaireReports;
             // 
             // tabControlConcessionaireReports
             // 
@@ -630,6 +635,7 @@
             // 
             // comboBoxSeniorCitizenBook
             // 
+            this.comboBoxSeniorCitizenBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSeniorCitizenBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSeniorCitizenBook.FormattingEnabled = true;
             this.comboBoxSeniorCitizenBook.Location = new System.Drawing.Point(408, 21);
@@ -639,6 +645,7 @@
             // 
             // comboBoxSeniorCitizenZone
             // 
+            this.comboBoxSeniorCitizenZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSeniorCitizenZone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSeniorCitizenZone.FormattingEnabled = true;
             this.comboBoxSeniorCitizenZone.Location = new System.Drawing.Point(262, 21);
@@ -684,6 +691,7 @@
             // 
             // comboBoxAccountPerMeterSizeMeterStatus
             // 
+            this.comboBoxAccountPerMeterSizeMeterStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAccountPerMeterSizeMeterStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxAccountPerMeterSizeMeterStatus.FormattingEnabled = true;
             this.comboBoxAccountPerMeterSizeMeterStatus.Location = new System.Drawing.Point(496, 24);
@@ -703,6 +711,7 @@
             // 
             // comboBoxAccountPerMeterSizeMeterSize
             // 
+            this.comboBoxAccountPerMeterSizeMeterSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAccountPerMeterSizeMeterSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxAccountPerMeterSizeMeterSize.FormattingEnabled = true;
             this.comboBoxAccountPerMeterSizeMeterSize.Location = new System.Drawing.Point(312, 26);
@@ -712,6 +721,7 @@
             // 
             // comboBoxAccountPerMeterSizeZone
             // 
+            this.comboBoxAccountPerMeterSizeZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAccountPerMeterSizeZone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxAccountPerMeterSizeZone.FormattingEnabled = true;
             this.comboBoxAccountPerMeterSizeZone.Location = new System.Drawing.Point(152, 26);
@@ -749,11 +759,6 @@
             this.label16.TabIndex = 5;
             this.label16.Text = "Zone:";
             // 
-            // AccountByStatusBindingSource
-            // 
-            this.AccountByStatusBindingSource.DataMember = "AccountByStatus";
-            this.AccountByStatusBindingSource.DataSource = this.DataSetConcessionaireReports;
-            // 
             // ConcessionaireReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -770,6 +775,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.AccountPerClassificationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SummaryAccountPerClassBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NewConnectionSummaryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountByStatusBindingSource)).EndInit();
             this.tabControlConcessionaireReports.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -786,7 +792,6 @@
             this.tabPage7.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AccountByStatusBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
