@@ -813,8 +813,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 513);
             this.Controls.Add(this.tabControlConcessionaireReports);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "ConcessionaireReportsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Concessionaire Reports";
             this.Load += new System.EventHandler(this.ConcessionaireReportsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AccountPerBookBindingSource)).EndInit();

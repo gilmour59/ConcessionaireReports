@@ -83,11 +83,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetConcessionaireReports.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetMeterReports.cs">
+      <DependentUpon>DataSetMeterReports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetMeterReports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetMeterReports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MeterReportsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeterReportsForm.Designer.cs">
+      <DependentUpon>MeterReportsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="ConcessionaireReportsForm.resx">
       <DependentUpon>ConcessionaireReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MeterReportsForm.resx">
+      <DependentUpon>MeterReportsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -116,6 +133,17 @@
     </None>
     <None Include="DataSetConcessionaireReports.xss">
       <DependentUpon>DataSetConcessionaireReports.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetMeterReports.xsc">
+      <DependentUpon>DataSetMeterReports.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetMeterReports.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetMeterReports.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetMeterReports.xss">
+      <DependentUpon>DataSetMeterReports.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
