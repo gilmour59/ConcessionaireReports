@@ -34,6 +34,10 @@ namespace ConcessionaireReports {
         
         private SummaryReceivedMetersDataTable tableSummaryReceivedMeters;
         
+        private SummaryDisposedMetersDataTable tableSummaryDisposedMeters;
+        
+        private SummaryTestedMetersDataTable tableSummaryTestedMeters;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -76,6 +80,12 @@ namespace ConcessionaireReports {
                 }
                 if ((ds.Tables["SummaryReceivedMeters"] != null)) {
                     base.Tables.Add(new SummaryReceivedMetersDataTable(ds.Tables["SummaryReceivedMeters"]));
+                }
+                if ((ds.Tables["SummaryDisposedMeters"] != null)) {
+                    base.Tables.Add(new SummaryDisposedMetersDataTable(ds.Tables["SummaryDisposedMeters"]));
+                }
+                if ((ds.Tables["SummaryTestedMeters"] != null)) {
+                    base.Tables.Add(new SummaryTestedMetersDataTable(ds.Tables["SummaryTestedMeters"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -142,6 +152,26 @@ namespace ConcessionaireReports {
         public SummaryReceivedMetersDataTable SummaryReceivedMeters {
             get {
                 return this.tableSummaryReceivedMeters;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public SummaryDisposedMetersDataTable SummaryDisposedMeters {
+            get {
+                return this.tableSummaryDisposedMeters;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public SummaryTestedMetersDataTable SummaryTestedMeters {
+            get {
+                return this.tableSummaryTestedMeters;
             }
         }
         
@@ -227,6 +257,12 @@ namespace ConcessionaireReports {
                 if ((ds.Tables["SummaryReceivedMeters"] != null)) {
                     base.Tables.Add(new SummaryReceivedMetersDataTable(ds.Tables["SummaryReceivedMeters"]));
                 }
+                if ((ds.Tables["SummaryDisposedMeters"] != null)) {
+                    base.Tables.Add(new SummaryDisposedMetersDataTable(ds.Tables["SummaryDisposedMeters"]));
+                }
+                if ((ds.Tables["SummaryTestedMeters"] != null)) {
+                    base.Tables.Add(new SummaryTestedMetersDataTable(ds.Tables["SummaryTestedMeters"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -290,6 +326,18 @@ namespace ConcessionaireReports {
                     this.tableSummaryReceivedMeters.InitVars();
                 }
             }
+            this.tableSummaryDisposedMeters = ((SummaryDisposedMetersDataTable)(base.Tables["SummaryDisposedMeters"]));
+            if ((initTable == true)) {
+                if ((this.tableSummaryDisposedMeters != null)) {
+                    this.tableSummaryDisposedMeters.InitVars();
+                }
+            }
+            this.tableSummaryTestedMeters = ((SummaryTestedMetersDataTable)(base.Tables["SummaryTestedMeters"]));
+            if ((initTable == true)) {
+                if ((this.tableSummaryTestedMeters != null)) {
+                    this.tableSummaryTestedMeters.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -310,6 +358,10 @@ namespace ConcessionaireReports {
             base.Tables.Add(this.tableSummaryAlteration);
             this.tableSummaryReceivedMeters = new SummaryReceivedMetersDataTable();
             base.Tables.Add(this.tableSummaryReceivedMeters);
+            this.tableSummaryDisposedMeters = new SummaryDisposedMetersDataTable();
+            base.Tables.Add(this.tableSummaryDisposedMeters);
+            this.tableSummaryTestedMeters = new SummaryTestedMetersDataTable();
+            base.Tables.Add(this.tableSummaryTestedMeters);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -339,6 +391,18 @@ namespace ConcessionaireReports {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private bool ShouldSerializeSummaryReceivedMeters() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeSummaryDisposedMeters() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeSummaryTestedMeters() {
             return false;
         }
         
@@ -411,6 +475,12 @@ namespace ConcessionaireReports {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void SummaryReceivedMetersRowChangeEventHandler(object sender, SummaryReceivedMetersRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void SummaryDisposedMetersRowChangeEventHandler(object sender, SummaryDisposedMetersRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void SummaryTestedMetersRowChangeEventHandler(object sender, SummaryTestedMetersRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1292,8 +1362,6 @@ namespace ConcessionaireReports {
                 base.Columns.Add(this.columnnew_meter);
                 this.columnprevious_reading = new global::System.Data.DataColumn("previous_reading", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnprevious_reading);
-                this.columnreading_.Caption = "new_meter_reading";
-                this.columnprevious_reading.Caption = "old_meter_reading";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1767,7 +1835,6 @@ namespace ConcessionaireReports {
                 base.Columns.Add(this.columnremarks);
                 this.columnold_meter = new global::System.Data.DataColumn("old_meter", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnold_meter);
-                this.columnreading_.Caption = "new_meter_reading";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2389,6 +2456,26 @@ namespace ConcessionaireReports {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class SummaryReceivedMetersDataTable : global::System.Data.TypedTableBase<SummaryReceivedMetersRow> {
             
+            private global::System.Data.DataColumn columnheader_name;
+            
+            private global::System.Data.DataColumn columnheader_address;
+            
+            private global::System.Data.DataColumn columntitle;
+            
+            private global::System.Data.DataColumn columnsub_title;
+            
+            private global::System.Data.DataColumn columnnoted_by;
+            
+            private global::System.Data.DataColumn columndate_changed;
+            
+            private global::System.Data.DataColumn columnbrand_name;
+            
+            private global::System.Data.DataColumn columnremarks;
+            
+            private global::System.Data.DataColumn columnnew_meter;
+            
+            private global::System.Data.DataColumn columnprev_stat;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public SummaryReceivedMetersDataTable() {
@@ -2420,6 +2507,86 @@ namespace ConcessionaireReports {
             protected SummaryReceivedMetersDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn header_nameColumn {
+                get {
+                    return this.columnheader_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn header_addressColumn {
+                get {
+                    return this.columnheader_address;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn titleColumn {
+                get {
+                    return this.columntitle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sub_titleColumn {
+                get {
+                    return this.columnsub_title;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn noted_byColumn {
+                get {
+                    return this.columnnoted_by;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn date_changedColumn {
+                get {
+                    return this.columndate_changed;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn brand_nameColumn {
+                get {
+                    return this.columnbrand_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn remarksColumn {
+                get {
+                    return this.columnremarks;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn new_meterColumn {
+                get {
+                    return this.columnnew_meter;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn prev_statColumn {
+                get {
+                    return this.columnprev_stat;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2459,9 +2626,19 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SummaryReceivedMetersRow AddSummaryReceivedMetersRow() {
+            public SummaryReceivedMetersRow AddSummaryReceivedMetersRow(string header_name, string header_address, string title, string sub_title, string noted_by, System.DateTime date_changed, string brand_name, string remarks, string new_meter, byte prev_stat) {
                 SummaryReceivedMetersRow rowSummaryReceivedMetersRow = ((SummaryReceivedMetersRow)(this.NewRow()));
-                object[] columnValuesArray = new object[0];
+                object[] columnValuesArray = new object[] {
+                        header_name,
+                        header_address,
+                        title,
+                        sub_title,
+                        noted_by,
+                        date_changed,
+                        brand_name,
+                        remarks,
+                        new_meter,
+                        prev_stat};
                 rowSummaryReceivedMetersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSummaryReceivedMetersRow);
                 return rowSummaryReceivedMetersRow;
@@ -2484,11 +2661,41 @@ namespace ConcessionaireReports {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
+                this.columnheader_name = base.Columns["header_name"];
+                this.columnheader_address = base.Columns["header_address"];
+                this.columntitle = base.Columns["title"];
+                this.columnsub_title = base.Columns["sub_title"];
+                this.columnnoted_by = base.Columns["noted_by"];
+                this.columndate_changed = base.Columns["date_changed"];
+                this.columnbrand_name = base.Columns["brand_name"];
+                this.columnremarks = base.Columns["remarks"];
+                this.columnnew_meter = base.Columns["new_meter"];
+                this.columnprev_stat = base.Columns["prev_stat"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
+                this.columnheader_name = new global::System.Data.DataColumn("header_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnheader_name);
+                this.columnheader_address = new global::System.Data.DataColumn("header_address", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnheader_address);
+                this.columntitle = new global::System.Data.DataColumn("title", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntitle);
+                this.columnsub_title = new global::System.Data.DataColumn("sub_title", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsub_title);
+                this.columnnoted_by = new global::System.Data.DataColumn("noted_by", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnoted_by);
+                this.columndate_changed = new global::System.Data.DataColumn("date_changed", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndate_changed);
+                this.columnbrand_name = new global::System.Data.DataColumn("brand_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbrand_name);
+                this.columnremarks = new global::System.Data.DataColumn("remarks", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnremarks);
+                this.columnnew_meter = new global::System.Data.DataColumn("new_meter", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnew_meter);
+                this.columnprev_stat = new global::System.Data.DataColumn("prev_stat", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprev_stat);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2575,6 +2782,780 @@ namespace ConcessionaireReports {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "SummaryReceivedMetersDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class SummaryDisposedMetersDataTable : global::System.Data.TypedTableBase<SummaryDisposedMetersRow> {
+            
+            private global::System.Data.DataColumn columnheader_name;
+            
+            private global::System.Data.DataColumn columnheader_address;
+            
+            private global::System.Data.DataColumn columntitle;
+            
+            private global::System.Data.DataColumn columnsub_title;
+            
+            private global::System.Data.DataColumn columnnoted_by;
+            
+            private global::System.Data.DataColumn columndate_changed;
+            
+            private global::System.Data.DataColumn columnbrand_name;
+            
+            private global::System.Data.DataColumn columnremarks;
+            
+            private global::System.Data.DataColumn columnnew_meter;
+            
+            private global::System.Data.DataColumn columnpres_reading;
+            
+            private global::System.Data.DataColumn columnaccuracy;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public SummaryDisposedMetersDataTable() {
+                this.TableName = "SummaryDisposedMeters";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal SummaryDisposedMetersDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected SummaryDisposedMetersDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn header_nameColumn {
+                get {
+                    return this.columnheader_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn header_addressColumn {
+                get {
+                    return this.columnheader_address;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn titleColumn {
+                get {
+                    return this.columntitle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sub_titleColumn {
+                get {
+                    return this.columnsub_title;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn noted_byColumn {
+                get {
+                    return this.columnnoted_by;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn date_changedColumn {
+                get {
+                    return this.columndate_changed;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn brand_nameColumn {
+                get {
+                    return this.columnbrand_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn remarksColumn {
+                get {
+                    return this.columnremarks;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn new_meterColumn {
+                get {
+                    return this.columnnew_meter;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn pres_readingColumn {
+                get {
+                    return this.columnpres_reading;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn accuracyColumn {
+                get {
+                    return this.columnaccuracy;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public SummaryDisposedMetersRow this[int index] {
+                get {
+                    return ((SummaryDisposedMetersRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event SummaryDisposedMetersRowChangeEventHandler SummaryDisposedMetersRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event SummaryDisposedMetersRowChangeEventHandler SummaryDisposedMetersRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event SummaryDisposedMetersRowChangeEventHandler SummaryDisposedMetersRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event SummaryDisposedMetersRowChangeEventHandler SummaryDisposedMetersRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddSummaryDisposedMetersRow(SummaryDisposedMetersRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public SummaryDisposedMetersRow AddSummaryDisposedMetersRow(string header_name, string header_address, string title, string sub_title, string noted_by, System.DateTime date_changed, string brand_name, string remarks, string new_meter, string pres_reading, decimal accuracy) {
+                SummaryDisposedMetersRow rowSummaryDisposedMetersRow = ((SummaryDisposedMetersRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        header_name,
+                        header_address,
+                        title,
+                        sub_title,
+                        noted_by,
+                        date_changed,
+                        brand_name,
+                        remarks,
+                        new_meter,
+                        pres_reading,
+                        accuracy};
+                rowSummaryDisposedMetersRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSummaryDisposedMetersRow);
+                return rowSummaryDisposedMetersRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                SummaryDisposedMetersDataTable cln = ((SummaryDisposedMetersDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new SummaryDisposedMetersDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnheader_name = base.Columns["header_name"];
+                this.columnheader_address = base.Columns["header_address"];
+                this.columntitle = base.Columns["title"];
+                this.columnsub_title = base.Columns["sub_title"];
+                this.columnnoted_by = base.Columns["noted_by"];
+                this.columndate_changed = base.Columns["date_changed"];
+                this.columnbrand_name = base.Columns["brand_name"];
+                this.columnremarks = base.Columns["remarks"];
+                this.columnnew_meter = base.Columns["new_meter"];
+                this.columnpres_reading = base.Columns["pres_reading"];
+                this.columnaccuracy = base.Columns["accuracy"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnheader_name = new global::System.Data.DataColumn("header_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnheader_name);
+                this.columnheader_address = new global::System.Data.DataColumn("header_address", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnheader_address);
+                this.columntitle = new global::System.Data.DataColumn("title", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntitle);
+                this.columnsub_title = new global::System.Data.DataColumn("sub_title", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsub_title);
+                this.columnnoted_by = new global::System.Data.DataColumn("noted_by", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnoted_by);
+                this.columndate_changed = new global::System.Data.DataColumn("date_changed", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndate_changed);
+                this.columnbrand_name = new global::System.Data.DataColumn("brand_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbrand_name);
+                this.columnremarks = new global::System.Data.DataColumn("remarks", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnremarks);
+                this.columnnew_meter = new global::System.Data.DataColumn("new_meter", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnew_meter);
+                this.columnpres_reading = new global::System.Data.DataColumn("pres_reading", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpres_reading);
+                this.columnaccuracy = new global::System.Data.DataColumn("accuracy", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnaccuracy);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public SummaryDisposedMetersRow NewSummaryDisposedMetersRow() {
+                return ((SummaryDisposedMetersRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new SummaryDisposedMetersRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(SummaryDisposedMetersRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.SummaryDisposedMetersRowChanged != null)) {
+                    this.SummaryDisposedMetersRowChanged(this, new SummaryDisposedMetersRowChangeEvent(((SummaryDisposedMetersRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.SummaryDisposedMetersRowChanging != null)) {
+                    this.SummaryDisposedMetersRowChanging(this, new SummaryDisposedMetersRowChangeEvent(((SummaryDisposedMetersRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.SummaryDisposedMetersRowDeleted != null)) {
+                    this.SummaryDisposedMetersRowDeleted(this, new SummaryDisposedMetersRowChangeEvent(((SummaryDisposedMetersRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.SummaryDisposedMetersRowDeleting != null)) {
+                    this.SummaryDisposedMetersRowDeleting(this, new SummaryDisposedMetersRowChangeEvent(((SummaryDisposedMetersRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveSummaryDisposedMetersRow(SummaryDisposedMetersRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSetMeterReports ds = new DataSetMeterReports();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "SummaryDisposedMetersDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class SummaryTestedMetersDataTable : global::System.Data.TypedTableBase<SummaryTestedMetersRow> {
+            
+            private global::System.Data.DataColumn columnheader_name;
+            
+            private global::System.Data.DataColumn columnheader_address;
+            
+            private global::System.Data.DataColumn columntitle;
+            
+            private global::System.Data.DataColumn columnsub_title;
+            
+            private global::System.Data.DataColumn columnnoted_by;
+            
+            private global::System.Data.DataColumn columndate_changed;
+            
+            private global::System.Data.DataColumn columnbrand_name;
+            
+            private global::System.Data.DataColumn columnremarks;
+            
+            private global::System.Data.DataColumn columnnew_meter;
+            
+            private global::System.Data.DataColumn columnpres_reading;
+            
+            private global::System.Data.DataColumn columnaccuracy;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public SummaryTestedMetersDataTable() {
+                this.TableName = "SummaryTestedMeters";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal SummaryTestedMetersDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected SummaryTestedMetersDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn header_nameColumn {
+                get {
+                    return this.columnheader_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn header_addressColumn {
+                get {
+                    return this.columnheader_address;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn titleColumn {
+                get {
+                    return this.columntitle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sub_titleColumn {
+                get {
+                    return this.columnsub_title;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn noted_byColumn {
+                get {
+                    return this.columnnoted_by;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn date_changedColumn {
+                get {
+                    return this.columndate_changed;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn brand_nameColumn {
+                get {
+                    return this.columnbrand_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn remarksColumn {
+                get {
+                    return this.columnremarks;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn new_meterColumn {
+                get {
+                    return this.columnnew_meter;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn pres_readingColumn {
+                get {
+                    return this.columnpres_reading;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn accuracyColumn {
+                get {
+                    return this.columnaccuracy;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public SummaryTestedMetersRow this[int index] {
+                get {
+                    return ((SummaryTestedMetersRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event SummaryTestedMetersRowChangeEventHandler SummaryTestedMetersRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event SummaryTestedMetersRowChangeEventHandler SummaryTestedMetersRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event SummaryTestedMetersRowChangeEventHandler SummaryTestedMetersRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event SummaryTestedMetersRowChangeEventHandler SummaryTestedMetersRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddSummaryTestedMetersRow(SummaryTestedMetersRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public SummaryTestedMetersRow AddSummaryTestedMetersRow(string header_name, string header_address, string title, string sub_title, string noted_by, System.DateTime date_changed, string brand_name, string remarks, string new_meter, string pres_reading, decimal accuracy) {
+                SummaryTestedMetersRow rowSummaryTestedMetersRow = ((SummaryTestedMetersRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        header_name,
+                        header_address,
+                        title,
+                        sub_title,
+                        noted_by,
+                        date_changed,
+                        brand_name,
+                        remarks,
+                        new_meter,
+                        pres_reading,
+                        accuracy};
+                rowSummaryTestedMetersRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSummaryTestedMetersRow);
+                return rowSummaryTestedMetersRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                SummaryTestedMetersDataTable cln = ((SummaryTestedMetersDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new SummaryTestedMetersDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnheader_name = base.Columns["header_name"];
+                this.columnheader_address = base.Columns["header_address"];
+                this.columntitle = base.Columns["title"];
+                this.columnsub_title = base.Columns["sub_title"];
+                this.columnnoted_by = base.Columns["noted_by"];
+                this.columndate_changed = base.Columns["date_changed"];
+                this.columnbrand_name = base.Columns["brand_name"];
+                this.columnremarks = base.Columns["remarks"];
+                this.columnnew_meter = base.Columns["new_meter"];
+                this.columnpres_reading = base.Columns["pres_reading"];
+                this.columnaccuracy = base.Columns["accuracy"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnheader_name = new global::System.Data.DataColumn("header_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnheader_name);
+                this.columnheader_address = new global::System.Data.DataColumn("header_address", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnheader_address);
+                this.columntitle = new global::System.Data.DataColumn("title", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntitle);
+                this.columnsub_title = new global::System.Data.DataColumn("sub_title", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsub_title);
+                this.columnnoted_by = new global::System.Data.DataColumn("noted_by", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnoted_by);
+                this.columndate_changed = new global::System.Data.DataColumn("date_changed", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndate_changed);
+                this.columnbrand_name = new global::System.Data.DataColumn("brand_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbrand_name);
+                this.columnremarks = new global::System.Data.DataColumn("remarks", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnremarks);
+                this.columnnew_meter = new global::System.Data.DataColumn("new_meter", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnew_meter);
+                this.columnpres_reading = new global::System.Data.DataColumn("pres_reading", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpres_reading);
+                this.columnaccuracy = new global::System.Data.DataColumn("accuracy", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnaccuracy);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public SummaryTestedMetersRow NewSummaryTestedMetersRow() {
+                return ((SummaryTestedMetersRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new SummaryTestedMetersRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(SummaryTestedMetersRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.SummaryTestedMetersRowChanged != null)) {
+                    this.SummaryTestedMetersRowChanged(this, new SummaryTestedMetersRowChangeEvent(((SummaryTestedMetersRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.SummaryTestedMetersRowChanging != null)) {
+                    this.SummaryTestedMetersRowChanging(this, new SummaryTestedMetersRowChangeEvent(((SummaryTestedMetersRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.SummaryTestedMetersRowDeleted != null)) {
+                    this.SummaryTestedMetersRowDeleted(this, new SummaryTestedMetersRowChangeEvent(((SummaryTestedMetersRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.SummaryTestedMetersRowDeleting != null)) {
+                    this.SummaryTestedMetersRowDeleting(this, new SummaryTestedMetersRowChangeEvent(((SummaryTestedMetersRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveSummaryTestedMetersRow(SummaryTestedMetersRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSetMeterReports ds = new DataSetMeterReports();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "SummaryTestedMetersDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -4633,6 +5614,934 @@ namespace ConcessionaireReports {
                     base(rb) {
                 this.tableSummaryReceivedMeters = ((SummaryReceivedMetersDataTable)(this.Table));
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string header_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummaryReceivedMeters.header_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'header_name\' in table \'SummaryReceivedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryReceivedMeters.header_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string header_address {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummaryReceivedMeters.header_addressColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'header_address\' in table \'SummaryReceivedMeters\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryReceivedMeters.header_addressColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string title {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummaryReceivedMeters.titleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'title\' in table \'SummaryReceivedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryReceivedMeters.titleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sub_title {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummaryReceivedMeters.sub_titleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'sub_title\' in table \'SummaryReceivedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryReceivedMeters.sub_titleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string noted_by {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummaryReceivedMeters.noted_byColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'noted_by\' in table \'SummaryReceivedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryReceivedMeters.noted_byColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime date_changed {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSummaryReceivedMeters.date_changedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'date_changed\' in table \'SummaryReceivedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryReceivedMeters.date_changedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string brand_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummaryReceivedMeters.brand_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'brand_name\' in table \'SummaryReceivedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryReceivedMeters.brand_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string remarks {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummaryReceivedMeters.remarksColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'remarks\' in table \'SummaryReceivedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryReceivedMeters.remarksColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string new_meter {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummaryReceivedMeters.new_meterColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'new_meter\' in table \'SummaryReceivedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryReceivedMeters.new_meterColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public byte prev_stat {
+                get {
+                    try {
+                        return ((byte)(this[this.tableSummaryReceivedMeters.prev_statColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'prev_stat\' in table \'SummaryReceivedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryReceivedMeters.prev_statColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isheader_nameNull() {
+                return this.IsNull(this.tableSummaryReceivedMeters.header_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setheader_nameNull() {
+                this[this.tableSummaryReceivedMeters.header_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isheader_addressNull() {
+                return this.IsNull(this.tableSummaryReceivedMeters.header_addressColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setheader_addressNull() {
+                this[this.tableSummaryReceivedMeters.header_addressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IstitleNull() {
+                return this.IsNull(this.tableSummaryReceivedMeters.titleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SettitleNull() {
+                this[this.tableSummaryReceivedMeters.titleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Issub_titleNull() {
+                return this.IsNull(this.tableSummaryReceivedMeters.sub_titleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setsub_titleNull() {
+                this[this.tableSummaryReceivedMeters.sub_titleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isnoted_byNull() {
+                return this.IsNull(this.tableSummaryReceivedMeters.noted_byColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setnoted_byNull() {
+                this[this.tableSummaryReceivedMeters.noted_byColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isdate_changedNull() {
+                return this.IsNull(this.tableSummaryReceivedMeters.date_changedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setdate_changedNull() {
+                this[this.tableSummaryReceivedMeters.date_changedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isbrand_nameNull() {
+                return this.IsNull(this.tableSummaryReceivedMeters.brand_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setbrand_nameNull() {
+                this[this.tableSummaryReceivedMeters.brand_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsremarksNull() {
+                return this.IsNull(this.tableSummaryReceivedMeters.remarksColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetremarksNull() {
+                this[this.tableSummaryReceivedMeters.remarksColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isnew_meterNull() {
+                return this.IsNull(this.tableSummaryReceivedMeters.new_meterColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setnew_meterNull() {
+                this[this.tableSummaryReceivedMeters.new_meterColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isprev_statNull() {
+                return this.IsNull(this.tableSummaryReceivedMeters.prev_statColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setprev_statNull() {
+                this[this.tableSummaryReceivedMeters.prev_statColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class SummaryDisposedMetersRow : global::System.Data.DataRow {
+            
+            private SummaryDisposedMetersDataTable tableSummaryDisposedMeters;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal SummaryDisposedMetersRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableSummaryDisposedMeters = ((SummaryDisposedMetersDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string header_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummaryDisposedMeters.header_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'header_name\' in table \'SummaryDisposedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryDisposedMeters.header_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string header_address {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummaryDisposedMeters.header_addressColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'header_address\' in table \'SummaryDisposedMeters\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryDisposedMeters.header_addressColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string title {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummaryDisposedMeters.titleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'title\' in table \'SummaryDisposedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryDisposedMeters.titleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sub_title {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummaryDisposedMeters.sub_titleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'sub_title\' in table \'SummaryDisposedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryDisposedMeters.sub_titleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string noted_by {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummaryDisposedMeters.noted_byColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'noted_by\' in table \'SummaryDisposedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryDisposedMeters.noted_byColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime date_changed {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSummaryDisposedMeters.date_changedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'date_changed\' in table \'SummaryDisposedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryDisposedMeters.date_changedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string brand_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummaryDisposedMeters.brand_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'brand_name\' in table \'SummaryDisposedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryDisposedMeters.brand_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string remarks {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummaryDisposedMeters.remarksColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'remarks\' in table \'SummaryDisposedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryDisposedMeters.remarksColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string new_meter {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummaryDisposedMeters.new_meterColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'new_meter\' in table \'SummaryDisposedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryDisposedMeters.new_meterColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string pres_reading {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummaryDisposedMeters.pres_readingColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pres_reading\' in table \'SummaryDisposedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryDisposedMeters.pres_readingColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal accuracy {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableSummaryDisposedMeters.accuracyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'accuracy\' in table \'SummaryDisposedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryDisposedMeters.accuracyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isheader_nameNull() {
+                return this.IsNull(this.tableSummaryDisposedMeters.header_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setheader_nameNull() {
+                this[this.tableSummaryDisposedMeters.header_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isheader_addressNull() {
+                return this.IsNull(this.tableSummaryDisposedMeters.header_addressColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setheader_addressNull() {
+                this[this.tableSummaryDisposedMeters.header_addressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IstitleNull() {
+                return this.IsNull(this.tableSummaryDisposedMeters.titleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SettitleNull() {
+                this[this.tableSummaryDisposedMeters.titleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Issub_titleNull() {
+                return this.IsNull(this.tableSummaryDisposedMeters.sub_titleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setsub_titleNull() {
+                this[this.tableSummaryDisposedMeters.sub_titleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isnoted_byNull() {
+                return this.IsNull(this.tableSummaryDisposedMeters.noted_byColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setnoted_byNull() {
+                this[this.tableSummaryDisposedMeters.noted_byColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isdate_changedNull() {
+                return this.IsNull(this.tableSummaryDisposedMeters.date_changedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setdate_changedNull() {
+                this[this.tableSummaryDisposedMeters.date_changedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isbrand_nameNull() {
+                return this.IsNull(this.tableSummaryDisposedMeters.brand_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setbrand_nameNull() {
+                this[this.tableSummaryDisposedMeters.brand_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsremarksNull() {
+                return this.IsNull(this.tableSummaryDisposedMeters.remarksColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetremarksNull() {
+                this[this.tableSummaryDisposedMeters.remarksColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isnew_meterNull() {
+                return this.IsNull(this.tableSummaryDisposedMeters.new_meterColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setnew_meterNull() {
+                this[this.tableSummaryDisposedMeters.new_meterColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Ispres_readingNull() {
+                return this.IsNull(this.tableSummaryDisposedMeters.pres_readingColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setpres_readingNull() {
+                this[this.tableSummaryDisposedMeters.pres_readingColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsaccuracyNull() {
+                return this.IsNull(this.tableSummaryDisposedMeters.accuracyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetaccuracyNull() {
+                this[this.tableSummaryDisposedMeters.accuracyColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class SummaryTestedMetersRow : global::System.Data.DataRow {
+            
+            private SummaryTestedMetersDataTable tableSummaryTestedMeters;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal SummaryTestedMetersRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableSummaryTestedMeters = ((SummaryTestedMetersDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string header_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummaryTestedMeters.header_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'header_name\' in table \'SummaryTestedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryTestedMeters.header_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string header_address {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummaryTestedMeters.header_addressColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'header_address\' in table \'SummaryTestedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryTestedMeters.header_addressColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string title {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummaryTestedMeters.titleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'title\' in table \'SummaryTestedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryTestedMeters.titleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string sub_title {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummaryTestedMeters.sub_titleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'sub_title\' in table \'SummaryTestedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryTestedMeters.sub_titleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string noted_by {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummaryTestedMeters.noted_byColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'noted_by\' in table \'SummaryTestedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryTestedMeters.noted_byColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime date_changed {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSummaryTestedMeters.date_changedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'date_changed\' in table \'SummaryTestedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryTestedMeters.date_changedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string brand_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummaryTestedMeters.brand_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'brand_name\' in table \'SummaryTestedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryTestedMeters.brand_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string remarks {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummaryTestedMeters.remarksColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'remarks\' in table \'SummaryTestedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryTestedMeters.remarksColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string new_meter {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummaryTestedMeters.new_meterColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'new_meter\' in table \'SummaryTestedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryTestedMeters.new_meterColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string pres_reading {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummaryTestedMeters.pres_readingColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pres_reading\' in table \'SummaryTestedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryTestedMeters.pres_readingColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal accuracy {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableSummaryTestedMeters.accuracyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'accuracy\' in table \'SummaryTestedMeters\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummaryTestedMeters.accuracyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isheader_nameNull() {
+                return this.IsNull(this.tableSummaryTestedMeters.header_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setheader_nameNull() {
+                this[this.tableSummaryTestedMeters.header_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isheader_addressNull() {
+                return this.IsNull(this.tableSummaryTestedMeters.header_addressColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setheader_addressNull() {
+                this[this.tableSummaryTestedMeters.header_addressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IstitleNull() {
+                return this.IsNull(this.tableSummaryTestedMeters.titleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SettitleNull() {
+                this[this.tableSummaryTestedMeters.titleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Issub_titleNull() {
+                return this.IsNull(this.tableSummaryTestedMeters.sub_titleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setsub_titleNull() {
+                this[this.tableSummaryTestedMeters.sub_titleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isnoted_byNull() {
+                return this.IsNull(this.tableSummaryTestedMeters.noted_byColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setnoted_byNull() {
+                this[this.tableSummaryTestedMeters.noted_byColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isdate_changedNull() {
+                return this.IsNull(this.tableSummaryTestedMeters.date_changedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setdate_changedNull() {
+                this[this.tableSummaryTestedMeters.date_changedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isbrand_nameNull() {
+                return this.IsNull(this.tableSummaryTestedMeters.brand_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setbrand_nameNull() {
+                this[this.tableSummaryTestedMeters.brand_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsremarksNull() {
+                return this.IsNull(this.tableSummaryTestedMeters.remarksColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetremarksNull() {
+                this[this.tableSummaryTestedMeters.remarksColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isnew_meterNull() {
+                return this.IsNull(this.tableSummaryTestedMeters.new_meterColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setnew_meterNull() {
+                this[this.tableSummaryTestedMeters.new_meterColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Ispres_readingNull() {
+                return this.IsNull(this.tableSummaryTestedMeters.pres_readingColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setpres_readingNull() {
+                this[this.tableSummaryTestedMeters.pres_readingColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsaccuracyNull() {
+                return this.IsNull(this.tableSummaryTestedMeters.accuracyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetaccuracyNull() {
+                this[this.tableSummaryTestedMeters.accuracyColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -4791,6 +6700,74 @@ namespace ConcessionaireReports {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public SummaryReceivedMetersRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class SummaryDisposedMetersRowChangeEvent : global::System.EventArgs {
+            
+            private SummaryDisposedMetersRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public SummaryDisposedMetersRowChangeEvent(SummaryDisposedMetersRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public SummaryDisposedMetersRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class SummaryTestedMetersRowChangeEvent : global::System.EventArgs {
+            
+            private SummaryTestedMetersRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public SummaryTestedMetersRowChangeEvent(SummaryTestedMetersRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public SummaryTestedMetersRow Row {
                 get {
                     return this.eventRow;
                 }
