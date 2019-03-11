@@ -639,7 +639,7 @@
             </Visibility>
             <Style>
               <Border>
-                <Style>Solid</Style>
+                <Style>None</Style>
               </Border>
             </Style>
           </Rectangle>
@@ -1212,7 +1212,7 @@
             </Visibility>
             <Style>
               <Border>
-                <Style>Solid</Style>
+                <Style>None</Style>
               </Border>
             </Style>
           </Rectangle>
@@ -1784,7 +1784,7 @@
             </Visibility>
             <Style>
               <Border>
-                <Style>Solid</Style>
+                <Style>None</Style>
               </Border>
             </Style>
           </Rectangle>
@@ -2356,7 +2356,7 @@
             </Visibility>
             <Style>
               <Border>
-                <Style>Solid</Style>
+                <Style>None</Style>
               </Border>
             </Style>
           </Rectangle>
@@ -2928,7 +2928,7 @@
             </Visibility>
             <Style>
               <Border>
-                <Style>Solid</Style>
+                <Style>None</Style>
               </Border>
             </Style>
           </Rectangle>
@@ -3500,7 +3500,7 @@
             </Visibility>
             <Style>
               <Border>
-                <Style>Solid</Style>
+                <Style>None</Style>
               </Border>
             </Style>
           </Rectangle>
@@ -4072,7 +4072,7 @@
             </Visibility>
             <Style>
               <Border>
-                <Style>Solid</Style>
+                <Style>None</Style>
               </Border>
             </Style>
           </Rectangle>

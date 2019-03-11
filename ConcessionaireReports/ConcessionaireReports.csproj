@@ -123,6 +123,7 @@
     <EmbeddedResource Include="RDLC\ReportNewConnectionSummary.rdlc" />
     <EmbeddedResource Include="RDLC\ReportSeniorCitizenAccounts.rdlc" />
     <EmbeddedResource Include="RDLC\ReportSummaryAccountsPerClass.rdlc" />
+    <EmbeddedResource Include="RDLC\ReportSummaryChangedMeters.rdlc" />
     <None Include="DataSetConcessionaireReports.xsc">
       <DependentUpon>DataSetConcessionaireReports.xsd</DependentUpon>
     </None>

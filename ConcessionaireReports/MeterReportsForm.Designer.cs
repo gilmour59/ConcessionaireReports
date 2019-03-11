@@ -28,54 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.tabControlMeterReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.buttonSummaryReceivedMetersSearch = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dateTimePickerSummaryReceivedMetersTo = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerSummaryReceivedMetersFrom = new System.Windows.Forms.DateTimePicker();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.reportViewerSummaryChangedMeters = new Microsoft.Reporting.WinForms.ReportViewer();
             this.buttonSummaryChangedMetersSearch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePickerSummaryChangedMetersTo = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerSummaryChangedMetersFrom = new System.Windows.Forms.DateTimePicker();
-            this.reportViewerSummaryChangedMeters = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.reportViewerChangedMeterPreviousRead = new Microsoft.Reporting.WinForms.ReportViewer();
             this.buttonChangedMeterPreviousReadSearch = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dateTimePickerChangedMeterPreviousReadYear = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerChangedMeterPreviousReadMonth = new System.Windows.Forms.DateTimePicker();
-            this.reportViewerChangedMeterPreviousRead = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.reportViewerSummaryPulledOutMeters = new Microsoft.Reporting.WinForms.ReportViewer();
             this.buttonSummaryPulledOutMetersSearch = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePickerSummaryPulledOutMetersYear = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerSummaryPulledOutMetersMonth = new System.Windows.Forms.DateTimePicker();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.reportViewerSummaryAlteration = new Microsoft.Reporting.WinForms.ReportViewer();
             this.buttonSummaryAlterationSearch = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.dateTimePickerSummaryAlterationDate = new System.Windows.Forms.DateTimePicker();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.reportViewerSummaryReceivedMeters = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.buttonSummaryReceivedMetersSearch = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dateTimePickerSummaryReceivedMetersTo = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerSummaryReceivedMetersFrom = new System.Windows.Forms.DateTimePicker();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.reportViewerSummaryDisposedMeters = new Microsoft.Reporting.WinForms.ReportViewer();
             this.buttonSummaryDisposedMetersSearch = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.dateTimePickerSummaryDisposedMetersTo = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerSummaryDisposedMetersFrom = new System.Windows.Forms.DateTimePicker();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.reportViewerSummaryTestedMeters = new Microsoft.Reporting.WinForms.ReportViewer();
             this.buttonSummaryTestedMetersSearch = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.dateTimePickerSummaryTestedMetersTo = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerSummaryTestedMetersFrom = new System.Windows.Forms.DateTimePicker();
+            this.DataSetMeterReports = new ConcessionaireReports.DataSetMeterReports();
+            this.SummaryChangedMetersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlMeterReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -84,6 +88,8 @@
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetMeterReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SummaryChangedMetersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlMeterReports
@@ -122,144 +128,17 @@
             this.tabPage1.Text = "Summary of Changed Meters";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // reportViewerSummaryChangedMeters
             // 
-            this.tabPage2.Controls.Add(this.reportViewerChangedMeterPreviousRead);
-            this.tabPage2.Controls.Add(this.buttonChangedMeterPreviousReadSearch);
-            this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.dateTimePickerChangedMeterPreviousReadYear);
-            this.tabPage2.Controls.Add(this.dateTimePickerChangedMeterPreviousReadMonth);
-            this.tabPage2.Location = new System.Drawing.Point(154, 4);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(824, 481);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Changed Meter with Previous Reading";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.reportViewerSummaryPulledOutMeters);
-            this.tabPage3.Controls.Add(this.buttonSummaryPulledOutMetersSearch);
-            this.tabPage3.Controls.Add(this.label4);
-            this.tabPage3.Controls.Add(this.label6);
-            this.tabPage3.Controls.Add(this.dateTimePickerSummaryPulledOutMetersYear);
-            this.tabPage3.Controls.Add(this.dateTimePickerSummaryPulledOutMetersMonth);
-            this.tabPage3.Location = new System.Drawing.Point(154, 4);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(824, 481);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Summary of Pulled-out Meters";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.reportViewerSummaryAlteration);
-            this.tabPage4.Controls.Add(this.buttonSummaryAlterationSearch);
-            this.tabPage4.Controls.Add(this.label7);
-            this.tabPage4.Controls.Add(this.dateTimePickerSummaryAlterationDate);
-            this.tabPage4.Location = new System.Drawing.Point(154, 4);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(824, 481);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Summary of Alteration";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.reportViewerSummaryReceivedMeters);
-            this.tabPage5.Controls.Add(this.buttonSummaryReceivedMetersSearch);
-            this.tabPage5.Controls.Add(this.label9);
-            this.tabPage5.Controls.Add(this.label8);
-            this.tabPage5.Controls.Add(this.dateTimePickerSummaryReceivedMetersTo);
-            this.tabPage5.Controls.Add(this.dateTimePickerSummaryReceivedMetersFrom);
-            this.tabPage5.Location = new System.Drawing.Point(154, 4);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(824, 481);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Summary of Received Meters";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // buttonSummaryReceivedMetersSearch
-            // 
-            this.buttonSummaryReceivedMetersSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSummaryReceivedMetersSearch.Location = new System.Drawing.Point(614, 24);
-            this.buttonSummaryReceivedMetersSearch.Name = "buttonSummaryReceivedMetersSearch";
-            this.buttonSummaryReceivedMetersSearch.Size = new System.Drawing.Size(74, 38);
-            this.buttonSummaryReceivedMetersSearch.TabIndex = 16;
-            this.buttonSummaryReceivedMetersSearch.Text = "Search";
-            this.buttonSummaryReceivedMetersSearch.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(342, 40);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(28, 16);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "To:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(88, 40);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 16);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "From:";
-            // 
-            // dateTimePickerSummaryReceivedMetersTo
-            // 
-            this.dateTimePickerSummaryReceivedMetersTo.CustomFormat = "MM/dd/yyyy";
-            this.dateTimePickerSummaryReceivedMetersTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerSummaryReceivedMetersTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerSummaryReceivedMetersTo.Location = new System.Drawing.Point(374, 32);
-            this.dateTimePickerSummaryReceivedMetersTo.Name = "dateTimePickerSummaryReceivedMetersTo";
-            this.dateTimePickerSummaryReceivedMetersTo.Size = new System.Drawing.Size(125, 24);
-            this.dateTimePickerSummaryReceivedMetersTo.TabIndex = 0;
-            // 
-            // dateTimePickerSummaryReceivedMetersFrom
-            // 
-            this.dateTimePickerSummaryReceivedMetersFrom.CustomFormat = "MM/dd/yyyy";
-            this.dateTimePickerSummaryReceivedMetersFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerSummaryReceivedMetersFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerSummaryReceivedMetersFrom.Location = new System.Drawing.Point(136, 32);
-            this.dateTimePickerSummaryReceivedMetersFrom.Name = "dateTimePickerSummaryReceivedMetersFrom";
-            this.dateTimePickerSummaryReceivedMetersFrom.Size = new System.Drawing.Size(118, 24);
-            this.dateTimePickerSummaryReceivedMetersFrom.TabIndex = 0;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Controls.Add(this.reportViewerSummaryDisposedMeters);
-            this.tabPage6.Controls.Add(this.buttonSummaryDisposedMetersSearch);
-            this.tabPage6.Controls.Add(this.label10);
-            this.tabPage6.Controls.Add(this.label11);
-            this.tabPage6.Controls.Add(this.dateTimePickerSummaryDisposedMetersTo);
-            this.tabPage6.Controls.Add(this.dateTimePickerSummaryDisposedMetersFrom);
-            this.tabPage6.Location = new System.Drawing.Point(154, 4);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(824, 481);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Summary of Disposed Meters";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Controls.Add(this.reportViewerSummaryTestedMeters);
-            this.tabPage7.Controls.Add(this.buttonSummaryTestedMetersSearch);
-            this.tabPage7.Controls.Add(this.label12);
-            this.tabPage7.Controls.Add(this.label13);
-            this.tabPage7.Controls.Add(this.dateTimePickerSummaryTestedMetersTo);
-            this.tabPage7.Controls.Add(this.dateTimePickerSummaryTestedMetersFrom);
-            this.tabPage7.Location = new System.Drawing.Point(154, 4);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(824, 481);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "Summary of Tested Meters";
-            this.tabPage7.UseVisualStyleBackColor = true;
+            reportDataSource1.Name = "DataSetMeterReports";
+            reportDataSource1.Value = this.SummaryChangedMetersBindingSource;
+            this.reportViewerSummaryChangedMeters.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewerSummaryChangedMeters.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportSummaryChangedMeters.rdlc";
+            this.reportViewerSummaryChangedMeters.Location = new System.Drawing.Point(26, 71);
+            this.reportViewerSummaryChangedMeters.Name = "reportViewerSummaryChangedMeters";
+            this.reportViewerSummaryChangedMeters.ServerReport.BearerToken = null;
+            this.reportViewerSummaryChangedMeters.Size = new System.Drawing.Size(777, 388);
+            this.reportViewerSummaryChangedMeters.TabIndex = 22;
             // 
             // buttonSummaryChangedMetersSearch
             // 
@@ -301,6 +180,7 @@
             this.dateTimePickerSummaryChangedMetersTo.Name = "dateTimePickerSummaryChangedMetersTo";
             this.dateTimePickerSummaryChangedMetersTo.Size = new System.Drawing.Size(125, 24);
             this.dateTimePickerSummaryChangedMetersTo.TabIndex = 17;
+            this.dateTimePickerSummaryChangedMetersTo.ValueChanged += new System.EventHandler(this.dateTimePickerSummaryChangedMetersTo_ValueChanged);
             // 
             // dateTimePickerSummaryChangedMetersFrom
             // 
@@ -312,13 +192,29 @@
             this.dateTimePickerSummaryChangedMetersFrom.Size = new System.Drawing.Size(118, 24);
             this.dateTimePickerSummaryChangedMetersFrom.TabIndex = 18;
             // 
-            // reportViewerSummaryChangedMeters
+            // tabPage2
             // 
-            this.reportViewerSummaryChangedMeters.Location = new System.Drawing.Point(26, 71);
-            this.reportViewerSummaryChangedMeters.Name = "reportViewerSummaryChangedMeters";
-            this.reportViewerSummaryChangedMeters.ServerReport.BearerToken = null;
-            this.reportViewerSummaryChangedMeters.Size = new System.Drawing.Size(777, 388);
-            this.reportViewerSummaryChangedMeters.TabIndex = 22;
+            this.tabPage2.Controls.Add(this.reportViewerChangedMeterPreviousRead);
+            this.tabPage2.Controls.Add(this.buttonChangedMeterPreviousReadSearch);
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.dateTimePickerChangedMeterPreviousReadYear);
+            this.tabPage2.Controls.Add(this.dateTimePickerChangedMeterPreviousReadMonth);
+            this.tabPage2.Location = new System.Drawing.Point(154, 4);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(824, 481);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Changed Meter with Previous Reading";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // reportViewerChangedMeterPreviousRead
+            // 
+            this.reportViewerChangedMeterPreviousRead.Location = new System.Drawing.Point(20, 70);
+            this.reportViewerChangedMeterPreviousRead.Name = "reportViewerChangedMeterPreviousRead";
+            this.reportViewerChangedMeterPreviousRead.ServerReport.BearerToken = null;
+            this.reportViewerChangedMeterPreviousRead.Size = new System.Drawing.Size(786, 393);
+            this.reportViewerChangedMeterPreviousRead.TabIndex = 27;
             // 
             // buttonChangedMeterPreviousReadSearch
             // 
@@ -372,13 +268,20 @@
             this.dateTimePickerChangedMeterPreviousReadMonth.Size = new System.Drawing.Size(111, 24);
             this.dateTimePickerChangedMeterPreviousReadMonth.TabIndex = 23;
             // 
-            // reportViewerChangedMeterPreviousRead
+            // tabPage3
             // 
-            this.reportViewerChangedMeterPreviousRead.Location = new System.Drawing.Point(20, 70);
-            this.reportViewerChangedMeterPreviousRead.Name = "reportViewerChangedMeterPreviousRead";
-            this.reportViewerChangedMeterPreviousRead.ServerReport.BearerToken = null;
-            this.reportViewerChangedMeterPreviousRead.Size = new System.Drawing.Size(786, 393);
-            this.reportViewerChangedMeterPreviousRead.TabIndex = 27;
+            this.tabPage3.Controls.Add(this.reportViewerSummaryPulledOutMeters);
+            this.tabPage3.Controls.Add(this.buttonSummaryPulledOutMetersSearch);
+            this.tabPage3.Controls.Add(this.label4);
+            this.tabPage3.Controls.Add(this.label6);
+            this.tabPage3.Controls.Add(this.dateTimePickerSummaryPulledOutMetersYear);
+            this.tabPage3.Controls.Add(this.dateTimePickerSummaryPulledOutMetersMonth);
+            this.tabPage3.Location = new System.Drawing.Point(154, 4);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(824, 481);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Summary of Pulled-out Meters";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // reportViewerSummaryPulledOutMeters
             // 
@@ -440,6 +343,19 @@
             this.dateTimePickerSummaryPulledOutMetersMonth.Size = new System.Drawing.Size(111, 24);
             this.dateTimePickerSummaryPulledOutMetersMonth.TabIndex = 29;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.reportViewerSummaryAlteration);
+            this.tabPage4.Controls.Add(this.buttonSummaryAlterationSearch);
+            this.tabPage4.Controls.Add(this.label7);
+            this.tabPage4.Controls.Add(this.dateTimePickerSummaryAlterationDate);
+            this.tabPage4.Location = new System.Drawing.Point(154, 4);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(824, 481);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Summary of Alteration";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
             // reportViewerSummaryAlteration
             // 
             this.reportViewerSummaryAlteration.Location = new System.Drawing.Point(24, 70);
@@ -478,6 +394,21 @@
             this.dateTimePickerSummaryAlterationDate.Size = new System.Drawing.Size(125, 24);
             this.dateTimePickerSummaryAlterationDate.TabIndex = 23;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.reportViewerSummaryReceivedMeters);
+            this.tabPage5.Controls.Add(this.buttonSummaryReceivedMetersSearch);
+            this.tabPage5.Controls.Add(this.label9);
+            this.tabPage5.Controls.Add(this.label8);
+            this.tabPage5.Controls.Add(this.dateTimePickerSummaryReceivedMetersTo);
+            this.tabPage5.Controls.Add(this.dateTimePickerSummaryReceivedMetersFrom);
+            this.tabPage5.Location = new System.Drawing.Point(154, 4);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(824, 481);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Summary of Received Meters";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
             // reportViewerSummaryReceivedMeters
             // 
             this.reportViewerSummaryReceivedMeters.Location = new System.Drawing.Point(25, 68);
@@ -485,6 +416,72 @@
             this.reportViewerSummaryReceivedMeters.ServerReport.BearerToken = null;
             this.reportViewerSummaryReceivedMeters.Size = new System.Drawing.Size(777, 388);
             this.reportViewerSummaryReceivedMeters.TabIndex = 27;
+            // 
+            // buttonSummaryReceivedMetersSearch
+            // 
+            this.buttonSummaryReceivedMetersSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSummaryReceivedMetersSearch.Location = new System.Drawing.Point(614, 24);
+            this.buttonSummaryReceivedMetersSearch.Name = "buttonSummaryReceivedMetersSearch";
+            this.buttonSummaryReceivedMetersSearch.Size = new System.Drawing.Size(74, 38);
+            this.buttonSummaryReceivedMetersSearch.TabIndex = 16;
+            this.buttonSummaryReceivedMetersSearch.Text = "Search";
+            this.buttonSummaryReceivedMetersSearch.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(342, 40);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(28, 16);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "To:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(88, 40);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(42, 16);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "From:";
+            // 
+            // dateTimePickerSummaryReceivedMetersTo
+            // 
+            this.dateTimePickerSummaryReceivedMetersTo.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePickerSummaryReceivedMetersTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerSummaryReceivedMetersTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerSummaryReceivedMetersTo.Location = new System.Drawing.Point(374, 32);
+            this.dateTimePickerSummaryReceivedMetersTo.Name = "dateTimePickerSummaryReceivedMetersTo";
+            this.dateTimePickerSummaryReceivedMetersTo.Size = new System.Drawing.Size(125, 24);
+            this.dateTimePickerSummaryReceivedMetersTo.TabIndex = 0;
+            this.dateTimePickerSummaryReceivedMetersTo.ValueChanged += new System.EventHandler(this.dateTimePickerSummaryReceivedMetersTo_ValueChanged);
+            // 
+            // dateTimePickerSummaryReceivedMetersFrom
+            // 
+            this.dateTimePickerSummaryReceivedMetersFrom.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePickerSummaryReceivedMetersFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerSummaryReceivedMetersFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerSummaryReceivedMetersFrom.Location = new System.Drawing.Point(136, 32);
+            this.dateTimePickerSummaryReceivedMetersFrom.Name = "dateTimePickerSummaryReceivedMetersFrom";
+            this.dateTimePickerSummaryReceivedMetersFrom.Size = new System.Drawing.Size(118, 24);
+            this.dateTimePickerSummaryReceivedMetersFrom.TabIndex = 0;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.reportViewerSummaryDisposedMeters);
+            this.tabPage6.Controls.Add(this.buttonSummaryDisposedMetersSearch);
+            this.tabPage6.Controls.Add(this.label10);
+            this.tabPage6.Controls.Add(this.label11);
+            this.tabPage6.Controls.Add(this.dateTimePickerSummaryDisposedMetersTo);
+            this.tabPage6.Controls.Add(this.dateTimePickerSummaryDisposedMetersFrom);
+            this.tabPage6.Location = new System.Drawing.Point(154, 4);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(824, 481);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Summary of Disposed Meters";
+            this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // reportViewerSummaryDisposedMeters
             // 
@@ -533,6 +530,7 @@
             this.dateTimePickerSummaryDisposedMetersTo.Name = "dateTimePickerSummaryDisposedMetersTo";
             this.dateTimePickerSummaryDisposedMetersTo.Size = new System.Drawing.Size(125, 24);
             this.dateTimePickerSummaryDisposedMetersTo.TabIndex = 28;
+            this.dateTimePickerSummaryDisposedMetersTo.ValueChanged += new System.EventHandler(this.dateTimePickerSummaryDisposedMetersTo_ValueChanged);
             // 
             // dateTimePickerSummaryDisposedMetersFrom
             // 
@@ -543,6 +541,21 @@
             this.dateTimePickerSummaryDisposedMetersFrom.Name = "dateTimePickerSummaryDisposedMetersFrom";
             this.dateTimePickerSummaryDisposedMetersFrom.Size = new System.Drawing.Size(118, 24);
             this.dateTimePickerSummaryDisposedMetersFrom.TabIndex = 29;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.reportViewerSummaryTestedMeters);
+            this.tabPage7.Controls.Add(this.buttonSummaryTestedMetersSearch);
+            this.tabPage7.Controls.Add(this.label12);
+            this.tabPage7.Controls.Add(this.label13);
+            this.tabPage7.Controls.Add(this.dateTimePickerSummaryTestedMetersTo);
+            this.tabPage7.Controls.Add(this.dateTimePickerSummaryTestedMetersFrom);
+            this.tabPage7.Location = new System.Drawing.Point(154, 4);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(824, 481);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Summary of Tested Meters";
+            this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // reportViewerSummaryTestedMeters
             // 
@@ -591,6 +604,7 @@
             this.dateTimePickerSummaryTestedMetersTo.Name = "dateTimePickerSummaryTestedMetersTo";
             this.dateTimePickerSummaryTestedMetersTo.Size = new System.Drawing.Size(125, 24);
             this.dateTimePickerSummaryTestedMetersTo.TabIndex = 34;
+            this.dateTimePickerSummaryTestedMetersTo.ValueChanged += new System.EventHandler(this.dateTimePickerSummaryTestedMetersTo_ValueChanged);
             // 
             // dateTimePickerSummaryTestedMetersFrom
             // 
@@ -601,6 +615,16 @@
             this.dateTimePickerSummaryTestedMetersFrom.Name = "dateTimePickerSummaryTestedMetersFrom";
             this.dateTimePickerSummaryTestedMetersFrom.Size = new System.Drawing.Size(118, 24);
             this.dateTimePickerSummaryTestedMetersFrom.TabIndex = 35;
+            // 
+            // DataSetMeterReports
+            // 
+            this.DataSetMeterReports.DataSetName = "DataSetMeterReports";
+            this.DataSetMeterReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // SummaryChangedMetersBindingSource
+            // 
+            this.SummaryChangedMetersBindingSource.DataMember = "SummaryChangedMeters";
+            this.SummaryChangedMetersBindingSource.DataSource = this.DataSetMeterReports;
             // 
             // MeterReportsForm
             // 
@@ -628,6 +652,8 @@
             this.tabPage6.PerformLayout();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetMeterReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SummaryChangedMetersBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -682,5 +708,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DateTimePicker dateTimePickerSummaryTestedMetersTo;
         private System.Windows.Forms.DateTimePicker dateTimePickerSummaryTestedMetersFrom;
+        private System.Windows.Forms.BindingSource SummaryChangedMetersBindingSource;
+        private DataSetMeterReports DataSetMeterReports;
     }
 }

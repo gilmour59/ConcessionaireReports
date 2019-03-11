@@ -81,7 +81,59 @@ namespace ConcessionaireReports
 
         private void buttonSummaryChangedMetersSearch_Click(object sender, EventArgs e)
         {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
 
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_getChangedMeterSummary_", conn))
+                    {
+
+                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+
+                        DataSetMeterReports ds = new DataSetMeterReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@asOfFrom", dateTimePickerSummaryChangedMetersFrom.Value.Date);
+                        adapter.SelectCommand.Parameters["@asOfFrom"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@asOfTo", dateTimePickerSummaryChangedMetersTo.Value.Date);
+                        adapter.SelectCommand.Parameters["@asOfTo"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "SummaryChangedMeters");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetMeterReports", ds.Tables["SummaryChangedMeters"]);
+                        reportViewerSummaryChangedMeters.LocalReport.DataSources.Clear();
+                        reportViewerSummaryChangedMeters.LocalReport.DataSources.Add(rds);
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            this.reportViewerSummaryChangedMeters.RefreshReport();
+        }
+
+        private void dateTimePickerSummaryChangedMetersTo_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerSummaryChangedMetersFrom.MaxDate = dateTimePickerSummaryChangedMetersTo.Value.Date;
+        }
+
+        private void dateTimePickerSummaryReceivedMetersTo_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerSummaryReceivedMetersFrom.MaxDate = dateTimePickerSummaryReceivedMetersTo.Value.Date;
+        }
+
+        private void dateTimePickerSummaryDisposedMetersTo_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerSummaryDisposedMetersFrom.MaxDate = dateTimePickerSummaryDisposedMetersTo.Value.Date;
+        }
+
+        private void dateTimePickerSummaryTestedMetersTo_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerSummaryTestedMetersFrom.MaxDate = dateTimePickerSummaryTestedMetersTo.Value.Date;
         }
     }
 }
