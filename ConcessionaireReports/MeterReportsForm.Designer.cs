@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.SummaryChangedMetersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSetMeterReports = new ConcessionaireReports.DataSetMeterReports();
             this.tabControlMeterReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.reportViewerSummaryChangedMeters = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -78,8 +80,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.dateTimePickerSummaryTestedMetersTo = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerSummaryTestedMetersFrom = new System.Windows.Forms.DateTimePicker();
-            this.DataSetMeterReports = new ConcessionaireReports.DataSetMeterReports();
-            this.SummaryChangedMetersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.SummaryChangedMetersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetMeterReports)).BeginInit();
             this.tabControlMeterReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -88,9 +90,17 @@
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetMeterReports)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SummaryChangedMetersBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // SummaryChangedMetersBindingSource
+            // 
+            this.SummaryChangedMetersBindingSource.DataMember = "SummaryChangedMeters";
+            this.SummaryChangedMetersBindingSource.DataSource = this.DataSetMeterReports;
+            // 
+            // DataSetMeterReports
+            // 
+            this.DataSetMeterReports.DataSetName = "DataSetMeterReports";
+            this.DataSetMeterReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabControlMeterReports
             // 
@@ -107,7 +117,7 @@
             this.tabControlMeterReports.Multiline = true;
             this.tabControlMeterReports.Name = "tabControlMeterReports";
             this.tabControlMeterReports.SelectedIndex = 0;
-            this.tabControlMeterReports.Size = new System.Drawing.Size(982, 489);
+            this.tabControlMeterReports.Size = new System.Drawing.Size(1152, 563);
             this.tabControlMeterReports.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControlMeterReports.TabIndex = 1;
             this.tabControlMeterReports.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControlMeterReports_DrawItem);
@@ -123,7 +133,7 @@
             this.tabPage1.Location = new System.Drawing.Point(154, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(824, 481);
+            this.tabPage1.Size = new System.Drawing.Size(994, 555);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Summary of Changed Meters";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -137,7 +147,7 @@
             this.reportViewerSummaryChangedMeters.Location = new System.Drawing.Point(26, 71);
             this.reportViewerSummaryChangedMeters.Name = "reportViewerSummaryChangedMeters";
             this.reportViewerSummaryChangedMeters.ServerReport.BearerToken = null;
-            this.reportViewerSummaryChangedMeters.Size = new System.Drawing.Size(777, 388);
+            this.reportViewerSummaryChangedMeters.Size = new System.Drawing.Size(946, 464);
             this.reportViewerSummaryChangedMeters.TabIndex = 22;
             // 
             // buttonSummaryChangedMetersSearch
@@ -203,7 +213,7 @@
             this.tabPage2.Location = new System.Drawing.Point(154, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(824, 481);
+            this.tabPage2.Size = new System.Drawing.Size(994, 555);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Changed Meter with Previous Reading";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -213,7 +223,7 @@
             this.reportViewerChangedMeterPreviousRead.Location = new System.Drawing.Point(20, 70);
             this.reportViewerChangedMeterPreviousRead.Name = "reportViewerChangedMeterPreviousRead";
             this.reportViewerChangedMeterPreviousRead.ServerReport.BearerToken = null;
-            this.reportViewerChangedMeterPreviousRead.Size = new System.Drawing.Size(786, 393);
+            this.reportViewerChangedMeterPreviousRead.Size = new System.Drawing.Size(957, 466);
             this.reportViewerChangedMeterPreviousRead.TabIndex = 27;
             // 
             // buttonChangedMeterPreviousReadSearch
@@ -278,7 +288,7 @@
             this.tabPage3.Controls.Add(this.dateTimePickerSummaryPulledOutMetersMonth);
             this.tabPage3.Location = new System.Drawing.Point(154, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(824, 481);
+            this.tabPage3.Size = new System.Drawing.Size(994, 555);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Summary of Pulled-out Meters";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -288,7 +298,7 @@
             this.reportViewerSummaryPulledOutMeters.Location = new System.Drawing.Point(19, 70);
             this.reportViewerSummaryPulledOutMeters.Name = "reportViewerSummaryPulledOutMeters";
             this.reportViewerSummaryPulledOutMeters.ServerReport.BearerToken = null;
-            this.reportViewerSummaryPulledOutMeters.Size = new System.Drawing.Size(786, 393);
+            this.reportViewerSummaryPulledOutMeters.Size = new System.Drawing.Size(957, 467);
             this.reportViewerSummaryPulledOutMeters.TabIndex = 33;
             // 
             // buttonSummaryPulledOutMetersSearch
@@ -351,7 +361,7 @@
             this.tabPage4.Controls.Add(this.dateTimePickerSummaryAlterationDate);
             this.tabPage4.Location = new System.Drawing.Point(154, 4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(824, 481);
+            this.tabPage4.Size = new System.Drawing.Size(994, 555);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Summary of Alteration";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -361,7 +371,7 @@
             this.reportViewerSummaryAlteration.Location = new System.Drawing.Point(24, 70);
             this.reportViewerSummaryAlteration.Name = "reportViewerSummaryAlteration";
             this.reportViewerSummaryAlteration.ServerReport.BearerToken = null;
-            this.reportViewerSummaryAlteration.Size = new System.Drawing.Size(777, 388);
+            this.reportViewerSummaryAlteration.Size = new System.Drawing.Size(953, 467);
             this.reportViewerSummaryAlteration.TabIndex = 26;
             // 
             // buttonSummaryAlterationSearch
@@ -404,7 +414,7 @@
             this.tabPage5.Controls.Add(this.dateTimePickerSummaryReceivedMetersFrom);
             this.tabPage5.Location = new System.Drawing.Point(154, 4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(824, 481);
+            this.tabPage5.Size = new System.Drawing.Size(994, 555);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Summary of Received Meters";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -414,7 +424,7 @@
             this.reportViewerSummaryReceivedMeters.Location = new System.Drawing.Point(25, 68);
             this.reportViewerSummaryReceivedMeters.Name = "reportViewerSummaryReceivedMeters";
             this.reportViewerSummaryReceivedMeters.ServerReport.BearerToken = null;
-            this.reportViewerSummaryReceivedMeters.Size = new System.Drawing.Size(777, 388);
+            this.reportViewerSummaryReceivedMeters.Size = new System.Drawing.Size(951, 469);
             this.reportViewerSummaryReceivedMeters.TabIndex = 27;
             // 
             // buttonSummaryReceivedMetersSearch
@@ -478,7 +488,7 @@
             this.tabPage6.Controls.Add(this.dateTimePickerSummaryDisposedMetersFrom);
             this.tabPage6.Location = new System.Drawing.Point(154, 4);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(824, 481);
+            this.tabPage6.Size = new System.Drawing.Size(994, 555);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Summary of Disposed Meters";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -488,7 +498,7 @@
             this.reportViewerSummaryDisposedMeters.Location = new System.Drawing.Point(24, 68);
             this.reportViewerSummaryDisposedMeters.Name = "reportViewerSummaryDisposedMeters";
             this.reportViewerSummaryDisposedMeters.ServerReport.BearerToken = null;
-            this.reportViewerSummaryDisposedMeters.Size = new System.Drawing.Size(777, 388);
+            this.reportViewerSummaryDisposedMeters.Size = new System.Drawing.Size(951, 467);
             this.reportViewerSummaryDisposedMeters.TabIndex = 33;
             // 
             // buttonSummaryDisposedMetersSearch
@@ -552,7 +562,7 @@
             this.tabPage7.Controls.Add(this.dateTimePickerSummaryTestedMetersFrom);
             this.tabPage7.Location = new System.Drawing.Point(154, 4);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(824, 481);
+            this.tabPage7.Size = new System.Drawing.Size(994, 555);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Summary of Tested Meters";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -562,7 +572,7 @@
             this.reportViewerSummaryTestedMeters.Location = new System.Drawing.Point(24, 68);
             this.reportViewerSummaryTestedMeters.Name = "reportViewerSummaryTestedMeters";
             this.reportViewerSummaryTestedMeters.ServerReport.BearerToken = null;
-            this.reportViewerSummaryTestedMeters.Size = new System.Drawing.Size(777, 388);
+            this.reportViewerSummaryTestedMeters.Size = new System.Drawing.Size(953, 467);
             this.reportViewerSummaryTestedMeters.TabIndex = 39;
             // 
             // buttonSummaryTestedMetersSearch
@@ -616,27 +626,19 @@
             this.dateTimePickerSummaryTestedMetersFrom.Size = new System.Drawing.Size(118, 24);
             this.dateTimePickerSummaryTestedMetersFrom.TabIndex = 35;
             // 
-            // DataSetMeterReports
-            // 
-            this.DataSetMeterReports.DataSetName = "DataSetMeterReports";
-            this.DataSetMeterReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // SummaryChangedMetersBindingSource
-            // 
-            this.SummaryChangedMetersBindingSource.DataMember = "SummaryChangedMeters";
-            this.SummaryChangedMetersBindingSource.DataSource = this.DataSetMeterReports;
-            // 
             // MeterReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 513);
+            this.ClientSize = new System.Drawing.Size(1176, 587);
             this.Controls.Add(this.tabControlMeterReports);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MeterReportsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Meter Reports";
             this.Load += new System.EventHandler(this.MeterReportsForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.SummaryChangedMetersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetMeterReports)).EndInit();
             this.tabControlMeterReports.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -652,8 +654,6 @@
             this.tabPage6.PerformLayout();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetMeterReports)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SummaryChangedMetersBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

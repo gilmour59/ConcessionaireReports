@@ -1261,7 +1261,6 @@
             </Textbox>
           </ReportItems>
           <KeepTogether>true</KeepTogether>
-          <Top>0cm</Top>
           <Left>4.99987cm</Left>
           <Height>0.81548cm</Height>
           <Width>16.81843cm</Width>

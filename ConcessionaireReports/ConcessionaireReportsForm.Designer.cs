@@ -183,7 +183,7 @@
             this.tabControlConcessionaireReports.Multiline = true;
             this.tabControlConcessionaireReports.Name = "tabControlConcessionaireReports";
             this.tabControlConcessionaireReports.SelectedIndex = 0;
-            this.tabControlConcessionaireReports.Size = new System.Drawing.Size(982, 489);
+            this.tabControlConcessionaireReports.Size = new System.Drawing.Size(1152, 563);
             this.tabControlConcessionaireReports.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControlConcessionaireReports.TabIndex = 0;
             this.tabControlConcessionaireReports.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControlConcessionaireReports_DrawItem);
@@ -201,7 +201,7 @@
             this.tabPage1.Location = new System.Drawing.Point(154, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(824, 481);
+            this.tabPage1.Size = new System.Drawing.Size(994, 555);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Account List Per Book";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -215,7 +215,7 @@
             this.reportViewerAccountPerBook.Location = new System.Drawing.Point(26, 66);
             this.reportViewerAccountPerBook.Name = "reportViewerAccountPerBook";
             this.reportViewerAccountPerBook.ServerReport.BearerToken = null;
-            this.reportViewerAccountPerBook.Size = new System.Drawing.Size(778, 392);
+            this.reportViewerAccountPerBook.Size = new System.Drawing.Size(944, 467);
             this.reportViewerAccountPerBook.TabIndex = 3;
             // 
             // buttonAccountPerBookSearch
@@ -301,7 +301,7 @@
             this.tabPage2.Location = new System.Drawing.Point(154, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(824, 481);
+            this.tabPage2.Size = new System.Drawing.Size(994, 555);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Account List Per Barangay";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -315,7 +315,7 @@
             this.reportViewerAccountPerBarangay.Location = new System.Drawing.Point(27, 65);
             this.reportViewerAccountPerBarangay.Name = "reportViewerAccountPerBarangay";
             this.reportViewerAccountPerBarangay.ServerReport.BearerToken = null;
-            this.reportViewerAccountPerBarangay.Size = new System.Drawing.Size(773, 395);
+            this.reportViewerAccountPerBarangay.Size = new System.Drawing.Size(946, 471);
             this.reportViewerAccountPerBarangay.TabIndex = 10;
             // 
             // buttonAccountPerBarangaySearch
@@ -380,7 +380,7 @@
             this.tabPage3.Controls.Add(this.label7);
             this.tabPage3.Location = new System.Drawing.Point(154, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(824, 481);
+            this.tabPage3.Size = new System.Drawing.Size(994, 555);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Account List Per Classification";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -394,7 +394,7 @@
             this.reportViewerAccountPerClassification.Location = new System.Drawing.Point(25, 60);
             this.reportViewerAccountPerClassification.Name = "reportViewerAccountPerClassification";
             this.reportViewerAccountPerClassification.ServerReport.BearerToken = null;
-            this.reportViewerAccountPerClassification.Size = new System.Drawing.Size(775, 397);
+            this.reportViewerAccountPerClassification.Size = new System.Drawing.Size(948, 476);
             this.reportViewerAccountPerClassification.TabIndex = 15;
             // 
             // buttonAccountPerClassificationSearch
@@ -453,7 +453,7 @@
             this.tabPage4.Controls.Add(this.reportViewerSummaryAccountsPerClass);
             this.tabPage4.Location = new System.Drawing.Point(154, 4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(824, 481);
+            this.tabPage4.Size = new System.Drawing.Size(994, 555);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Summary of Accounts Per Classification";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -467,7 +467,7 @@
             this.reportViewerSummaryAccountsPerClass.Location = new System.Drawing.Point(23, 24);
             this.reportViewerSummaryAccountsPerClass.Name = "reportViewerSummaryAccountsPerClass";
             this.reportViewerSummaryAccountsPerClass.ServerReport.BearerToken = null;
-            this.reportViewerSummaryAccountsPerClass.Size = new System.Drawing.Size(776, 435);
+            this.reportViewerSummaryAccountsPerClass.Size = new System.Drawing.Size(952, 511);
             this.reportViewerSummaryAccountsPerClass.TabIndex = 0;
             // 
             // tabPage5
@@ -480,7 +480,7 @@
             this.tabPage5.Controls.Add(this.dateTimePickerNewConnectionFrom);
             this.tabPage5.Location = new System.Drawing.Point(154, 4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(824, 481);
+            this.tabPage5.Size = new System.Drawing.Size(994, 555);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "New Connection Summary";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -491,10 +491,10 @@
             reportDataSource5.Value = this.NewConnectionSummaryBindingSource;
             this.reportViewerNewConnectionSummary.LocalReport.DataSources.Add(reportDataSource5);
             this.reportViewerNewConnectionSummary.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportNewConnectionSummary.rdlc";
-            this.reportViewerNewConnectionSummary.Location = new System.Drawing.Point(30, 75);
+            this.reportViewerNewConnectionSummary.Location = new System.Drawing.Point(26, 75);
             this.reportViewerNewConnectionSummary.Name = "reportViewerNewConnectionSummary";
             this.reportViewerNewConnectionSummary.ServerReport.BearerToken = null;
-            this.reportViewerNewConnectionSummary.Size = new System.Drawing.Size(768, 383);
+            this.reportViewerNewConnectionSummary.Size = new System.Drawing.Size(946, 459);
             this.reportViewerNewConnectionSummary.TabIndex = 0;
             // 
             // buttonNewConnectionSearch
@@ -559,7 +559,7 @@
             this.tabPage6.Controls.Add(this.dateTimePickerAccountByStatusAsOf);
             this.tabPage6.Location = new System.Drawing.Point(154, 4);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(824, 481);
+            this.tabPage6.Size = new System.Drawing.Size(994, 555);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Account List By Status";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -573,7 +573,7 @@
             this.reportViewerAccountByStatus.Location = new System.Drawing.Point(25, 67);
             this.reportViewerAccountByStatus.Name = "reportViewerAccountByStatus";
             this.reportViewerAccountByStatus.ServerReport.BearerToken = null;
-            this.reportViewerAccountByStatus.Size = new System.Drawing.Size(779, 394);
+            this.reportViewerAccountByStatus.Size = new System.Drawing.Size(947, 469);
             this.reportViewerAccountByStatus.TabIndex = 17;
             // 
             // buttonAccountByStatusSearch
@@ -637,7 +637,7 @@
             this.tabPage7.Controls.Add(this.label13);
             this.tabPage7.Location = new System.Drawing.Point(154, 4);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(824, 481);
+            this.tabPage7.Size = new System.Drawing.Size(994, 555);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Senior Citizen Accounts";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -651,7 +651,7 @@
             this.reportViewerSeniorCitizenAccounts.Location = new System.Drawing.Point(24, 61);
             this.reportViewerSeniorCitizenAccounts.Name = "reportViewerSeniorCitizenAccounts";
             this.reportViewerSeniorCitizenAccounts.ServerReport.BearerToken = null;
-            this.reportViewerSeniorCitizenAccounts.Size = new System.Drawing.Size(780, 397);
+            this.reportViewerSeniorCitizenAccounts.Size = new System.Drawing.Size(949, 475);
             this.reportViewerSeniorCitizenAccounts.TabIndex = 7;
             // 
             // buttonSeniorCitizenSearch
@@ -718,7 +718,7 @@
             this.tabPage8.Controls.Add(this.label16);
             this.tabPage8.Location = new System.Drawing.Point(154, 4);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(824, 481);
+            this.tabPage8.Size = new System.Drawing.Size(994, 555);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "Account List Per Meter Size";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -732,7 +732,7 @@
             this.reportViewerAccountPerMeterSize.Location = new System.Drawing.Point(24, 65);
             this.reportViewerAccountPerMeterSize.Name = "reportViewerAccountPerMeterSize";
             this.reportViewerAccountPerMeterSize.ServerReport.BearerToken = null;
-            this.reportViewerAccountPerMeterSize.Size = new System.Drawing.Size(779, 390);
+            this.reportViewerAccountPerMeterSize.Size = new System.Drawing.Size(949, 472);
             this.reportViewerAccountPerMeterSize.TabIndex = 11;
             // 
             // comboBoxAccountPerMeterSizeMeterStatus
@@ -811,7 +811,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 513);
+            this.ClientSize = new System.Drawing.Size(1176, 587);
             this.Controls.Add(this.tabControlConcessionaireReports);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
