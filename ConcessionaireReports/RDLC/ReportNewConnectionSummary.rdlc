@@ -6,22 +6,22 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.17633cm</Width>
+              <Width>1.92529cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.74042cm</Width>
+              <Width>2.2825cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.1393cm</Width>
+              <Width>1.60088cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.6cm</Width>
+              <Width>4.9cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.6cm</Width>
+              <Width>4.9cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.67159cm</Width>
+              <Width>2.37cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.5cm</Width>
@@ -44,12 +44,11 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.9175cm</Height>
+              <Height>0.45cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox28">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -58,11 +57,14 @@
                               <Value>Date</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
+                                <FontSize>8.7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox28</rd:DefaultName>
@@ -82,32 +84,22 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox12">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Account </Value>
+                              <Value>Account No.</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
+                                <FontSize>8.7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
-                        </Paragraph>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>No.</Value>
-                              <Style>
-                                <FontFamily>calibri</FontFamily>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox12</rd:DefaultName>
@@ -127,32 +119,22 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox30">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Zone-</Value>
+                              <Value>Zone-Book</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
+                                <FontSize>8.7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
-                        </Paragraph>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Book</Value>
-                              <Style>
-                                <FontFamily>calibri</FontFamily>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox30</rd:DefaultName>
@@ -172,7 +154,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox23">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -181,11 +162,14 @@
                               <Value>Name</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
+                                <FontSize>8.7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox23</rd:DefaultName>
@@ -205,7 +189,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox31">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -214,11 +197,14 @@
                               <Value>Address</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
+                                <FontSize>8.7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox31</rd:DefaultName>
@@ -238,32 +224,22 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox32">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Class-</Value>
+                              <Value>Class-Meter Size</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
+                                <FontSize>8.7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
-                        </Paragraph>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>MeterSize</Value>
-                              <Style>
-                                <FontFamily>calibri</FontFamily>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox32</rd:DefaultName>
@@ -283,20 +259,22 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox33">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>JO No.</Value>
+                              <Value>J.O. No.</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
+                                <FontSize>8.7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox33</rd:DefaultName>
@@ -316,7 +294,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox35">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -325,11 +302,14 @@
                               <Value>Brand</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
+                                <FontSize>8.7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox35</rd:DefaultName>
@@ -349,7 +329,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox37">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -358,11 +337,14 @@
                               <Value>Meter No.</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
+                                <FontSize>8.7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox37</rd:DefaultName>
@@ -382,7 +364,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox39">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -391,11 +372,14 @@
                               <Value>RDNG</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
+                                <FontSize>8.7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox39</rd:DefaultName>
@@ -415,7 +399,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox15">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -424,11 +407,14 @@
                               <Value>residential</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
+                                <FontSize>8.7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox15</rd:DefaultName>
@@ -451,7 +437,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox18">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -460,11 +445,14 @@
                               <Value>commercial</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
+                                <FontSize>8.7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox18</rd:DefaultName>
@@ -487,12 +475,11 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.45cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="date_connected1">
-                      <CanGrow>true</CanGrow>
                       <HideDuplicates>DataSetConcessionaireReports</HideDuplicates>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -502,13 +489,13 @@
                               <Value>=Fields!date_connected.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8.5pt</FontSize>
                                 <Format>d</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -529,7 +516,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="ref_no">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -538,12 +524,12 @@
                               <Value>=Fields!ref_no.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8.5pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -564,7 +550,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="concessionaire_name">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -573,11 +558,13 @@
                               <Value>=Fields!zone_id.Value &amp; "-" &amp; Fields!book_id.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8.5pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>concessionaire_name</rd:DefaultName>
@@ -597,7 +584,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="concessionaire_name1">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -606,7 +592,7 @@
                               <Value>=Fields!concessionaire_name.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8.5pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -630,7 +616,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="address">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -639,7 +624,7 @@
                               <Value>=Fields!address.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8.5pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -663,7 +648,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox4">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -672,11 +656,13 @@
                               <Value>=Fields!classification_id.Value &amp; "-" &amp; Fields!meter_size_id.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8.5pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox4</rd:DefaultName>
@@ -696,7 +682,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="jo_number">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -705,11 +690,13 @@
                               <Value>=Fields!jo_number.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8.5pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>jo_number</rd:DefaultName>
@@ -729,7 +716,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="brand">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -738,7 +724,7 @@
                               <Value>=Fields!brand.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8.5pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -762,7 +748,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="meter_no">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -771,7 +756,7 @@
                               <Value>=Fields!meter_no.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8.5pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -795,7 +780,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="init_reading">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -804,11 +788,13 @@
                               <Value>=Fields!init_reading.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8.5pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>init_reading</rd:DefaultName>
@@ -828,7 +814,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="residential">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -837,7 +822,7 @@
                               <Value>=Fields!residential.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8.5pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -864,7 +849,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="commercial">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -873,7 +857,7 @@
                               <Value>=Fields!commercial.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8.5pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -931,8 +915,8 @@
         <DataSetName>DataSetConcessionaireReports</DataSetName>
         <Top>2.89875cm</Top>
         <Left>0.34417cm</Left>
-        <Height>1.5175cm</Height>
-        <Width>26.48401cm</Width>
+        <Height>0.9cm</Height>
+        <Width>26.53504cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -960,7 +944,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox16</rd:DefaultName>
-        <Top>1.47978cm</Top>
+        <Top>1.32103cm</Top>
         <Left>9.56117cm</Left>
         <Height>0.6cm</Height>
         <Width>7.79167cm</Width>
@@ -994,7 +978,7 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <Top>2.07978cm</Top>
+        <Top>1.95278cm</Top>
         <Left>9.56117cm</Left>
         <Height>0.6cm</Height>
         <Width>7.79167cm</Width>
@@ -1029,7 +1013,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>header_address</rd:DefaultName>
-        <Top>0.89714cm</Top>
+        <Top>0.70664cm</Top>
         <Left>9.56117cm</Left>
         <Height>0.6cm</Height>
         <Width>7.79167cm</Width>
@@ -1065,7 +1049,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>header_name</rd:DefaultName>
-        <Top>0.26186cm</Top>
+        <Top>0.07136cm</Top>
         <Left>9.56117cm</Left>
         <Height>0.6cm</Height>
         <Width>7.79167cm</Width>
@@ -1081,10 +1065,10 @@
         </Style>
       </Textbox>
       <Line Name="Line4">
-        <Top>4.55031cm</Top>
+        <Top>3.91531cm</Top>
         <Left>0.34417cm</Left>
         <Height>0cm</Height>
-        <Width>25.95547cm</Width>
+        <Width>26.0065cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -1092,14 +1076,116 @@
           </Border>
         </Style>
       </Line>
+      <Textbox Name="Textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Residential: " &amp; Sum(Fields!residential.Value, "DataSetConcessionaireReports")</Value>
+                <Style>
+                  <FontFamily>calibri</FontFamily>
+                  <FontSize>9.5pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>4.08464cm</Top>
+        <Left>8.01621cm</Left>
+        <Height>0.46567cm</Height>
+        <Width>3.55cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Commercial: " &amp; Sum(Fields!commercial.Value, "DataSetConcessionaireReports")</Value>
+                <Style>
+                  <FontFamily>calibri</FontFamily>
+                  <FontSize>9.5pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>4.08464cm</Top>
+        <Left>11.60806cm</Left>
+        <Height>0.46567cm</Height>
+        <Width>3.55cm</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="New Connection Total: " &amp; Count(Fields!ref_no.Value, "DataSetConcessionaireReports")</Value>
+                <Style>
+                  <FontFamily>calibri</FontFamily>
+                  <FontSize>9.5pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>4.08464cm</Top>
+        <Left>15.19991cm</Left>
+        <Height>0.46567cm</Height>
+        <Width>5.3cm</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>1.83521in</Height>
+    <Height>1.85625in</Height>
     <Style />
   </Body>
-  <Width>10.64102in</Width>
+  <Width>10.58237in</Width>
   <Page>
     <PageFooter>
-      <Height>2.8575cm</Height>
+      <Height>1.04016cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -1175,7 +1261,7 @@
             </Textbox>
           </ReportItems>
           <KeepTogether>true</KeepTogether>
-          <Top>1.905cm</Top>
+          <Top>0cm</Top>
           <Left>4.99987cm</Left>
           <Height>0.81548cm</Height>
           <Width>16.81843cm</Width>
@@ -1185,108 +1271,6 @@
             </Border>
           </Style>
         </Rectangle>
-        <Textbox Name="Textbox3">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>="Residential: " &amp; SUM(ReportItems!residential.Value)</Value>
-                  <Style>
-                    <FontFamily>calibri</FontFamily>
-                    <FontSize>9.5pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.10583cm</Top>
-          <Left>1.82487cm</Left>
-          <Height>0.46567cm</Height>
-          <Width>5.22521cm</Width>
-          <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox1">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>="New Connection Total: " &amp; Count(ReportItems!ref_no.Value)</Value>
-                  <Style>
-                    <FontFamily>calibri</FontFamily>
-                    <FontSize>9.5pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>1.19945cm</Top>
-          <Left>1.82487cm</Left>
-          <Height>0.46567cm</Height>
-          <Width>5.22521cm</Width>
-          <ZIndex>2</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox2">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>="Commercial: " &amp; SUM(ReportItems!commercial.Value)</Value>
-                  <Style>
-                    <FontFamily>calibri</FontFamily>
-                    <FontSize>9.5pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.65264cm</Top>
-          <Left>1.82487cm</Left>
-          <Height>0.46567cm</Height>
-          <Width>5.22521cm</Width>
-          <ZIndex>3</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
       </ReportItems>
       <Style>
         <Border>
@@ -1298,7 +1282,7 @@
     <PageWidth>27.94cm</PageWidth>
     <LeftMargin>0.55cm</LeftMargin>
     <RightMargin>0.3cm</RightMargin>
-    <TopMargin>0.7cm</TopMargin>
+    <TopMargin>0.5cm</TopMargin>
     <BottomMargin>0.4cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />

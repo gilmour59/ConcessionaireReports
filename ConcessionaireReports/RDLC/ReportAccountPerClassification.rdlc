@@ -224,12 +224,11 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.5cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox6">
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -238,6 +237,7 @@
                                   <Value>Seq.</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -262,7 +262,6 @@
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox12">
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -271,6 +270,7 @@
                                   <Value>Account No.</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -295,7 +295,6 @@
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox13">
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -304,6 +303,7 @@
                                   <Value>Name</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -328,7 +328,6 @@
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox23">
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -337,6 +336,7 @@
                                   <Value>Address</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -361,7 +361,6 @@
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox24">
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -370,6 +369,7 @@
                                   <Value>Meter Status</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -394,7 +394,6 @@
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox21">
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -403,6 +402,7 @@
                                   <Value>Date Connected</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -427,12 +427,11 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.5cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="seq_no">
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -445,7 +444,9 @@
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>seq_no</rd:DefaultName>
@@ -465,7 +466,6 @@
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="account_number">
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -498,7 +498,6 @@
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="concessionaire_name">
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -531,7 +530,6 @@
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="address">
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -564,7 +562,6 @@
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="meter_stat">
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -597,7 +594,6 @@
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="date_connected">
-                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
@@ -656,7 +652,7 @@
             <DataSetName>DataSetConcessionaireReports</DataSetName>
             <Top>0.17639cm</Top>
             <Left>0.29786cm</Left>
-            <Height>1.2cm</Height>
+            <Height>1cm</Height>
             <Width>19.89855cm</Width>
             <ZIndex>4</ZIndex>
             <Style>
@@ -765,14 +761,11 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>header_address</rd:DefaultName>
-              <Top>0.65264cm</Top>
+              <Top>0.62089cm</Top>
               <Left>6.42292cm</Left>
               <Height>0.6cm</Height>
               <Width>7.47417cm</Width>
               <ZIndex>2</ZIndex>
-              <Visibility>
-                <Hidden>=(Globals!PageNumber &lt;&gt; 1)</Hidden>
-              </Visibility>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -809,9 +802,6 @@
               <Height>0.6cm</Height>
               <Width>7.47417cm</Width>
               <ZIndex>3</ZIndex>
-              <Visibility>
-                <Hidden>=(Globals!PageNumber &lt;&gt; 1)</Hidden>
-              </Visibility>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -926,7 +916,7 @@
         <PageWidth>21.59cm</PageWidth>
         <LeftMargin>0.55cm</LeftMargin>
         <RightMargin>0.3cm</RightMargin>
-        <TopMargin>1cm</TopMargin>
+        <TopMargin>0.5cm</TopMargin>
         <BottomMargin>0.4cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
