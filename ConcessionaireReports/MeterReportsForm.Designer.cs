@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.SummaryChangedMetersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetMeterReports = new ConcessionaireReports.DataSetMeterReports();
             this.tabControlMeterReports = new System.Windows.Forms.TabControl();
@@ -140,9 +140,9 @@
             // 
             // reportViewerSummaryChangedMeters
             // 
-            reportDataSource1.Name = "DataSetMeterReports";
-            reportDataSource1.Value = this.SummaryChangedMetersBindingSource;
-            this.reportViewerSummaryChangedMeters.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource3.Name = "DataSetMeterReports";
+            reportDataSource3.Value = this.SummaryChangedMetersBindingSource;
+            this.reportViewerSummaryChangedMeters.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewerSummaryChangedMeters.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportSummaryChangedMeters.rdlc";
             this.reportViewerSummaryChangedMeters.Location = new System.Drawing.Point(26, 71);
             this.reportViewerSummaryChangedMeters.Name = "reportViewerSummaryChangedMeters";
@@ -235,6 +235,7 @@
             this.buttonChangedMeterPreviousReadSearch.TabIndex = 26;
             this.buttonChangedMeterPreviousReadSearch.Text = "Search";
             this.buttonChangedMeterPreviousReadSearch.UseVisualStyleBackColor = true;
+            this.buttonChangedMeterPreviousReadSearch.Click += new System.EventHandler(this.buttonChangedMeterPreviousReadSearch_Click);
             // 
             // label3
             // 
@@ -584,6 +585,7 @@
             this.buttonSummaryTestedMetersSearch.TabIndex = 38;
             this.buttonSummaryTestedMetersSearch.Text = "Search";
             this.buttonSummaryTestedMetersSearch.UseVisualStyleBackColor = true;
+            this.buttonSummaryTestedMetersSearch.Click += new System.EventHandler(this.buttonSummaryTestedMetersSearch_Click);
             // 
             // label12
             // 
