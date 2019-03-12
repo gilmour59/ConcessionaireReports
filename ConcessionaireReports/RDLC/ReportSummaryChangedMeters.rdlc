@@ -3,10 +3,10 @@
   <Body>
     <ReportItems>
       <Line Name="Line10">
-        <Top>4.30375cm</Top>
+        <Top>3.94569cm</Top>
         <Left>0.29782cm</Left>
         <Height>0cm</Height>
-        <Width>26.41636cm</Width>
+        <Width>26.80536cm</Width>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -17,34 +17,34 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.11593cm</Width>
+              <Width>1.68253cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.90032cm</Width>
+              <Width>2.44605cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.8cm</Width>
+              <Width>4.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.8cm</Width>
+              <Width>4.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.9cm</Width>
+              <Width>2.47667cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.7cm</Width>
+              <Width>2.2cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.1cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.6cm</Width>
+              <Width>2.2cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.40011cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.7cm</Width>
+              <Width>2.2cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.1cm</Width>
@@ -52,7 +52,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.45cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -63,14 +63,17 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Date</Value>
+                              <Value>DATE</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8.7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox33</rd:DefaultName>
@@ -96,14 +99,17 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>JO No.</Value>
+                              <Value>J.O. No.</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8.7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox35</rd:DefaultName>
@@ -132,11 +138,14 @@
                               <Value>Name</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8.7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox37</rd:DefaultName>
@@ -165,11 +174,14 @@
                               <Value>Address</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8.7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox45</rd:DefaultName>
@@ -198,11 +210,14 @@
                               <Value>Account No.</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8.7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox43</rd:DefaultName>
@@ -228,26 +243,17 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Old </Value>
+                              <Value>Old Meter No.</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8.7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
-                        </Paragraph>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Meter No.</Value>
-                              <Style>
-                                <FontFamily>Calibri</FontFamily>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox41</rd:DefaultName>
@@ -276,6 +282,7 @@
                               <Value>RDNG</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8.7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -309,11 +316,14 @@
                               <Value>Meter Brand</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8.7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox47</rd:DefaultName>
@@ -342,6 +352,7 @@
                               <Value>Remarks</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8.7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -372,26 +383,17 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>New</Value>
+                              <Value>New Meter No.</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8.7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
-                        </Paragraph>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Meter No.</Value>
-                              <Style>
-                                <FontFamily>Calibri</FontFamily>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox49</rd:DefaultName>
@@ -420,6 +422,7 @@
                               <Value>RDNG</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8.7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -444,7 +447,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.45cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -457,11 +460,14 @@
                               <Value>=Fields!date_changed.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                                 <Format>d</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>date_changed</rd:DefaultName>
@@ -489,10 +495,13 @@
                               <Value>=Fields!jo_number.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>jo_number</rd:DefaultName>
@@ -520,10 +529,13 @@
                               <Value>=Fields!concessionaire_name.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>concessionaire_name</rd:DefaultName>
@@ -551,10 +563,13 @@
                               <Value>=Fields!address.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>address</rd:DefaultName>
@@ -582,10 +597,13 @@
                               <Value>=Fields!account_number.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>account_number</rd:DefaultName>
@@ -613,10 +631,13 @@
                               <Value>=Fields!old_meter.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>old_meter</rd:DefaultName>
@@ -644,10 +665,13 @@
                               <Value>=Fields!old_meter_reading.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>old_meter_reading</rd:DefaultName>
@@ -675,10 +699,13 @@
                               <Value>=Fields!brand_name.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>brand_name</rd:DefaultName>
@@ -706,10 +733,13 @@
                               <Value>=Fields!remarks.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>remarks</rd:DefaultName>
@@ -737,10 +767,13 @@
                               <Value>=Fields!new_meter.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>new_meter</rd:DefaultName>
@@ -768,10 +801,13 @@
                               <Value>=Fields!new_meter_reading.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>new_meter_reading</rd:DefaultName>
@@ -820,8 +856,8 @@
         <DataSetName>DataSetMeterReports</DataSetName>
         <Top>2.93511cm</Top>
         <Left>0.29782cm</Left>
-        <Height>1.2cm</Height>
-        <Width>26.11636cm</Width>
+        <Height>0.9cm</Height>
+        <Width>26.80536cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -971,10 +1007,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>1.77083in</Height>
+    <Height>1.64583in</Height>
     <Style />
   </Body>
-  <Width>10.67487in</Width>
+  <Width>10.8279in</Width>
   <Page>
     <PageFooter>
       <Height>1.00542cm</Height>
@@ -1004,7 +1040,7 @@
                 </Paragraph>
               </Paragraphs>
               <Top>0.17639cm</Top>
-              <Left>0.32199cm</Left>
+              <Left>0.32005cm</Left>
               <Height>0.49417cm</Height>
               <Width>2.47242cm</Width>
               <Style>
@@ -1037,9 +1073,9 @@
                 </Paragraph>
               </Paragraphs>
               <Top>0.17639cm</Top>
-              <Left>14.07089cm</Left>
+              <Left>14.06895cm</Left>
               <Height>0.49417cm</Height>
-              <Width>2.39417cm</Width>
+              <Width>2.4275cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -1053,9 +1089,8 @@
             </Textbox>
           </ReportItems>
           <KeepTogether>true</KeepTogether>
-          <Top>0cm</Top>
-          <Left>5.34912cm</Left>
-          <Height>0.85958cm</Height>
+          <Left>5.14787cm</Left>
+          <Height>0.81548cm</Height>
           <Width>16.81843cm</Width>
           <Style>
             <Border>
@@ -1072,8 +1107,8 @@
     </PageFooter>
     <PageHeight>21.59cm</PageHeight>
     <PageWidth>27.94cm</PageWidth>
-    <LeftMargin>0.55cm</LeftMargin>
-    <RightMargin>0.3cm</RightMargin>
+    <LeftMargin>0.2cm</LeftMargin>
+    <RightMargin>0.2cm</RightMargin>
     <TopMargin>1cm</TopMargin>
     <BottomMargin>0.4cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
