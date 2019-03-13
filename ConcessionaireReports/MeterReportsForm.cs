@@ -61,10 +61,10 @@ namespace ConcessionaireReports
             dateTimePickerSummaryReceivedMetersFrom.MaxDate = dateTimePickerSummaryReceivedMetersTo.Value.Date;
             dateTimePickerSummaryDisposedMetersFrom.MaxDate = dateTimePickerSummaryDisposedMetersTo.Value.Date;
             dateTimePickerSummaryTestedMetersFrom.MaxDate = dateTimePickerSummaryTestedMetersTo.Value.Date;
+            dateTimePickerSummaryAlterationFrom.MaxDate = dateTimePickerSummaryAlterationTo.Value.Date;
 
             dateTimePickerChangedMeterPreviousReadYear.MaxDate = DateTime.Today;
             dateTimePickerSummaryPulledOutMetersYear.MaxDate = DateTime.Today;
-            dateTimePickerSummaryAlterationDate.MaxDate = DateTime.Today;
 
             tabControlMeterReports.DrawMode = TabDrawMode.OwnerDrawFixed;
 
@@ -209,6 +209,56 @@ namespace ConcessionaireReports
                 MessageBox.Show("error: " + ex, "Error!");
             }
             this.reportViewerSummaryPulledOutMeters.RefreshReport();
+        }
+
+        private void dateTimePickerSummaryAlterationTo_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerSummaryAlterationFrom.MaxDate = dateTimePickerSummaryAlterationTo.Value.Date;
+        }
+
+        private void buttonSummaryAlterationSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetAlterationByDate", conn))
+                    {
+                        //label5.Text = dateTimePickerChangedMeterPreviousReadMonth.Value.ToString("MM") + dateTimePickerChangedMeterPreviousReadYear.Value.ToString("yyyy");
+                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+
+                        DataSetMeterReports ds = new DataSetMeterReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@asOfFrom", dateTimePickerSummaryAlterationFrom.Value.Date);
+                        adapter.SelectCommand.Parameters["@asOfFrom"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@asOfTo", dateTimePickerSummaryAlterationTo.Value.Date);
+                        adapter.SelectCommand.Parameters["@asOfTo"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "SummaryAlteration");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetMeterReports", ds.Tables["SummaryAlteration"]);
+                        reportViewerSummaryAlteration.LocalReport.DataSources.Clear();
+                        reportViewerSummaryAlteration.LocalReport.DataSources.Add(rds);
+
+                        ReportParameter[] param = new ReportParameter[]
+                        {
+                            new ReportParameter("ReportParameterFrom", dateTimePickerSummaryAlterationFrom.Value.Date.ToString("MMMM dd, yyyy")),
+                            new ReportParameter("ReportParameterTo", dateTimePickerSummaryAlterationTo.Value.Date.ToString("MMMM dd, yyyy"))
+                        };
+                        reportViewerSummaryAlteration.LocalReport.SetParameters(param);
+                        reportViewerSummaryAlteration.LocalReport.Refresh();
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            this.reportViewerSummaryAlteration.RefreshReport();
         }
     }
 }

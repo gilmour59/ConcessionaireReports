@@ -124,6 +124,7 @@
     <EmbeddedResource Include="RDLC\ReportNewConnectionSummary.rdlc" />
     <EmbeddedResource Include="RDLC\ReportSeniorCitizenAccounts.rdlc" />
     <EmbeddedResource Include="RDLC\ReportSummaryAccountsPerClass.rdlc" />
+    <EmbeddedResource Include="RDLC\ReportSummaryAlteration.rdlc" />
     <EmbeddedResource Include="RDLC\ReportSummaryChangedMeters.rdlc" />
     <EmbeddedResource Include="RDLC\ReportSummaryPulledOutMeters.rdlc" />
     <None Include="DataSetConcessionaireReports.xsc">
