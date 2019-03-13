@@ -91,6 +91,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetMeterReports.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MeterReadingReportsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeterReadingReportsForm.Designer.cs">
+      <DependentUpon>MeterReadingReportsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MeterReportsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="ConcessionaireReportsForm.resx">
       <DependentUpon>ConcessionaireReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MeterReadingReportsForm.resx">
+      <DependentUpon>MeterReadingReportsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MeterReportsForm.resx">
       <DependentUpon>MeterReportsForm.cs</DependentUpon>
