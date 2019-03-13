@@ -151,20 +151,20 @@ namespace ConcessionaireReports
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_getChangedMeterSummaryWithPrevRdng_", conn))
                     {
-                        label5.Text = dateTimePickerChangedMeterPreviousReadMonth.Value.Month.ToString("MM") + dateTimePickerChangedMeterPreviousReadYear.Value.Year.ToString("yyyy");
-                        //adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+                        //label5.Text = dateTimePickerChangedMeterPreviousReadMonth.Value.ToString("MM") + dateTimePickerChangedMeterPreviousReadYear.Value.ToString("yyyy");
+                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
 
-                        //DataSetMeterReports ds = new DataSetMeterReports();
+                        DataSetMeterReports ds = new DataSetMeterReports();
 
-                        //adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        //adapter.SelectCommand.Parameters.AddWithValue("@asOfMonth", dateTimePickerSummaryChangedMetersFrom.Value.Date);
-                        //adapter.SelectCommand.Parameters["@asOfMonth"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@asOfMonth", (dateTimePickerChangedMeterPreviousReadMonth.Value.ToString("MM") + dateTimePickerChangedMeterPreviousReadYear.Value.ToString("yyyy")));
+                        adapter.SelectCommand.Parameters["@asOfMonth"].Direction = ParameterDirection.Input;
 
-                        //adapter.Fill(ds, "SummaryChangedMeters");
+                        adapter.Fill(ds, "ChangedMeterPreviousRead");
 
-                        //ReportDataSource rds = new ReportDataSource("DataSetMeterReports", ds.Tables["SummaryChangedMeters"]);
-                        //reportViewerSummaryChangedMeters.LocalReport.DataSources.Clear();
-                        //reportViewerSummaryChangedMeters.LocalReport.DataSources.Add(rds);
+                        ReportDataSource rds = new ReportDataSource("DataSetMeterReports", ds.Tables["ChangedMeterPreviousRead"]);
+                        reportViewerChangedMeterPreviousRead.LocalReport.DataSources.Clear();
+                        reportViewerChangedMeterPreviousRead.LocalReport.DataSources.Add(rds);
                     }
                     conn.Close();
                 }
@@ -173,7 +173,42 @@ namespace ConcessionaireReports
             {
                 MessageBox.Show("error: " + ex, "Error!");
             }
-            this.reportViewerSummaryChangedMeters.RefreshReport();
+            this.reportViewerChangedMeterPreviousRead.RefreshReport();
+        }
+
+        private void buttonSummaryPulledOutMetersSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_getPulledOutMeterSummary_", conn))
+                    {
+                        //label5.Text = dateTimePickerChangedMeterPreviousReadMonth.Value.ToString("MM") + dateTimePickerChangedMeterPreviousReadYear.Value.ToString("yyyy");
+                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+
+                        DataSetMeterReports ds = new DataSetMeterReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@asOfMonth", (dateTimePickerSummaryPulledOutMetersMonth.Value.ToString("MM") + dateTimePickerSummaryPulledOutMetersYear.Value.ToString("yyyy")));
+                        adapter.SelectCommand.Parameters["@asOfMonth"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "SummaryPulledOutMeters");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetMeterReports", ds.Tables["SummaryPulledOutMeters"]);
+                        reportViewerSummaryPulledOutMeters.LocalReport.DataSources.Clear();
+                        reportViewerSummaryPulledOutMeters.LocalReport.DataSources.Add(rds);
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            this.reportViewerSummaryPulledOutMeters.RefreshReport();
         }
     }
 }
