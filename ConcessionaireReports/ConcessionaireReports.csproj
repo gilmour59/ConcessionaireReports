@@ -127,6 +127,7 @@
     <EmbeddedResource Include="RDLC\ReportSummaryAlteration.rdlc" />
     <EmbeddedResource Include="RDLC\ReportSummaryChangedMeters.rdlc" />
     <EmbeddedResource Include="RDLC\ReportSummaryPulledOutMeters.rdlc" />
+    <EmbeddedResource Include="RDLC\ReportSummaryReceivedMeters.rdlc" />
     <None Include="DataSetConcessionaireReports.xsc">
       <DependentUpon>DataSetConcessionaireReports.xsd</DependentUpon>
     </None>

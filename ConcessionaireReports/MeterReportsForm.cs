@@ -260,5 +260,42 @@ namespace ConcessionaireReports
             }
             this.reportViewerSummaryAlteration.RefreshReport();
         }
+
+        private void buttonSummaryReceivedMetersSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_getReceivedMetersSummary_", conn))
+                    {
+                        //label5.Text = dateTimePickerChangedMeterPreviousReadMonth.Value.ToString("MM") + dateTimePickerChangedMeterPreviousReadYear.Value.ToString("yyyy");
+                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+
+                        DataSetMeterReports ds = new DataSetMeterReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@fromDate", dateTimePickerSummaryReceivedMetersFrom.Value.Date);
+                        adapter.SelectCommand.Parameters["@fromDate"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@toDate", dateTimePickerSummaryReceivedMetersTo.Value.Date);
+                        adapter.SelectCommand.Parameters["@toDate"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "SummaryReceivedMeters");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetMeterReports", ds.Tables["SummaryReceivedMeters"]);
+                        reportViewerSummaryReceivedMeters.LocalReport.DataSources.Clear();
+                        reportViewerSummaryReceivedMeters.LocalReport.DataSources.Add(rds);
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            this.reportViewerSummaryReceivedMeters.RefreshReport();
+        }
     }
 }

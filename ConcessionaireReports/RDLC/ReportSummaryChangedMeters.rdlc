@@ -893,9 +893,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox16</rd:DefaultName>
         <Top>1.30806cm</Top>
-        <Left>9.60444cm</Left>
+        <Left>7.06444cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.79167cm</Width>
+        <Width>13cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -927,9 +927,9 @@
           </Paragraph>
         </Paragraphs>
         <Top>1.93981cm</Top>
-        <Left>9.60444cm</Left>
+        <Left>7.06444cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.79167cm</Width>
+        <Width>13cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -962,9 +962,9 @@
         </Paragraphs>
         <rd:DefaultName>header_address</rd:DefaultName>
         <Top>0.69367cm</Top>
-        <Left>9.60444cm</Left>
+        <Left>7.06444cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.79167cm</Width>
+        <Width>13cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -998,9 +998,9 @@
         </Paragraphs>
         <rd:DefaultName>header_name</rd:DefaultName>
         <Top>0.05839cm</Top>
-        <Left>9.60444cm</Left>
+        <Left>7.06444cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.79167cm</Width>
+        <Width>13cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>

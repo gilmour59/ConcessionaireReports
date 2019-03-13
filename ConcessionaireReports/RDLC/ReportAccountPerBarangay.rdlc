@@ -100,7 +100,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>1.65861cm</Top>
+            <Top>4.51611cm</Top>
             <Left>8.52186cm</Left>
             <Height>0.49417cm</Height>
             <Width>3.54628cm</Width>
@@ -134,7 +134,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
-            <Top>1.65861cm</Top>
+            <Top>4.51611cm</Top>
             <Left>4.9403cm</Left>
             <Height>0.49417cm</Height>
             <Width>3.54628cm</Width>
@@ -150,7 +150,7 @@
             </Style>
           </Textbox>
           <Line Name="Line10">
-            <Top>1.55278cm</Top>
+            <Top>4.41028cm</Top>
             <Left>0.31136cm</Left>
             <Height>0cm</Height>
             <Width>19.88505cm</Width>
@@ -181,7 +181,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>1.65861cm</Top>
+            <Top>4.51611cm</Top>
             <Left>12.10342cm</Left>
             <Height>0.49417cm</Height>
             <Width>3.54628cm</Width>
@@ -646,7 +646,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSetConcessionaireReports</DataSetName>
-            <Top>0.17639cm</Top>
+            <Top>3.03389cm</Top>
             <Left>0.29786cm</Left>
             <Height>1cm</Height>
             <Width>19.89855cm</Width>
@@ -657,163 +657,153 @@
               </Border>
             </Style>
           </Tablix>
+          <Textbox Name="Textbox16">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Account List Per Barangay</Value>
+                    <Style>
+                      <FontFamily>calibri</FontFamily>
+                      <FontSize>11pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox16</rd:DefaultName>
+            <Top>1.31805cm</Top>
+            <Left>3.67126cm</Left>
+            <Height>0.6cm</Height>
+            <Width>13cm</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="header_ZoneBook">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>="Town: " &amp; Parameters!ReportParameterTown.Value &amp; " - Barangay: " &amp; Parameters!ReportParameterBarangay.Value</Value>
+                    <Style>
+                      <FontFamily>calibri</FontFamily>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>1.9498cm</Top>
+            <Left>3.67126cm</Left>
+            <Height>0.6cm</Height>
+            <Width>13cm</Width>
+            <ZIndex>6</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="header_address">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!header_address.Value, "DataSetConcessionaireReports")</Value>
+                    <Style>
+                      <FontFamily>calibri</FontFamily>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>header_address</rd:DefaultName>
+            <Top>0.68277cm</Top>
+            <Left>3.67126cm</Left>
+            <Height>0.6cm</Height>
+            <Width>13cm</Width>
+            <ZIndex>7</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="header_name">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!header_name.Value, "DataSetConcessionaireReports")</Value>
+                    <Style>
+                      <FontFamily>calibri</FontFamily>
+                      <FontSize>13pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>header_name</rd:DefaultName>
+            <Top>0.04749cm</Top>
+            <Left>3.67126cm</Left>
+            <Height>0.6cm</Height>
+            <Width>13cm</Width>
+            <ZIndex>8</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
-        <Height>0.93749in</Height>
+        <Height>2.03505in</Height>
         <Style />
       </Body>
       <Width>8.08334in</Width>
       <Page>
-        <PageHeader>
-          <Height>2.57639cm</Height>
-          <PrintOnFirstPage>true</PrintOnFirstPage>
-          <PrintOnLastPage>true</PrintOnLastPage>
-          <ReportItems>
-            <Textbox Name="Textbox16">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Account List Per Barangay</Value>
-                      <Style>
-                        <FontFamily>calibri</FontFamily>
-                        <FontSize>11pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox16</rd:DefaultName>
-              <Top>1.27056cm</Top>
-              <Left>6.47254cm</Left>
-              <Height>0.6cm</Height>
-              <Width>7.47417cm</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="header_ZoneBook">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>="Town: " &amp; Parameters!ReportParameterTown.Value &amp; " - Barangay: " &amp; Parameters!ReportParameterBarangay.Value</Value>
-                      <Style>
-                        <FontFamily>calibri</FontFamily>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <Top>1.90231cm</Top>
-              <Left>6.47254cm</Left>
-              <Height>0.6cm</Height>
-              <Width>7.47417cm</Width>
-              <ZIndex>1</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="header_address">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=First(Fields!header_address.Value, "DataSetConcessionaireReports")</Value>
-                      <Style>
-                        <FontFamily>calibri</FontFamily>
-                        <FontWeight>Normal</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>header_address</rd:DefaultName>
-              <Top>0.63528cm</Top>
-              <Left>6.47254cm</Left>
-              <Height>0.6cm</Height>
-              <Width>7.47417cm</Width>
-              <ZIndex>2</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="header_name">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=First(Fields!header_name.Value, "DataSetConcessionaireReports")</Value>
-                      <Style>
-                        <FontFamily>calibri</FontFamily>
-                        <FontSize>13pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>header_name</rd:DefaultName>
-              <Left>6.47254cm</Left>
-              <Height>0.6cm</Height>
-              <Width>7.47417cm</Width>
-              <ZIndex>3</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-          </ReportItems>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </PageHeader>
         <PageFooter>
           <Height>0.98834cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
@@ -891,6 +881,7 @@
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
+              <Top>0cm</Top>
               <Left>2.03548cm</Left>
               <Height>0.83312cm</Height>
               <Width>16.81843cm</Width>
