@@ -138,7 +138,39 @@ namespace ConcessionaireReports
 
         private void buttonSummaryTestedMetersSearch_Click(object sender, EventArgs e)
         {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
 
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_getTestedMetersSummary_", conn))
+                    {
+                        //label5.Text = dateTimePickerChangedMeterPreviousReadMonth.Value.ToString("MM") + dateTimePickerChangedMeterPreviousReadYear.Value.ToString("yyyy");
+                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+
+                        DataSetMeterReports ds = new DataSetMeterReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@fromDate", dateTimePickerSummaryTestedMetersFrom.Value.Date);
+                        adapter.SelectCommand.Parameters["@fromDate"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@toDate", dateTimePickerSummaryTestedMetersTo.Value.Date);
+                        adapter.SelectCommand.Parameters["@toDate"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "SummaryTestedMeters");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetMeterReports", ds.Tables["SummaryTestedMeters"]);
+                        reportViewerSummaryTestedMeters.LocalReport.DataSources.Clear();
+                        reportViewerSummaryTestedMeters.LocalReport.DataSources.Add(rds);
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            this.reportViewerSummaryTestedMeters.RefreshReport();
         }
 
         private void buttonChangedMeterPreviousReadSearch_Click(object sender, EventArgs e)

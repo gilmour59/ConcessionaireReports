@@ -24,7 +24,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox16</rd:DefaultName>
         <Top>1.35037cm</Top>
-        <Left>3.98341cm</Left>
+        <Left>3.99664cm</Left>
         <Height>0.6cm</Height>
         <Width>13cm</Width>
         <Style>
@@ -58,7 +58,7 @@
         </Paragraphs>
         <rd:DefaultName>header_address</rd:DefaultName>
         <Top>0.71509cm</Top>
-        <Left>3.98341cm</Left>
+        <Left>3.99664cm</Left>
         <Height>0.6cm</Height>
         <Width>13cm</Width>
         <ZIndex>1</ZIndex>
@@ -94,7 +94,7 @@
         </Paragraphs>
         <rd:DefaultName>header_name</rd:DefaultName>
         <Top>0.07981cm</Top>
-        <Left>3.98341cm</Left>
+        <Left>3.99664cm</Left>
         <Height>0.6cm</Height>
         <Width>13cm</Width>
         <ZIndex>2</ZIndex>
@@ -128,7 +128,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>1.98565cm</Top>
-        <Left>3.9834cm</Left>
+        <Left>3.99663cm</Left>
         <Height>0.6cm</Height>
         <Width>13cm</Width>
         <ZIndex>3</ZIndex>
@@ -177,7 +177,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Date Disposed</Value>
+                              <Value>Date Tested</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -626,7 +626,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSetMeterReports</DataSetName>
         <Top>3.19017cm</Top>
-        <Left>0.50333cm</Left>
+        <Left>0.51656cm</Left>
         <Height>1cm</Height>
         <Width>19.525cm</Width>
         <ZIndex>4</ZIndex>
@@ -638,7 +638,7 @@
       </Tablix>
       <Line Name="Line2">
         <Top>4.32259cm</Top>
-        <Left>0.50333cm</Left>
+        <Left>0.51656cm</Left>
         <Height>0cm</Height>
         <Width>19.525cm</Width>
         <ZIndex>5</ZIndex>
@@ -655,7 +655,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>="Total Disposed Meters: " &amp; Count(Fields!new_meter.Value, "DataSetMeterReports")</Value>
+                <Value>="Total Tested Meters: " &amp; Count(Fields!new_meter.Value, "DataSetMeterReports")</Value>
                 <Style>
                   <FontFamily>calibri</FontFamily>
                   <FontWeight>Bold</FontWeight>
@@ -669,7 +669,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox17</rd:DefaultName>
         <Top>4.44253cm</Top>
-        <Left>0.50333cm</Left>
+        <Left>0.51656cm</Left>
         <Height>0.49417cm</Height>
         <Width>6.94605cm</Width>
         <ZIndex>6</ZIndex>
@@ -687,10 +687,10 @@
     <Height>2.02083in</Height>
     <Style />
   </Body>
-  <Width>8.08333in</Width>
+  <Width>8.09375in</Width>
   <Page>
     <PageFooter>
-      <Height>1.00542cm</Height>
+      <Height>0.97896cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -767,7 +767,7 @@
           </ReportItems>
           <KeepTogether>true</KeepTogether>
           <Top>0.00501cm</Top>
-          <Left>1.85662cm</Left>
+          <Left>1.86985cm</Left>
           <Height>0.81548cm</Height>
           <Width>16.81843cm</Width>
           <Style>
@@ -799,7 +799,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>d2dedd40-3cc6-4ecc-8b5f-c3ec2a570548</rd:DataSourceID>
+      <rd:DataSourceID>a8ed5641-15d5-400e-89ce-ac633bcadb2c</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -857,7 +857,7 @@
       <rd:DataSetInfo>
         <rd:DataSetName>DataSetMeterReports</rd:DataSetName>
         <rd:SchemaPath>C:\Users\Gilmour\Source\Repos\gilmour59\ConcessionaireReports\ConcessionaireReports\DataSetMeterReports.xsd</rd:SchemaPath>
-        <rd:TableName>SummaryDisposedMeters</rd:TableName>
+        <rd:TableName>SummaryTestedMeters</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
@@ -865,5 +865,5 @@
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>b4e3dbb1-6c48-40ef-a89b-631f4de2212c</rd:ReportID>
+  <rd:ReportID>84ff461a-1386-4ee6-8b72-319ae2d86e30</rd:ReportID>
 </Report>

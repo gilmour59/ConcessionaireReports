@@ -35,12 +35,14 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.SummaryChangedMetersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetMeterReports = new ConcessionaireReports.DataSetMeterReports();
             this.ChangedMeterPreviousReadBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SummaryPulledOutMetersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SummaryAlterationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SummaryReceivedMetersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SummaryDisposedMetersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlMeterReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.reportViewerSummaryChangedMeters = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -91,13 +93,14 @@
             this.label13 = new System.Windows.Forms.Label();
             this.dateTimePickerSummaryTestedMetersTo = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerSummaryTestedMetersFrom = new System.Windows.Forms.DateTimePicker();
-            this.SummaryDisposedMetersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SummaryTestedMetersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.SummaryChangedMetersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetMeterReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChangedMeterPreviousReadBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SummaryPulledOutMetersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SummaryAlterationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SummaryReceivedMetersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SummaryDisposedMetersBindingSource)).BeginInit();
             this.tabControlMeterReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -106,7 +109,7 @@
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SummaryDisposedMetersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SummaryTestedMetersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // SummaryChangedMetersBindingSource
@@ -138,6 +141,11 @@
             // 
             this.SummaryReceivedMetersBindingSource.DataMember = "SummaryReceivedMeters";
             this.SummaryReceivedMetersBindingSource.DataSource = this.DataSetMeterReports;
+            // 
+            // SummaryDisposedMetersBindingSource
+            // 
+            this.SummaryDisposedMetersBindingSource.DataMember = "SummaryDisposedMeters";
+            this.SummaryDisposedMetersBindingSource.DataSource = this.DataSetMeterReports;
             // 
             // tabControlMeterReports
             // 
@@ -654,6 +662,10 @@
             // 
             // reportViewerSummaryTestedMeters
             // 
+            reportDataSource7.Name = "DataSetMeterReports";
+            reportDataSource7.Value = this.SummaryTestedMetersBindingSource;
+            this.reportViewerSummaryTestedMeters.LocalReport.DataSources.Add(reportDataSource7);
+            this.reportViewerSummaryTestedMeters.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportSummaryTestedMeters.rdlc";
             this.reportViewerSummaryTestedMeters.Location = new System.Drawing.Point(24, 68);
             this.reportViewerSummaryTestedMeters.Name = "reportViewerSummaryTestedMeters";
             this.reportViewerSummaryTestedMeters.ServerReport.BearerToken = null;
@@ -712,10 +724,10 @@
             this.dateTimePickerSummaryTestedMetersFrom.Size = new System.Drawing.Size(118, 24);
             this.dateTimePickerSummaryTestedMetersFrom.TabIndex = 35;
             // 
-            // SummaryDisposedMetersBindingSource
+            // SummaryTestedMetersBindingSource
             // 
-            this.SummaryDisposedMetersBindingSource.DataMember = "SummaryDisposedMeters";
-            this.SummaryDisposedMetersBindingSource.DataSource = this.DataSetMeterReports;
+            this.SummaryTestedMetersBindingSource.DataMember = "SummaryTestedMeters";
+            this.SummaryTestedMetersBindingSource.DataSource = this.DataSetMeterReports;
             // 
             // MeterReportsForm
             // 
@@ -734,6 +746,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SummaryPulledOutMetersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SummaryAlterationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SummaryReceivedMetersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SummaryDisposedMetersBindingSource)).EndInit();
             this.tabControlMeterReports.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -749,7 +762,7 @@
             this.tabPage6.PerformLayout();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SummaryDisposedMetersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SummaryTestedMetersBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -813,5 +826,6 @@
         private System.Windows.Forms.BindingSource SummaryAlterationBindingSource;
         private System.Windows.Forms.BindingSource SummaryReceivedMetersBindingSource;
         private System.Windows.Forms.BindingSource SummaryDisposedMetersBindingSource;
+        private System.Windows.Forms.BindingSource SummaryTestedMetersBindingSource;
     }
 }
