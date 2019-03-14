@@ -26,6 +26,8 @@ namespace ConcessionaireReports {
         
         private ReadingSlipDataTable tableReadingSlip;
         
+        private AccountsSuddenIncDecConsumptionDataTable tableAccountsSuddenIncDecConsumption;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -57,6 +59,9 @@ namespace ConcessionaireReports {
                 if ((ds.Tables["ReadingSlip"] != null)) {
                     base.Tables.Add(new ReadingSlipDataTable(ds.Tables["ReadingSlip"]));
                 }
+                if ((ds.Tables["AccountsSuddenIncDecConsumption"] != null)) {
+                    base.Tables.Add(new AccountsSuddenIncDecConsumptionDataTable(ds.Tables["AccountsSuddenIncDecConsumption"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -82,6 +87,16 @@ namespace ConcessionaireReports {
         public ReadingSlipDataTable ReadingSlip {
             get {
                 return this.tableReadingSlip;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public AccountsSuddenIncDecConsumptionDataTable AccountsSuddenIncDecConsumption {
+            get {
+                return this.tableAccountsSuddenIncDecConsumption;
             }
         }
         
@@ -155,6 +170,9 @@ namespace ConcessionaireReports {
                 if ((ds.Tables["ReadingSlip"] != null)) {
                     base.Tables.Add(new ReadingSlipDataTable(ds.Tables["ReadingSlip"]));
                 }
+                if ((ds.Tables["AccountsSuddenIncDecConsumption"] != null)) {
+                    base.Tables.Add(new AccountsSuddenIncDecConsumptionDataTable(ds.Tables["AccountsSuddenIncDecConsumption"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -194,6 +212,12 @@ namespace ConcessionaireReports {
                     this.tableReadingSlip.InitVars();
                 }
             }
+            this.tableAccountsSuddenIncDecConsumption = ((AccountsSuddenIncDecConsumptionDataTable)(base.Tables["AccountsSuddenIncDecConsumption"]));
+            if ((initTable == true)) {
+                if ((this.tableAccountsSuddenIncDecConsumption != null)) {
+                    this.tableAccountsSuddenIncDecConsumption.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -206,11 +230,19 @@ namespace ConcessionaireReports {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableReadingSlip = new ReadingSlipDataTable();
             base.Tables.Add(this.tableReadingSlip);
+            this.tableAccountsSuddenIncDecConsumption = new AccountsSuddenIncDecConsumptionDataTable();
+            base.Tables.Add(this.tableAccountsSuddenIncDecConsumption);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private bool ShouldSerializeReadingSlip() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeAccountsSuddenIncDecConsumption() {
             return false;
         }
         
@@ -271,6 +303,9 @@ namespace ConcessionaireReports {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void ReadingSlipRowChangeEventHandler(object sender, ReadingSlipRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void AccountsSuddenIncDecConsumptionRowChangeEventHandler(object sender, AccountsSuddenIncDecConsumptionRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -557,19 +592,19 @@ namespace ConcessionaireReports {
                         string zone_id, 
                         string book_id, 
                         byte classification_id, 
-                        string acct_no, 
+                        int acct_no, 
                         string old_acct_no, 
                         string concessionaire_name, 
                         string meter_sn, 
-                        string rdng_date, 
-                        string pres_rdng, 
-                        double ave_cons, 
-                        int Month1, 
-                        int Month2, 
-                        int Month3, 
-                        System.DateTime month_name1, 
-                        System.DateTime month_name2, 
-                        System.DateTime month_name3) {
+                        System.DateTime rdng_date, 
+                        int pres_rdng, 
+                        decimal ave_cons, 
+                        decimal Month1, 
+                        decimal Month2, 
+                        decimal Month3, 
+                        string month_name1, 
+                        string month_name2, 
+                        string month_name3) {
                 ReadingSlipRow rowReadingSlipRow = ((ReadingSlipRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         header_name,
@@ -653,7 +688,7 @@ namespace ConcessionaireReports {
                 base.Columns.Add(this.columnbook_id);
                 this.columnclassification_id = new global::System.Data.DataColumn("classification_id", typeof(byte), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnclassification_id);
-                this.columnacct_no = new global::System.Data.DataColumn("acct_no", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnacct_no = new global::System.Data.DataColumn("acct_no", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnacct_no);
                 this.columnold_acct_no = new global::System.Data.DataColumn("old_acct_no", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnold_acct_no);
@@ -661,23 +696,23 @@ namespace ConcessionaireReports {
                 base.Columns.Add(this.columnconcessionaire_name);
                 this.columnmeter_sn = new global::System.Data.DataColumn("meter_sn", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmeter_sn);
-                this.columnrdng_date = new global::System.Data.DataColumn("rdng_date", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnrdng_date = new global::System.Data.DataColumn("rdng_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnrdng_date);
-                this.columnpres_rdng = new global::System.Data.DataColumn("pres_rdng", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnpres_rdng = new global::System.Data.DataColumn("pres_rdng", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpres_rdng);
-                this.columnave_cons = new global::System.Data.DataColumn("ave_cons", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnave_cons = new global::System.Data.DataColumn("ave_cons", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnave_cons);
-                this.columnMonth1 = new global::System.Data.DataColumn("Month1", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnMonth1 = new global::System.Data.DataColumn("Month1", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMonth1);
-                this.columnMonth2 = new global::System.Data.DataColumn("Month2", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnMonth2 = new global::System.Data.DataColumn("Month2", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMonth2);
-                this.columnMonth3 = new global::System.Data.DataColumn("Month3", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnMonth3 = new global::System.Data.DataColumn("Month3", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMonth3);
-                this.columnmonth_name1 = new global::System.Data.DataColumn("month_name1", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnmonth_name1 = new global::System.Data.DataColumn("month_name1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmonth_name1);
-                this.columnmonth_name2 = new global::System.Data.DataColumn("month_name2", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnmonth_name2 = new global::System.Data.DataColumn("month_name2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmonth_name2);
-                this.columnmonth_name3 = new global::System.Data.DataColumn("month_name3", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnmonth_name3 = new global::System.Data.DataColumn("month_name3", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmonth_name3);
             }
             
@@ -765,6 +800,365 @@ namespace ConcessionaireReports {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "ReadingSlipDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class AccountsSuddenIncDecConsumptionDataTable : global::System.Data.TypedTableBase<AccountsSuddenIncDecConsumptionRow> {
+            
+            private global::System.Data.DataColumn columnheader_name;
+            
+            private global::System.Data.DataColumn columnheader_address;
+            
+            private global::System.Data.DataColumn columnref_no;
+            
+            private global::System.Data.DataColumn columnaccount_number;
+            
+            private global::System.Data.DataColumn columnconcessionaire_name;
+            
+            private global::System.Data.DataColumn columnaddress;
+            
+            private global::System.Data.DataColumn columncurrent;
+            
+            private global::System.Data.DataColumn columnsix_mo_ave;
+            
+            private global::System.Data.DataColumn columnpercent_change;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public AccountsSuddenIncDecConsumptionDataTable() {
+                this.TableName = "AccountsSuddenIncDecConsumption";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal AccountsSuddenIncDecConsumptionDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected AccountsSuddenIncDecConsumptionDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn header_nameColumn {
+                get {
+                    return this.columnheader_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn header_addressColumn {
+                get {
+                    return this.columnheader_address;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ref_noColumn {
+                get {
+                    return this.columnref_no;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn account_numberColumn {
+                get {
+                    return this.columnaccount_number;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn concessionaire_nameColumn {
+                get {
+                    return this.columnconcessionaire_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn addressColumn {
+                get {
+                    return this.columnaddress;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn currentColumn {
+                get {
+                    return this.columncurrent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn six_mo_aveColumn {
+                get {
+                    return this.columnsix_mo_ave;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn percent_changeColumn {
+                get {
+                    return this.columnpercent_change;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public AccountsSuddenIncDecConsumptionRow this[int index] {
+                get {
+                    return ((AccountsSuddenIncDecConsumptionRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event AccountsSuddenIncDecConsumptionRowChangeEventHandler AccountsSuddenIncDecConsumptionRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event AccountsSuddenIncDecConsumptionRowChangeEventHandler AccountsSuddenIncDecConsumptionRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event AccountsSuddenIncDecConsumptionRowChangeEventHandler AccountsSuddenIncDecConsumptionRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event AccountsSuddenIncDecConsumptionRowChangeEventHandler AccountsSuddenIncDecConsumptionRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddAccountsSuddenIncDecConsumptionRow(AccountsSuddenIncDecConsumptionRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public AccountsSuddenIncDecConsumptionRow AddAccountsSuddenIncDecConsumptionRow(string header_name, string header_address, int ref_no, string account_number, string concessionaire_name, string address, int current, int six_mo_ave, decimal percent_change) {
+                AccountsSuddenIncDecConsumptionRow rowAccountsSuddenIncDecConsumptionRow = ((AccountsSuddenIncDecConsumptionRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        header_name,
+                        header_address,
+                        ref_no,
+                        account_number,
+                        concessionaire_name,
+                        address,
+                        current,
+                        six_mo_ave,
+                        percent_change};
+                rowAccountsSuddenIncDecConsumptionRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowAccountsSuddenIncDecConsumptionRow);
+                return rowAccountsSuddenIncDecConsumptionRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                AccountsSuddenIncDecConsumptionDataTable cln = ((AccountsSuddenIncDecConsumptionDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new AccountsSuddenIncDecConsumptionDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnheader_name = base.Columns["header_name"];
+                this.columnheader_address = base.Columns["header_address"];
+                this.columnref_no = base.Columns["ref_no"];
+                this.columnaccount_number = base.Columns["account_number"];
+                this.columnconcessionaire_name = base.Columns["concessionaire_name"];
+                this.columnaddress = base.Columns["address"];
+                this.columncurrent = base.Columns["current"];
+                this.columnsix_mo_ave = base.Columns["six_mo_ave"];
+                this.columnpercent_change = base.Columns["percent_change"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnheader_name = new global::System.Data.DataColumn("header_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnheader_name);
+                this.columnheader_address = new global::System.Data.DataColumn("header_address", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnheader_address);
+                this.columnref_no = new global::System.Data.DataColumn("ref_no", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnref_no);
+                this.columnaccount_number = new global::System.Data.DataColumn("account_number", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnaccount_number);
+                this.columnconcessionaire_name = new global::System.Data.DataColumn("concessionaire_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnconcessionaire_name);
+                this.columnaddress = new global::System.Data.DataColumn("address", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnaddress);
+                this.columncurrent = new global::System.Data.DataColumn("current", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncurrent);
+                this.columnsix_mo_ave = new global::System.Data.DataColumn("six_mo_ave", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsix_mo_ave);
+                this.columnpercent_change = new global::System.Data.DataColumn("percent_change", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpercent_change);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public AccountsSuddenIncDecConsumptionRow NewAccountsSuddenIncDecConsumptionRow() {
+                return ((AccountsSuddenIncDecConsumptionRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new AccountsSuddenIncDecConsumptionRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(AccountsSuddenIncDecConsumptionRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.AccountsSuddenIncDecConsumptionRowChanged != null)) {
+                    this.AccountsSuddenIncDecConsumptionRowChanged(this, new AccountsSuddenIncDecConsumptionRowChangeEvent(((AccountsSuddenIncDecConsumptionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.AccountsSuddenIncDecConsumptionRowChanging != null)) {
+                    this.AccountsSuddenIncDecConsumptionRowChanging(this, new AccountsSuddenIncDecConsumptionRowChangeEvent(((AccountsSuddenIncDecConsumptionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.AccountsSuddenIncDecConsumptionRowDeleted != null)) {
+                    this.AccountsSuddenIncDecConsumptionRowDeleted(this, new AccountsSuddenIncDecConsumptionRowChangeEvent(((AccountsSuddenIncDecConsumptionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.AccountsSuddenIncDecConsumptionRowDeleting != null)) {
+                    this.AccountsSuddenIncDecConsumptionRowDeleting(this, new AccountsSuddenIncDecConsumptionRowChangeEvent(((AccountsSuddenIncDecConsumptionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveAccountsSuddenIncDecConsumptionRow(AccountsSuddenIncDecConsumptionRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "AccountsSuddenIncDecConsumptionDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -933,10 +1327,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string acct_no {
+            public int acct_no {
                 get {
                     try {
-                        return ((string)(this[this.tableReadingSlip.acct_noColumn]));
+                        return ((int)(this[this.tableReadingSlip.acct_noColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'acct_no\' in table \'ReadingSlip\' is DBNull.", e);
@@ -997,10 +1391,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string rdng_date {
+            public System.DateTime rdng_date {
                 get {
                     try {
-                        return ((string)(this[this.tableReadingSlip.rdng_dateColumn]));
+                        return ((global::System.DateTime)(this[this.tableReadingSlip.rdng_dateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'rdng_date\' in table \'ReadingSlip\' is DBNull.", e);
@@ -1013,10 +1407,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string pres_rdng {
+            public int pres_rdng {
                 get {
                     try {
-                        return ((string)(this[this.tableReadingSlip.pres_rdngColumn]));
+                        return ((int)(this[this.tableReadingSlip.pres_rdngColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'pres_rdng\' in table \'ReadingSlip\' is DBNull.", e);
@@ -1029,10 +1423,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double ave_cons {
+            public decimal ave_cons {
                 get {
                     try {
-                        return ((double)(this[this.tableReadingSlip.ave_consColumn]));
+                        return ((decimal)(this[this.tableReadingSlip.ave_consColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ave_cons\' in table \'ReadingSlip\' is DBNull.", e);
@@ -1045,10 +1439,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Month1 {
+            public decimal Month1 {
                 get {
                     try {
-                        return ((int)(this[this.tableReadingSlip.Month1Column]));
+                        return ((decimal)(this[this.tableReadingSlip.Month1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Month1\' in table \'ReadingSlip\' is DBNull.", e);
@@ -1061,10 +1455,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Month2 {
+            public decimal Month2 {
                 get {
                     try {
-                        return ((int)(this[this.tableReadingSlip.Month2Column]));
+                        return ((decimal)(this[this.tableReadingSlip.Month2Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Month2\' in table \'ReadingSlip\' is DBNull.", e);
@@ -1077,10 +1471,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Month3 {
+            public decimal Month3 {
                 get {
                     try {
-                        return ((int)(this[this.tableReadingSlip.Month3Column]));
+                        return ((decimal)(this[this.tableReadingSlip.Month3Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Month3\' in table \'ReadingSlip\' is DBNull.", e);
@@ -1093,10 +1487,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime month_name1 {
+            public string month_name1 {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableReadingSlip.month_name1Column]));
+                        return ((string)(this[this.tableReadingSlip.month_name1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'month_name1\' in table \'ReadingSlip\' is DBNull.", e);
@@ -1109,10 +1503,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime month_name2 {
+            public string month_name2 {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableReadingSlip.month_name2Column]));
+                        return ((string)(this[this.tableReadingSlip.month_name2Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'month_name2\' in table \'ReadingSlip\' is DBNull.", e);
@@ -1125,10 +1519,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime month_name3 {
+            public string month_name3 {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableReadingSlip.month_name3Column]));
+                        return ((string)(this[this.tableReadingSlip.month_name3Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'month_name3\' in table \'ReadingSlip\' is DBNull.", e);
@@ -1381,6 +1775,282 @@ namespace ConcessionaireReports {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class AccountsSuddenIncDecConsumptionRow : global::System.Data.DataRow {
+            
+            private AccountsSuddenIncDecConsumptionDataTable tableAccountsSuddenIncDecConsumption;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal AccountsSuddenIncDecConsumptionRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableAccountsSuddenIncDecConsumption = ((AccountsSuddenIncDecConsumptionDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string header_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableAccountsSuddenIncDecConsumption.header_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'header_name\' in table \'AccountsSuddenIncDecConsumption\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAccountsSuddenIncDecConsumption.header_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string header_address {
+                get {
+                    try {
+                        return ((string)(this[this.tableAccountsSuddenIncDecConsumption.header_addressColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'header_address\' in table \'AccountsSuddenIncDecConsumption\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAccountsSuddenIncDecConsumption.header_addressColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int ref_no {
+                get {
+                    try {
+                        return ((int)(this[this.tableAccountsSuddenIncDecConsumption.ref_noColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ref_no\' in table \'AccountsSuddenIncDecConsumption\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableAccountsSuddenIncDecConsumption.ref_noColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string account_number {
+                get {
+                    try {
+                        return ((string)(this[this.tableAccountsSuddenIncDecConsumption.account_numberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'account_number\' in table \'AccountsSuddenIncDecConsumption\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAccountsSuddenIncDecConsumption.account_numberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string concessionaire_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableAccountsSuddenIncDecConsumption.concessionaire_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'concessionaire_name\' in table \'AccountsSuddenIncDecConsumpt" +
+                                "ion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAccountsSuddenIncDecConsumption.concessionaire_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string address {
+                get {
+                    try {
+                        return ((string)(this[this.tableAccountsSuddenIncDecConsumption.addressColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'address\' in table \'AccountsSuddenIncDecConsumption\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableAccountsSuddenIncDecConsumption.addressColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int current {
+                get {
+                    try {
+                        return ((int)(this[this.tableAccountsSuddenIncDecConsumption.currentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'current\' in table \'AccountsSuddenIncDecConsumption\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableAccountsSuddenIncDecConsumption.currentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int six_mo_ave {
+                get {
+                    try {
+                        return ((int)(this[this.tableAccountsSuddenIncDecConsumption.six_mo_aveColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'six_mo_ave\' in table \'AccountsSuddenIncDecConsumption\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAccountsSuddenIncDecConsumption.six_mo_aveColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal percent_change {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableAccountsSuddenIncDecConsumption.percent_changeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'percent_change\' in table \'AccountsSuddenIncDecConsumption\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAccountsSuddenIncDecConsumption.percent_changeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isheader_nameNull() {
+                return this.IsNull(this.tableAccountsSuddenIncDecConsumption.header_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setheader_nameNull() {
+                this[this.tableAccountsSuddenIncDecConsumption.header_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isheader_addressNull() {
+                return this.IsNull(this.tableAccountsSuddenIncDecConsumption.header_addressColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setheader_addressNull() {
+                this[this.tableAccountsSuddenIncDecConsumption.header_addressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isref_noNull() {
+                return this.IsNull(this.tableAccountsSuddenIncDecConsumption.ref_noColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setref_noNull() {
+                this[this.tableAccountsSuddenIncDecConsumption.ref_noColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isaccount_numberNull() {
+                return this.IsNull(this.tableAccountsSuddenIncDecConsumption.account_numberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setaccount_numberNull() {
+                this[this.tableAccountsSuddenIncDecConsumption.account_numberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isconcessionaire_nameNull() {
+                return this.IsNull(this.tableAccountsSuddenIncDecConsumption.concessionaire_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setconcessionaire_nameNull() {
+                this[this.tableAccountsSuddenIncDecConsumption.concessionaire_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsaddressNull() {
+                return this.IsNull(this.tableAccountsSuddenIncDecConsumption.addressColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetaddressNull() {
+                this[this.tableAccountsSuddenIncDecConsumption.addressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IscurrentNull() {
+                return this.IsNull(this.tableAccountsSuddenIncDecConsumption.currentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetcurrentNull() {
+                this[this.tableAccountsSuddenIncDecConsumption.currentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Issix_mo_aveNull() {
+                return this.IsNull(this.tableAccountsSuddenIncDecConsumption.six_mo_aveColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setsix_mo_aveNull() {
+                this[this.tableAccountsSuddenIncDecConsumption.six_mo_aveColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Ispercent_changeNull() {
+                return this.IsNull(this.tableAccountsSuddenIncDecConsumption.percent_changeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setpercent_changeNull() {
+                this[this.tableAccountsSuddenIncDecConsumption.percent_changeColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -1400,6 +2070,40 @@ namespace ConcessionaireReports {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public ReadingSlipRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class AccountsSuddenIncDecConsumptionRowChangeEvent : global::System.EventArgs {
+            
+            private AccountsSuddenIncDecConsumptionRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public AccountsSuddenIncDecConsumptionRowChangeEvent(AccountsSuddenIncDecConsumptionRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public AccountsSuddenIncDecConsumptionRow Row {
                 get {
                     return this.eventRow;
                 }
