@@ -16,7 +16,7 @@ namespace ConcessionaireReports
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MeterReportsForm());
+            Application.Run(new MeterReadingReportsForm());
         }
     }
 }
