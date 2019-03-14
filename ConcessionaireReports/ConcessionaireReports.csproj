@@ -83,6 +83,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetConcessionaireReports.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetMeterReadingReports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetMeterReadingReports.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetMeterReports.cs">
       <DependentUpon>DataSetMeterReports.xsd</DependentUpon>
     </Compile>
@@ -131,6 +136,7 @@
     <EmbeddedResource Include="RDLC\ReportAccountPerMeterSize.rdlc" />
     <EmbeddedResource Include="RDLC\ReportChangedMeterPreviousRead.rdlc" />
     <EmbeddedResource Include="RDLC\ReportNewConnectionSummary.rdlc" />
+    <EmbeddedResource Include="RDLC\ReportReadingSlip.rdlc" />
     <EmbeddedResource Include="RDLC\ReportSeniorCitizenAccounts.rdlc" />
     <EmbeddedResource Include="RDLC\ReportSummaryAccountsPerClass.rdlc" />
     <EmbeddedResource Include="RDLC\ReportSummaryAlteration.rdlc" />
@@ -149,6 +155,17 @@
     </None>
     <None Include="DataSetConcessionaireReports.xss">
       <DependentUpon>DataSetConcessionaireReports.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetMeterReadingReports.xsc">
+      <DependentUpon>DataSetMeterReadingReports.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetMeterReadingReports.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetMeterReadingReports.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetMeterReadingReports.xss">
+      <DependentUpon>DataSetMeterReadingReports.xsd</DependentUpon>
     </None>
     <None Include="DataSetMeterReports.xsc">
       <DependentUpon>DataSetMeterReports.xsd</DependentUpon>
