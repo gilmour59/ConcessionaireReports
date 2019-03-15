@@ -49,6 +49,11 @@ namespace ConcessionaireReports
                         comboBoxAccountsSuddenIncDecConsumptionZone.ValueMember = "zone_code";
                         comboBoxAccountsSuddenIncDecConsumptionZone.DisplayMember = "zone_code";
                         comboBoxAccountsSuddenIncDecConsumptionZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox
+
+                        //Min Consumption
+                        comboBoxAccountsMinimumConsumptionZone.ValueMember = "zone_code";
+                        comboBoxAccountsMinimumConsumptionZone.DisplayMember = "zone_code";
+                        comboBoxAccountsMinimumConsumptionZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox
                     }
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetBillingMonthsId", conn))
@@ -66,6 +71,11 @@ namespace ConcessionaireReports
                         comboBoxAccountsSuddenIncDecConsumptionBillingMonth.ValueMember = "billing_month_id";
                         comboBoxAccountsSuddenIncDecConsumptionBillingMonth.DisplayMember = "month_year";
                         comboBoxAccountsSuddenIncDecConsumptionBillingMonth.DataSource = dsBillMonth.Tables[0]; //this triggers the SelectedIndex property of a combobox
+
+                        //Min Consumption
+                        comboBoxAccountsMinimumConsumptionBillingMonth.ValueMember = "billing_month_id";
+                        comboBoxAccountsMinimumConsumptionBillingMonth.DisplayMember = "month_year";
+                        comboBoxAccountsMinimumConsumptionBillingMonth.DataSource = dsBillMonth.Tables[0]; //this triggers the SelectedIndex property of a combobox
                     }
                     conn.Close();
                 }
@@ -266,6 +276,83 @@ namespace ConcessionaireReports
             {
                 MessageBox.Show("error: " + ex, "Error!");
             }
+        }
+
+        private void comboBoxAccountsMinimumConsumptionZone_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetBooksOfZone", conn))
+                    {
+                        DataSet dsBooksOfZone = new DataSet();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountsMinimumConsumptionZone.SelectedValue.ToString());
+                        adapter.Fill(dsBooksOfZone);
+
+                        comboBoxAccountsMinimumConsumptionBook.ValueMember = "book_code";
+                        comboBoxAccountsMinimumConsumptionBook.DisplayMember = "book_code";
+                        comboBoxAccountsMinimumConsumptionBook.DataSource = dsBooksOfZone.Tables[0];
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+        }
+
+        private void buttonAccountsMinimumConsumptionSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetAccountsWithMinConsumption_", conn))
+                    {
+
+                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+
+                        DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@billMonth", comboBoxAccountsMinimumConsumptionBillingMonth.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@billMonth"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountsMinimumConsumptionZone.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxAccountsMinimumConsumptionBook.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "AccountsMinimumConsumption");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetMeterReadingReports", ds.Tables["AccountsMinimumConsumption"]);
+                        reportViewerAccountsMinimumConsumption.LocalReport.DataSources.Clear();
+                        reportViewerAccountsMinimumConsumption.LocalReport.DataSources.Add(rds);
+
+                        ReportParameter[] param = new ReportParameter[]
+                        {
+                            new ReportParameter("ReportParameterDate", comboBoxAccountsMinimumConsumptionBillingMonth.Text),
+                            new ReportParameter("ReportParameterZone", comboBoxAccountsMinimumConsumptionZone.Text),
+                            new ReportParameter("ReportParameterBook", comboBoxAccountsMinimumConsumptionBook.Text)
+                        };
+                        reportViewerAccountsMinimumConsumption.LocalReport.SetParameters(param);
+                        reportViewerAccountsMinimumConsumption.LocalReport.Refresh();
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            this.reportViewerAccountsMinimumConsumption.RefreshReport();
         }
     }
 }
