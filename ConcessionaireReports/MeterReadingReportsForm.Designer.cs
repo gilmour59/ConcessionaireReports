@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.tabControlMeterReadingReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.comboBoxReadingSlipBook = new System.Windows.Forms.ComboBox();
@@ -73,6 +76,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.dateTimePickerSummaryDisposedMetersTo = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerSummaryDisposedMetersFrom = new System.Windows.Forms.DateTimePicker();
+            this.DataSetMeterReadingReports = new ConcessionaireReports.DataSetMeterReadingReports();
+            this.ReadingSlipBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlMeterReadingReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -80,6 +85,8 @@
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetMeterReadingReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReadingSlipBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlMeterReadingReports
@@ -152,6 +159,10 @@
             // 
             // reportViewerReadingSlip
             // 
+            reportDataSource1.Name = "DataSetMeterReadingReports";
+            reportDataSource1.Value = this.ReadingSlipBindingSource;
+            this.reportViewerReadingSlip.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewerReadingSlip.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportReadingSlip.rdlc";
             this.reportViewerReadingSlip.Location = new System.Drawing.Point(27, 67);
             this.reportViewerReadingSlip.Name = "reportViewerReadingSlip";
             this.reportViewerReadingSlip.ServerReport.BearerToken = null;
@@ -167,6 +178,7 @@
             this.buttonReadingSlipSearch.TabIndex = 21;
             this.buttonReadingSlipSearch.Text = "Search";
             this.buttonReadingSlipSearch.UseVisualStyleBackColor = true;
+            this.buttonReadingSlipSearch.Click += new System.EventHandler(this.buttonReadingSlipSearch_Click);
             // 
             // label12
             // 
@@ -512,6 +524,10 @@
             // 
             // reportViewerUnreadMeters
             // 
+            reportDataSource2.Name = "DataSetMeterReadingReports";
+            reportDataSource2.Value = this.ReadingSlipBindingSource;
+            this.reportViewerUnreadMeters.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewerUnreadMeters.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportReadingSlip.rdlc";
             this.reportViewerUnreadMeters.Location = new System.Drawing.Point(23, 63);
             this.reportViewerUnreadMeters.Name = "reportViewerUnreadMeters";
             this.reportViewerUnreadMeters.ServerReport.BearerToken = null;
@@ -568,6 +584,16 @@
             this.dateTimePickerSummaryDisposedMetersFrom.Size = new System.Drawing.Size(118, 24);
             this.dateTimePickerSummaryDisposedMetersFrom.TabIndex = 29;
             // 
+            // DataSetMeterReadingReports
+            // 
+            this.DataSetMeterReadingReports.DataSetName = "DataSetMeterReadingReports";
+            this.DataSetMeterReadingReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ReadingSlipBindingSource
+            // 
+            this.ReadingSlipBindingSource.DataMember = "ReadingSlip";
+            this.ReadingSlipBindingSource.DataSource = this.DataSetMeterReadingReports;
+            // 
             // MeterReadingReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -593,6 +619,8 @@
             this.tabPage5.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetMeterReadingReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReadingSlipBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -644,5 +672,7 @@
         private System.Windows.Forms.ComboBox comboBoxReadingSlipBook;
         private System.Windows.Forms.ComboBox comboBoxReadingSlipZone;
         private System.Windows.Forms.ComboBox comboBoxReadingSlipBillingMonth;
+        private System.Windows.Forms.BindingSource ReadingSlipBindingSource;
+        private DataSetMeterReadingReports DataSetMeterReadingReports;
     }
 }

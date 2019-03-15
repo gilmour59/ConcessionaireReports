@@ -131,5 +131,51 @@ namespace ConcessionaireReports
                 MessageBox.Show("error: " + ex, "Error!");
             }
         }
+
+        private void buttonReadingSlipSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetReadingSlipData_", conn))
+                    {
+
+                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+
+                        DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@zone", comboBoxReadingSlipZone.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@zone"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@book", comboBoxReadingSlipBook.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@book"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@bill_month_id", comboBoxReadingSlipBillingMonth.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@bill_month_id"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "ReadingSlip");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetMeterReadingReports", ds.Tables["ReadingSlip"]);
+                        reportViewerReadingSlip.LocalReport.DataSources.Clear();
+                        reportViewerReadingSlip.LocalReport.DataSources.Add(rds);
+
+                        ReportParameter[] param = new ReportParameter[]
+                        {
+                            new ReportParameter("ReportParameterDate", comboBoxReadingSlipBillingMonth.Text),
+                        };
+                        reportViewerReadingSlip.LocalReport.SetParameters(param);
+                        reportViewerReadingSlip.LocalReport.Refresh();
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            this.reportViewerReadingSlip.RefreshReport();
+        }
     }
 }
