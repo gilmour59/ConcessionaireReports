@@ -134,6 +134,7 @@
     <EmbeddedResource Include="RDLC\ReportAccountPerBook.rdlc" />
     <EmbeddedResource Include="RDLC\ReportAccountPerClassification.rdlc" />
     <EmbeddedResource Include="RDLC\ReportAccountPerMeterSize.rdlc" />
+    <EmbeddedResource Include="RDLC\ReportAccountsSuddenIncDecConsumption.rdlc" />
     <EmbeddedResource Include="RDLC\ReportChangedMeterPreviousRead.rdlc" />
     <EmbeddedResource Include="RDLC\ReportNewConnectionSummary.rdlc" />
     <EmbeddedResource Include="RDLC\ReportReadingSlip.rdlc" />
