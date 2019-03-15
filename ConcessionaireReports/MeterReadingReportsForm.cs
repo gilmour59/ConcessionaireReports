@@ -40,10 +40,15 @@ namespace ConcessionaireReports
                         adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                         adapter.Fill(dsZones);
 
-                        //Account Per Book Zone
+                        //Reading Slip
                         comboBoxReadingSlipZone.ValueMember = "zone_code";
                         comboBoxReadingSlipZone.DisplayMember = "zone_code";
                         comboBoxReadingSlipZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox
+
+                        //Sudden Inc/Dec
+                        comboBoxAccountsSuddenIncDecConsumptionZone.ValueMember = "zone_code";
+                        comboBoxAccountsSuddenIncDecConsumptionZone.DisplayMember = "zone_code";
+                        comboBoxAccountsSuddenIncDecConsumptionZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox
                     }
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetBillingMonthsId", conn))
@@ -52,9 +57,15 @@ namespace ConcessionaireReports
                         adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                         adapter.Fill(dsBillMonth);
 
+                        //Reading Slip
                         comboBoxReadingSlipBillingMonth.ValueMember = "billing_month_id";
                         comboBoxReadingSlipBillingMonth.DisplayMember = "month_year"; 
                         comboBoxReadingSlipBillingMonth.DataSource = dsBillMonth.Tables[0]; //this triggers the SelectedIndex property of a combobox
+
+                        //Sudden Inc/Dec
+                        comboBoxAccountsSuddenIncDecConsumptionBillingMonth.ValueMember = "billing_month_id";
+                        comboBoxAccountsSuddenIncDecConsumptionBillingMonth.DisplayMember = "month_year";
+                        comboBoxAccountsSuddenIncDecConsumptionBillingMonth.DataSource = dsBillMonth.Tables[0]; //this triggers the SelectedIndex property of a combobox
                     }
                     conn.Close();
                 }
@@ -176,6 +187,85 @@ namespace ConcessionaireReports
                 MessageBox.Show("error: " + ex, "Error!");
             }
             this.reportViewerReadingSlip.RefreshReport();
+        }
+
+        private void buttonAccountsSuddenIncDecConsumptionSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetSuddenUpDownInComsumption_", conn))
+                    {
+
+                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+
+                        DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@billMonth", comboBoxAccountsSuddenIncDecConsumptionBillingMonth.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@billMonth"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountsSuddenIncDecConsumptionZone.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxAccountsSuddenIncDecConsumptionBook.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@in_change", numericUpDownAccountsSuddenIncDecConsumptionChange.Value);
+                        adapter.SelectCommand.Parameters["@in_change"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "AccountsSuddenIncDecConsumption");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetMeterReadingReports", ds.Tables["AccountsSuddenIncDecConsumption"]);
+                        reportViewerAccountsSuddenIncDecConsumption.LocalReport.DataSources.Clear();
+                        reportViewerAccountsSuddenIncDecConsumption.LocalReport.DataSources.Add(rds);
+
+                        ReportParameter[] param = new ReportParameter[]
+                        {
+                            new ReportParameter("ReportParameterDate", comboBoxAccountsSuddenIncDecConsumptionBillingMonth.Text),
+                            new ReportParameter("ReportParameterZone", comboBoxAccountsSuddenIncDecConsumptionZone.Text),
+                            new ReportParameter("ReportParameterBook", comboBoxAccountsSuddenIncDecConsumptionBook.Text)
+                        };
+                        reportViewerAccountsSuddenIncDecConsumption.LocalReport.SetParameters(param);
+                        reportViewerAccountsSuddenIncDecConsumption.LocalReport.Refresh();
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            this.reportViewerAccountsSuddenIncDecConsumption.RefreshReport();
+        }
+
+        private void comboBoxAccountsSuddenIncDecConsumptionZone_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetBooksOfZone", conn))
+                    {
+                        DataSet dsBooksOfZone = new DataSet();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountsSuddenIncDecConsumptionZone.SelectedValue.ToString());
+                        adapter.Fill(dsBooksOfZone);
+
+                        comboBoxAccountsSuddenIncDecConsumptionBook.ValueMember = "book_code";
+                        comboBoxAccountsSuddenIncDecConsumptionBook.DisplayMember = "book_code";
+                        comboBoxAccountsSuddenIncDecConsumptionBook.DataSource = dsBooksOfZone.Tables[0];
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
         }
     }
 }

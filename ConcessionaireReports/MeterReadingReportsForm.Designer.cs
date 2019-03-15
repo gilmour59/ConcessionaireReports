@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.ReadingSlipBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSetMeterReadingReports = new ConcessionaireReports.DataSetMeterReadingReports();
             this.tabControlMeterReadingReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.comboBoxReadingSlipBook = new System.Windows.Forms.ComboBox();
@@ -57,11 +60,7 @@
             this.dateTimePickerSummaryPulledOutMetersMonth = new System.Windows.Forms.DateTimePicker();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.reportViewerAccountsSuddenIncDecConsumption = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.dateTimePickerSummaryAlterationTo = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerSummaryAlterationFrom = new System.Windows.Forms.DateTimePicker();
-            this.buttonSummaryAlterationSearch = new System.Windows.Forms.Button();
+            this.buttonAccountsSuddenIncDecConsumptionSearch = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.reportViewerAccountsMinimumConsumption = new Microsoft.Reporting.WinForms.ReportViewer();
             this.buttonSummaryReceivedMetersSearch = new System.Windows.Forms.Button();
@@ -76,8 +75,17 @@
             this.label11 = new System.Windows.Forms.Label();
             this.dateTimePickerSummaryDisposedMetersTo = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerSummaryDisposedMetersFrom = new System.Windows.Forms.DateTimePicker();
-            this.DataSetMeterReadingReports = new ConcessionaireReports.DataSetMeterReadingReports();
-            this.ReadingSlipBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBoxAccountsSuddenIncDecConsumptionBook = new System.Windows.Forms.ComboBox();
+            this.comboBoxAccountsSuddenIncDecConsumptionZone = new System.Windows.Forms.ComboBox();
+            this.comboBoxAccountsSuddenIncDecConsumptionBillingMonth = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.numericUpDownAccountsSuddenIncDecConsumptionChange = new System.Windows.Forms.NumericUpDown();
+            this.AccountsSuddenIncDecConsumptionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ReadingSlipBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetMeterReadingReports)).BeginInit();
             this.tabControlMeterReadingReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -85,9 +93,19 @@
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetMeterReadingReports)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ReadingSlipBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAccountsSuddenIncDecConsumptionChange)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountsSuddenIncDecConsumptionBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ReadingSlipBindingSource
+            // 
+            this.ReadingSlipBindingSource.DataMember = "ReadingSlip";
+            this.ReadingSlipBindingSource.DataSource = this.DataSetMeterReadingReports;
+            // 
+            // DataSetMeterReadingReports
+            // 
+            this.DataSetMeterReadingReports.DataSetName = "DataSetMeterReadingReports";
+            this.DataSetMeterReadingReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabControlMeterReadingReports
             // 
@@ -131,7 +149,7 @@
             this.comboBoxReadingSlipBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxReadingSlipBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxReadingSlipBook.FormattingEnabled = true;
-            this.comboBoxReadingSlipBook.Location = new System.Drawing.Point(613, 31);
+            this.comboBoxReadingSlipBook.Location = new System.Drawing.Point(540, 25);
             this.comboBoxReadingSlipBook.Name = "comboBoxReadingSlipBook";
             this.comboBoxReadingSlipBook.Size = new System.Drawing.Size(56, 24);
             this.comboBoxReadingSlipBook.TabIndex = 37;
@@ -141,7 +159,7 @@
             this.comboBoxReadingSlipZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxReadingSlipZone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxReadingSlipZone.FormattingEnabled = true;
-            this.comboBoxReadingSlipZone.Location = new System.Drawing.Point(451, 31);
+            this.comboBoxReadingSlipZone.Location = new System.Drawing.Point(378, 25);
             this.comboBoxReadingSlipZone.Name = "comboBoxReadingSlipZone";
             this.comboBoxReadingSlipZone.Size = new System.Drawing.Size(56, 24);
             this.comboBoxReadingSlipZone.TabIndex = 36;
@@ -152,16 +170,16 @@
             this.comboBoxReadingSlipBillingMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxReadingSlipBillingMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxReadingSlipBillingMonth.FormattingEnabled = true;
-            this.comboBoxReadingSlipBillingMonth.Location = new System.Drawing.Point(189, 31);
+            this.comboBoxReadingSlipBillingMonth.Location = new System.Drawing.Point(116, 25);
             this.comboBoxReadingSlipBillingMonth.Name = "comboBoxReadingSlipBillingMonth";
             this.comboBoxReadingSlipBillingMonth.Size = new System.Drawing.Size(167, 24);
             this.comboBoxReadingSlipBillingMonth.TabIndex = 35;
             // 
             // reportViewerReadingSlip
             // 
-            reportDataSource1.Name = "DataSetMeterReadingReports";
-            reportDataSource1.Value = this.ReadingSlipBindingSource;
-            this.reportViewerReadingSlip.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource5.Name = "DataSetMeterReadingReports";
+            reportDataSource5.Value = this.ReadingSlipBindingSource;
+            this.reportViewerReadingSlip.LocalReport.DataSources.Add(reportDataSource5);
             this.reportViewerReadingSlip.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportReadingSlip.rdlc";
             this.reportViewerReadingSlip.Location = new System.Drawing.Point(27, 67);
             this.reportViewerReadingSlip.Name = "reportViewerReadingSlip";
@@ -172,7 +190,7 @@
             // buttonReadingSlipSearch
             // 
             this.buttonReadingSlipSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReadingSlipSearch.Location = new System.Drawing.Point(746, 23);
+            this.buttonReadingSlipSearch.Location = new System.Drawing.Point(674, 17);
             this.buttonReadingSlipSearch.Name = "buttonReadingSlipSearch";
             this.buttonReadingSlipSearch.Size = new System.Drawing.Size(74, 38);
             this.buttonReadingSlipSearch.TabIndex = 21;
@@ -184,7 +202,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(564, 39);
+            this.label12.Location = new System.Drawing.Point(491, 28);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(43, 16);
             this.label12.TabIndex = 19;
@@ -194,7 +212,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(403, 39);
+            this.label1.Location = new System.Drawing.Point(330, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 16);
             this.label1.TabIndex = 19;
@@ -204,7 +222,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(97, 39);
+            this.label2.Location = new System.Drawing.Point(24, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 16);
             this.label2.TabIndex = 20;
@@ -363,12 +381,16 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.reportViewerAccountsSuddenIncDecConsumption);
+            this.tabPage4.Controls.Add(this.numericUpDownAccountsSuddenIncDecConsumptionChange);
+            this.tabPage4.Controls.Add(this.comboBoxAccountsSuddenIncDecConsumptionBook);
+            this.tabPage4.Controls.Add(this.comboBoxAccountsSuddenIncDecConsumptionZone);
+            this.tabPage4.Controls.Add(this.comboBoxAccountsSuddenIncDecConsumptionBillingMonth);
+            this.tabPage4.Controls.Add(this.label15);
             this.tabPage4.Controls.Add(this.label7);
+            this.tabPage4.Controls.Add(this.label13);
             this.tabPage4.Controls.Add(this.label14);
-            this.tabPage4.Controls.Add(this.dateTimePickerSummaryAlterationTo);
-            this.tabPage4.Controls.Add(this.dateTimePickerSummaryAlterationFrom);
-            this.tabPage4.Controls.Add(this.buttonSummaryAlterationSearch);
+            this.tabPage4.Controls.Add(this.reportViewerAccountsSuddenIncDecConsumption);
+            this.tabPage4.Controls.Add(this.buttonAccountsSuddenIncDecConsumptionSearch);
             this.tabPage4.Location = new System.Drawing.Point(184, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(992, 555);
@@ -378,61 +400,26 @@
             // 
             // reportViewerAccountsSuddenIncDecConsumption
             // 
+            reportDataSource4.Name = "DataSetMeterReadingReports";
+            reportDataSource4.Value = this.AccountsSuddenIncDecConsumptionBindingSource;
+            this.reportViewerAccountsSuddenIncDecConsumption.LocalReport.DataSources.Add(reportDataSource4);
+            this.reportViewerAccountsSuddenIncDecConsumption.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountsSuddenIncDecConsumption.rdlc";
             this.reportViewerAccountsSuddenIncDecConsumption.Location = new System.Drawing.Point(27, 67);
             this.reportViewerAccountsSuddenIncDecConsumption.Name = "reportViewerAccountsSuddenIncDecConsumption";
             this.reportViewerAccountsSuddenIncDecConsumption.ServerReport.BearerToken = null;
             this.reportViewerAccountsSuddenIncDecConsumption.Size = new System.Drawing.Size(938, 469);
             this.reportViewerAccountsSuddenIncDecConsumption.TabIndex = 34;
             // 
-            // label7
+            // buttonAccountsSuddenIncDecConsumptionSearch
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(344, 35);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(28, 16);
-            this.label7.TabIndex = 29;
-            this.label7.Text = "To:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(90, 35);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(42, 16);
-            this.label14.TabIndex = 30;
-            this.label14.Text = "From:";
-            // 
-            // dateTimePickerSummaryAlterationTo
-            // 
-            this.dateTimePickerSummaryAlterationTo.CustomFormat = "MM/dd/yyyy";
-            this.dateTimePickerSummaryAlterationTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerSummaryAlterationTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerSummaryAlterationTo.Location = new System.Drawing.Point(376, 27);
-            this.dateTimePickerSummaryAlterationTo.Name = "dateTimePickerSummaryAlterationTo";
-            this.dateTimePickerSummaryAlterationTo.Size = new System.Drawing.Size(125, 24);
-            this.dateTimePickerSummaryAlterationTo.TabIndex = 27;
-            // 
-            // dateTimePickerSummaryAlterationFrom
-            // 
-            this.dateTimePickerSummaryAlterationFrom.CustomFormat = "MM/dd/yyyy";
-            this.dateTimePickerSummaryAlterationFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerSummaryAlterationFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerSummaryAlterationFrom.Location = new System.Drawing.Point(138, 27);
-            this.dateTimePickerSummaryAlterationFrom.Name = "dateTimePickerSummaryAlterationFrom";
-            this.dateTimePickerSummaryAlterationFrom.Size = new System.Drawing.Size(118, 24);
-            this.dateTimePickerSummaryAlterationFrom.TabIndex = 28;
-            // 
-            // buttonSummaryAlterationSearch
-            // 
-            this.buttonSummaryAlterationSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSummaryAlterationSearch.Location = new System.Drawing.Point(582, 23);
-            this.buttonSummaryAlterationSearch.Name = "buttonSummaryAlterationSearch";
-            this.buttonSummaryAlterationSearch.Size = new System.Drawing.Size(74, 38);
-            this.buttonSummaryAlterationSearch.TabIndex = 25;
-            this.buttonSummaryAlterationSearch.Text = "Search";
-            this.buttonSummaryAlterationSearch.UseVisualStyleBackColor = true;
+            this.buttonAccountsSuddenIncDecConsumptionSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAccountsSuddenIncDecConsumptionSearch.Location = new System.Drawing.Point(827, 20);
+            this.buttonAccountsSuddenIncDecConsumptionSearch.Name = "buttonAccountsSuddenIncDecConsumptionSearch";
+            this.buttonAccountsSuddenIncDecConsumptionSearch.Size = new System.Drawing.Size(74, 38);
+            this.buttonAccountsSuddenIncDecConsumptionSearch.TabIndex = 25;
+            this.buttonAccountsSuddenIncDecConsumptionSearch.Text = "Search";
+            this.buttonAccountsSuddenIncDecConsumptionSearch.UseVisualStyleBackColor = true;
+            this.buttonAccountsSuddenIncDecConsumptionSearch.Click += new System.EventHandler(this.buttonAccountsSuddenIncDecConsumptionSearch_Click);
             // 
             // tabPage5
             // 
@@ -524,9 +511,9 @@
             // 
             // reportViewerUnreadMeters
             // 
-            reportDataSource2.Name = "DataSetMeterReadingReports";
-            reportDataSource2.Value = this.ReadingSlipBindingSource;
-            this.reportViewerUnreadMeters.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource6.Name = "DataSetMeterReadingReports";
+            reportDataSource6.Value = this.ReadingSlipBindingSource;
+            this.reportViewerUnreadMeters.LocalReport.DataSources.Add(reportDataSource6);
             this.reportViewerUnreadMeters.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportReadingSlip.rdlc";
             this.reportViewerUnreadMeters.Location = new System.Drawing.Point(23, 63);
             this.reportViewerUnreadMeters.Name = "reportViewerUnreadMeters";
@@ -584,15 +571,88 @@
             this.dateTimePickerSummaryDisposedMetersFrom.Size = new System.Drawing.Size(118, 24);
             this.dateTimePickerSummaryDisposedMetersFrom.TabIndex = 29;
             // 
-            // DataSetMeterReadingReports
+            // comboBoxAccountsSuddenIncDecConsumptionBook
             // 
-            this.DataSetMeterReadingReports.DataSetName = "DataSetMeterReadingReports";
-            this.DataSetMeterReadingReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.comboBoxAccountsSuddenIncDecConsumptionBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxAccountsSuddenIncDecConsumptionBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxAccountsSuddenIncDecConsumptionBook.FormattingEnabled = true;
+            this.comboBoxAccountsSuddenIncDecConsumptionBook.Location = new System.Drawing.Point(540, 28);
+            this.comboBoxAccountsSuddenIncDecConsumptionBook.Name = "comboBoxAccountsSuddenIncDecConsumptionBook";
+            this.comboBoxAccountsSuddenIncDecConsumptionBook.Size = new System.Drawing.Size(56, 24);
+            this.comboBoxAccountsSuddenIncDecConsumptionBook.TabIndex = 43;
             // 
-            // ReadingSlipBindingSource
+            // comboBoxAccountsSuddenIncDecConsumptionZone
             // 
-            this.ReadingSlipBindingSource.DataMember = "ReadingSlip";
-            this.ReadingSlipBindingSource.DataSource = this.DataSetMeterReadingReports;
+            this.comboBoxAccountsSuddenIncDecConsumptionZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxAccountsSuddenIncDecConsumptionZone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxAccountsSuddenIncDecConsumptionZone.FormattingEnabled = true;
+            this.comboBoxAccountsSuddenIncDecConsumptionZone.Location = new System.Drawing.Point(378, 28);
+            this.comboBoxAccountsSuddenIncDecConsumptionZone.Name = "comboBoxAccountsSuddenIncDecConsumptionZone";
+            this.comboBoxAccountsSuddenIncDecConsumptionZone.Size = new System.Drawing.Size(56, 24);
+            this.comboBoxAccountsSuddenIncDecConsumptionZone.TabIndex = 42;
+            this.comboBoxAccountsSuddenIncDecConsumptionZone.SelectedIndexChanged += new System.EventHandler(this.comboBoxAccountsSuddenIncDecConsumptionZone_SelectedIndexChanged);
+            // 
+            // comboBoxAccountsSuddenIncDecConsumptionBillingMonth
+            // 
+            this.comboBoxAccountsSuddenIncDecConsumptionBillingMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxAccountsSuddenIncDecConsumptionBillingMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxAccountsSuddenIncDecConsumptionBillingMonth.FormattingEnabled = true;
+            this.comboBoxAccountsSuddenIncDecConsumptionBillingMonth.Location = new System.Drawing.Point(116, 28);
+            this.comboBoxAccountsSuddenIncDecConsumptionBillingMonth.Name = "comboBoxAccountsSuddenIncDecConsumptionBillingMonth";
+            this.comboBoxAccountsSuddenIncDecConsumptionBillingMonth.Size = new System.Drawing.Size(167, 24);
+            this.comboBoxAccountsSuddenIncDecConsumptionBillingMonth.TabIndex = 41;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(491, 31);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(43, 16);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "Book:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(330, 31);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(42, 16);
+            this.label13.TabIndex = 39;
+            this.label13.Text = "Zone:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(24, 31);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(86, 16);
+            this.label14.TabIndex = 40;
+            this.label14.Text = "Billing Month:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(649, 31);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(76, 16);
+            this.label15.TabIndex = 38;
+            this.label15.Text = "% Change: ";
+            // 
+            // numericUpDownAccountsSuddenIncDecConsumptionChange
+            // 
+            this.numericUpDownAccountsSuddenIncDecConsumptionChange.Location = new System.Drawing.Point(731, 31);
+            this.numericUpDownAccountsSuddenIncDecConsumptionChange.Name = "numericUpDownAccountsSuddenIncDecConsumptionChange";
+            this.numericUpDownAccountsSuddenIncDecConsumptionChange.Size = new System.Drawing.Size(54, 20);
+            this.numericUpDownAccountsSuddenIncDecConsumptionChange.TabIndex = 44;
+            // 
+            // AccountsSuddenIncDecConsumptionBindingSource
+            // 
+            this.AccountsSuddenIncDecConsumptionBindingSource.DataMember = "AccountsSuddenIncDecConsumption";
+            this.AccountsSuddenIncDecConsumptionBindingSource.DataSource = this.DataSetMeterReadingReports;
             // 
             // MeterReadingReportsForm
             // 
@@ -606,6 +666,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Meter Reading Reports";
             this.Load += new System.EventHandler(this.MeterReadingReportsForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ReadingSlipBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetMeterReadingReports)).EndInit();
             this.tabControlMeterReadingReports.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -619,8 +681,8 @@
             this.tabPage5.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetMeterReadingReports)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ReadingSlipBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAccountsSuddenIncDecConsumptionChange)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountsSuddenIncDecConsumptionBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -645,11 +707,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerSummaryPulledOutMetersYear;
         private System.Windows.Forms.DateTimePicker dateTimePickerSummaryPulledOutMetersMonth;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DateTimePicker dateTimePickerSummaryAlterationTo;
-        private System.Windows.Forms.DateTimePicker dateTimePickerSummaryAlterationFrom;
-        private System.Windows.Forms.Button buttonSummaryAlterationSearch;
+        private System.Windows.Forms.Button buttonAccountsSuddenIncDecConsumptionSearch;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Button buttonSummaryReceivedMetersSearch;
         private System.Windows.Forms.Label label9;
@@ -674,5 +732,14 @@
         private System.Windows.Forms.ComboBox comboBoxReadingSlipBillingMonth;
         private System.Windows.Forms.BindingSource ReadingSlipBindingSource;
         private DataSetMeterReadingReports DataSetMeterReadingReports;
+        private System.Windows.Forms.ComboBox comboBoxAccountsSuddenIncDecConsumptionBook;
+        private System.Windows.Forms.ComboBox comboBoxAccountsSuddenIncDecConsumptionZone;
+        private System.Windows.Forms.ComboBox comboBoxAccountsSuddenIncDecConsumptionBillingMonth;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.NumericUpDown numericUpDownAccountsSuddenIncDecConsumptionChange;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.BindingSource AccountsSuddenIncDecConsumptionBindingSource;
     }
 }
