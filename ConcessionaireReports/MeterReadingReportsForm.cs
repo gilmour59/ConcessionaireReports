@@ -57,6 +57,7 @@ namespace ConcessionaireReports
                         bindBillingMonth(comboBoxAccountsSuddenIncDecConsumptionBillingMonth, adapter);
                         bindBillingMonth(comboBoxAccountsMinimumConsumptionBillingMonth, adapter);
                         bindBillingMonth(comboBoxUnreadMetersBillingMonth, adapter);
+                        bindBillingMonth(comboBoxMeterReaderAccomplishmentBillingMonth, adapter);
 
                         //DataSet dsBillMonth = new DataSet();
                         //adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
@@ -75,7 +76,6 @@ namespace ConcessionaireReports
                 MessageBox.Show("error: " + ex, "Error!");
             }
             this.reportViewerReadingSlip.RefreshReport();
-            this.reportViewerReadBillSOA.RefreshReport();
             this.reportViewerMeterReaderAccomplishment.RefreshReport();
             this.reportViewerAccountsSuddenIncDecConsumption.RefreshReport();
             this.reportViewerAccountsMinimumConsumption.RefreshReport();
@@ -438,6 +438,47 @@ namespace ConcessionaireReports
                 MessageBox.Show("error: " + ex, "Error!");
             }
             this.reportViewerUnreadMeters.RefreshReport();
+        }
+
+        private void buttonMeterReaderAccomplishmentSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetMeterReaderAccomplishment_", conn))
+                    {
+                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+
+                        DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@billMonth", comboBoxMeterReaderAccomplishmentBillingMonth.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@billMonth"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "MeterReaderAccomplishment");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetMeterReadingReports", ds.Tables["MeterReaderAccomplishment"]);
+                        reportViewerMeterReaderAccomplishment.LocalReport.DataSources.Clear();
+                        reportViewerMeterReaderAccomplishment.LocalReport.DataSources.Add(rds);
+
+                        ReportParameter[] param = new ReportParameter[]
+                        {
+                            new ReportParameter("ReportParameterDate", comboBoxMeterReaderAccomplishmentBillingMonth.Text)
+                        };
+                        reportViewerMeterReaderAccomplishment.LocalReport.SetParameters(param);
+                        reportViewerMeterReaderAccomplishment.LocalReport.Refresh();
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            this.reportViewerMeterReaderAccomplishment.RefreshReport();
         }
     }
 }

@@ -137,6 +137,7 @@
     <EmbeddedResource Include="RDLC\ReportAccountsMinimumConsumption.rdlc" />
     <EmbeddedResource Include="RDLC\ReportAccountsSuddenIncDecConsumption.rdlc" />
     <EmbeddedResource Include="RDLC\ReportChangedMeterPreviousRead.rdlc" />
+    <EmbeddedResource Include="RDLC\ReportMeterReaderAccomplishment.rdlc" />
     <EmbeddedResource Include="RDLC\ReportNewConnectionSummary.rdlc" />
     <EmbeddedResource Include="RDLC\ReportReadingSlip.rdlc" />
     <EmbeddedResource Include="RDLC\ReportSeniorCitizenAccounts.rdlc" />
