@@ -89,7 +89,6 @@ namespace ConcessionaireReports
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_getChangedMeterSummary_", conn))
                     {
-
                         adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
 
                         DataSetMeterReports ds = new DataSetMeterReports();

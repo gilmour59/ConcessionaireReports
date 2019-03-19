@@ -36,46 +36,36 @@ namespace ConcessionaireReports
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetZones", conn))
                     {
-                        DataSet dsZones = new DataSet();
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.Fill(dsZones);
+                        bindZone(comboBoxReadingSlipZone, adapter);
+                        bindZone(comboBoxAccountsSuddenIncDecConsumptionZone, adapter);
+                        bindZone(comboBoxAccountsMinimumConsumptionZone, adapter);
+                        bindZone(comboBoxUnreadMetersZone, adapter);
 
-                        //Reading Slip
-                        comboBoxReadingSlipZone.ValueMember = "zone_code";
-                        comboBoxReadingSlipZone.DisplayMember = "zone_code";
-                        comboBoxReadingSlipZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox
+                        //DataSet dsZones = new DataSet();
+                        //adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        //adapter.Fill(dsZones);
 
-                        //Sudden Inc/Dec
-                        comboBoxAccountsSuddenIncDecConsumptionZone.ValueMember = "zone_code";
-                        comboBoxAccountsSuddenIncDecConsumptionZone.DisplayMember = "zone_code";
-                        comboBoxAccountsSuddenIncDecConsumptionZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox
-
-                        //Min Consumption
-                        comboBoxAccountsMinimumConsumptionZone.ValueMember = "zone_code";
-                        comboBoxAccountsMinimumConsumptionZone.DisplayMember = "zone_code";
-                        comboBoxAccountsMinimumConsumptionZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox
+                        ////Reading Slip
+                        //comboBoxReadingSlipZone.ValueMember = "zone_code";
+                        //comboBoxReadingSlipZone.DisplayMember = "zone_code";
+                        //comboBoxReadingSlipZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox
                     }
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetBillingMonthsId", conn))
                     {
-                        DataSet dsBillMonth = new DataSet();
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.Fill(dsBillMonth);
+                        bindBillingMonth(comboBoxReadingSlipBillingMonth, adapter);
+                        bindBillingMonth(comboBoxAccountsSuddenIncDecConsumptionBillingMonth, adapter);
+                        bindBillingMonth(comboBoxAccountsMinimumConsumptionBillingMonth, adapter);
+                        bindBillingMonth(comboBoxUnreadMetersBillingMonth, adapter);
 
-                        //Reading Slip
-                        comboBoxReadingSlipBillingMonth.ValueMember = "billing_month_id";
-                        comboBoxReadingSlipBillingMonth.DisplayMember = "month_year"; 
-                        comboBoxReadingSlipBillingMonth.DataSource = dsBillMonth.Tables[0]; //this triggers the SelectedIndex property of a combobox
+                        //DataSet dsBillMonth = new DataSet();
+                        //adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        //adapter.Fill(dsBillMonth);
 
-                        //Sudden Inc/Dec
-                        comboBoxAccountsSuddenIncDecConsumptionBillingMonth.ValueMember = "billing_month_id";
-                        comboBoxAccountsSuddenIncDecConsumptionBillingMonth.DisplayMember = "month_year";
-                        comboBoxAccountsSuddenIncDecConsumptionBillingMonth.DataSource = dsBillMonth.Tables[0]; //this triggers the SelectedIndex property of a combobox
-
-                        //Min Consumption
-                        comboBoxAccountsMinimumConsumptionBillingMonth.ValueMember = "billing_month_id";
-                        comboBoxAccountsMinimumConsumptionBillingMonth.DisplayMember = "month_year";
-                        comboBoxAccountsMinimumConsumptionBillingMonth.DataSource = dsBillMonth.Tables[0]; //this triggers the SelectedIndex property of a combobox
+                        ////Reading Slip
+                        //comboBoxReadingSlipBillingMonth.ValueMember = "billing_month_id";
+                        //comboBoxReadingSlipBillingMonth.DisplayMember = "month_year"; 
+                        //comboBoxReadingSlipBillingMonth.DataSource = dsBillMonth.Tables[0]; //this triggers the SelectedIndex property of a combobox
                     }
                     conn.Close();
                 }
@@ -90,6 +80,28 @@ namespace ConcessionaireReports
             this.reportViewerAccountsSuddenIncDecConsumption.RefreshReport();
             this.reportViewerAccountsMinimumConsumption.RefreshReport();
             this.reportViewerUnreadMeters.RefreshReport();
+        }
+
+        private void bindBillingMonth(ComboBox cb, MySqlDataAdapter adap)
+        {
+            DataSet dsBillMonth = new DataSet();
+            adap.SelectCommand.CommandType = CommandType.StoredProcedure;
+            adap.Fill(dsBillMonth);
+
+            cb.ValueMember = "billing_month_id";
+            cb.DisplayMember = "month_year";
+            cb.DataSource = dsBillMonth.Tables[0];
+        }
+
+        private void bindZone(ComboBox cb, MySqlDataAdapter adap)
+        {
+            DataSet dsZones = new DataSet();
+            adap.SelectCommand.CommandType = CommandType.StoredProcedure;
+            adap.Fill(dsZones);
+
+            cb.ValueMember = "zone_code";
+            cb.DisplayMember = "zone_code";
+            cb.DataSource = dsZones.Tables[0];
         }
 
         private void tabControlMeterReadingReports_DrawItem(object sender, DrawItemEventArgs e)
@@ -163,7 +175,6 @@ namespace ConcessionaireReports
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetReadingSlipData_", conn))
                     {
-
                         adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
 
                         DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
@@ -209,7 +220,6 @@ namespace ConcessionaireReports
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetSuddenUpDownInComsumption_", conn))
                     {
-
                         adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
 
                         DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
@@ -317,7 +327,6 @@ namespace ConcessionaireReports
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetAccountsWithMinConsumption_", conn))
                     {
-
                         adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
 
                         DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
@@ -353,6 +362,82 @@ namespace ConcessionaireReports
                 MessageBox.Show("error: " + ex, "Error!");
             }
             this.reportViewerAccountsMinimumConsumption.RefreshReport();
+        }
+
+        private void comboBoxUnreadMetersZone_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetBooksOfZone", conn))
+                    {
+                        DataSet dsBooksOfZone = new DataSet();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxUnreadMetersZone.SelectedValue.ToString());
+                        adapter.Fill(dsBooksOfZone);
+
+                        comboBoxUnreadMetersBook.ValueMember = "book_code";
+                        comboBoxUnreadMetersBook.DisplayMember = "book_code";
+                        comboBoxUnreadMetersBook.DataSource = dsBooksOfZone.Tables[0];
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+        }
+
+        private void buttonUnreadMetersSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetUnreadMeters_", conn))
+                    {
+                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+
+                        DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@billMonth", comboBoxUnreadMetersBillingMonth.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@billMonth"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxUnreadMetersZone.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxUnreadMetersBook.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "UnreadMeters");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetMeterReadingReports", ds.Tables["UnreadMeters"]);
+                        reportViewerUnreadMeters.LocalReport.DataSources.Clear();
+                        reportViewerUnreadMeters.LocalReport.DataSources.Add(rds);
+
+                        ReportParameter[] param = new ReportParameter[]
+                        {
+                            new ReportParameter("ReportParameterDate", comboBoxUnreadMetersBillingMonth.Text),
+                            new ReportParameter("ReportParameterZone", comboBoxUnreadMetersZone.Text),
+                            new ReportParameter("ReportParameterBook", comboBoxUnreadMetersBook.Text)
+                        };
+                        reportViewerUnreadMeters.LocalReport.SetParameters(param);
+                        reportViewerUnreadMeters.LocalReport.Refresh();
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            this.reportViewerUnreadMeters.RefreshReport();
         }
     }
 }

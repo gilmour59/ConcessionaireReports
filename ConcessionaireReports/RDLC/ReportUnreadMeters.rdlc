@@ -7,7 +7,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>eb5ac2ad-056d-4743-9827-a4acaaa96e40</rd:DataSourceID>
+      <rd:DataSourceID>db099eea-d0ea-4aec-9e10-d04997334e37</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -41,23 +41,23 @@
           <DataField>address</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="meter_sn">
+          <DataField>meter_sn</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="current">
           <DataField>current</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="six_mo_ave">
-          <DataField>six_mo_ave</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="percent_change">
-          <DataField>percent_change</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
+        <Field Name="last_reading_date">
+          <DataField>last_reading_date</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSetMeterReadingReports</rd:DataSetName>
         <rd:SchemaPath>C:\Users\Gilmour\Source\Repos\gilmour59\ConcessionaireReports\ConcessionaireReports\DataSetMeterReadingReports.xsd</rd:SchemaPath>
-        <rd:TableName>AccountsSuddenIncDecConsumption</rd:TableName>
+        <rd:TableName>UnreadMeters</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
@@ -72,25 +72,28 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.7cm</Width>
+                  <Width>1.71622cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.7cm</Width>
+                  <Width>2.65532cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5cm</Width>
+                  <Width>4.38263cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5cm</Width>
+                  <Width>4.38263cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.5cm</Width>
+                  <Width>1.8cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.5cm</Width>
+                  <Width>1.8cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.5cm</Width>
+                  <Width>1.6cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.6cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -232,13 +235,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox23">
+                        <Textbox Name="Textbox28">
+                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Current</Value>
+                                  <Value>Meter SN</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
                                     <FontSize>9pt</FontSize>
@@ -251,7 +255,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox23</rd:DefaultName>
+                          <rd:DefaultName>Textbox28</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -274,7 +278,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>6 Mo. Ave</Value>
+                                  <Value>Last Rdng</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
                                     <FontSize>9pt</FontSize>
@@ -303,13 +307,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox19">
+                        <Textbox Name="Textbox21">
+                          <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>% Change</Value>
+                                  <Value>Prev. Rdng</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
                                     <FontSize>9pt</FontSize>
@@ -322,7 +327,43 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox19</rd:DefaultName>
+                          <rd:DefaultName>Textbox21</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox24">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Reading</Value>
+                                  <Style>
+                                    <FontFamily>calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox24</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -471,6 +512,73 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
+                        <Textbox Name="meter_sn">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!meter_sn.Value</Value>
+                                  <Style>
+                                    <FontFamily>calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>meter_sn</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="last_reading_date">
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!last_reading_date.Value</Value>
+                                  <Style>
+                                    <FontFamily>calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                    <Format>d</Format>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>last_reading_date</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="current">
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -484,7 +592,9 @@
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>current</rd:DefaultName>
@@ -503,13 +613,13 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="six_mo_ave">
+                        <Textbox Name="Textbox25">
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!six_mo_ave.Value</Value>
+                                  <Value />
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
                                     <FontSize>9pt</FontSize>
@@ -521,41 +631,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>six_mo_ave</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="percent_change">
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!percent_change.Value</Value>
-                                  <Style>
-                                    <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>percent_change</rd:DefaultName>
+                          <rd:DefaultName>Textbox25</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -582,6 +658,7 @@
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -596,10 +673,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSetMeterReadingReports</DataSetName>
-            <Top>3.60532cm</Top>
-            <Left>0.25406cm</Left>
+            <Top>3.60669cm</Top>
+            <Left>0.35147cm</Left>
             <Height>1cm</Height>
-            <Width>19.9cm</Width>
+            <Width>19.93681cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -626,8 +703,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
-            <Top>4.83285cm</Top>
-            <Left>0.25406cm</Left>
+            <Top>4.83422cm</Top>
+            <Left>0.35147cm</Left>
             <Height>0.49417cm</Height>
             <Width>5.8217cm</Width>
             <ZIndex>1</ZIndex>
@@ -648,7 +725,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>List of Accounts with Sudden Increase/Decrease in Consumption</Value>
+                    <Value>List of Unread Meters</Value>
                     <Style>
                       <FontFamily>calibri</FontFamily>
                       <FontSize>11pt</FontSize>
@@ -662,8 +739,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox16</rd:DefaultName>
-            <Top>1.333cm</Top>
-            <Left>3.77907cm</Left>
+            <Top>1.33437cm</Top>
+            <Left>3.87648cm</Left>
             <Height>0.6cm</Height>
             <Width>13cm</Width>
             <ZIndex>2</ZIndex>
@@ -697,8 +774,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>header_address</rd:DefaultName>
-            <Top>0.69772cm</Top>
-            <Left>3.77907cm</Left>
+            <Top>0.69909cm</Top>
+            <Left>3.87648cm</Left>
             <Height>0.6cm</Height>
             <Width>13cm</Width>
             <ZIndex>3</ZIndex>
@@ -733,8 +810,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>header_name</rd:DefaultName>
-            <Top>0.06244cm</Top>
-            <Left>3.77907cm</Left>
+            <Top>0.06381cm</Top>
+            <Left>3.87648cm</Left>
             <Height>0.6cm</Height>
             <Width>13cm</Width>
             <ZIndex>4</ZIndex>
@@ -768,8 +845,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>1.96828cm</Top>
-            <Left>3.77906cm</Left>
+            <Top>1.96965cm</Top>
+            <Left>3.87647cm</Left>
             <Height>0.6cm</Height>
             <Width>13cm</Width>
             <ZIndex>5</ZIndex>
@@ -803,8 +880,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>2.60082cm</Top>
-            <Left>3.77906cm</Left>
+            <Top>2.60219cm</Top>
+            <Left>3.87647cm</Left>
             <Height>0.6cm</Height>
             <Width>13cm</Width>
             <ZIndex>6</ZIndex>
@@ -819,10 +896,10 @@
             </Style>
           </Textbox>
           <Line Name="Line1">
-            <Top>4.7429cm</Top>
-            <Left>0.25406cm</Left>
+            <Top>4.69635cm</Top>
+            <Left>0.32906cm</Left>
             <Height>0cm</Height>
-            <Width>19.9cm</Width>
+            <Width>19.95922cm</Width>
             <ZIndex>7</ZIndex>
             <Style>
               <Border>
@@ -831,13 +908,13 @@
             </Style>
           </Line>
         </ReportItems>
-        <Height>2.19517in</Height>
+        <Height>2.19792in</Height>
         <Style />
       </Body>
-      <Width>8.08717in</Width>
+      <Width>8.09375in</Width>
       <Page>
         <PageFooter>
-          <Height>1.08479cm</Height>
+          <Height>1.05833cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -913,7 +990,6 @@
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Top>0cm</Top>
               <Left>1.86985cm</Left>
               <Height>0.83312cm</Height>
               <Width>16.81843cm</Width>
@@ -985,5 +1061,5 @@
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>97273897-d417-4188-94be-3d28a3b4fd0b</rd:ReportID>
+  <rd:ReportID>cf3ab5c1-2cfe-43c2-9c6b-0d7bba0cd359</rd:ReportID>
 </Report>
