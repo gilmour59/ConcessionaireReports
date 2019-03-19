@@ -28,67 +28,86 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource10 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.tabControlBillingReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.comboBoxReadingSlipBook = new System.Windows.Forms.ComboBox();
-            this.comboBoxReadingSlipZone = new System.Windows.Forms.ComboBox();
-            this.comboBoxReadingSlipBillingMonth = new System.Windows.Forms.ComboBox();
-            this.reportViewerReadingSlip = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.buttonReadingSlipSearch = new System.Windows.Forms.Button();
+            this.comboBoxBillComputationRegBook = new System.Windows.Forms.ComboBox();
+            this.comboBoxBillComputationRegZone = new System.Windows.Forms.ComboBox();
+            this.comboBoxBillComputationRegBillingMonth = new System.Windows.Forms.ComboBox();
+            this.reportViewerBillComputationReg = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.buttonBillComputationRegSearch = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.buttonMeterReaderAccomplishmentSearch = new System.Windows.Forms.Button();
-            this.comboBoxMeterReaderAccomplishmentBillingMonth = new System.Windows.Forms.ComboBox();
+            this.buttonBillSummaryMonthSearch = new System.Windows.Forms.Button();
+            this.comboBoxBillSummaryMonthBillingMonth = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.reportViewerMeterReaderAccomplishment = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.numericUpDownAccountsSuddenIncDecConsumptionChange = new System.Windows.Forms.NumericUpDown();
-            this.comboBoxAccountsSuddenIncDecConsumptionBook = new System.Windows.Forms.ComboBox();
-            this.comboBoxAccountsSuddenIncDecConsumptionZone = new System.Windows.Forms.ComboBox();
-            this.comboBoxAccountsSuddenIncDecConsumptionBillingMonth = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.reportViewerAccountsSuddenIncDecConsumption = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.buttonAccountsSuddenIncDecConsumptionSearch = new System.Windows.Forms.Button();
+            this.reportViewerBillPreviousMonth = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.comboBoxAccountsMinimumConsumptionBook = new System.Windows.Forms.ComboBox();
-            this.reportViewerAccountsMinimumConsumption = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.comboBoxAccountsMinimumConsumptionZone = new System.Windows.Forms.ComboBox();
-            this.buttonAccountsMinimumConsumptionSearch = new System.Windows.Forms.Button();
-            this.comboBoxAccountsMinimumConsumptionBillingMonth = new System.Windows.Forms.ComboBox();
+            this.comboBoxPenaltyBillingReportBook = new System.Windows.Forms.ComboBox();
+            this.reportViewerPenaltyBillingReport = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.comboBoxPenaltyBillingReportZone = new System.Windows.Forms.ComboBox();
+            this.buttonPenaltyBillingReportSearch = new System.Windows.Forms.Button();
+            this.comboBoxPenaltyBillingReportBillingMonth = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.comboBoxUnreadMetersBook = new System.Windows.Forms.ComboBox();
-            this.comboBoxUnreadMetersZone = new System.Windows.Forms.ComboBox();
-            this.buttonUnreadMetersSearch = new System.Windows.Forms.Button();
-            this.comboBoxUnreadMetersBillingMonth = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.reportViewerUnreadMeters = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reportViewerPenaltySummaryMonth = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.comboBoxBillSummaryBookBook = new System.Windows.Forms.ComboBox();
+            this.comboBoxBillSummaryBookZone = new System.Windows.Forms.ComboBox();
+            this.comboBoxBillSummaryBookBillingMonth = new System.Windows.Forms.ComboBox();
+            this.reportViewerBillSummaryBook = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.buttonBillSummaryBookSearch = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.buttonBillPreviousMonthSearch = new System.Windows.Forms.Button();
+            this.comboBoxBillPreviousMonthBillingMonth = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.buttonPenaltySummaryMonthSearch = new System.Windows.Forms.Button();
+            this.comboBoxPenaltySummaryMonthBillingMonth = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.buttonBillingSummaryMaterialsSearch = new System.Windows.Forms.Button();
+            this.comboBoxBillingSummaryMaterialsBillingMonth = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.reportViewerBillingSummaryMaterials = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reportViewerBillingAdjustmentSummary = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.buttonBillingAdjustmentSummarySearch = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.dateTimePickerBillingAdjustmentSummaryYear = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerBillingAdjustmentSummaryMonth = new System.Windows.Forms.DateTimePicker();
+            this.buttonDailyBillingSummarySearch = new System.Windows.Forms.Button();
+            this.comboBoxDailyBillingSummaryBillingMonth = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.reportViewerDailyBillingSummary = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabControlBillingReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAccountsSuddenIncDecConsumptionChange)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            this.tabPage8.SuspendLayout();
+            this.tabPage10.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlBillingReports
@@ -116,11 +135,11 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.comboBoxReadingSlipBook);
-            this.tabPage1.Controls.Add(this.comboBoxReadingSlipZone);
-            this.tabPage1.Controls.Add(this.comboBoxReadingSlipBillingMonth);
-            this.tabPage1.Controls.Add(this.reportViewerReadingSlip);
-            this.tabPage1.Controls.Add(this.buttonReadingSlipSearch);
+            this.tabPage1.Controls.Add(this.comboBoxBillComputationRegBook);
+            this.tabPage1.Controls.Add(this.comboBoxBillComputationRegZone);
+            this.tabPage1.Controls.Add(this.comboBoxBillComputationRegBillingMonth);
+            this.tabPage1.Controls.Add(this.reportViewerBillComputationReg);
+            this.tabPage1.Controls.Add(this.buttonBillComputationRegSearch);
             this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.label2);
@@ -132,57 +151,57 @@
             this.tabPage1.Text = "Bill Computation Register";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // comboBoxReadingSlipBook
+            // comboBoxBillComputationRegBook
             // 
-            this.comboBoxReadingSlipBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxReadingSlipBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxReadingSlipBook.FormattingEnabled = true;
-            this.comboBoxReadingSlipBook.Location = new System.Drawing.Point(539, 13);
-            this.comboBoxReadingSlipBook.Name = "comboBoxReadingSlipBook";
-            this.comboBoxReadingSlipBook.Size = new System.Drawing.Size(56, 24);
-            this.comboBoxReadingSlipBook.TabIndex = 37;
+            this.comboBoxBillComputationRegBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBillComputationRegBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxBillComputationRegBook.FormattingEnabled = true;
+            this.comboBoxBillComputationRegBook.Location = new System.Drawing.Point(539, 13);
+            this.comboBoxBillComputationRegBook.Name = "comboBoxBillComputationRegBook";
+            this.comboBoxBillComputationRegBook.Size = new System.Drawing.Size(56, 24);
+            this.comboBoxBillComputationRegBook.TabIndex = 37;
             // 
-            // comboBoxReadingSlipZone
+            // comboBoxBillComputationRegZone
             // 
-            this.comboBoxReadingSlipZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxReadingSlipZone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxReadingSlipZone.FormattingEnabled = true;
-            this.comboBoxReadingSlipZone.Location = new System.Drawing.Point(377, 13);
-            this.comboBoxReadingSlipZone.Name = "comboBoxReadingSlipZone";
-            this.comboBoxReadingSlipZone.Size = new System.Drawing.Size(56, 24);
-            this.comboBoxReadingSlipZone.TabIndex = 36;
+            this.comboBoxBillComputationRegZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBillComputationRegZone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxBillComputationRegZone.FormattingEnabled = true;
+            this.comboBoxBillComputationRegZone.Location = new System.Drawing.Point(377, 13);
+            this.comboBoxBillComputationRegZone.Name = "comboBoxBillComputationRegZone";
+            this.comboBoxBillComputationRegZone.Size = new System.Drawing.Size(56, 24);
+            this.comboBoxBillComputationRegZone.TabIndex = 36;
             // 
-            // comboBoxReadingSlipBillingMonth
+            // comboBoxBillComputationRegBillingMonth
             // 
-            this.comboBoxReadingSlipBillingMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxReadingSlipBillingMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxReadingSlipBillingMonth.FormattingEnabled = true;
-            this.comboBoxReadingSlipBillingMonth.Location = new System.Drawing.Point(115, 13);
-            this.comboBoxReadingSlipBillingMonth.Name = "comboBoxReadingSlipBillingMonth";
-            this.comboBoxReadingSlipBillingMonth.Size = new System.Drawing.Size(167, 24);
-            this.comboBoxReadingSlipBillingMonth.TabIndex = 35;
+            this.comboBoxBillComputationRegBillingMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBillComputationRegBillingMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxBillComputationRegBillingMonth.FormattingEnabled = true;
+            this.comboBoxBillComputationRegBillingMonth.Location = new System.Drawing.Point(115, 13);
+            this.comboBoxBillComputationRegBillingMonth.Name = "comboBoxBillComputationRegBillingMonth";
+            this.comboBoxBillComputationRegBillingMonth.Size = new System.Drawing.Size(167, 24);
+            this.comboBoxBillComputationRegBillingMonth.TabIndex = 35;
             // 
-            // reportViewerReadingSlip
+            // reportViewerBillComputationReg
             // 
-            reportDataSource6.Name = "DataSetMeterReadingReports";
-            reportDataSource6.Value = null;
-            this.reportViewerReadingSlip.LocalReport.DataSources.Add(reportDataSource6);
-            this.reportViewerReadingSlip.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportReadingSlip.rdlc";
-            this.reportViewerReadingSlip.Location = new System.Drawing.Point(26, 49);
-            this.reportViewerReadingSlip.Name = "reportViewerReadingSlip";
-            this.reportViewerReadingSlip.ServerReport.BearerToken = null;
-            this.reportViewerReadingSlip.Size = new System.Drawing.Size(944, 481);
-            this.reportViewerReadingSlip.TabIndex = 34;
+            reportDataSource1.Name = "DataSetMeterReadingReports";
+            reportDataSource1.Value = null;
+            this.reportViewerBillComputationReg.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewerBillComputationReg.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportReadingSlip.rdlc";
+            this.reportViewerBillComputationReg.Location = new System.Drawing.Point(26, 49);
+            this.reportViewerBillComputationReg.Name = "reportViewerBillComputationReg";
+            this.reportViewerBillComputationReg.ServerReport.BearerToken = null;
+            this.reportViewerBillComputationReg.Size = new System.Drawing.Size(944, 481);
+            this.reportViewerBillComputationReg.TabIndex = 34;
             // 
-            // buttonReadingSlipSearch
+            // buttonBillComputationRegSearch
             // 
-            this.buttonReadingSlipSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReadingSlipSearch.Location = new System.Drawing.Point(673, 5);
-            this.buttonReadingSlipSearch.Name = "buttonReadingSlipSearch";
-            this.buttonReadingSlipSearch.Size = new System.Drawing.Size(74, 38);
-            this.buttonReadingSlipSearch.TabIndex = 21;
-            this.buttonReadingSlipSearch.Text = "Search";
-            this.buttonReadingSlipSearch.UseVisualStyleBackColor = true;
+            this.buttonBillComputationRegSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBillComputationRegSearch.Location = new System.Drawing.Point(673, 5);
+            this.buttonBillComputationRegSearch.Name = "buttonBillComputationRegSearch";
+            this.buttonBillComputationRegSearch.Size = new System.Drawing.Size(74, 38);
+            this.buttonBillComputationRegSearch.TabIndex = 21;
+            this.buttonBillComputationRegSearch.Text = "Search";
+            this.buttonBillComputationRegSearch.UseVisualStyleBackColor = true;
             // 
             // label12
             // 
@@ -216,8 +235,8 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.buttonMeterReaderAccomplishmentSearch);
-            this.tabPage3.Controls.Add(this.comboBoxMeterReaderAccomplishmentBillingMonth);
+            this.tabPage3.Controls.Add(this.buttonBillSummaryMonthSearch);
+            this.tabPage3.Controls.Add(this.comboBoxBillSummaryMonthBillingMonth);
             this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Controls.Add(this.reportViewerMeterReaderAccomplishment);
             this.tabPage3.Location = new System.Drawing.Point(189, 4);
@@ -227,25 +246,25 @@
             this.tabPage3.Text = "Billing Summary Per Month";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // buttonMeterReaderAccomplishmentSearch
+            // buttonBillSummaryMonthSearch
             // 
-            this.buttonMeterReaderAccomplishmentSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMeterReaderAccomplishmentSearch.Location = new System.Drawing.Point(348, 5);
-            this.buttonMeterReaderAccomplishmentSearch.Name = "buttonMeterReaderAccomplishmentSearch";
-            this.buttonMeterReaderAccomplishmentSearch.Size = new System.Drawing.Size(74, 38);
-            this.buttonMeterReaderAccomplishmentSearch.TabIndex = 50;
-            this.buttonMeterReaderAccomplishmentSearch.Text = "Search";
-            this.buttonMeterReaderAccomplishmentSearch.UseVisualStyleBackColor = true;
+            this.buttonBillSummaryMonthSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBillSummaryMonthSearch.Location = new System.Drawing.Point(348, 5);
+            this.buttonBillSummaryMonthSearch.Name = "buttonBillSummaryMonthSearch";
+            this.buttonBillSummaryMonthSearch.Size = new System.Drawing.Size(74, 38);
+            this.buttonBillSummaryMonthSearch.TabIndex = 50;
+            this.buttonBillSummaryMonthSearch.Text = "Search";
+            this.buttonBillSummaryMonthSearch.UseVisualStyleBackColor = true;
             // 
-            // comboBoxMeterReaderAccomplishmentBillingMonth
+            // comboBoxBillSummaryMonthBillingMonth
             // 
-            this.comboBoxMeterReaderAccomplishmentBillingMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxMeterReaderAccomplishmentBillingMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxMeterReaderAccomplishmentBillingMonth.FormattingEnabled = true;
-            this.comboBoxMeterReaderAccomplishmentBillingMonth.Location = new System.Drawing.Point(115, 13);
-            this.comboBoxMeterReaderAccomplishmentBillingMonth.Name = "comboBoxMeterReaderAccomplishmentBillingMonth";
-            this.comboBoxMeterReaderAccomplishmentBillingMonth.Size = new System.Drawing.Size(167, 24);
-            this.comboBoxMeterReaderAccomplishmentBillingMonth.TabIndex = 49;
+            this.comboBoxBillSummaryMonthBillingMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBillSummaryMonthBillingMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxBillSummaryMonthBillingMonth.FormattingEnabled = true;
+            this.comboBoxBillSummaryMonthBillingMonth.Location = new System.Drawing.Point(115, 13);
+            this.comboBoxBillSummaryMonthBillingMonth.Name = "comboBoxBillSummaryMonthBillingMonth";
+            this.comboBoxBillSummaryMonthBillingMonth.Size = new System.Drawing.Size(167, 24);
+            this.comboBoxBillSummaryMonthBillingMonth.TabIndex = 49;
             // 
             // label3
             // 
@@ -259,9 +278,9 @@
             // 
             // reportViewerMeterReaderAccomplishment
             // 
-            reportDataSource7.Name = "DataSetMeterReadingReports";
-            reportDataSource7.Value = null;
-            this.reportViewerMeterReaderAccomplishment.LocalReport.DataSources.Add(reportDataSource7);
+            reportDataSource3.Name = "DataSetMeterReadingReports";
+            reportDataSource3.Value = null;
+            this.reportViewerMeterReaderAccomplishment.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewerMeterReaderAccomplishment.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportMeterReaderAccomplishment.rdlc";
             this.reportViewerMeterReaderAccomplishment.Location = new System.Drawing.Point(26, 49);
             this.reportViewerMeterReaderAccomplishment.Name = "reportViewerMeterReaderAccomplishment";
@@ -271,16 +290,10 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.numericUpDownAccountsSuddenIncDecConsumptionChange);
-            this.tabPage4.Controls.Add(this.comboBoxAccountsSuddenIncDecConsumptionBook);
-            this.tabPage4.Controls.Add(this.comboBoxAccountsSuddenIncDecConsumptionZone);
-            this.tabPage4.Controls.Add(this.comboBoxAccountsSuddenIncDecConsumptionBillingMonth);
-            this.tabPage4.Controls.Add(this.label15);
+            this.tabPage4.Controls.Add(this.buttonBillPreviousMonthSearch);
+            this.tabPage4.Controls.Add(this.comboBoxBillPreviousMonthBillingMonth);
             this.tabPage4.Controls.Add(this.label7);
-            this.tabPage4.Controls.Add(this.label13);
-            this.tabPage4.Controls.Add(this.label14);
-            this.tabPage4.Controls.Add(this.reportViewerAccountsSuddenIncDecConsumption);
-            this.tabPage4.Controls.Add(this.buttonAccountsSuddenIncDecConsumptionSearch);
+            this.tabPage4.Controls.Add(this.reportViewerBillPreviousMonth);
             this.tabPage4.Location = new System.Drawing.Point(189, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(987, 555);
@@ -288,112 +301,25 @@
             this.tabPage4.Text = "Billing from Previous Months";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // numericUpDownAccountsSuddenIncDecConsumptionChange
+            // reportViewerBillPreviousMonth
             // 
-            this.numericUpDownAccountsSuddenIncDecConsumptionChange.Location = new System.Drawing.Point(730, 16);
-            this.numericUpDownAccountsSuddenIncDecConsumptionChange.Name = "numericUpDownAccountsSuddenIncDecConsumptionChange";
-            this.numericUpDownAccountsSuddenIncDecConsumptionChange.Size = new System.Drawing.Size(54, 20);
-            this.numericUpDownAccountsSuddenIncDecConsumptionChange.TabIndex = 44;
-            // 
-            // comboBoxAccountsSuddenIncDecConsumptionBook
-            // 
-            this.comboBoxAccountsSuddenIncDecConsumptionBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxAccountsSuddenIncDecConsumptionBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxAccountsSuddenIncDecConsumptionBook.FormattingEnabled = true;
-            this.comboBoxAccountsSuddenIncDecConsumptionBook.Location = new System.Drawing.Point(539, 13);
-            this.comboBoxAccountsSuddenIncDecConsumptionBook.Name = "comboBoxAccountsSuddenIncDecConsumptionBook";
-            this.comboBoxAccountsSuddenIncDecConsumptionBook.Size = new System.Drawing.Size(56, 24);
-            this.comboBoxAccountsSuddenIncDecConsumptionBook.TabIndex = 43;
-            // 
-            // comboBoxAccountsSuddenIncDecConsumptionZone
-            // 
-            this.comboBoxAccountsSuddenIncDecConsumptionZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxAccountsSuddenIncDecConsumptionZone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxAccountsSuddenIncDecConsumptionZone.FormattingEnabled = true;
-            this.comboBoxAccountsSuddenIncDecConsumptionZone.Location = new System.Drawing.Point(377, 13);
-            this.comboBoxAccountsSuddenIncDecConsumptionZone.Name = "comboBoxAccountsSuddenIncDecConsumptionZone";
-            this.comboBoxAccountsSuddenIncDecConsumptionZone.Size = new System.Drawing.Size(56, 24);
-            this.comboBoxAccountsSuddenIncDecConsumptionZone.TabIndex = 42;
-            // 
-            // comboBoxAccountsSuddenIncDecConsumptionBillingMonth
-            // 
-            this.comboBoxAccountsSuddenIncDecConsumptionBillingMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxAccountsSuddenIncDecConsumptionBillingMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxAccountsSuddenIncDecConsumptionBillingMonth.FormattingEnabled = true;
-            this.comboBoxAccountsSuddenIncDecConsumptionBillingMonth.Location = new System.Drawing.Point(115, 13);
-            this.comboBoxAccountsSuddenIncDecConsumptionBillingMonth.Name = "comboBoxAccountsSuddenIncDecConsumptionBillingMonth";
-            this.comboBoxAccountsSuddenIncDecConsumptionBillingMonth.Size = new System.Drawing.Size(167, 24);
-            this.comboBoxAccountsSuddenIncDecConsumptionBillingMonth.TabIndex = 41;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(648, 16);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(76, 16);
-            this.label15.TabIndex = 38;
-            this.label15.Text = "% Change: ";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(490, 16);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 16);
-            this.label7.TabIndex = 38;
-            this.label7.Text = "Book:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(329, 16);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(42, 16);
-            this.label13.TabIndex = 39;
-            this.label13.Text = "Zone:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(23, 16);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(86, 16);
-            this.label14.TabIndex = 40;
-            this.label14.Text = "Billing Month:";
-            // 
-            // reportViewerAccountsSuddenIncDecConsumption
-            // 
-            reportDataSource8.Name = "DataSetMeterReadingReports";
-            reportDataSource8.Value = null;
-            this.reportViewerAccountsSuddenIncDecConsumption.LocalReport.DataSources.Add(reportDataSource8);
-            this.reportViewerAccountsSuddenIncDecConsumption.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountsSuddenIncDecConsumption.rdlc";
-            this.reportViewerAccountsSuddenIncDecConsumption.Location = new System.Drawing.Point(26, 49);
-            this.reportViewerAccountsSuddenIncDecConsumption.Name = "reportViewerAccountsSuddenIncDecConsumption";
-            this.reportViewerAccountsSuddenIncDecConsumption.ServerReport.BearerToken = null;
-            this.reportViewerAccountsSuddenIncDecConsumption.Size = new System.Drawing.Size(944, 481);
-            this.reportViewerAccountsSuddenIncDecConsumption.TabIndex = 34;
-            // 
-            // buttonAccountsSuddenIncDecConsumptionSearch
-            // 
-            this.buttonAccountsSuddenIncDecConsumptionSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAccountsSuddenIncDecConsumptionSearch.Location = new System.Drawing.Point(826, 5);
-            this.buttonAccountsSuddenIncDecConsumptionSearch.Name = "buttonAccountsSuddenIncDecConsumptionSearch";
-            this.buttonAccountsSuddenIncDecConsumptionSearch.Size = new System.Drawing.Size(74, 38);
-            this.buttonAccountsSuddenIncDecConsumptionSearch.TabIndex = 25;
-            this.buttonAccountsSuddenIncDecConsumptionSearch.Text = "Search";
-            this.buttonAccountsSuddenIncDecConsumptionSearch.UseVisualStyleBackColor = true;
+            reportDataSource4.Name = "DataSetMeterReadingReports";
+            reportDataSource4.Value = null;
+            this.reportViewerBillPreviousMonth.LocalReport.DataSources.Add(reportDataSource4);
+            this.reportViewerBillPreviousMonth.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountsSuddenIncDecConsumption.rdlc";
+            this.reportViewerBillPreviousMonth.Location = new System.Drawing.Point(26, 49);
+            this.reportViewerBillPreviousMonth.Name = "reportViewerBillPreviousMonth";
+            this.reportViewerBillPreviousMonth.ServerReport.BearerToken = null;
+            this.reportViewerBillPreviousMonth.Size = new System.Drawing.Size(944, 481);
+            this.reportViewerBillPreviousMonth.TabIndex = 34;
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.comboBoxAccountsMinimumConsumptionBook);
-            this.tabPage5.Controls.Add(this.reportViewerAccountsMinimumConsumption);
-            this.tabPage5.Controls.Add(this.comboBoxAccountsMinimumConsumptionZone);
-            this.tabPage5.Controls.Add(this.buttonAccountsMinimumConsumptionSearch);
-            this.tabPage5.Controls.Add(this.comboBoxAccountsMinimumConsumptionBillingMonth);
+            this.tabPage5.Controls.Add(this.comboBoxPenaltyBillingReportBook);
+            this.tabPage5.Controls.Add(this.reportViewerPenaltyBillingReport);
+            this.tabPage5.Controls.Add(this.comboBoxPenaltyBillingReportZone);
+            this.tabPage5.Controls.Add(this.buttonPenaltyBillingReportSearch);
+            this.tabPage5.Controls.Add(this.comboBoxPenaltyBillingReportBillingMonth);
             this.tabPage5.Controls.Add(this.label16);
             this.tabPage5.Controls.Add(this.label8);
             this.tabPage5.Controls.Add(this.label9);
@@ -404,57 +330,57 @@
             this.tabPage5.Text = "Penalty Billing Report";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // comboBoxAccountsMinimumConsumptionBook
+            // comboBoxPenaltyBillingReportBook
             // 
-            this.comboBoxAccountsMinimumConsumptionBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxAccountsMinimumConsumptionBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxAccountsMinimumConsumptionBook.FormattingEnabled = true;
-            this.comboBoxAccountsMinimumConsumptionBook.Location = new System.Drawing.Point(539, 13);
-            this.comboBoxAccountsMinimumConsumptionBook.Name = "comboBoxAccountsMinimumConsumptionBook";
-            this.comboBoxAccountsMinimumConsumptionBook.Size = new System.Drawing.Size(56, 24);
-            this.comboBoxAccountsMinimumConsumptionBook.TabIndex = 49;
+            this.comboBoxPenaltyBillingReportBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPenaltyBillingReportBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxPenaltyBillingReportBook.FormattingEnabled = true;
+            this.comboBoxPenaltyBillingReportBook.Location = new System.Drawing.Point(539, 13);
+            this.comboBoxPenaltyBillingReportBook.Name = "comboBoxPenaltyBillingReportBook";
+            this.comboBoxPenaltyBillingReportBook.Size = new System.Drawing.Size(56, 24);
+            this.comboBoxPenaltyBillingReportBook.TabIndex = 49;
             // 
-            // reportViewerAccountsMinimumConsumption
+            // reportViewerPenaltyBillingReport
             // 
-            reportDataSource9.Name = "DataSetMeterReadingReports";
-            reportDataSource9.Value = null;
-            this.reportViewerAccountsMinimumConsumption.LocalReport.DataSources.Add(reportDataSource9);
-            this.reportViewerAccountsMinimumConsumption.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountsMinimumConsumption.rdlc";
-            this.reportViewerAccountsMinimumConsumption.Location = new System.Drawing.Point(26, 49);
-            this.reportViewerAccountsMinimumConsumption.Name = "reportViewerAccountsMinimumConsumption";
-            this.reportViewerAccountsMinimumConsumption.ServerReport.BearerToken = null;
-            this.reportViewerAccountsMinimumConsumption.Size = new System.Drawing.Size(944, 481);
-            this.reportViewerAccountsMinimumConsumption.TabIndex = 34;
+            reportDataSource5.Name = "DataSetMeterReadingReports";
+            reportDataSource5.Value = null;
+            this.reportViewerPenaltyBillingReport.LocalReport.DataSources.Add(reportDataSource5);
+            this.reportViewerPenaltyBillingReport.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountsMinimumConsumption.rdlc";
+            this.reportViewerPenaltyBillingReport.Location = new System.Drawing.Point(26, 49);
+            this.reportViewerPenaltyBillingReport.Name = "reportViewerPenaltyBillingReport";
+            this.reportViewerPenaltyBillingReport.ServerReport.BearerToken = null;
+            this.reportViewerPenaltyBillingReport.Size = new System.Drawing.Size(944, 481);
+            this.reportViewerPenaltyBillingReport.TabIndex = 34;
             // 
-            // comboBoxAccountsMinimumConsumptionZone
+            // comboBoxPenaltyBillingReportZone
             // 
-            this.comboBoxAccountsMinimumConsumptionZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxAccountsMinimumConsumptionZone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxAccountsMinimumConsumptionZone.FormattingEnabled = true;
-            this.comboBoxAccountsMinimumConsumptionZone.Location = new System.Drawing.Point(377, 13);
-            this.comboBoxAccountsMinimumConsumptionZone.Name = "comboBoxAccountsMinimumConsumptionZone";
-            this.comboBoxAccountsMinimumConsumptionZone.Size = new System.Drawing.Size(56, 24);
-            this.comboBoxAccountsMinimumConsumptionZone.TabIndex = 48;
+            this.comboBoxPenaltyBillingReportZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPenaltyBillingReportZone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxPenaltyBillingReportZone.FormattingEnabled = true;
+            this.comboBoxPenaltyBillingReportZone.Location = new System.Drawing.Point(377, 13);
+            this.comboBoxPenaltyBillingReportZone.Name = "comboBoxPenaltyBillingReportZone";
+            this.comboBoxPenaltyBillingReportZone.Size = new System.Drawing.Size(56, 24);
+            this.comboBoxPenaltyBillingReportZone.TabIndex = 48;
             // 
-            // buttonAccountsMinimumConsumptionSearch
+            // buttonPenaltyBillingReportSearch
             // 
-            this.buttonAccountsMinimumConsumptionSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAccountsMinimumConsumptionSearch.Location = new System.Drawing.Point(650, 5);
-            this.buttonAccountsMinimumConsumptionSearch.Name = "buttonAccountsMinimumConsumptionSearch";
-            this.buttonAccountsMinimumConsumptionSearch.Size = new System.Drawing.Size(74, 38);
-            this.buttonAccountsMinimumConsumptionSearch.TabIndex = 16;
-            this.buttonAccountsMinimumConsumptionSearch.Text = "Search";
-            this.buttonAccountsMinimumConsumptionSearch.UseVisualStyleBackColor = true;
+            this.buttonPenaltyBillingReportSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPenaltyBillingReportSearch.Location = new System.Drawing.Point(650, 5);
+            this.buttonPenaltyBillingReportSearch.Name = "buttonPenaltyBillingReportSearch";
+            this.buttonPenaltyBillingReportSearch.Size = new System.Drawing.Size(74, 38);
+            this.buttonPenaltyBillingReportSearch.TabIndex = 16;
+            this.buttonPenaltyBillingReportSearch.Text = "Search";
+            this.buttonPenaltyBillingReportSearch.UseVisualStyleBackColor = true;
             // 
-            // comboBoxAccountsMinimumConsumptionBillingMonth
+            // comboBoxPenaltyBillingReportBillingMonth
             // 
-            this.comboBoxAccountsMinimumConsumptionBillingMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxAccountsMinimumConsumptionBillingMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxAccountsMinimumConsumptionBillingMonth.FormattingEnabled = true;
-            this.comboBoxAccountsMinimumConsumptionBillingMonth.Location = new System.Drawing.Point(115, 13);
-            this.comboBoxAccountsMinimumConsumptionBillingMonth.Name = "comboBoxAccountsMinimumConsumptionBillingMonth";
-            this.comboBoxAccountsMinimumConsumptionBillingMonth.Size = new System.Drawing.Size(167, 24);
-            this.comboBoxAccountsMinimumConsumptionBillingMonth.TabIndex = 47;
+            this.comboBoxPenaltyBillingReportBillingMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPenaltyBillingReportBillingMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxPenaltyBillingReportBillingMonth.FormattingEnabled = true;
+            this.comboBoxPenaltyBillingReportBillingMonth.Location = new System.Drawing.Point(115, 13);
+            this.comboBoxPenaltyBillingReportBillingMonth.Name = "comboBoxPenaltyBillingReportBillingMonth";
+            this.comboBoxPenaltyBillingReportBillingMonth.Size = new System.Drawing.Size(167, 24);
+            this.comboBoxPenaltyBillingReportBillingMonth.TabIndex = 47;
             // 
             // label16
             // 
@@ -488,14 +414,10 @@
             // 
             // tabPage6
             // 
-            this.tabPage6.Controls.Add(this.comboBoxUnreadMetersBook);
-            this.tabPage6.Controls.Add(this.comboBoxUnreadMetersZone);
-            this.tabPage6.Controls.Add(this.buttonUnreadMetersSearch);
-            this.tabPage6.Controls.Add(this.comboBoxUnreadMetersBillingMonth);
+            this.tabPage6.Controls.Add(this.buttonPenaltySummaryMonthSearch);
+            this.tabPage6.Controls.Add(this.comboBoxPenaltySummaryMonthBillingMonth);
             this.tabPage6.Controls.Add(this.label10);
-            this.tabPage6.Controls.Add(this.label11);
-            this.tabPage6.Controls.Add(this.label17);
-            this.tabPage6.Controls.Add(this.reportViewerUnreadMeters);
+            this.tabPage6.Controls.Add(this.reportViewerPenaltySummaryMonth);
             this.tabPage6.Location = new System.Drawing.Point(189, 4);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Size = new System.Drawing.Size(987, 555);
@@ -503,90 +425,28 @@
             this.tabPage6.Text = "Penalty Summary Per Month";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // comboBoxUnreadMetersBook
+            // reportViewerPenaltySummaryMonth
             // 
-            this.comboBoxUnreadMetersBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxUnreadMetersBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxUnreadMetersBook.FormattingEnabled = true;
-            this.comboBoxUnreadMetersBook.Location = new System.Drawing.Point(539, 13);
-            this.comboBoxUnreadMetersBook.Name = "comboBoxUnreadMetersBook";
-            this.comboBoxUnreadMetersBook.Size = new System.Drawing.Size(56, 24);
-            this.comboBoxUnreadMetersBook.TabIndex = 56;
-            // 
-            // comboBoxUnreadMetersZone
-            // 
-            this.comboBoxUnreadMetersZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxUnreadMetersZone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxUnreadMetersZone.FormattingEnabled = true;
-            this.comboBoxUnreadMetersZone.Location = new System.Drawing.Point(377, 13);
-            this.comboBoxUnreadMetersZone.Name = "comboBoxUnreadMetersZone";
-            this.comboBoxUnreadMetersZone.Size = new System.Drawing.Size(56, 24);
-            this.comboBoxUnreadMetersZone.TabIndex = 55;
-            // 
-            // buttonUnreadMetersSearch
-            // 
-            this.buttonUnreadMetersSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUnreadMetersSearch.Location = new System.Drawing.Point(650, 5);
-            this.buttonUnreadMetersSearch.Name = "buttonUnreadMetersSearch";
-            this.buttonUnreadMetersSearch.Size = new System.Drawing.Size(74, 38);
-            this.buttonUnreadMetersSearch.TabIndex = 50;
-            this.buttonUnreadMetersSearch.Text = "Search";
-            this.buttonUnreadMetersSearch.UseVisualStyleBackColor = true;
-            // 
-            // comboBoxUnreadMetersBillingMonth
-            // 
-            this.comboBoxUnreadMetersBillingMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxUnreadMetersBillingMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxUnreadMetersBillingMonth.FormattingEnabled = true;
-            this.comboBoxUnreadMetersBillingMonth.Location = new System.Drawing.Point(115, 13);
-            this.comboBoxUnreadMetersBillingMonth.Name = "comboBoxUnreadMetersBillingMonth";
-            this.comboBoxUnreadMetersBillingMonth.Size = new System.Drawing.Size(167, 24);
-            this.comboBoxUnreadMetersBillingMonth.TabIndex = 54;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(23, 16);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 16);
-            this.label10.TabIndex = 53;
-            this.label10.Text = "Billing Month:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(490, 16);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(43, 16);
-            this.label11.TabIndex = 51;
-            this.label11.Text = "Book:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(329, 16);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(42, 16);
-            this.label17.TabIndex = 52;
-            this.label17.Text = "Zone:";
-            // 
-            // reportViewerUnreadMeters
-            // 
-            reportDataSource10.Name = "DataSetMeterReadingReports";
-            reportDataSource10.Value = null;
-            this.reportViewerUnreadMeters.LocalReport.DataSources.Add(reportDataSource10);
-            this.reportViewerUnreadMeters.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportUnreadMeters.rdlc";
-            this.reportViewerUnreadMeters.Location = new System.Drawing.Point(26, 49);
-            this.reportViewerUnreadMeters.Name = "reportViewerUnreadMeters";
-            this.reportViewerUnreadMeters.ServerReport.BearerToken = null;
-            this.reportViewerUnreadMeters.Size = new System.Drawing.Size(944, 481);
-            this.reportViewerUnreadMeters.TabIndex = 35;
+            reportDataSource6.Name = "DataSetMeterReadingReports";
+            reportDataSource6.Value = null;
+            this.reportViewerPenaltySummaryMonth.LocalReport.DataSources.Add(reportDataSource6);
+            this.reportViewerPenaltySummaryMonth.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportUnreadMeters.rdlc";
+            this.reportViewerPenaltySummaryMonth.Location = new System.Drawing.Point(26, 49);
+            this.reportViewerPenaltySummaryMonth.Name = "reportViewerPenaltySummaryMonth";
+            this.reportViewerPenaltySummaryMonth.ServerReport.BearerToken = null;
+            this.reportViewerPenaltySummaryMonth.Size = new System.Drawing.Size(944, 481);
+            this.reportViewerPenaltySummaryMonth.TabIndex = 35;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.comboBoxBillSummaryBookBook);
+            this.tabPage2.Controls.Add(this.comboBoxBillSummaryBookZone);
+            this.tabPage2.Controls.Add(this.comboBoxBillSummaryBookBillingMonth);
+            this.tabPage2.Controls.Add(this.reportViewerBillSummaryBook);
+            this.tabPage2.Controls.Add(this.buttonBillSummaryBookSearch);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Location = new System.Drawing.Point(189, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Size = new System.Drawing.Size(987, 555);
@@ -596,6 +456,10 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.buttonBillingSummaryMaterialsSearch);
+            this.tabPage7.Controls.Add(this.comboBoxBillingSummaryMaterialsBillingMonth);
+            this.tabPage7.Controls.Add(this.label11);
+            this.tabPage7.Controls.Add(this.reportViewerBillingSummaryMaterials);
             this.tabPage7.Location = new System.Drawing.Point(189, 4);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Size = new System.Drawing.Size(987, 555);
@@ -605,6 +469,12 @@
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.reportViewerBillingAdjustmentSummary);
+            this.tabPage8.Controls.Add(this.buttonBillingAdjustmentSummarySearch);
+            this.tabPage8.Controls.Add(this.label13);
+            this.tabPage8.Controls.Add(this.label14);
+            this.tabPage8.Controls.Add(this.dateTimePickerBillingAdjustmentSummaryYear);
+            this.tabPage8.Controls.Add(this.dateTimePickerBillingAdjustmentSummaryMonth);
             this.tabPage8.Location = new System.Drawing.Point(189, 4);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Size = new System.Drawing.Size(987, 555);
@@ -623,12 +493,306 @@
             // 
             // tabPage10
             // 
+            this.tabPage10.Controls.Add(this.buttonDailyBillingSummarySearch);
+            this.tabPage10.Controls.Add(this.comboBoxDailyBillingSummaryBillingMonth);
+            this.tabPage10.Controls.Add(this.label15);
+            this.tabPage10.Controls.Add(this.reportViewerDailyBillingSummary);
             this.tabPage10.Location = new System.Drawing.Point(189, 4);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Size = new System.Drawing.Size(987, 555);
             this.tabPage10.TabIndex = 10;
             this.tabPage10.Text = "Daily Billing Summary";
             this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxBillSummaryBookBook
+            // 
+            this.comboBoxBillSummaryBookBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBillSummaryBookBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxBillSummaryBookBook.FormattingEnabled = true;
+            this.comboBoxBillSummaryBookBook.Location = new System.Drawing.Point(539, 13);
+            this.comboBoxBillSummaryBookBook.Name = "comboBoxBillSummaryBookBook";
+            this.comboBoxBillSummaryBookBook.Size = new System.Drawing.Size(56, 24);
+            this.comboBoxBillSummaryBookBook.TabIndex = 45;
+            // 
+            // comboBoxBillSummaryBookZone
+            // 
+            this.comboBoxBillSummaryBookZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBillSummaryBookZone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxBillSummaryBookZone.FormattingEnabled = true;
+            this.comboBoxBillSummaryBookZone.Location = new System.Drawing.Point(377, 13);
+            this.comboBoxBillSummaryBookZone.Name = "comboBoxBillSummaryBookZone";
+            this.comboBoxBillSummaryBookZone.Size = new System.Drawing.Size(56, 24);
+            this.comboBoxBillSummaryBookZone.TabIndex = 44;
+            // 
+            // comboBoxBillSummaryBookBillingMonth
+            // 
+            this.comboBoxBillSummaryBookBillingMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBillSummaryBookBillingMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxBillSummaryBookBillingMonth.FormattingEnabled = true;
+            this.comboBoxBillSummaryBookBillingMonth.Location = new System.Drawing.Point(115, 13);
+            this.comboBoxBillSummaryBookBillingMonth.Name = "comboBoxBillSummaryBookBillingMonth";
+            this.comboBoxBillSummaryBookBillingMonth.Size = new System.Drawing.Size(167, 24);
+            this.comboBoxBillSummaryBookBillingMonth.TabIndex = 43;
+            // 
+            // reportViewerBillSummaryBook
+            // 
+            reportDataSource2.Name = "DataSetMeterReadingReports";
+            reportDataSource2.Value = null;
+            this.reportViewerBillSummaryBook.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewerBillSummaryBook.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportReadingSlip.rdlc";
+            this.reportViewerBillSummaryBook.Location = new System.Drawing.Point(26, 49);
+            this.reportViewerBillSummaryBook.Name = "reportViewerBillSummaryBook";
+            this.reportViewerBillSummaryBook.ServerReport.BearerToken = null;
+            this.reportViewerBillSummaryBook.Size = new System.Drawing.Size(944, 481);
+            this.reportViewerBillSummaryBook.TabIndex = 42;
+            // 
+            // buttonBillSummaryBookSearch
+            // 
+            this.buttonBillSummaryBookSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBillSummaryBookSearch.Location = new System.Drawing.Point(673, 5);
+            this.buttonBillSummaryBookSearch.Name = "buttonBillSummaryBookSearch";
+            this.buttonBillSummaryBookSearch.Size = new System.Drawing.Size(74, 38);
+            this.buttonBillSummaryBookSearch.TabIndex = 41;
+            this.buttonBillSummaryBookSearch.Text = "Search";
+            this.buttonBillSummaryBookSearch.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(490, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 16);
+            this.label4.TabIndex = 38;
+            this.label4.Text = "Book:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(329, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(42, 16);
+            this.label5.TabIndex = 39;
+            this.label5.Text = "Zone:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(23, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(86, 16);
+            this.label6.TabIndex = 40;
+            this.label6.Text = "Billing Month:";
+            // 
+            // buttonBillPreviousMonthSearch
+            // 
+            this.buttonBillPreviousMonthSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBillPreviousMonthSearch.Location = new System.Drawing.Point(348, 5);
+            this.buttonBillPreviousMonthSearch.Name = "buttonBillPreviousMonthSearch";
+            this.buttonBillPreviousMonthSearch.Size = new System.Drawing.Size(74, 38);
+            this.buttonBillPreviousMonthSearch.TabIndex = 53;
+            this.buttonBillPreviousMonthSearch.Text = "Search";
+            this.buttonBillPreviousMonthSearch.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxBillPreviousMonthBillingMonth
+            // 
+            this.comboBoxBillPreviousMonthBillingMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBillPreviousMonthBillingMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxBillPreviousMonthBillingMonth.FormattingEnabled = true;
+            this.comboBoxBillPreviousMonthBillingMonth.Location = new System.Drawing.Point(115, 13);
+            this.comboBoxBillPreviousMonthBillingMonth.Name = "comboBoxBillPreviousMonthBillingMonth";
+            this.comboBoxBillPreviousMonthBillingMonth.Size = new System.Drawing.Size(167, 24);
+            this.comboBoxBillPreviousMonthBillingMonth.TabIndex = 52;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(23, 16);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(86, 16);
+            this.label7.TabIndex = 51;
+            this.label7.Text = "Billing Month:";
+            // 
+            // buttonPenaltySummaryMonthSearch
+            // 
+            this.buttonPenaltySummaryMonthSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPenaltySummaryMonthSearch.Location = new System.Drawing.Point(348, 5);
+            this.buttonPenaltySummaryMonthSearch.Name = "buttonPenaltySummaryMonthSearch";
+            this.buttonPenaltySummaryMonthSearch.Size = new System.Drawing.Size(74, 38);
+            this.buttonPenaltySummaryMonthSearch.TabIndex = 53;
+            this.buttonPenaltySummaryMonthSearch.Text = "Search";
+            this.buttonPenaltySummaryMonthSearch.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxPenaltySummaryMonthBillingMonth
+            // 
+            this.comboBoxPenaltySummaryMonthBillingMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPenaltySummaryMonthBillingMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxPenaltySummaryMonthBillingMonth.FormattingEnabled = true;
+            this.comboBoxPenaltySummaryMonthBillingMonth.Location = new System.Drawing.Point(115, 13);
+            this.comboBoxPenaltySummaryMonthBillingMonth.Name = "comboBoxPenaltySummaryMonthBillingMonth";
+            this.comboBoxPenaltySummaryMonthBillingMonth.Size = new System.Drawing.Size(167, 24);
+            this.comboBoxPenaltySummaryMonthBillingMonth.TabIndex = 52;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(23, 16);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(86, 16);
+            this.label10.TabIndex = 51;
+            this.label10.Text = "Billing Month:";
+            // 
+            // buttonBillingSummaryMaterialsSearch
+            // 
+            this.buttonBillingSummaryMaterialsSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBillingSummaryMaterialsSearch.Location = new System.Drawing.Point(348, 5);
+            this.buttonBillingSummaryMaterialsSearch.Name = "buttonBillingSummaryMaterialsSearch";
+            this.buttonBillingSummaryMaterialsSearch.Size = new System.Drawing.Size(74, 38);
+            this.buttonBillingSummaryMaterialsSearch.TabIndex = 57;
+            this.buttonBillingSummaryMaterialsSearch.Text = "Search";
+            this.buttonBillingSummaryMaterialsSearch.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxBillingSummaryMaterialsBillingMonth
+            // 
+            this.comboBoxBillingSummaryMaterialsBillingMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBillingSummaryMaterialsBillingMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxBillingSummaryMaterialsBillingMonth.FormattingEnabled = true;
+            this.comboBoxBillingSummaryMaterialsBillingMonth.Location = new System.Drawing.Point(115, 13);
+            this.comboBoxBillingSummaryMaterialsBillingMonth.Name = "comboBoxBillingSummaryMaterialsBillingMonth";
+            this.comboBoxBillingSummaryMaterialsBillingMonth.Size = new System.Drawing.Size(167, 24);
+            this.comboBoxBillingSummaryMaterialsBillingMonth.TabIndex = 56;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(23, 16);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(86, 16);
+            this.label11.TabIndex = 55;
+            this.label11.Text = "Billing Month:";
+            // 
+            // reportViewerBillingSummaryMaterials
+            // 
+            reportDataSource7.Name = "DataSetMeterReadingReports";
+            reportDataSource7.Value = null;
+            this.reportViewerBillingSummaryMaterials.LocalReport.DataSources.Add(reportDataSource7);
+            this.reportViewerBillingSummaryMaterials.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportUnreadMeters.rdlc";
+            this.reportViewerBillingSummaryMaterials.Location = new System.Drawing.Point(26, 49);
+            this.reportViewerBillingSummaryMaterials.Name = "reportViewerBillingSummaryMaterials";
+            this.reportViewerBillingSummaryMaterials.ServerReport.BearerToken = null;
+            this.reportViewerBillingSummaryMaterials.Size = new System.Drawing.Size(944, 481);
+            this.reportViewerBillingSummaryMaterials.TabIndex = 54;
+            // 
+            // reportViewerBillingAdjustmentSummary
+            // 
+            reportDataSource8.Name = "DataSetMeterReports";
+            reportDataSource8.Value = null;
+            this.reportViewerBillingAdjustmentSummary.LocalReport.DataSources.Add(reportDataSource8);
+            this.reportViewerBillingAdjustmentSummary.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportChangedMeterPreviousRead.rdlc";
+            this.reportViewerBillingAdjustmentSummary.Location = new System.Drawing.Point(26, 49);
+            this.reportViewerBillingAdjustmentSummary.Name = "reportViewerBillingAdjustmentSummary";
+            this.reportViewerBillingAdjustmentSummary.ServerReport.BearerToken = null;
+            this.reportViewerBillingAdjustmentSummary.Size = new System.Drawing.Size(944, 481);
+            this.reportViewerBillingAdjustmentSummary.TabIndex = 33;
+            // 
+            // buttonBillingAdjustmentSummarySearch
+            // 
+            this.buttonBillingAdjustmentSummarySearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBillingAdjustmentSummarySearch.Location = new System.Drawing.Point(556, 5);
+            this.buttonBillingAdjustmentSummarySearch.Name = "buttonBillingAdjustmentSummarySearch";
+            this.buttonBillingAdjustmentSummarySearch.Size = new System.Drawing.Size(74, 38);
+            this.buttonBillingAdjustmentSummarySearch.TabIndex = 32;
+            this.buttonBillingAdjustmentSummarySearch.Text = "Search";
+            this.buttonBillingAdjustmentSummarySearch.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(294, 18);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(40, 16);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "Year:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(23, 18);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(47, 16);
+            this.label14.TabIndex = 31;
+            this.label14.Text = "Month:";
+            // 
+            // dateTimePickerBillingAdjustmentSummaryYear
+            // 
+            this.dateTimePickerBillingAdjustmentSummaryYear.CustomFormat = "yyyy";
+            this.dateTimePickerBillingAdjustmentSummaryYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerBillingAdjustmentSummaryYear.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerBillingAdjustmentSummaryYear.Location = new System.Drawing.Point(337, 13);
+            this.dateTimePickerBillingAdjustmentSummaryYear.Name = "dateTimePickerBillingAdjustmentSummaryYear";
+            this.dateTimePickerBillingAdjustmentSummaryYear.ShowUpDown = true;
+            this.dateTimePickerBillingAdjustmentSummaryYear.Size = new System.Drawing.Size(82, 24);
+            this.dateTimePickerBillingAdjustmentSummaryYear.TabIndex = 28;
+            // 
+            // dateTimePickerBillingAdjustmentSummaryMonth
+            // 
+            this.dateTimePickerBillingAdjustmentSummaryMonth.CustomFormat = "MMMM";
+            this.dateTimePickerBillingAdjustmentSummaryMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerBillingAdjustmentSummaryMonth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerBillingAdjustmentSummaryMonth.Location = new System.Drawing.Point(78, 13);
+            this.dateTimePickerBillingAdjustmentSummaryMonth.Name = "dateTimePickerBillingAdjustmentSummaryMonth";
+            this.dateTimePickerBillingAdjustmentSummaryMonth.ShowUpDown = true;
+            this.dateTimePickerBillingAdjustmentSummaryMonth.Size = new System.Drawing.Size(111, 24);
+            this.dateTimePickerBillingAdjustmentSummaryMonth.TabIndex = 29;
+            // 
+            // buttonDailyBillingSummarySearch
+            // 
+            this.buttonDailyBillingSummarySearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDailyBillingSummarySearch.Location = new System.Drawing.Point(348, 5);
+            this.buttonDailyBillingSummarySearch.Name = "buttonDailyBillingSummarySearch";
+            this.buttonDailyBillingSummarySearch.Size = new System.Drawing.Size(74, 38);
+            this.buttonDailyBillingSummarySearch.TabIndex = 61;
+            this.buttonDailyBillingSummarySearch.Text = "Search";
+            this.buttonDailyBillingSummarySearch.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxDailyBillingSummaryBillingMonth
+            // 
+            this.comboBoxDailyBillingSummaryBillingMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDailyBillingSummaryBillingMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxDailyBillingSummaryBillingMonth.FormattingEnabled = true;
+            this.comboBoxDailyBillingSummaryBillingMonth.Location = new System.Drawing.Point(115, 13);
+            this.comboBoxDailyBillingSummaryBillingMonth.Name = "comboBoxDailyBillingSummaryBillingMonth";
+            this.comboBoxDailyBillingSummaryBillingMonth.Size = new System.Drawing.Size(167, 24);
+            this.comboBoxDailyBillingSummaryBillingMonth.TabIndex = 60;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(23, 16);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(86, 16);
+            this.label15.TabIndex = 59;
+            this.label15.Text = "Billing Month:";
+            // 
+            // reportViewerDailyBillingSummary
+            // 
+            reportDataSource9.Name = "DataSetMeterReadingReports";
+            reportDataSource9.Value = null;
+            this.reportViewerDailyBillingSummary.LocalReport.DataSources.Add(reportDataSource9);
+            this.reportViewerDailyBillingSummary.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportUnreadMeters.rdlc";
+            this.reportViewerDailyBillingSummary.Location = new System.Drawing.Point(26, 49);
+            this.reportViewerDailyBillingSummary.Name = "reportViewerDailyBillingSummary";
+            this.reportViewerDailyBillingSummary.ServerReport.BearerToken = null;
+            this.reportViewerDailyBillingSummary.Size = new System.Drawing.Size(944, 481);
+            this.reportViewerDailyBillingSummary.TabIndex = 58;
             // 
             // BillingReportsForm
             // 
@@ -649,11 +813,18 @@
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAccountsSuddenIncDecConsumptionChange)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
+            this.tabPage8.ResumeLayout(false);
+            this.tabPage8.PerformLayout();
+            this.tabPage10.ResumeLayout(false);
+            this.tabPage10.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -662,52 +833,64 @@
 
         private System.Windows.Forms.TabControl tabControlBillingReports;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.ComboBox comboBoxReadingSlipBook;
-        private System.Windows.Forms.ComboBox comboBoxReadingSlipZone;
-        private System.Windows.Forms.ComboBox comboBoxReadingSlipBillingMonth;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewerReadingSlip;
-        private System.Windows.Forms.Button buttonReadingSlipSearch;
+        private System.Windows.Forms.ComboBox comboBoxBillComputationRegBook;
+        private System.Windows.Forms.ComboBox comboBoxBillComputationRegZone;
+        private System.Windows.Forms.ComboBox comboBoxBillComputationRegBillingMonth;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerBillComputationReg;
+        private System.Windows.Forms.Button buttonBillComputationRegSearch;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Button buttonMeterReaderAccomplishmentSearch;
-        private System.Windows.Forms.ComboBox comboBoxMeterReaderAccomplishmentBillingMonth;
+        private System.Windows.Forms.Button buttonBillSummaryMonthSearch;
+        private System.Windows.Forms.ComboBox comboBoxBillSummaryMonthBillingMonth;
         private System.Windows.Forms.Label label3;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerMeterReaderAccomplishment;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.NumericUpDown numericUpDownAccountsSuddenIncDecConsumptionChange;
-        private System.Windows.Forms.ComboBox comboBoxAccountsSuddenIncDecConsumptionBook;
-        private System.Windows.Forms.ComboBox comboBoxAccountsSuddenIncDecConsumptionZone;
-        private System.Windows.Forms.ComboBox comboBoxAccountsSuddenIncDecConsumptionBillingMonth;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewerAccountsSuddenIncDecConsumption;
-        private System.Windows.Forms.Button buttonAccountsSuddenIncDecConsumptionSearch;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerBillPreviousMonth;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.ComboBox comboBoxAccountsMinimumConsumptionBook;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewerAccountsMinimumConsumption;
-        private System.Windows.Forms.ComboBox comboBoxAccountsMinimumConsumptionZone;
-        private System.Windows.Forms.Button buttonAccountsMinimumConsumptionSearch;
-        private System.Windows.Forms.ComboBox comboBoxAccountsMinimumConsumptionBillingMonth;
+        private System.Windows.Forms.ComboBox comboBoxPenaltyBillingReportBook;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerPenaltyBillingReport;
+        private System.Windows.Forms.ComboBox comboBoxPenaltyBillingReportZone;
+        private System.Windows.Forms.Button buttonPenaltyBillingReportSearch;
+        private System.Windows.Forms.ComboBox comboBoxPenaltyBillingReportBillingMonth;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.ComboBox comboBoxUnreadMetersBook;
-        private System.Windows.Forms.ComboBox comboBoxUnreadMetersZone;
-        private System.Windows.Forms.Button buttonUnreadMetersSearch;
-        private System.Windows.Forms.ComboBox comboBoxUnreadMetersBillingMonth;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label17;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewerUnreadMeters;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerPenaltySummaryMonth;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.TabPage tabPage9;
         private System.Windows.Forms.TabPage tabPage10;
+        private System.Windows.Forms.ComboBox comboBoxBillSummaryBookBook;
+        private System.Windows.Forms.ComboBox comboBoxBillSummaryBookZone;
+        private System.Windows.Forms.ComboBox comboBoxBillSummaryBookBillingMonth;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerBillSummaryBook;
+        private System.Windows.Forms.Button buttonBillSummaryBookSearch;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button buttonBillPreviousMonthSearch;
+        private System.Windows.Forms.ComboBox comboBoxBillPreviousMonthBillingMonth;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button buttonPenaltySummaryMonthSearch;
+        private System.Windows.Forms.ComboBox comboBoxPenaltySummaryMonthBillingMonth;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button buttonBillingSummaryMaterialsSearch;
+        private System.Windows.Forms.ComboBox comboBoxBillingSummaryMaterialsBillingMonth;
+        private System.Windows.Forms.Label label11;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerBillingSummaryMaterials;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerBillingAdjustmentSummary;
+        private System.Windows.Forms.Button buttonBillingAdjustmentSummarySearch;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.DateTimePicker dateTimePickerBillingAdjustmentSummaryYear;
+        private System.Windows.Forms.DateTimePicker dateTimePickerBillingAdjustmentSummaryMonth;
+        private System.Windows.Forms.Button buttonDailyBillingSummarySearch;
+        private System.Windows.Forms.ComboBox comboBoxDailyBillingSummaryBillingMonth;
+        private System.Windows.Forms.Label label15;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerDailyBillingSummary;
     }
 }
