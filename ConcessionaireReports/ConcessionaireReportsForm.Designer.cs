@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource66 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource67 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource68 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource69 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource70 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource71 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource72 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource65 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.AccountPerBookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetConcessionaireReports = new ConcessionaireReports.DataSetConcessionaireReports();
             this.AccountPerBarangayBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -208,9 +208,9 @@
             // 
             // reportViewerAccountPerBook
             // 
-            reportDataSource66.Name = "DataSetConcessionaireReports";
-            reportDataSource66.Value = this.AccountPerBookBindingSource;
-            this.reportViewerAccountPerBook.LocalReport.DataSources.Add(reportDataSource66);
+            reportDataSource1.Name = "DataSetConcessionaireReports";
+            reportDataSource1.Value = this.AccountPerBookBindingSource;
+            this.reportViewerAccountPerBook.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewerAccountPerBook.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountPerBook.rdlc";
             this.reportViewerAccountPerBook.Location = new System.Drawing.Point(26, 49);
             this.reportViewerAccountPerBook.Name = "reportViewerAccountPerBook";
@@ -308,9 +308,9 @@
             // 
             // reportViewerAccountPerBarangay
             // 
-            reportDataSource67.Name = "DataSetConcessionaireReports";
-            reportDataSource67.Value = this.AccountPerBarangayBindingSource;
-            this.reportViewerAccountPerBarangay.LocalReport.DataSources.Add(reportDataSource67);
+            reportDataSource2.Name = "DataSetConcessionaireReports";
+            reportDataSource2.Value = this.AccountPerBarangayBindingSource;
+            this.reportViewerAccountPerBarangay.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewerAccountPerBarangay.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountPerBarangay.rdlc";
             this.reportViewerAccountPerBarangay.Location = new System.Drawing.Point(26, 49);
             this.reportViewerAccountPerBarangay.Name = "reportViewerAccountPerBarangay";
@@ -387,9 +387,9 @@
             // 
             // reportViewerAccountPerClassification
             // 
-            reportDataSource68.Name = "DataSetConcessionaireReports";
-            reportDataSource68.Value = this.AccountPerClassificationBindingSource;
-            this.reportViewerAccountPerClassification.LocalReport.DataSources.Add(reportDataSource68);
+            reportDataSource3.Name = "DataSetConcessionaireReports";
+            reportDataSource3.Value = this.AccountPerClassificationBindingSource;
+            this.reportViewerAccountPerClassification.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewerAccountPerClassification.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountPerClassification.rdlc";
             this.reportViewerAccountPerClassification.Location = new System.Drawing.Point(26, 49);
             this.reportViewerAccountPerClassification.Name = "reportViewerAccountPerClassification";
@@ -460,9 +460,9 @@
             // 
             // reportViewerSummaryAccountsPerClass
             // 
-            reportDataSource69.Name = "DataSetConcessionaireReports";
-            reportDataSource69.Value = this.SummaryAccountPerClassBindingSource;
-            this.reportViewerSummaryAccountsPerClass.LocalReport.DataSources.Add(reportDataSource69);
+            reportDataSource4.Name = "DataSetConcessionaireReports";
+            reportDataSource4.Value = this.SummaryAccountPerClassBindingSource;
+            this.reportViewerSummaryAccountsPerClass.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewerSummaryAccountsPerClass.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportSummaryAccountsPerClass.rdlc";
             this.reportViewerSummaryAccountsPerClass.Location = new System.Drawing.Point(23, 24);
             this.reportViewerSummaryAccountsPerClass.Name = "reportViewerSummaryAccountsPerClass";
@@ -487,9 +487,9 @@
             // 
             // reportViewerNewConnectionSummary
             // 
-            reportDataSource70.Name = "DataSetConcessionaireReports";
-            reportDataSource70.Value = this.NewConnectionSummaryBindingSource;
-            this.reportViewerNewConnectionSummary.LocalReport.DataSources.Add(reportDataSource70);
+            reportDataSource5.Name = "DataSetConcessionaireReports";
+            reportDataSource5.Value = this.NewConnectionSummaryBindingSource;
+            this.reportViewerNewConnectionSummary.LocalReport.DataSources.Add(reportDataSource5);
             this.reportViewerNewConnectionSummary.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportNewConnectionSummary.rdlc";
             this.reportViewerNewConnectionSummary.Location = new System.Drawing.Point(26, 49);
             this.reportViewerNewConnectionSummary.Name = "reportViewerNewConnectionSummary";
@@ -566,9 +566,9 @@
             // 
             // reportViewerAccountByStatus
             // 
-            reportDataSource71.Name = "DataSetConcessionaireReports";
-            reportDataSource71.Value = this.AccountByStatusBindingSource;
-            this.reportViewerAccountByStatus.LocalReport.DataSources.Add(reportDataSource71);
+            reportDataSource6.Name = "DataSetConcessionaireReports";
+            reportDataSource6.Value = this.AccountByStatusBindingSource;
+            this.reportViewerAccountByStatus.LocalReport.DataSources.Add(reportDataSource6);
             this.reportViewerAccountByStatus.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountByStatus.rdlc";
             this.reportViewerAccountByStatus.Location = new System.Drawing.Point(26, 49);
             this.reportViewerAccountByStatus.Name = "reportViewerAccountByStatus";
@@ -644,9 +644,9 @@
             // 
             // reportViewerSeniorCitizenAccounts
             // 
-            reportDataSource72.Name = "DataSetConcessionaireReports";
-            reportDataSource72.Value = this.SeniorCitizenAccountsBindingSource;
-            this.reportViewerSeniorCitizenAccounts.LocalReport.DataSources.Add(reportDataSource72);
+            reportDataSource7.Name = "DataSetConcessionaireReports";
+            reportDataSource7.Value = this.SeniorCitizenAccountsBindingSource;
+            this.reportViewerSeniorCitizenAccounts.LocalReport.DataSources.Add(reportDataSource7);
             this.reportViewerSeniorCitizenAccounts.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportSeniorCitizenAccounts.rdlc";
             this.reportViewerSeniorCitizenAccounts.Location = new System.Drawing.Point(26, 49);
             this.reportViewerSeniorCitizenAccounts.Name = "reportViewerSeniorCitizenAccounts";
@@ -725,9 +725,9 @@
             // 
             // reportViewerAccountPerMeterSize
             // 
-            reportDataSource65.Name = "DataSetConcessionaireReports";
-            reportDataSource65.Value = this.AccountPerMeterSizeBindingSource;
-            this.reportViewerAccountPerMeterSize.LocalReport.DataSources.Add(reportDataSource65);
+            reportDataSource8.Name = "DataSetConcessionaireReports";
+            reportDataSource8.Value = this.AccountPerMeterSizeBindingSource;
+            this.reportViewerAccountPerMeterSize.LocalReport.DataSources.Add(reportDataSource8);
             this.reportViewerAccountPerMeterSize.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountPerMeterSize.rdlc";
             this.reportViewerAccountPerMeterSize.Location = new System.Drawing.Point(26, 49);
             this.reportViewerAccountPerMeterSize.Name = "reportViewerAccountPerMeterSize";
