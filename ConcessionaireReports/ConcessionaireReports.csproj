@@ -81,6 +81,11 @@
     <Compile Include="ConcessionaireReportsForm.Designer.cs">
       <DependentUpon>ConcessionaireReportsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSetBillingReports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetBillingReports.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetConcessionaireReports.cs">
       <DependentUpon>DataSetConcessionaireReports.xsd</DependentUpon>
     </Compile>
@@ -145,6 +150,7 @@
     <EmbeddedResource Include="RDLC\ReportAccountPerMeterSize.rdlc" />
     <EmbeddedResource Include="RDLC\ReportAccountsMinimumConsumption.rdlc" />
     <EmbeddedResource Include="RDLC\ReportAccountsSuddenIncDecConsumption.rdlc" />
+    <EmbeddedResource Include="RDLC\ReportBillComputationRegister.rdlc" />
     <EmbeddedResource Include="RDLC\ReportChangedMeterPreviousRead.rdlc" />
     <EmbeddedResource Include="RDLC\ReportMeterReaderAccomplishment.rdlc" />
     <EmbeddedResource Include="RDLC\ReportNewConnectionSummary.rdlc" />
@@ -158,6 +164,17 @@
     <EmbeddedResource Include="RDLC\ReportSummaryReceivedMeters.rdlc" />
     <EmbeddedResource Include="RDLC\ReportSummaryTestedMeters.rdlc" />
     <EmbeddedResource Include="RDLC\ReportUnreadMeters.rdlc" />
+    <None Include="DataSetBillingReports.xsc">
+      <DependentUpon>DataSetBillingReports.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetBillingReports.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetBillingReports.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetBillingReports.xss">
+      <DependentUpon>DataSetBillingReports.xsd</DependentUpon>
+    </None>
     <None Include="DataSetConcessionaireReports.xsc">
       <DependentUpon>DataSetConcessionaireReports.xsd</DependentUpon>
     </None>
