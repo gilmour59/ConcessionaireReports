@@ -69,13 +69,13 @@ namespace ConcessionaireReports
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetZones", conn))
                     {
                         bindZone(comboBoxBillComputationRegZone, adapter);
-                        
+                        bindZone(comboBoxBillSummaryBookZone, adapter);
                     }
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetBillingMonthsId", conn))
                     {
                         bindBillingMonth(comboBoxBillComputationRegBillingMonth, adapter);
-                        
+                        bindBillingMonth(comboBoxBillSummaryBookBillingMonth, adapter);
                     }
                     conn.Close();
                 }
@@ -85,6 +85,7 @@ namespace ConcessionaireReports
                 MessageBox.Show("error: " + ex, "Error!");
             }
             this.reportViewerBillComputationReg.RefreshReport();
+            this.reportViewerBillSummaryBook.RefreshReport();
         }
 
         private void bindBillingMonth(ComboBox cb, MySqlDataAdapter adap)
@@ -107,6 +108,18 @@ namespace ConcessionaireReports
             cb.ValueMember = "zone_code";
             cb.DisplayMember = "zone_code";
             cb.DataSource = dsZones.Tables[0];
+        }
+
+        private void bindBook(ComboBox cb, ComboBox cbZone, MySqlDataAdapter adap)
+        {
+            DataSet dsBooksOfZone = new DataSet();
+            adap.SelectCommand.CommandType = CommandType.StoredProcedure;
+            adap.SelectCommand.Parameters.AddWithValue("@zoneCode", cbZone.SelectedValue.ToString());
+            adap.Fill(dsBooksOfZone);
+
+            cb.ValueMember = "book_code";
+            cb.DisplayMember = "book_code";
+            cb.DataSource = dsBooksOfZone.Tables[0];
         }
 
         private void buttonBillComputationRegSearch_Click(object sender, EventArgs e)
@@ -165,15 +178,7 @@ namespace ConcessionaireReports
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetBooksOfZone", conn))
                     {
-                        DataSet dsBooksOfZone = new DataSet();
-
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxBillComputationRegZone.SelectedValue.ToString());
-                        adapter.Fill(dsBooksOfZone);
-
-                        comboBoxBillComputationRegBook.ValueMember = "book_code";
-                        comboBoxBillComputationRegBook.DisplayMember = "book_code";
-                        comboBoxBillComputationRegBook.DataSource = dsBooksOfZone.Tables[0];
+                        bindBook(comboBoxBillComputationRegBook, comboBoxBillComputationRegZone, adapter);
                     }
                     conn.Close();
                 }
@@ -182,6 +187,72 @@ namespace ConcessionaireReports
             {
                 MessageBox.Show("error: " + ex, "Error!");
             }
+        }
+
+        private void comboBoxBillSummaryBookZone_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetBooksOfZone", conn))
+                    {
+                        bindBook(comboBoxBillSummaryBookBook, comboBoxBillSummaryBookZone, adapter);
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+        }
+
+        private void buttonBillSummaryBookSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetBillingSummaryPerBook", conn))
+                    {
+                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+
+                        DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@in_bill_month_id", comboBoxBillSummaryBookBillingMonth.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@in_bill_month_id"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@in_zone_id", comboBoxBillSummaryBookZone.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@in_zone_id"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@in_book_id", comboBoxBillSummaryBookBook.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@in_book_id"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "BillingSummaryPerBook");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetBillingReports", ds.Tables["BillingSummaryPerBook"]);
+                        reportViewerBillSummaryBook.LocalReport.DataSources.Clear();
+                        reportViewerBillSummaryBook.LocalReport.DataSources.Add(rds);
+
+                        ReportParameter[] param = new ReportParameter[]
+                        {
+                            new ReportParameter("ReportParameterDate", comboBoxBillSummaryBookBillingMonth.Text),
+                        };
+                        reportViewerBillSummaryBook.LocalReport.SetParameters(param);
+                        reportViewerBillSummaryBook.LocalReport.Refresh();
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            this.reportViewerBillSummaryBook.RefreshReport();
         }
     }
 }
