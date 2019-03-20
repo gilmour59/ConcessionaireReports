@@ -62,7 +62,7 @@
             this.buttonBillSummaryMonthSearch = new System.Windows.Forms.Button();
             this.comboBoxBillSummaryMonthBillingMonth = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.reportViewerMeterReaderAccomplishment = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reportViewerBillSummaryMonth = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.buttonBillPreviousMonthSearch = new System.Windows.Forms.Button();
             this.comboBoxBillPreviousMonthBillingMonth = new System.Windows.Forms.ComboBox();
@@ -102,6 +102,7 @@
             this.reportViewerDailyBillingSummary = new Microsoft.Reporting.WinForms.ReportViewer();
             this.BillingSummaryPerBookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewerBillSummaryBook = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.BillingSummaryPerMonthBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.BillComputationRegisterBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetBillingReports)).BeginInit();
             this.tabControlBillingReports.SuspendLayout();
@@ -115,6 +116,7 @@
             this.tabPage8.SuspendLayout();
             this.tabPage10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryPerBookBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryPerMonthBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // BillComputationRegisterBindingSource
@@ -346,7 +348,7 @@
             this.tabPage3.Controls.Add(this.buttonBillSummaryMonthSearch);
             this.tabPage3.Controls.Add(this.comboBoxBillSummaryMonthBillingMonth);
             this.tabPage3.Controls.Add(this.label3);
-            this.tabPage3.Controls.Add(this.reportViewerMeterReaderAccomplishment);
+            this.tabPage3.Controls.Add(this.reportViewerBillSummaryMonth);
             this.tabPage3.Location = new System.Drawing.Point(189, 4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(987, 555);
@@ -363,6 +365,7 @@
             this.buttonBillSummaryMonthSearch.TabIndex = 50;
             this.buttonBillSummaryMonthSearch.Text = "Search";
             this.buttonBillSummaryMonthSearch.UseVisualStyleBackColor = true;
+            this.buttonBillSummaryMonthSearch.Click += new System.EventHandler(this.buttonBillSummaryMonthSearch_Click);
             // 
             // comboBoxBillSummaryMonthBillingMonth
             // 
@@ -384,17 +387,17 @@
             this.label3.TabIndex = 48;
             this.label3.Text = "Billing Month:";
             // 
-            // reportViewerMeterReaderAccomplishment
+            // reportViewerBillSummaryMonth
             // 
-            reportDataSource3.Name = "DataSetMeterReadingReports";
-            reportDataSource3.Value = null;
-            this.reportViewerMeterReaderAccomplishment.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewerMeterReaderAccomplishment.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportMeterReaderAccomplishment.rdlc";
-            this.reportViewerMeterReaderAccomplishment.Location = new System.Drawing.Point(26, 49);
-            this.reportViewerMeterReaderAccomplishment.Name = "reportViewerMeterReaderAccomplishment";
-            this.reportViewerMeterReaderAccomplishment.ServerReport.BearerToken = null;
-            this.reportViewerMeterReaderAccomplishment.Size = new System.Drawing.Size(944, 481);
-            this.reportViewerMeterReaderAccomplishment.TabIndex = 34;
+            reportDataSource3.Name = "DataSetBillingReports";
+            reportDataSource3.Value = this.BillingSummaryPerMonthBindingSource;
+            this.reportViewerBillSummaryMonth.LocalReport.DataSources.Add(reportDataSource3);
+            this.reportViewerBillSummaryMonth.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportBillingSummaryMonth.rdlc";
+            this.reportViewerBillSummaryMonth.Location = new System.Drawing.Point(26, 49);
+            this.reportViewerBillSummaryMonth.Name = "reportViewerBillSummaryMonth";
+            this.reportViewerBillSummaryMonth.ServerReport.BearerToken = null;
+            this.reportViewerBillSummaryMonth.Size = new System.Drawing.Size(944, 481);
+            this.reportViewerBillSummaryMonth.TabIndex = 34;
             // 
             // tabPage4
             // 
@@ -820,6 +823,11 @@
             this.reportViewerBillSummaryBook.Size = new System.Drawing.Size(944, 481);
             this.reportViewerBillSummaryBook.TabIndex = 46;
             // 
+            // BillingSummaryPerMonthBindingSource
+            // 
+            this.BillingSummaryPerMonthBindingSource.DataMember = "BillingSummaryPerMonth";
+            this.BillingSummaryPerMonthBindingSource.DataSource = this.DataSetBillingReports;
+            // 
             // BillingReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -854,6 +862,7 @@
             this.tabPage10.ResumeLayout(false);
             this.tabPage10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryPerBookBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryPerMonthBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -875,7 +884,7 @@
         private System.Windows.Forms.Button buttonBillSummaryMonthSearch;
         private System.Windows.Forms.ComboBox comboBoxBillSummaryMonthBillingMonth;
         private System.Windows.Forms.Label label3;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewerMeterReaderAccomplishment;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerBillSummaryMonth;
         private System.Windows.Forms.TabPage tabPage4;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerBillPreviousMonth;
         private System.Windows.Forms.TabPage tabPage5;
@@ -924,5 +933,6 @@
         private DataSetBillingReports DataSetBillingReports;
         private System.Windows.Forms.BindingSource BillingSummaryPerBookBindingSource;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerBillSummaryBook;
+        private System.Windows.Forms.BindingSource BillingSummaryPerMonthBindingSource;
     }
 }
