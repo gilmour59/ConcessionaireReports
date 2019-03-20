@@ -81,6 +81,9 @@
     <Compile Include="ConcessionaireReportsForm.Designer.cs">
       <DependentUpon>ConcessionaireReportsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSetBillingReports.cs">
+      <DependentUpon>DataSetBillingReports.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetBillingReports.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
