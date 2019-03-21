@@ -79,6 +79,7 @@ namespace ConcessionaireReports
                         bindBillingMonth(comboBoxBillSummaryBookBillingMonth, adapter);
                         bindBillingMonth(comboBoxBillSummaryMonthBillingMonth, adapter);
                         bindBillingMonth(comboBoxPenaltyBillingReportBillingMonth, adapter);
+                        bindBillingMonth(comboBoxBillingSummaryMaterialsBillingMonth, adapter);
                     }
                     conn.Close();
                 }
@@ -367,6 +368,47 @@ namespace ConcessionaireReports
                 MessageBox.Show("error: " + ex, "Error!");
             }
             this.reportViewerPenaltyBillingReport.RefreshReport();
+        }
+
+        private void buttonBillingSummaryMaterialsSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetBillingSummaryOfMaterialsAndOtherFees_", conn))
+                    {
+                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+
+                        DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@billMonth", comboBoxBillingSummaryMaterialsBillingMonth.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@billMonth"].Direction = ParameterDirection.Input;                     
+
+                        adapter.Fill(ds, "BillingSummaryMaterialsFees");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetBillingReports", ds.Tables["BillingSummaryMaterialsFees"]);
+                        reportViewerBillingSummaryMaterials.LocalReport.DataSources.Clear();
+                        reportViewerBillingSummaryMaterials.LocalReport.DataSources.Add(rds);
+
+                        ReportParameter[] param = new ReportParameter[]
+                        {
+                            new ReportParameter("ReportParameterDate", comboBoxBillingSummaryMaterialsBillingMonth.Text)
+                        };
+                        reportViewerBillingSummaryMaterials.LocalReport.SetParameters(param);
+                        reportViewerBillingSummaryMaterials.LocalReport.Refresh();
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            this.reportViewerBillingSummaryMaterials.RefreshReport();
         }
     }
 }

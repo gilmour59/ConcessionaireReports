@@ -40,8 +40,9 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.BillComputationRegisterBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetBillingReports = new ConcessionaireReports.DataSetBillingReports();
-            this.BillingSummaryPerMonthBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BillingSummaryPerBookBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.BillingSummaryPerMonthBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PenaltyBillingReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlBillingReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.comboBoxBillComputationRegBook = new System.Windows.Forms.ComboBox();
@@ -103,11 +104,12 @@
             this.comboBoxDailyBillingSummaryBillingMonth = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.reportViewerDailyBillingSummary = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.PenaltyBillingReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.BillingSummaryMaterialsFeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.BillComputationRegisterBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetBillingReports)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryPerMonthBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryPerBookBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryPerMonthBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PenaltyBillingReportBindingSource)).BeginInit();
             this.tabControlBillingReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -118,7 +120,7 @@
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.tabPage10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PenaltyBillingReportBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryMaterialsFeesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // BillComputationRegisterBindingSource
@@ -131,15 +133,20 @@
             this.DataSetBillingReports.DataSetName = "DataSetBillingReports";
             this.DataSetBillingReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // BillingSummaryPerBookBindingSource
+            // 
+            this.BillingSummaryPerBookBindingSource.DataMember = "BillingSummaryPerBook";
+            this.BillingSummaryPerBookBindingSource.DataSource = this.DataSetBillingReports;
+            // 
             // BillingSummaryPerMonthBindingSource
             // 
             this.BillingSummaryPerMonthBindingSource.DataMember = "BillingSummaryPerMonth";
             this.BillingSummaryPerMonthBindingSource.DataSource = this.DataSetBillingReports;
             // 
-            // BillingSummaryPerBookBindingSource
+            // PenaltyBillingReportBindingSource
             // 
-            this.BillingSummaryPerBookBindingSource.DataMember = "BillingSummaryPerBook";
-            this.BillingSummaryPerBookBindingSource.DataSource = this.DataSetBillingReports;
+            this.PenaltyBillingReportBindingSource.DataMember = "PenaltyBillingReport";
+            this.PenaltyBillingReportBindingSource.DataSource = this.DataSetBillingReports;
             // 
             // tabControlBillingReports
             // 
@@ -656,6 +663,7 @@
             this.buttonBillingSummaryMaterialsSearch.TabIndex = 57;
             this.buttonBillingSummaryMaterialsSearch.Text = "Search";
             this.buttonBillingSummaryMaterialsSearch.UseVisualStyleBackColor = true;
+            this.buttonBillingSummaryMaterialsSearch.Click += new System.EventHandler(this.buttonBillingSummaryMaterialsSearch_Click);
             // 
             // comboBoxBillingSummaryMaterialsBillingMonth
             // 
@@ -679,10 +687,10 @@
             // 
             // reportViewerBillingSummaryMaterials
             // 
-            reportDataSource7.Name = "DataSetMeterReadingReports";
-            reportDataSource7.Value = null;
+            reportDataSource7.Name = "DataSetBillingReports";
+            reportDataSource7.Value = this.BillingSummaryMaterialsFeesBindingSource;
             this.reportViewerBillingSummaryMaterials.LocalReport.DataSources.Add(reportDataSource7);
-            this.reportViewerBillingSummaryMaterials.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportUnreadMeters.rdlc";
+            this.reportViewerBillingSummaryMaterials.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportBillingSummaryMaterialsOtherFees.rdlc";
             this.reportViewerBillingSummaryMaterials.Location = new System.Drawing.Point(26, 49);
             this.reportViewerBillingSummaryMaterials.Name = "reportViewerBillingSummaryMaterials";
             this.reportViewerBillingSummaryMaterials.ServerReport.BearerToken = null;
@@ -832,10 +840,10 @@
             this.reportViewerDailyBillingSummary.Size = new System.Drawing.Size(944, 481);
             this.reportViewerDailyBillingSummary.TabIndex = 58;
             // 
-            // PenaltyBillingReportBindingSource
+            // BillingSummaryMaterialsFeesBindingSource
             // 
-            this.PenaltyBillingReportBindingSource.DataMember = "PenaltyBillingReport";
-            this.PenaltyBillingReportBindingSource.DataSource = this.DataSetBillingReports;
+            this.BillingSummaryMaterialsFeesBindingSource.DataMember = "BillingSummaryMaterialsFees";
+            this.BillingSummaryMaterialsFeesBindingSource.DataSource = this.DataSetBillingReports;
             // 
             // BillingReportsForm
             // 
@@ -851,8 +859,9 @@
             this.Load += new System.EventHandler(this.BillingReportsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BillComputationRegisterBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetBillingReports)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryPerMonthBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryPerBookBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryPerMonthBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PenaltyBillingReportBindingSource)).EndInit();
             this.tabControlBillingReports.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -872,7 +881,7 @@
             this.tabPage8.PerformLayout();
             this.tabPage10.ResumeLayout(false);
             this.tabPage10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PenaltyBillingReportBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryMaterialsFeesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -945,5 +954,6 @@
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerBillSummaryBook;
         private System.Windows.Forms.BindingSource BillingSummaryPerMonthBindingSource;
         private System.Windows.Forms.BindingSource PenaltyBillingReportBindingSource;
+        private System.Windows.Forms.BindingSource BillingSummaryMaterialsFeesBindingSource;
     }
 }
