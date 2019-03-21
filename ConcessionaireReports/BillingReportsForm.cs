@@ -378,7 +378,7 @@ namespace ConcessionaireReports
                 {
                     conn.Open();
 
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetBillingSummaryOfMaterialsAndOtherFees_", conn))
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetBillingSummaryOfMaterialsAndOtherFees_", conn))
                     {
                         adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
 
