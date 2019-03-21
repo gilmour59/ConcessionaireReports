@@ -70,6 +70,7 @@ namespace ConcessionaireReports
                     {
                         bindZone(comboBoxBillComputationRegZone, adapter);
                         bindZone(comboBoxBillSummaryBookZone, adapter);
+                        bindZone(comboBoxPenaltyBillingReportZone, adapter);
                     }
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetBillingMonthsId", conn))
@@ -77,6 +78,7 @@ namespace ConcessionaireReports
                         bindBillingMonth(comboBoxBillComputationRegBillingMonth, adapter);
                         bindBillingMonth(comboBoxBillSummaryBookBillingMonth, adapter);
                         bindBillingMonth(comboBoxBillSummaryMonthBillingMonth, adapter);
+                        bindBillingMonth(comboBoxPenaltyBillingReportBillingMonth, adapter);
                     }
                     conn.Close();
                 }
@@ -88,6 +90,7 @@ namespace ConcessionaireReports
             this.reportViewerBillComputationReg.RefreshReport();
             this.reportViewerBillSummaryBook.RefreshReport();
             this.reportViewerBillSummaryMonth.RefreshReport();
+            this.reportViewerPenaltyBillingReport.RefreshReport();
         }
 
         private void bindBillingMonth(ComboBox cb, MySqlDataAdapter adap)
@@ -296,6 +299,74 @@ namespace ConcessionaireReports
                 MessageBox.Show("error: " + ex, "Error!");
             }
             this.reportViewerBillSummaryMonth.RefreshReport();
+        }
+
+        private void comboBoxPenaltyBillingReportZone_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetBooksOfZone", conn))
+                    {
+                        bindBook(comboBoxPenaltyBillingReportBook, comboBoxPenaltyBillingReportZone, adapter);
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+        }
+
+        private void buttonPenaltyBillingReportSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_getPenaltyBilling_", conn))
+                    {
+                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+
+                        DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxPenaltyBillingReportZone.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxPenaltyBillingReportBook.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@billingMonthId", comboBoxPenaltyBillingReportBillingMonth.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@billingMonthId"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "PenaltyBillingReport");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetBillingReports", ds.Tables["PenaltyBillingReport"]);
+                        reportViewerPenaltyBillingReport.LocalReport.DataSources.Clear();
+                        reportViewerPenaltyBillingReport.LocalReport.DataSources.Add(rds);
+
+                        ReportParameter[] param = new ReportParameter[]
+                        {
+                            new ReportParameter("ReportParameterZone", comboBoxPenaltyBillingReportZone.Text),
+                            new ReportParameter("ReportParameterBook", comboBoxPenaltyBillingReportBook.Text),
+                            new ReportParameter("ReportParameterDate", comboBoxPenaltyBillingReportBillingMonth.Text)
+                        };
+                        reportViewerPenaltyBillingReport.LocalReport.SetParameters(param);
+                        reportViewerPenaltyBillingReport.LocalReport.Refresh();
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            this.reportViewerPenaltyBillingReport.RefreshReport();
         }
     }
 }

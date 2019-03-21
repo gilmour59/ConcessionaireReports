@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
@@ -37,9 +38,10 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.BillComputationRegisterBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetBillingReports = new ConcessionaireReports.DataSetBillingReports();
+            this.BillingSummaryPerMonthBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.BillingSummaryPerBookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlBillingReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.comboBoxBillComputationRegBook = new System.Windows.Forms.ComboBox();
@@ -51,6 +53,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.reportViewerBillSummaryBook = new Microsoft.Reporting.WinForms.ReportViewer();
             this.comboBoxBillSummaryBookBook = new System.Windows.Forms.ComboBox();
             this.comboBoxBillSummaryBookZone = new System.Windows.Forms.ComboBox();
             this.comboBoxBillSummaryBookBillingMonth = new System.Windows.Forms.ComboBox();
@@ -100,11 +103,11 @@
             this.comboBoxDailyBillingSummaryBillingMonth = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.reportViewerDailyBillingSummary = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.BillingSummaryPerBookBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reportViewerBillSummaryBook = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.BillingSummaryPerMonthBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PenaltyBillingReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.BillComputationRegisterBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetBillingReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryPerMonthBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryPerBookBindingSource)).BeginInit();
             this.tabControlBillingReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -115,8 +118,7 @@
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.tabPage10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryPerBookBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryPerMonthBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PenaltyBillingReportBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // BillComputationRegisterBindingSource
@@ -128,6 +130,16 @@
             // 
             this.DataSetBillingReports.DataSetName = "DataSetBillingReports";
             this.DataSetBillingReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // BillingSummaryPerMonthBindingSource
+            // 
+            this.BillingSummaryPerMonthBindingSource.DataMember = "BillingSummaryPerMonth";
+            this.BillingSummaryPerMonthBindingSource.DataSource = this.DataSetBillingReports;
+            // 
+            // BillingSummaryPerBookBindingSource
+            // 
+            this.BillingSummaryPerBookBindingSource.DataMember = "BillingSummaryPerBook";
+            this.BillingSummaryPerBookBindingSource.DataSource = this.DataSetBillingReports;
             // 
             // tabControlBillingReports
             // 
@@ -270,6 +282,18 @@
             this.tabPage2.TabIndex = 6;
             this.tabPage2.Text = "Billing Summary Per Book";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // reportViewerBillSummaryBook
+            // 
+            reportDataSource2.Name = "DataSetBillingReports";
+            reportDataSource2.Value = this.BillingSummaryPerBookBindingSource;
+            this.reportViewerBillSummaryBook.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewerBillSummaryBook.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportBillingSummaryBook.rdlc";
+            this.reportViewerBillSummaryBook.Location = new System.Drawing.Point(26, 49);
+            this.reportViewerBillSummaryBook.Name = "reportViewerBillSummaryBook";
+            this.reportViewerBillSummaryBook.ServerReport.BearerToken = null;
+            this.reportViewerBillSummaryBook.Size = new System.Drawing.Size(944, 481);
+            this.reportViewerBillSummaryBook.TabIndex = 46;
             // 
             // comboBoxBillSummaryBookBook
             // 
@@ -483,10 +507,10 @@
             // 
             // reportViewerPenaltyBillingReport
             // 
-            reportDataSource5.Name = "DataSetMeterReadingReports";
-            reportDataSource5.Value = null;
+            reportDataSource5.Name = "DataSetBillingReports";
+            reportDataSource5.Value = this.PenaltyBillingReportBindingSource;
             this.reportViewerPenaltyBillingReport.LocalReport.DataSources.Add(reportDataSource5);
-            this.reportViewerPenaltyBillingReport.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountsMinimumConsumption.rdlc";
+            this.reportViewerPenaltyBillingReport.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportPenaltyBillingReport.rdlc";
             this.reportViewerPenaltyBillingReport.Location = new System.Drawing.Point(26, 49);
             this.reportViewerPenaltyBillingReport.Name = "reportViewerPenaltyBillingReport";
             this.reportViewerPenaltyBillingReport.ServerReport.BearerToken = null;
@@ -502,6 +526,7 @@
             this.comboBoxPenaltyBillingReportZone.Name = "comboBoxPenaltyBillingReportZone";
             this.comboBoxPenaltyBillingReportZone.Size = new System.Drawing.Size(56, 24);
             this.comboBoxPenaltyBillingReportZone.TabIndex = 48;
+            this.comboBoxPenaltyBillingReportZone.SelectedIndexChanged += new System.EventHandler(this.comboBoxPenaltyBillingReportZone_SelectedIndexChanged);
             // 
             // buttonPenaltyBillingReportSearch
             // 
@@ -512,6 +537,7 @@
             this.buttonPenaltyBillingReportSearch.TabIndex = 16;
             this.buttonPenaltyBillingReportSearch.Text = "Search";
             this.buttonPenaltyBillingReportSearch.UseVisualStyleBackColor = true;
+            this.buttonPenaltyBillingReportSearch.Click += new System.EventHandler(this.buttonPenaltyBillingReportSearch_Click);
             // 
             // comboBoxPenaltyBillingReportBillingMonth
             // 
@@ -806,27 +832,10 @@
             this.reportViewerDailyBillingSummary.Size = new System.Drawing.Size(944, 481);
             this.reportViewerDailyBillingSummary.TabIndex = 58;
             // 
-            // BillingSummaryPerBookBindingSource
+            // PenaltyBillingReportBindingSource
             // 
-            this.BillingSummaryPerBookBindingSource.DataMember = "BillingSummaryPerBook";
-            this.BillingSummaryPerBookBindingSource.DataSource = this.DataSetBillingReports;
-            // 
-            // reportViewerBillSummaryBook
-            // 
-            reportDataSource2.Name = "DataSetBillingReports";
-            reportDataSource2.Value = this.BillingSummaryPerBookBindingSource;
-            this.reportViewerBillSummaryBook.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewerBillSummaryBook.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportBillingSummaryBook.rdlc";
-            this.reportViewerBillSummaryBook.Location = new System.Drawing.Point(26, 49);
-            this.reportViewerBillSummaryBook.Name = "reportViewerBillSummaryBook";
-            this.reportViewerBillSummaryBook.ServerReport.BearerToken = null;
-            this.reportViewerBillSummaryBook.Size = new System.Drawing.Size(944, 481);
-            this.reportViewerBillSummaryBook.TabIndex = 46;
-            // 
-            // BillingSummaryPerMonthBindingSource
-            // 
-            this.BillingSummaryPerMonthBindingSource.DataMember = "BillingSummaryPerMonth";
-            this.BillingSummaryPerMonthBindingSource.DataSource = this.DataSetBillingReports;
+            this.PenaltyBillingReportBindingSource.DataMember = "PenaltyBillingReport";
+            this.PenaltyBillingReportBindingSource.DataSource = this.DataSetBillingReports;
             // 
             // BillingReportsForm
             // 
@@ -842,6 +851,8 @@
             this.Load += new System.EventHandler(this.BillingReportsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BillComputationRegisterBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetBillingReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryPerMonthBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryPerBookBindingSource)).EndInit();
             this.tabControlBillingReports.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -861,8 +872,7 @@
             this.tabPage8.PerformLayout();
             this.tabPage10.ResumeLayout(false);
             this.tabPage10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryPerBookBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryPerMonthBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PenaltyBillingReportBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -934,5 +944,6 @@
         private System.Windows.Forms.BindingSource BillingSummaryPerBookBindingSource;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerBillSummaryBook;
         private System.Windows.Forms.BindingSource BillingSummaryPerMonthBindingSource;
+        private System.Windows.Forms.BindingSource PenaltyBillingReportBindingSource;
     }
 }
