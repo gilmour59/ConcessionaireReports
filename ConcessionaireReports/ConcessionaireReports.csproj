@@ -95,6 +95,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetBillingReports.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetCollectionReports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCollectionReports.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetConcessionaireReports.cs">
       <DependentUpon>DataSetConcessionaireReports.xsd</DependentUpon>
     </Compile>
@@ -193,6 +198,17 @@
     </None>
     <None Include="DataSetBillingReports.xss">
       <DependentUpon>DataSetBillingReports.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetCollectionReports.xsc">
+      <DependentUpon>DataSetCollectionReports.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetCollectionReports.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCollectionReports.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetCollectionReports.xss">
+      <DependentUpon>DataSetCollectionReports.xsd</DependentUpon>
     </None>
     <None Include="DataSetConcessionaireReports.xsc">
       <DependentUpon>DataSetConcessionaireReports.xsd</DependentUpon>
