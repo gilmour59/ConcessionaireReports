@@ -160,6 +160,7 @@
     <EmbeddedResource Include="RDLC\ReportBillingSummaryMaterialsOtherFees.rdlc" />
     <EmbeddedResource Include="RDLC\ReportBillingSummaryMonth.rdlc" />
     <EmbeddedResource Include="RDLC\ReportChangedMeterPreviousRead.rdlc" />
+    <EmbeddedResource Include="RDLC\ReportDailyBillingSummary.rdlc" />
     <EmbeddedResource Include="RDLC\ReportMeterReaderAccomplishment.rdlc" />
     <EmbeddedResource Include="RDLC\ReportNewConnectionSummary.rdlc" />
     <EmbeddedResource Include="RDLC\ReportPenaltyBillingReport.rdlc" />
