@@ -151,6 +151,7 @@
     <EmbeddedResource Include="RDLC\ReportAccountPerBook.rdlc" />
     <EmbeddedResource Include="RDLC\ReportAccountPerClassification.rdlc" />
     <EmbeddedResource Include="RDLC\ReportAccountPerMeterSize.rdlc" />
+    <EmbeddedResource Include="RDLC\ReportAccountsLargeConsumption.rdlc" />
     <EmbeddedResource Include="RDLC\ReportAccountsMinimumConsumption.rdlc" />
     <EmbeddedResource Include="RDLC\ReportAccountsSuddenIncDecConsumption.rdlc" />
     <EmbeddedResource Include="RDLC\ReportBillComputationRegister.rdlc" />
