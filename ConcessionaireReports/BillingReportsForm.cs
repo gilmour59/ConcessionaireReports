@@ -82,6 +82,18 @@ namespace ConcessionaireReports
                         bindBillingMonth(comboBoxBillSummaryMonthBillingMonth, adapter);
                         bindBillingMonth(comboBoxPenaltyBillingReportBillingMonth, adapter);
                         bindBillingMonth(comboBoxBillingSummaryMaterialsBillingMonth, adapter);
+                        bindBillingMonth(comboBoxAccountsLargeConsBillingMonth, adapter);
+                    }
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetClassification", conn))
+                    {
+                        DataSet dsClassifications = new DataSet();
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.Fill(dsClassifications);
+
+                        comboBoxAccountsLargeConsClass.ValueMember = "classification_id";
+                        comboBoxAccountsLargeConsClass.DisplayMember = "class_desc";
+                        comboBoxAccountsLargeConsClass.DataSource = dsClassifications.Tables[0]; //this triggers the SelectedIndex property of a combobox
                     }
                     conn.Close();
                 }
@@ -463,6 +475,52 @@ namespace ConcessionaireReports
                 MessageBox.Show("error: " + ex, "Error!");
             }
             this.reportViewerBillingAdjustmentSummary.RefreshReport();
+        }
+
+        private void buttonAccountsLargeConsSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetAccountsWithLargeCons_", conn))
+                    {
+                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+
+                        DataSetBillingReports ds = new DataSetBillingReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@billMonth", comboBoxAccountsLargeConsBillingMonth.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@billMonth"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@classId", comboBoxAccountsLargeConsClass.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@classId"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@consumption", numericUpDownAccountsLargeConsConsumption.Value);
+                        adapter.SelectCommand.Parameters["@consumption"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "AccountsLargeConsPerClassification");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetBillingReports", ds.Tables["AccountsLargeConsPerClassification"]);
+                        reportViewerAccountsLargeCons.LocalReport.DataSources.Clear();
+                        reportViewerAccountsLargeCons.LocalReport.DataSources.Add(rds);
+
+                        ReportParameter[] param = new ReportParameter[]
+                        {
+                            new ReportParameter("ReportParameterDate", comboBoxBillingSummaryMaterialsBillingMonth.Text),
+                            new ReportParameter("ReportParameterCons", numericUpDownAccountsLargeConsConsumption.Value.ToString())
+                        };
+                        reportViewerAccountsLargeCons.LocalReport.SetParameters(param);
+                        reportViewerAccountsLargeCons.LocalReport.Refresh();
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            this.reportViewerAccountsLargeCons.RefreshReport();
         }
     }
 }
