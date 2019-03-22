@@ -75,6 +75,12 @@
     <Compile Include="BillingReportsForm.Designer.cs">
       <DependentUpon>BillingReportsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CollectionReportsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CollectionReportsForm.Designer.cs">
+      <DependentUpon>CollectionReportsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConcessionaireReportsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="BillingReportsForm.resx">
       <DependentUpon>BillingReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CollectionReportsForm.resx">
+      <DependentUpon>CollectionReportsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ConcessionaireReportsForm.resx">
       <DependentUpon>ConcessionaireReportsForm.cs</DependentUpon>
