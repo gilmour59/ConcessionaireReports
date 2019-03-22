@@ -154,6 +154,7 @@
     <EmbeddedResource Include="RDLC\ReportAccountsMinimumConsumption.rdlc" />
     <EmbeddedResource Include="RDLC\ReportAccountsSuddenIncDecConsumption.rdlc" />
     <EmbeddedResource Include="RDLC\ReportBillComputationRegister.rdlc" />
+    <EmbeddedResource Include="RDLC\ReportBillingAdjustmentSummary.rdlc" />
     <EmbeddedResource Include="RDLC\ReportBillingSummaryBook.rdlc" />
     <EmbeddedResource Include="RDLC\ReportBillingSummaryMaterialsOtherFees.rdlc" />
     <EmbeddedResource Include="RDLC\ReportBillingSummaryMonth.rdlc" />

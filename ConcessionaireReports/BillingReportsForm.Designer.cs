@@ -29,20 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource11 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource12 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource13 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource14 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource15 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource16 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource17 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource18 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource19 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource20 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.BillComputationRegisterBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetBillingReports = new ConcessionaireReports.DataSetBillingReports();
             this.BillingSummaryPerBookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BillingSummaryPerMonthBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PenaltyBillingReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.BillingSummaryMaterialsFeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.BillingAdjustmentSummaryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlBillingReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.comboBoxBillComputationRegBook = new System.Windows.Forms.ComboBox();
@@ -104,12 +107,14 @@
             this.comboBoxDailyBillingSummaryBillingMonth = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.reportViewerDailyBillingSummary = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.BillingSummaryMaterialsFeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.BillingAdjustmentSummaryRecapBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.BillComputationRegisterBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetBillingReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryPerBookBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryPerMonthBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PenaltyBillingReportBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryMaterialsFeesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BillingAdjustmentSummaryBindingSource)).BeginInit();
             this.tabControlBillingReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -120,7 +125,7 @@
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.tabPage10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryMaterialsFeesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BillingAdjustmentSummaryRecapBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // BillComputationRegisterBindingSource
@@ -147,6 +152,16 @@
             // 
             this.PenaltyBillingReportBindingSource.DataMember = "PenaltyBillingReport";
             this.PenaltyBillingReportBindingSource.DataSource = this.DataSetBillingReports;
+            // 
+            // BillingSummaryMaterialsFeesBindingSource
+            // 
+            this.BillingSummaryMaterialsFeesBindingSource.DataMember = "BillingSummaryMaterialsFees";
+            this.BillingSummaryMaterialsFeesBindingSource.DataSource = this.DataSetBillingReports;
+            // 
+            // BillingAdjustmentSummaryBindingSource
+            // 
+            this.BillingAdjustmentSummaryBindingSource.DataMember = "BillingAdjustmentSummary";
+            this.BillingAdjustmentSummaryBindingSource.DataSource = this.DataSetBillingReports;
             // 
             // tabControlBillingReports
             // 
@@ -222,9 +237,9 @@
             // 
             // reportViewerBillComputationReg
             // 
-            reportDataSource1.Name = "DataSetBillingReports";
-            reportDataSource1.Value = this.BillComputationRegisterBindingSource;
-            this.reportViewerBillComputationReg.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource11.Name = "DataSetBillingReports";
+            reportDataSource11.Value = this.BillComputationRegisterBindingSource;
+            this.reportViewerBillComputationReg.LocalReport.DataSources.Add(reportDataSource11);
             this.reportViewerBillComputationReg.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportBillComputationRegister.rdlc";
             this.reportViewerBillComputationReg.Location = new System.Drawing.Point(26, 49);
             this.reportViewerBillComputationReg.Name = "reportViewerBillComputationReg";
@@ -292,9 +307,9 @@
             // 
             // reportViewerBillSummaryBook
             // 
-            reportDataSource2.Name = "DataSetBillingReports";
-            reportDataSource2.Value = this.BillingSummaryPerBookBindingSource;
-            this.reportViewerBillSummaryBook.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource12.Name = "DataSetBillingReports";
+            reportDataSource12.Value = this.BillingSummaryPerBookBindingSource;
+            this.reportViewerBillSummaryBook.LocalReport.DataSources.Add(reportDataSource12);
             this.reportViewerBillSummaryBook.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportBillingSummaryBook.rdlc";
             this.reportViewerBillSummaryBook.Location = new System.Drawing.Point(26, 49);
             this.reportViewerBillSummaryBook.Name = "reportViewerBillSummaryBook";
@@ -420,9 +435,9 @@
             // 
             // reportViewerBillSummaryMonth
             // 
-            reportDataSource3.Name = "DataSetBillingReports";
-            reportDataSource3.Value = this.BillingSummaryPerMonthBindingSource;
-            this.reportViewerBillSummaryMonth.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource13.Name = "DataSetBillingReports";
+            reportDataSource13.Value = this.BillingSummaryPerMonthBindingSource;
+            this.reportViewerBillSummaryMonth.LocalReport.DataSources.Add(reportDataSource13);
             this.reportViewerBillSummaryMonth.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportBillingSummaryMonth.rdlc";
             this.reportViewerBillSummaryMonth.Location = new System.Drawing.Point(26, 49);
             this.reportViewerBillSummaryMonth.Name = "reportViewerBillSummaryMonth";
@@ -475,9 +490,9 @@
             // 
             // reportViewerBillPreviousMonth
             // 
-            reportDataSource4.Name = "DataSetMeterReadingReports";
-            reportDataSource4.Value = null;
-            this.reportViewerBillPreviousMonth.LocalReport.DataSources.Add(reportDataSource4);
+            reportDataSource14.Name = "DataSetMeterReadingReports";
+            reportDataSource14.Value = null;
+            this.reportViewerBillPreviousMonth.LocalReport.DataSources.Add(reportDataSource14);
             this.reportViewerBillPreviousMonth.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountsSuddenIncDecConsumption.rdlc";
             this.reportViewerBillPreviousMonth.Location = new System.Drawing.Point(26, 49);
             this.reportViewerBillPreviousMonth.Name = "reportViewerBillPreviousMonth";
@@ -514,9 +529,9 @@
             // 
             // reportViewerPenaltyBillingReport
             // 
-            reportDataSource5.Name = "DataSetBillingReports";
-            reportDataSource5.Value = this.PenaltyBillingReportBindingSource;
-            this.reportViewerPenaltyBillingReport.LocalReport.DataSources.Add(reportDataSource5);
+            reportDataSource15.Name = "DataSetBillingReports";
+            reportDataSource15.Value = this.PenaltyBillingReportBindingSource;
+            this.reportViewerPenaltyBillingReport.LocalReport.DataSources.Add(reportDataSource15);
             this.reportViewerPenaltyBillingReport.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportPenaltyBillingReport.rdlc";
             this.reportViewerPenaltyBillingReport.Location = new System.Drawing.Point(26, 49);
             this.reportViewerPenaltyBillingReport.Name = "reportViewerPenaltyBillingReport";
@@ -631,9 +646,9 @@
             // 
             // reportViewerPenaltySummaryMonth
             // 
-            reportDataSource6.Name = "DataSetMeterReadingReports";
-            reportDataSource6.Value = null;
-            this.reportViewerPenaltySummaryMonth.LocalReport.DataSources.Add(reportDataSource6);
+            reportDataSource16.Name = "DataSetMeterReadingReports";
+            reportDataSource16.Value = null;
+            this.reportViewerPenaltySummaryMonth.LocalReport.DataSources.Add(reportDataSource16);
             this.reportViewerPenaltySummaryMonth.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportUnreadMeters.rdlc";
             this.reportViewerPenaltySummaryMonth.Location = new System.Drawing.Point(26, 49);
             this.reportViewerPenaltySummaryMonth.Name = "reportViewerPenaltySummaryMonth";
@@ -687,9 +702,9 @@
             // 
             // reportViewerBillingSummaryMaterials
             // 
-            reportDataSource7.Name = "DataSetBillingReports";
-            reportDataSource7.Value = this.BillingSummaryMaterialsFeesBindingSource;
-            this.reportViewerBillingSummaryMaterials.LocalReport.DataSources.Add(reportDataSource7);
+            reportDataSource17.Name = "DataSetBillingReports";
+            reportDataSource17.Value = this.BillingSummaryMaterialsFeesBindingSource;
+            this.reportViewerBillingSummaryMaterials.LocalReport.DataSources.Add(reportDataSource17);
             this.reportViewerBillingSummaryMaterials.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportBillingSummaryMaterialsOtherFees.rdlc";
             this.reportViewerBillingSummaryMaterials.Location = new System.Drawing.Point(26, 49);
             this.reportViewerBillingSummaryMaterials.Name = "reportViewerBillingSummaryMaterials";
@@ -714,10 +729,13 @@
             // 
             // reportViewerBillingAdjustmentSummary
             // 
-            reportDataSource8.Name = "DataSetMeterReports";
-            reportDataSource8.Value = null;
-            this.reportViewerBillingAdjustmentSummary.LocalReport.DataSources.Add(reportDataSource8);
-            this.reportViewerBillingAdjustmentSummary.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportChangedMeterPreviousRead.rdlc";
+            reportDataSource18.Name = "DataSetBillingReports";
+            reportDataSource18.Value = this.BillingAdjustmentSummaryBindingSource;
+            reportDataSource19.Name = "DataSetBillingReports2";
+            reportDataSource19.Value = this.BillingAdjustmentSummaryRecapBindingSource;
+            this.reportViewerBillingAdjustmentSummary.LocalReport.DataSources.Add(reportDataSource18);
+            this.reportViewerBillingAdjustmentSummary.LocalReport.DataSources.Add(reportDataSource19);
+            this.reportViewerBillingAdjustmentSummary.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportBillingAdjustmentSummary.rdlc";
             this.reportViewerBillingAdjustmentSummary.Location = new System.Drawing.Point(26, 49);
             this.reportViewerBillingAdjustmentSummary.Name = "reportViewerBillingAdjustmentSummary";
             this.reportViewerBillingAdjustmentSummary.ServerReport.BearerToken = null;
@@ -733,6 +751,7 @@
             this.buttonBillingAdjustmentSummarySearch.TabIndex = 32;
             this.buttonBillingAdjustmentSummarySearch.Text = "Search";
             this.buttonBillingAdjustmentSummarySearch.UseVisualStyleBackColor = true;
+            this.buttonBillingAdjustmentSummarySearch.Click += new System.EventHandler(this.buttonBillingAdjustmentSummarySearch_Click);
             // 
             // label13
             // 
@@ -830,9 +849,9 @@
             // 
             // reportViewerDailyBillingSummary
             // 
-            reportDataSource9.Name = "DataSetMeterReadingReports";
-            reportDataSource9.Value = null;
-            this.reportViewerDailyBillingSummary.LocalReport.DataSources.Add(reportDataSource9);
+            reportDataSource20.Name = "DataSetMeterReadingReports";
+            reportDataSource20.Value = null;
+            this.reportViewerDailyBillingSummary.LocalReport.DataSources.Add(reportDataSource20);
             this.reportViewerDailyBillingSummary.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportUnreadMeters.rdlc";
             this.reportViewerDailyBillingSummary.Location = new System.Drawing.Point(26, 49);
             this.reportViewerDailyBillingSummary.Name = "reportViewerDailyBillingSummary";
@@ -840,10 +859,10 @@
             this.reportViewerDailyBillingSummary.Size = new System.Drawing.Size(944, 481);
             this.reportViewerDailyBillingSummary.TabIndex = 58;
             // 
-            // BillingSummaryMaterialsFeesBindingSource
+            // BillingAdjustmentSummaryRecapBindingSource
             // 
-            this.BillingSummaryMaterialsFeesBindingSource.DataMember = "BillingSummaryMaterialsFees";
-            this.BillingSummaryMaterialsFeesBindingSource.DataSource = this.DataSetBillingReports;
+            this.BillingAdjustmentSummaryRecapBindingSource.DataMember = "BillingAdjustmentSummaryRecap";
+            this.BillingAdjustmentSummaryRecapBindingSource.DataSource = this.DataSetBillingReports;
             // 
             // BillingReportsForm
             // 
@@ -862,6 +881,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryPerBookBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryPerMonthBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PenaltyBillingReportBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryMaterialsFeesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BillingAdjustmentSummaryBindingSource)).EndInit();
             this.tabControlBillingReports.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -881,7 +902,7 @@
             this.tabPage8.PerformLayout();
             this.tabPage10.ResumeLayout(false);
             this.tabPage10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryMaterialsFeesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BillingAdjustmentSummaryRecapBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -955,5 +976,7 @@
         private System.Windows.Forms.BindingSource BillingSummaryPerMonthBindingSource;
         private System.Windows.Forms.BindingSource PenaltyBillingReportBindingSource;
         private System.Windows.Forms.BindingSource BillingSummaryMaterialsFeesBindingSource;
+        private System.Windows.Forms.BindingSource BillingAdjustmentSummaryBindingSource;
+        private System.Windows.Forms.BindingSource BillingAdjustmentSummaryRecapBindingSource;
     }
 }

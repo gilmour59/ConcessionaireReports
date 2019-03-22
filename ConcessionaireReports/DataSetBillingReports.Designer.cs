@@ -42,6 +42,8 @@ namespace ConcessionaireReports {
         
         private DailyBillingSummaryDataTable tableDailyBillingSummary;
         
+        private BillingAdjustmentSummaryRecapDataTable tableBillingAdjustmentSummaryRecap;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -96,6 +98,9 @@ namespace ConcessionaireReports {
                 }
                 if ((ds.Tables["DailyBillingSummary"] != null)) {
                     base.Tables.Add(new DailyBillingSummaryDataTable(ds.Tables["DailyBillingSummary"]));
+                }
+                if ((ds.Tables["BillingAdjustmentSummaryRecap"] != null)) {
+                    base.Tables.Add(new BillingAdjustmentSummaryRecapDataTable(ds.Tables["BillingAdjustmentSummaryRecap"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -207,6 +212,16 @@ namespace ConcessionaireReports {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public BillingAdjustmentSummaryRecapDataTable BillingAdjustmentSummaryRecap {
+            get {
+                return this.tableBillingAdjustmentSummaryRecap;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -299,6 +314,9 @@ namespace ConcessionaireReports {
                 if ((ds.Tables["DailyBillingSummary"] != null)) {
                     base.Tables.Add(new DailyBillingSummaryDataTable(ds.Tables["DailyBillingSummary"]));
                 }
+                if ((ds.Tables["BillingAdjustmentSummaryRecap"] != null)) {
+                    base.Tables.Add(new BillingAdjustmentSummaryRecapDataTable(ds.Tables["BillingAdjustmentSummaryRecap"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -386,6 +404,12 @@ namespace ConcessionaireReports {
                     this.tableDailyBillingSummary.InitVars();
                 }
             }
+            this.tableBillingAdjustmentSummaryRecap = ((BillingAdjustmentSummaryRecapDataTable)(base.Tables["BillingAdjustmentSummaryRecap"]));
+            if ((initTable == true)) {
+                if ((this.tableBillingAdjustmentSummaryRecap != null)) {
+                    this.tableBillingAdjustmentSummaryRecap.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -414,6 +438,8 @@ namespace ConcessionaireReports {
             base.Tables.Add(this.tableAccountsLargeConsPerClassification);
             this.tableDailyBillingSummary = new DailyBillingSummaryDataTable();
             base.Tables.Add(this.tableDailyBillingSummary);
+            this.tableBillingAdjustmentSummaryRecap = new BillingAdjustmentSummaryRecapDataTable();
+            base.Tables.Add(this.tableBillingAdjustmentSummaryRecap);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -467,6 +493,12 @@ namespace ConcessionaireReports {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private bool ShouldSerializeDailyBillingSummary() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeBillingAdjustmentSummaryRecap() {
             return false;
         }
         
@@ -551,6 +583,9 @@ namespace ConcessionaireReports {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void DailyBillingSummaryRowChangeEventHandler(object sender, DailyBillingSummaryRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void BillingAdjustmentSummaryRecapRowChangeEventHandler(object sender, BillingAdjustmentSummaryRecapRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -4617,6 +4652,309 @@ namespace ConcessionaireReports {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class BillingAdjustmentSummaryRecapDataTable : global::System.Data.TypedTableBase<BillingAdjustmentSummaryRecapRow> {
+            
+            private global::System.Data.DataColumn columnacct_code;
+            
+            private global::System.Data.DataColumn columnacct_desc;
+            
+            private global::System.Data.DataColumn columndebit;
+            
+            private global::System.Data.DataColumn columncredit;
+            
+            private global::System.Data.DataColumn columnsequence;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public BillingAdjustmentSummaryRecapDataTable() {
+                this.TableName = "BillingAdjustmentSummaryRecap";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal BillingAdjustmentSummaryRecapDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected BillingAdjustmentSummaryRecapDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn acct_codeColumn {
+                get {
+                    return this.columnacct_code;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn acct_descColumn {
+                get {
+                    return this.columnacct_desc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn debitColumn {
+                get {
+                    return this.columndebit;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn creditColumn {
+                get {
+                    return this.columncredit;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sequenceColumn {
+                get {
+                    return this.columnsequence;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public BillingAdjustmentSummaryRecapRow this[int index] {
+                get {
+                    return ((BillingAdjustmentSummaryRecapRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event BillingAdjustmentSummaryRecapRowChangeEventHandler BillingAdjustmentSummaryRecapRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event BillingAdjustmentSummaryRecapRowChangeEventHandler BillingAdjustmentSummaryRecapRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event BillingAdjustmentSummaryRecapRowChangeEventHandler BillingAdjustmentSummaryRecapRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event BillingAdjustmentSummaryRecapRowChangeEventHandler BillingAdjustmentSummaryRecapRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddBillingAdjustmentSummaryRecapRow(BillingAdjustmentSummaryRecapRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public BillingAdjustmentSummaryRecapRow AddBillingAdjustmentSummaryRecapRow(string acct_code, string acct_desc, decimal debit, decimal credit, long sequence) {
+                BillingAdjustmentSummaryRecapRow rowBillingAdjustmentSummaryRecapRow = ((BillingAdjustmentSummaryRecapRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        acct_code,
+                        acct_desc,
+                        debit,
+                        credit,
+                        sequence};
+                rowBillingAdjustmentSummaryRecapRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowBillingAdjustmentSummaryRecapRow);
+                return rowBillingAdjustmentSummaryRecapRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                BillingAdjustmentSummaryRecapDataTable cln = ((BillingAdjustmentSummaryRecapDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new BillingAdjustmentSummaryRecapDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnacct_code = base.Columns["acct_code"];
+                this.columnacct_desc = base.Columns["acct_desc"];
+                this.columndebit = base.Columns["debit"];
+                this.columncredit = base.Columns["credit"];
+                this.columnsequence = base.Columns["sequence"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnacct_code = new global::System.Data.DataColumn("acct_code", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnacct_code);
+                this.columnacct_desc = new global::System.Data.DataColumn("acct_desc", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnacct_desc);
+                this.columndebit = new global::System.Data.DataColumn("debit", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndebit);
+                this.columncredit = new global::System.Data.DataColumn("credit", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncredit);
+                this.columnsequence = new global::System.Data.DataColumn("sequence", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsequence);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public BillingAdjustmentSummaryRecapRow NewBillingAdjustmentSummaryRecapRow() {
+                return ((BillingAdjustmentSummaryRecapRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new BillingAdjustmentSummaryRecapRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(BillingAdjustmentSummaryRecapRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.BillingAdjustmentSummaryRecapRowChanged != null)) {
+                    this.BillingAdjustmentSummaryRecapRowChanged(this, new BillingAdjustmentSummaryRecapRowChangeEvent(((BillingAdjustmentSummaryRecapRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.BillingAdjustmentSummaryRecapRowChanging != null)) {
+                    this.BillingAdjustmentSummaryRecapRowChanging(this, new BillingAdjustmentSummaryRecapRowChangeEvent(((BillingAdjustmentSummaryRecapRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.BillingAdjustmentSummaryRecapRowDeleted != null)) {
+                    this.BillingAdjustmentSummaryRecapRowDeleted(this, new BillingAdjustmentSummaryRecapRowChangeEvent(((BillingAdjustmentSummaryRecapRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.BillingAdjustmentSummaryRecapRowDeleting != null)) {
+                    this.BillingAdjustmentSummaryRecapRowDeleting(this, new BillingAdjustmentSummaryRecapRowChangeEvent(((BillingAdjustmentSummaryRecapRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveBillingAdjustmentSummaryRecapRow(BillingAdjustmentSummaryRecapRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSetBillingReports ds = new DataSetBillingReports();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "BillingAdjustmentSummaryRecapDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class BillComputationRegisterRow : global::System.Data.DataRow {
@@ -8567,6 +8905,165 @@ namespace ConcessionaireReports {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class BillingAdjustmentSummaryRecapRow : global::System.Data.DataRow {
+            
+            private BillingAdjustmentSummaryRecapDataTable tableBillingAdjustmentSummaryRecap;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal BillingAdjustmentSummaryRecapRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableBillingAdjustmentSummaryRecap = ((BillingAdjustmentSummaryRecapDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string acct_code {
+                get {
+                    try {
+                        return ((string)(this[this.tableBillingAdjustmentSummaryRecap.acct_codeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'acct_code\' in table \'BillingAdjustmentSummaryRecap\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableBillingAdjustmentSummaryRecap.acct_codeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string acct_desc {
+                get {
+                    try {
+                        return ((string)(this[this.tableBillingAdjustmentSummaryRecap.acct_descColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'acct_desc\' in table \'BillingAdjustmentSummaryRecap\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableBillingAdjustmentSummaryRecap.acct_descColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal debit {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableBillingAdjustmentSummaryRecap.debitColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'debit\' in table \'BillingAdjustmentSummaryRecap\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBillingAdjustmentSummaryRecap.debitColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal credit {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableBillingAdjustmentSummaryRecap.creditColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'credit\' in table \'BillingAdjustmentSummaryRecap\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableBillingAdjustmentSummaryRecap.creditColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public long sequence {
+                get {
+                    try {
+                        return ((long)(this[this.tableBillingAdjustmentSummaryRecap.sequenceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'sequence\' in table \'BillingAdjustmentSummaryRecap\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableBillingAdjustmentSummaryRecap.sequenceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isacct_codeNull() {
+                return this.IsNull(this.tableBillingAdjustmentSummaryRecap.acct_codeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setacct_codeNull() {
+                this[this.tableBillingAdjustmentSummaryRecap.acct_codeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isacct_descNull() {
+                return this.IsNull(this.tableBillingAdjustmentSummaryRecap.acct_descColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setacct_descNull() {
+                this[this.tableBillingAdjustmentSummaryRecap.acct_descColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsdebitNull() {
+                return this.IsNull(this.tableBillingAdjustmentSummaryRecap.debitColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetdebitNull() {
+                this[this.tableBillingAdjustmentSummaryRecap.debitColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IscreditNull() {
+                return this.IsNull(this.tableBillingAdjustmentSummaryRecap.creditColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetcreditNull() {
+                this[this.tableBillingAdjustmentSummaryRecap.creditColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IssequenceNull() {
+                return this.IsNull(this.tableBillingAdjustmentSummaryRecap.sequenceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetsequenceNull() {
+                this[this.tableBillingAdjustmentSummaryRecap.sequenceColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -8858,6 +9355,40 @@ namespace ConcessionaireReports {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DailyBillingSummaryRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class BillingAdjustmentSummaryRecapRowChangeEvent : global::System.EventArgs {
+            
+            private BillingAdjustmentSummaryRecapRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public BillingAdjustmentSummaryRecapRowChangeEvent(BillingAdjustmentSummaryRecapRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public BillingAdjustmentSummaryRecapRow Row {
                 get {
                     return this.eventRow;
                 }

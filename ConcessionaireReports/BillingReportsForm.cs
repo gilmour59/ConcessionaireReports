@@ -56,6 +56,8 @@ namespace ConcessionaireReports
 
         private void BillingReportsForm_Load(object sender, EventArgs e)
         {
+            dateTimePickerBillingAdjustmentSummaryYear.MaxDate = DateTime.Today;
+
             tabControlBillingReports.DrawMode = TabDrawMode.OwnerDrawFixed;
 
             connStr = "server=localhost;user=root;database=mrwdbcsys;port=3306;password=";
@@ -140,7 +142,7 @@ namespace ConcessionaireReports
                     {
                         adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
 
-                        DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
+                        DataSetBillingReports ds = new DataSetBillingReports();
 
                         adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                         adapter.SelectCommand.Parameters.AddWithValue("@billMonth", comboBoxBillComputationRegBillingMonth.SelectedValue.ToString());
@@ -228,7 +230,7 @@ namespace ConcessionaireReports
                     {
                         adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
 
-                        DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
+                        DataSetBillingReports ds = new DataSetBillingReports();
 
                         adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                         adapter.SelectCommand.Parameters.AddWithValue("@in_bill_month_id", comboBoxBillSummaryBookBillingMonth.SelectedValue.ToString());
@@ -273,7 +275,7 @@ namespace ConcessionaireReports
                     {
                         adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
 
-                        DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
+                        DataSetBillingReports ds = new DataSetBillingReports();
 
                         adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                         adapter.SelectCommand.Parameters.AddWithValue("@bill_month", comboBoxBillSummaryMonthBillingMonth.SelectedValue.ToString());
@@ -335,7 +337,7 @@ namespace ConcessionaireReports
                     {
                         adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
 
-                        DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
+                        DataSetBillingReports ds = new DataSetBillingReports();
 
                         adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                         adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxPenaltyBillingReportZone.SelectedValue.ToString());
@@ -382,7 +384,7 @@ namespace ConcessionaireReports
                     {
                         adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
 
-                        DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
+                        DataSetBillingReports ds = new DataSetBillingReports();
 
                         adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                         adapter.SelectCommand.Parameters.AddWithValue("@billMonth", comboBoxBillingSummaryMaterialsBillingMonth.SelectedValue.ToString());
@@ -409,6 +411,58 @@ namespace ConcessionaireReports
                 MessageBox.Show("error: " + ex, "Error!");
             }
             this.reportViewerBillingSummaryMaterials.RefreshReport();
+        }
+
+        private void buttonBillingAdjustmentSummarySearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetAdjustmentSummary", conn))
+                    {
+                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+
+                        DataSetBillingReports ds = new DataSetBillingReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        string billMonth = dateTimePickerBillingAdjustmentSummaryYear.Value.ToString("yyyy") + dateTimePickerBillingAdjustmentSummaryMonth.Value.ToString("MM"); 
+                        adapter.SelectCommand.Parameters.AddWithValue("@billMonth", billMonth);
+                        adapter.SelectCommand.Parameters["@billMonth"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "BillingAdjustmentSummary");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetBillingReports", ds.Tables["BillingAdjustmentSummary"]);
+                        reportViewerBillingAdjustmentSummary.LocalReport.DataSources.Clear();
+                        reportViewerBillingAdjustmentSummary.LocalReport.DataSources.Add(rds);
+                    }
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetAdjustmentSummaryRecap", conn))
+                    {
+                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+
+                        DataSetBillingReports ds = new DataSetBillingReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        string billMonth = dateTimePickerBillingAdjustmentSummaryYear.Value.ToString("yyyy") + dateTimePickerBillingAdjustmentSummaryMonth.Value.ToString("MM");
+                        adapter.SelectCommand.Parameters.AddWithValue("@billMonth", billMonth);
+                        adapter.SelectCommand.Parameters["@billMonth"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "BillingAdjustmentSummaryRecap");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetBillingReports2", ds.Tables["BillingAdjustmentSummaryRecap"]);
+                        reportViewerBillingAdjustmentSummary.LocalReport.DataSources.Add(rds);
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            this.reportViewerBillingAdjustmentSummary.RefreshReport();
         }
     }
 }
