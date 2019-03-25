@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace ConcessionaireReports
 {
@@ -49,8 +52,21 @@ namespace ConcessionaireReports
             g.DrawString(_tabPage.Text, _tabFont, _textBrush, _tabBounds, new StringFormat(_stringFlags));
         }
 
+        private void bindTeller(ComboBox cb, MySqlDataAdapter adap)
+        {
+            DataSet dsTeller = new DataSet();
+            adap.SelectCommand.CommandType = CommandType.StoredProcedure;
+            adap.Fill(dsTeller);
+
+            cb.ValueMember = "zone_code";
+            cb.DisplayMember = "zone_code";
+            cb.DataSource = dsTeller.Tables[0];
+        }
+
         private void CollectionReportsForm_Load(object sender, EventArgs e)
         {
+            dateTimePickerDailyCollectionReportDate.MaxDate = DateTime.Today;
+
             tabControlCollectionReports.DrawMode = TabDrawMode.OwnerDrawFixed;
         }
     }
