@@ -59,7 +59,6 @@ namespace ConcessionaireReports
         {
             DataSet dsTeller = new DataSet();
             adap.SelectCommand.CommandType = CommandType.StoredProcedure;
-            adap.SelectCommand.Parameters.Clear();
             adap.SelectCommand.Parameters.AddWithValue("@transDate", dt.Value.Date);
             adap.SelectCommand.Parameters["@transDate"].Direction = ParameterDirection.Input;
             adap.Fill(dsTeller);
@@ -90,7 +89,6 @@ namespace ConcessionaireReports
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilgetTellersByTransDate", conn))
                     {
                         bindTeller(comboBoxDailyCollectionReportTeller, dateTimePickerDailyCollectionReportDate, adapter);
-                        bindTeller(comboBoxDCR2Teller, dateTimePickerDCR2Date, adapter);
                     }
                     conn.Close();
                 }
