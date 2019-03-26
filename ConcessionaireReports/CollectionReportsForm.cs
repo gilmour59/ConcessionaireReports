@@ -131,7 +131,7 @@ namespace ConcessionaireReports
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetDCR2", conn))
                     {
-                        DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
+                        DataSetCollectionReports ds = new DataSetCollectionReports();
 
                         adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                         adapter.SelectCommand.Parameters.AddWithValue("@in_trans_date", dateTimePickerDailyCollectionReportDate.Value);
@@ -156,7 +156,7 @@ namespace ConcessionaireReports
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetDCRRecap", conn))
                     {
-                        DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
+                        DataSetCollectionReports ds = new DataSetCollectionReports();
 
                         adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                         adapter.SelectCommand.Parameters.AddWithValue("@transDate", dateTimePickerDailyCollectionReportDate.Value);
@@ -167,6 +167,23 @@ namespace ConcessionaireReports
                         adapter.Fill(ds, "DCRRecap");
 
                         ReportDataSource rds = new ReportDataSource("DataSetCollectionReports2", ds.Tables["DCRRecap"]);
+                        reportViewerDailyCollectionReport.LocalReport.DataSources.Add(rds);
+                        //reportViewerDailyCollectionReport.LocalReport.Refresh();
+                    }
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetCheckPayments", conn))
+                    {
+                        DataSetCollectionReports ds = new DataSetCollectionReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@transDate", dateTimePickerDailyCollectionReportDate.Value);
+                        adapter.SelectCommand.Parameters["@transDate"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@userId", comboBoxDailyCollectionReportTeller.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@userId"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "DCRCheckPayments");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports3", ds.Tables["DCRCheckPayments"]);
                         reportViewerDailyCollectionReport.LocalReport.DataSources.Add(rds);
                         reportViewerDailyCollectionReport.LocalReport.Refresh();
                     }
