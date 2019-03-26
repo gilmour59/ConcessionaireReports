@@ -11,10 +11,13 @@ using Microsoft.Reporting.WinForms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
+
 namespace ConcessionaireReports
 {
     public partial class CollectionReportsForm : Form
     {
+        private string connStr;
+
         public CollectionReportsForm()
         {
             InitializeComponent();
@@ -52,22 +55,50 @@ namespace ConcessionaireReports
             g.DrawString(_tabPage.Text, _tabFont, _textBrush, _tabBounds, new StringFormat(_stringFlags));
         }
 
-        private void bindTeller(ComboBox cb, MySqlDataAdapter adap)
+        private void bindTeller(ComboBox cb, DateTimePicker dt, MySqlDataAdapter adap)
         {
             DataSet dsTeller = new DataSet();
             adap.SelectCommand.CommandType = CommandType.StoredProcedure;
+            adap.SelectCommand.Parameters.Clear();
+            adap.SelectCommand.Parameters.AddWithValue("@transDate", dt.Value.Date);
+            adap.SelectCommand.Parameters["@transDate"].Direction = ParameterDirection.Input;
             adap.Fill(dsTeller);
 
-            cb.ValueMember = "zone_code";
-            cb.DisplayMember = "zone_code";
+            cb.ValueMember = "user_id";
+            cb.DisplayMember = "full_name";
             cb.DataSource = dsTeller.Tables[0];
         }
 
         private void CollectionReportsForm_Load(object sender, EventArgs e)
         {
-            dateTimePickerDailyCollectionReportDate.MaxDate = DateTime.Today;
-
             tabControlCollectionReports.DrawMode = TabDrawMode.OwnerDrawFixed;
+
+            connStr = "server=localhost;user=root;database=mrwdbcsys;port=3306;password=";
+
+            //This needs to be after the connStr because of the datetimepicker changed value function;
+            dateTimePickerDailyCollectionReportDate.MaxDate = DateTime.Today;
+        }
+
+        private void dateTimePickerDailyCollectionReportDate_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilgetTellersByTransDate", conn))
+                    {
+                        bindTeller(comboBoxDailyCollectionReportTeller, dateTimePickerDailyCollectionReportDate, adapter);
+                        bindTeller(comboBoxDCR2Teller, dateTimePickerDCR2Date, adapter);
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
         }
     }
 }

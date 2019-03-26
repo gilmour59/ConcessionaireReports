@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource10 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource11 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource12 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource13 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource14 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource15 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource16 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource18 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource19 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource17 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource20 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource21 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource22 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource23 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource24 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource25 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource26 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource27 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource28 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource29 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource30 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.tabControlCollectionReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dateTimePickerDailyCollectionReportDate = new System.Windows.Forms.DateTimePicker();
@@ -199,6 +199,7 @@
             this.dateTimePickerDailyCollectionReportDate.Name = "dateTimePickerDailyCollectionReportDate";
             this.dateTimePickerDailyCollectionReportDate.Size = new System.Drawing.Size(118, 24);
             this.dateTimePickerDailyCollectionReportDate.TabIndex = 36;
+            this.dateTimePickerDailyCollectionReportDate.ValueChanged += new System.EventHandler(this.dateTimePickerDailyCollectionReportDate_ValueChanged);
             // 
             // comboBoxDailyCollectionReportTeller
             // 
@@ -212,9 +213,9 @@
             // 
             // reportViewerDailyCollectionReport
             // 
-            reportDataSource1.Name = "DataSetBillingReports";
-            reportDataSource1.Value = null;
-            this.reportViewerDailyCollectionReport.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource16.Name = "DataSetBillingReports";
+            reportDataSource16.Value = null;
+            this.reportViewerDailyCollectionReport.LocalReport.DataSources.Add(reportDataSource16);
             this.reportViewerDailyCollectionReport.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportBillComputationRegister.rdlc";
             this.reportViewerDailyCollectionReport.Location = new System.Drawing.Point(26, 49);
             this.reportViewerDailyCollectionReport.Name = "reportViewerDailyCollectionReport";
@@ -319,9 +320,9 @@
             // 
             // reportViewerDCR2
             // 
-            reportDataSource2.Name = "DataSetBillingReports";
-            reportDataSource2.Value = null;
-            this.reportViewerDCR2.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource18.Name = "DataSetBillingReports";
+            reportDataSource18.Value = null;
+            this.reportViewerDCR2.LocalReport.DataSources.Add(reportDataSource18);
             this.reportViewerDCR2.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportBillingSummaryBook.rdlc";
             this.reportViewerDCR2.Location = new System.Drawing.Point(26, 49);
             this.reportViewerDCR2.Name = "reportViewerDCR2";
@@ -374,9 +375,9 @@
             // 
             // reportViewerCollectionSummaryZoneBook
             // 
-            reportDataSource3.Name = "DataSetBillingReports";
-            reportDataSource3.Value = null;
-            this.reportViewerCollectionSummaryZoneBook.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource19.Name = "DataSetBillingReports";
+            reportDataSource19.Value = null;
+            this.reportViewerCollectionSummaryZoneBook.LocalReport.DataSources.Add(reportDataSource19);
             this.reportViewerCollectionSummaryZoneBook.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportBillingSummaryMonth.rdlc";
             this.reportViewerCollectionSummaryZoneBook.Location = new System.Drawing.Point(26, 49);
             this.reportViewerCollectionSummaryZoneBook.Name = "reportViewerCollectionSummaryZoneBook";
@@ -451,9 +452,9 @@
             // 
             // reportViewerCashReceiptRecord
             // 
-            reportDataSource4.Name = "DataSetMeterReadingReports";
-            reportDataSource4.Value = null;
-            this.reportViewerCashReceiptRecord.LocalReport.DataSources.Add(reportDataSource4);
+            reportDataSource17.Name = "DataSetMeterReadingReports";
+            reportDataSource17.Value = null;
+            this.reportViewerCashReceiptRecord.LocalReport.DataSources.Add(reportDataSource17);
             this.reportViewerCashReceiptRecord.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountsSuddenIncDecConsumption.rdlc";
             this.reportViewerCashReceiptRecord.Location = new System.Drawing.Point(26, 49);
             this.reportViewerCashReceiptRecord.Name = "reportViewerCashReceiptRecord";
@@ -496,9 +497,9 @@
             // 
             // reportViewerCDCR
             // 
-            reportDataSource5.Name = "DataSetBillingReports";
-            reportDataSource5.Value = null;
-            this.reportViewerCDCR.LocalReport.DataSources.Add(reportDataSource5);
+            reportDataSource20.Name = "DataSetBillingReports";
+            reportDataSource20.Value = null;
+            this.reportViewerCDCR.LocalReport.DataSources.Add(reportDataSource20);
             this.reportViewerCDCR.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportPenaltyBillingReport.rdlc";
             this.reportViewerCDCR.Location = new System.Drawing.Point(26, 49);
             this.reportViewerCDCR.Name = "reportViewerCDCR";
@@ -583,9 +584,9 @@
             // 
             // reportViewerMonthlyCollectionReport
             // 
-            reportDataSource6.Name = "DataSetMeterReadingReports";
-            reportDataSource6.Value = null;
-            this.reportViewerMonthlyCollectionReport.LocalReport.DataSources.Add(reportDataSource6);
+            reportDataSource21.Name = "DataSetMeterReadingReports";
+            reportDataSource21.Value = null;
+            this.reportViewerMonthlyCollectionReport.LocalReport.DataSources.Add(reportDataSource21);
             this.reportViewerMonthlyCollectionReport.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportUnreadMeters.rdlc";
             this.reportViewerMonthlyCollectionReport.Location = new System.Drawing.Point(26, 49);
             this.reportViewerMonthlyCollectionReport.Name = "reportViewerMonthlyCollectionReport";
@@ -638,9 +639,9 @@
             // 
             // reportViewerPaymentSummaryMaterials
             // 
-            reportDataSource7.Name = "DataSetBillingReports";
-            reportDataSource7.Value = null;
-            this.reportViewerPaymentSummaryMaterials.LocalReport.DataSources.Add(reportDataSource7);
+            reportDataSource22.Name = "DataSetBillingReports";
+            reportDataSource22.Value = null;
+            this.reportViewerPaymentSummaryMaterials.LocalReport.DataSources.Add(reportDataSource22);
             this.reportViewerPaymentSummaryMaterials.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportBillingSummaryMaterialsOtherFees.rdlc";
             this.reportViewerPaymentSummaryMaterials.Location = new System.Drawing.Point(26, 49);
             this.reportViewerPaymentSummaryMaterials.Name = "reportViewerPaymentSummaryMaterials";
@@ -705,12 +706,12 @@
             // 
             // reportViewerSummarySeniorCitizenDiscount
             // 
-            reportDataSource8.Name = "DataSetBillingReports";
-            reportDataSource8.Value = null;
-            reportDataSource9.Name = "DataSetBillingReports2";
-            reportDataSource9.Value = null;
-            this.reportViewerSummarySeniorCitizenDiscount.LocalReport.DataSources.Add(reportDataSource8);
-            this.reportViewerSummarySeniorCitizenDiscount.LocalReport.DataSources.Add(reportDataSource9);
+            reportDataSource23.Name = "DataSetBillingReports";
+            reportDataSource23.Value = null;
+            reportDataSource24.Name = "DataSetBillingReports2";
+            reportDataSource24.Value = null;
+            this.reportViewerSummarySeniorCitizenDiscount.LocalReport.DataSources.Add(reportDataSource23);
+            this.reportViewerSummarySeniorCitizenDiscount.LocalReport.DataSources.Add(reportDataSource24);
             this.reportViewerSummarySeniorCitizenDiscount.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportBillingAdjustmentSummary.rdlc";
             this.reportViewerSummarySeniorCitizenDiscount.Location = new System.Drawing.Point(26, 49);
             this.reportViewerSummarySeniorCitizenDiscount.Name = "reportViewerSummarySeniorCitizenDiscount";
@@ -763,9 +764,9 @@
             // 
             // reportViewerSummaryCancelledOR
             // 
-            reportDataSource10.Name = "DataSetBillingReports";
-            reportDataSource10.Value = null;
-            this.reportViewerSummaryCancelledOR.LocalReport.DataSources.Add(reportDataSource10);
+            reportDataSource25.Name = "DataSetBillingReports";
+            reportDataSource25.Value = null;
+            this.reportViewerSummaryCancelledOR.LocalReport.DataSources.Add(reportDataSource25);
             this.reportViewerSummaryCancelledOR.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountsLargeConsumption.rdlc";
             this.reportViewerSummaryCancelledOR.Location = new System.Drawing.Point(26, 49);
             this.reportViewerSummaryCancelledOR.Name = "reportViewerSummaryCancelledOR";
@@ -850,9 +851,9 @@
             // 
             // reportViewerSummaryWithholdingTaxes
             // 
-            reportDataSource11.Name = "DataSetMeterReadingReports";
-            reportDataSource11.Value = null;
-            this.reportViewerSummaryWithholdingTaxes.LocalReport.DataSources.Add(reportDataSource11);
+            reportDataSource26.Name = "DataSetMeterReadingReports";
+            reportDataSource26.Value = null;
+            this.reportViewerSummaryWithholdingTaxes.LocalReport.DataSources.Add(reportDataSource26);
             this.reportViewerSummaryWithholdingTaxes.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportUnreadMeters.rdlc";
             this.reportViewerSummaryWithholdingTaxes.Location = new System.Drawing.Point(26, 49);
             this.reportViewerSummaryWithholdingTaxes.Name = "reportViewerSummaryWithholdingTaxes";
@@ -949,9 +950,9 @@
             // 
             // reportViewerSummaryMiscellaneousFees
             // 
-            reportDataSource12.Name = "DataSetBillingReports";
-            reportDataSource12.Value = null;
-            this.reportViewerSummaryMiscellaneousFees.LocalReport.DataSources.Add(reportDataSource12);
+            reportDataSource27.Name = "DataSetBillingReports";
+            reportDataSource27.Value = null;
+            this.reportViewerSummaryMiscellaneousFees.LocalReport.DataSources.Add(reportDataSource27);
             this.reportViewerSummaryMiscellaneousFees.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountsLargeConsumption.rdlc";
             this.reportViewerSummaryMiscellaneousFees.Location = new System.Drawing.Point(26, 49);
             this.reportViewerSummaryMiscellaneousFees.Name = "reportViewerSummaryMiscellaneousFees";
@@ -1004,9 +1005,9 @@
             // 
             // reportViewerDailyCollectionSummaryZone
             // 
-            reportDataSource13.Name = "DataSetBillingReports";
-            reportDataSource13.Value = null;
-            this.reportViewerDailyCollectionSummaryZone.LocalReport.DataSources.Add(reportDataSource13);
+            reportDataSource28.Name = "DataSetBillingReports";
+            reportDataSource28.Value = null;
+            this.reportViewerDailyCollectionSummaryZone.LocalReport.DataSources.Add(reportDataSource28);
             this.reportViewerDailyCollectionSummaryZone.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountsLargeConsumption.rdlc";
             this.reportViewerDailyCollectionSummaryZone.Location = new System.Drawing.Point(26, 49);
             this.reportViewerDailyCollectionSummaryZone.Name = "reportViewerDailyCollectionSummaryZone";
@@ -1059,9 +1060,9 @@
             // 
             // reportViewerDailyCollectionSummary
             // 
-            reportDataSource14.Name = "DataSetBillingReports";
-            reportDataSource14.Value = null;
-            this.reportViewerDailyCollectionSummary.LocalReport.DataSources.Add(reportDataSource14);
+            reportDataSource29.Name = "DataSetBillingReports";
+            reportDataSource29.Value = null;
+            this.reportViewerDailyCollectionSummary.LocalReport.DataSources.Add(reportDataSource29);
             this.reportViewerDailyCollectionSummary.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountsLargeConsumption.rdlc";
             this.reportViewerDailyCollectionSummary.Location = new System.Drawing.Point(26, 49);
             this.reportViewerDailyCollectionSummary.Name = "reportViewerDailyCollectionSummary";
@@ -1114,9 +1115,9 @@
             // 
             // reportViewerCashCollectionReport
             // 
-            reportDataSource15.Name = "DataSetBillingReports";
-            reportDataSource15.Value = null;
-            this.reportViewerCashCollectionReport.LocalReport.DataSources.Add(reportDataSource15);
+            reportDataSource30.Name = "DataSetBillingReports";
+            reportDataSource30.Value = null;
+            this.reportViewerCashCollectionReport.LocalReport.DataSources.Add(reportDataSource30);
             this.reportViewerCashCollectionReport.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountsLargeConsumption.rdlc";
             this.reportViewerCashCollectionReport.Location = new System.Drawing.Point(26, 49);
             this.reportViewerCashCollectionReport.Name = "reportViewerCashCollectionReport";
