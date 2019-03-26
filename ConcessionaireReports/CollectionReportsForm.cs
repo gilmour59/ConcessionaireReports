@@ -159,10 +159,10 @@ namespace ConcessionaireReports
                         DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
 
                         adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@trans_date", dateTimePickerDailyCollectionReportDate.Value);
-                        adapter.SelectCommand.Parameters["@trans_date"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@user_id", comboBoxDailyCollectionReportTeller.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@user_id"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@transDate", dateTimePickerDailyCollectionReportDate.Value);
+                        adapter.SelectCommand.Parameters["@transDate"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@userId", comboBoxDailyCollectionReportTeller.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@userId"].Direction = ParameterDirection.Input;
 
                         adapter.Fill(ds, "DCRRecap");
 

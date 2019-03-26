@@ -12,7 +12,7 @@
   <xs:element name="DataSetCollectionReports" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetCollectionReports" msprop:Generator_UserDSName="DataSetCollectionReports">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DCRRecap" msprop:Generator_TableClassName="DCRRecapDataTable" msprop:Generator_TableVarName="tableDCRRecap" msprop:Generator_TablePropName="DCRRecap" msprop:Generator_RowDeletingName="DCRRecapRowDeleting" msprop:Generator_RowChangingName="DCRRecapRowChanging" msprop:Generator_RowEvHandlerName="DCRRecapRowChangeEventHandler" msprop:Generator_RowDeletedName="DCRRecapRowDeleted" msprop:Generator_UserTableName="DCRRecap" msprop:Generator_RowChangedName="DCRRecapRowChanged" msprop:Generator_RowEvArgName="DCRRecapRowChangeEvent" msprop:Generator_RowClassName="DCRRecapRow">
+        <xs:element name="DCRRecap" msprop:Generator_TableClassName="DCRRecapDataTable" msprop:Generator_TableVarName="tableDCRRecap" msprop:Generator_RowChangedName="DCRRecapRowChanged" msprop:Generator_TablePropName="DCRRecap" msprop:Generator_RowDeletingName="DCRRecapRowDeleting" msprop:Generator_RowChangingName="DCRRecapRowChanging" msprop:Generator_RowEvHandlerName="DCRRecapRowChangeEventHandler" msprop:Generator_RowDeletedName="DCRRecapRowDeleted" msprop:Generator_RowClassName="DCRRecapRow" msprop:Generator_UserTableName="DCRRecap" msprop:Generator_RowEvArgName="DCRRecapRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="acct_code" msprop:Generator_ColumnVarNameInTable="columnacct_code" msprop:Generator_ColumnPropNameInRow="acct_code" msprop:Generator_ColumnPropNameInTable="acct_codeColumn" msprop:Generator_UserColumnName="acct_code" type="xs:string" minOccurs="0" />
@@ -21,7 +21,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DailyCollectionReport" msprop:Generator_TableClassName="DailyCollectionReportDataTable" msprop:Generator_TableVarName="tableDailyCollectionReport" msprop:Generator_TablePropName="DailyCollectionReport" msprop:Generator_RowDeletingName="DailyCollectionReportRowDeleting" msprop:Generator_RowChangingName="DailyCollectionReportRowChanging" msprop:Generator_RowEvHandlerName="DailyCollectionReportRowChangeEventHandler" msprop:Generator_RowDeletedName="DailyCollectionReportRowDeleted" msprop:Generator_UserTableName="DailyCollectionReport" msprop:Generator_RowChangedName="DailyCollectionReportRowChanged" msprop:Generator_RowEvArgName="DailyCollectionReportRowChangeEvent" msprop:Generator_RowClassName="DailyCollectionReportRow">
+        <xs:element name="DailyCollectionReport" msprop:Generator_TableClassName="DailyCollectionReportDataTable" msprop:Generator_TableVarName="tableDailyCollectionReport" msprop:Generator_RowChangedName="DailyCollectionReportRowChanged" msprop:Generator_TablePropName="DailyCollectionReport" msprop:Generator_RowDeletingName="DailyCollectionReportRowDeleting" msprop:Generator_RowChangingName="DailyCollectionReportRowChanging" msprop:Generator_RowEvHandlerName="DailyCollectionReportRowChangeEventHandler" msprop:Generator_RowDeletedName="DailyCollectionReportRowDeleted" msprop:Generator_RowClassName="DailyCollectionReportRow" msprop:Generator_UserTableName="DailyCollectionReport" msprop:Generator_RowEvArgName="DailyCollectionReportRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="header_name" msprop:Generator_ColumnVarNameInTable="columnheader_name" msprop:Generator_ColumnPropNameInRow="header_name" msprop:Generator_ColumnPropNameInTable="header_nameColumn" msprop:Generator_UserColumnName="header_name" type="xs:string" minOccurs="0" />
@@ -45,6 +45,18 @@
               <xs:element name="materials" msprop:Generator_ColumnVarNameInTable="columnmaterials" msprop:Generator_ColumnPropNameInRow="materials" msprop:Generator_ColumnPropNameInTable="materialsColumn" msprop:Generator_UserColumnName="materials" type="xs:decimal" minOccurs="0" />
               <xs:element name="miscellaneous" msprop:Generator_ColumnVarNameInTable="columnmiscellaneous" msprop:Generator_ColumnPropNameInRow="miscellaneous" msprop:Generator_ColumnPropNameInTable="miscellaneousColumn" msprop:Generator_UserColumnName="miscellaneous" type="xs:decimal" minOccurs="0" />
               <xs:element name="collection_count" msprop:Generator_ColumnVarNameInTable="columncollection_count" msprop:Generator_ColumnPropNameInRow="collection_count" msprop:Generator_ColumnPropNameInTable="collection_countColumn" msprop:Generator_UserColumnName="collection_count" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DCRCheckPayments" msprop:Generator_TableClassName="DCRCheckPaymentsDataTable" msprop:Generator_TableVarName="tableDCRCheckPayments" msprop:Generator_TablePropName="DCRCheckPayments" msprop:Generator_RowDeletingName="DCRCheckPaymentsRowDeleting" msprop:Generator_RowChangingName="DCRCheckPaymentsRowChanging" msprop:Generator_RowEvHandlerName="DCRCheckPaymentsRowChangeEventHandler" msprop:Generator_RowDeletedName="DCRCheckPaymentsRowDeleted" msprop:Generator_UserTableName="DCRCheckPayments" msprop:Generator_RowChangedName="DCRCheckPaymentsRowChanged" msprop:Generator_RowEvArgName="DCRCheckPaymentsRowChangeEvent" msprop:Generator_RowClassName="DCRCheckPaymentsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="check_no" msprop:Generator_ColumnVarNameInTable="columncheck_no" msprop:Generator_ColumnPropNameInRow="check_no" msprop:Generator_ColumnPropNameInTable="check_noColumn" msprop:Generator_UserColumnName="check_no" type="xs:string" minOccurs="0" />
+              <xs:element name="bank" msprop:Generator_ColumnVarNameInTable="columnbank" msprop:Generator_ColumnPropNameInRow="bank" msprop:Generator_ColumnPropNameInTable="bankColumn" msprop:Generator_UserColumnName="bank" type="xs:string" minOccurs="0" />
+              <xs:element name="check_amt" msprop:Generator_ColumnVarNameInTable="columncheck_amt" msprop:Generator_ColumnPropNameInRow="check_amt" msprop:Generator_ColumnPropNameInTable="check_amtColumn" msprop:Generator_UserColumnName="check_amt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ref_no" msprop:Generator_ColumnVarNameInTable="columnref_no" msprop:Generator_ColumnPropNameInRow="ref_no" msprop:Generator_ColumnPropNameInTable="ref_noColumn" msprop:Generator_UserColumnName="ref_no" type="xs:string" minOccurs="0" />
+              <xs:element name="concessionaire_name" msprop:Generator_ColumnVarNameInTable="columnconcessionaire_name" msprop:Generator_ColumnPropNameInRow="concessionaire_name" msprop:Generator_ColumnPropNameInTable="concessionaire_nameColumn" msprop:Generator_UserColumnName="concessionaire_name" type="xs:string" minOccurs="0" />
+              <xs:element name="amt_paid" msprop:Generator_ColumnVarNameInTable="columnamt_paid" msprop:Generator_ColumnPropNameInRow="amt_paid" msprop:Generator_ColumnPropNameInTable="amt_paidColumn" msprop:Generator_UserColumnName="amt_paid" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
