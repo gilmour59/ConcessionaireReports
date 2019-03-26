@@ -120,5 +120,64 @@ namespace ConcessionaireReports
                 MessageBox.Show("error: " + ex, "Error!");
             }
         }
+
+        private void buttonDailyCollectionReportSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetDCR2", conn))
+                    {
+                        DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@in_trans_date", dateTimePickerDailyCollectionReportDate.Value);
+                        adapter.SelectCommand.Parameters["@in_trans_date"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@in_user_id", comboBoxDailyCollectionReportTeller.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@in_user_id"].Direction = ParameterDirection.Input;
+                      
+                        adapter.Fill(ds, "DailyCollectionReport");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["DailyCollectionReport"]);
+                        reportViewerDailyCollectionReport.LocalReport.DataSources.Clear();
+                        reportViewerDailyCollectionReport.LocalReport.DataSources.Add(rds);
+
+                        ReportParameter[] param = new ReportParameter[]
+                        {
+                            new ReportParameter("ReportParameterDate", dateTimePickerDailyCollectionReportDate.Value.ToString()),
+                            new ReportParameter("ReportParameterTeller", comboBoxDailyCollectionReportTeller.Text)
+                        };
+                        reportViewerDailyCollectionReport.LocalReport.SetParameters(param);
+                        //reportViewerDailyCollectionReport.LocalReport.Refresh();
+                    }
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetDCRRecap", conn))
+                    {
+                        DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@trans_date", dateTimePickerDailyCollectionReportDate.Value);
+                        adapter.SelectCommand.Parameters["@trans_date"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@user_id", comboBoxDailyCollectionReportTeller.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@user_id"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "DCRRecap");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports2", ds.Tables["DCRRecap"]);
+                        reportViewerDailyCollectionReport.LocalReport.DataSources.Add(rds);
+                        reportViewerDailyCollectionReport.LocalReport.Refresh();
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            this.reportViewerDailyCollectionReport.RefreshReport();
+        }
     }
 }
