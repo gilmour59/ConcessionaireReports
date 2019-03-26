@@ -76,6 +76,7 @@ namespace ConcessionaireReports
 
             //This needs to be after the connStr because of the datetimepicker changed value function;
             dateTimePickerDailyCollectionReportDate.MaxDate = DateTime.Today;
+            dateTimePickerDCR2Date.MaxDate = DateTime.Today;
         }
 
         private void dateTimePickerDailyCollectionReportDate_ValueChanged(object sender, EventArgs e)
@@ -89,6 +90,27 @@ namespace ConcessionaireReports
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilgetTellersByTransDate", conn))
                     {
                         bindTeller(comboBoxDailyCollectionReportTeller, dateTimePickerDailyCollectionReportDate, adapter);
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+        }
+
+        private void dateTimePickerDCR2Date_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilgetTellersByTransDate", conn))
+                    {
+                        bindTeller(comboBoxDCR2Teller, dateTimePickerDCR2Date, adapter);
                     }
                     conn.Close();
                 }
