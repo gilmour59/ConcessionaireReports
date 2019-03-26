@@ -45,87 +45,87 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource15 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.tabControlCollectionReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dateTimePickerDailyCollectionReportDate = new System.Windows.Forms.DateTimePicker();
             this.comboBoxDailyCollectionReportTeller = new System.Windows.Forms.ComboBox();
             this.reportViewerDailyCollectionReport = new Microsoft.Reporting.WinForms.ReportViewer();
             this.buttonDailyCollectionReportSearch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.reportViewerDCR2 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.buttonCollectionSummaryZoneBookSearch = new System.Windows.Forms.Button();
-            this.reportViewerCollectionSummaryZoneBook = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.reportViewerCashReceiptRecord = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.reportViewerCDCR = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.buttonCDCRSearch = new System.Windows.Forms.Button();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.buttonMonthlyCollectionReportSearch = new System.Windows.Forms.Button();
-            this.reportViewerMonthlyCollectionReport = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.buttonPaymentSummaryMaterialsSearch = new System.Windows.Forms.Button();
-            this.reportViewerPaymentSummaryMaterials = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.reportViewerSummarySeniorCitizenDiscount = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.buttonSummarySeniorCitizenDiscountSearch = new System.Windows.Forms.Button();
-            this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.reportViewerSummaryCancelledOR = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.buttonSummaryCancelledORSearch = new System.Windows.Forms.Button();
-            this.tabPage10 = new System.Windows.Forms.TabPage();
-            this.reportViewerSummaryWithholdingTaxes = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.tabPage11 = new System.Windows.Forms.TabPage();
-            this.tabPage12 = new System.Windows.Forms.TabPage();
-            this.tabPage13 = new System.Windows.Forms.TabPage();
-            this.tabPage14 = new System.Windows.Forms.TabPage();
-            this.dateTimePickerDailyCollectionReportDate = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerDCR2Date = new System.Windows.Forms.DateTimePicker();
             this.comboBoxDCR2Teller = new System.Windows.Forms.ComboBox();
             this.buttonDCR2Search = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.reportViewerDCR2 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dateTimePickerCollectionSummaryZoneBookDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
+            this.buttonCollectionSummaryZoneBookSearch = new System.Windows.Forms.Button();
+            this.reportViewerCollectionSummaryZoneBook = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dateTimePickerCashReceiptRecordDate = new System.Windows.Forms.DateTimePicker();
             this.comboBoxCashReceiptRecordTeller = new System.Windows.Forms.ComboBox();
             this.buttonCashReceiptRecordSearch = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.reportViewerCashReceiptRecord = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dateTimePickerCDCRDate = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
-            this.dateTimePickerMonthlyCollectionReportFrom = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
+            this.reportViewerCDCR = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.buttonCDCRSearch = new System.Windows.Forms.Button();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.dateTimePickerMonthlyCollectionReportTo = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
+            this.dateTimePickerMonthlyCollectionReportFrom = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
+            this.buttonMonthlyCollectionReportSearch = new System.Windows.Forms.Button();
+            this.reportViewerMonthlyCollectionReport = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.dateTimePickerPaymentSummaryMaterialsDate = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
-            this.dateTimePickerSummarySeniorCitizenDiscountFrom = new System.Windows.Forms.DateTimePicker();
-            this.label12 = new System.Windows.Forms.Label();
+            this.buttonPaymentSummaryMaterialsSearch = new System.Windows.Forms.Button();
+            this.reportViewerPaymentSummaryMaterials = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
             this.dateTimePickerSummarySeniorCitizenDiscountTo = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
+            this.dateTimePickerSummarySeniorCitizenDiscountFrom = new System.Windows.Forms.DateTimePicker();
+            this.label12 = new System.Windows.Forms.Label();
+            this.reportViewerSummarySeniorCitizenDiscount = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.buttonSummarySeniorCitizenDiscountSearch = new System.Windows.Forms.Button();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
             this.dateTimePickerSummaryCancelledORDate = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
+            this.reportViewerSummaryCancelledOR = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.buttonSummaryCancelledORSearch = new System.Windows.Forms.Button();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
             this.dateTimePickerSummaryWithholdingTaxesTo = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
             this.dateTimePickerSummaryWithholdingTaxesFrom = new System.Windows.Forms.DateTimePicker();
             this.label16 = new System.Windows.Forms.Label();
             this.buttonSummaryWithholdingTaxesSearch = new System.Windows.Forms.Button();
-            this.reportViewerSummaryMiscellaneousFees = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reportViewerSummaryWithholdingTaxes = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tabPage11 = new System.Windows.Forms.TabPage();
+            this.comboBoxSummaryMiscellaneousFeesItem = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.dateTimePickerSummaryMiscellaneousFeesTo = new System.Windows.Forms.DateTimePicker();
             this.label17 = new System.Windows.Forms.Label();
             this.dateTimePickerSummaryMiscellaneousFeesFrom = new System.Windows.Forms.DateTimePicker();
             this.label18 = new System.Windows.Forms.Label();
             this.buttonSummaryMiscellaneousFeesSearch = new System.Windows.Forms.Button();
-            this.comboBoxSummaryMiscellaneousFeesItem = new System.Windows.Forms.ComboBox();
-            this.label19 = new System.Windows.Forms.Label();
+            this.reportViewerSummaryMiscellaneousFees = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.buttonDailyCollectionSummaryZoneSearch = new System.Windows.Forms.Button();
             this.dateTimePickerDailyCollectionSummaryZoneDate = new System.Windows.Forms.DateTimePicker();
             this.label20 = new System.Windows.Forms.Label();
             this.reportViewerDailyCollectionSummaryZone = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.buttonDailyCollectionSummaryZoneSearch = new System.Windows.Forms.Button();
+            this.tabPage13 = new System.Windows.Forms.TabPage();
             this.buttonDailyCollectionSummarySearch = new System.Windows.Forms.Button();
             this.dateTimePickerDailyCollectionSummaryDate = new System.Windows.Forms.DateTimePicker();
             this.label21 = new System.Windows.Forms.Label();
             this.reportViewerDailyCollectionSummary = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tabPage14 = new System.Windows.Forms.TabPage();
             this.buttonCashCollectionReportSearch = new System.Windows.Forms.Button();
             this.dateTimePickerCashCollectionReportDate = new System.Windows.Forms.DateTimePicker();
             this.label22 = new System.Windows.Forms.Label();
@@ -190,12 +190,22 @@
             this.tabPage1.Text = "Daily Collection Report";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // dateTimePickerDailyCollectionReportDate
+            // 
+            this.dateTimePickerDailyCollectionReportDate.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePickerDailyCollectionReportDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerDailyCollectionReportDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerDailyCollectionReportDate.Location = new System.Drawing.Point(75, 13);
+            this.dateTimePickerDailyCollectionReportDate.Name = "dateTimePickerDailyCollectionReportDate";
+            this.dateTimePickerDailyCollectionReportDate.Size = new System.Drawing.Size(118, 24);
+            this.dateTimePickerDailyCollectionReportDate.TabIndex = 36;
+            // 
             // comboBoxDailyCollectionReportTeller
             // 
             this.comboBoxDailyCollectionReportTeller.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDailyCollectionReportTeller.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxDailyCollectionReportTeller.FormattingEnabled = true;
-            this.comboBoxDailyCollectionReportTeller.Location = new System.Drawing.Point(82, 13);
+            this.comboBoxDailyCollectionReportTeller.Location = new System.Drawing.Point(342, 13);
             this.comboBoxDailyCollectionReportTeller.Name = "comboBoxDailyCollectionReportTeller";
             this.comboBoxDailyCollectionReportTeller.Size = new System.Drawing.Size(167, 24);
             this.comboBoxDailyCollectionReportTeller.TabIndex = 35;
@@ -226,7 +236,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(296, 16);
+            this.label1.Location = new System.Drawing.Point(23, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 16);
             this.label1.TabIndex = 19;
@@ -236,7 +246,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(23, 16);
+            this.label2.Location = new System.Drawing.Point(283, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 16);
             this.label2.TabIndex = 20;
@@ -256,6 +266,56 @@
             this.tabPage2.TabIndex = 6;
             this.tabPage2.Text = "Daily Collection Report 2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePickerDCR2Date
+            // 
+            this.dateTimePickerDCR2Date.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePickerDCR2Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerDCR2Date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerDCR2Date.Location = new System.Drawing.Point(75, 13);
+            this.dateTimePickerDCR2Date.Name = "dateTimePickerDCR2Date";
+            this.dateTimePickerDCR2Date.Size = new System.Drawing.Size(118, 24);
+            this.dateTimePickerDCR2Date.TabIndex = 51;
+            // 
+            // comboBoxDCR2Teller
+            // 
+            this.comboBoxDCR2Teller.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDCR2Teller.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxDCR2Teller.FormattingEnabled = true;
+            this.comboBoxDCR2Teller.Location = new System.Drawing.Point(351, 13);
+            this.comboBoxDCR2Teller.Name = "comboBoxDCR2Teller";
+            this.comboBoxDCR2Teller.Size = new System.Drawing.Size(167, 24);
+            this.comboBoxDCR2Teller.TabIndex = 50;
+            // 
+            // buttonDCR2Search
+            // 
+            this.buttonDCR2Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDCR2Search.Location = new System.Drawing.Point(640, 5);
+            this.buttonDCR2Search.Name = "buttonDCR2Search";
+            this.buttonDCR2Search.Size = new System.Drawing.Size(74, 38);
+            this.buttonDCR2Search.TabIndex = 49;
+            this.buttonDCR2Search.Text = "Search";
+            this.buttonDCR2Search.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(23, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 16);
+            this.label4.TabIndex = 47;
+            this.label4.Text = "Date:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(292, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 16);
+            this.label5.TabIndex = 48;
+            this.label5.Text = "Teller:";
             // 
             // reportViewerDCR2
             // 
@@ -281,6 +341,26 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Collection Summary Per Zone/Book";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePickerCollectionSummaryZoneBookDate
+            // 
+            this.dateTimePickerCollectionSummaryZoneBookDate.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePickerCollectionSummaryZoneBookDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerCollectionSummaryZoneBookDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerCollectionSummaryZoneBookDate.Location = new System.Drawing.Point(75, 13);
+            this.dateTimePickerCollectionSummaryZoneBookDate.Name = "dateTimePickerCollectionSummaryZoneBookDate";
+            this.dateTimePickerCollectionSummaryZoneBookDate.Size = new System.Drawing.Size(118, 24);
+            this.dateTimePickerCollectionSummaryZoneBookDate.TabIndex = 53;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(23, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 16);
+            this.label3.TabIndex = 52;
+            this.label3.Text = "Date:";
             // 
             // buttonCollectionSummaryZoneBookSearch
             // 
@@ -319,6 +399,56 @@
             this.tabPage4.Text = "Cash Receipt and Remittance Record";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // dateTimePickerCashReceiptRecordDate
+            // 
+            this.dateTimePickerCashReceiptRecordDate.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePickerCashReceiptRecordDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerCashReceiptRecordDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerCashReceiptRecordDate.Location = new System.Drawing.Point(75, 13);
+            this.dateTimePickerCashReceiptRecordDate.Name = "dateTimePickerCashReceiptRecordDate";
+            this.dateTimePickerCashReceiptRecordDate.Size = new System.Drawing.Size(118, 24);
+            this.dateTimePickerCashReceiptRecordDate.TabIndex = 56;
+            // 
+            // comboBoxCashReceiptRecordTeller
+            // 
+            this.comboBoxCashReceiptRecordTeller.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCashReceiptRecordTeller.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxCashReceiptRecordTeller.FormattingEnabled = true;
+            this.comboBoxCashReceiptRecordTeller.Location = new System.Drawing.Point(358, 13);
+            this.comboBoxCashReceiptRecordTeller.Name = "comboBoxCashReceiptRecordTeller";
+            this.comboBoxCashReceiptRecordTeller.Size = new System.Drawing.Size(167, 24);
+            this.comboBoxCashReceiptRecordTeller.TabIndex = 55;
+            // 
+            // buttonCashReceiptRecordSearch
+            // 
+            this.buttonCashReceiptRecordSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCashReceiptRecordSearch.Location = new System.Drawing.Point(640, 5);
+            this.buttonCashReceiptRecordSearch.Name = "buttonCashReceiptRecordSearch";
+            this.buttonCashReceiptRecordSearch.Size = new System.Drawing.Size(74, 38);
+            this.buttonCashReceiptRecordSearch.TabIndex = 54;
+            this.buttonCashReceiptRecordSearch.Text = "Search";
+            this.buttonCashReceiptRecordSearch.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(23, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 16);
+            this.label6.TabIndex = 52;
+            this.label6.Text = "Date:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(299, 16);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(46, 16);
+            this.label7.TabIndex = 53;
+            this.label7.Text = "Teller:";
+            // 
             // reportViewerCashReceiptRecord
             // 
             reportDataSource4.Name = "DataSetMeterReadingReports";
@@ -343,6 +473,26 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Cashier\'s Daily Collection Report";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePickerCDCRDate
+            // 
+            this.dateTimePickerCDCRDate.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePickerCDCRDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerCDCRDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerCDCRDate.Location = new System.Drawing.Point(75, 13);
+            this.dateTimePickerCDCRDate.Name = "dateTimePickerCDCRDate";
+            this.dateTimePickerCDCRDate.Size = new System.Drawing.Size(118, 24);
+            this.dateTimePickerCDCRDate.TabIndex = 58;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(23, 16);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(40, 16);
+            this.label8.TabIndex = 57;
+            this.label8.Text = "Date:";
             // 
             // reportViewerCDCR
             // 
@@ -381,6 +531,46 @@
             this.tabPage6.Text = "Monthly Collection Report";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+            // dateTimePickerMonthlyCollectionReportTo
+            // 
+            this.dateTimePickerMonthlyCollectionReportTo.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePickerMonthlyCollectionReportTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerMonthlyCollectionReportTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerMonthlyCollectionReportTo.Location = new System.Drawing.Point(297, 13);
+            this.dateTimePickerMonthlyCollectionReportTo.Name = "dateTimePickerMonthlyCollectionReportTo";
+            this.dateTimePickerMonthlyCollectionReportTo.Size = new System.Drawing.Size(118, 24);
+            this.dateTimePickerMonthlyCollectionReportTo.TabIndex = 60;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(245, 16);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(40, 16);
+            this.label10.TabIndex = 59;
+            this.label10.Text = "Date:";
+            // 
+            // dateTimePickerMonthlyCollectionReportFrom
+            // 
+            this.dateTimePickerMonthlyCollectionReportFrom.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePickerMonthlyCollectionReportFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerMonthlyCollectionReportFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerMonthlyCollectionReportFrom.Location = new System.Drawing.Point(75, 13);
+            this.dateTimePickerMonthlyCollectionReportFrom.Name = "dateTimePickerMonthlyCollectionReportFrom";
+            this.dateTimePickerMonthlyCollectionReportFrom.Size = new System.Drawing.Size(118, 24);
+            this.dateTimePickerMonthlyCollectionReportFrom.TabIndex = 58;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(23, 16);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(40, 16);
+            this.label9.TabIndex = 57;
+            this.label9.Text = "Date:";
+            // 
             // buttonMonthlyCollectionReportSearch
             // 
             this.buttonMonthlyCollectionReportSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -415,6 +605,26 @@
             this.tabPage7.TabIndex = 7;
             this.tabPage7.Text = "Payment Summary of  Materials and Other Fees";
             this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePickerPaymentSummaryMaterialsDate
+            // 
+            this.dateTimePickerPaymentSummaryMaterialsDate.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePickerPaymentSummaryMaterialsDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerPaymentSummaryMaterialsDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerPaymentSummaryMaterialsDate.Location = new System.Drawing.Point(75, 13);
+            this.dateTimePickerPaymentSummaryMaterialsDate.Name = "dateTimePickerPaymentSummaryMaterialsDate";
+            this.dateTimePickerPaymentSummaryMaterialsDate.Size = new System.Drawing.Size(118, 24);
+            this.dateTimePickerPaymentSummaryMaterialsDate.TabIndex = 60;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(23, 16);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(40, 16);
+            this.label11.TabIndex = 59;
+            this.label11.Text = "Date:";
             // 
             // buttonPaymentSummaryMaterialsSearch
             // 
@@ -452,6 +662,46 @@
             this.tabPage8.TabIndex = 8;
             this.tabPage8.Text = "Summary of Senior Citizen Discount";
             this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePickerSummarySeniorCitizenDiscountTo
+            // 
+            this.dateTimePickerSummarySeniorCitizenDiscountTo.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePickerSummarySeniorCitizenDiscountTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerSummarySeniorCitizenDiscountTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerSummarySeniorCitizenDiscountTo.Location = new System.Drawing.Point(329, 13);
+            this.dateTimePickerSummarySeniorCitizenDiscountTo.Name = "dateTimePickerSummarySeniorCitizenDiscountTo";
+            this.dateTimePickerSummarySeniorCitizenDiscountTo.Size = new System.Drawing.Size(118, 24);
+            this.dateTimePickerSummarySeniorCitizenDiscountTo.TabIndex = 62;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(282, 16);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(28, 16);
+            this.label13.TabIndex = 61;
+            this.label13.Text = "To:";
+            // 
+            // dateTimePickerSummarySeniorCitizenDiscountFrom
+            // 
+            this.dateTimePickerSummarySeniorCitizenDiscountFrom.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePickerSummarySeniorCitizenDiscountFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerSummarySeniorCitizenDiscountFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerSummarySeniorCitizenDiscountFrom.Location = new System.Drawing.Point(70, 13);
+            this.dateTimePickerSummarySeniorCitizenDiscountFrom.Name = "dateTimePickerSummarySeniorCitizenDiscountFrom";
+            this.dateTimePickerSummarySeniorCitizenDiscountFrom.Size = new System.Drawing.Size(118, 24);
+            this.dateTimePickerSummarySeniorCitizenDiscountFrom.TabIndex = 60;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(23, 16);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(42, 16);
+            this.label12.TabIndex = 59;
+            this.label12.Text = "From:";
             // 
             // reportViewerSummarySeniorCitizenDiscount
             // 
@@ -491,6 +741,26 @@
             this.tabPage9.Text = "Summary of Cancelled Official Receipts";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
+            // dateTimePickerSummaryCancelledORDate
+            // 
+            this.dateTimePickerSummaryCancelledORDate.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePickerSummaryCancelledORDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerSummaryCancelledORDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerSummaryCancelledORDate.Location = new System.Drawing.Point(70, 13);
+            this.dateTimePickerSummaryCancelledORDate.Name = "dateTimePickerSummaryCancelledORDate";
+            this.dateTimePickerSummaryCancelledORDate.Size = new System.Drawing.Size(118, 24);
+            this.dateTimePickerSummaryCancelledORDate.TabIndex = 62;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(23, 16);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(40, 16);
+            this.label14.TabIndex = 61;
+            this.label14.Text = "Date:";
+            // 
             // reportViewerSummaryCancelledOR
             // 
             reportDataSource10.Name = "DataSetBillingReports";
@@ -527,344 +797,6 @@
             this.tabPage10.TabIndex = 10;
             this.tabPage10.Text = "Summary of Withholding Taxes";
             this.tabPage10.UseVisualStyleBackColor = true;
-            // 
-            // reportViewerSummaryWithholdingTaxes
-            // 
-            reportDataSource11.Name = "DataSetMeterReadingReports";
-            reportDataSource11.Value = null;
-            this.reportViewerSummaryWithholdingTaxes.LocalReport.DataSources.Add(reportDataSource11);
-            this.reportViewerSummaryWithholdingTaxes.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportUnreadMeters.rdlc";
-            this.reportViewerSummaryWithholdingTaxes.Location = new System.Drawing.Point(26, 49);
-            this.reportViewerSummaryWithholdingTaxes.Name = "reportViewerSummaryWithholdingTaxes";
-            this.reportViewerSummaryWithholdingTaxes.ServerReport.BearerToken = null;
-            this.reportViewerSummaryWithholdingTaxes.Size = new System.Drawing.Size(944, 481);
-            this.reportViewerSummaryWithholdingTaxes.TabIndex = 58;
-            // 
-            // tabPage11
-            // 
-            this.tabPage11.Controls.Add(this.comboBoxSummaryMiscellaneousFeesItem);
-            this.tabPage11.Controls.Add(this.label19);
-            this.tabPage11.Controls.Add(this.dateTimePickerSummaryMiscellaneousFeesTo);
-            this.tabPage11.Controls.Add(this.label17);
-            this.tabPage11.Controls.Add(this.dateTimePickerSummaryMiscellaneousFeesFrom);
-            this.tabPage11.Controls.Add(this.label18);
-            this.tabPage11.Controls.Add(this.buttonSummaryMiscellaneousFeesSearch);
-            this.tabPage11.Controls.Add(this.reportViewerSummaryMiscellaneousFees);
-            this.tabPage11.Location = new System.Drawing.Point(189, 4);
-            this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Size = new System.Drawing.Size(987, 555);
-            this.tabPage11.TabIndex = 11;
-            this.tabPage11.Text = "Summary of Miscellaneous Fees";
-            this.tabPage11.UseVisualStyleBackColor = true;
-            // 
-            // tabPage12
-            // 
-            this.tabPage12.Controls.Add(this.buttonDailyCollectionSummaryZoneSearch);
-            this.tabPage12.Controls.Add(this.dateTimePickerDailyCollectionSummaryZoneDate);
-            this.tabPage12.Controls.Add(this.label20);
-            this.tabPage12.Controls.Add(this.reportViewerDailyCollectionSummaryZone);
-            this.tabPage12.Location = new System.Drawing.Point(189, 4);
-            this.tabPage12.Name = "tabPage12";
-            this.tabPage12.Size = new System.Drawing.Size(987, 555);
-            this.tabPage12.TabIndex = 12;
-            this.tabPage12.Text = "Daily Collection Summary Per Zone";
-            this.tabPage12.UseVisualStyleBackColor = true;
-            // 
-            // tabPage13
-            // 
-            this.tabPage13.Controls.Add(this.buttonDailyCollectionSummarySearch);
-            this.tabPage13.Controls.Add(this.dateTimePickerDailyCollectionSummaryDate);
-            this.tabPage13.Controls.Add(this.label21);
-            this.tabPage13.Controls.Add(this.reportViewerDailyCollectionSummary);
-            this.tabPage13.Location = new System.Drawing.Point(189, 4);
-            this.tabPage13.Name = "tabPage13";
-            this.tabPage13.Size = new System.Drawing.Size(987, 555);
-            this.tabPage13.TabIndex = 13;
-            this.tabPage13.Text = "Daily Collection Summary";
-            this.tabPage13.UseVisualStyleBackColor = true;
-            // 
-            // tabPage14
-            // 
-            this.tabPage14.Controls.Add(this.buttonCashCollectionReportSearch);
-            this.tabPage14.Controls.Add(this.dateTimePickerCashCollectionReportDate);
-            this.tabPage14.Controls.Add(this.label22);
-            this.tabPage14.Controls.Add(this.reportViewerCashCollectionReport);
-            this.tabPage14.Location = new System.Drawing.Point(189, 4);
-            this.tabPage14.Name = "tabPage14";
-            this.tabPage14.Size = new System.Drawing.Size(987, 555);
-            this.tabPage14.TabIndex = 14;
-            this.tabPage14.Text = "Cash Collection Report";
-            this.tabPage14.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePickerDailyCollectionReportDate
-            // 
-            this.dateTimePickerDailyCollectionReportDate.CustomFormat = "MM/dd/yyyy";
-            this.dateTimePickerDailyCollectionReportDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerDailyCollectionReportDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerDailyCollectionReportDate.Location = new System.Drawing.Point(348, 13);
-            this.dateTimePickerDailyCollectionReportDate.Name = "dateTimePickerDailyCollectionReportDate";
-            this.dateTimePickerDailyCollectionReportDate.Size = new System.Drawing.Size(118, 24);
-            this.dateTimePickerDailyCollectionReportDate.TabIndex = 36;
-            // 
-            // dateTimePickerDCR2Date
-            // 
-            this.dateTimePickerDCR2Date.CustomFormat = "MM/dd/yyyy";
-            this.dateTimePickerDCR2Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerDCR2Date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerDCR2Date.Location = new System.Drawing.Point(348, 13);
-            this.dateTimePickerDCR2Date.Name = "dateTimePickerDCR2Date";
-            this.dateTimePickerDCR2Date.Size = new System.Drawing.Size(118, 24);
-            this.dateTimePickerDCR2Date.TabIndex = 51;
-            // 
-            // comboBoxDCR2Teller
-            // 
-            this.comboBoxDCR2Teller.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxDCR2Teller.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxDCR2Teller.FormattingEnabled = true;
-            this.comboBoxDCR2Teller.Location = new System.Drawing.Point(82, 13);
-            this.comboBoxDCR2Teller.Name = "comboBoxDCR2Teller";
-            this.comboBoxDCR2Teller.Size = new System.Drawing.Size(167, 24);
-            this.comboBoxDCR2Teller.TabIndex = 50;
-            // 
-            // buttonDCR2Search
-            // 
-            this.buttonDCR2Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDCR2Search.Location = new System.Drawing.Point(640, 5);
-            this.buttonDCR2Search.Name = "buttonDCR2Search";
-            this.buttonDCR2Search.Size = new System.Drawing.Size(74, 38);
-            this.buttonDCR2Search.TabIndex = 49;
-            this.buttonDCR2Search.Text = "Search";
-            this.buttonDCR2Search.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(296, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 16);
-            this.label4.TabIndex = 47;
-            this.label4.Text = "Date:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 16);
-            this.label5.TabIndex = 48;
-            this.label5.Text = "Teller:";
-            // 
-            // dateTimePickerCollectionSummaryZoneBookDate
-            // 
-            this.dateTimePickerCollectionSummaryZoneBookDate.CustomFormat = "MM/dd/yyyy";
-            this.dateTimePickerCollectionSummaryZoneBookDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerCollectionSummaryZoneBookDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerCollectionSummaryZoneBookDate.Location = new System.Drawing.Point(75, 13);
-            this.dateTimePickerCollectionSummaryZoneBookDate.Name = "dateTimePickerCollectionSummaryZoneBookDate";
-            this.dateTimePickerCollectionSummaryZoneBookDate.Size = new System.Drawing.Size(118, 24);
-            this.dateTimePickerCollectionSummaryZoneBookDate.TabIndex = 53;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(23, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 16);
-            this.label3.TabIndex = 52;
-            this.label3.Text = "Date:";
-            // 
-            // dateTimePickerCashReceiptRecordDate
-            // 
-            this.dateTimePickerCashReceiptRecordDate.CustomFormat = "MM/dd/yyyy";
-            this.dateTimePickerCashReceiptRecordDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerCashReceiptRecordDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerCashReceiptRecordDate.Location = new System.Drawing.Point(348, 13);
-            this.dateTimePickerCashReceiptRecordDate.Name = "dateTimePickerCashReceiptRecordDate";
-            this.dateTimePickerCashReceiptRecordDate.Size = new System.Drawing.Size(118, 24);
-            this.dateTimePickerCashReceiptRecordDate.TabIndex = 56;
-            // 
-            // comboBoxCashReceiptRecordTeller
-            // 
-            this.comboBoxCashReceiptRecordTeller.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCashReceiptRecordTeller.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxCashReceiptRecordTeller.FormattingEnabled = true;
-            this.comboBoxCashReceiptRecordTeller.Location = new System.Drawing.Point(82, 13);
-            this.comboBoxCashReceiptRecordTeller.Name = "comboBoxCashReceiptRecordTeller";
-            this.comboBoxCashReceiptRecordTeller.Size = new System.Drawing.Size(167, 24);
-            this.comboBoxCashReceiptRecordTeller.TabIndex = 55;
-            // 
-            // buttonCashReceiptRecordSearch
-            // 
-            this.buttonCashReceiptRecordSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCashReceiptRecordSearch.Location = new System.Drawing.Point(640, 5);
-            this.buttonCashReceiptRecordSearch.Name = "buttonCashReceiptRecordSearch";
-            this.buttonCashReceiptRecordSearch.Size = new System.Drawing.Size(74, 38);
-            this.buttonCashReceiptRecordSearch.TabIndex = 54;
-            this.buttonCashReceiptRecordSearch.Text = "Search";
-            this.buttonCashReceiptRecordSearch.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(296, 16);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 16);
-            this.label6.TabIndex = 52;
-            this.label6.Text = "Date:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(23, 16);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 16);
-            this.label7.TabIndex = 53;
-            this.label7.Text = "Teller:";
-            // 
-            // dateTimePickerCDCRDate
-            // 
-            this.dateTimePickerCDCRDate.CustomFormat = "MM/dd/yyyy";
-            this.dateTimePickerCDCRDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerCDCRDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerCDCRDate.Location = new System.Drawing.Point(75, 13);
-            this.dateTimePickerCDCRDate.Name = "dateTimePickerCDCRDate";
-            this.dateTimePickerCDCRDate.Size = new System.Drawing.Size(118, 24);
-            this.dateTimePickerCDCRDate.TabIndex = 58;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(23, 16);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(40, 16);
-            this.label8.TabIndex = 57;
-            this.label8.Text = "Date:";
-            // 
-            // dateTimePickerMonthlyCollectionReportFrom
-            // 
-            this.dateTimePickerMonthlyCollectionReportFrom.CustomFormat = "MM/dd/yyyy";
-            this.dateTimePickerMonthlyCollectionReportFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerMonthlyCollectionReportFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerMonthlyCollectionReportFrom.Location = new System.Drawing.Point(75, 13);
-            this.dateTimePickerMonthlyCollectionReportFrom.Name = "dateTimePickerMonthlyCollectionReportFrom";
-            this.dateTimePickerMonthlyCollectionReportFrom.Size = new System.Drawing.Size(118, 24);
-            this.dateTimePickerMonthlyCollectionReportFrom.TabIndex = 58;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(23, 16);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(40, 16);
-            this.label9.TabIndex = 57;
-            this.label9.Text = "Date:";
-            // 
-            // dateTimePickerMonthlyCollectionReportTo
-            // 
-            this.dateTimePickerMonthlyCollectionReportTo.CustomFormat = "MM/dd/yyyy";
-            this.dateTimePickerMonthlyCollectionReportTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerMonthlyCollectionReportTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerMonthlyCollectionReportTo.Location = new System.Drawing.Point(297, 13);
-            this.dateTimePickerMonthlyCollectionReportTo.Name = "dateTimePickerMonthlyCollectionReportTo";
-            this.dateTimePickerMonthlyCollectionReportTo.Size = new System.Drawing.Size(118, 24);
-            this.dateTimePickerMonthlyCollectionReportTo.TabIndex = 60;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(245, 16);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(40, 16);
-            this.label10.TabIndex = 59;
-            this.label10.Text = "Date:";
-            // 
-            // dateTimePickerPaymentSummaryMaterialsDate
-            // 
-            this.dateTimePickerPaymentSummaryMaterialsDate.CustomFormat = "MM/dd/yyyy";
-            this.dateTimePickerPaymentSummaryMaterialsDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerPaymentSummaryMaterialsDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerPaymentSummaryMaterialsDate.Location = new System.Drawing.Point(75, 13);
-            this.dateTimePickerPaymentSummaryMaterialsDate.Name = "dateTimePickerPaymentSummaryMaterialsDate";
-            this.dateTimePickerPaymentSummaryMaterialsDate.Size = new System.Drawing.Size(118, 24);
-            this.dateTimePickerPaymentSummaryMaterialsDate.TabIndex = 60;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(23, 16);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(40, 16);
-            this.label11.TabIndex = 59;
-            this.label11.Text = "Date:";
-            // 
-            // dateTimePickerSummarySeniorCitizenDiscountFrom
-            // 
-            this.dateTimePickerSummarySeniorCitizenDiscountFrom.CustomFormat = "MM/dd/yyyy";
-            this.dateTimePickerSummarySeniorCitizenDiscountFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerSummarySeniorCitizenDiscountFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerSummarySeniorCitizenDiscountFrom.Location = new System.Drawing.Point(70, 13);
-            this.dateTimePickerSummarySeniorCitizenDiscountFrom.Name = "dateTimePickerSummarySeniorCitizenDiscountFrom";
-            this.dateTimePickerSummarySeniorCitizenDiscountFrom.Size = new System.Drawing.Size(118, 24);
-            this.dateTimePickerSummarySeniorCitizenDiscountFrom.TabIndex = 60;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(23, 16);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(42, 16);
-            this.label12.TabIndex = 59;
-            this.label12.Text = "From:";
-            // 
-            // dateTimePickerSummarySeniorCitizenDiscountTo
-            // 
-            this.dateTimePickerSummarySeniorCitizenDiscountTo.CustomFormat = "MM/dd/yyyy";
-            this.dateTimePickerSummarySeniorCitizenDiscountTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerSummarySeniorCitizenDiscountTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerSummarySeniorCitizenDiscountTo.Location = new System.Drawing.Point(329, 13);
-            this.dateTimePickerSummarySeniorCitizenDiscountTo.Name = "dateTimePickerSummarySeniorCitizenDiscountTo";
-            this.dateTimePickerSummarySeniorCitizenDiscountTo.Size = new System.Drawing.Size(118, 24);
-            this.dateTimePickerSummarySeniorCitizenDiscountTo.TabIndex = 62;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(282, 16);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(28, 16);
-            this.label13.TabIndex = 61;
-            this.label13.Text = "To:";
-            // 
-            // dateTimePickerSummaryCancelledORDate
-            // 
-            this.dateTimePickerSummaryCancelledORDate.CustomFormat = "MM/dd/yyyy";
-            this.dateTimePickerSummaryCancelledORDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerSummaryCancelledORDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerSummaryCancelledORDate.Location = new System.Drawing.Point(70, 13);
-            this.dateTimePickerSummaryCancelledORDate.Name = "dateTimePickerSummaryCancelledORDate";
-            this.dateTimePickerSummaryCancelledORDate.Size = new System.Drawing.Size(118, 24);
-            this.dateTimePickerSummaryCancelledORDate.TabIndex = 62;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(23, 16);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(40, 16);
-            this.label14.TabIndex = 61;
-            this.label14.Text = "Date:";
             // 
             // dateTimePickerSummaryWithholdingTaxesTo
             // 
@@ -916,17 +848,54 @@
             this.buttonSummaryWithholdingTaxesSearch.Text = "Search";
             this.buttonSummaryWithholdingTaxesSearch.UseVisualStyleBackColor = true;
             // 
-            // reportViewerSummaryMiscellaneousFees
+            // reportViewerSummaryWithholdingTaxes
             // 
-            reportDataSource12.Name = "DataSetBillingReports";
-            reportDataSource12.Value = null;
-            this.reportViewerSummaryMiscellaneousFees.LocalReport.DataSources.Add(reportDataSource12);
-            this.reportViewerSummaryMiscellaneousFees.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountsLargeConsumption.rdlc";
-            this.reportViewerSummaryMiscellaneousFees.Location = new System.Drawing.Point(26, 49);
-            this.reportViewerSummaryMiscellaneousFees.Name = "reportViewerSummaryMiscellaneousFees";
-            this.reportViewerSummaryMiscellaneousFees.ServerReport.BearerToken = null;
-            this.reportViewerSummaryMiscellaneousFees.Size = new System.Drawing.Size(944, 481);
-            this.reportViewerSummaryMiscellaneousFees.TabIndex = 55;
+            reportDataSource11.Name = "DataSetMeterReadingReports";
+            reportDataSource11.Value = null;
+            this.reportViewerSummaryWithholdingTaxes.LocalReport.DataSources.Add(reportDataSource11);
+            this.reportViewerSummaryWithholdingTaxes.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportUnreadMeters.rdlc";
+            this.reportViewerSummaryWithholdingTaxes.Location = new System.Drawing.Point(26, 49);
+            this.reportViewerSummaryWithholdingTaxes.Name = "reportViewerSummaryWithholdingTaxes";
+            this.reportViewerSummaryWithholdingTaxes.ServerReport.BearerToken = null;
+            this.reportViewerSummaryWithholdingTaxes.Size = new System.Drawing.Size(944, 481);
+            this.reportViewerSummaryWithholdingTaxes.TabIndex = 58;
+            // 
+            // tabPage11
+            // 
+            this.tabPage11.Controls.Add(this.comboBoxSummaryMiscellaneousFeesItem);
+            this.tabPage11.Controls.Add(this.label19);
+            this.tabPage11.Controls.Add(this.dateTimePickerSummaryMiscellaneousFeesTo);
+            this.tabPage11.Controls.Add(this.label17);
+            this.tabPage11.Controls.Add(this.dateTimePickerSummaryMiscellaneousFeesFrom);
+            this.tabPage11.Controls.Add(this.label18);
+            this.tabPage11.Controls.Add(this.buttonSummaryMiscellaneousFeesSearch);
+            this.tabPage11.Controls.Add(this.reportViewerSummaryMiscellaneousFees);
+            this.tabPage11.Location = new System.Drawing.Point(189, 4);
+            this.tabPage11.Name = "tabPage11";
+            this.tabPage11.Size = new System.Drawing.Size(987, 555);
+            this.tabPage11.TabIndex = 11;
+            this.tabPage11.Text = "Summary of Miscellaneous Fees";
+            this.tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxSummaryMiscellaneousFeesItem
+            // 
+            this.comboBoxSummaryMiscellaneousFeesItem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSummaryMiscellaneousFeesItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxSummaryMiscellaneousFeesItem.FormattingEnabled = true;
+            this.comboBoxSummaryMiscellaneousFeesItem.Location = new System.Drawing.Point(568, 13);
+            this.comboBoxSummaryMiscellaneousFeesItem.Name = "comboBoxSummaryMiscellaneousFeesItem";
+            this.comboBoxSummaryMiscellaneousFeesItem.Size = new System.Drawing.Size(167, 24);
+            this.comboBoxSummaryMiscellaneousFeesItem.TabIndex = 74;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(512, 16);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(36, 16);
+            this.label19.TabIndex = 73;
+            this.label19.Text = "Item:";
             // 
             // dateTimePickerSummaryMiscellaneousFeesTo
             // 
@@ -978,25 +947,40 @@
             this.buttonSummaryMiscellaneousFeesSearch.Text = "Search";
             this.buttonSummaryMiscellaneousFeesSearch.UseVisualStyleBackColor = true;
             // 
-            // comboBoxSummaryMiscellaneousFeesItem
+            // reportViewerSummaryMiscellaneousFees
             // 
-            this.comboBoxSummaryMiscellaneousFeesItem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSummaryMiscellaneousFeesItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxSummaryMiscellaneousFeesItem.FormattingEnabled = true;
-            this.comboBoxSummaryMiscellaneousFeesItem.Location = new System.Drawing.Point(568, 13);
-            this.comboBoxSummaryMiscellaneousFeesItem.Name = "comboBoxSummaryMiscellaneousFeesItem";
-            this.comboBoxSummaryMiscellaneousFeesItem.Size = new System.Drawing.Size(167, 24);
-            this.comboBoxSummaryMiscellaneousFeesItem.TabIndex = 74;
+            reportDataSource12.Name = "DataSetBillingReports";
+            reportDataSource12.Value = null;
+            this.reportViewerSummaryMiscellaneousFees.LocalReport.DataSources.Add(reportDataSource12);
+            this.reportViewerSummaryMiscellaneousFees.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountsLargeConsumption.rdlc";
+            this.reportViewerSummaryMiscellaneousFees.Location = new System.Drawing.Point(26, 49);
+            this.reportViewerSummaryMiscellaneousFees.Name = "reportViewerSummaryMiscellaneousFees";
+            this.reportViewerSummaryMiscellaneousFees.ServerReport.BearerToken = null;
+            this.reportViewerSummaryMiscellaneousFees.Size = new System.Drawing.Size(944, 481);
+            this.reportViewerSummaryMiscellaneousFees.TabIndex = 55;
             // 
-            // label19
+            // tabPage12
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(512, 16);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(36, 16);
-            this.label19.TabIndex = 73;
-            this.label19.Text = "Item:";
+            this.tabPage12.Controls.Add(this.buttonDailyCollectionSummaryZoneSearch);
+            this.tabPage12.Controls.Add(this.dateTimePickerDailyCollectionSummaryZoneDate);
+            this.tabPage12.Controls.Add(this.label20);
+            this.tabPage12.Controls.Add(this.reportViewerDailyCollectionSummaryZone);
+            this.tabPage12.Location = new System.Drawing.Point(189, 4);
+            this.tabPage12.Name = "tabPage12";
+            this.tabPage12.Size = new System.Drawing.Size(987, 555);
+            this.tabPage12.TabIndex = 12;
+            this.tabPage12.Text = "Daily Collection Summary Per Zone";
+            this.tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // buttonDailyCollectionSummaryZoneSearch
+            // 
+            this.buttonDailyCollectionSummaryZoneSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDailyCollectionSummaryZoneSearch.Location = new System.Drawing.Point(312, 5);
+            this.buttonDailyCollectionSummaryZoneSearch.Name = "buttonDailyCollectionSummaryZoneSearch";
+            this.buttonDailyCollectionSummaryZoneSearch.Size = new System.Drawing.Size(74, 38);
+            this.buttonDailyCollectionSummaryZoneSearch.TabIndex = 74;
+            this.buttonDailyCollectionSummaryZoneSearch.Text = "Search";
+            this.buttonDailyCollectionSummaryZoneSearch.UseVisualStyleBackColor = true;
             // 
             // dateTimePickerDailyCollectionSummaryZoneDate
             // 
@@ -1030,15 +1014,18 @@
             this.reportViewerDailyCollectionSummaryZone.Size = new System.Drawing.Size(944, 481);
             this.reportViewerDailyCollectionSummaryZone.TabIndex = 71;
             // 
-            // buttonDailyCollectionSummaryZoneSearch
+            // tabPage13
             // 
-            this.buttonDailyCollectionSummaryZoneSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDailyCollectionSummaryZoneSearch.Location = new System.Drawing.Point(312, 5);
-            this.buttonDailyCollectionSummaryZoneSearch.Name = "buttonDailyCollectionSummaryZoneSearch";
-            this.buttonDailyCollectionSummaryZoneSearch.Size = new System.Drawing.Size(74, 38);
-            this.buttonDailyCollectionSummaryZoneSearch.TabIndex = 74;
-            this.buttonDailyCollectionSummaryZoneSearch.Text = "Search";
-            this.buttonDailyCollectionSummaryZoneSearch.UseVisualStyleBackColor = true;
+            this.tabPage13.Controls.Add(this.buttonDailyCollectionSummarySearch);
+            this.tabPage13.Controls.Add(this.dateTimePickerDailyCollectionSummaryDate);
+            this.tabPage13.Controls.Add(this.label21);
+            this.tabPage13.Controls.Add(this.reportViewerDailyCollectionSummary);
+            this.tabPage13.Location = new System.Drawing.Point(189, 4);
+            this.tabPage13.Name = "tabPage13";
+            this.tabPage13.Size = new System.Drawing.Size(987, 555);
+            this.tabPage13.TabIndex = 13;
+            this.tabPage13.Text = "Daily Collection Summary";
+            this.tabPage13.UseVisualStyleBackColor = true;
             // 
             // buttonDailyCollectionSummarySearch
             // 
@@ -1081,6 +1068,19 @@
             this.reportViewerDailyCollectionSummary.ServerReport.BearerToken = null;
             this.reportViewerDailyCollectionSummary.Size = new System.Drawing.Size(944, 481);
             this.reportViewerDailyCollectionSummary.TabIndex = 75;
+            // 
+            // tabPage14
+            // 
+            this.tabPage14.Controls.Add(this.buttonCashCollectionReportSearch);
+            this.tabPage14.Controls.Add(this.dateTimePickerCashCollectionReportDate);
+            this.tabPage14.Controls.Add(this.label22);
+            this.tabPage14.Controls.Add(this.reportViewerCashCollectionReport);
+            this.tabPage14.Location = new System.Drawing.Point(189, 4);
+            this.tabPage14.Name = "tabPage14";
+            this.tabPage14.Size = new System.Drawing.Size(987, 555);
+            this.tabPage14.TabIndex = 14;
+            this.tabPage14.Text = "Cash Collection Report";
+            this.tabPage14.UseVisualStyleBackColor = true;
             // 
             // buttonCashCollectionReportSearch
             // 
