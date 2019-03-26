@@ -262,7 +262,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="Date: " &amp; Parameters!ReportParameterDate.Value</Value>
+                    <Value>="Date: " &amp; Format(Parameters!ReportParameterDate.Value, "D")</Value>
                     <Style>
                       <FontFamily>calibri</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -299,6 +299,7 @@
                     <Value>="Teller: " &amp; Parameters!ReportParameterTeller.Value</Value>
                     <Style>
                       <FontFamily>calibri</FontFamily>
+                      <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -2730,9 +2731,8 @@
   </ReportSections>
   <ReportParameters>
     <ReportParameter Name="ReportParameterDate">
-      <DataType>String</DataType>
+      <DataType>DateTime</DataType>
       <Nullable>true</Nullable>
-      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="ReportParameterTeller">
