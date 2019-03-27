@@ -45,6 +45,9 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource14 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource15 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource16 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.DailyCollectionReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSetCollectionReports = new ConcessionaireReports.DataSetCollectionReports();
+            this.DCRRecapBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlCollectionReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dateTimePickerDailyCollectionReportDate = new System.Windows.Forms.DateTimePicker();
@@ -132,9 +135,9 @@
             this.dateTimePickerCashCollectionReportDate = new System.Windows.Forms.DateTimePicker();
             this.label22 = new System.Windows.Forms.Label();
             this.reportViewerCashCollectionReport = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DataSetCollectionReports = new ConcessionaireReports.DataSetCollectionReports();
-            this.DailyCollectionReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DCRRecapBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReportBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetCollectionReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DCRRecapBindingSource)).BeginInit();
             this.tabControlCollectionReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -150,10 +153,22 @@
             this.tabPage12.SuspendLayout();
             this.tabPage13.SuspendLayout();
             this.tabPage14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetCollectionReports)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReportBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DCRRecapBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // DailyCollectionReportBindingSource
+            // 
+            this.DailyCollectionReportBindingSource.DataMember = "DailyCollectionReport";
+            this.DailyCollectionReportBindingSource.DataSource = this.DataSetCollectionReports;
+            // 
+            // DataSetCollectionReports
+            // 
+            this.DataSetCollectionReports.DataSetName = "DataSetCollectionReports";
+            this.DataSetCollectionReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // DCRRecapBindingSource
+            // 
+            this.DCRRecapBindingSource.DataMember = "DCRRecap";
+            this.DCRRecapBindingSource.DataSource = this.DataSetCollectionReports;
             // 
             // tabControlCollectionReports
             // 
@@ -310,6 +325,7 @@
             this.buttonDCR2Search.TabIndex = 49;
             this.buttonDCR2Search.Text = "Search";
             this.buttonDCR2Search.UseVisualStyleBackColor = true;
+            this.buttonDCR2Search.Click += new System.EventHandler(this.buttonDCR2Search_Click);
             // 
             // label4
             // 
@@ -1138,21 +1154,6 @@
             this.reportViewerCashCollectionReport.Size = new System.Drawing.Size(944, 481);
             this.reportViewerCashCollectionReport.TabIndex = 75;
             // 
-            // DataSetCollectionReports
-            // 
-            this.DataSetCollectionReports.DataSetName = "DataSetCollectionReports";
-            this.DataSetCollectionReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // DailyCollectionReportBindingSource
-            // 
-            this.DailyCollectionReportBindingSource.DataMember = "DailyCollectionReport";
-            this.DailyCollectionReportBindingSource.DataSource = this.DataSetCollectionReports;
-            // 
-            // DCRRecapBindingSource
-            // 
-            this.DCRRecapBindingSource.DataMember = "DCRRecap";
-            this.DCRRecapBindingSource.DataSource = this.DataSetCollectionReports;
-            // 
             // CollectionReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1165,6 +1166,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Collection Reports";
             this.Load += new System.EventHandler(this.CollectionReportsForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReportBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetCollectionReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DCRRecapBindingSource)).EndInit();
             this.tabControlCollectionReports.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1194,9 +1198,6 @@
             this.tabPage13.PerformLayout();
             this.tabPage14.ResumeLayout(false);
             this.tabPage14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetCollectionReports)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReportBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DCRRecapBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

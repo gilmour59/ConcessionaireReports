@@ -196,5 +196,10 @@ namespace ConcessionaireReports
             }
             this.reportViewerDailyCollectionReport.RefreshReport();
         }
+
+        private void buttonDCR2Search_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
