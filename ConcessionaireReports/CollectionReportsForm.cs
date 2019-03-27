@@ -121,36 +121,36 @@ namespace ConcessionaireReports
             }
         }
 
-        private void buttonDailyCollectionReportSearch_Click(object sender, EventArgs e)
+        private void bindDCR(DateTimePicker dt, ComboBox cb, ReportViewer rv, string sp, string dataTable)
         {
             try
             {
-                using (MySqlConnection conn = new MySqlConnection(connStr))
+                using (MySqlConnection conn = new MySqlConnection(this.connStr))
                 {
                     conn.Open();
 
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetDCR2", conn))
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(sp, conn))
                     {
                         DataSetCollectionReports ds = new DataSetCollectionReports();
 
                         adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@in_trans_date", dateTimePickerDailyCollectionReportDate.Value);
+                        adapter.SelectCommand.Parameters.AddWithValue("@in_trans_date", dt.Value);
                         adapter.SelectCommand.Parameters["@in_trans_date"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@in_user_id", comboBoxDailyCollectionReportTeller.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters.AddWithValue("@in_user_id", cb.SelectedValue.ToString());
                         adapter.SelectCommand.Parameters["@in_user_id"].Direction = ParameterDirection.Input;
-                      
-                        adapter.Fill(ds, "DailyCollectionReport");
 
-                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["DailyCollectionReport"]);
-                        reportViewerDailyCollectionReport.LocalReport.DataSources.Clear();
-                        reportViewerDailyCollectionReport.LocalReport.DataSources.Add(rds);
+                        adapter.Fill(ds, dataTable);
+
+                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables[dataTable]);
+                        rv.LocalReport.DataSources.Clear();
+                        rv.LocalReport.DataSources.Add(rds);
 
                         ReportParameter[] param = new ReportParameter[]
                         {
-                            new ReportParameter("ReportParameterDate", dateTimePickerDailyCollectionReportDate.Value.ToString()),
-                            new ReportParameter("ReportParameterTeller", comboBoxDailyCollectionReportTeller.Text)
+                    new ReportParameter("ReportParameterDate", dt.Value.ToString()),
+                    new ReportParameter("ReportParameterTeller", cb.Text)
                         };
-                        reportViewerDailyCollectionReport.LocalReport.SetParameters(param);
+                        rv.LocalReport.SetParameters(param);
                         //reportViewerDailyCollectionReport.LocalReport.Refresh();
                     }
 
@@ -159,15 +159,15 @@ namespace ConcessionaireReports
                         DataSetCollectionReports ds = new DataSetCollectionReports();
 
                         adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@transDate", dateTimePickerDailyCollectionReportDate.Value);
+                        adapter.SelectCommand.Parameters.AddWithValue("@transDate", dt.Value);
                         adapter.SelectCommand.Parameters["@transDate"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@userId", comboBoxDailyCollectionReportTeller.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters.AddWithValue("@userId", cb.SelectedValue.ToString());
                         adapter.SelectCommand.Parameters["@userId"].Direction = ParameterDirection.Input;
 
                         adapter.Fill(ds, "DCRRecap");
 
                         ReportDataSource rds = new ReportDataSource("DataSetCollectionReports2", ds.Tables["DCRRecap"]);
-                        reportViewerDailyCollectionReport.LocalReport.DataSources.Add(rds);
+                        rv.LocalReport.DataSources.Add(rds);
                         //reportViewerDailyCollectionReport.LocalReport.Refresh();
                     }
 
@@ -176,16 +176,16 @@ namespace ConcessionaireReports
                         DataSetCollectionReports ds = new DataSetCollectionReports();
 
                         adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@transDate", dateTimePickerDailyCollectionReportDate.Value);
+                        adapter.SelectCommand.Parameters.AddWithValue("@transDate", dt.Value);
                         adapter.SelectCommand.Parameters["@transDate"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@userId", comboBoxDailyCollectionReportTeller.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters.AddWithValue("@userId", cb.SelectedValue.ToString());
                         adapter.SelectCommand.Parameters["@userId"].Direction = ParameterDirection.Input;
 
                         adapter.Fill(ds, "DCRCheckPayments");
 
                         ReportDataSource rds = new ReportDataSource("DataSetCollectionReports3", ds.Tables["DCRCheckPayments"]);
-                        reportViewerDailyCollectionReport.LocalReport.DataSources.Add(rds);
-                        reportViewerDailyCollectionReport.LocalReport.Refresh();
+                        rv.LocalReport.DataSources.Add(rds);
+                        rv.LocalReport.Refresh();
                     }
                     conn.Close();
                 }
@@ -194,12 +194,17 @@ namespace ConcessionaireReports
             {
                 MessageBox.Show("error: " + ex, "Error!");
             }
-            this.reportViewerDailyCollectionReport.RefreshReport();
+            rv.RefreshReport();
+        }
+
+        private void buttonDailyCollectionReportSearch_Click(object sender, EventArgs e)
+        {
+            bindDCR(dateTimePickerDailyCollectionReportDate, comboBoxDailyCollectionReportTeller, reportViewerDailyCollectionReport, "sp_GetDCR2", "DailyCollectionReport");         
         }
 
         private void buttonDCR2Search_Click(object sender, EventArgs e)
         {
-
+            //bindDCR(dateTimePickerDailyCollectionReportDate, comboBoxDailyCollectionReportTeller, reportViewerDailyCollectionReport, "sp_GetDCR2", "DailyCollectionReport");
         }
     }
 }
