@@ -147,8 +147,8 @@ namespace ConcessionaireReports
 
                         ReportParameter[] param = new ReportParameter[]
                         {
-                    new ReportParameter("ReportParameterDate", dt.Value.ToString()),
-                    new ReportParameter("ReportParameterTeller", cb.Text)
+                            new ReportParameter("ReportParameterDate", dt.Value.ToString()),
+                            new ReportParameter("ReportParameterTeller", cb.Text)
                         };
                         rv.LocalReport.SetParameters(param);
                         //reportViewerDailyCollectionReport.LocalReport.Refresh();

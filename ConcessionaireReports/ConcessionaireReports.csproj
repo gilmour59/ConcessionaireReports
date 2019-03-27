@@ -176,6 +176,7 @@
     <EmbeddedResource Include="RDLC\ReportChangedMeterPreviousRead.rdlc" />
     <EmbeddedResource Include="RDLC\ReportDailyBillingSummary.rdlc" />
     <EmbeddedResource Include="RDLC\ReportDailyCollectionReport.rdlc" />
+    <EmbeddedResource Include="RDLC\ReportDailyCollectionReport2.rdlc" />
     <EmbeddedResource Include="RDLC\ReportMeterReaderAccomplishment.rdlc" />
     <EmbeddedResource Include="RDLC\ReportNewConnectionSummary.rdlc" />
     <EmbeddedResource Include="RDLC\ReportPenaltyBillingReport.rdlc" />
