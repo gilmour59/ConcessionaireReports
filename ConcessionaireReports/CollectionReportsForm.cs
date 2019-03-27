@@ -204,7 +204,7 @@ namespace ConcessionaireReports
 
         private void buttonDCR2Search_Click(object sender, EventArgs e)
         {
-            //bindDCR(dateTimePickerDailyCollectionReportDate, comboBoxDailyCollectionReportTeller, reportViewerDailyCollectionReport, "sp_GetDCR2", "DailyCollectionReport");
+            bindDCR(dateTimePickerDCR2Date, comboBoxDCR2Teller, reportViewerDCR2, "sp_GetDCR", "DailyCollectionReport2");
         }
     }
 }
