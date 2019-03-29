@@ -95,6 +95,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetBillingReports.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetCollectionReports.cs">
+      <DependentUpon>DataSetCollectionReports.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetCollectionReports.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -174,6 +177,7 @@
     <EmbeddedResource Include="RDLC\ReportBillingSummaryMaterialsOtherFees.rdlc" />
     <EmbeddedResource Include="RDLC\ReportBillingSummaryMonth.rdlc" />
     <EmbeddedResource Include="RDLC\ReportChangedMeterPreviousRead.rdlc" />
+    <EmbeddedResource Include="RDLC\ReportCollectionSummaryPerZoneBook.rdlc" />
     <EmbeddedResource Include="RDLC\ReportDailyBillingSummary.rdlc" />
     <EmbeddedResource Include="RDLC\ReportDailyCollectionReport.rdlc" />
     <EmbeddedResource Include="RDLC\ReportDailyCollectionReport2.rdlc" />

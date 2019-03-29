@@ -32,6 +32,8 @@ namespace ConcessionaireReports {
         
         private DailyCollectionReport2DataTable tableDailyCollectionReport2;
         
+        private CollectionSummaryPerBookZoneDataTable tableCollectionSummaryPerBookZone;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -71,6 +73,9 @@ namespace ConcessionaireReports {
                 }
                 if ((ds.Tables["DailyCollectionReport2"] != null)) {
                     base.Tables.Add(new DailyCollectionReport2DataTable(ds.Tables["DailyCollectionReport2"]));
+                }
+                if ((ds.Tables["CollectionSummaryPerBookZone"] != null)) {
+                    base.Tables.Add(new CollectionSummaryPerBookZoneDataTable(ds.Tables["CollectionSummaryPerBookZone"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -127,6 +132,16 @@ namespace ConcessionaireReports {
         public DailyCollectionReport2DataTable DailyCollectionReport2 {
             get {
                 return this.tableDailyCollectionReport2;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public CollectionSummaryPerBookZoneDataTable CollectionSummaryPerBookZone {
+            get {
+                return this.tableCollectionSummaryPerBookZone;
             }
         }
         
@@ -209,6 +224,9 @@ namespace ConcessionaireReports {
                 if ((ds.Tables["DailyCollectionReport2"] != null)) {
                     base.Tables.Add(new DailyCollectionReport2DataTable(ds.Tables["DailyCollectionReport2"]));
                 }
+                if ((ds.Tables["CollectionSummaryPerBookZone"] != null)) {
+                    base.Tables.Add(new CollectionSummaryPerBookZoneDataTable(ds.Tables["CollectionSummaryPerBookZone"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -266,6 +284,12 @@ namespace ConcessionaireReports {
                     this.tableDailyCollectionReport2.InitVars();
                 }
             }
+            this.tableCollectionSummaryPerBookZone = ((CollectionSummaryPerBookZoneDataTable)(base.Tables["CollectionSummaryPerBookZone"]));
+            if ((initTable == true)) {
+                if ((this.tableCollectionSummaryPerBookZone != null)) {
+                    this.tableCollectionSummaryPerBookZone.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -284,6 +308,8 @@ namespace ConcessionaireReports {
             base.Tables.Add(this.tableDCRCheckPayments);
             this.tableDailyCollectionReport2 = new DailyCollectionReport2DataTable();
             base.Tables.Add(this.tableDailyCollectionReport2);
+            this.tableCollectionSummaryPerBookZone = new CollectionSummaryPerBookZoneDataTable();
+            base.Tables.Add(this.tableCollectionSummaryPerBookZone);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -307,6 +333,12 @@ namespace ConcessionaireReports {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private bool ShouldSerializeDailyCollectionReport2() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeCollectionSummaryPerBookZone() {
             return false;
         }
         
@@ -376,6 +408,9 @@ namespace ConcessionaireReports {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void DailyCollectionReport2RowChangeEventHandler(object sender, DailyCollectionReport2RowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void CollectionSummaryPerBookZoneRowChangeEventHandler(object sender, CollectionSummaryPerBookZoneRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1991,6 +2026,479 @@ namespace ConcessionaireReports {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class CollectionSummaryPerBookZoneDataTable : global::System.Data.TypedTableBase<CollectionSummaryPerBookZoneRow> {
+            
+            private global::System.Data.DataColumn columnheader_name;
+            
+            private global::System.Data.DataColumn columnheader_address;
+            
+            private global::System.Data.DataColumn columntrans_date;
+            
+            private global::System.Data.DataColumn columnzone_id;
+            
+            private global::System.Data.DataColumn columnbook_id;
+            
+            private global::System.Data.DataColumn columnzone_book;
+            
+            private global::System.Data.DataColumn columnwater_bill_current;
+            
+            private global::System.Data.DataColumn columnwater_bill_curr_yr;
+            
+            private global::System.Data.DataColumn columnwater_bill_prev_yr;
+            
+            private global::System.Data.DataColumn columnpenalty;
+            
+            private global::System.Data.DataColumn columnmeter_maintenance;
+            
+            private global::System.Data.DataColumn columnmeter_rental;
+            
+            private global::System.Data.DataColumn columnmaterials;
+            
+            private global::System.Data.DataColumn columnmiscellaneous;
+            
+            private global::System.Data.DataColumn columnsr_citizen;
+            
+            private global::System.Data.DataColumn columntotal_amount;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CollectionSummaryPerBookZoneDataTable() {
+                this.TableName = "CollectionSummaryPerBookZone";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal CollectionSummaryPerBookZoneDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected CollectionSummaryPerBookZoneDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn header_nameColumn {
+                get {
+                    return this.columnheader_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn header_addressColumn {
+                get {
+                    return this.columnheader_address;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn trans_dateColumn {
+                get {
+                    return this.columntrans_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn zone_idColumn {
+                get {
+                    return this.columnzone_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn book_idColumn {
+                get {
+                    return this.columnbook_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn zone_bookColumn {
+                get {
+                    return this.columnzone_book;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn water_bill_currentColumn {
+                get {
+                    return this.columnwater_bill_current;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn water_bill_curr_yrColumn {
+                get {
+                    return this.columnwater_bill_curr_yr;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn water_bill_prev_yrColumn {
+                get {
+                    return this.columnwater_bill_prev_yr;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn penaltyColumn {
+                get {
+                    return this.columnpenalty;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn meter_maintenanceColumn {
+                get {
+                    return this.columnmeter_maintenance;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn meter_rentalColumn {
+                get {
+                    return this.columnmeter_rental;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn materialsColumn {
+                get {
+                    return this.columnmaterials;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn miscellaneousColumn {
+                get {
+                    return this.columnmiscellaneous;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sr_citizenColumn {
+                get {
+                    return this.columnsr_citizen;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn total_amountColumn {
+                get {
+                    return this.columntotal_amount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CollectionSummaryPerBookZoneRow this[int index] {
+                get {
+                    return ((CollectionSummaryPerBookZoneRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event CollectionSummaryPerBookZoneRowChangeEventHandler CollectionSummaryPerBookZoneRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event CollectionSummaryPerBookZoneRowChangeEventHandler CollectionSummaryPerBookZoneRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event CollectionSummaryPerBookZoneRowChangeEventHandler CollectionSummaryPerBookZoneRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event CollectionSummaryPerBookZoneRowChangeEventHandler CollectionSummaryPerBookZoneRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddCollectionSummaryPerBookZoneRow(CollectionSummaryPerBookZoneRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CollectionSummaryPerBookZoneRow AddCollectionSummaryPerBookZoneRow(
+                        string header_name, 
+                        string header_address, 
+                        System.DateTime trans_date, 
+                        byte zone_id, 
+                        byte book_id, 
+                        string zone_book, 
+                        decimal water_bill_current, 
+                        decimal water_bill_curr_yr, 
+                        decimal water_bill_prev_yr, 
+                        decimal penalty, 
+                        decimal meter_maintenance, 
+                        decimal meter_rental, 
+                        decimal materials, 
+                        decimal miscellaneous, 
+                        decimal sr_citizen, 
+                        decimal total_amount) {
+                CollectionSummaryPerBookZoneRow rowCollectionSummaryPerBookZoneRow = ((CollectionSummaryPerBookZoneRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        header_name,
+                        header_address,
+                        trans_date,
+                        zone_id,
+                        book_id,
+                        zone_book,
+                        water_bill_current,
+                        water_bill_curr_yr,
+                        water_bill_prev_yr,
+                        penalty,
+                        meter_maintenance,
+                        meter_rental,
+                        materials,
+                        miscellaneous,
+                        sr_citizen,
+                        total_amount};
+                rowCollectionSummaryPerBookZoneRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCollectionSummaryPerBookZoneRow);
+                return rowCollectionSummaryPerBookZoneRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                CollectionSummaryPerBookZoneDataTable cln = ((CollectionSummaryPerBookZoneDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new CollectionSummaryPerBookZoneDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnheader_name = base.Columns["header_name"];
+                this.columnheader_address = base.Columns["header_address"];
+                this.columntrans_date = base.Columns["trans_date"];
+                this.columnzone_id = base.Columns["zone_id"];
+                this.columnbook_id = base.Columns["book_id"];
+                this.columnzone_book = base.Columns["zone_book"];
+                this.columnwater_bill_current = base.Columns["water_bill_current"];
+                this.columnwater_bill_curr_yr = base.Columns["water_bill_curr_yr"];
+                this.columnwater_bill_prev_yr = base.Columns["water_bill_prev_yr"];
+                this.columnpenalty = base.Columns["penalty"];
+                this.columnmeter_maintenance = base.Columns["meter_maintenance"];
+                this.columnmeter_rental = base.Columns["meter_rental"];
+                this.columnmaterials = base.Columns["materials"];
+                this.columnmiscellaneous = base.Columns["miscellaneous"];
+                this.columnsr_citizen = base.Columns["sr_citizen"];
+                this.columntotal_amount = base.Columns["total_amount"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnheader_name = new global::System.Data.DataColumn("header_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnheader_name);
+                this.columnheader_address = new global::System.Data.DataColumn("header_address", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnheader_address);
+                this.columntrans_date = new global::System.Data.DataColumn("trans_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntrans_date);
+                this.columnzone_id = new global::System.Data.DataColumn("zone_id", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnzone_id);
+                this.columnbook_id = new global::System.Data.DataColumn("book_id", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbook_id);
+                this.columnzone_book = new global::System.Data.DataColumn("zone_book", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnzone_book);
+                this.columnwater_bill_current = new global::System.Data.DataColumn("water_bill_current", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwater_bill_current);
+                this.columnwater_bill_curr_yr = new global::System.Data.DataColumn("water_bill_curr_yr", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwater_bill_curr_yr);
+                this.columnwater_bill_prev_yr = new global::System.Data.DataColumn("water_bill_prev_yr", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwater_bill_prev_yr);
+                this.columnpenalty = new global::System.Data.DataColumn("penalty", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpenalty);
+                this.columnmeter_maintenance = new global::System.Data.DataColumn("meter_maintenance", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmeter_maintenance);
+                this.columnmeter_rental = new global::System.Data.DataColumn("meter_rental", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmeter_rental);
+                this.columnmaterials = new global::System.Data.DataColumn("materials", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmaterials);
+                this.columnmiscellaneous = new global::System.Data.DataColumn("miscellaneous", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmiscellaneous);
+                this.columnsr_citizen = new global::System.Data.DataColumn("sr_citizen", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsr_citizen);
+                this.columntotal_amount = new global::System.Data.DataColumn("total_amount", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntotal_amount);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CollectionSummaryPerBookZoneRow NewCollectionSummaryPerBookZoneRow() {
+                return ((CollectionSummaryPerBookZoneRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new CollectionSummaryPerBookZoneRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(CollectionSummaryPerBookZoneRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.CollectionSummaryPerBookZoneRowChanged != null)) {
+                    this.CollectionSummaryPerBookZoneRowChanged(this, new CollectionSummaryPerBookZoneRowChangeEvent(((CollectionSummaryPerBookZoneRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.CollectionSummaryPerBookZoneRowChanging != null)) {
+                    this.CollectionSummaryPerBookZoneRowChanging(this, new CollectionSummaryPerBookZoneRowChangeEvent(((CollectionSummaryPerBookZoneRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.CollectionSummaryPerBookZoneRowDeleted != null)) {
+                    this.CollectionSummaryPerBookZoneRowDeleted(this, new CollectionSummaryPerBookZoneRowChangeEvent(((CollectionSummaryPerBookZoneRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.CollectionSummaryPerBookZoneRowDeleting != null)) {
+                    this.CollectionSummaryPerBookZoneRowDeleting(this, new CollectionSummaryPerBookZoneRowChangeEvent(((CollectionSummaryPerBookZoneRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveCollectionSummaryPerBookZoneRow(CollectionSummaryPerBookZoneRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSetCollectionReports ds = new DataSetCollectionReports();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "CollectionSummaryPerBookZoneDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class DCRRecapRow : global::System.Data.DataRow {
@@ -3347,6 +3855,485 @@ namespace ConcessionaireReports {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class CollectionSummaryPerBookZoneRow : global::System.Data.DataRow {
+            
+            private CollectionSummaryPerBookZoneDataTable tableCollectionSummaryPerBookZone;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal CollectionSummaryPerBookZoneRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableCollectionSummaryPerBookZone = ((CollectionSummaryPerBookZoneDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string header_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableCollectionSummaryPerBookZone.header_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'header_name\' in table \'CollectionSummaryPerBookZone\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCollectionSummaryPerBookZone.header_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string header_address {
+                get {
+                    try {
+                        return ((string)(this[this.tableCollectionSummaryPerBookZone.header_addressColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'header_address\' in table \'CollectionSummaryPerBookZone\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCollectionSummaryPerBookZone.header_addressColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime trans_date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableCollectionSummaryPerBookZone.trans_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'trans_date\' in table \'CollectionSummaryPerBookZone\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableCollectionSummaryPerBookZone.trans_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public byte zone_id {
+                get {
+                    try {
+                        return ((byte)(this[this.tableCollectionSummaryPerBookZone.zone_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'zone_id\' in table \'CollectionSummaryPerBookZone\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableCollectionSummaryPerBookZone.zone_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public byte book_id {
+                get {
+                    try {
+                        return ((byte)(this[this.tableCollectionSummaryPerBookZone.book_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'book_id\' in table \'CollectionSummaryPerBookZone\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableCollectionSummaryPerBookZone.book_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string zone_book {
+                get {
+                    try {
+                        return ((string)(this[this.tableCollectionSummaryPerBookZone.zone_bookColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'zone_book\' in table \'CollectionSummaryPerBookZone\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableCollectionSummaryPerBookZone.zone_bookColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal water_bill_current {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCollectionSummaryPerBookZone.water_bill_currentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'water_bill_current\' in table \'CollectionSummaryPerBookZone\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCollectionSummaryPerBookZone.water_bill_currentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal water_bill_curr_yr {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCollectionSummaryPerBookZone.water_bill_curr_yrColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'water_bill_curr_yr\' in table \'CollectionSummaryPerBookZone\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCollectionSummaryPerBookZone.water_bill_curr_yrColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal water_bill_prev_yr {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCollectionSummaryPerBookZone.water_bill_prev_yrColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'water_bill_prev_yr\' in table \'CollectionSummaryPerBookZone\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCollectionSummaryPerBookZone.water_bill_prev_yrColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal penalty {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCollectionSummaryPerBookZone.penaltyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'penalty\' in table \'CollectionSummaryPerBookZone\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableCollectionSummaryPerBookZone.penaltyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal meter_maintenance {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCollectionSummaryPerBookZone.meter_maintenanceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'meter_maintenance\' in table \'CollectionSummaryPerBookZone\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCollectionSummaryPerBookZone.meter_maintenanceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal meter_rental {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCollectionSummaryPerBookZone.meter_rentalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'meter_rental\' in table \'CollectionSummaryPerBookZone\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableCollectionSummaryPerBookZone.meter_rentalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal materials {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCollectionSummaryPerBookZone.materialsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'materials\' in table \'CollectionSummaryPerBookZone\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableCollectionSummaryPerBookZone.materialsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal miscellaneous {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCollectionSummaryPerBookZone.miscellaneousColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'miscellaneous\' in table \'CollectionSummaryPerBookZone\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCollectionSummaryPerBookZone.miscellaneousColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal sr_citizen {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCollectionSummaryPerBookZone.sr_citizenColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'sr_citizen\' in table \'CollectionSummaryPerBookZone\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableCollectionSummaryPerBookZone.sr_citizenColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal total_amount {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCollectionSummaryPerBookZone.total_amountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'total_amount\' in table \'CollectionSummaryPerBookZone\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableCollectionSummaryPerBookZone.total_amountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isheader_nameNull() {
+                return this.IsNull(this.tableCollectionSummaryPerBookZone.header_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setheader_nameNull() {
+                this[this.tableCollectionSummaryPerBookZone.header_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isheader_addressNull() {
+                return this.IsNull(this.tableCollectionSummaryPerBookZone.header_addressColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setheader_addressNull() {
+                this[this.tableCollectionSummaryPerBookZone.header_addressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Istrans_dateNull() {
+                return this.IsNull(this.tableCollectionSummaryPerBookZone.trans_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Settrans_dateNull() {
+                this[this.tableCollectionSummaryPerBookZone.trans_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iszone_idNull() {
+                return this.IsNull(this.tableCollectionSummaryPerBookZone.zone_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setzone_idNull() {
+                this[this.tableCollectionSummaryPerBookZone.zone_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isbook_idNull() {
+                return this.IsNull(this.tableCollectionSummaryPerBookZone.book_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setbook_idNull() {
+                this[this.tableCollectionSummaryPerBookZone.book_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iszone_bookNull() {
+                return this.IsNull(this.tableCollectionSummaryPerBookZone.zone_bookColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setzone_bookNull() {
+                this[this.tableCollectionSummaryPerBookZone.zone_bookColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iswater_bill_currentNull() {
+                return this.IsNull(this.tableCollectionSummaryPerBookZone.water_bill_currentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setwater_bill_currentNull() {
+                this[this.tableCollectionSummaryPerBookZone.water_bill_currentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iswater_bill_curr_yrNull() {
+                return this.IsNull(this.tableCollectionSummaryPerBookZone.water_bill_curr_yrColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setwater_bill_curr_yrNull() {
+                this[this.tableCollectionSummaryPerBookZone.water_bill_curr_yrColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iswater_bill_prev_yrNull() {
+                return this.IsNull(this.tableCollectionSummaryPerBookZone.water_bill_prev_yrColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setwater_bill_prev_yrNull() {
+                this[this.tableCollectionSummaryPerBookZone.water_bill_prev_yrColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IspenaltyNull() {
+                return this.IsNull(this.tableCollectionSummaryPerBookZone.penaltyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetpenaltyNull() {
+                this[this.tableCollectionSummaryPerBookZone.penaltyColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Ismeter_maintenanceNull() {
+                return this.IsNull(this.tableCollectionSummaryPerBookZone.meter_maintenanceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setmeter_maintenanceNull() {
+                this[this.tableCollectionSummaryPerBookZone.meter_maintenanceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Ismeter_rentalNull() {
+                return this.IsNull(this.tableCollectionSummaryPerBookZone.meter_rentalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setmeter_rentalNull() {
+                this[this.tableCollectionSummaryPerBookZone.meter_rentalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsmaterialsNull() {
+                return this.IsNull(this.tableCollectionSummaryPerBookZone.materialsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetmaterialsNull() {
+                this[this.tableCollectionSummaryPerBookZone.materialsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsmiscellaneousNull() {
+                return this.IsNull(this.tableCollectionSummaryPerBookZone.miscellaneousColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetmiscellaneousNull() {
+                this[this.tableCollectionSummaryPerBookZone.miscellaneousColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Issr_citizenNull() {
+                return this.IsNull(this.tableCollectionSummaryPerBookZone.sr_citizenColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setsr_citizenNull() {
+                this[this.tableCollectionSummaryPerBookZone.sr_citizenColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Istotal_amountNull() {
+                return this.IsNull(this.tableCollectionSummaryPerBookZone.total_amountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Settotal_amountNull() {
+                this[this.tableCollectionSummaryPerBookZone.total_amountColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -3468,6 +4455,40 @@ namespace ConcessionaireReports {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DailyCollectionReport2Row Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class CollectionSummaryPerBookZoneRowChangeEvent : global::System.EventArgs {
+            
+            private CollectionSummaryPerBookZoneRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CollectionSummaryPerBookZoneRowChangeEvent(CollectionSummaryPerBookZoneRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CollectionSummaryPerBookZoneRow Row {
                 get {
                     return this.eventRow;
                 }

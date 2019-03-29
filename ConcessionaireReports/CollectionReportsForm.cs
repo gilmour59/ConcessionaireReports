@@ -77,6 +77,7 @@ namespace ConcessionaireReports
             //This needs to be after the connStr because of the datetimepicker changed value function;
             dateTimePickerDailyCollectionReportDate.MaxDate = DateTime.Today;
             dateTimePickerDCR2Date.MaxDate = DateTime.Today;
+            dateTimePickerCollectionSummaryZoneBookDate.MaxDate = DateTime.Today;
         }
 
         private void dateTimePickerDailyCollectionReportDate_ValueChanged(object sender, EventArgs e)
@@ -205,6 +206,45 @@ namespace ConcessionaireReports
         private void buttonDCR2Search_Click(object sender, EventArgs e)
         {
             bindDCR(dateTimePickerDCR2Date, comboBoxDCR2Teller, reportViewerDCR2, "sp_GetDCR", "DailyCollectionReport2");
+        }
+
+        private void buttonCollectionSummaryZoneBookSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetCollectionSummaryPerBook", conn))
+                    {
+                        DataSetCollectionReports ds = new DataSetCollectionReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@in_trans_date", dateTimePickerCollectionSummaryZoneBookDate.Value);
+                        adapter.SelectCommand.Parameters["@in_trans_date"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "CollectionSummaryPerBookZone");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["CollectionSummaryPerBookZone"]);
+                        reportViewerCollectionSummaryZoneBook.LocalReport.DataSources.Clear();
+                        reportViewerCollectionSummaryZoneBook.LocalReport.DataSources.Add(rds);
+
+                        ReportParameter[] param = new ReportParameter[]
+                        {
+                            new ReportParameter("ReportParameterDate", dateTimePickerCollectionSummaryZoneBookDate.Value.ToString())
+                        };
+                        reportViewerCollectionSummaryZoneBook.LocalReport.SetParameters(param);
+                        //reportViewerDailyCollectionReport.LocalReport.Refresh();
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            reportViewerCollectionSummaryZoneBook.RefreshReport();
         }
     }
 }
