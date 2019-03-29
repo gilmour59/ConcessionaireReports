@@ -273,8 +273,7 @@ namespace ConcessionaireReports
 
                         ReportParameter[] param = new ReportParameter[]
                         {
-                            new ReportParameter("ReportParameterDate", dateTimePickerCashReceiptRecordDate.Value.ToString()),
-                            new ReportParameter("ReportParameterTeller", comboBoxCashReceiptRecordTeller.Text)
+                            new ReportParameter("ReportParameterDate", dateTimePickerCashReceiptRecordDate.Value.ToString())
                         };
                         reportViewerCashReceiptRecord.LocalReport.SetParameters(param);
                         //reportViewerDailyCollectionReport.LocalReport.Refresh();
