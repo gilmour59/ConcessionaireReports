@@ -34,6 +34,8 @@ namespace ConcessionaireReports {
         
         private CollectionSummaryPerBookZoneDataTable tableCollectionSummaryPerBookZone;
         
+        private CashReceiptRemittanceRecordDataTable tableCashReceiptRemittanceRecord;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -76,6 +78,9 @@ namespace ConcessionaireReports {
                 }
                 if ((ds.Tables["CollectionSummaryPerBookZone"] != null)) {
                     base.Tables.Add(new CollectionSummaryPerBookZoneDataTable(ds.Tables["CollectionSummaryPerBookZone"]));
+                }
+                if ((ds.Tables["CashReceiptRemittanceRecord"] != null)) {
+                    base.Tables.Add(new CashReceiptRemittanceRecordDataTable(ds.Tables["CashReceiptRemittanceRecord"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -142,6 +147,16 @@ namespace ConcessionaireReports {
         public CollectionSummaryPerBookZoneDataTable CollectionSummaryPerBookZone {
             get {
                 return this.tableCollectionSummaryPerBookZone;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public CashReceiptRemittanceRecordDataTable CashReceiptRemittanceRecord {
+            get {
+                return this.tableCashReceiptRemittanceRecord;
             }
         }
         
@@ -227,6 +242,9 @@ namespace ConcessionaireReports {
                 if ((ds.Tables["CollectionSummaryPerBookZone"] != null)) {
                     base.Tables.Add(new CollectionSummaryPerBookZoneDataTable(ds.Tables["CollectionSummaryPerBookZone"]));
                 }
+                if ((ds.Tables["CashReceiptRemittanceRecord"] != null)) {
+                    base.Tables.Add(new CashReceiptRemittanceRecordDataTable(ds.Tables["CashReceiptRemittanceRecord"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -290,6 +308,12 @@ namespace ConcessionaireReports {
                     this.tableCollectionSummaryPerBookZone.InitVars();
                 }
             }
+            this.tableCashReceiptRemittanceRecord = ((CashReceiptRemittanceRecordDataTable)(base.Tables["CashReceiptRemittanceRecord"]));
+            if ((initTable == true)) {
+                if ((this.tableCashReceiptRemittanceRecord != null)) {
+                    this.tableCashReceiptRemittanceRecord.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -310,6 +334,8 @@ namespace ConcessionaireReports {
             base.Tables.Add(this.tableDailyCollectionReport2);
             this.tableCollectionSummaryPerBookZone = new CollectionSummaryPerBookZoneDataTable();
             base.Tables.Add(this.tableCollectionSummaryPerBookZone);
+            this.tableCashReceiptRemittanceRecord = new CashReceiptRemittanceRecordDataTable();
+            base.Tables.Add(this.tableCashReceiptRemittanceRecord);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -339,6 +365,12 @@ namespace ConcessionaireReports {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private bool ShouldSerializeCollectionSummaryPerBookZone() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeCashReceiptRemittanceRecord() {
             return false;
         }
         
@@ -411,6 +443,9 @@ namespace ConcessionaireReports {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void CollectionSummaryPerBookZoneRowChangeEventHandler(object sender, CollectionSummaryPerBookZoneRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void CashReceiptRemittanceRecordRowChangeEventHandler(object sender, CashReceiptRemittanceRecordRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2499,6 +2534,494 @@ namespace ConcessionaireReports {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class CashReceiptRemittanceRecordDataTable : global::System.Data.TypedTableBase<CashReceiptRemittanceRecordRow> {
+            
+            private global::System.Data.DataColumn columnheader_name;
+            
+            private global::System.Data.DataColumn columnheader_address;
+            
+            private global::System.Data.DataColumn columntrans_date;
+            
+            private global::System.Data.DataColumn columnfull_name;
+            
+            private global::System.Data.DataColumn columnchecked_by;
+            
+            private global::System.Data.DataColumn columnacknowledged_by;
+            
+            private global::System.Data.DataColumn columnstart_or;
+            
+            private global::System.Data.DataColumn columnend_or;
+            
+            private global::System.Data.DataColumn columnwater_bill_current;
+            
+            private global::System.Data.DataColumn columnwater_bill_curr_yr;
+            
+            private global::System.Data.DataColumn columnwater_bill_prev_yr;
+            
+            private global::System.Data.DataColumn columnpenalty;
+            
+            private global::System.Data.DataColumn columnmaterials;
+            
+            private global::System.Data.DataColumn columnmiscellaneous;
+            
+            private global::System.Data.DataColumn columnar_others;
+            
+            private global::System.Data.DataColumn columnsr_citizen;
+            
+            private global::System.Data.DataColumn columntotal_amount;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CashReceiptRemittanceRecordDataTable() {
+                this.TableName = "CashReceiptRemittanceRecord";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal CashReceiptRemittanceRecordDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected CashReceiptRemittanceRecordDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn header_nameColumn {
+                get {
+                    return this.columnheader_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn header_addressColumn {
+                get {
+                    return this.columnheader_address;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn trans_dateColumn {
+                get {
+                    return this.columntrans_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn full_nameColumn {
+                get {
+                    return this.columnfull_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn checked_byColumn {
+                get {
+                    return this.columnchecked_by;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn acknowledged_byColumn {
+                get {
+                    return this.columnacknowledged_by;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn start_orColumn {
+                get {
+                    return this.columnstart_or;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn end_orColumn {
+                get {
+                    return this.columnend_or;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn water_bill_currentColumn {
+                get {
+                    return this.columnwater_bill_current;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn water_bill_curr_yrColumn {
+                get {
+                    return this.columnwater_bill_curr_yr;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn water_bill_prev_yrColumn {
+                get {
+                    return this.columnwater_bill_prev_yr;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn penaltyColumn {
+                get {
+                    return this.columnpenalty;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn materialsColumn {
+                get {
+                    return this.columnmaterials;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn miscellaneousColumn {
+                get {
+                    return this.columnmiscellaneous;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ar_othersColumn {
+                get {
+                    return this.columnar_others;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sr_citizenColumn {
+                get {
+                    return this.columnsr_citizen;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn total_amountColumn {
+                get {
+                    return this.columntotal_amount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CashReceiptRemittanceRecordRow this[int index] {
+                get {
+                    return ((CashReceiptRemittanceRecordRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event CashReceiptRemittanceRecordRowChangeEventHandler CashReceiptRemittanceRecordRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event CashReceiptRemittanceRecordRowChangeEventHandler CashReceiptRemittanceRecordRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event CashReceiptRemittanceRecordRowChangeEventHandler CashReceiptRemittanceRecordRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event CashReceiptRemittanceRecordRowChangeEventHandler CashReceiptRemittanceRecordRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddCashReceiptRemittanceRecordRow(CashReceiptRemittanceRecordRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CashReceiptRemittanceRecordRow AddCashReceiptRemittanceRecordRow(
+                        string header_name, 
+                        string header_address, 
+                        System.DateTime trans_date, 
+                        string full_name, 
+                        string checked_by, 
+                        string acknowledged_by, 
+                        string start_or, 
+                        string end_or, 
+                        decimal water_bill_current, 
+                        decimal water_bill_curr_yr, 
+                        decimal water_bill_prev_yr, 
+                        decimal penalty, 
+                        decimal materials, 
+                        decimal miscellaneous, 
+                        decimal ar_others, 
+                        decimal sr_citizen, 
+                        decimal total_amount) {
+                CashReceiptRemittanceRecordRow rowCashReceiptRemittanceRecordRow = ((CashReceiptRemittanceRecordRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        header_name,
+                        header_address,
+                        trans_date,
+                        full_name,
+                        checked_by,
+                        acknowledged_by,
+                        start_or,
+                        end_or,
+                        water_bill_current,
+                        water_bill_curr_yr,
+                        water_bill_prev_yr,
+                        penalty,
+                        materials,
+                        miscellaneous,
+                        ar_others,
+                        sr_citizen,
+                        total_amount};
+                rowCashReceiptRemittanceRecordRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCashReceiptRemittanceRecordRow);
+                return rowCashReceiptRemittanceRecordRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                CashReceiptRemittanceRecordDataTable cln = ((CashReceiptRemittanceRecordDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new CashReceiptRemittanceRecordDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnheader_name = base.Columns["header_name"];
+                this.columnheader_address = base.Columns["header_address"];
+                this.columntrans_date = base.Columns["trans_date"];
+                this.columnfull_name = base.Columns["full_name"];
+                this.columnchecked_by = base.Columns["checked_by"];
+                this.columnacknowledged_by = base.Columns["acknowledged_by"];
+                this.columnstart_or = base.Columns["start_or"];
+                this.columnend_or = base.Columns["end_or"];
+                this.columnwater_bill_current = base.Columns["water_bill_current"];
+                this.columnwater_bill_curr_yr = base.Columns["water_bill_curr_yr"];
+                this.columnwater_bill_prev_yr = base.Columns["water_bill_prev_yr"];
+                this.columnpenalty = base.Columns["penalty"];
+                this.columnmaterials = base.Columns["materials"];
+                this.columnmiscellaneous = base.Columns["miscellaneous"];
+                this.columnar_others = base.Columns["ar_others"];
+                this.columnsr_citizen = base.Columns["sr_citizen"];
+                this.columntotal_amount = base.Columns["total_amount"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnheader_name = new global::System.Data.DataColumn("header_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnheader_name);
+                this.columnheader_address = new global::System.Data.DataColumn("header_address", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnheader_address);
+                this.columntrans_date = new global::System.Data.DataColumn("trans_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntrans_date);
+                this.columnfull_name = new global::System.Data.DataColumn("full_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfull_name);
+                this.columnchecked_by = new global::System.Data.DataColumn("checked_by", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnchecked_by);
+                this.columnacknowledged_by = new global::System.Data.DataColumn("acknowledged_by", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnacknowledged_by);
+                this.columnstart_or = new global::System.Data.DataColumn("start_or", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstart_or);
+                this.columnend_or = new global::System.Data.DataColumn("end_or", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnend_or);
+                this.columnwater_bill_current = new global::System.Data.DataColumn("water_bill_current", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwater_bill_current);
+                this.columnwater_bill_curr_yr = new global::System.Data.DataColumn("water_bill_curr_yr", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwater_bill_curr_yr);
+                this.columnwater_bill_prev_yr = new global::System.Data.DataColumn("water_bill_prev_yr", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwater_bill_prev_yr);
+                this.columnpenalty = new global::System.Data.DataColumn("penalty", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpenalty);
+                this.columnmaterials = new global::System.Data.DataColumn("materials", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmaterials);
+                this.columnmiscellaneous = new global::System.Data.DataColumn("miscellaneous", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmiscellaneous);
+                this.columnar_others = new global::System.Data.DataColumn("ar_others", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnar_others);
+                this.columnsr_citizen = new global::System.Data.DataColumn("sr_citizen", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsr_citizen);
+                this.columntotal_amount = new global::System.Data.DataColumn("total_amount", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntotal_amount);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CashReceiptRemittanceRecordRow NewCashReceiptRemittanceRecordRow() {
+                return ((CashReceiptRemittanceRecordRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new CashReceiptRemittanceRecordRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(CashReceiptRemittanceRecordRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.CashReceiptRemittanceRecordRowChanged != null)) {
+                    this.CashReceiptRemittanceRecordRowChanged(this, new CashReceiptRemittanceRecordRowChangeEvent(((CashReceiptRemittanceRecordRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.CashReceiptRemittanceRecordRowChanging != null)) {
+                    this.CashReceiptRemittanceRecordRowChanging(this, new CashReceiptRemittanceRecordRowChangeEvent(((CashReceiptRemittanceRecordRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.CashReceiptRemittanceRecordRowDeleted != null)) {
+                    this.CashReceiptRemittanceRecordRowDeleted(this, new CashReceiptRemittanceRecordRowChangeEvent(((CashReceiptRemittanceRecordRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.CashReceiptRemittanceRecordRowDeleting != null)) {
+                    this.CashReceiptRemittanceRecordRowDeleting(this, new CashReceiptRemittanceRecordRowChangeEvent(((CashReceiptRemittanceRecordRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveCashReceiptRemittanceRecordRow(CashReceiptRemittanceRecordRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSetCollectionReports ds = new DataSetCollectionReports();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "CashReceiptRemittanceRecordDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class DCRRecapRow : global::System.Data.DataRow {
@@ -4334,6 +4857,512 @@ namespace ConcessionaireReports {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class CashReceiptRemittanceRecordRow : global::System.Data.DataRow {
+            
+            private CashReceiptRemittanceRecordDataTable tableCashReceiptRemittanceRecord;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal CashReceiptRemittanceRecordRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableCashReceiptRemittanceRecord = ((CashReceiptRemittanceRecordDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string header_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableCashReceiptRemittanceRecord.header_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'header_name\' in table \'CashReceiptRemittanceRecord\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashReceiptRemittanceRecord.header_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string header_address {
+                get {
+                    try {
+                        return ((string)(this[this.tableCashReceiptRemittanceRecord.header_addressColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'header_address\' in table \'CashReceiptRemittanceRecord\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashReceiptRemittanceRecord.header_addressColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime trans_date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableCashReceiptRemittanceRecord.trans_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'trans_date\' in table \'CashReceiptRemittanceRecord\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashReceiptRemittanceRecord.trans_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string full_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableCashReceiptRemittanceRecord.full_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'full_name\' in table \'CashReceiptRemittanceRecord\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableCashReceiptRemittanceRecord.full_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string checked_by {
+                get {
+                    try {
+                        return ((string)(this[this.tableCashReceiptRemittanceRecord.checked_byColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'checked_by\' in table \'CashReceiptRemittanceRecord\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashReceiptRemittanceRecord.checked_byColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string acknowledged_by {
+                get {
+                    try {
+                        return ((string)(this[this.tableCashReceiptRemittanceRecord.acknowledged_byColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'acknowledged_by\' in table \'CashReceiptRemittanceRecord\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashReceiptRemittanceRecord.acknowledged_byColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string start_or {
+                get {
+                    try {
+                        return ((string)(this[this.tableCashReceiptRemittanceRecord.start_orColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'start_or\' in table \'CashReceiptRemittanceRecord\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableCashReceiptRemittanceRecord.start_orColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string end_or {
+                get {
+                    try {
+                        return ((string)(this[this.tableCashReceiptRemittanceRecord.end_orColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'end_or\' in table \'CashReceiptRemittanceRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashReceiptRemittanceRecord.end_orColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal water_bill_current {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashReceiptRemittanceRecord.water_bill_currentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'water_bill_current\' in table \'CashReceiptRemittanceRecord\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashReceiptRemittanceRecord.water_bill_currentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal water_bill_curr_yr {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashReceiptRemittanceRecord.water_bill_curr_yrColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'water_bill_curr_yr\' in table \'CashReceiptRemittanceRecord\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashReceiptRemittanceRecord.water_bill_curr_yrColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal water_bill_prev_yr {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashReceiptRemittanceRecord.water_bill_prev_yrColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'water_bill_prev_yr\' in table \'CashReceiptRemittanceRecord\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashReceiptRemittanceRecord.water_bill_prev_yrColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal penalty {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashReceiptRemittanceRecord.penaltyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'penalty\' in table \'CashReceiptRemittanceRecord\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashReceiptRemittanceRecord.penaltyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal materials {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashReceiptRemittanceRecord.materialsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'materials\' in table \'CashReceiptRemittanceRecord\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableCashReceiptRemittanceRecord.materialsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal miscellaneous {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashReceiptRemittanceRecord.miscellaneousColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'miscellaneous\' in table \'CashReceiptRemittanceRecord\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashReceiptRemittanceRecord.miscellaneousColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal ar_others {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashReceiptRemittanceRecord.ar_othersColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ar_others\' in table \'CashReceiptRemittanceRecord\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableCashReceiptRemittanceRecord.ar_othersColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal sr_citizen {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashReceiptRemittanceRecord.sr_citizenColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'sr_citizen\' in table \'CashReceiptRemittanceRecord\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashReceiptRemittanceRecord.sr_citizenColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal total_amount {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashReceiptRemittanceRecord.total_amountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'total_amount\' in table \'CashReceiptRemittanceRecord\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashReceiptRemittanceRecord.total_amountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isheader_nameNull() {
+                return this.IsNull(this.tableCashReceiptRemittanceRecord.header_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setheader_nameNull() {
+                this[this.tableCashReceiptRemittanceRecord.header_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isheader_addressNull() {
+                return this.IsNull(this.tableCashReceiptRemittanceRecord.header_addressColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setheader_addressNull() {
+                this[this.tableCashReceiptRemittanceRecord.header_addressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Istrans_dateNull() {
+                return this.IsNull(this.tableCashReceiptRemittanceRecord.trans_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Settrans_dateNull() {
+                this[this.tableCashReceiptRemittanceRecord.trans_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isfull_nameNull() {
+                return this.IsNull(this.tableCashReceiptRemittanceRecord.full_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setfull_nameNull() {
+                this[this.tableCashReceiptRemittanceRecord.full_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Ischecked_byNull() {
+                return this.IsNull(this.tableCashReceiptRemittanceRecord.checked_byColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setchecked_byNull() {
+                this[this.tableCashReceiptRemittanceRecord.checked_byColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isacknowledged_byNull() {
+                return this.IsNull(this.tableCashReceiptRemittanceRecord.acknowledged_byColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setacknowledged_byNull() {
+                this[this.tableCashReceiptRemittanceRecord.acknowledged_byColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isstart_orNull() {
+                return this.IsNull(this.tableCashReceiptRemittanceRecord.start_orColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setstart_orNull() {
+                this[this.tableCashReceiptRemittanceRecord.start_orColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isend_orNull() {
+                return this.IsNull(this.tableCashReceiptRemittanceRecord.end_orColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setend_orNull() {
+                this[this.tableCashReceiptRemittanceRecord.end_orColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iswater_bill_currentNull() {
+                return this.IsNull(this.tableCashReceiptRemittanceRecord.water_bill_currentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setwater_bill_currentNull() {
+                this[this.tableCashReceiptRemittanceRecord.water_bill_currentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iswater_bill_curr_yrNull() {
+                return this.IsNull(this.tableCashReceiptRemittanceRecord.water_bill_curr_yrColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setwater_bill_curr_yrNull() {
+                this[this.tableCashReceiptRemittanceRecord.water_bill_curr_yrColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iswater_bill_prev_yrNull() {
+                return this.IsNull(this.tableCashReceiptRemittanceRecord.water_bill_prev_yrColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setwater_bill_prev_yrNull() {
+                this[this.tableCashReceiptRemittanceRecord.water_bill_prev_yrColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IspenaltyNull() {
+                return this.IsNull(this.tableCashReceiptRemittanceRecord.penaltyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetpenaltyNull() {
+                this[this.tableCashReceiptRemittanceRecord.penaltyColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsmaterialsNull() {
+                return this.IsNull(this.tableCashReceiptRemittanceRecord.materialsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetmaterialsNull() {
+                this[this.tableCashReceiptRemittanceRecord.materialsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsmiscellaneousNull() {
+                return this.IsNull(this.tableCashReceiptRemittanceRecord.miscellaneousColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetmiscellaneousNull() {
+                this[this.tableCashReceiptRemittanceRecord.miscellaneousColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isar_othersNull() {
+                return this.IsNull(this.tableCashReceiptRemittanceRecord.ar_othersColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setar_othersNull() {
+                this[this.tableCashReceiptRemittanceRecord.ar_othersColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Issr_citizenNull() {
+                return this.IsNull(this.tableCashReceiptRemittanceRecord.sr_citizenColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setsr_citizenNull() {
+                this[this.tableCashReceiptRemittanceRecord.sr_citizenColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Istotal_amountNull() {
+                return this.IsNull(this.tableCashReceiptRemittanceRecord.total_amountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Settotal_amountNull() {
+                this[this.tableCashReceiptRemittanceRecord.total_amountColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -4489,6 +5518,40 @@ namespace ConcessionaireReports {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public CollectionSummaryPerBookZoneRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class CashReceiptRemittanceRecordRowChangeEvent : global::System.EventArgs {
+            
+            private CashReceiptRemittanceRecordRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CashReceiptRemittanceRecordRowChangeEvent(CashReceiptRemittanceRecordRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public CashReceiptRemittanceRecordRow Row {
                 get {
                     return this.eventRow;
                 }
