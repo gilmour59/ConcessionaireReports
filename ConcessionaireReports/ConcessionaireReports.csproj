@@ -176,6 +176,7 @@
     <EmbeddedResource Include="RDLC\ReportBillingSummaryBook.rdlc" />
     <EmbeddedResource Include="RDLC\ReportBillingSummaryMaterialsOtherFees.rdlc" />
     <EmbeddedResource Include="RDLC\ReportBillingSummaryMonth.rdlc" />
+    <EmbeddedResource Include="RDLC\ReportCashReceiptRemittanceRecord.rdlc" />
     <EmbeddedResource Include="RDLC\ReportChangedMeterPreviousRead.rdlc" />
     <EmbeddedResource Include="RDLC\ReportCollectionSummaryPerZoneBook.rdlc" />
     <EmbeddedResource Include="RDLC\ReportDailyBillingSummary.rdlc" />
