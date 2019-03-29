@@ -34,8 +34,8 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource22 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource23 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource24 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource19 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource25 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource19 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource26 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource27 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource28 = new Microsoft.Reporting.WinForms.ReportDataSource();
@@ -47,11 +47,6 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource34 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource35 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource36 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.DailyCollectionReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DataSetCollectionReports = new ConcessionaireReports.DataSetCollectionReports();
-            this.DCRRecapBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DailyCollectionReport2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DCRCheckPaymentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlCollectionReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dateTimePickerDailyCollectionReportDate = new System.Windows.Forms.DateTimePicker();
@@ -139,12 +134,12 @@
             this.dateTimePickerCashCollectionReportDate = new System.Windows.Forms.DateTimePicker();
             this.label22 = new System.Windows.Forms.Label();
             this.reportViewerCashCollectionReport = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.DailyCollectionReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSetCollectionReports = new ConcessionaireReports.DataSetCollectionReports();
+            this.DCRRecapBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DailyCollectionReport2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DCRCheckPaymentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CollectionSummaryPerBookZoneBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReportBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetCollectionReports)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DCRRecapBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReport2BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DCRCheckPaymentsBindingSource)).BeginInit();
             this.tabControlCollectionReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -160,33 +155,13 @@
             this.tabPage12.SuspendLayout();
             this.tabPage13.SuspendLayout();
             this.tabPage14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReportBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetCollectionReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DCRRecapBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReport2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DCRCheckPaymentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CollectionSummaryPerBookZoneBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // DailyCollectionReportBindingSource
-            // 
-            this.DailyCollectionReportBindingSource.DataMember = "DailyCollectionReport";
-            this.DailyCollectionReportBindingSource.DataSource = this.DataSetCollectionReports;
-            // 
-            // DataSetCollectionReports
-            // 
-            this.DataSetCollectionReports.DataSetName = "DataSetCollectionReports";
-            this.DataSetCollectionReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // DCRRecapBindingSource
-            // 
-            this.DCRRecapBindingSource.DataMember = "DCRRecap";
-            this.DCRRecapBindingSource.DataSource = this.DataSetCollectionReports;
-            // 
-            // DailyCollectionReport2BindingSource
-            // 
-            this.DailyCollectionReport2BindingSource.DataMember = "DailyCollectionReport2";
-            this.DailyCollectionReport2BindingSource.DataSource = this.DataSetCollectionReports;
-            // 
-            // DCRCheckPaymentsBindingSource
-            // 
-            this.DCRCheckPaymentsBindingSource.DataMember = "DCRCheckPayments";
-            this.DCRCheckPaymentsBindingSource.DataSource = this.DataSetCollectionReports;
             // 
             // tabControlCollectionReports
             // 
@@ -429,9 +404,9 @@
             // 
             // reportViewerCollectionSummaryZoneBook
             // 
-            reportDataSource19.Name = "DataSetCollectionReports";
-            reportDataSource19.Value = this.CollectionSummaryPerBookZoneBindingSource;
-            this.reportViewerCollectionSummaryZoneBook.LocalReport.DataSources.Add(reportDataSource19);
+            reportDataSource25.Name = "DataSetCollectionReports";
+            reportDataSource25.Value = this.CollectionSummaryPerBookZoneBindingSource;
+            this.reportViewerCollectionSummaryZoneBook.LocalReport.DataSources.Add(reportDataSource25);
             this.reportViewerCollectionSummaryZoneBook.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportCollectionSummaryPerZoneBook.rdlc";
             this.reportViewerCollectionSummaryZoneBook.Location = new System.Drawing.Point(26, 49);
             this.reportViewerCollectionSummaryZoneBook.Name = "reportViewerCollectionSummaryZoneBook";
@@ -463,6 +438,7 @@
             this.dateTimePickerCashReceiptRecordDate.Name = "dateTimePickerCashReceiptRecordDate";
             this.dateTimePickerCashReceiptRecordDate.Size = new System.Drawing.Size(118, 24);
             this.dateTimePickerCashReceiptRecordDate.TabIndex = 56;
+            this.dateTimePickerCashReceiptRecordDate.ValueChanged += new System.EventHandler(this.dateTimePickerCashReceiptRecordDate_ValueChanged);
             // 
             // comboBoxCashReceiptRecordTeller
             // 
@@ -483,6 +459,7 @@
             this.buttonCashReceiptRecordSearch.TabIndex = 54;
             this.buttonCashReceiptRecordSearch.Text = "Search";
             this.buttonCashReceiptRecordSearch.UseVisualStyleBackColor = true;
+            this.buttonCashReceiptRecordSearch.Click += new System.EventHandler(this.buttonCashReceiptRecordSearch_Click);
             // 
             // label6
             // 
@@ -506,9 +483,9 @@
             // 
             // reportViewerCashReceiptRecord
             // 
-            reportDataSource25.Name = "DataSetMeterReadingReports";
-            reportDataSource25.Value = null;
-            this.reportViewerCashReceiptRecord.LocalReport.DataSources.Add(reportDataSource25);
+            reportDataSource19.Name = "DataSetMeterReadingReports";
+            reportDataSource19.Value = null;
+            this.reportViewerCashReceiptRecord.LocalReport.DataSources.Add(reportDataSource19);
             this.reportViewerCashReceiptRecord.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountsSuddenIncDecConsumption.rdlc";
             this.reportViewerCashReceiptRecord.Location = new System.Drawing.Point(26, 49);
             this.reportViewerCashReceiptRecord.Name = "reportViewerCashReceiptRecord";
@@ -1179,6 +1156,31 @@
             this.reportViewerCashCollectionReport.Size = new System.Drawing.Size(944, 481);
             this.reportViewerCashCollectionReport.TabIndex = 75;
             // 
+            // DailyCollectionReportBindingSource
+            // 
+            this.DailyCollectionReportBindingSource.DataMember = "DailyCollectionReport";
+            this.DailyCollectionReportBindingSource.DataSource = this.DataSetCollectionReports;
+            // 
+            // DataSetCollectionReports
+            // 
+            this.DataSetCollectionReports.DataSetName = "DataSetCollectionReports";
+            this.DataSetCollectionReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // DCRRecapBindingSource
+            // 
+            this.DCRRecapBindingSource.DataMember = "DCRRecap";
+            this.DCRRecapBindingSource.DataSource = this.DataSetCollectionReports;
+            // 
+            // DailyCollectionReport2BindingSource
+            // 
+            this.DailyCollectionReport2BindingSource.DataMember = "DailyCollectionReport2";
+            this.DailyCollectionReport2BindingSource.DataSource = this.DataSetCollectionReports;
+            // 
+            // DCRCheckPaymentsBindingSource
+            // 
+            this.DCRCheckPaymentsBindingSource.DataMember = "DCRCheckPayments";
+            this.DCRCheckPaymentsBindingSource.DataSource = this.DataSetCollectionReports;
+            // 
             // CollectionSummaryPerBookZoneBindingSource
             // 
             this.CollectionSummaryPerBookZoneBindingSource.DataMember = "CollectionSummaryPerBookZone";
@@ -1196,11 +1198,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Collection Reports";
             this.Load += new System.EventHandler(this.CollectionReportsForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReportBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetCollectionReports)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DCRRecapBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReport2BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DCRCheckPaymentsBindingSource)).EndInit();
             this.tabControlCollectionReports.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1230,6 +1227,11 @@
             this.tabPage13.PerformLayout();
             this.tabPage14.ResumeLayout(false);
             this.tabPage14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReportBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetCollectionReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DCRRecapBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReport2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DCRCheckPaymentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CollectionSummaryPerBookZoneBindingSource)).EndInit();
             this.ResumeLayout(false);
 

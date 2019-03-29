@@ -246,5 +246,68 @@ namespace ConcessionaireReports
             }
             reportViewerCollectionSummaryZoneBook.RefreshReport();
         }
+
+        private void buttonCashReceiptRecordSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetCashReceiptAndRemittanceRecord", conn))
+                    {
+                        DataSetCollectionReports ds = new DataSetCollectionReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@in_trans_date", dateTimePickerCashReceiptRecordDate.Value);
+                        adapter.SelectCommand.Parameters["@in_trans_date"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@in_user_id", comboBoxCashReceiptRecordTeller.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters["@in_user_id"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "CashReceiptRemittanceRecord");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["CashReceiptRemittanceRecord"]);
+                        reportViewerCashReceiptRecord.LocalReport.DataSources.Clear();
+                        reportViewerCashReceiptRecord.LocalReport.DataSources.Add(rds);
+
+                        ReportParameter[] param = new ReportParameter[]
+                        {
+                            new ReportParameter("ReportParameterDate", dateTimePickerCashReceiptRecordDate.Value.ToString()),
+                            new ReportParameter("ReportParameterTeller", comboBoxCashReceiptRecordTeller.Text)
+                        };
+                        reportViewerCashReceiptRecord.LocalReport.SetParameters(param);
+                        //reportViewerDailyCollectionReport.LocalReport.Refresh();
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            reportViewerCashReceiptRecord.RefreshReport();
+        }
+
+        private void dateTimePickerCashReceiptRecordDate_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilgetTellersByTransDate", conn))
+                    {
+                        bindTeller(comboBoxCashReceiptRecordTeller, dateTimePickerCashReceiptRecordDate, adapter);
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+        }
     }
 }
