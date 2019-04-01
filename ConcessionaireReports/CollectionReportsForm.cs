@@ -78,6 +78,7 @@ namespace ConcessionaireReports
             dateTimePickerDailyCollectionReportDate.MaxDate = DateTime.Today;
             dateTimePickerDCR2Date.MaxDate = DateTime.Today;
             dateTimePickerCollectionSummaryZoneBookDate.MaxDate = DateTime.Today;
+            dateTimePickerCDCRDate.MaxDate = DateTime.Today;
         }
 
         private void dateTimePickerDailyCollectionReportDate_ValueChanged(object sender, EventArgs e)
@@ -307,6 +308,11 @@ namespace ConcessionaireReports
             {
                 MessageBox.Show("error: " + ex, "Error!");
             }
+        }
+
+        private void buttonCDCRSearch_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

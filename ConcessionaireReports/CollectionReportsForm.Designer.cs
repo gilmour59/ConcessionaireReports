@@ -53,6 +53,7 @@
             this.DailyCollectionReport2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DCRCheckPaymentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CollectionSummaryPerBookZoneBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CashReceiptRemittanceRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlCollectionReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dateTimePickerDailyCollectionReportDate = new System.Windows.Forms.DateTimePicker();
@@ -140,13 +141,13 @@
             this.dateTimePickerCashCollectionReportDate = new System.Windows.Forms.DateTimePicker();
             this.label22 = new System.Windows.Forms.Label();
             this.reportViewerCashCollectionReport = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.CashReceiptRemittanceRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReportBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetCollectionReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DCRRecapBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReport2BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DCRCheckPaymentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CollectionSummaryPerBookZoneBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CashReceiptRemittanceRecordBindingSource)).BeginInit();
             this.tabControlCollectionReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -162,7 +163,6 @@
             this.tabPage12.SuspendLayout();
             this.tabPage13.SuspendLayout();
             this.tabPage14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CashReceiptRemittanceRecordBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // DailyCollectionReportBindingSource
@@ -194,6 +194,11 @@
             // 
             this.CollectionSummaryPerBookZoneBindingSource.DataMember = "CollectionSummaryPerBookZone";
             this.CollectionSummaryPerBookZoneBindingSource.DataSource = this.DataSetCollectionReports;
+            // 
+            // CashReceiptRemittanceRecordBindingSource
+            // 
+            this.CashReceiptRemittanceRecordBindingSource.DataMember = "CashReceiptRemittanceRecord";
+            this.CashReceiptRemittanceRecordBindingSource.DataSource = this.DataSetCollectionReports;
             // 
             // tabControlCollectionReports
             // 
@@ -579,6 +584,7 @@
             this.buttonCDCRSearch.TabIndex = 16;
             this.buttonCDCRSearch.Text = "Search";
             this.buttonCDCRSearch.UseVisualStyleBackColor = true;
+            this.buttonCDCRSearch.Click += new System.EventHandler(this.buttonCDCRSearch_Click);
             // 
             // tabPage6
             // 
@@ -1188,11 +1194,6 @@
             this.reportViewerCashCollectionReport.Size = new System.Drawing.Size(944, 481);
             this.reportViewerCashCollectionReport.TabIndex = 75;
             // 
-            // CashReceiptRemittanceRecordBindingSource
-            // 
-            this.CashReceiptRemittanceRecordBindingSource.DataMember = "CashReceiptRemittanceRecord";
-            this.CashReceiptRemittanceRecordBindingSource.DataSource = this.DataSetCollectionReports;
-            // 
             // CollectionReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1211,6 +1212,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReport2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DCRCheckPaymentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CollectionSummaryPerBookZoneBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CashReceiptRemittanceRecordBindingSource)).EndInit();
             this.tabControlCollectionReports.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1240,7 +1242,6 @@
             this.tabPage13.PerformLayout();
             this.tabPage14.ResumeLayout(false);
             this.tabPage14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CashReceiptRemittanceRecordBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

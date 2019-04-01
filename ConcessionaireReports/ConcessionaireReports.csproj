@@ -163,11 +163,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RDLC\ReportAccountByStatus.rdlc" />
-    <EmbeddedResource Include="RDLC\ReportAccountPerBarangay.rdlc" />
-    <EmbeddedResource Include="RDLC\ReportAccountPerBook.rdlc" />
-    <EmbeddedResource Include="RDLC\ReportAccountPerClassification.rdlc" />
-    <EmbeddedResource Include="RDLC\ReportAccountPerMeterSize.rdlc" />
+    <EmbeddedResource Include="RDLC\ConcessionaireReports\ReportAccountByStatus.rdlc" />
+    <EmbeddedResource Include="RDLC\ConcessionaireReports\ReportAccountPerBarangay.rdlc" />
+    <EmbeddedResource Include="RDLC\ConcessionaireReports\ReportAccountPerBook.rdlc" />
+    <EmbeddedResource Include="RDLC\ConcessionaireReports\ReportAccountPerClassification.rdlc" />
+    <EmbeddedResource Include="RDLC\ConcessionaireReports\ReportAccountPerMeterSize.rdlc" />
     <EmbeddedResource Include="RDLC\ReportAccountsLargeConsumption.rdlc" />
     <EmbeddedResource Include="RDLC\ReportAccountsMinimumConsumption.rdlc" />
     <EmbeddedResource Include="RDLC\ReportAccountsSuddenIncDecConsumption.rdlc" />
@@ -183,11 +183,11 @@
     <EmbeddedResource Include="RDLC\ReportDailyCollectionReport.rdlc" />
     <EmbeddedResource Include="RDLC\ReportDailyCollectionReport2.rdlc" />
     <EmbeddedResource Include="RDLC\ReportMeterReaderAccomplishment.rdlc" />
-    <EmbeddedResource Include="RDLC\ReportNewConnectionSummary.rdlc" />
+    <EmbeddedResource Include="RDLC\ConcessionaireReports\ReportNewConnectionSummary.rdlc" />
     <EmbeddedResource Include="RDLC\ReportPenaltyBillingReport.rdlc" />
     <EmbeddedResource Include="RDLC\ReportReadingSlip.rdlc" />
-    <EmbeddedResource Include="RDLC\ReportSeniorCitizenAccounts.rdlc" />
-    <EmbeddedResource Include="RDLC\ReportSummaryAccountsPerClass.rdlc" />
+    <EmbeddedResource Include="RDLC\ConcessionaireReports\ReportSeniorCitizenAccounts.rdlc" />
+    <EmbeddedResource Include="RDLC\ConcessionaireReports\ReportSummaryAccountsPerClass.rdlc" />
     <EmbeddedResource Include="RDLC\ReportSummaryAlteration.rdlc" />
     <EmbeddedResource Include="RDLC\ReportSummaryChangedMeters.rdlc" />
     <EmbeddedResource Include="RDLC\ReportSummaryDisposedMeters.rdlc" />
