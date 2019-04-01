@@ -176,12 +176,12 @@
     <EmbeddedResource Include="RDLC\BillingReports\ReportBillingSummaryBook.rdlc" />
     <EmbeddedResource Include="RDLC\BillingReports\ReportBillingSummaryMaterialsOtherFees.rdlc" />
     <EmbeddedResource Include="RDLC\BillingReports\ReportBillingSummaryMonth.rdlc" />
-    <EmbeddedResource Include="RDLC\ReportCashReceiptRemittanceRecord.rdlc" />
+    <EmbeddedResource Include="RDLC\CollectionReports\ReportCashReceiptRemittanceRecord.rdlc" />
     <EmbeddedResource Include="RDLC\MeterReports\ReportChangedMeterPreviousRead.rdlc" />
-    <EmbeddedResource Include="RDLC\ReportCollectionSummaryPerZoneBook.rdlc" />
+    <EmbeddedResource Include="RDLC\CollectionReports\ReportCollectionSummaryPerZoneBook.rdlc" />
     <EmbeddedResource Include="RDLC\BillingReports\ReportDailyBillingSummary.rdlc" />
-    <EmbeddedResource Include="RDLC\ReportDailyCollectionReport.rdlc" />
-    <EmbeddedResource Include="RDLC\ReportDailyCollectionReport2.rdlc" />
+    <EmbeddedResource Include="RDLC\CollectionReports\ReportDailyCollectionReport.rdlc" />
+    <EmbeddedResource Include="RDLC\CollectionReports\ReportDailyCollectionReport2.rdlc" />
     <EmbeddedResource Include="RDLC\MeterReadingReports\ReportMeterReaderAccomplishment.rdlc" />
     <EmbeddedResource Include="RDLC\ConcessionaireReports\ReportNewConnectionSummary.rdlc" />
     <EmbeddedResource Include="RDLC\BillingReports\ReportPenaltyBillingReport.rdlc" />

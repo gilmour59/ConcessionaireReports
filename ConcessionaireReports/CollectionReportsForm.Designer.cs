@@ -272,7 +272,7 @@
             reportDataSource2.Value = this.DCRRecapBindingSource;
             this.reportViewerDailyCollectionReport.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewerDailyCollectionReport.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewerDailyCollectionReport.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportDailyCollectionReport.rdlc";
+            this.reportViewerDailyCollectionReport.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.CollectionReports.ReportDailyCollectionReport.rdlc";
             this.reportViewerDailyCollectionReport.Location = new System.Drawing.Point(26, 49);
             this.reportViewerDailyCollectionReport.Name = "reportViewerDailyCollectionReport";
             this.reportViewerDailyCollectionReport.ServerReport.BearerToken = null;
@@ -388,7 +388,7 @@
             this.reportViewerDCR2.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewerDCR2.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewerDCR2.LocalReport.DataSources.Add(reportDataSource5);
-            this.reportViewerDCR2.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportDailyCollectionReport2.rdlc";
+            this.reportViewerDCR2.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.CollectionReports.ReportDailyCollectionReport2.rdlc";
             this.reportViewerDCR2.Location = new System.Drawing.Point(26, 49);
             this.reportViewerDCR2.Name = "reportViewerDCR2";
             this.reportViewerDCR2.ServerReport.BearerToken = null;
@@ -444,7 +444,7 @@
             reportDataSource6.Name = "DataSetCollectionReports";
             reportDataSource6.Value = this.CollectionSummaryPerBookZoneBindingSource;
             this.reportViewerCollectionSummaryZoneBook.LocalReport.DataSources.Add(reportDataSource6);
-            this.reportViewerCollectionSummaryZoneBook.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportCollectionSummaryPerZoneBook.rdlc";
+            this.reportViewerCollectionSummaryZoneBook.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.CollectionReports.ReportCollectionSummaryPerZoneBook.rdlc";
             this.reportViewerCollectionSummaryZoneBook.Location = new System.Drawing.Point(26, 49);
             this.reportViewerCollectionSummaryZoneBook.Name = "reportViewerCollectionSummaryZoneBook";
             this.reportViewerCollectionSummaryZoneBook.ServerReport.BearerToken = null;
@@ -523,7 +523,7 @@
             reportDataSource7.Name = "DataSetCollectionReports";
             reportDataSource7.Value = this.CashReceiptRemittanceRecordBindingSource;
             this.reportViewerCashReceiptRecord.LocalReport.DataSources.Add(reportDataSource7);
-            this.reportViewerCashReceiptRecord.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportCashReceiptRemittanceRecord.rdlc";
+            this.reportViewerCashReceiptRecord.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.CollectionReports.ReportCashReceiptRemittanceRecord.rdlc";
             this.reportViewerCashReceiptRecord.Location = new System.Drawing.Point(26, 49);
             this.reportViewerCashReceiptRecord.Name = "reportViewerCashReceiptRecord";
             this.reportViewerCashReceiptRecord.ServerReport.BearerToken = null;
