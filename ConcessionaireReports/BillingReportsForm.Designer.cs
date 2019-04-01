@@ -263,7 +263,7 @@
             reportDataSource13.Name = "DataSetBillingReports";
             reportDataSource13.Value = this.BillComputationRegisterBindingSource;
             this.reportViewerBillComputationReg.LocalReport.DataSources.Add(reportDataSource13);
-            this.reportViewerBillComputationReg.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportBillComputationRegister.rdlc";
+            this.reportViewerBillComputationReg.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.BillingReports.ReportBillComputationRegister.rdlc";
             this.reportViewerBillComputationReg.Location = new System.Drawing.Point(26, 49);
             this.reportViewerBillComputationReg.Name = "reportViewerBillComputationReg";
             this.reportViewerBillComputationReg.ServerReport.BearerToken = null;
@@ -333,7 +333,7 @@
             reportDataSource14.Name = "DataSetBillingReports";
             reportDataSource14.Value = this.BillingSummaryPerBookBindingSource;
             this.reportViewerBillSummaryBook.LocalReport.DataSources.Add(reportDataSource14);
-            this.reportViewerBillSummaryBook.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportBillingSummaryBook.rdlc";
+            this.reportViewerBillSummaryBook.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.BillingReports.ReportBillingSummaryBook.rdlc";
             this.reportViewerBillSummaryBook.Location = new System.Drawing.Point(26, 49);
             this.reportViewerBillSummaryBook.Name = "reportViewerBillSummaryBook";
             this.reportViewerBillSummaryBook.ServerReport.BearerToken = null;
@@ -461,7 +461,7 @@
             reportDataSource15.Name = "DataSetBillingReports";
             reportDataSource15.Value = this.BillingSummaryPerMonthBindingSource;
             this.reportViewerBillSummaryMonth.LocalReport.DataSources.Add(reportDataSource15);
-            this.reportViewerBillSummaryMonth.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportBillingSummaryMonth.rdlc";
+            this.reportViewerBillSummaryMonth.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.BillingReports.ReportBillingSummaryMonth.rdlc";
             this.reportViewerBillSummaryMonth.Location = new System.Drawing.Point(26, 49);
             this.reportViewerBillSummaryMonth.Name = "reportViewerBillSummaryMonth";
             this.reportViewerBillSummaryMonth.ServerReport.BearerToken = null;
@@ -555,7 +555,7 @@
             reportDataSource17.Name = "DataSetBillingReports";
             reportDataSource17.Value = this.PenaltyBillingReportBindingSource;
             this.reportViewerPenaltyBillingReport.LocalReport.DataSources.Add(reportDataSource17);
-            this.reportViewerPenaltyBillingReport.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportPenaltyBillingReport.rdlc";
+            this.reportViewerPenaltyBillingReport.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.BillingReports.ReportPenaltyBillingReport.rdlc";
             this.reportViewerPenaltyBillingReport.Location = new System.Drawing.Point(26, 49);
             this.reportViewerPenaltyBillingReport.Name = "reportViewerPenaltyBillingReport";
             this.reportViewerPenaltyBillingReport.ServerReport.BearerToken = null;
@@ -728,7 +728,7 @@
             reportDataSource19.Name = "DataSetBillingReports";
             reportDataSource19.Value = this.BillingSummaryMaterialsFeesBindingSource;
             this.reportViewerBillingSummaryMaterials.LocalReport.DataSources.Add(reportDataSource19);
-            this.reportViewerBillingSummaryMaterials.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportBillingSummaryMaterialsOtherFees.rdlc";
+            this.reportViewerBillingSummaryMaterials.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.BillingReports.ReportBillingSummaryMaterialsOtherFees.rdlc";
             this.reportViewerBillingSummaryMaterials.Location = new System.Drawing.Point(26, 49);
             this.reportViewerBillingSummaryMaterials.Name = "reportViewerBillingSummaryMaterials";
             this.reportViewerBillingSummaryMaterials.ServerReport.BearerToken = null;
@@ -758,7 +758,7 @@
             reportDataSource21.Value = this.BillingAdjustmentSummaryRecapBindingSource;
             this.reportViewerBillingAdjustmentSummary.LocalReport.DataSources.Add(reportDataSource20);
             this.reportViewerBillingAdjustmentSummary.LocalReport.DataSources.Add(reportDataSource21);
-            this.reportViewerBillingAdjustmentSummary.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportBillingAdjustmentSummary.rdlc";
+            this.reportViewerBillingAdjustmentSummary.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.BillingReports.ReportBillingAdjustmentSummary.rdlc";
             this.reportViewerBillingAdjustmentSummary.Location = new System.Drawing.Point(26, 49);
             this.reportViewerBillingAdjustmentSummary.Name = "reportViewerBillingAdjustmentSummary";
             this.reportViewerBillingAdjustmentSummary.ServerReport.BearerToken = null;
@@ -852,7 +852,7 @@
             reportDataSource12.Name = "DataSetBillingReports";
             reportDataSource12.Value = this.AccountsLargeConsPerClassificationBindingSource;
             this.reportViewerAccountsLargeCons.LocalReport.DataSources.Add(reportDataSource12);
-            this.reportViewerAccountsLargeCons.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountsLargeConsumption.rdlc";
+            this.reportViewerAccountsLargeCons.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.BillingReports.ReportAccountsLargeConsumption.rdlc";
             this.reportViewerAccountsLargeCons.Location = new System.Drawing.Point(26, 49);
             this.reportViewerAccountsLargeCons.Name = "reportViewerAccountsLargeCons";
             this.reportViewerAccountsLargeCons.ServerReport.BearerToken = null;
