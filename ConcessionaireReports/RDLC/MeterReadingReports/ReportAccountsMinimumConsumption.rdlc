@@ -331,7 +331,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -576,7 +575,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>List of Accounts with Sudden Increase/Decrease in Consumption</Value>
+                    <Value>List of Accounts with Minimum Consumption</Value>
                     <Style>
                       <FontFamily>calibri</FontFamily>
                       <FontSize>11pt</FontSize>

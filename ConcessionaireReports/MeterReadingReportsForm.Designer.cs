@@ -196,7 +196,7 @@
             reportDataSource1.Name = "DataSetMeterReadingReports";
             reportDataSource1.Value = this.ReadingSlipBindingSource;
             this.reportViewerReadingSlip.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewerReadingSlip.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportReadingSlip.rdlc";
+            this.reportViewerReadingSlip.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReadingReports.ReportReadingSlip.rdlc";
             this.reportViewerReadingSlip.Location = new System.Drawing.Point(26, 49);
             this.reportViewerReadingSlip.Name = "reportViewerReadingSlip";
             this.reportViewerReadingSlip.ServerReport.BearerToken = null;
@@ -293,7 +293,7 @@
             reportDataSource2.Name = "DataSetMeterReadingReports";
             reportDataSource2.Value = this.MeterReaderAccomplishmentBindingSource;
             this.reportViewerMeterReaderAccomplishment.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewerMeterReaderAccomplishment.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportMeterReaderAccomplishment.rdlc";
+            this.reportViewerMeterReaderAccomplishment.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReadingReports.ReportMeterReaderAccomplishment.rdlc";
             this.reportViewerMeterReaderAccomplishment.Location = new System.Drawing.Point(26, 49);
             this.reportViewerMeterReaderAccomplishment.Name = "reportViewerMeterReaderAccomplishment";
             this.reportViewerMeterReaderAccomplishment.ServerReport.BearerToken = null;
@@ -402,7 +402,7 @@
             reportDataSource3.Name = "DataSetMeterReadingReports";
             reportDataSource3.Value = this.AccountsSuddenIncDecConsumptionBindingSource;
             this.reportViewerAccountsSuddenIncDecConsumption.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewerAccountsSuddenIncDecConsumption.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountsSuddenIncDecConsumption.rdlc";
+            this.reportViewerAccountsSuddenIncDecConsumption.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReadingReports.ReportAccountsSuddenIncDecConsumption.rdlc";
             this.reportViewerAccountsSuddenIncDecConsumption.Location = new System.Drawing.Point(26, 49);
             this.reportViewerAccountsSuddenIncDecConsumption.Name = "reportViewerAccountsSuddenIncDecConsumption";
             this.reportViewerAccountsSuddenIncDecConsumption.ServerReport.BearerToken = null;
@@ -452,7 +452,7 @@
             reportDataSource4.Name = "DataSetMeterReadingReports";
             reportDataSource4.Value = this.AccountsMinimumConsumptionBindingSource;
             this.reportViewerAccountsMinimumConsumption.LocalReport.DataSources.Add(reportDataSource4);
-            this.reportViewerAccountsMinimumConsumption.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountsMinimumConsumption.rdlc";
+            this.reportViewerAccountsMinimumConsumption.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReadingReports.ReportAccountsMinimumConsumption.rdlc";
             this.reportViewerAccountsMinimumConsumption.Location = new System.Drawing.Point(26, 49);
             this.reportViewerAccountsMinimumConsumption.Name = "reportViewerAccountsMinimumConsumption";
             this.reportViewerAccountsMinimumConsumption.ServerReport.BearerToken = null;
@@ -615,7 +615,7 @@
             reportDataSource5.Name = "DataSetMeterReadingReports";
             reportDataSource5.Value = this.UnreadMetersBindingSource;
             this.reportViewerUnreadMeters.LocalReport.DataSources.Add(reportDataSource5);
-            this.reportViewerUnreadMeters.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportUnreadMeters.rdlc";
+            this.reportViewerUnreadMeters.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReadingReports.ReportUnreadMeters.rdlc";
             this.reportViewerUnreadMeters.Location = new System.Drawing.Point(26, 49);
             this.reportViewerUnreadMeters.Name = "reportViewerUnreadMeters";
             this.reportViewerUnreadMeters.ServerReport.BearerToken = null;

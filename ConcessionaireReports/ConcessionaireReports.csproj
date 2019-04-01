@@ -169,8 +169,8 @@
     <EmbeddedResource Include="RDLC\ConcessionaireReports\ReportAccountPerClassification.rdlc" />
     <EmbeddedResource Include="RDLC\ConcessionaireReports\ReportAccountPerMeterSize.rdlc" />
     <EmbeddedResource Include="RDLC\ReportAccountsLargeConsumption.rdlc" />
-    <EmbeddedResource Include="RDLC\ReportAccountsMinimumConsumption.rdlc" />
-    <EmbeddedResource Include="RDLC\ReportAccountsSuddenIncDecConsumption.rdlc" />
+    <EmbeddedResource Include="RDLC\MeterReadingReports\ReportAccountsMinimumConsumption.rdlc" />
+    <EmbeddedResource Include="RDLC\MeterReadingReports\ReportAccountsSuddenIncDecConsumption.rdlc" />
     <EmbeddedResource Include="RDLC\ReportBillComputationRegister.rdlc" />
     <EmbeddedResource Include="RDLC\ReportBillingAdjustmentSummary.rdlc" />
     <EmbeddedResource Include="RDLC\ReportBillingSummaryBook.rdlc" />
@@ -182,10 +182,10 @@
     <EmbeddedResource Include="RDLC\ReportDailyBillingSummary.rdlc" />
     <EmbeddedResource Include="RDLC\ReportDailyCollectionReport.rdlc" />
     <EmbeddedResource Include="RDLC\ReportDailyCollectionReport2.rdlc" />
-    <EmbeddedResource Include="RDLC\ReportMeterReaderAccomplishment.rdlc" />
+    <EmbeddedResource Include="RDLC\MeterReadingReports\ReportMeterReaderAccomplishment.rdlc" />
     <EmbeddedResource Include="RDLC\ConcessionaireReports\ReportNewConnectionSummary.rdlc" />
     <EmbeddedResource Include="RDLC\ReportPenaltyBillingReport.rdlc" />
-    <EmbeddedResource Include="RDLC\ReportReadingSlip.rdlc" />
+    <EmbeddedResource Include="RDLC\MeterReadingReports\ReportReadingSlip.rdlc" />
     <EmbeddedResource Include="RDLC\ConcessionaireReports\ReportSeniorCitizenAccounts.rdlc" />
     <EmbeddedResource Include="RDLC\ConcessionaireReports\ReportSummaryAccountsPerClass.rdlc" />
     <EmbeddedResource Include="RDLC\MeterReports\ReportSummaryAlteration.rdlc" />
@@ -194,7 +194,7 @@
     <EmbeddedResource Include="RDLC\MeterReports\ReportSummaryPulledOutMeters.rdlc" />
     <EmbeddedResource Include="RDLC\MeterReports\ReportSummaryReceivedMeters.rdlc" />
     <EmbeddedResource Include="RDLC\MeterReports\ReportSummaryTestedMeters.rdlc" />
-    <EmbeddedResource Include="RDLC\ReportUnreadMeters.rdlc" />
+    <EmbeddedResource Include="RDLC\MeterReadingReports\ReportUnreadMeters.rdlc" />
     <None Include="DataSetBillingReports.xsc">
       <DependentUpon>DataSetBillingReports.xsd</DependentUpon>
     </None>
