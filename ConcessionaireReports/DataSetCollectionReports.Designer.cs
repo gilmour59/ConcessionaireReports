@@ -3063,6 +3063,42 @@ namespace ConcessionaireReports {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class CashierDailyCollectionReportDataTable : global::System.Data.TypedTableBase<CashierDailyCollectionReportRow> {
             
+            private global::System.Data.DataColumn columnheader_name;
+            
+            private global::System.Data.DataColumn columnheader_address;
+            
+            private global::System.Data.DataColumn columnprepared_by;
+            
+            private global::System.Data.DataColumn columncashier_trans_id;
+            
+            private global::System.Data.DataColumn columnteller;
+            
+            private global::System.Data.DataColumn columnteller_name;
+            
+            private global::System.Data.DataColumn columntrans_amt;
+            
+            private global::System.Data.DataColumn columncash_amt;
+            
+            private global::System.Data.DataColumn columncheck_amt;
+            
+            private global::System.Data.DataColumn columnuser_id;
+            
+            private global::System.Data.DataColumn columncashier_name;
+            
+            private global::System.Data.DataColumn columntrans_date;
+            
+            private global::System.Data.DataColumn columntrans_time;
+            
+            private global::System.Data.DataColumn columnamount;
+            
+            private global::System.Data.DataColumn columnDR_Acct;
+            
+            private global::System.Data.DataColumn columnCR_Acct;
+            
+            private global::System.Data.DataColumn columnacct_code;
+            
+            private global::System.Data.DataColumn columnacct_desc;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public CashierDailyCollectionReportDataTable() {
@@ -3094,6 +3130,150 @@ namespace ConcessionaireReports {
             protected CashierDailyCollectionReportDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn header_nameColumn {
+                get {
+                    return this.columnheader_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn header_addressColumn {
+                get {
+                    return this.columnheader_address;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn prepared_byColumn {
+                get {
+                    return this.columnprepared_by;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn cashier_trans_idColumn {
+                get {
+                    return this.columncashier_trans_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn tellerColumn {
+                get {
+                    return this.columnteller;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn teller_nameColumn {
+                get {
+                    return this.columnteller_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn trans_amtColumn {
+                get {
+                    return this.columntrans_amt;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn cash_amtColumn {
+                get {
+                    return this.columncash_amt;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn check_amtColumn {
+                get {
+                    return this.columncheck_amt;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn user_idColumn {
+                get {
+                    return this.columnuser_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn cashier_nameColumn {
+                get {
+                    return this.columncashier_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn trans_dateColumn {
+                get {
+                    return this.columntrans_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn trans_timeColumn {
+                get {
+                    return this.columntrans_time;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn amountColumn {
+                get {
+                    return this.columnamount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DR_AcctColumn {
+                get {
+                    return this.columnDR_Acct;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CR_AcctColumn {
+                get {
+                    return this.columnCR_Acct;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn acct_codeColumn {
+                get {
+                    return this.columnacct_code;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn acct_descColumn {
+                get {
+                    return this.columnacct_desc;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3133,9 +3313,45 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CashierDailyCollectionReportRow AddCashierDailyCollectionReportRow() {
+            public CashierDailyCollectionReportRow AddCashierDailyCollectionReportRow(
+                        string header_name, 
+                        string header_address, 
+                        string prepared_by, 
+                        int cashier_trans_id, 
+                        int teller, 
+                        string teller_name, 
+                        decimal trans_amt, 
+                        decimal cash_amt, 
+                        decimal check_amt, 
+                        int user_id, 
+                        string cashier_name, 
+                        System.DateTime trans_date, 
+                        System.TimeSpan trans_time, 
+                        decimal amount, 
+                        int DR_Acct, 
+                        int CR_Acct, 
+                        string acct_code, 
+                        string acct_desc) {
                 CashierDailyCollectionReportRow rowCashierDailyCollectionReportRow = ((CashierDailyCollectionReportRow)(this.NewRow()));
-                object[] columnValuesArray = new object[0];
+                object[] columnValuesArray = new object[] {
+                        header_name,
+                        header_address,
+                        prepared_by,
+                        cashier_trans_id,
+                        teller,
+                        teller_name,
+                        trans_amt,
+                        cash_amt,
+                        check_amt,
+                        user_id,
+                        cashier_name,
+                        trans_date,
+                        trans_time,
+                        amount,
+                        DR_Acct,
+                        CR_Acct,
+                        acct_code,
+                        acct_desc};
                 rowCashierDailyCollectionReportRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCashierDailyCollectionReportRow);
                 return rowCashierDailyCollectionReportRow;
@@ -3158,11 +3374,65 @@ namespace ConcessionaireReports {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
+                this.columnheader_name = base.Columns["header_name"];
+                this.columnheader_address = base.Columns["header_address"];
+                this.columnprepared_by = base.Columns["prepared_by"];
+                this.columncashier_trans_id = base.Columns["cashier_trans_id"];
+                this.columnteller = base.Columns["teller"];
+                this.columnteller_name = base.Columns["teller_name"];
+                this.columntrans_amt = base.Columns["trans_amt"];
+                this.columncash_amt = base.Columns["cash_amt"];
+                this.columncheck_amt = base.Columns["check_amt"];
+                this.columnuser_id = base.Columns["user_id"];
+                this.columncashier_name = base.Columns["cashier_name"];
+                this.columntrans_date = base.Columns["trans_date"];
+                this.columntrans_time = base.Columns["trans_time"];
+                this.columnamount = base.Columns["amount"];
+                this.columnDR_Acct = base.Columns["DR_Acct"];
+                this.columnCR_Acct = base.Columns["CR_Acct"];
+                this.columnacct_code = base.Columns["acct_code"];
+                this.columnacct_desc = base.Columns["acct_desc"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
+                this.columnheader_name = new global::System.Data.DataColumn("header_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnheader_name);
+                this.columnheader_address = new global::System.Data.DataColumn("header_address", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnheader_address);
+                this.columnprepared_by = new global::System.Data.DataColumn("prepared_by", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprepared_by);
+                this.columncashier_trans_id = new global::System.Data.DataColumn("cashier_trans_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncashier_trans_id);
+                this.columnteller = new global::System.Data.DataColumn("teller", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnteller);
+                this.columnteller_name = new global::System.Data.DataColumn("teller_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnteller_name);
+                this.columntrans_amt = new global::System.Data.DataColumn("trans_amt", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntrans_amt);
+                this.columncash_amt = new global::System.Data.DataColumn("cash_amt", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncash_amt);
+                this.columncheck_amt = new global::System.Data.DataColumn("check_amt", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncheck_amt);
+                this.columnuser_id = new global::System.Data.DataColumn("user_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnuser_id);
+                this.columncashier_name = new global::System.Data.DataColumn("cashier_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncashier_name);
+                this.columntrans_date = new global::System.Data.DataColumn("trans_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntrans_date);
+                this.columntrans_time = new global::System.Data.DataColumn("trans_time", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntrans_time);
+                this.columnamount = new global::System.Data.DataColumn("amount", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnamount);
+                this.columnDR_Acct = new global::System.Data.DataColumn("DR_Acct", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDR_Acct);
+                this.columnCR_Acct = new global::System.Data.DataColumn("CR_Acct", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCR_Acct);
+                this.columnacct_code = new global::System.Data.DataColumn("acct_code", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnacct_code);
+                this.columnacct_desc = new global::System.Data.DataColumn("acct_desc", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnacct_desc);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5642,6 +5912,526 @@ namespace ConcessionaireReports {
             internal CashierDailyCollectionReportRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tableCashierDailyCollectionReport = ((CashierDailyCollectionReportDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string header_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableCashierDailyCollectionReport.header_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'header_name\' in table \'CashierDailyCollectionReport\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashierDailyCollectionReport.header_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string header_address {
+                get {
+                    try {
+                        return ((string)(this[this.tableCashierDailyCollectionReport.header_addressColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'header_address\' in table \'CashierDailyCollectionReport\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashierDailyCollectionReport.header_addressColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string prepared_by {
+                get {
+                    try {
+                        return ((string)(this[this.tableCashierDailyCollectionReport.prepared_byColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'prepared_by\' in table \'CashierDailyCollectionReport\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashierDailyCollectionReport.prepared_byColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int cashier_trans_id {
+                get {
+                    try {
+                        return ((int)(this[this.tableCashierDailyCollectionReport.cashier_trans_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cashier_trans_id\' in table \'CashierDailyCollectionReport\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashierDailyCollectionReport.cashier_trans_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int teller {
+                get {
+                    try {
+                        return ((int)(this[this.tableCashierDailyCollectionReport.tellerColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'teller\' in table \'CashierDailyCollectionReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashierDailyCollectionReport.tellerColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string teller_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableCashierDailyCollectionReport.teller_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'teller_name\' in table \'CashierDailyCollectionReport\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashierDailyCollectionReport.teller_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal trans_amt {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashierDailyCollectionReport.trans_amtColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'trans_amt\' in table \'CashierDailyCollectionReport\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashierDailyCollectionReport.trans_amtColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal cash_amt {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashierDailyCollectionReport.cash_amtColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cash_amt\' in table \'CashierDailyCollectionReport\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableCashierDailyCollectionReport.cash_amtColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal check_amt {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashierDailyCollectionReport.check_amtColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'check_amt\' in table \'CashierDailyCollectionReport\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashierDailyCollectionReport.check_amtColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int user_id {
+                get {
+                    try {
+                        return ((int)(this[this.tableCashierDailyCollectionReport.user_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'user_id\' in table \'CashierDailyCollectionReport\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableCashierDailyCollectionReport.user_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string cashier_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableCashierDailyCollectionReport.cashier_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cashier_name\' in table \'CashierDailyCollectionReport\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashierDailyCollectionReport.cashier_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime trans_date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableCashierDailyCollectionReport.trans_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'trans_date\' in table \'CashierDailyCollectionReport\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashierDailyCollectionReport.trans_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.TimeSpan trans_time {
+                get {
+                    try {
+                        return ((global::System.TimeSpan)(this[this.tableCashierDailyCollectionReport.trans_timeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'trans_time\' in table \'CashierDailyCollectionReport\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashierDailyCollectionReport.trans_timeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal amount {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashierDailyCollectionReport.amountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'amount\' in table \'CashierDailyCollectionReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashierDailyCollectionReport.amountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int DR_Acct {
+                get {
+                    try {
+                        return ((int)(this[this.tableCashierDailyCollectionReport.DR_AcctColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DR_Acct\' in table \'CashierDailyCollectionReport\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableCashierDailyCollectionReport.DR_AcctColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int CR_Acct {
+                get {
+                    try {
+                        return ((int)(this[this.tableCashierDailyCollectionReport.CR_AcctColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CR_Acct\' in table \'CashierDailyCollectionReport\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableCashierDailyCollectionReport.CR_AcctColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string acct_code {
+                get {
+                    try {
+                        return ((string)(this[this.tableCashierDailyCollectionReport.acct_codeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'acct_code\' in table \'CashierDailyCollectionReport\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashierDailyCollectionReport.acct_codeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string acct_desc {
+                get {
+                    try {
+                        return ((string)(this[this.tableCashierDailyCollectionReport.acct_descColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'acct_desc\' in table \'CashierDailyCollectionReport\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashierDailyCollectionReport.acct_descColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isheader_nameNull() {
+                return this.IsNull(this.tableCashierDailyCollectionReport.header_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setheader_nameNull() {
+                this[this.tableCashierDailyCollectionReport.header_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isheader_addressNull() {
+                return this.IsNull(this.tableCashierDailyCollectionReport.header_addressColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setheader_addressNull() {
+                this[this.tableCashierDailyCollectionReport.header_addressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isprepared_byNull() {
+                return this.IsNull(this.tableCashierDailyCollectionReport.prepared_byColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setprepared_byNull() {
+                this[this.tableCashierDailyCollectionReport.prepared_byColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iscashier_trans_idNull() {
+                return this.IsNull(this.tableCashierDailyCollectionReport.cashier_trans_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setcashier_trans_idNull() {
+                this[this.tableCashierDailyCollectionReport.cashier_trans_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IstellerNull() {
+                return this.IsNull(this.tableCashierDailyCollectionReport.tellerColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SettellerNull() {
+                this[this.tableCashierDailyCollectionReport.tellerColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isteller_nameNull() {
+                return this.IsNull(this.tableCashierDailyCollectionReport.teller_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setteller_nameNull() {
+                this[this.tableCashierDailyCollectionReport.teller_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Istrans_amtNull() {
+                return this.IsNull(this.tableCashierDailyCollectionReport.trans_amtColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Settrans_amtNull() {
+                this[this.tableCashierDailyCollectionReport.trans_amtColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iscash_amtNull() {
+                return this.IsNull(this.tableCashierDailyCollectionReport.cash_amtColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setcash_amtNull() {
+                this[this.tableCashierDailyCollectionReport.cash_amtColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Ischeck_amtNull() {
+                return this.IsNull(this.tableCashierDailyCollectionReport.check_amtColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setcheck_amtNull() {
+                this[this.tableCashierDailyCollectionReport.check_amtColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isuser_idNull() {
+                return this.IsNull(this.tableCashierDailyCollectionReport.user_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setuser_idNull() {
+                this[this.tableCashierDailyCollectionReport.user_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iscashier_nameNull() {
+                return this.IsNull(this.tableCashierDailyCollectionReport.cashier_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setcashier_nameNull() {
+                this[this.tableCashierDailyCollectionReport.cashier_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Istrans_dateNull() {
+                return this.IsNull(this.tableCashierDailyCollectionReport.trans_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Settrans_dateNull() {
+                this[this.tableCashierDailyCollectionReport.trans_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Istrans_timeNull() {
+                return this.IsNull(this.tableCashierDailyCollectionReport.trans_timeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Settrans_timeNull() {
+                this[this.tableCashierDailyCollectionReport.trans_timeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsamountNull() {
+                return this.IsNull(this.tableCashierDailyCollectionReport.amountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetamountNull() {
+                this[this.tableCashierDailyCollectionReport.amountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsDR_AcctNull() {
+                return this.IsNull(this.tableCashierDailyCollectionReport.DR_AcctColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetDR_AcctNull() {
+                this[this.tableCashierDailyCollectionReport.DR_AcctColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCR_AcctNull() {
+                return this.IsNull(this.tableCashierDailyCollectionReport.CR_AcctColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCR_AcctNull() {
+                this[this.tableCashierDailyCollectionReport.CR_AcctColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isacct_codeNull() {
+                return this.IsNull(this.tableCashierDailyCollectionReport.acct_codeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setacct_codeNull() {
+                this[this.tableCashierDailyCollectionReport.acct_codeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isacct_descNull() {
+                return this.IsNull(this.tableCashierDailyCollectionReport.acct_descColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setacct_descNull() {
+                this[this.tableCashierDailyCollectionReport.acct_descColumn] = global::System.Convert.DBNull;
             }
         }
         
