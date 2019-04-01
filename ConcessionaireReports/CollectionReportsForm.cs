@@ -250,33 +250,39 @@ namespace ConcessionaireReports
 
         private void buttonCashReceiptRecordSearch_Click(object sender, EventArgs e)
         {
+            int id = (int) comboBoxCashReceiptRecordTeller.SelectedValue;
+            bindTellerDate(dateTimePickerCashReceiptRecordDate, id, reportViewerCashReceiptRecord, "sp_GilGetCashReceiptAndRemittanceRecord", "CashReceiptRemittanceRecord");
+        }
+
+        private void bindTellerDate(DateTimePicker dt, int user_id, ReportViewer rv, string sp, string dataTable)
+        {
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(this.connStr))
                 {
                     conn.Open();
 
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetCashReceiptAndRemittanceRecord", conn))
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(sp, conn))
                     {
                         DataSetCollectionReports ds = new DataSetCollectionReports();
 
                         adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@in_trans_date", dateTimePickerCashReceiptRecordDate.Value);
+                        adapter.SelectCommand.Parameters.AddWithValue("@in_trans_date", dt.Value);
                         adapter.SelectCommand.Parameters["@in_trans_date"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@in_user_id", comboBoxCashReceiptRecordTeller.SelectedValue.ToString());
+                        adapter.SelectCommand.Parameters.AddWithValue("@in_user_id", user_id);
                         adapter.SelectCommand.Parameters["@in_user_id"].Direction = ParameterDirection.Input;
 
-                        adapter.Fill(ds, "CashReceiptRemittanceRecord");
+                        adapter.Fill(ds, dataTable);
 
-                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["CashReceiptRemittanceRecord"]);
-                        reportViewerCashReceiptRecord.LocalReport.DataSources.Clear();
-                        reportViewerCashReceiptRecord.LocalReport.DataSources.Add(rds);
+                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables[dataTable]);
+                        rv.LocalReport.DataSources.Clear();
+                        rv.LocalReport.DataSources.Add(rds);
 
                         ReportParameter[] param = new ReportParameter[]
                         {
-                            new ReportParameter("ReportParameterDate", dateTimePickerCashReceiptRecordDate.Value.ToString())
+                            new ReportParameter("ReportParameterDate", dt.Value.ToString())
                         };
-                        reportViewerCashReceiptRecord.LocalReport.SetParameters(param);
+                        rv.LocalReport.SetParameters(param);
                         //reportViewerDailyCollectionReport.LocalReport.Refresh();
                     }
                     conn.Close();
@@ -286,7 +292,7 @@ namespace ConcessionaireReports
             {
                 MessageBox.Show("error: " + ex, "Error!");
             }
-            reportViewerCashReceiptRecord.RefreshReport();
+            rv.RefreshReport();
         }
 
         private void dateTimePickerCashReceiptRecordDate_ValueChanged(object sender, EventArgs e)
@@ -312,7 +318,7 @@ namespace ConcessionaireReports
 
         private void buttonCDCRSearch_Click(object sender, EventArgs e)
         {
-
+            bindTellerDate(dateTimePickerCDCRDate, 0, reportViewerCDCR, "sp_GetCDCR", "CashierDailyCollectionReport");
         }
     }
 }

@@ -163,6 +163,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RDLC\CollectionReports\ReportCashierDailyCollectionReport.rdlc" />
     <EmbeddedResource Include="RDLC\ConcessionaireReports\ReportAccountByStatus.rdlc" />
     <EmbeddedResource Include="RDLC\ConcessionaireReports\ReportAccountPerBarangay.rdlc" />
     <EmbeddedResource Include="RDLC\ConcessionaireReports\ReportAccountPerBook.rdlc" />

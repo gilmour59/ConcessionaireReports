@@ -141,6 +141,7 @@
             this.dateTimePickerCashCollectionReportDate = new System.Windows.Forms.DateTimePicker();
             this.label22 = new System.Windows.Forms.Label();
             this.reportViewerCashCollectionReport = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.CashierDailyCollectionReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReportBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetCollectionReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DCRRecapBindingSource)).BeginInit();
@@ -163,6 +164,7 @@
             this.tabPage12.SuspendLayout();
             this.tabPage13.SuspendLayout();
             this.tabPage14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CashierDailyCollectionReportBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // DailyCollectionReportBindingSource
@@ -444,7 +446,8 @@
             reportDataSource6.Name = "DataSetCollectionReports";
             reportDataSource6.Value = this.CollectionSummaryPerBookZoneBindingSource;
             this.reportViewerCollectionSummaryZoneBook.LocalReport.DataSources.Add(reportDataSource6);
-            this.reportViewerCollectionSummaryZoneBook.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.CollectionReports.ReportCollectionSummaryPerZoneBook.rdlc";
+            this.reportViewerCollectionSummaryZoneBook.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.CollectionReports.ReportCollectionSummaryPerZoneBook.r" +
+    "dlc";
             this.reportViewerCollectionSummaryZoneBook.Location = new System.Drawing.Point(26, 49);
             this.reportViewerCollectionSummaryZoneBook.Name = "reportViewerCollectionSummaryZoneBook";
             this.reportViewerCollectionSummaryZoneBook.ServerReport.BearerToken = null;
@@ -523,7 +526,8 @@
             reportDataSource7.Name = "DataSetCollectionReports";
             reportDataSource7.Value = this.CashReceiptRemittanceRecordBindingSource;
             this.reportViewerCashReceiptRecord.LocalReport.DataSources.Add(reportDataSource7);
-            this.reportViewerCashReceiptRecord.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.CollectionReports.ReportCashReceiptRemittanceRecord.rdlc";
+            this.reportViewerCashReceiptRecord.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.CollectionReports.ReportCashReceiptRemittanceRecord.rd" +
+    "lc";
             this.reportViewerCashReceiptRecord.Location = new System.Drawing.Point(26, 49);
             this.reportViewerCashReceiptRecord.Name = "reportViewerCashReceiptRecord";
             this.reportViewerCashReceiptRecord.ServerReport.BearerToken = null;
@@ -565,10 +569,11 @@
             // 
             // reportViewerCDCR
             // 
-            reportDataSource8.Name = "DataSetBillingReports";
-            reportDataSource8.Value = null;
+            reportDataSource8.Name = "DataSetCollectionReports";
+            reportDataSource8.Value = this.CashierDailyCollectionReportBindingSource;
             this.reportViewerCDCR.LocalReport.DataSources.Add(reportDataSource8);
-            this.reportViewerCDCR.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportPenaltyBillingReport.rdlc";
+            this.reportViewerCDCR.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.CollectionReports.ReportCashierDailyCollectionReport.r" +
+    "dlc";
             this.reportViewerCDCR.Location = new System.Drawing.Point(26, 49);
             this.reportViewerCDCR.Name = "reportViewerCDCR";
             this.reportViewerCDCR.ServerReport.BearerToken = null;
@@ -1194,6 +1199,11 @@
             this.reportViewerCashCollectionReport.Size = new System.Drawing.Size(944, 481);
             this.reportViewerCashCollectionReport.TabIndex = 75;
             // 
+            // CashierDailyCollectionReportBindingSource
+            // 
+            this.CashierDailyCollectionReportBindingSource.DataMember = "CashierDailyCollectionReport";
+            this.CashierDailyCollectionReportBindingSource.DataSource = this.DataSetCollectionReports;
+            // 
             // CollectionReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1242,6 +1252,7 @@
             this.tabPage13.PerformLayout();
             this.tabPage14.ResumeLayout(false);
             this.tabPage14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CashierDailyCollectionReportBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1342,5 +1353,6 @@
         private System.Windows.Forms.BindingSource DCRCheckPaymentsBindingSource;
         private System.Windows.Forms.BindingSource CollectionSummaryPerBookZoneBindingSource;
         private System.Windows.Forms.BindingSource CashReceiptRemittanceRecordBindingSource;
+        private System.Windows.Forms.BindingSource CashierDailyCollectionReportBindingSource;
     }
 }
