@@ -177,7 +177,7 @@
     <EmbeddedResource Include="RDLC\ReportBillingSummaryMaterialsOtherFees.rdlc" />
     <EmbeddedResource Include="RDLC\ReportBillingSummaryMonth.rdlc" />
     <EmbeddedResource Include="RDLC\ReportCashReceiptRemittanceRecord.rdlc" />
-    <EmbeddedResource Include="RDLC\ReportChangedMeterPreviousRead.rdlc" />
+    <EmbeddedResource Include="RDLC\MeterReports\ReportChangedMeterPreviousRead.rdlc" />
     <EmbeddedResource Include="RDLC\ReportCollectionSummaryPerZoneBook.rdlc" />
     <EmbeddedResource Include="RDLC\ReportDailyBillingSummary.rdlc" />
     <EmbeddedResource Include="RDLC\ReportDailyCollectionReport.rdlc" />
@@ -188,12 +188,12 @@
     <EmbeddedResource Include="RDLC\ReportReadingSlip.rdlc" />
     <EmbeddedResource Include="RDLC\ConcessionaireReports\ReportSeniorCitizenAccounts.rdlc" />
     <EmbeddedResource Include="RDLC\ConcessionaireReports\ReportSummaryAccountsPerClass.rdlc" />
-    <EmbeddedResource Include="RDLC\ReportSummaryAlteration.rdlc" />
-    <EmbeddedResource Include="RDLC\ReportSummaryChangedMeters.rdlc" />
-    <EmbeddedResource Include="RDLC\ReportSummaryDisposedMeters.rdlc" />
-    <EmbeddedResource Include="RDLC\ReportSummaryPulledOutMeters.rdlc" />
-    <EmbeddedResource Include="RDLC\ReportSummaryReceivedMeters.rdlc" />
-    <EmbeddedResource Include="RDLC\ReportSummaryTestedMeters.rdlc" />
+    <EmbeddedResource Include="RDLC\MeterReports\ReportSummaryAlteration.rdlc" />
+    <EmbeddedResource Include="RDLC\MeterReports\ReportSummaryChangedMeters.rdlc" />
+    <EmbeddedResource Include="RDLC\MeterReports\ReportSummaryDisposedMeters.rdlc" />
+    <EmbeddedResource Include="RDLC\MeterReports\ReportSummaryPulledOutMeters.rdlc" />
+    <EmbeddedResource Include="RDLC\MeterReports\ReportSummaryReceivedMeters.rdlc" />
+    <EmbeddedResource Include="RDLC\MeterReports\ReportSummaryTestedMeters.rdlc" />
     <EmbeddedResource Include="RDLC\ReportUnreadMeters.rdlc" />
     <None Include="DataSetBillingReports.xsc">
       <DependentUpon>DataSetBillingReports.xsd</DependentUpon>

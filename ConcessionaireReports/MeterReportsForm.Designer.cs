@@ -193,7 +193,7 @@
             reportDataSource16.Name = "DataSetMeterReports";
             reportDataSource16.Value = this.SummaryChangedMetersBindingSource;
             this.reportViewerSummaryChangedMeters.LocalReport.DataSources.Add(reportDataSource16);
-            this.reportViewerSummaryChangedMeters.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportSummaryChangedMeters.rdlc";
+            this.reportViewerSummaryChangedMeters.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReports.ReportSummaryChangedMeters.rdlc";
             this.reportViewerSummaryChangedMeters.Location = new System.Drawing.Point(26, 49);
             this.reportViewerSummaryChangedMeters.Name = "reportViewerSummaryChangedMeters";
             this.reportViewerSummaryChangedMeters.ServerReport.BearerToken = null;
@@ -273,7 +273,7 @@
             reportDataSource17.Name = "DataSetMeterReports";
             reportDataSource17.Value = this.ChangedMeterPreviousReadBindingSource;
             this.reportViewerChangedMeterPreviousRead.LocalReport.DataSources.Add(reportDataSource17);
-            this.reportViewerChangedMeterPreviousRead.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportChangedMeterPreviousRead.rdlc";
+            this.reportViewerChangedMeterPreviousRead.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReports.ReportChangedMeterPreviousRead.rdlc";
             this.reportViewerChangedMeterPreviousRead.Location = new System.Drawing.Point(26, 49);
             this.reportViewerChangedMeterPreviousRead.Name = "reportViewerChangedMeterPreviousRead";
             this.reportViewerChangedMeterPreviousRead.ServerReport.BearerToken = null;
@@ -353,7 +353,7 @@
             reportDataSource18.Name = "DataSetMeterReports";
             reportDataSource18.Value = this.SummaryPulledOutMetersBindingSource;
             this.reportViewerSummaryPulledOutMeters.LocalReport.DataSources.Add(reportDataSource18);
-            this.reportViewerSummaryPulledOutMeters.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportSummaryPulledOutMeters.rdlc";
+            this.reportViewerSummaryPulledOutMeters.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReports.ReportSummaryPulledOutMeters.rdlc";
             this.reportViewerSummaryPulledOutMeters.Location = new System.Drawing.Point(26, 49);
             this.reportViewerSummaryPulledOutMeters.Name = "reportViewerSummaryPulledOutMeters";
             this.reportViewerSummaryPulledOutMeters.ServerReport.BearerToken = null;
@@ -474,7 +474,7 @@
             reportDataSource19.Name = "DataSetMeterReports";
             reportDataSource19.Value = this.SummaryAlterationBindingSource;
             this.reportViewerSummaryAlteration.LocalReport.DataSources.Add(reportDataSource19);
-            this.reportViewerSummaryAlteration.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportSummaryAlteration.rdlc";
+            this.reportViewerSummaryAlteration.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReports.ReportSummaryAlteration.rdlc";
             this.reportViewerSummaryAlteration.Location = new System.Drawing.Point(26, 49);
             this.reportViewerSummaryAlteration.Name = "reportViewerSummaryAlteration";
             this.reportViewerSummaryAlteration.ServerReport.BearerToken = null;
@@ -512,7 +512,7 @@
             reportDataSource20.Name = "DataSetMeterReports";
             reportDataSource20.Value = this.SummaryReceivedMetersBindingSource;
             this.reportViewerSummaryReceivedMeters.LocalReport.DataSources.Add(reportDataSource20);
-            this.reportViewerSummaryReceivedMeters.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportSummaryReceivedMeters.rdlc";
+            this.reportViewerSummaryReceivedMeters.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReports.ReportSummaryReceivedMeters.rdlc";
             this.reportViewerSummaryReceivedMeters.Location = new System.Drawing.Point(26, 49);
             this.reportViewerSummaryReceivedMeters.Name = "reportViewerSummaryReceivedMeters";
             this.reportViewerSummaryReceivedMeters.ServerReport.BearerToken = null;
@@ -591,7 +591,7 @@
             reportDataSource21.Name = "DataSetMeterReports";
             reportDataSource21.Value = this.SummaryDisposedMetersBindingSource;
             this.reportViewerSummaryDisposedMeters.LocalReport.DataSources.Add(reportDataSource21);
-            this.reportViewerSummaryDisposedMeters.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportSummaryDisposedMeters.rdlc";
+            this.reportViewerSummaryDisposedMeters.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReports.ReportSummaryDisposedMeters.rdlc";
             this.reportViewerSummaryDisposedMeters.Location = new System.Drawing.Point(26, 49);
             this.reportViewerSummaryDisposedMeters.Name = "reportViewerSummaryDisposedMeters";
             this.reportViewerSummaryDisposedMeters.ServerReport.BearerToken = null;
@@ -670,7 +670,7 @@
             reportDataSource15.Name = "DataSetMeterReports";
             reportDataSource15.Value = this.SummaryTestedMetersBindingSource;
             this.reportViewerSummaryTestedMeters.LocalReport.DataSources.Add(reportDataSource15);
-            this.reportViewerSummaryTestedMeters.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportSummaryTestedMeters.rdlc";
+            this.reportViewerSummaryTestedMeters.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReports.ReportSummaryTestedMeters.rdlc";
             this.reportViewerSummaryTestedMeters.Location = new System.Drawing.Point(26, 49);
             this.reportViewerSummaryTestedMeters.Name = "reportViewerSummaryTestedMeters";
             this.reportViewerSummaryTestedMeters.ServerReport.BearerToken = null;
