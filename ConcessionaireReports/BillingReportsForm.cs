@@ -102,10 +102,6 @@ namespace ConcessionaireReports
             {
                 MessageBox.Show("error: " + ex, "Error!");
             }
-            this.reportViewerBillComputationReg.RefreshReport();
-            this.reportViewerBillSummaryBook.RefreshReport();
-            this.reportViewerBillSummaryMonth.RefreshReport();
-            this.reportViewerPenaltyBillingReport.RefreshReport();
         }
 
         private void bindBillingMonth(ComboBox cb, MySqlDataAdapter adap)

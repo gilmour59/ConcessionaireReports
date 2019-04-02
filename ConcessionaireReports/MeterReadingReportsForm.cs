@@ -75,11 +75,6 @@ namespace ConcessionaireReports
             {
                 MessageBox.Show("error: " + ex, "Error!");
             }
-            this.reportViewerReadingSlip.RefreshReport();
-            this.reportViewerMeterReaderAccomplishment.RefreshReport();
-            this.reportViewerAccountsSuddenIncDecConsumption.RefreshReport();
-            this.reportViewerAccountsMinimumConsumption.RefreshReport();
-            this.reportViewerUnreadMeters.RefreshReport();
         }
 
         private void bindBillingMonth(ComboBox cb, MySqlDataAdapter adap)

@@ -160,14 +160,6 @@ namespace ConcessionaireReports
             {
                 MessageBox.Show("error: " + ex, "Error!");
             }
-            this.reportViewerAccountPerBook.RefreshReport();
-            this.reportViewerAccountPerBarangay.RefreshReport();
-            this.reportViewerAccountPerClassification.RefreshReport();
-            this.reportViewerSummaryAccountsPerClass.RefreshReport();
-            this.reportViewerNewConnectionSummary.RefreshReport();
-            this.reportViewerAccountByStatus.RefreshReport();
-            this.reportViewerSeniorCitizenAccounts.RefreshReport();
-            this.reportViewerAccountPerMeterSize.RefreshReport();
         }
 
         private void buttonAccountPerBookSearch_Click(object sender, EventArgs e)

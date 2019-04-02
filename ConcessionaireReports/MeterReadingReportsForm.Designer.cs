@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource10 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.ReadingSlipBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetMeterReadingReports = new ConcessionaireReports.DataSetMeterReadingReports();
+            this.MeterReaderAccomplishmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AccountsSuddenIncDecConsumptionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AccountsMinimumConsumptionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.UnreadMetersBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -83,9 +84,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.reportViewerUnreadMeters = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.MeterReaderAccomplishmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ReadingSlipBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetMeterReadingReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MeterReaderAccomplishmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountsSuddenIncDecConsumptionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountsMinimumConsumptionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UnreadMetersBindingSource)).BeginInit();
@@ -96,7 +97,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAccountsSuddenIncDecConsumptionChange)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MeterReaderAccomplishmentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ReadingSlipBindingSource
@@ -108,6 +108,11 @@
             // 
             this.DataSetMeterReadingReports.DataSetName = "DataSetMeterReadingReports";
             this.DataSetMeterReadingReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // MeterReaderAccomplishmentBindingSource
+            // 
+            this.MeterReaderAccomplishmentBindingSource.DataMember = "MeterReaderAccomplishment";
+            this.MeterReaderAccomplishmentBindingSource.DataSource = this.DataSetMeterReadingReports;
             // 
             // AccountsSuddenIncDecConsumptionBindingSource
             // 
@@ -193,9 +198,9 @@
             // 
             // reportViewerReadingSlip
             // 
-            reportDataSource1.Name = "DataSetMeterReadingReports";
-            reportDataSource1.Value = this.ReadingSlipBindingSource;
-            this.reportViewerReadingSlip.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource6.Name = "DataSetMeterReadingReports";
+            reportDataSource6.Value = this.ReadingSlipBindingSource;
+            this.reportViewerReadingSlip.LocalReport.DataSources.Add(reportDataSource6);
             this.reportViewerReadingSlip.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReadingReports.ReportReadingSlip.rdlc";
             this.reportViewerReadingSlip.Location = new System.Drawing.Point(26, 49);
             this.reportViewerReadingSlip.Name = "reportViewerReadingSlip";
@@ -290,10 +295,11 @@
             // 
             // reportViewerMeterReaderAccomplishment
             // 
-            reportDataSource2.Name = "DataSetMeterReadingReports";
-            reportDataSource2.Value = this.MeterReaderAccomplishmentBindingSource;
-            this.reportViewerMeterReaderAccomplishment.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewerMeterReaderAccomplishment.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReadingReports.ReportMeterReaderAccomplishment.rdlc";
+            reportDataSource7.Name = "DataSetMeterReadingReports";
+            reportDataSource7.Value = this.MeterReaderAccomplishmentBindingSource;
+            this.reportViewerMeterReaderAccomplishment.LocalReport.DataSources.Add(reportDataSource7);
+            this.reportViewerMeterReaderAccomplishment.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReadingReports.ReportMeterReaderAccomplishment.rd" +
+    "lc";
             this.reportViewerMeterReaderAccomplishment.Location = new System.Drawing.Point(26, 49);
             this.reportViewerMeterReaderAccomplishment.Name = "reportViewerMeterReaderAccomplishment";
             this.reportViewerMeterReaderAccomplishment.ServerReport.BearerToken = null;
@@ -399,10 +405,11 @@
             // 
             // reportViewerAccountsSuddenIncDecConsumption
             // 
-            reportDataSource3.Name = "DataSetMeterReadingReports";
-            reportDataSource3.Value = this.AccountsSuddenIncDecConsumptionBindingSource;
-            this.reportViewerAccountsSuddenIncDecConsumption.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewerAccountsSuddenIncDecConsumption.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReadingReports.ReportAccountsSuddenIncDecConsumption.rdlc";
+            reportDataSource8.Name = "DataSetMeterReadingReports";
+            reportDataSource8.Value = this.AccountsSuddenIncDecConsumptionBindingSource;
+            this.reportViewerAccountsSuddenIncDecConsumption.LocalReport.DataSources.Add(reportDataSource8);
+            this.reportViewerAccountsSuddenIncDecConsumption.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReadingReports.ReportAccountsSuddenIncDecConsumpt" +
+    "ion.rdlc";
             this.reportViewerAccountsSuddenIncDecConsumption.Location = new System.Drawing.Point(26, 49);
             this.reportViewerAccountsSuddenIncDecConsumption.Name = "reportViewerAccountsSuddenIncDecConsumption";
             this.reportViewerAccountsSuddenIncDecConsumption.ServerReport.BearerToken = null;
@@ -449,10 +456,11 @@
             // 
             // reportViewerAccountsMinimumConsumption
             // 
-            reportDataSource4.Name = "DataSetMeterReadingReports";
-            reportDataSource4.Value = this.AccountsMinimumConsumptionBindingSource;
-            this.reportViewerAccountsMinimumConsumption.LocalReport.DataSources.Add(reportDataSource4);
-            this.reportViewerAccountsMinimumConsumption.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReadingReports.ReportAccountsMinimumConsumption.rdlc";
+            reportDataSource9.Name = "DataSetMeterReadingReports";
+            reportDataSource9.Value = this.AccountsMinimumConsumptionBindingSource;
+            this.reportViewerAccountsMinimumConsumption.LocalReport.DataSources.Add(reportDataSource9);
+            this.reportViewerAccountsMinimumConsumption.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReadingReports.ReportAccountsMinimumConsumption.r" +
+    "dlc";
             this.reportViewerAccountsMinimumConsumption.Location = new System.Drawing.Point(26, 49);
             this.reportViewerAccountsMinimumConsumption.Name = "reportViewerAccountsMinimumConsumption";
             this.reportViewerAccountsMinimumConsumption.ServerReport.BearerToken = null;
@@ -612,20 +620,15 @@
             // 
             // reportViewerUnreadMeters
             // 
-            reportDataSource5.Name = "DataSetMeterReadingReports";
-            reportDataSource5.Value = this.UnreadMetersBindingSource;
-            this.reportViewerUnreadMeters.LocalReport.DataSources.Add(reportDataSource5);
+            reportDataSource10.Name = "DataSetMeterReadingReports";
+            reportDataSource10.Value = this.UnreadMetersBindingSource;
+            this.reportViewerUnreadMeters.LocalReport.DataSources.Add(reportDataSource10);
             this.reportViewerUnreadMeters.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReadingReports.ReportUnreadMeters.rdlc";
             this.reportViewerUnreadMeters.Location = new System.Drawing.Point(26, 49);
             this.reportViewerUnreadMeters.Name = "reportViewerUnreadMeters";
             this.reportViewerUnreadMeters.ServerReport.BearerToken = null;
             this.reportViewerUnreadMeters.Size = new System.Drawing.Size(944, 481);
             this.reportViewerUnreadMeters.TabIndex = 35;
-            // 
-            // MeterReaderAccomplishmentBindingSource
-            // 
-            this.MeterReaderAccomplishmentBindingSource.DataMember = "MeterReaderAccomplishment";
-            this.MeterReaderAccomplishmentBindingSource.DataSource = this.DataSetMeterReadingReports;
             // 
             // MeterReadingReportsForm
             // 
@@ -641,6 +644,7 @@
             this.Load += new System.EventHandler(this.MeterReadingReportsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ReadingSlipBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetMeterReadingReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MeterReaderAccomplishmentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountsSuddenIncDecConsumptionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountsMinimumConsumptionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UnreadMetersBindingSource)).EndInit();
@@ -656,7 +660,6 @@
             this.tabPage5.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MeterReaderAccomplishmentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

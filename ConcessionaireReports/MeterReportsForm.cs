@@ -69,14 +69,6 @@ namespace ConcessionaireReports
             tabControlMeterReports.DrawMode = TabDrawMode.OwnerDrawFixed;
 
             connStr = "server=localhost;user=root;database=mrwdbcsys;port=3306;password=";
-
-            this.reportViewerSummaryChangedMeters.RefreshReport();
-            this.reportViewerChangedMeterPreviousRead.RefreshReport();
-            this.reportViewerSummaryPulledOutMeters.RefreshReport();
-            this.reportViewerSummaryAlteration.RefreshReport();
-            this.reportViewerSummaryReceivedMeters.RefreshReport();
-            this.reportViewerSummaryDisposedMeters.RefreshReport();
-            this.reportViewerSummaryTestedMeters.RefreshReport();
         }
 
         private void buttonSummaryChangedMetersSearch_Click(object sender, EventArgs e)
