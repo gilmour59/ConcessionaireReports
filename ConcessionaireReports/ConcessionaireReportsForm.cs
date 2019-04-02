@@ -55,6 +55,20 @@ namespace ConcessionaireReports
             g.DrawString(_tabPage.Text, _tabFont, _textBrush, _tabBounds, new StringFormat(_stringFlags));
         }
 
+        private void bindZone(ComboBox cb, MySqlConnection con)
+        {
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetZones", con))
+            {
+                DataSet dsZones = new DataSet();
+                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                adapter.Fill(dsZones);
+
+                cb.ValueMember = "zone_code";
+                cb.DisplayMember = "zone_code";
+                cb.DataSource = dsZones.Tables[0];
+            }
+        }
+
         private void ConcessionaireReportsForm_Load(object sender, EventArgs e)
         {
             dateTimePickerNewConnectionFrom.MaxDate = dateTimePickerNewConnectionTo.Value.Date;
@@ -69,32 +83,10 @@ namespace ConcessionaireReports
                 {
                     conn.Open();
 
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetZones", conn))
-                    {
-                        DataSet dsZones = new DataSet();
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.Fill(dsZones);
-
-                        //Account Per Book Zone
-                        comboBoxAccountPerBookZone.ValueMember = "zone_code";
-                        comboBoxAccountPerBookZone.DisplayMember = "zone_code";
-                        comboBoxAccountPerBookZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox
-
-                        //Account Per Classification Accounts Zone
-                        comboBoxAccountPerClassificationZone.ValueMember = "zone_code";
-                        comboBoxAccountPerClassificationZone.DisplayMember = "zone_code";
-                        comboBoxAccountPerClassificationZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox
-
-                        //Account by Status Zone
-                        comboBoxAccountByStatusZone.ValueMember = "zone_code";
-                        comboBoxAccountByStatusZone.DisplayMember = "zone_code";
-                        comboBoxAccountByStatusZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox
-
-                        //Account Per Meter Size Zone
-                        comboBoxAccountPerMeterSizeZone.ValueMember = "zone_code";
-                        comboBoxAccountPerMeterSizeZone.DisplayMember = "zone_code";
-                        comboBoxAccountPerMeterSizeZone.DataSource = dsZones.Tables[0]; //this triggers the SelectedIndex property of a combobox
-                    }
+                    bindZone(comboBoxAccountPerBookZone, conn);
+                    bindZone(comboBoxAccountPerClassificationZone, conn);
+                    bindZone(comboBoxAccountByStatusZone, conn);
+                    bindZone(comboBoxAccountPerMeterSizeZone, conn);
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetMeterSize", conn))
                     {
