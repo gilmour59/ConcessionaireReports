@@ -325,6 +325,19 @@ namespace ConcessionaireReports
 
                     bindTellerDate(dateTimePickerCDCRDate, 0, reportViewerCDCR, "sp_GetCDCR", "CashierDailyCollectionReport", conn);
 
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetCDCRRecap", conn))
+                    {
+                        DataSetCollectionReports ds = new DataSetCollectionReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@in_trans_date", dateTimePickerCDCRDate.Value);
+                        adapter.SelectCommand.Parameters["@in_trans_date"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "CDCRRecap");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports2", ds.Tables["CDCRRecap"]);
+                        reportViewerCDCR.LocalReport.DataSources.Add(rds);
+                    }
                     conn.Close();
                 }
             }
