@@ -55,17 +55,20 @@ namespace ConcessionaireReports
             g.DrawString(_tabPage.Text, _tabFont, _textBrush, _tabBounds, new StringFormat(_stringFlags));
         }
 
-        private void bindTeller(ComboBox cb, DateTimePicker dt, MySqlDataAdapter adap)
+        private void bindTeller(ComboBox cb, DateTimePicker dt, MySqlConnection con)
         {
-            DataSet dsTeller = new DataSet();
-            adap.SelectCommand.CommandType = CommandType.StoredProcedure;
-            adap.SelectCommand.Parameters.AddWithValue("@transDate", dt.Value.Date);
-            adap.SelectCommand.Parameters["@transDate"].Direction = ParameterDirection.Input;
-            adap.Fill(dsTeller);
+            using (MySqlDataAdapter adap = new MySqlDataAdapter("sp_GilgetTellersByTransDate", con))
+            {
+                DataSet dsTeller = new DataSet();
+                adap.SelectCommand.CommandType = CommandType.StoredProcedure;
+                adap.SelectCommand.Parameters.AddWithValue("@transDate", dt.Value.Date);
+                adap.SelectCommand.Parameters["@transDate"].Direction = ParameterDirection.Input;
+                adap.Fill(dsTeller);
 
-            cb.ValueMember = "user_id";
-            cb.DisplayMember = "full_name";
-            cb.DataSource = dsTeller.Tables[0];
+                cb.ValueMember = "user_id";
+                cb.DisplayMember = "full_name";
+                cb.DataSource = dsTeller.Tables[0];
+            }
         }
 
         private void CollectionReportsForm_Load(object sender, EventArgs e)
@@ -79,6 +82,7 @@ namespace ConcessionaireReports
             dateTimePickerDCR2Date.MaxDate = DateTime.Today;
             dateTimePickerCollectionSummaryZoneBookDate.MaxDate = DateTime.Today;
             dateTimePickerCDCRDate.MaxDate = DateTime.Today;
+            dateTimePickerMonthlyCollectionReportTo.MaxDate = DateTime.Today;
         }
 
         private void dateTimePickerDailyCollectionReportDate_ValueChanged(object sender, EventArgs e)
@@ -88,11 +92,9 @@ namespace ConcessionaireReports
                 using (MySqlConnection conn = new MySqlConnection(connStr))
                 {
                     conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilgetTellersByTransDate", conn))
-                    {
-                        bindTeller(comboBoxDailyCollectionReportTeller, dateTimePickerDailyCollectionReportDate, adapter);
-                    }
+                  
+                    bindTeller(comboBoxDailyCollectionReportTeller, dateTimePickerDailyCollectionReportDate, conn);
+                    
                     conn.Close();
                 }
             }
@@ -110,10 +112,8 @@ namespace ConcessionaireReports
                 {
                     conn.Open();
 
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilgetTellersByTransDate", conn))
-                    {
-                        bindTeller(comboBoxDCR2Teller, dateTimePickerDCR2Date, adapter);
-                    }
+                    bindTeller(comboBoxDCR2Teller, dateTimePickerDCR2Date, conn);
+                    
                     conn.Close();
                 }
             }
@@ -249,42 +249,16 @@ namespace ConcessionaireReports
         }
 
         private void buttonCashReceiptRecordSearch_Click(object sender, EventArgs e)
-        {
-            int id = (int) comboBoxCashReceiptRecordTeller.SelectedValue;
-            bindTellerDate(dateTimePickerCashReceiptRecordDate, id, reportViewerCashReceiptRecord, "sp_GilGetCashReceiptAndRemittanceRecord", "CashReceiptRemittanceRecord");
-        }
-
-        private void bindTellerDate(DateTimePicker dt, int user_id, ReportViewer rv, string sp, string dataTable)
-        {
+        {            
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(this.connStr))
                 {
                     conn.Open();
 
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(sp, conn))
-                    {
-                        DataSetCollectionReports ds = new DataSetCollectionReports();
+                    int id = (int)comboBoxCashReceiptRecordTeller.SelectedValue;
+                    bindTellerDate(dateTimePickerCashReceiptRecordDate, id, reportViewerCashReceiptRecord, "sp_GilGetCashReceiptAndRemittanceRecord", "CashReceiptRemittanceRecord", conn);
 
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@in_trans_date", dt.Value);
-                        adapter.SelectCommand.Parameters["@in_trans_date"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@in_user_id", user_id);
-                        adapter.SelectCommand.Parameters["@in_user_id"].Direction = ParameterDirection.Input;
-
-                        adapter.Fill(ds, dataTable);
-
-                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables[dataTable]);
-                        rv.LocalReport.DataSources.Clear();
-                        rv.LocalReport.DataSources.Add(rds);
-
-                        ReportParameter[] param = new ReportParameter[]
-                        {
-                            new ReportParameter("ReportParameterDate", dt.Value.ToString())
-                        };
-                        rv.LocalReport.SetParameters(param);
-                        //reportViewerDailyCollectionReport.LocalReport.Refresh();
-                    }
                     conn.Close();
                 }
             }
@@ -292,7 +266,34 @@ namespace ConcessionaireReports
             {
                 MessageBox.Show("error: " + ex, "Error!");
             }
-            rv.RefreshReport();
+            reportViewerCashReceiptRecord.RefreshReport();
+        }
+
+        private void bindTellerDate(DateTimePicker dt, int user_id, ReportViewer rv, string sp, string dataTable, MySqlConnection con)
+        {
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter(sp, con))
+            {
+                DataSetCollectionReports ds = new DataSetCollectionReports();
+
+                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                adapter.SelectCommand.Parameters.AddWithValue("@in_trans_date", dt.Value);
+                adapter.SelectCommand.Parameters["@in_trans_date"].Direction = ParameterDirection.Input;
+                adapter.SelectCommand.Parameters.AddWithValue("@in_user_id", user_id);
+                adapter.SelectCommand.Parameters["@in_user_id"].Direction = ParameterDirection.Input;
+
+                adapter.Fill(ds, dataTable);
+
+                ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables[dataTable]);
+                rv.LocalReport.DataSources.Clear();
+                rv.LocalReport.DataSources.Add(rds);
+
+                ReportParameter[] param = new ReportParameter[]
+                {
+                    new ReportParameter("ReportParameterDate", dt.Value.ToString())
+                };
+                rv.LocalReport.SetParameters(param);
+                //reportViewerDailyCollectionReport.LocalReport.Refresh();
+            }   
         }
 
         private void dateTimePickerCashReceiptRecordDate_ValueChanged(object sender, EventArgs e)
@@ -303,10 +304,8 @@ namespace ConcessionaireReports
                 {
                     conn.Open();
 
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilgetTellersByTransDate", conn))
-                    {
-                        bindTeller(comboBoxCashReceiptRecordTeller, dateTimePickerCashReceiptRecordDate, adapter);
-                    }
+                    bindTeller(comboBoxCashReceiptRecordTeller, dateTimePickerCashReceiptRecordDate, conn);
+
                     conn.Close();
                 }
             }
@@ -318,7 +317,71 @@ namespace ConcessionaireReports
 
         private void buttonCDCRSearch_Click(object sender, EventArgs e)
         {
-            bindTellerDate(dateTimePickerCDCRDate, 0, reportViewerCDCR, "sp_GetCDCR", "CashierDailyCollectionReport");
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                {
+                    conn.Open();
+
+                    bindTellerDate(dateTimePickerCDCRDate, 0, reportViewerCDCR, "sp_GetCDCR", "CashierDailyCollectionReport", conn);
+
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            reportViewerCDCR.RefreshReport();           
+        }
+
+        private void buttonMonthlyCollectionReportSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetMonthlyCollectionReport", conn))
+                    {
+                        DataSetCollectionReports ds = new DataSetCollectionReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@in_start_date", dateTimePickerMonthlyCollectionReportFrom.Value);
+                        adapter.SelectCommand.Parameters["@in_start_date"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@in_end_date", dateTimePickerMonthlyCollectionReportTo.Value);
+                        adapter.SelectCommand.Parameters["@in_end_date"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@in_user_id", 0);
+                        adapter.SelectCommand.Parameters["@in_user_id"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "MonthlyCollectionReport");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["MonthlyCollectionReport"]);
+                        reportViewerMonthlyCollectionReport.LocalReport.DataSources.Clear();
+                        reportViewerMonthlyCollectionReport.LocalReport.DataSources.Add(rds);
+
+                        ReportParameter[] param = new ReportParameter[]
+                        {
+                            new ReportParameter("ReportParameterFrom", dateTimePickerMonthlyCollectionReportFrom.Value.ToString()),
+                            new ReportParameter("ReportParameterTo", dateTimePickerMonthlyCollectionReportTo.Value.ToString())
+                        };
+                        reportViewerMonthlyCollectionReport.LocalReport.SetParameters(param);
+                        //reportViewerDailyCollectionReport.LocalReport.Refresh();
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            reportViewerMonthlyCollectionReport.RefreshReport();
+        }
+
+        private void dateTimePickerMonthlyCollectionReportTo_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerMonthlyCollectionReportFrom.MaxDate = dateTimePickerMonthlyCollectionReportTo.Value;
         }
     }
 }
