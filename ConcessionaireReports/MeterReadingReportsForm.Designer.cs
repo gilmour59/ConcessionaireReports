@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource10 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.ReadingSlipBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -198,9 +198,9 @@
             // 
             // reportViewerReadingSlip
             // 
-            reportDataSource6.Name = "DataSetMeterReadingReports";
-            reportDataSource6.Value = this.ReadingSlipBindingSource;
-            this.reportViewerReadingSlip.LocalReport.DataSources.Add(reportDataSource6);
+            reportDataSource7.Name = "DataSetMeterReadingReports";
+            reportDataSource7.Value = this.ReadingSlipBindingSource;
+            this.reportViewerReadingSlip.LocalReport.DataSources.Add(reportDataSource7);
             this.reportViewerReadingSlip.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReadingReports.ReportReadingSlip.rdlc";
             this.reportViewerReadingSlip.Location = new System.Drawing.Point(26, 49);
             this.reportViewerReadingSlip.Name = "reportViewerReadingSlip";
@@ -295,9 +295,9 @@
             // 
             // reportViewerMeterReaderAccomplishment
             // 
-            reportDataSource7.Name = "DataSetMeterReadingReports";
-            reportDataSource7.Value = this.MeterReaderAccomplishmentBindingSource;
-            this.reportViewerMeterReaderAccomplishment.LocalReport.DataSources.Add(reportDataSource7);
+            reportDataSource8.Name = "DataSetMeterReadingReports";
+            reportDataSource8.Value = this.MeterReaderAccomplishmentBindingSource;
+            this.reportViewerMeterReaderAccomplishment.LocalReport.DataSources.Add(reportDataSource8);
             this.reportViewerMeterReaderAccomplishment.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReadingReports.ReportMeterReaderAccomplishment.rd" +
     "lc";
             this.reportViewerMeterReaderAccomplishment.Location = new System.Drawing.Point(26, 49);
@@ -328,6 +328,11 @@
             // numericUpDownAccountsSuddenIncDecConsumptionChange
             // 
             this.numericUpDownAccountsSuddenIncDecConsumptionChange.Location = new System.Drawing.Point(730, 16);
+            this.numericUpDownAccountsSuddenIncDecConsumptionChange.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
             this.numericUpDownAccountsSuddenIncDecConsumptionChange.Name = "numericUpDownAccountsSuddenIncDecConsumptionChange";
             this.numericUpDownAccountsSuddenIncDecConsumptionChange.Size = new System.Drawing.Size(54, 20);
             this.numericUpDownAccountsSuddenIncDecConsumptionChange.TabIndex = 44;
@@ -405,9 +410,9 @@
             // 
             // reportViewerAccountsSuddenIncDecConsumption
             // 
-            reportDataSource8.Name = "DataSetMeterReadingReports";
-            reportDataSource8.Value = this.AccountsSuddenIncDecConsumptionBindingSource;
-            this.reportViewerAccountsSuddenIncDecConsumption.LocalReport.DataSources.Add(reportDataSource8);
+            reportDataSource6.Name = "DataSetMeterReadingReports";
+            reportDataSource6.Value = this.AccountsSuddenIncDecConsumptionBindingSource;
+            this.reportViewerAccountsSuddenIncDecConsumption.LocalReport.DataSources.Add(reportDataSource6);
             this.reportViewerAccountsSuddenIncDecConsumption.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReadingReports.ReportAccountsSuddenIncDecConsumpt" +
     "ion.rdlc";
             this.reportViewerAccountsSuddenIncDecConsumption.Location = new System.Drawing.Point(26, 49);
