@@ -71,6 +71,28 @@ namespace ConcessionaireReports
             connStr = "server=localhost;user=root;database=mrwdbcsys;port=3306;password=";
         }
 
+        private void bindDate(MySqlConnection con, string sp, string paramFrom, string paramTo, DateTimePicker dtFrom, DateTimePicker dtTo, string dataTable, ReportViewer rv)
+        {
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter(sp, con))
+            {
+                adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+
+                DataSetMeterReports ds = new DataSetMeterReports();
+
+                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                adapter.SelectCommand.Parameters.AddWithValue(paramFrom, dtFrom.Value.Date);
+                adapter.SelectCommand.Parameters[paramFrom].Direction = ParameterDirection.Input;
+                adapter.SelectCommand.Parameters.AddWithValue(paramTo, dtTo.Value.Date);
+                adapter.SelectCommand.Parameters[paramTo].Direction = ParameterDirection.Input;
+
+                adapter.Fill(ds, dataTable);
+
+                ReportDataSource rds = new ReportDataSource("DataSetMeterReports", ds.Tables[dataTable]);
+                rv.LocalReport.DataSources.Clear();
+                rv.LocalReport.DataSources.Add(rds);
+            }
+        }
+
         private void buttonSummaryChangedMetersSearch_Click(object sender, EventArgs e)
         {
             try
@@ -79,24 +101,8 @@ namespace ConcessionaireReports
                 {
                     conn.Open();
 
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetChangedMeterSummary_", conn))
-                    {
-                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+                    bindDate(conn, "sp_GilGetChangedMeterSummary_", "@asOfFrom", "@asOfTo", dateTimePickerSummaryChangedMetersFrom, dateTimePickerSummaryChangedMetersTo, "SummaryChangedMeters", reportViewerSummaryChangedMeters);
 
-                        DataSetMeterReports ds = new DataSetMeterReports();
-
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@asOfFrom", dateTimePickerSummaryChangedMetersFrom.Value.Date);
-                        adapter.SelectCommand.Parameters["@asOfFrom"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@asOfTo", dateTimePickerSummaryChangedMetersTo.Value.Date);
-                        adapter.SelectCommand.Parameters["@asOfTo"].Direction = ParameterDirection.Input;
-
-                        adapter.Fill(ds, "SummaryChangedMeters");
-
-                        ReportDataSource rds = new ReportDataSource("DataSetMeterReports", ds.Tables["SummaryChangedMeters"]);
-                        reportViewerSummaryChangedMeters.LocalReport.DataSources.Clear();
-                        reportViewerSummaryChangedMeters.LocalReport.DataSources.Add(rds);
-                    }
                     conn.Close();
                 }
             }
@@ -135,25 +141,8 @@ namespace ConcessionaireReports
                 {
                     conn.Open();
 
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_getTestedMetersSummary_", conn))
-                    {
-                        //label5.Text = dateTimePickerChangedMeterPreviousReadMonth.Value.ToString("MM") + dateTimePickerChangedMeterPreviousReadYear.Value.ToString("yyyy");
-                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
-
-                        DataSetMeterReports ds = new DataSetMeterReports();
-
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@fromDate", dateTimePickerSummaryTestedMetersFrom.Value.Date);
-                        adapter.SelectCommand.Parameters["@fromDate"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@toDate", dateTimePickerSummaryTestedMetersTo.Value.Date);
-                        adapter.SelectCommand.Parameters["@toDate"].Direction = ParameterDirection.Input;
-
-                        adapter.Fill(ds, "SummaryTestedMeters");
-
-                        ReportDataSource rds = new ReportDataSource("DataSetMeterReports", ds.Tables["SummaryTestedMeters"]);
-                        reportViewerSummaryTestedMeters.LocalReport.DataSources.Clear();
-                        reportViewerSummaryTestedMeters.LocalReport.DataSources.Add(rds);
-                    }
+                    bindDate(conn, "sp_getTestedMetersSummary_", "@fromDate", "@toDate", dateTimePickerSummaryTestedMetersFrom, dateTimePickerSummaryTestedMetersTo, "SummaryTestedMeters", reportViewerSummaryTestedMeters);
+                  
                     conn.Close();
                 }
             }
@@ -247,33 +236,16 @@ namespace ConcessionaireReports
                 {
                     conn.Open();
 
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetAlterationByDate", conn))
+                    bindDate(conn, "sp_GilGetAlterationByDate", "@asOfFrom", "@asOfTo", dateTimePickerSummaryAlterationFrom, dateTimePickerSummaryAlterationTo, "SummaryAlteration", reportViewerSummaryAlteration);
+
+                    ReportParameter[] param = new ReportParameter[]
                     {
-                        //label5.Text = dateTimePickerChangedMeterPreviousReadMonth.Value.ToString("MM") + dateTimePickerChangedMeterPreviousReadYear.Value.ToString("yyyy");
-                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
-
-                        DataSetMeterReports ds = new DataSetMeterReports();
-
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@asOfFrom", dateTimePickerSummaryAlterationFrom.Value.Date);
-                        adapter.SelectCommand.Parameters["@asOfFrom"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@asOfTo", dateTimePickerSummaryAlterationTo.Value.Date);
-                        adapter.SelectCommand.Parameters["@asOfTo"].Direction = ParameterDirection.Input;
-
-                        adapter.Fill(ds, "SummaryAlteration");
-
-                        ReportDataSource rds = new ReportDataSource("DataSetMeterReports", ds.Tables["SummaryAlteration"]);
-                        reportViewerSummaryAlteration.LocalReport.DataSources.Clear();
-                        reportViewerSummaryAlteration.LocalReport.DataSources.Add(rds);
-
-                        ReportParameter[] param = new ReportParameter[]
-                        {
-                            new ReportParameter("ReportParameterFrom", dateTimePickerSummaryAlterationFrom.Value.Date.ToString("MMMM dd, yyyy")),
-                            new ReportParameter("ReportParameterTo", dateTimePickerSummaryAlterationTo.Value.Date.ToString("MMMM dd, yyyy"))
-                        };
-                        reportViewerSummaryAlteration.LocalReport.SetParameters(param);
-                        reportViewerSummaryAlteration.LocalReport.Refresh();
-                    }
+                        new ReportParameter("ReportParameterFrom", dateTimePickerSummaryAlterationFrom.Value.Date.ToString("MMMM dd, yyyy")),
+                        new ReportParameter("ReportParameterTo", dateTimePickerSummaryAlterationTo.Value.Date.ToString("MMMM dd, yyyy"))
+                    };
+                    reportViewerSummaryAlteration.LocalReport.SetParameters(param);
+                    reportViewerSummaryAlteration.LocalReport.Refresh();
+                    
                     conn.Close();
                 }
             }
@@ -292,25 +264,8 @@ namespace ConcessionaireReports
                 {
                     conn.Open();
 
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_getReceivedMetersSummary_", conn))
-                    {
-                        //label5.Text = dateTimePickerChangedMeterPreviousReadMonth.Value.ToString("MM") + dateTimePickerChangedMeterPreviousReadYear.Value.ToString("yyyy");
-                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
-
-                        DataSetMeterReports ds = new DataSetMeterReports();
-
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@fromDate", dateTimePickerSummaryReceivedMetersFrom.Value.Date);
-                        adapter.SelectCommand.Parameters["@fromDate"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@toDate", dateTimePickerSummaryReceivedMetersTo.Value.Date);
-                        adapter.SelectCommand.Parameters["@toDate"].Direction = ParameterDirection.Input;
-
-                        adapter.Fill(ds, "SummaryReceivedMeters");
-
-                        ReportDataSource rds = new ReportDataSource("DataSetMeterReports", ds.Tables["SummaryReceivedMeters"]);
-                        reportViewerSummaryReceivedMeters.LocalReport.DataSources.Clear();
-                        reportViewerSummaryReceivedMeters.LocalReport.DataSources.Add(rds);
-                    }
+                    bindDate(conn, "sp_getReceivedMetersSummary_", "@fromDate", "@toDate", dateTimePickerSummaryReceivedMetersFrom, dateTimePickerSummaryReceivedMetersTo, "SummaryReceivedMeters", reportViewerSummaryReceivedMeters);
+                   
                     conn.Close();
                 }
             }
@@ -329,25 +284,8 @@ namespace ConcessionaireReports
                 {
                     conn.Open();
 
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_getDisposedMetersSummary_", conn))
-                    {
-                        //label5.Text = dateTimePickerChangedMeterPreviousReadMonth.Value.ToString("MM") + dateTimePickerChangedMeterPreviousReadYear.Value.ToString("yyyy");
-                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
-
-                        DataSetMeterReports ds = new DataSetMeterReports();
-
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@fromDate", dateTimePickerSummaryDisposedMetersFrom.Value.Date);
-                        adapter.SelectCommand.Parameters["@fromDate"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@toDate", dateTimePickerSummaryDisposedMetersTo.Value.Date);
-                        adapter.SelectCommand.Parameters["@toDate"].Direction = ParameterDirection.Input;
-
-                        adapter.Fill(ds, "SummaryDisposedMeters");
-
-                        ReportDataSource rds = new ReportDataSource("DataSetMeterReports", ds.Tables["SummaryDisposedMeters"]);
-                        reportViewerSummaryDisposedMeters.LocalReport.DataSources.Clear();
-                        reportViewerSummaryDisposedMeters.LocalReport.DataSources.Add(rds);
-                    }
+                    bindDate(conn, "sp_getDisposedMetersSummary_", "@fromDate", "@toDate", dateTimePickerSummaryDisposedMetersFrom, dateTimePickerSummaryDisposedMetersTo, "SummaryDisposedMeters", reportViewerSummaryDisposedMeters);
+                 
                     conn.Close();
                 }
             }
