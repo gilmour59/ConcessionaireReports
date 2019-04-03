@@ -404,5 +404,37 @@ namespace ConcessionaireReports
         {
             dateTimePickerMonthlyCollectionReportFrom.MaxDate = dateTimePickerMonthlyCollectionReportTo.Value;
         }
+
+        private void buttonPaymentSummaryMaterialsSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetPaymentSummaryOfMaterials", conn))
+                    {
+                        DataSetCollectionReports ds = new DataSetCollectionReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@in_trans_date", dateTimePickerPaymentSummaryMaterialsDate.Value);
+                        adapter.SelectCommand.Parameters["@in_trans_date"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "PaymentSummaryMaterials");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["PaymentSummaryMaterials"]);
+                        reportViewerPaymentSummaryMaterials.LocalReport.DataSources.Clear();
+                        reportViewerPaymentSummaryMaterials.LocalReport.DataSources.Add(rds);
+                    }                   
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            reportViewerPaymentSummaryMaterials.RefreshReport();
+        }
     }
 }
