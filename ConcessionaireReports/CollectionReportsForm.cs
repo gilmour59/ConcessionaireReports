@@ -373,14 +373,22 @@ namespace ConcessionaireReports
                         ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["MonthlyCollectionReport"]);
                         reportViewerMonthlyCollectionReport.LocalReport.DataSources.Clear();
                         reportViewerMonthlyCollectionReport.LocalReport.DataSources.Add(rds);
+                    }
 
-                        ReportParameter[] param = new ReportParameter[]
-                        {
-                            new ReportParameter("ReportParameterFrom", dateTimePickerMonthlyCollectionReportFrom.Value.ToString()),
-                            new ReportParameter("ReportParameterTo", dateTimePickerMonthlyCollectionReportTo.Value.ToString())
-                        };
-                        reportViewerMonthlyCollectionReport.LocalReport.SetParameters(param);
-                        //reportViewerDailyCollectionReport.LocalReport.Refresh();
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetMonthlyCollectionReportTotal", conn))
+                    {
+                        DataSetCollectionReports ds = new DataSetCollectionReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@in_start_date", dateTimePickerMonthlyCollectionReportFrom.Value);
+                        adapter.SelectCommand.Parameters["@in_start_date"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@in_end_date", dateTimePickerMonthlyCollectionReportTo.Value);
+                        adapter.SelectCommand.Parameters["@in_end_date"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "MonthlyCollectionReportTotal");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports2", ds.Tables["MonthlyCollectionReportTotal"]);
+                        reportViewerMonthlyCollectionReport.LocalReport.DataSources.Add(rds);
                     }
                     conn.Close();
                 }
