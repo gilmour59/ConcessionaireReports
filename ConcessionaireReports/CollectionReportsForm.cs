@@ -217,7 +217,7 @@ namespace ConcessionaireReports
                 {
                     conn.Open();
 
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetCollectionSummaryPerBook", conn))
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetCollectionSummaryPerBook", conn))
                     {
                         DataSetCollectionReports ds = new DataSetCollectionReports();
 
