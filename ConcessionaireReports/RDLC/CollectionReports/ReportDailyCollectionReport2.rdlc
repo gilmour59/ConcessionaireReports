@@ -341,7 +341,7 @@
                                   <Value>Month/Bill No./Description</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -376,7 +376,7 @@
                                   <Value>Bill Amount</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -411,7 +411,7 @@
                                   <Value>Amount Paid</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -447,7 +447,7 @@
                                   <Value>Cash Amount</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -483,7 +483,7 @@
                                   <Value>Check Amount</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -519,7 +519,7 @@
                                   <Value>Balance</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -559,7 +559,7 @@
                                   <Value>=Fields!description.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <Format>#,0.00</Format>
                                   </Style>
                                 </TextRun>
@@ -594,7 +594,7 @@
                                   <Value>=Fields!amount.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <Format>#,0.00</Format>
                                   </Style>
                                 </TextRun>
@@ -629,7 +629,7 @@
                                   <Value>=Fields!amt_paid.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <Format>#,0.00</Format>
                                   </Style>
                                 </TextRun>
@@ -664,7 +664,7 @@
                                   <Value>=Fields!cash_amt.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <Format>#,0.00</Format>
                                   </Style>
                                 </TextRun>
@@ -699,7 +699,7 @@
                                   <Value>=Fields!check_amt.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -733,7 +733,7 @@
                                   <Value>=Fields!balance.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <Format>#,0.00</Format>
                                   </Style>
                                 </TextRun>
@@ -773,7 +773,7 @@
                                   <Value>Total:</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -809,7 +809,7 @@
                                   <Value>=Sum(Fields!amount.Value)</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0.00</Format>
                                   </Style>
@@ -846,7 +846,7 @@
                                   <Value>=Sum(Fields!amt_paid.Value)</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0.00</Format>
                                   </Style>
@@ -883,7 +883,7 @@
                                   <Value>=Sum(Fields!cash_amt.Value)</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0.00</Format>
                                   </Style>
@@ -920,7 +920,7 @@
                                   <Value>=Sum(Fields!check_amt.Value)</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -956,7 +956,7 @@
                                   <Value>=Sum(Fields!balance.Value)</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0.00</Format>
                                   </Style>
@@ -1011,7 +1011,7 @@
                                 <Value>OR No.</Value>
                                 <Style>
                                   <FontFamily>calibri</FontFamily>
-                                  <FontSize>9pt</FontSize>
+                                  <FontSize>8pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
                               </TextRun>
@@ -1050,7 +1050,7 @@
                                     <Value>Account No.</Value>
                                     <Style>
                                       <FontFamily>calibri</FontFamily>
-                                      <FontSize>9pt</FontSize>
+                                      <FontSize>8pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
                                     </Style>
                                   </TextRun>
@@ -1089,7 +1089,7 @@
                                         <Value>Name</Value>
                                         <Style>
                                           <FontFamily>calibri</FontFamily>
-                                          <FontSize>9pt</FontSize>
+                                          <FontSize>8pt</FontSize>
                                           <FontWeight>Bold</FontWeight>
                                         </Style>
                                       </TextRun>
@@ -1148,7 +1148,7 @@
                                     <Value>=Fields!ref_no.Value</Value>
                                     <Style>
                                       <FontFamily>calibri</FontFamily>
-                                      <FontSize>9pt</FontSize>
+                                      <FontSize>8pt</FontSize>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
@@ -1195,7 +1195,7 @@
                                         <Value>=Fields!account_number.Value</Value>
                                         <Style>
                                           <FontFamily>calibri</FontFamily>
-                                          <FontSize>9pt</FontSize>
+                                          <FontSize>8pt</FontSize>
                                         </Style>
                                       </TextRun>
                                     </TextRuns>
@@ -1242,7 +1242,7 @@
                                             <Value>=Fields!concessionaire_name.Value</Value>
                                             <Style>
                                               <FontFamily>calibri</FontFamily>
-                                              <FontSize>9pt</FontSize>
+                                              <FontSize>8pt</FontSize>
                                             </Style>
                                           </TextRun>
                                         </TextRuns>
@@ -1290,7 +1290,7 @@
                                 <Value>=Count(Fields!ref_no.Value, "DataSetCollectionReports")</Value>
                                 <Style>
                                   <FontFamily>calibri</FontFamily>
-                                  <FontSize>9pt</FontSize>
+                                  <FontSize>8pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
                               </TextRun>
@@ -1328,7 +1328,7 @@
                                     <Value />
                                     <Style>
                                       <FontFamily>calibri</FontFamily>
-                                      <FontSize>9pt</FontSize>
+                                      <FontSize>8pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
                                     </Style>
                                   </TextRun>
@@ -1367,7 +1367,7 @@
                                         <Value />
                                         <Style>
                                           <FontFamily>calibri</FontFamily>
-                                          <FontSize>9pt</FontSize>
+                                          <FontSize>8pt</FontSize>
                                           <FontWeight>Bold</FontWeight>
                                         </Style>
                                       </TextRun>
@@ -1440,7 +1440,7 @@
                                   <Value>Account Code</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1475,7 +1475,7 @@
                                   <Value>Account Desc</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1510,7 +1510,7 @@
                                   <Value>Amount</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1550,7 +1550,7 @@
                                   <Value>=Fields!acct_code.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1584,7 +1584,7 @@
                                   <Value>=Fields!acct_desc.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1618,7 +1618,7 @@
                                   <Value>=Fields!amount.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <Format>#,0.00</Format>
                                   </Style>
                                 </TextRun>
@@ -1658,7 +1658,7 @@
                                   <Value />
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1692,7 +1692,7 @@
                                   <Value>Total:</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1728,7 +1728,7 @@
                                   <Value>=Sum(Fields!amount.Value)</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>#,0.00</Format>
                                   </Style>
@@ -1865,7 +1865,7 @@
                                       <Value>Check No.</Value>
                                       <Style>
                                         <FontFamily>calibri</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>8pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
@@ -1898,7 +1898,7 @@
                                       <Value>Bank</Value>
                                       <Style>
                                         <FontFamily>calibri</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>8pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
@@ -1931,7 +1931,7 @@
                                       <Value>Check Amount</Value>
                                       <Style>
                                         <FontFamily>calibri</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>8pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
@@ -1964,7 +1964,7 @@
                                       <Value>OR No.</Value>
                                       <Style>
                                         <FontFamily>calibri</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>8pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
@@ -1997,7 +1997,7 @@
                                       <Value>Name</Value>
                                       <Style>
                                         <FontFamily>calibri</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>8pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
@@ -2030,7 +2030,7 @@
                                       <Value>Amount Paid</Value>
                                       <Style>
                                         <FontFamily>calibri</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>8pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
@@ -2070,7 +2070,7 @@
                                       <Value>=Fields!check_no.Value</Value>
                                       <Style>
                                         <FontFamily>calibri</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>8pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -2102,7 +2102,7 @@
                                       <Value>=Fields!bank.Value</Value>
                                       <Style>
                                         <FontFamily>calibri</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>8pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -2134,7 +2134,7 @@
                                       <Value>=Fields!check_amt.Value</Value>
                                       <Style>
                                         <FontFamily>calibri</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>8pt</FontSize>
                                         <Format>#,0.00;(#,0.00)</Format>
                                       </Style>
                                     </TextRun>
@@ -2167,7 +2167,7 @@
                                       <Value>=Fields!ref_no.Value</Value>
                                       <Style>
                                         <FontFamily>calibri</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>8pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -2199,7 +2199,7 @@
                                       <Value>=Fields!concessionaire_name.Value</Value>
                                       <Style>
                                         <FontFamily>calibri</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>8pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -2231,7 +2231,7 @@
                                       <Value>=Fields!amt_paid.Value</Value>
                                       <Style>
                                         <FontFamily>calibri</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>8pt</FontSize>
                                         <Format>#,0.00</Format>
                                       </Style>
                                     </TextRun>
@@ -2271,7 +2271,7 @@
                                       <Value />
                                       <Style>
                                         <FontFamily>calibri</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>8pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -2303,7 +2303,7 @@
                                       <Value />
                                       <Style>
                                         <FontFamily>calibri</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>8pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -2335,7 +2335,7 @@
                                       <Value />
                                       <Style>
                                         <FontFamily>calibri</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>8pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -2367,7 +2367,7 @@
                                       <Value />
                                       <Style>
                                         <FontFamily>calibri</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>8pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -2399,7 +2399,7 @@
                                       <Value>Total:</Value>
                                       <Style>
                                         <FontFamily>calibri</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>8pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                       </Style>
                                     </TextRun>
@@ -2435,7 +2435,7 @@
                                       <Value>=Sum(Fields!amt_paid.Value)</Value>
                                       <Style>
                                         <FontFamily>calibri</FontFamily>
-                                        <FontSize>9pt</FontSize>
+                                        <FontSize>8pt</FontSize>
                                         <FontWeight>Bold</FontWeight>
                                         <Format>#,0.00</Format>
                                       </Style>
