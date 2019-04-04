@@ -472,5 +472,39 @@ namespace ConcessionaireReports
             }
             reportViewerSummarySeniorCitizenDiscount.RefreshReport();
         }
+
+        private void buttonSummaryCancelledORSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetSummaryCancelledOR", conn))
+                    {
+                        adapter.SelectCommand.CommandTimeout = 5000;
+
+                        DataSetCollectionReports ds = new DataSetCollectionReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@in_trans_date", dateTimePickerSummaryCancelledORDate.Value);
+                        adapter.SelectCommand.Parameters["@in_trans_date"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "SummaryCancelledOR");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["SummaryCancelledOR"]);
+                        reportViewerSummaryCancelledOR.LocalReport.DataSources.Clear();
+                        reportViewerSummaryCancelledOR.LocalReport.DataSources.Add(rds);
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            reportViewerSummaryCancelledOR.RefreshReport();
+        }
     }
 }

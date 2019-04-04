@@ -56,6 +56,7 @@
             this.CashierDailyCollectionReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MonthlyCollectionReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PaymentSummaryMaterialsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SummarySeniorDiscountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlCollectionReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dateTimePickerDailyCollectionReportDate = new System.Windows.Forms.DateTimePicker();
@@ -143,7 +144,7 @@
             this.dateTimePickerCashCollectionReportDate = new System.Windows.Forms.DateTimePicker();
             this.label22 = new System.Windows.Forms.Label();
             this.reportViewerCashCollectionReport = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.SummarySeniorDiscountBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SummaryCancelledORBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReportBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetCollectionReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DCRRecapBindingSource)).BeginInit();
@@ -154,6 +155,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.CashierDailyCollectionReportBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MonthlyCollectionReportBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PaymentSummaryMaterialsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SummarySeniorDiscountBindingSource)).BeginInit();
             this.tabControlCollectionReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -169,7 +171,7 @@
             this.tabPage12.SuspendLayout();
             this.tabPage13.SuspendLayout();
             this.tabPage14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SummarySeniorDiscountBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SummaryCancelledORBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // DailyCollectionReportBindingSource
@@ -221,6 +223,11 @@
             // 
             this.PaymentSummaryMaterialsBindingSource.DataMember = "PaymentSummaryMaterials";
             this.PaymentSummaryMaterialsBindingSource.DataSource = this.DataSetCollectionReports;
+            // 
+            // SummarySeniorDiscountBindingSource
+            // 
+            this.SummarySeniorDiscountBindingSource.DataMember = "SummarySeniorDiscount";
+            this.SummarySeniorDiscountBindingSource.DataSource = this.DataSetCollectionReports;
             // 
             // tabControlCollectionReports
             // 
@@ -859,10 +866,10 @@
             // 
             // reportViewerSummaryCancelledOR
             // 
-            reportDataSource12.Name = "DataSetBillingReports";
-            reportDataSource12.Value = null;
+            reportDataSource12.Name = "DataSetCollectionReports";
+            reportDataSource12.Value = this.SummaryCancelledORBindingSource;
             this.reportViewerSummaryCancelledOR.LocalReport.DataSources.Add(reportDataSource12);
-            this.reportViewerSummaryCancelledOR.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountsLargeConsumption.rdlc";
+            this.reportViewerSummaryCancelledOR.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.CollectionReports.ReportSummaryCancelledOR.rdlc";
             this.reportViewerSummaryCancelledOR.Location = new System.Drawing.Point(26, 49);
             this.reportViewerSummaryCancelledOR.Name = "reportViewerSummaryCancelledOR";
             this.reportViewerSummaryCancelledOR.ServerReport.BearerToken = null;
@@ -878,6 +885,7 @@
             this.buttonSummaryCancelledORSearch.TabIndex = 50;
             this.buttonSummaryCancelledORSearch.Text = "Search";
             this.buttonSummaryCancelledORSearch.UseVisualStyleBackColor = true;
+            this.buttonSummaryCancelledORSearch.Click += new System.EventHandler(this.buttonSummaryCancelledORSearch_Click);
             // 
             // tabPage10
             // 
@@ -1220,10 +1228,10 @@
             this.reportViewerCashCollectionReport.Size = new System.Drawing.Size(944, 481);
             this.reportViewerCashCollectionReport.TabIndex = 75;
             // 
-            // SummarySeniorDiscountBindingSource
+            // SummaryCancelledORBindingSource
             // 
-            this.SummarySeniorDiscountBindingSource.DataMember = "SummarySeniorDiscount";
-            this.SummarySeniorDiscountBindingSource.DataSource = this.DataSetCollectionReports;
+            this.SummaryCancelledORBindingSource.DataMember = "SummaryCancelledOR";
+            this.SummaryCancelledORBindingSource.DataSource = this.DataSetCollectionReports;
             // 
             // CollectionReportsForm
             // 
@@ -1247,6 +1255,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.CashierDailyCollectionReportBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MonthlyCollectionReportBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PaymentSummaryMaterialsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SummarySeniorDiscountBindingSource)).EndInit();
             this.tabControlCollectionReports.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1276,7 +1285,7 @@
             this.tabPage13.PerformLayout();
             this.tabPage14.ResumeLayout(false);
             this.tabPage14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SummarySeniorDiscountBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SummaryCancelledORBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1381,5 +1390,6 @@
         private System.Windows.Forms.BindingSource MonthlyCollectionReportBindingSource;
         private System.Windows.Forms.BindingSource PaymentSummaryMaterialsBindingSource;
         private System.Windows.Forms.BindingSource SummarySeniorDiscountBindingSource;
+        private System.Windows.Forms.BindingSource SummaryCancelledORBindingSource;
     }
 }
