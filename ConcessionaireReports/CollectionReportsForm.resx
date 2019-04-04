@@ -147,4 +147,7 @@
   <metadata name="PaymentSummaryMaterialsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>573, 95</value>
   </metadata>
+  <metadata name="SummarySeniorDiscountBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>852, 95</value>
+  </metadata>
 </root>

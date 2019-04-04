@@ -4995,6 +4995,22 @@ namespace ConcessionaireReports {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class SummarySeniorDiscountDataTable : global::System.Data.TypedTableBase<SummarySeniorDiscountRow> {
             
+            private global::System.Data.DataColumn columnsubtitle;
+            
+            private global::System.Data.DataColumn columntrans_date;
+            
+            private global::System.Data.DataColumn columnacct_no;
+            
+            private global::System.Data.DataColumn columnold_acct_no;
+            
+            private global::System.Data.DataColumn columnacct_name;
+            
+            private global::System.Data.DataColumn columnref_no;
+            
+            private global::System.Data.DataColumn columnwater_bill;
+            
+            private global::System.Data.DataColumn columnsr_citizen_disc;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public SummarySeniorDiscountDataTable() {
@@ -5026,6 +5042,70 @@ namespace ConcessionaireReports {
             protected SummarySeniorDiscountDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn subtitleColumn {
+                get {
+                    return this.columnsubtitle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn trans_dateColumn {
+                get {
+                    return this.columntrans_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn acct_noColumn {
+                get {
+                    return this.columnacct_no;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn old_acct_noColumn {
+                get {
+                    return this.columnold_acct_no;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn acct_nameColumn {
+                get {
+                    return this.columnacct_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ref_noColumn {
+                get {
+                    return this.columnref_no;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn water_billColumn {
+                get {
+                    return this.columnwater_bill;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn sr_citizen_discColumn {
+                get {
+                    return this.columnsr_citizen_disc;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5065,9 +5145,17 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SummarySeniorDiscountRow AddSummarySeniorDiscountRow() {
+            public SummarySeniorDiscountRow AddSummarySeniorDiscountRow(string subtitle, System.DateTime trans_date, int acct_no, string old_acct_no, string acct_name, string ref_no, decimal water_bill, decimal sr_citizen_disc) {
                 SummarySeniorDiscountRow rowSummarySeniorDiscountRow = ((SummarySeniorDiscountRow)(this.NewRow()));
-                object[] columnValuesArray = new object[0];
+                object[] columnValuesArray = new object[] {
+                        subtitle,
+                        trans_date,
+                        acct_no,
+                        old_acct_no,
+                        acct_name,
+                        ref_no,
+                        water_bill,
+                        sr_citizen_disc};
                 rowSummarySeniorDiscountRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSummarySeniorDiscountRow);
                 return rowSummarySeniorDiscountRow;
@@ -5090,11 +5178,35 @@ namespace ConcessionaireReports {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
+                this.columnsubtitle = base.Columns["subtitle"];
+                this.columntrans_date = base.Columns["trans_date"];
+                this.columnacct_no = base.Columns["acct_no"];
+                this.columnold_acct_no = base.Columns["old_acct_no"];
+                this.columnacct_name = base.Columns["acct_name"];
+                this.columnref_no = base.Columns["ref_no"];
+                this.columnwater_bill = base.Columns["water_bill"];
+                this.columnsr_citizen_disc = base.Columns["sr_citizen_disc"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
+                this.columnsubtitle = new global::System.Data.DataColumn("subtitle", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsubtitle);
+                this.columntrans_date = new global::System.Data.DataColumn("trans_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntrans_date);
+                this.columnacct_no = new global::System.Data.DataColumn("acct_no", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnacct_no);
+                this.columnold_acct_no = new global::System.Data.DataColumn("old_acct_no", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnold_acct_no);
+                this.columnacct_name = new global::System.Data.DataColumn("acct_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnacct_name);
+                this.columnref_no = new global::System.Data.DataColumn("ref_no", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnref_no);
+                this.columnwater_bill = new global::System.Data.DataColumn("water_bill", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwater_bill);
+                this.columnsr_citizen_disc = new global::System.Data.DataColumn("sr_citizen_disc", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsr_citizen_disc);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8818,6 +8930,231 @@ namespace ConcessionaireReports {
             internal SummarySeniorDiscountRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tableSummarySeniorDiscount = ((SummarySeniorDiscountDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string subtitle {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummarySeniorDiscount.subtitleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'subtitle\' in table \'SummarySeniorDiscount\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummarySeniorDiscount.subtitleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime trans_date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSummarySeniorDiscount.trans_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'trans_date\' in table \'SummarySeniorDiscount\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummarySeniorDiscount.trans_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int acct_no {
+                get {
+                    try {
+                        return ((int)(this[this.tableSummarySeniorDiscount.acct_noColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'acct_no\' in table \'SummarySeniorDiscount\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummarySeniorDiscount.acct_noColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string old_acct_no {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummarySeniorDiscount.old_acct_noColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'old_acct_no\' in table \'SummarySeniorDiscount\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummarySeniorDiscount.old_acct_noColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string acct_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummarySeniorDiscount.acct_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'acct_name\' in table \'SummarySeniorDiscount\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummarySeniorDiscount.acct_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string ref_no {
+                get {
+                    try {
+                        return ((string)(this[this.tableSummarySeniorDiscount.ref_noColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ref_no\' in table \'SummarySeniorDiscount\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummarySeniorDiscount.ref_noColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal water_bill {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableSummarySeniorDiscount.water_billColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'water_bill\' in table \'SummarySeniorDiscount\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSummarySeniorDiscount.water_billColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal sr_citizen_disc {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableSummarySeniorDiscount.sr_citizen_discColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'sr_citizen_disc\' in table \'SummarySeniorDiscount\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableSummarySeniorDiscount.sr_citizen_discColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IssubtitleNull() {
+                return this.IsNull(this.tableSummarySeniorDiscount.subtitleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetsubtitleNull() {
+                this[this.tableSummarySeniorDiscount.subtitleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Istrans_dateNull() {
+                return this.IsNull(this.tableSummarySeniorDiscount.trans_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Settrans_dateNull() {
+                this[this.tableSummarySeniorDiscount.trans_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isacct_noNull() {
+                return this.IsNull(this.tableSummarySeniorDiscount.acct_noColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setacct_noNull() {
+                this[this.tableSummarySeniorDiscount.acct_noColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isold_acct_noNull() {
+                return this.IsNull(this.tableSummarySeniorDiscount.old_acct_noColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setold_acct_noNull() {
+                this[this.tableSummarySeniorDiscount.old_acct_noColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isacct_nameNull() {
+                return this.IsNull(this.tableSummarySeniorDiscount.acct_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setacct_nameNull() {
+                this[this.tableSummarySeniorDiscount.acct_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isref_noNull() {
+                return this.IsNull(this.tableSummarySeniorDiscount.ref_noColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setref_noNull() {
+                this[this.tableSummarySeniorDiscount.ref_noColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iswater_billNull() {
+                return this.IsNull(this.tableSummarySeniorDiscount.water_billColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setwater_billNull() {
+                this[this.tableSummarySeniorDiscount.water_billColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Issr_citizen_discNull() {
+                return this.IsNull(this.tableSummarySeniorDiscount.sr_citizen_discColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setsr_citizen_discNull() {
+                this[this.tableSummarySeniorDiscount.sr_citizen_discColumn] = global::System.Convert.DBNull;
             }
         }
         

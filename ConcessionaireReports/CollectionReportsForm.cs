@@ -436,5 +436,41 @@ namespace ConcessionaireReports
             }
             reportViewerPaymentSummaryMaterials.RefreshReport();
         }
+
+        private void buttonSummarySeniorCitizenDiscountSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetSeniorCitizenDiscountSummary", conn))
+                    {
+                        adapter.SelectCommand.CommandTimeout = 5000;
+
+                        DataSetCollectionReports ds = new DataSetCollectionReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@in_start_date", dateTimePickerSummarySeniorCitizenDiscountFrom.Value);
+                        adapter.SelectCommand.Parameters["@in_start_date"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@in_end_date", dateTimePickerSummarySeniorCitizenDiscountTo.Value);
+                        adapter.SelectCommand.Parameters["@in_end_date"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "SummarySeniorDiscount");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["SummarySeniorDiscount"]);
+                        reportViewerSummarySeniorCitizenDiscount.LocalReport.DataSources.Clear();
+                        reportViewerSummarySeniorCitizenDiscount.LocalReport.DataSources.Add(rds);
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            reportViewerSummarySeniorCitizenDiscount.RefreshReport();
+        }
     }
 }
