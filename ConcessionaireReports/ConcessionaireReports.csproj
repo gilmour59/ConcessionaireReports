@@ -166,6 +166,7 @@
     <EmbeddedResource Include="RDLC\CollectionReports\ReportCashierDailyCollectionReport.rdlc" />
     <EmbeddedResource Include="RDLC\CollectionReports\ReportMonthlyCollectionReport.rdlc" />
     <EmbeddedResource Include="RDLC\CollectionReports\ReportPaymentSummaryMaterials.rdlc" />
+    <EmbeddedResource Include="RDLC\CollectionReports\ReportSummarySeniorDiscount.rdlc" />
     <EmbeddedResource Include="RDLC\ConcessionaireReports\ReportAccountByStatus.rdlc" />
     <EmbeddedResource Include="RDLC\ConcessionaireReports\ReportAccountPerBarangay.rdlc" />
     <EmbeddedResource Include="RDLC\ConcessionaireReports\ReportAccountPerBook.rdlc" />
