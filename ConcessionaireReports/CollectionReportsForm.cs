@@ -83,6 +83,31 @@ namespace ConcessionaireReports
             dateTimePickerCollectionSummaryZoneBookDate.MaxDate = DateTime.Today;
             dateTimePickerCDCRDate.MaxDate = DateTime.Today;
             dateTimePickerMonthlyCollectionReportTo.MaxDate = DateTime.Today;
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetItem", conn))
+                    {
+                        DataSet dsItem = new DataSet();
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.Fill(dsItem);
+
+                        comboBoxSummaryMiscellaneousFeesItem.ValueMember = "item_id";
+                        comboBoxSummaryMiscellaneousFeesItem.DisplayMember = "item_desc";
+                        comboBoxSummaryMiscellaneousFeesItem.DataSource = dsItem.Tables[0];
+                    }
+
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
         }
 
         private void dateTimePickerDailyCollectionReportDate_ValueChanged(object sender, EventArgs e)
