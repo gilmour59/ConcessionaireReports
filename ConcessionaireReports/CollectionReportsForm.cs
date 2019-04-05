@@ -437,10 +437,34 @@ namespace ConcessionaireReports
             reportViewerPaymentSummaryMaterials.RefreshReport();
         }
 
+        private void beforeAwait(PictureBox pb, Button b)
+        {
+            //tabControlCollectionReports.TabPages[0].Enabled = false;
+            foreach (TabPage tp in tabControlCollectionReports.TabPages)
+            {
+                if (!(tp == tabControlCollectionReports.SelectedTab))
+                {
+                    tp.Enabled = false;
+                }
+            }
+            b.Enabled = false;
+            pb.Show();
+            pb.Update();
+        }
+
+        private void afterAwait(PictureBox pb, Button b)
+        {
+            foreach (TabPage tp in tabControlCollectionReports.TabPages)
+            {
+                tp.Enabled = true; 
+            }
+            b.Enabled = true;
+            pb.Hide();
+        }
+
         private async void buttonSummarySeniorCitizenDiscountSearch_Click(object sender, EventArgs e)
         {
-            pictureBoxLoadingSenior.Show();
-            pictureBoxLoadingSenior.Update();
+            beforeAwait(pictureBoxLoadingSenior, buttonSummarySeniorCitizenDiscountSearch);
 
             await Task.Run(() => 
             {
@@ -476,8 +500,7 @@ namespace ConcessionaireReports
                     MessageBox.Show("error: " + ex, "Error!");
                 }
             });
-            
-            pictureBoxLoadingSenior.Hide();
+            afterAwait(pictureBoxLoadingSenior, buttonSummarySeniorCitizenDiscountSearch);
 
             reportViewerSummarySeniorCitizenDiscount.RefreshReport();
         }
@@ -528,8 +551,7 @@ namespace ConcessionaireReports
 
         private async void buttonSummaryWithholdingTaxesSearch_Click(object sender, EventArgs e)
         {
-            pictureBoxLoadingWithholdingTaxes.Show();
-            pictureBoxLoadingWithholdingTaxes.Update();
+            beforeAwait(pictureBoxLoadingWithholdingTaxes, buttonSummaryWithholdingTaxesSearch);
 
             await Task.Run(() =>
             {
@@ -584,8 +606,7 @@ namespace ConcessionaireReports
                     MessageBox.Show("error: " + ex, "Error!");
                 }
             });
-
-            pictureBoxLoadingWithholdingTaxes.Hide();
+            afterAwait(pictureBoxLoadingWithholdingTaxes, buttonSummaryWithholdingTaxesSearch);
 
             reportViewerSummaryWithholdingTaxes.RefreshReport();
         }
