@@ -660,7 +660,7 @@ namespace ConcessionaireReports
                             DataSetCollectionReports ds = new DataSetCollectionReports();
 
                             adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                            adapter.SelectCommand.Parameters.AddWithValue("@itemId", comboBoxSummaryMiscellaneousFeesItem.SelectedValue.ToString());
+                            adapter.SelectCommand.Parameters.AddWithValue("@itemId", comboBoxSummaryMiscellaneousFeesItem.SelectedValue);
                             adapter.SelectCommand.Parameters["@itemId"].Direction = ParameterDirection.Input;
                             adapter.SelectCommand.Parameters.AddWithValue("@startDate", dateTimePickerSummaryMiscellaneousFeesFrom.Value);
                             adapter.SelectCommand.Parameters["@startDate"].Direction = ParameterDirection.Input;

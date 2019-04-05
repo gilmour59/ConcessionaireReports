@@ -167,6 +167,7 @@
     <EmbeddedResource Include="RDLC\CollectionReports\ReportMonthlyCollectionReport.rdlc" />
     <EmbeddedResource Include="RDLC\CollectionReports\ReportPaymentSummaryMaterials.rdlc" />
     <EmbeddedResource Include="RDLC\CollectionReports\ReportSummaryCancelledOR.rdlc" />
+    <EmbeddedResource Include="RDLC\CollectionReports\ReportSummaryMiscellaneousFees.rdlc" />
     <EmbeddedResource Include="RDLC\CollectionReports\ReportSummarySeniorDiscount.rdlc" />
     <EmbeddedResource Include="RDLC\CollectionReports\ReportSummaryWithholdingTaxes.rdlc" />
     <EmbeddedResource Include="RDLC\ConcessionaireReports\ReportAccountByStatus.rdlc" />
