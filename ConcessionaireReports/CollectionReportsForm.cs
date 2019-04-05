@@ -635,5 +635,55 @@ namespace ConcessionaireReports
 
             reportViewerSummaryWithholdingTaxes.RefreshReport();
         }
+
+        private void dateTimePickerSummaryMiscellaneousFeesTo_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerSummaryMiscellaneousFeesFrom.MaxDate = dateTimePickerSummaryMiscellaneousFeesTo.Value;
+        }
+
+        private async void buttonSummaryMiscellaneousFeesSearch_Click(object sender, EventArgs e)
+        {
+            beforeAwait(pictureBoxLoadingMisc, buttonSummaryMiscellaneousFeesSearch);
+
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                    {
+                        conn.Open();
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_getSummaryOfMiscellaneousFees", conn))
+                        {
+                            adapter.SelectCommand.CommandTimeout = 5000;
+
+                            DataSetCollectionReports ds = new DataSetCollectionReports();
+
+                            adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                            adapter.SelectCommand.Parameters.AddWithValue("@itemId", comboBoxSummaryMiscellaneousFeesItem.SelectedValue.ToString());
+                            adapter.SelectCommand.Parameters["@itemId"].Direction = ParameterDirection.Input;
+                            adapter.SelectCommand.Parameters.AddWithValue("@startDate", dateTimePickerSummaryMiscellaneousFeesFrom.Value);
+                            adapter.SelectCommand.Parameters["@startDate"].Direction = ParameterDirection.Input;
+                            adapter.SelectCommand.Parameters.AddWithValue("@endDate", dateTimePickerSummaryMiscellaneousFeesTo.Value);
+                            adapter.SelectCommand.Parameters["@endDate"].Direction = ParameterDirection.Input;
+
+                            adapter.Fill(ds, "SummaryMiscellaneousFees");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["SummaryMiscellaneousFees"]);
+                            reportViewerSummaryMiscellaneousFees.LocalReport.DataSources.Clear();
+                            reportViewerSummaryMiscellaneousFees.LocalReport.DataSources.Add(rds);
+                        }
+                        conn.Close();
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+            afterAwait(pictureBoxLoadingMisc, buttonSummaryMiscellaneousFeesSearch);
+
+            reportViewerSummaryMiscellaneousFees.RefreshReport();
+        }
     }
 }
