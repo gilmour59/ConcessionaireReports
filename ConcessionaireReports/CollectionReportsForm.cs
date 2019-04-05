@@ -437,39 +437,48 @@ namespace ConcessionaireReports
             reportViewerPaymentSummaryMaterials.RefreshReport();
         }
 
-        private void buttonSummarySeniorCitizenDiscountSearch_Click(object sender, EventArgs e)
+        private async void buttonSummarySeniorCitizenDiscountSearch_Click(object sender, EventArgs e)
         {
-            try
+            pictureBoxLoadingSenior.Show();
+            pictureBoxLoadingSenior.Update();
+
+            await Task.Run(() => 
             {
-                using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                try
                 {
-                    conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetSeniorCitizenDiscountSummary", conn))
+                    using (MySqlConnection conn = new MySqlConnection(this.connStr))
                     {
-                        adapter.SelectCommand.CommandTimeout = 5000;
+                        conn.Open();
 
-                        DataSetCollectionReports ds = new DataSetCollectionReports();
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetSeniorCitizenDiscountSummary", conn))
+                        {
+                            adapter.SelectCommand.CommandTimeout = 5000;
 
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@in_start_date", dateTimePickerSummarySeniorCitizenDiscountFrom.Value);
-                        adapter.SelectCommand.Parameters["@in_start_date"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@in_end_date", dateTimePickerSummarySeniorCitizenDiscountTo.Value);
-                        adapter.SelectCommand.Parameters["@in_end_date"].Direction = ParameterDirection.Input;
+                            DataSetCollectionReports ds = new DataSetCollectionReports();
 
-                        adapter.Fill(ds, "SummarySeniorDiscount");
+                            adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                            adapter.SelectCommand.Parameters.AddWithValue("@in_start_date", dateTimePickerSummarySeniorCitizenDiscountFrom.Value);
+                            adapter.SelectCommand.Parameters["@in_start_date"].Direction = ParameterDirection.Input;
+                            adapter.SelectCommand.Parameters.AddWithValue("@in_end_date", dateTimePickerSummarySeniorCitizenDiscountTo.Value);
+                            adapter.SelectCommand.Parameters["@in_end_date"].Direction = ParameterDirection.Input;
 
-                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["SummarySeniorDiscount"]);
-                        reportViewerSummarySeniorCitizenDiscount.LocalReport.DataSources.Clear();
-                        reportViewerSummarySeniorCitizenDiscount.LocalReport.DataSources.Add(rds);
+                            adapter.Fill(ds, "SummarySeniorDiscount");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["SummarySeniorDiscount"]);
+                            reportViewerSummarySeniorCitizenDiscount.LocalReport.DataSources.Clear();
+                            reportViewerSummarySeniorCitizenDiscount.LocalReport.DataSources.Add(rds);
+                        }
+                        conn.Close();
                     }
-                    conn.Close();
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+            
+            pictureBoxLoadingSenior.Hide();
+
             reportViewerSummarySeniorCitizenDiscount.RefreshReport();
         }
 
@@ -505,6 +514,11 @@ namespace ConcessionaireReports
                 MessageBox.Show("error: " + ex, "Error!");
             }
             reportViewerSummaryCancelledOR.RefreshReport();
+        }
+
+        private void dateTimePickerSummarySeniorCitizenDiscountTo_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerSummarySeniorCitizenDiscountFrom.MaxDate = dateTimePickerSummarySeniorCitizenDiscountTo.Value;
         }
     }
 }
