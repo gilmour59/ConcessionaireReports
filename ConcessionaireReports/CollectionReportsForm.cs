@@ -520,5 +520,74 @@ namespace ConcessionaireReports
         {
             dateTimePickerSummarySeniorCitizenDiscountFrom.MaxDate = dateTimePickerSummarySeniorCitizenDiscountTo.Value;
         }
+
+        private void dateTimePickerSummaryWithholdingTaxesTo_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerSummaryWithholdingTaxesFrom.MaxDate = dateTimePickerSummaryWithholdingTaxesTo.Value;
+        }
+
+        private async void buttonSummaryWithholdingTaxesSearch_Click(object sender, EventArgs e)
+        {
+            pictureBoxLoadingWithholdingTaxes.Show();
+            pictureBoxLoadingWithholdingTaxes.Update();
+
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                    {
+                        conn.Open();
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetWTaxSummary", conn))
+                        {
+                            adapter.SelectCommand.CommandTimeout = 5000;
+
+                            DataSetCollectionReports ds = new DataSetCollectionReports();
+
+                            adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                            adapter.SelectCommand.Parameters.AddWithValue("@startDate", dateTimePickerSummaryWithholdingTaxesFrom.Value);
+                            adapter.SelectCommand.Parameters["@startDate"].Direction = ParameterDirection.Input;
+                            adapter.SelectCommand.Parameters.AddWithValue("@endDate", dateTimePickerSummaryWithholdingTaxesTo.Value);
+                            adapter.SelectCommand.Parameters["@endDate"].Direction = ParameterDirection.Input;
+
+                            adapter.Fill(ds, "SummaryWithholdingTaxes");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["SummaryWithholdingTaxes"]);
+                            reportViewerSummaryWithholdingTaxes.LocalReport.DataSources.Clear();
+                            reportViewerSummaryWithholdingTaxes.LocalReport.DataSources.Add(rds);
+                        }
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetWTaxSummaryRecap", conn))
+                        {
+                            adapter.SelectCommand.CommandTimeout = 5000;
+
+                            DataSetCollectionReports ds = new DataSetCollectionReports();
+
+                            adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                            adapter.SelectCommand.Parameters.AddWithValue("@startDate", dateTimePickerSummaryWithholdingTaxesFrom.Value);
+                            adapter.SelectCommand.Parameters["@startDate"].Direction = ParameterDirection.Input;
+                            adapter.SelectCommand.Parameters.AddWithValue("@endDate", dateTimePickerSummaryWithholdingTaxesTo.Value);
+                            adapter.SelectCommand.Parameters["@endDate"].Direction = ParameterDirection.Input;
+
+                            adapter.Fill(ds, "SummaryWithholdingTaxesRecap");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetCollectionReports2", ds.Tables["SummaryWithholdingTaxesRecap"]);
+                            reportViewerSummaryWithholdingTaxes.LocalReport.DataSources.Add(rds);
+                        }
+
+                        conn.Close();
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            pictureBoxLoadingWithholdingTaxes.Hide();
+
+            reportViewerSummaryWithholdingTaxes.RefreshReport();
+        }
     }
 }
