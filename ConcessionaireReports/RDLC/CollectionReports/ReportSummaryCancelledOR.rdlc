@@ -115,7 +115,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Format(First(Fields!trans_date.Value, "DataSetCollectionReports"), "D")</Value>
+                <Value>=First(Fields!trans_date.Value, "DataSetCollectionReports")</Value>
                 <Style>
                   <FontFamily>calibri</FontFamily>
                   <FontWeight>Bold</FontWeight>
@@ -636,7 +636,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -851,7 +850,7 @@
         <Top>3.04506cm</Top>
         <Left>0.25525cm</Left>
         <Height>1.26cm</Height>
-        <Width>19.88875cm</Width>
+        <Width>19.88874cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>

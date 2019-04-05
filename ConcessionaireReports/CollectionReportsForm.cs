@@ -659,19 +659,30 @@ namespace ConcessionaireReports
 
                             DataSetCollectionReports ds = new DataSetCollectionReports();
 
-                            adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                            adapter.SelectCommand.Parameters.AddWithValue("@itemId", comboBoxSummaryMiscellaneousFeesItem.SelectedValue);
-                            adapter.SelectCommand.Parameters["@itemId"].Direction = ParameterDirection.Input;
-                            adapter.SelectCommand.Parameters.AddWithValue("@startDate", dateTimePickerSummaryMiscellaneousFeesFrom.Value);
-                            adapter.SelectCommand.Parameters["@startDate"].Direction = ParameterDirection.Input;
-                            adapter.SelectCommand.Parameters.AddWithValue("@endDate", dateTimePickerSummaryMiscellaneousFeesTo.Value);
-                            adapter.SelectCommand.Parameters["@endDate"].Direction = ParameterDirection.Input;
-
+                            Invoke((MethodInvoker) delegate() 
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@itemId", comboBoxSummaryMiscellaneousFeesItem.SelectedValue);
+                                adapter.SelectCommand.Parameters["@itemId"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@startDate", dateTimePickerSummaryMiscellaneousFeesFrom.Value);
+                                adapter.SelectCommand.Parameters["@startDate"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@endDate", dateTimePickerSummaryMiscellaneousFeesTo.Value);
+                                adapter.SelectCommand.Parameters["@endDate"].Direction = ParameterDirection.Input;
+                            });
+                                                       
                             adapter.Fill(ds, "SummaryMiscellaneousFees");
 
                             ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["SummaryMiscellaneousFees"]);
                             reportViewerSummaryMiscellaneousFees.LocalReport.DataSources.Clear();
                             reportViewerSummaryMiscellaneousFees.LocalReport.DataSources.Add(rds);
+
+                            ReportParameter[] param = new ReportParameter[]
+                            {
+                                new ReportParameter("ReportParameterFrom", dateTimePickerSummaryMiscellaneousFeesFrom.Value.ToString()),
+                                new ReportParameter("ReportParameterTo", dateTimePickerSummaryMiscellaneousFeesTo.Value.ToString())
+                            };
+                            reportViewerSummaryMiscellaneousFees.LocalReport.SetParameters(param);
+                            reportViewerSummaryMiscellaneousFees.LocalReport.Refresh();
                         }
                         conn.Close();
                     }

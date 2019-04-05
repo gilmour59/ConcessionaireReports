@@ -6623,7 +6623,7 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SummaryMiscellaneousFeesRow AddSummaryMiscellaneousFeesRow(string o_name, string o_address, string trans_date, string account_number, string concessionaire_name, string teller, string ref_no, decimal amount) {
+            public SummaryMiscellaneousFeesRow AddSummaryMiscellaneousFeesRow(string o_name, string o_address, System.DateTime trans_date, string account_number, string concessionaire_name, string teller, string ref_no, decimal amount) {
                 SummaryMiscellaneousFeesRow rowSummaryMiscellaneousFeesRow = ((SummaryMiscellaneousFeesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         o_name,
@@ -6673,7 +6673,7 @@ namespace ConcessionaireReports {
                 base.Columns.Add(this.columno_name);
                 this.columno_address = new global::System.Data.DataColumn("o_address", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columno_address);
-                this.columntrans_date = new global::System.Data.DataColumn("trans_date", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columntrans_date = new global::System.Data.DataColumn("trans_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntrans_date);
                 this.columnaccount_number = new global::System.Data.DataColumn("account_number", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnaccount_number);
@@ -11322,10 +11322,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string trans_date {
+            public System.DateTime trans_date {
                 get {
                     try {
-                        return ((string)(this[this.tableSummaryMiscellaneousFees.trans_dateColumn]));
+                        return ((global::System.DateTime)(this[this.tableSummaryMiscellaneousFees.trans_dateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'trans_date\' in table \'SummaryMiscellaneousFees\' is DBNull.", e);
