@@ -56,6 +56,19 @@ namespace ConcessionaireReports
             connStr = "server=localhost;user=root;database=mrwdbcsys;port=3306;password=";
 
             tabControlReceivablesReports.DrawMode = TabDrawMode.OwnerDrawFixed;
+
+            dateTimePickerAgingAccountCutOff.MaxDate = DateTime.Today;
+            dateTimePickerAgingBookCutOff.MaxDate = DateTime.Today;
+            dateTimePickerDetailedListCutOff.MaxDate = DateTime.Today;
+            dateTimePickerReceivablesAccountCutOff.MaxDate = DateTime.Today;
+            dateTimePickerDemandLetterCutOff.MaxDate = DateTime.Today;
+            dateTimePickerDelinquentCutOff.MaxDate = DateTime.Today;
+            dateTimePickerOtherReceivablesCutOff.MaxDate = DateTime.Today;
+        }
+
+        private void buttonAgingAccountSearch_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

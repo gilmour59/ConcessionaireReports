@@ -124,6 +124,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetMeterReports.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetReceivablesReports.cs">
+      <DependentUpon>DataSetReceivablesReports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetReceivablesReports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetReceivablesReports.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MeterReadingReportsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,6 +276,17 @@
     </None>
     <None Include="DataSetMeterReports.xss">
       <DependentUpon>DataSetMeterReports.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetReceivablesReports.xsc">
+      <DependentUpon>DataSetReceivablesReports.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetReceivablesReports.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetReceivablesReports.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetReceivablesReports.xss">
+      <DependentUpon>DataSetReceivablesReports.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

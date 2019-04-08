@@ -31,46 +31,36 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.tabControlReceivablesReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dateTimePickerAgingAccountCutOff = new System.Windows.Forms.DateTimePicker();
             this.reportViewerAgingAccount = new Microsoft.Reporting.WinForms.ReportViewer();
             this.buttonAgingAccountSearch = new System.Windows.Forms.Button();
+            this.comboBoxAgingAccountStatus = new System.Windows.Forms.ComboBox();
+            this.comboBoxAgingAccountBook = new System.Windows.Forms.ComboBox();
+            this.comboBoxAgingAccountZone = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dateTimePickerAgingBookCutOff = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
             this.reportViewerAgingBook = new Microsoft.Reporting.WinForms.ReportViewer();
             this.buttonAgingBookSearch = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.reportViewerDetailedList = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.buttonDetailedListSearch = new System.Windows.Forms.Button();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.reportViewerDemandLetter = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.reportViewerDelinquent = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.buttonDelinquentSearch = new System.Windows.Forms.Button();
-            this.comboBoxDelinquentStatus = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dateTimePickerDelinquentCutOff = new System.Windows.Forms.DateTimePicker();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.reportViewerOtherReceivables = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBoxAgingAccountZone = new System.Windows.Forms.ComboBox();
-            this.comboBoxAgingAccountBook = new System.Windows.Forms.ComboBox();
-            this.comboBoxAgingAccountStatus = new System.Windows.Forms.ComboBox();
-            this.dateTimePickerAgingAccountCutOff = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerAgingBookCutOff = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
             this.dateTimePickerDetailedListCutOff = new System.Windows.Forms.DateTimePicker();
             this.comboBoxDetailedListBook = new System.Windows.Forms.ComboBox();
             this.comboBoxDetailedListZone = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.reportViewerDetailedList = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.buttonDetailedListSearch = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dateTimePickerReceivablesAccountCutOff = new System.Windows.Forms.DateTimePicker();
             this.comboBoxReceivablesAccountBook = new System.Windows.Forms.ComboBox();
             this.comboBoxReceivablesAccountZone = new System.Windows.Forms.ComboBox();
@@ -79,6 +69,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.reportViewerReceivablesAccount = new Microsoft.Reporting.WinForms.ReportViewer();
             this.buttonReceivablesAccountSearch = new System.Windows.Forms.Button();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dateTimePickerDemandLetterCutOff = new System.Windows.Forms.DateTimePicker();
             this.comboBoxDemandLetterBook = new System.Windows.Forms.ComboBox();
             this.comboBoxDemandLetterZone = new System.Windows.Forms.ComboBox();
@@ -86,8 +77,16 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.buttonDemandLetterSearch = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
+            this.reportViewerDemandLetter = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.numericUpDownDelinquentLimit = new System.Windows.Forms.NumericUpDown();
+            this.reportViewerDelinquent = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.buttonDelinquentSearch = new System.Windows.Forms.Button();
+            this.comboBoxDelinquentStatus = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dateTimePickerDelinquentCutOff = new System.Windows.Forms.DateTimePicker();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.dateTimePickerOtherReceivablesCutOff = new System.Windows.Forms.DateTimePicker();
             this.comboBoxOtherReceivablesBook = new System.Windows.Forms.ComboBox();
             this.comboBoxOtherReceivablesZone = new System.Windows.Forms.ComboBox();
@@ -95,6 +94,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.buttonOtherReceivablesSearch = new System.Windows.Forms.Button();
+            this.reportViewerOtherReceivables = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabControlReceivablesReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -102,8 +102,8 @@
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
-            this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDelinquentLimit)).BeginInit();
+            this.tabPage7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlReceivablesReports
@@ -145,6 +145,16 @@
             this.tabPage1.Text = "Accounts Receivable Aging Per Account";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // dateTimePickerAgingAccountCutOff
+            // 
+            this.dateTimePickerAgingAccountCutOff.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePickerAgingAccountCutOff.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerAgingAccountCutOff.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerAgingAccountCutOff.Location = new System.Drawing.Point(406, 15);
+            this.dateTimePickerAgingAccountCutOff.Name = "dateTimePickerAgingAccountCutOff";
+            this.dateTimePickerAgingAccountCutOff.Size = new System.Drawing.Size(129, 24);
+            this.dateTimePickerAgingAccountCutOff.TabIndex = 4;
+            // 
             // reportViewerAgingAccount
             // 
             reportDataSource1.Name = "DataSetConcessionaireReports";
@@ -166,6 +176,67 @@
             this.buttonAgingAccountSearch.TabIndex = 2;
             this.buttonAgingAccountSearch.Text = "Search";
             this.buttonAgingAccountSearch.UseVisualStyleBackColor = true;
+            this.buttonAgingAccountSearch.Click += new System.EventHandler(this.buttonAgingAccountSearch_Click);
+            // 
+            // comboBoxAgingAccountStatus
+            // 
+            this.comboBoxAgingAccountStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxAgingAccountStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxAgingAccountStatus.FormattingEnabled = true;
+            this.comboBoxAgingAccountStatus.Location = new System.Drawing.Point(571, 15);
+            this.comboBoxAgingAccountStatus.Name = "comboBoxAgingAccountStatus";
+            this.comboBoxAgingAccountStatus.Size = new System.Drawing.Size(96, 24);
+            this.comboBoxAgingAccountStatus.TabIndex = 1;
+            // 
+            // comboBoxAgingAccountBook
+            // 
+            this.comboBoxAgingAccountBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxAgingAccountBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxAgingAccountBook.FormattingEnabled = true;
+            this.comboBoxAgingAccountBook.Location = new System.Drawing.Point(215, 15);
+            this.comboBoxAgingAccountBook.Name = "comboBoxAgingAccountBook";
+            this.comboBoxAgingAccountBook.Size = new System.Drawing.Size(55, 24);
+            this.comboBoxAgingAccountBook.TabIndex = 1;
+            // 
+            // comboBoxAgingAccountZone
+            // 
+            this.comboBoxAgingAccountZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxAgingAccountZone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxAgingAccountZone.FormattingEnabled = true;
+            this.comboBoxAgingAccountZone.Location = new System.Drawing.Point(69, 15);
+            this.comboBoxAgingAccountZone.Name = "comboBoxAgingAccountZone";
+            this.comboBoxAgingAccountZone.Size = new System.Drawing.Size(50, 24);
+            this.comboBoxAgingAccountZone.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(318, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 16);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Cut-Off Date:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(169, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 16);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Book:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(23, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Zone:";
             // 
             // tabPage2
             // 
@@ -180,6 +251,26 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Accounts Receivable Aging Summary Per Book";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePickerAgingBookCutOff
+            // 
+            this.dateTimePickerAgingBookCutOff.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePickerAgingBookCutOff.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerAgingBookCutOff.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerAgingBookCutOff.Location = new System.Drawing.Point(111, 13);
+            this.dateTimePickerAgingBookCutOff.Name = "dateTimePickerAgingBookCutOff";
+            this.dateTimePickerAgingBookCutOff.Size = new System.Drawing.Size(129, 24);
+            this.dateTimePickerAgingBookCutOff.TabIndex = 12;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(23, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(82, 16);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Cut-Off Date:";
             // 
             // reportViewerAgingBook
             // 
@@ -219,263 +310,6 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Detailed List of Receivables Per Account";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // reportViewerDetailedList
-            // 
-            reportDataSource3.Name = "DataSetConcessionaireReports";
-            reportDataSource3.Value = null;
-            this.reportViewerDetailedList.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewerDetailedList.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportAccountPerClassification.r" +
-    "dlc";
-            this.reportViewerDetailedList.Location = new System.Drawing.Point(26, 49);
-            this.reportViewerDetailedList.Name = "reportViewerDetailedList";
-            this.reportViewerDetailedList.ServerReport.BearerToken = null;
-            this.reportViewerDetailedList.Size = new System.Drawing.Size(944, 481);
-            this.reportViewerDetailedList.TabIndex = 15;
-            // 
-            // buttonDetailedListSearch
-            // 
-            this.buttonDetailedListSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDetailedListSearch.Location = new System.Drawing.Point(581, 5);
-            this.buttonDetailedListSearch.Name = "buttonDetailedListSearch";
-            this.buttonDetailedListSearch.Size = new System.Drawing.Size(74, 38);
-            this.buttonDetailedListSearch.TabIndex = 14;
-            this.buttonDetailedListSearch.Text = "Search";
-            this.buttonDetailedListSearch.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.dateTimePickerReceivablesAccountCutOff);
-            this.tabPage4.Controls.Add(this.comboBoxReceivablesAccountBook);
-            this.tabPage4.Controls.Add(this.comboBoxReceivablesAccountZone);
-            this.tabPage4.Controls.Add(this.label14);
-            this.tabPage4.Controls.Add(this.label15);
-            this.tabPage4.Controls.Add(this.label16);
-            this.tabPage4.Controls.Add(this.reportViewerReceivablesAccount);
-            this.tabPage4.Controls.Add(this.buttonReceivablesAccountSearch);
-            this.tabPage4.Location = new System.Drawing.Point(154, 4);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(994, 555);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Summary of Receivables Per Account";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.dateTimePickerDemandLetterCutOff);
-            this.tabPage5.Controls.Add(this.comboBoxDemandLetterBook);
-            this.tabPage5.Controls.Add(this.comboBoxDemandLetterZone);
-            this.tabPage5.Controls.Add(this.label8);
-            this.tabPage5.Controls.Add(this.label9);
-            this.tabPage5.Controls.Add(this.label17);
-            this.tabPage5.Controls.Add(this.buttonDemandLetterSearch);
-            this.tabPage5.Controls.Add(this.reportViewerDemandLetter);
-            this.tabPage5.Location = new System.Drawing.Point(154, 4);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(994, 555);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Demand Letter";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // reportViewerDemandLetter
-            // 
-            reportDataSource5.Name = "DataSetConcessionaireReports";
-            reportDataSource5.Value = null;
-            this.reportViewerDemandLetter.LocalReport.DataSources.Add(reportDataSource5);
-            this.reportViewerDemandLetter.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportNewConnectionSummary.rdlc";
-            this.reportViewerDemandLetter.Location = new System.Drawing.Point(26, 49);
-            this.reportViewerDemandLetter.Name = "reportViewerDemandLetter";
-            this.reportViewerDemandLetter.ServerReport.BearerToken = null;
-            this.reportViewerDemandLetter.Size = new System.Drawing.Size(944, 481);
-            this.reportViewerDemandLetter.TabIndex = 0;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Controls.Add(this.numericUpDownDelinquentLimit);
-            this.tabPage6.Controls.Add(this.reportViewerDelinquent);
-            this.tabPage6.Controls.Add(this.buttonDelinquentSearch);
-            this.tabPage6.Controls.Add(this.comboBoxDelinquentStatus);
-            this.tabPage6.Controls.Add(this.label11);
-            this.tabPage6.Controls.Add(this.label10);
-            this.tabPage6.Controls.Add(this.dateTimePickerDelinquentCutOff);
-            this.tabPage6.Location = new System.Drawing.Point(154, 4);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(994, 555);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Top Delinquent Accounts";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // reportViewerDelinquent
-            // 
-            reportDataSource6.Name = "DataSetConcessionaireReports";
-            reportDataSource6.Value = null;
-            this.reportViewerDelinquent.LocalReport.DataSources.Add(reportDataSource6);
-            this.reportViewerDelinquent.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportAccountByStatus.rdlc";
-            this.reportViewerDelinquent.Location = new System.Drawing.Point(26, 49);
-            this.reportViewerDelinquent.Name = "reportViewerDelinquent";
-            this.reportViewerDelinquent.ServerReport.BearerToken = null;
-            this.reportViewerDelinquent.Size = new System.Drawing.Size(944, 481);
-            this.reportViewerDelinquent.TabIndex = 17;
-            // 
-            // buttonDelinquentSearch
-            // 
-            this.buttonDelinquentSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDelinquentSearch.Location = new System.Drawing.Point(570, 8);
-            this.buttonDelinquentSearch.Name = "buttonDelinquentSearch";
-            this.buttonDelinquentSearch.Size = new System.Drawing.Size(74, 38);
-            this.buttonDelinquentSearch.TabIndex = 16;
-            this.buttonDelinquentSearch.Text = "Search";
-            this.buttonDelinquentSearch.UseVisualStyleBackColor = true;
-            // 
-            // comboBoxDelinquentStatus
-            // 
-            this.comboBoxDelinquentStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxDelinquentStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxDelinquentStatus.FormattingEnabled = true;
-            this.comboBoxDelinquentStatus.Location = new System.Drawing.Point(379, 16);
-            this.comboBoxDelinquentStatus.Name = "comboBoxDelinquentStatus";
-            this.comboBoxDelinquentStatus.Size = new System.Drawing.Size(138, 24);
-            this.comboBoxDelinquentStatus.TabIndex = 5;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(23, 19);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 16);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Cut Off:";
-            // 
-            // dateTimePickerDelinquentCutOff
-            // 
-            this.dateTimePickerDelinquentCutOff.CustomFormat = "MM/dd/yyyy";
-            this.dateTimePickerDelinquentCutOff.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerDelinquentCutOff.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerDelinquentCutOff.Location = new System.Drawing.Point(78, 16);
-            this.dateTimePickerDelinquentCutOff.Name = "dateTimePickerDelinquentCutOff";
-            this.dateTimePickerDelinquentCutOff.Size = new System.Drawing.Size(129, 24);
-            this.dateTimePickerDelinquentCutOff.TabIndex = 2;
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Controls.Add(this.dateTimePickerOtherReceivablesCutOff);
-            this.tabPage7.Controls.Add(this.comboBoxOtherReceivablesBook);
-            this.tabPage7.Controls.Add(this.comboBoxOtherReceivablesZone);
-            this.tabPage7.Controls.Add(this.label12);
-            this.tabPage7.Controls.Add(this.label13);
-            this.tabPage7.Controls.Add(this.label18);
-            this.tabPage7.Controls.Add(this.buttonOtherReceivablesSearch);
-            this.tabPage7.Controls.Add(this.reportViewerOtherReceivables);
-            this.tabPage7.Location = new System.Drawing.Point(154, 4);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(994, 555);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "Summary of Other Receivables";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // reportViewerOtherReceivables
-            // 
-            reportDataSource7.Name = "DataSetConcessionaireReports";
-            reportDataSource7.Value = null;
-            this.reportViewerOtherReceivables.LocalReport.DataSources.Add(reportDataSource7);
-            this.reportViewerOtherReceivables.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportSeniorCitizenAccounts.rdlc" +
-    "";
-            this.reportViewerOtherReceivables.Location = new System.Drawing.Point(26, 49);
-            this.reportViewerOtherReceivables.Name = "reportViewerOtherReceivables";
-            this.reportViewerOtherReceivables.ServerReport.BearerToken = null;
-            this.reportViewerOtherReceivables.Size = new System.Drawing.Size(944, 481);
-            this.reportViewerOtherReceivables.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Zone:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(169, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 16);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Book:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(318, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 16);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Cut-Off Date:";
-            // 
-            // comboBoxAgingAccountZone
-            // 
-            this.comboBoxAgingAccountZone.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxAgingAccountZone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxAgingAccountZone.FormattingEnabled = true;
-            this.comboBoxAgingAccountZone.Location = new System.Drawing.Point(69, 15);
-            this.comboBoxAgingAccountZone.Name = "comboBoxAgingAccountZone";
-            this.comboBoxAgingAccountZone.Size = new System.Drawing.Size(50, 24);
-            this.comboBoxAgingAccountZone.TabIndex = 1;
-            // 
-            // comboBoxAgingAccountBook
-            // 
-            this.comboBoxAgingAccountBook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxAgingAccountBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxAgingAccountBook.FormattingEnabled = true;
-            this.comboBoxAgingAccountBook.Location = new System.Drawing.Point(215, 15);
-            this.comboBoxAgingAccountBook.Name = "comboBoxAgingAccountBook";
-            this.comboBoxAgingAccountBook.Size = new System.Drawing.Size(55, 24);
-            this.comboBoxAgingAccountBook.TabIndex = 1;
-            // 
-            // comboBoxAgingAccountStatus
-            // 
-            this.comboBoxAgingAccountStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxAgingAccountStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxAgingAccountStatus.FormattingEnabled = true;
-            this.comboBoxAgingAccountStatus.Location = new System.Drawing.Point(571, 15);
-            this.comboBoxAgingAccountStatus.Name = "comboBoxAgingAccountStatus";
-            this.comboBoxAgingAccountStatus.Size = new System.Drawing.Size(96, 24);
-            this.comboBoxAgingAccountStatus.TabIndex = 1;
-            // 
-            // dateTimePickerAgingAccountCutOff
-            // 
-            this.dateTimePickerAgingAccountCutOff.CustomFormat = "MM/dd/yyyy";
-            this.dateTimePickerAgingAccountCutOff.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerAgingAccountCutOff.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerAgingAccountCutOff.Location = new System.Drawing.Point(406, 15);
-            this.dateTimePickerAgingAccountCutOff.Name = "dateTimePickerAgingAccountCutOff";
-            this.dateTimePickerAgingAccountCutOff.Size = new System.Drawing.Size(129, 24);
-            this.dateTimePickerAgingAccountCutOff.TabIndex = 4;
-            // 
-            // dateTimePickerAgingBookCutOff
-            // 
-            this.dateTimePickerAgingBookCutOff.CustomFormat = "MM/dd/yyyy";
-            this.dateTimePickerAgingBookCutOff.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerAgingBookCutOff.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerAgingBookCutOff.Location = new System.Drawing.Point(111, 13);
-            this.dateTimePickerAgingBookCutOff.Name = "dateTimePickerAgingBookCutOff";
-            this.dateTimePickerAgingBookCutOff.Size = new System.Drawing.Size(129, 24);
-            this.dateTimePickerAgingBookCutOff.TabIndex = 12;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 16);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Cut-Off Date:";
             // 
             // dateTimePickerDetailedListCutOff
             // 
@@ -536,6 +370,46 @@
             this.label7.Size = new System.Drawing.Size(42, 16);
             this.label7.TabIndex = 18;
             this.label7.Text = "Zone:";
+            // 
+            // reportViewerDetailedList
+            // 
+            reportDataSource3.Name = "DataSetConcessionaireReports";
+            reportDataSource3.Value = null;
+            this.reportViewerDetailedList.LocalReport.DataSources.Add(reportDataSource3);
+            this.reportViewerDetailedList.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportAccountPerClassification.r" +
+    "dlc";
+            this.reportViewerDetailedList.Location = new System.Drawing.Point(26, 49);
+            this.reportViewerDetailedList.Name = "reportViewerDetailedList";
+            this.reportViewerDetailedList.ServerReport.BearerToken = null;
+            this.reportViewerDetailedList.Size = new System.Drawing.Size(944, 481);
+            this.reportViewerDetailedList.TabIndex = 15;
+            // 
+            // buttonDetailedListSearch
+            // 
+            this.buttonDetailedListSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDetailedListSearch.Location = new System.Drawing.Point(581, 5);
+            this.buttonDetailedListSearch.Name = "buttonDetailedListSearch";
+            this.buttonDetailedListSearch.Size = new System.Drawing.Size(74, 38);
+            this.buttonDetailedListSearch.TabIndex = 14;
+            this.buttonDetailedListSearch.Text = "Search";
+            this.buttonDetailedListSearch.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.dateTimePickerReceivablesAccountCutOff);
+            this.tabPage4.Controls.Add(this.comboBoxReceivablesAccountBook);
+            this.tabPage4.Controls.Add(this.comboBoxReceivablesAccountZone);
+            this.tabPage4.Controls.Add(this.label14);
+            this.tabPage4.Controls.Add(this.label15);
+            this.tabPage4.Controls.Add(this.label16);
+            this.tabPage4.Controls.Add(this.reportViewerReceivablesAccount);
+            this.tabPage4.Controls.Add(this.buttonReceivablesAccountSearch);
+            this.tabPage4.Location = new System.Drawing.Point(154, 4);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(994, 555);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Summary of Receivables Per Account";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // dateTimePickerReceivablesAccountCutOff
             // 
@@ -620,6 +494,23 @@
             this.buttonReceivablesAccountSearch.Text = "Search";
             this.buttonReceivablesAccountSearch.UseVisualStyleBackColor = true;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.dateTimePickerDemandLetterCutOff);
+            this.tabPage5.Controls.Add(this.comboBoxDemandLetterBook);
+            this.tabPage5.Controls.Add(this.comboBoxDemandLetterZone);
+            this.tabPage5.Controls.Add(this.label8);
+            this.tabPage5.Controls.Add(this.label9);
+            this.tabPage5.Controls.Add(this.label17);
+            this.tabPage5.Controls.Add(this.buttonDemandLetterSearch);
+            this.tabPage5.Controls.Add(this.reportViewerDemandLetter);
+            this.tabPage5.Location = new System.Drawing.Point(154, 4);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(994, 555);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Demand Letter";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
             // dateTimePickerDemandLetterCutOff
             // 
             this.dateTimePickerDemandLetterCutOff.CustomFormat = "MM/dd/yyyy";
@@ -690,6 +581,73 @@
             this.buttonDemandLetterSearch.Text = "Search";
             this.buttonDemandLetterSearch.UseVisualStyleBackColor = true;
             // 
+            // reportViewerDemandLetter
+            // 
+            reportDataSource5.Name = "DataSetConcessionaireReports";
+            reportDataSource5.Value = null;
+            this.reportViewerDemandLetter.LocalReport.DataSources.Add(reportDataSource5);
+            this.reportViewerDemandLetter.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportNewConnectionSummary.rdlc";
+            this.reportViewerDemandLetter.Location = new System.Drawing.Point(26, 49);
+            this.reportViewerDemandLetter.Name = "reportViewerDemandLetter";
+            this.reportViewerDemandLetter.ServerReport.BearerToken = null;
+            this.reportViewerDemandLetter.Size = new System.Drawing.Size(944, 481);
+            this.reportViewerDemandLetter.TabIndex = 0;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.numericUpDownDelinquentLimit);
+            this.tabPage6.Controls.Add(this.reportViewerDelinquent);
+            this.tabPage6.Controls.Add(this.buttonDelinquentSearch);
+            this.tabPage6.Controls.Add(this.comboBoxDelinquentStatus);
+            this.tabPage6.Controls.Add(this.label11);
+            this.tabPage6.Controls.Add(this.label10);
+            this.tabPage6.Controls.Add(this.dateTimePickerDelinquentCutOff);
+            this.tabPage6.Location = new System.Drawing.Point(154, 4);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(994, 555);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Top Delinquent Accounts";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDownDelinquentLimit
+            // 
+            this.numericUpDownDelinquentLimit.Location = new System.Drawing.Point(285, 19);
+            this.numericUpDownDelinquentLimit.Name = "numericUpDownDelinquentLimit";
+            this.numericUpDownDelinquentLimit.Size = new System.Drawing.Size(54, 20);
+            this.numericUpDownDelinquentLimit.TabIndex = 18;
+            // 
+            // reportViewerDelinquent
+            // 
+            reportDataSource6.Name = "DataSetConcessionaireReports";
+            reportDataSource6.Value = null;
+            this.reportViewerDelinquent.LocalReport.DataSources.Add(reportDataSource6);
+            this.reportViewerDelinquent.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportAccountByStatus.rdlc";
+            this.reportViewerDelinquent.Location = new System.Drawing.Point(26, 49);
+            this.reportViewerDelinquent.Name = "reportViewerDelinquent";
+            this.reportViewerDelinquent.ServerReport.BearerToken = null;
+            this.reportViewerDelinquent.Size = new System.Drawing.Size(944, 481);
+            this.reportViewerDelinquent.TabIndex = 17;
+            // 
+            // buttonDelinquentSearch
+            // 
+            this.buttonDelinquentSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDelinquentSearch.Location = new System.Drawing.Point(570, 8);
+            this.buttonDelinquentSearch.Name = "buttonDelinquentSearch";
+            this.buttonDelinquentSearch.Size = new System.Drawing.Size(74, 38);
+            this.buttonDelinquentSearch.TabIndex = 16;
+            this.buttonDelinquentSearch.Text = "Search";
+            this.buttonDelinquentSearch.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxDelinquentStatus
+            // 
+            this.comboBoxDelinquentStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDelinquentStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxDelinquentStatus.FormattingEnabled = true;
+            this.comboBoxDelinquentStatus.Location = new System.Drawing.Point(379, 16);
+            this.comboBoxDelinquentStatus.Name = "comboBoxDelinquentStatus";
+            this.comboBoxDelinquentStatus.Size = new System.Drawing.Size(138, 24);
+            this.comboBoxDelinquentStatus.TabIndex = 5;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -700,12 +658,42 @@
             this.label11.TabIndex = 3;
             this.label11.Text = "Limit:";
             // 
-            // numericUpDownDelinquentLimit
+            // label10
             // 
-            this.numericUpDownDelinquentLimit.Location = new System.Drawing.Point(285, 19);
-            this.numericUpDownDelinquentLimit.Name = "numericUpDownDelinquentLimit";
-            this.numericUpDownDelinquentLimit.Size = new System.Drawing.Size(54, 20);
-            this.numericUpDownDelinquentLimit.TabIndex = 18;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(23, 19);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(49, 16);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Cut Off:";
+            // 
+            // dateTimePickerDelinquentCutOff
+            // 
+            this.dateTimePickerDelinquentCutOff.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePickerDelinquentCutOff.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerDelinquentCutOff.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerDelinquentCutOff.Location = new System.Drawing.Point(78, 16);
+            this.dateTimePickerDelinquentCutOff.Name = "dateTimePickerDelinquentCutOff";
+            this.dateTimePickerDelinquentCutOff.Size = new System.Drawing.Size(129, 24);
+            this.dateTimePickerDelinquentCutOff.TabIndex = 2;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.dateTimePickerOtherReceivablesCutOff);
+            this.tabPage7.Controls.Add(this.comboBoxOtherReceivablesBook);
+            this.tabPage7.Controls.Add(this.comboBoxOtherReceivablesZone);
+            this.tabPage7.Controls.Add(this.label12);
+            this.tabPage7.Controls.Add(this.label13);
+            this.tabPage7.Controls.Add(this.label18);
+            this.tabPage7.Controls.Add(this.buttonOtherReceivablesSearch);
+            this.tabPage7.Controls.Add(this.reportViewerOtherReceivables);
+            this.tabPage7.Location = new System.Drawing.Point(154, 4);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(994, 555);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Summary of Other Receivables";
+            this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // dateTimePickerOtherReceivablesCutOff
             // 
@@ -777,6 +765,19 @@
             this.buttonOtherReceivablesSearch.Text = "Search";
             this.buttonOtherReceivablesSearch.UseVisualStyleBackColor = true;
             // 
+            // reportViewerOtherReceivables
+            // 
+            reportDataSource7.Name = "DataSetConcessionaireReports";
+            reportDataSource7.Value = null;
+            this.reportViewerOtherReceivables.LocalReport.DataSources.Add(reportDataSource7);
+            this.reportViewerOtherReceivables.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportSeniorCitizenAccounts.rdlc" +
+    "";
+            this.reportViewerOtherReceivables.Location = new System.Drawing.Point(26, 49);
+            this.reportViewerOtherReceivables.Name = "reportViewerOtherReceivables";
+            this.reportViewerOtherReceivables.ServerReport.BearerToken = null;
+            this.reportViewerOtherReceivables.Size = new System.Drawing.Size(944, 481);
+            this.reportViewerOtherReceivables.TabIndex = 7;
+            // 
             // ReceivablesReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -802,9 +803,9 @@
             this.tabPage5.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDelinquentLimit)).EndInit();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDelinquentLimit)).EndInit();
             this.ResumeLayout(false);
 
         }
