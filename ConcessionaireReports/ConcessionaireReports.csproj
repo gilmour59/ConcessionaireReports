@@ -138,6 +138,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReceivablesReportsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceivablesReportsForm.Designer.cs">
+      <DependentUpon>ReceivablesReportsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="BillingReportsForm.resx">
       <DependentUpon>BillingReportsForm.cs</DependentUpon>
@@ -205,6 +211,9 @@
     <EmbeddedResource Include="RDLC\MeterReports\ReportSummaryReceivedMeters.rdlc" />
     <EmbeddedResource Include="RDLC\MeterReports\ReportSummaryTestedMeters.rdlc" />
     <EmbeddedResource Include="RDLC\MeterReadingReports\ReportUnreadMeters.rdlc" />
+    <EmbeddedResource Include="ReceivablesReportsForm.resx">
+      <DependentUpon>ReceivablesReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DataSetBillingReports.xsc">
       <DependentUpon>DataSetBillingReports.xsd</DependentUpon>
     </None>
