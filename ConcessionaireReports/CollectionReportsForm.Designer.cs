@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource10 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource56 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource57 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource58 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource59 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource60 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource61 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource62 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource63 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource64 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource65 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CollectionReportsForm));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource11 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource12 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource13 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource14 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource15 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource16 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource17 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource18 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource66 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource67 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource68 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource69 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource70 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource71 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource72 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource55 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.DailyCollectionReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetCollectionReports = new ConcessionaireReports.DataSetCollectionReports();
             this.DCRRecapBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -64,6 +64,7 @@
             this.SummaryWithholdingTaxesRecapBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SummaryMiscellaneousFeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DailyCollectionSummaryPerZoneBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DailyCollectionSummaryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlCollectionReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dateTimePickerDailyCollectionReportDate = new System.Windows.Forms.DateTimePicker();
@@ -154,7 +155,7 @@
             this.dateTimePickerCashCollectionReportDate = new System.Windows.Forms.DateTimePicker();
             this.label22 = new System.Windows.Forms.Label();
             this.reportViewerCashCollectionReport = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DailyCollectionSummaryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CashCollectionReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReportBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetCollectionReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DCRRecapBindingSource)).BeginInit();
@@ -171,6 +172,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SummaryWithholdingTaxesRecapBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SummaryMiscellaneousFeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionSummaryPerZoneBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionSummaryBindingSource)).BeginInit();
             this.tabControlCollectionReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -189,7 +191,7 @@
             this.tabPage12.SuspendLayout();
             this.tabPage13.SuspendLayout();
             this.tabPage14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionSummaryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CashCollectionReportBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // DailyCollectionReportBindingSource
@@ -272,6 +274,11 @@
             this.DailyCollectionSummaryPerZoneBindingSource.DataMember = "DailyCollectionSummaryPerZone";
             this.DailyCollectionSummaryPerZoneBindingSource.DataSource = this.DataSetCollectionReports;
             // 
+            // DailyCollectionSummaryBindingSource
+            // 
+            this.DailyCollectionSummaryBindingSource.DataMember = "DailyCollectionSummary";
+            this.DailyCollectionSummaryBindingSource.DataSource = this.DataSetCollectionReports;
+            // 
             // tabControlCollectionReports
             // 
             this.tabControlCollectionReports.Alignment = System.Windows.Forms.TabAlignment.Left;
@@ -338,12 +345,12 @@
             // 
             // reportViewerDailyCollectionReport
             // 
-            reportDataSource1.Name = "DataSetCollectionReports";
-            reportDataSource1.Value = this.DailyCollectionReportBindingSource;
-            reportDataSource2.Name = "DataSetCollectionReports2";
-            reportDataSource2.Value = this.DCRRecapBindingSource;
-            this.reportViewerDailyCollectionReport.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewerDailyCollectionReport.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource56.Name = "DataSetCollectionReports";
+            reportDataSource56.Value = this.DailyCollectionReportBindingSource;
+            reportDataSource57.Name = "DataSetCollectionReports2";
+            reportDataSource57.Value = this.DCRRecapBindingSource;
+            this.reportViewerDailyCollectionReport.LocalReport.DataSources.Add(reportDataSource56);
+            this.reportViewerDailyCollectionReport.LocalReport.DataSources.Add(reportDataSource57);
             this.reportViewerDailyCollectionReport.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.CollectionReports.ReportDailyCollectionReport.rdlc";
             this.reportViewerDailyCollectionReport.Location = new System.Drawing.Point(26, 49);
             this.reportViewerDailyCollectionReport.Name = "reportViewerDailyCollectionReport";
@@ -451,15 +458,15 @@
             // 
             // reportViewerDCR2
             // 
-            reportDataSource3.Name = "DataSetCollectionReports";
-            reportDataSource3.Value = this.DailyCollectionReport2BindingSource;
-            reportDataSource4.Name = "DataSetCollectionReports2";
-            reportDataSource4.Value = this.DCRRecapBindingSource;
-            reportDataSource5.Name = "DataSetCollectionReports3";
-            reportDataSource5.Value = this.DCRCheckPaymentsBindingSource;
-            this.reportViewerDCR2.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewerDCR2.LocalReport.DataSources.Add(reportDataSource4);
-            this.reportViewerDCR2.LocalReport.DataSources.Add(reportDataSource5);
+            reportDataSource58.Name = "DataSetCollectionReports";
+            reportDataSource58.Value = this.DailyCollectionReport2BindingSource;
+            reportDataSource59.Name = "DataSetCollectionReports2";
+            reportDataSource59.Value = this.DCRRecapBindingSource;
+            reportDataSource60.Name = "DataSetCollectionReports3";
+            reportDataSource60.Value = this.DCRCheckPaymentsBindingSource;
+            this.reportViewerDCR2.LocalReport.DataSources.Add(reportDataSource58);
+            this.reportViewerDCR2.LocalReport.DataSources.Add(reportDataSource59);
+            this.reportViewerDCR2.LocalReport.DataSources.Add(reportDataSource60);
             this.reportViewerDCR2.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.CollectionReports.ReportDailyCollectionReport2.rdlc";
             this.reportViewerDCR2.Location = new System.Drawing.Point(26, 49);
             this.reportViewerDCR2.Name = "reportViewerDCR2";
@@ -513,9 +520,9 @@
             // 
             // reportViewerCollectionSummaryZoneBook
             // 
-            reportDataSource6.Name = "DataSetCollectionReports";
-            reportDataSource6.Value = this.CollectionSummaryPerBookZoneBindingSource;
-            this.reportViewerCollectionSummaryZoneBook.LocalReport.DataSources.Add(reportDataSource6);
+            reportDataSource61.Name = "DataSetCollectionReports";
+            reportDataSource61.Value = this.CollectionSummaryPerBookZoneBindingSource;
+            this.reportViewerCollectionSummaryZoneBook.LocalReport.DataSources.Add(reportDataSource61);
             this.reportViewerCollectionSummaryZoneBook.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.CollectionReports.ReportCollectionSummaryPerZoneBook.r" +
     "dlc";
             this.reportViewerCollectionSummaryZoneBook.Location = new System.Drawing.Point(26, 49);
@@ -593,9 +600,9 @@
             // 
             // reportViewerCashReceiptRecord
             // 
-            reportDataSource7.Name = "DataSetCollectionReports";
-            reportDataSource7.Value = this.CashReceiptRemittanceRecordBindingSource;
-            this.reportViewerCashReceiptRecord.LocalReport.DataSources.Add(reportDataSource7);
+            reportDataSource62.Name = "DataSetCollectionReports";
+            reportDataSource62.Value = this.CashReceiptRemittanceRecordBindingSource;
+            this.reportViewerCashReceiptRecord.LocalReport.DataSources.Add(reportDataSource62);
             this.reportViewerCashReceiptRecord.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.CollectionReports.ReportCashReceiptRemittanceRecord.rd" +
     "lc";
             this.reportViewerCashReceiptRecord.Location = new System.Drawing.Point(26, 49);
@@ -639,9 +646,9 @@
             // 
             // reportViewerCDCR
             // 
-            reportDataSource8.Name = "DataSetCollectionReports";
-            reportDataSource8.Value = this.CashierDailyCollectionReportBindingSource;
-            this.reportViewerCDCR.LocalReport.DataSources.Add(reportDataSource8);
+            reportDataSource63.Name = "DataSetCollectionReports";
+            reportDataSource63.Value = this.CashierDailyCollectionReportBindingSource;
+            this.reportViewerCDCR.LocalReport.DataSources.Add(reportDataSource63);
             this.reportViewerCDCR.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.CollectionReports.ReportCashierDailyCollectionReport.r" +
     "dlc";
             this.reportViewerCDCR.Location = new System.Drawing.Point(26, 49);
@@ -730,9 +737,9 @@
             // 
             // reportViewerMonthlyCollectionReport
             // 
-            reportDataSource9.Name = "DataSetCollectionReports";
-            reportDataSource9.Value = this.MonthlyCollectionReportBindingSource;
-            this.reportViewerMonthlyCollectionReport.LocalReport.DataSources.Add(reportDataSource9);
+            reportDataSource64.Name = "DataSetCollectionReports";
+            reportDataSource64.Value = this.MonthlyCollectionReportBindingSource;
+            this.reportViewerMonthlyCollectionReport.LocalReport.DataSources.Add(reportDataSource64);
             this.reportViewerMonthlyCollectionReport.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.CollectionReports.ReportMonthlyCollectionReport.rdlc";
             this.reportViewerMonthlyCollectionReport.Location = new System.Drawing.Point(26, 49);
             this.reportViewerMonthlyCollectionReport.Name = "reportViewerMonthlyCollectionReport";
@@ -786,9 +793,9 @@
             // 
             // reportViewerPaymentSummaryMaterials
             // 
-            reportDataSource10.Name = "DataSetCollectionReports";
-            reportDataSource10.Value = this.PaymentSummaryMaterialsBindingSource;
-            this.reportViewerPaymentSummaryMaterials.LocalReport.DataSources.Add(reportDataSource10);
+            reportDataSource65.Name = "DataSetCollectionReports";
+            reportDataSource65.Value = this.PaymentSummaryMaterialsBindingSource;
+            this.reportViewerPaymentSummaryMaterials.LocalReport.DataSources.Add(reportDataSource65);
             this.reportViewerPaymentSummaryMaterials.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.CollectionReports.ReportPaymentSummaryMaterials.rdlc";
             this.reportViewerPaymentSummaryMaterials.Location = new System.Drawing.Point(26, 49);
             this.reportViewerPaymentSummaryMaterials.Name = "reportViewerPaymentSummaryMaterials";
@@ -866,9 +873,9 @@
             // 
             // reportViewerSummarySeniorCitizenDiscount
             // 
-            reportDataSource11.Name = "DataSetCollectionReports";
-            reportDataSource11.Value = this.SummarySeniorDiscountBindingSource;
-            this.reportViewerSummarySeniorCitizenDiscount.LocalReport.DataSources.Add(reportDataSource11);
+            reportDataSource66.Name = "DataSetCollectionReports";
+            reportDataSource66.Value = this.SummarySeniorDiscountBindingSource;
+            this.reportViewerSummarySeniorCitizenDiscount.LocalReport.DataSources.Add(reportDataSource66);
             this.reportViewerSummarySeniorCitizenDiscount.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.CollectionReports.ReportSummarySeniorDiscount.rdlc";
             this.reportViewerSummarySeniorCitizenDiscount.Location = new System.Drawing.Point(26, 49);
             this.reportViewerSummarySeniorCitizenDiscount.Name = "reportViewerSummarySeniorCitizenDiscount";
@@ -922,9 +929,9 @@
             // 
             // reportViewerSummaryCancelledOR
             // 
-            reportDataSource12.Name = "DataSetCollectionReports";
-            reportDataSource12.Value = this.SummaryCancelledORBindingSource;
-            this.reportViewerSummaryCancelledOR.LocalReport.DataSources.Add(reportDataSource12);
+            reportDataSource67.Name = "DataSetCollectionReports";
+            reportDataSource67.Value = this.SummaryCancelledORBindingSource;
+            this.reportViewerSummaryCancelledOR.LocalReport.DataSources.Add(reportDataSource67);
             this.reportViewerSummaryCancelledOR.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.CollectionReports.ReportSummaryCancelledOR.rdlc";
             this.reportViewerSummaryCancelledOR.Location = new System.Drawing.Point(26, 49);
             this.reportViewerSummaryCancelledOR.Name = "reportViewerSummaryCancelledOR";
@@ -1024,12 +1031,12 @@
             // 
             // reportViewerSummaryWithholdingTaxes
             // 
-            reportDataSource13.Name = "DataSetCollectionReports";
-            reportDataSource13.Value = this.SummaryWithholdingTaxesBindingSource;
-            reportDataSource14.Name = "DataSetCollectionReports2";
-            reportDataSource14.Value = this.SummaryWithholdingTaxesRecapBindingSource;
-            this.reportViewerSummaryWithholdingTaxes.LocalReport.DataSources.Add(reportDataSource13);
-            this.reportViewerSummaryWithholdingTaxes.LocalReport.DataSources.Add(reportDataSource14);
+            reportDataSource68.Name = "DataSetCollectionReports";
+            reportDataSource68.Value = this.SummaryWithholdingTaxesBindingSource;
+            reportDataSource69.Name = "DataSetCollectionReports2";
+            reportDataSource69.Value = this.SummaryWithholdingTaxesRecapBindingSource;
+            this.reportViewerSummaryWithholdingTaxes.LocalReport.DataSources.Add(reportDataSource68);
+            this.reportViewerSummaryWithholdingTaxes.LocalReport.DataSources.Add(reportDataSource69);
             this.reportViewerSummaryWithholdingTaxes.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.CollectionReports.ReportSummaryWithholdingTaxes.rdlc";
             this.reportViewerSummaryWithholdingTaxes.Location = new System.Drawing.Point(26, 49);
             this.reportViewerSummaryWithholdingTaxes.Name = "reportViewerSummaryWithholdingTaxes";
@@ -1140,9 +1147,9 @@
             // 
             // reportViewerSummaryMiscellaneousFees
             // 
-            reportDataSource15.Name = "DataSetCollectionReports";
-            reportDataSource15.Value = this.SummaryMiscellaneousFeesBindingSource;
-            this.reportViewerSummaryMiscellaneousFees.LocalReport.DataSources.Add(reportDataSource15);
+            reportDataSource70.Name = "DataSetCollectionReports";
+            reportDataSource70.Value = this.SummaryMiscellaneousFeesBindingSource;
+            this.reportViewerSummaryMiscellaneousFees.LocalReport.DataSources.Add(reportDataSource70);
             this.reportViewerSummaryMiscellaneousFees.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.CollectionReports.ReportSummaryMiscellaneousFees.rdlc";
             this.reportViewerSummaryMiscellaneousFees.Location = new System.Drawing.Point(26, 49);
             this.reportViewerSummaryMiscellaneousFees.Name = "reportViewerSummaryMiscellaneousFees";
@@ -1196,9 +1203,9 @@
             // 
             // reportViewerDailyCollectionSummaryZone
             // 
-            reportDataSource16.Name = "DataSetCollectionReports";
-            reportDataSource16.Value = this.DailyCollectionSummaryPerZoneBindingSource;
-            this.reportViewerDailyCollectionSummaryZone.LocalReport.DataSources.Add(reportDataSource16);
+            reportDataSource71.Name = "DataSetCollectionReports";
+            reportDataSource71.Value = this.DailyCollectionSummaryPerZoneBindingSource;
+            this.reportViewerDailyCollectionSummaryZone.LocalReport.DataSources.Add(reportDataSource71);
             this.reportViewerDailyCollectionSummaryZone.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.CollectionReports.ReportDailyCollectionSummaryPerZone." +
     "rdlc";
             this.reportViewerDailyCollectionSummaryZone.Location = new System.Drawing.Point(26, 49);
@@ -1253,9 +1260,9 @@
             // 
             // reportViewerDailyCollectionSummary
             // 
-            reportDataSource17.Name = "DataSetCollectionReports";
-            reportDataSource17.Value = this.DailyCollectionSummaryBindingSource;
-            this.reportViewerDailyCollectionSummary.LocalReport.DataSources.Add(reportDataSource17);
+            reportDataSource72.Name = "DataSetCollectionReports";
+            reportDataSource72.Value = this.DailyCollectionSummaryBindingSource;
+            this.reportViewerDailyCollectionSummary.LocalReport.DataSources.Add(reportDataSource72);
             this.reportViewerDailyCollectionSummary.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.CollectionReports.ReportDailyCollectionSummary.rdlc";
             this.reportViewerDailyCollectionSummary.Location = new System.Drawing.Point(26, 49);
             this.reportViewerDailyCollectionSummary.Name = "reportViewerDailyCollectionSummary";
@@ -1285,15 +1292,17 @@
             this.buttonCashCollectionReportSearch.TabIndex = 78;
             this.buttonCashCollectionReportSearch.Text = "Search";
             this.buttonCashCollectionReportSearch.UseVisualStyleBackColor = true;
+            this.buttonCashCollectionReportSearch.Click += new System.EventHandler(this.buttonCashCollectionReportSearch_Click);
             // 
             // dateTimePickerCashCollectionReportDate
             // 
-            this.dateTimePickerCashCollectionReportDate.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePickerCashCollectionReportDate.CustomFormat = "MM/yyyy";
             this.dateTimePickerCashCollectionReportDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerCashCollectionReportDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerCashCollectionReportDate.Location = new System.Drawing.Point(70, 13);
             this.dateTimePickerCashCollectionReportDate.Name = "dateTimePickerCashCollectionReportDate";
-            this.dateTimePickerCashCollectionReportDate.Size = new System.Drawing.Size(118, 24);
+            this.dateTimePickerCashCollectionReportDate.ShowUpDown = true;
+            this.dateTimePickerCashCollectionReportDate.Size = new System.Drawing.Size(91, 24);
             this.dateTimePickerCashCollectionReportDate.TabIndex = 77;
             // 
             // label22
@@ -1308,20 +1317,20 @@
             // 
             // reportViewerCashCollectionReport
             // 
-            reportDataSource18.Name = "DataSetBillingReports";
-            reportDataSource18.Value = null;
-            this.reportViewerCashCollectionReport.LocalReport.DataSources.Add(reportDataSource18);
-            this.reportViewerCashCollectionReport.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountsLargeConsumption.rdlc";
+            reportDataSource55.Name = "DataSetCollectionReports";
+            reportDataSource55.Value = this.CashCollectionReportBindingSource;
+            this.reportViewerCashCollectionReport.LocalReport.DataSources.Add(reportDataSource55);
+            this.reportViewerCashCollectionReport.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.CollectionReports.ReportCashCollectionReport.rdlc";
             this.reportViewerCashCollectionReport.Location = new System.Drawing.Point(26, 49);
             this.reportViewerCashCollectionReport.Name = "reportViewerCashCollectionReport";
             this.reportViewerCashCollectionReport.ServerReport.BearerToken = null;
             this.reportViewerCashCollectionReport.Size = new System.Drawing.Size(944, 481);
             this.reportViewerCashCollectionReport.TabIndex = 75;
             // 
-            // DailyCollectionSummaryBindingSource
+            // CashCollectionReportBindingSource
             // 
-            this.DailyCollectionSummaryBindingSource.DataMember = "DailyCollectionSummary";
-            this.DailyCollectionSummaryBindingSource.DataSource = this.DataSetCollectionReports;
+            this.CashCollectionReportBindingSource.DataMember = "CashCollectionReport";
+            this.CashCollectionReportBindingSource.DataSource = this.DataSetCollectionReports;
             // 
             // CollectionReportsForm
             // 
@@ -1351,6 +1360,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SummaryWithholdingTaxesRecapBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SummaryMiscellaneousFeesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionSummaryPerZoneBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionSummaryBindingSource)).EndInit();
             this.tabControlCollectionReports.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1383,7 +1393,7 @@
             this.tabPage13.PerformLayout();
             this.tabPage14.ResumeLayout(false);
             this.tabPage14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionSummaryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CashCollectionReportBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1497,5 +1507,6 @@
         private System.Windows.Forms.BindingSource SummaryMiscellaneousFeesBindingSource;
         private System.Windows.Forms.BindingSource DailyCollectionSummaryPerZoneBindingSource;
         private System.Windows.Forms.BindingSource DailyCollectionSummaryBindingSource;
+        private System.Windows.Forms.BindingSource CashCollectionReportBindingSource;
     }
 }

@@ -764,5 +764,43 @@ namespace ConcessionaireReports
             }
             reportViewerDailyCollectionSummary.RefreshReport();
         }
+
+        private void buttonCashCollectionReportSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetCashCollectionReport", conn))
+                    {
+                        adapter.SelectCommand.CommandTimeout = 5000;
+
+                        DataSetCollectionReports ds = new DataSetCollectionReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@paramYear", dateTimePickerCashCollectionReportDate.Value.Year);
+                        adapter.SelectCommand.Parameters["@paramYear"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@paramMonth", dateTimePickerCashCollectionReportDate.Value.Month);
+                        adapter.SelectCommand.Parameters["@paramMonth"].Direction = ParameterDirection.Input;
+                        adapter.SelectCommand.Parameters.AddWithValue("@userID", 0);
+                        adapter.SelectCommand.Parameters["@userID"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "CashCollectionReport");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["CashCollectionReport"]);
+                        reportViewerCashCollectionReport.LocalReport.DataSources.Clear();
+                        reportViewerCashCollectionReport.LocalReport.DataSources.Add(rds);
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            reportViewerCashCollectionReport.RefreshReport();
+        }
     }
 }
