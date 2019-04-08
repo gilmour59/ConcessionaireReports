@@ -63,6 +63,7 @@
             this.SummaryWithholdingTaxesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SummaryWithholdingTaxesRecapBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SummaryMiscellaneousFeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DailyCollectionSummaryPerZoneBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlCollectionReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dateTimePickerDailyCollectionReportDate = new System.Windows.Forms.DateTimePicker();
@@ -153,7 +154,7 @@
             this.dateTimePickerCashCollectionReportDate = new System.Windows.Forms.DateTimePicker();
             this.label22 = new System.Windows.Forms.Label();
             this.reportViewerCashCollectionReport = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DailyCollectionSummaryPerZoneBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DailyCollectionSummaryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReportBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetCollectionReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DCRRecapBindingSource)).BeginInit();
@@ -169,6 +170,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SummaryWithholdingTaxesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SummaryWithholdingTaxesRecapBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SummaryMiscellaneousFeesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionSummaryPerZoneBindingSource)).BeginInit();
             this.tabControlCollectionReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -187,7 +189,7 @@
             this.tabPage12.SuspendLayout();
             this.tabPage13.SuspendLayout();
             this.tabPage14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionSummaryPerZoneBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionSummaryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // DailyCollectionReportBindingSource
@@ -264,6 +266,11 @@
             // 
             this.SummaryMiscellaneousFeesBindingSource.DataMember = "SummaryMiscellaneousFees";
             this.SummaryMiscellaneousFeesBindingSource.DataSource = this.DataSetCollectionReports;
+            // 
+            // DailyCollectionSummaryPerZoneBindingSource
+            // 
+            this.DailyCollectionSummaryPerZoneBindingSource.DataMember = "DailyCollectionSummaryPerZone";
+            this.DailyCollectionSummaryPerZoneBindingSource.DataSource = this.DataSetCollectionReports;
             // 
             // tabControlCollectionReports
             // 
@@ -1222,6 +1229,7 @@
             this.buttonDailyCollectionSummarySearch.TabIndex = 78;
             this.buttonDailyCollectionSummarySearch.Text = "Search";
             this.buttonDailyCollectionSummarySearch.UseVisualStyleBackColor = true;
+            this.buttonDailyCollectionSummarySearch.Click += new System.EventHandler(this.buttonDailyCollectionSummarySearch_Click);
             // 
             // dateTimePickerDailyCollectionSummaryDate
             // 
@@ -1245,10 +1253,10 @@
             // 
             // reportViewerDailyCollectionSummary
             // 
-            reportDataSource17.Name = "DataSetBillingReports";
-            reportDataSource17.Value = null;
+            reportDataSource17.Name = "DataSetCollectionReports";
+            reportDataSource17.Value = this.DailyCollectionSummaryBindingSource;
             this.reportViewerDailyCollectionSummary.LocalReport.DataSources.Add(reportDataSource17);
-            this.reportViewerDailyCollectionSummary.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountsLargeConsumption.rdlc";
+            this.reportViewerDailyCollectionSummary.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.CollectionReports.ReportDailyCollectionSummary.rdlc";
             this.reportViewerDailyCollectionSummary.Location = new System.Drawing.Point(26, 49);
             this.reportViewerDailyCollectionSummary.Name = "reportViewerDailyCollectionSummary";
             this.reportViewerDailyCollectionSummary.ServerReport.BearerToken = null;
@@ -1310,10 +1318,10 @@
             this.reportViewerCashCollectionReport.Size = new System.Drawing.Size(944, 481);
             this.reportViewerCashCollectionReport.TabIndex = 75;
             // 
-            // DailyCollectionSummaryPerZoneBindingSource
+            // DailyCollectionSummaryBindingSource
             // 
-            this.DailyCollectionSummaryPerZoneBindingSource.DataMember = "DailyCollectionSummaryPerZone";
-            this.DailyCollectionSummaryPerZoneBindingSource.DataSource = this.DataSetCollectionReports;
+            this.DailyCollectionSummaryBindingSource.DataMember = "DailyCollectionSummary";
+            this.DailyCollectionSummaryBindingSource.DataSource = this.DataSetCollectionReports;
             // 
             // CollectionReportsForm
             // 
@@ -1342,6 +1350,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SummaryWithholdingTaxesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SummaryWithholdingTaxesRecapBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SummaryMiscellaneousFeesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionSummaryPerZoneBindingSource)).EndInit();
             this.tabControlCollectionReports.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1374,7 +1383,7 @@
             this.tabPage13.PerformLayout();
             this.tabPage14.ResumeLayout(false);
             this.tabPage14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionSummaryPerZoneBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionSummaryBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1487,5 +1496,6 @@
         private System.Windows.Forms.PictureBox pictureBoxLoadingMisc;
         private System.Windows.Forms.BindingSource SummaryMiscellaneousFeesBindingSource;
         private System.Windows.Forms.BindingSource DailyCollectionSummaryPerZoneBindingSource;
+        private System.Windows.Forms.BindingSource DailyCollectionSummaryBindingSource;
     }
 }

@@ -164,6 +164,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="RDLC\CollectionReports\ReportCashierDailyCollectionReport.rdlc" />
+    <EmbeddedResource Include="RDLC\CollectionReports\ReportDailyCollectionSummary.rdlc" />
     <EmbeddedResource Include="RDLC\CollectionReports\ReportDailyCollectionSummaryPerZone.rdlc" />
     <EmbeddedResource Include="RDLC\CollectionReports\ReportMonthlyCollectionReport.rdlc" />
     <EmbeddedResource Include="RDLC\CollectionReports\ReportPaymentSummaryMaterials.rdlc" />
