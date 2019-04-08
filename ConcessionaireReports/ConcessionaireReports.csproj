@@ -219,6 +219,7 @@
     <EmbeddedResource Include="RDLC\MeterReports\ReportSummaryReceivedMeters.rdlc" />
     <EmbeddedResource Include="RDLC\MeterReports\ReportSummaryTestedMeters.rdlc" />
     <EmbeddedResource Include="RDLC\MeterReadingReports\ReportUnreadMeters.rdlc" />
+    <EmbeddedResource Include="RDLC\ReceivablesReports\ReportAccountsReceivableAgingPerAccount.rdlc" />
     <EmbeddedResource Include="ReceivablesReportsForm.resx">
       <DependentUpon>ReceivablesReportsForm.cs</DependentUpon>
     </EmbeddedResource>
