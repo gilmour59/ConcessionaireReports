@@ -696,5 +696,39 @@ namespace ConcessionaireReports
 
             reportViewerSummaryMiscellaneousFees.RefreshReport();
         }
+
+        private void buttonDailyCollectionSummaryZoneSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetDCR3", conn))
+                    {
+                        adapter.SelectCommand.CommandTimeout = 5000;
+
+                        DataSetCollectionReports ds = new DataSetCollectionReports();
+
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.SelectCommand.Parameters.AddWithValue("@transDate", dateTimePickerDailyCollectionSummaryZoneDate.Value);
+                        adapter.SelectCommand.Parameters["@transDate"].Direction = ParameterDirection.Input;
+
+                        adapter.Fill(ds, "DailyCollectionPerZone");
+
+                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["DailyCollectionPerZone"]);
+                        reportViewerDailyCollectionSummaryZone.LocalReport.DataSources.Clear();
+                        reportViewerDailyCollectionSummaryZone.LocalReport.DataSources.Add(rds);
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+            reportViewerDailyCollectionSummaryZone.RefreshReport();
+        }
     }
 }

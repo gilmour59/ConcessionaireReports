@@ -56,6 +56,8 @@ namespace ConcessionaireReports {
         
         private SummaryMiscellaneousFeesDataTable tableSummaryMiscellaneousFees;
         
+        private DailyCollectionSummaryPerZoneDataTable tableDailyCollectionSummaryPerZone;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -131,6 +133,9 @@ namespace ConcessionaireReports {
                 }
                 if ((ds.Tables["SummaryMiscellaneousFees"] != null)) {
                     base.Tables.Add(new SummaryMiscellaneousFeesDataTable(ds.Tables["SummaryMiscellaneousFees"]));
+                }
+                if ((ds.Tables["DailyCollectionSummaryPerZone"] != null)) {
+                    base.Tables.Add(new DailyCollectionSummaryPerZoneDataTable(ds.Tables["DailyCollectionSummaryPerZone"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -312,6 +317,16 @@ namespace ConcessionaireReports {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public DailyCollectionSummaryPerZoneDataTable DailyCollectionSummaryPerZone {
+            get {
+                return this.tableDailyCollectionSummaryPerZone;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -424,6 +439,9 @@ namespace ConcessionaireReports {
                 }
                 if ((ds.Tables["SummaryMiscellaneousFees"] != null)) {
                     base.Tables.Add(new SummaryMiscellaneousFeesDataTable(ds.Tables["SummaryMiscellaneousFees"]));
+                }
+                if ((ds.Tables["DailyCollectionSummaryPerZone"] != null)) {
+                    base.Tables.Add(new DailyCollectionSummaryPerZoneDataTable(ds.Tables["DailyCollectionSummaryPerZone"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -554,6 +572,12 @@ namespace ConcessionaireReports {
                     this.tableSummaryMiscellaneousFees.InitVars();
                 }
             }
+            this.tableDailyCollectionSummaryPerZone = ((DailyCollectionSummaryPerZoneDataTable)(base.Tables["DailyCollectionSummaryPerZone"]));
+            if ((initTable == true)) {
+                if ((this.tableDailyCollectionSummaryPerZone != null)) {
+                    this.tableDailyCollectionSummaryPerZone.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -596,6 +620,8 @@ namespace ConcessionaireReports {
             base.Tables.Add(this.tableSummaryWithholdingTaxesRecap);
             this.tableSummaryMiscellaneousFees = new SummaryMiscellaneousFeesDataTable();
             base.Tables.Add(this.tableSummaryMiscellaneousFees);
+            this.tableDailyCollectionSummaryPerZone = new DailyCollectionSummaryPerZoneDataTable();
+            base.Tables.Add(this.tableDailyCollectionSummaryPerZone);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -691,6 +717,12 @@ namespace ConcessionaireReports {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private bool ShouldSerializeSummaryMiscellaneousFees() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeDailyCollectionSummaryPerZone() {
             return false;
         }
         
@@ -796,6 +828,9 @@ namespace ConcessionaireReports {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void SummaryMiscellaneousFeesRowChangeEventHandler(object sender, SummaryMiscellaneousFeesRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void DailyCollectionSummaryPerZoneRowChangeEventHandler(object sender, DailyCollectionSummaryPerZoneRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -6812,6 +6847,365 @@ namespace ConcessionaireReports {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class DailyCollectionSummaryPerZoneDataTable : global::System.Data.TypedTableBase<DailyCollectionSummaryPerZoneRow> {
+            
+            private global::System.Data.DataColumn columnheader_name;
+            
+            private global::System.Data.DataColumn columntrans_date;
+            
+            private global::System.Data.DataColumn columnzone_id;
+            
+            private global::System.Data.DataColumn columnwb_cur_month;
+            
+            private global::System.Data.DataColumn columnwb_prev_month;
+            
+            private global::System.Data.DataColumn columnwb_prev_year;
+            
+            private global::System.Data.DataColumn columnothers_cur_month;
+            
+            private global::System.Data.DataColumn columnothers_prev_month;
+            
+            private global::System.Data.DataColumn columnothers_prev_year;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public DailyCollectionSummaryPerZoneDataTable() {
+                this.TableName = "DailyCollectionSummaryPerZone";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal DailyCollectionSummaryPerZoneDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected DailyCollectionSummaryPerZoneDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn header_nameColumn {
+                get {
+                    return this.columnheader_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn trans_dateColumn {
+                get {
+                    return this.columntrans_date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn zone_idColumn {
+                get {
+                    return this.columnzone_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn wb_cur_monthColumn {
+                get {
+                    return this.columnwb_cur_month;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn wb_prev_monthColumn {
+                get {
+                    return this.columnwb_prev_month;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn wb_prev_yearColumn {
+                get {
+                    return this.columnwb_prev_year;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn others_cur_monthColumn {
+                get {
+                    return this.columnothers_cur_month;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn others_prev_monthColumn {
+                get {
+                    return this.columnothers_prev_month;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn others_prev_yearColumn {
+                get {
+                    return this.columnothers_prev_year;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public DailyCollectionSummaryPerZoneRow this[int index] {
+                get {
+                    return ((DailyCollectionSummaryPerZoneRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event DailyCollectionSummaryPerZoneRowChangeEventHandler DailyCollectionSummaryPerZoneRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event DailyCollectionSummaryPerZoneRowChangeEventHandler DailyCollectionSummaryPerZoneRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event DailyCollectionSummaryPerZoneRowChangeEventHandler DailyCollectionSummaryPerZoneRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event DailyCollectionSummaryPerZoneRowChangeEventHandler DailyCollectionSummaryPerZoneRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddDailyCollectionSummaryPerZoneRow(DailyCollectionSummaryPerZoneRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public DailyCollectionSummaryPerZoneRow AddDailyCollectionSummaryPerZoneRow(string header_name, string trans_date, byte zone_id, decimal wb_cur_month, decimal wb_prev_month, decimal wb_prev_year, decimal others_cur_month, decimal others_prev_month, decimal others_prev_year) {
+                DailyCollectionSummaryPerZoneRow rowDailyCollectionSummaryPerZoneRow = ((DailyCollectionSummaryPerZoneRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        header_name,
+                        trans_date,
+                        zone_id,
+                        wb_cur_month,
+                        wb_prev_month,
+                        wb_prev_year,
+                        others_cur_month,
+                        others_prev_month,
+                        others_prev_year};
+                rowDailyCollectionSummaryPerZoneRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDailyCollectionSummaryPerZoneRow);
+                return rowDailyCollectionSummaryPerZoneRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                DailyCollectionSummaryPerZoneDataTable cln = ((DailyCollectionSummaryPerZoneDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new DailyCollectionSummaryPerZoneDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnheader_name = base.Columns["header_name"];
+                this.columntrans_date = base.Columns["trans_date"];
+                this.columnzone_id = base.Columns["zone_id"];
+                this.columnwb_cur_month = base.Columns["wb_cur_month"];
+                this.columnwb_prev_month = base.Columns["wb_prev_month"];
+                this.columnwb_prev_year = base.Columns["wb_prev_year"];
+                this.columnothers_cur_month = base.Columns["others_cur_month"];
+                this.columnothers_prev_month = base.Columns["others_prev_month"];
+                this.columnothers_prev_year = base.Columns["others_prev_year"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnheader_name = new global::System.Data.DataColumn("header_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnheader_name);
+                this.columntrans_date = new global::System.Data.DataColumn("trans_date", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntrans_date);
+                this.columnzone_id = new global::System.Data.DataColumn("zone_id", typeof(byte), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnzone_id);
+                this.columnwb_cur_month = new global::System.Data.DataColumn("wb_cur_month", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwb_cur_month);
+                this.columnwb_prev_month = new global::System.Data.DataColumn("wb_prev_month", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwb_prev_month);
+                this.columnwb_prev_year = new global::System.Data.DataColumn("wb_prev_year", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwb_prev_year);
+                this.columnothers_cur_month = new global::System.Data.DataColumn("others_cur_month", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnothers_cur_month);
+                this.columnothers_prev_month = new global::System.Data.DataColumn("others_prev_month", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnothers_prev_month);
+                this.columnothers_prev_year = new global::System.Data.DataColumn("others_prev_year", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnothers_prev_year);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public DailyCollectionSummaryPerZoneRow NewDailyCollectionSummaryPerZoneRow() {
+                return ((DailyCollectionSummaryPerZoneRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new DailyCollectionSummaryPerZoneRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(DailyCollectionSummaryPerZoneRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.DailyCollectionSummaryPerZoneRowChanged != null)) {
+                    this.DailyCollectionSummaryPerZoneRowChanged(this, new DailyCollectionSummaryPerZoneRowChangeEvent(((DailyCollectionSummaryPerZoneRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.DailyCollectionSummaryPerZoneRowChanging != null)) {
+                    this.DailyCollectionSummaryPerZoneRowChanging(this, new DailyCollectionSummaryPerZoneRowChangeEvent(((DailyCollectionSummaryPerZoneRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.DailyCollectionSummaryPerZoneRowDeleted != null)) {
+                    this.DailyCollectionSummaryPerZoneRowDeleted(this, new DailyCollectionSummaryPerZoneRowChangeEvent(((DailyCollectionSummaryPerZoneRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.DailyCollectionSummaryPerZoneRowDeleting != null)) {
+                    this.DailyCollectionSummaryPerZoneRowDeleting(this, new DailyCollectionSummaryPerZoneRowChangeEvent(((DailyCollectionSummaryPerZoneRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveDailyCollectionSummaryPerZoneRow(DailyCollectionSummaryPerZoneRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSetCollectionReports ds = new DataSetCollectionReports();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "DailyCollectionSummaryPerZoneDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class DCRRecapRow : global::System.Data.DataRow {
@@ -11516,6 +11910,282 @@ namespace ConcessionaireReports {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class DailyCollectionSummaryPerZoneRow : global::System.Data.DataRow {
+            
+            private DailyCollectionSummaryPerZoneDataTable tableDailyCollectionSummaryPerZone;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal DailyCollectionSummaryPerZoneRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableDailyCollectionSummaryPerZone = ((DailyCollectionSummaryPerZoneDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string header_name {
+                get {
+                    try {
+                        return ((string)(this[this.tableDailyCollectionSummaryPerZone.header_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'header_name\' in table \'DailyCollectionSummaryPerZone\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableDailyCollectionSummaryPerZone.header_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string trans_date {
+                get {
+                    try {
+                        return ((string)(this[this.tableDailyCollectionSummaryPerZone.trans_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'trans_date\' in table \'DailyCollectionSummaryPerZone\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDailyCollectionSummaryPerZone.trans_dateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public byte zone_id {
+                get {
+                    try {
+                        return ((byte)(this[this.tableDailyCollectionSummaryPerZone.zone_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'zone_id\' in table \'DailyCollectionSummaryPerZone\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableDailyCollectionSummaryPerZone.zone_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal wb_cur_month {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableDailyCollectionSummaryPerZone.wb_cur_monthColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'wb_cur_month\' in table \'DailyCollectionSummaryPerZone\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDailyCollectionSummaryPerZone.wb_cur_monthColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal wb_prev_month {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableDailyCollectionSummaryPerZone.wb_prev_monthColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'wb_prev_month\' in table \'DailyCollectionSummaryPerZone\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDailyCollectionSummaryPerZone.wb_prev_monthColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal wb_prev_year {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableDailyCollectionSummaryPerZone.wb_prev_yearColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'wb_prev_year\' in table \'DailyCollectionSummaryPerZone\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDailyCollectionSummaryPerZone.wb_prev_yearColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal others_cur_month {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableDailyCollectionSummaryPerZone.others_cur_monthColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'others_cur_month\' in table \'DailyCollectionSummaryPerZone\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDailyCollectionSummaryPerZone.others_cur_monthColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal others_prev_month {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableDailyCollectionSummaryPerZone.others_prev_monthColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'others_prev_month\' in table \'DailyCollectionSummaryPerZone\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDailyCollectionSummaryPerZone.others_prev_monthColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal others_prev_year {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableDailyCollectionSummaryPerZone.others_prev_yearColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'others_prev_year\' in table \'DailyCollectionSummaryPerZone\' " +
+                                "is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDailyCollectionSummaryPerZone.others_prev_yearColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isheader_nameNull() {
+                return this.IsNull(this.tableDailyCollectionSummaryPerZone.header_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setheader_nameNull() {
+                this[this.tableDailyCollectionSummaryPerZone.header_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Istrans_dateNull() {
+                return this.IsNull(this.tableDailyCollectionSummaryPerZone.trans_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Settrans_dateNull() {
+                this[this.tableDailyCollectionSummaryPerZone.trans_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iszone_idNull() {
+                return this.IsNull(this.tableDailyCollectionSummaryPerZone.zone_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setzone_idNull() {
+                this[this.tableDailyCollectionSummaryPerZone.zone_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iswb_cur_monthNull() {
+                return this.IsNull(this.tableDailyCollectionSummaryPerZone.wb_cur_monthColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setwb_cur_monthNull() {
+                this[this.tableDailyCollectionSummaryPerZone.wb_cur_monthColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iswb_prev_monthNull() {
+                return this.IsNull(this.tableDailyCollectionSummaryPerZone.wb_prev_monthColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setwb_prev_monthNull() {
+                this[this.tableDailyCollectionSummaryPerZone.wb_prev_monthColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Iswb_prev_yearNull() {
+                return this.IsNull(this.tableDailyCollectionSummaryPerZone.wb_prev_yearColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setwb_prev_yearNull() {
+                this[this.tableDailyCollectionSummaryPerZone.wb_prev_yearColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isothers_cur_monthNull() {
+                return this.IsNull(this.tableDailyCollectionSummaryPerZone.others_cur_monthColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setothers_cur_monthNull() {
+                this[this.tableDailyCollectionSummaryPerZone.others_cur_monthColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isothers_prev_monthNull() {
+                return this.IsNull(this.tableDailyCollectionSummaryPerZone.others_prev_monthColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setothers_prev_monthNull() {
+                this[this.tableDailyCollectionSummaryPerZone.others_prev_monthColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isothers_prev_yearNull() {
+                return this.IsNull(this.tableDailyCollectionSummaryPerZone.others_prev_yearColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setothers_prev_yearNull() {
+                this[this.tableDailyCollectionSummaryPerZone.others_prev_yearColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -12045,6 +12715,40 @@ namespace ConcessionaireReports {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public SummaryMiscellaneousFeesRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class DailyCollectionSummaryPerZoneRowChangeEvent : global::System.EventArgs {
+            
+            private DailyCollectionSummaryPerZoneRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public DailyCollectionSummaryPerZoneRowChangeEvent(DailyCollectionSummaryPerZoneRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public DailyCollectionSummaryPerZoneRow Row {
                 get {
                     return this.eventRow;
                 }

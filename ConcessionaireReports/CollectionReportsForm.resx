@@ -147,6 +147,21 @@
   <metadata name="PaymentSummaryMaterialsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>573, 95</value>
   </metadata>
+  <metadata name="SummarySeniorDiscountBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>852, 95</value>
+  </metadata>
+  <metadata name="SummaryCancelledORBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 134</value>
+  </metadata>
+  <metadata name="SummaryWithholdingTaxesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>268, 134</value>
+  </metadata>
+  <metadata name="SummaryWithholdingTaxesRecapBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>547, 134</value>
+  </metadata>
+  <metadata name="SummaryMiscellaneousFeesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>860, 134</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBoxLoadingSenior.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1739,12 +1754,6 @@
         AAEAAAgEAP8FBAA7
 </value>
   </data>
-  <metadata name="SummarySeniorDiscountBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>852, 95</value>
-  </metadata>
-  <metadata name="SummaryCancelledORBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 134</value>
-  </metadata>
   <data name="pictureBoxLoadingWithholdingTaxes.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhAAEAAff/AJPk5K/r68Dv76bp6Y/j48bx8Xre3ifJyavq6uD39zvOznLc3DLMzJbl5SDIyFLU
@@ -3336,12 +3345,6 @@
         AAEAAAgEAP8FBAA7
 </value>
   </data>
-  <metadata name="SummaryWithholdingTaxesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>268, 134</value>
-  </metadata>
-  <metadata name="SummaryWithholdingTaxesRecapBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>547, 134</value>
-  </metadata>
   <data name="pictureBoxLoadingMisc.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhAAEAAff/AJPk5K/r68Dv76bp6Y/j48bx8Xre3ifJyavq6uD39zvOznLc3DLMzJbl5SDIyFLU
@@ -4933,7 +4936,7 @@
         AAEAAAgEAP8FBAA7
 </value>
   </data>
-  <metadata name="SummaryMiscellaneousFeesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>860, 134</value>
+  <metadata name="DailyCollectionSummaryPerZoneBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 173</value>
   </metadata>
 </root>
