@@ -241,5 +241,59 @@ namespace ConcessionaireReports
             bindBook(comboBoxOtherReceivablesBook, comboBoxOtherReceivablesZone);
         }
 
+        private async void buttonDemandLetterSearch_Click(object sender, EventArgs e)
+        {
+            beforeAwait(pictureBoxLoadingDemandLetter, buttonDemandLetterSearch);
+
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                    {
+                        conn.Open();
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetDemandLetter", conn))
+                        {
+                            adapter.SelectCommand.CommandTimeout = 5000;
+
+                            DataSetReceivablesReports ds = new DataSetReceivablesReports();
+
+                            Invoke((MethodInvoker)delegate ()
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@in_zone_id", comboBoxDemandLetterZone.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@in_zone_id"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@in_book_id", comboBoxDemandLetterBook.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@in_book_id"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@in_cut_off_date", dateTimePickerDemandLetterCutOff.Value);
+                                adapter.SelectCommand.Parameters["@in_cut_off_date"].Direction = ParameterDirection.Input;
+                            });
+
+                            adapter.Fill(ds, "DemandLetter");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetReceivablesReports", ds.Tables["DemandLetter"]);
+                            reportViewerDemandLetter.LocalReport.DataSources.Clear();
+                            reportViewerDemandLetter.LocalReport.DataSources.Add(rds);
+
+                            ReportParameter[] param = new ReportParameter[]
+                            {
+                            new ReportParameter("ReportParameterDate", dateTimePickerDemandLetterCutOff.Value.ToString())
+                            };
+                            reportViewerDemandLetter.LocalReport.SetParameters(param);
+                        }
+                        conn.Close();
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingDemandLetter, buttonDemandLetterSearch);
+
+            reportViewerDemandLetter.RefreshReport();
+        }
     }
 }
