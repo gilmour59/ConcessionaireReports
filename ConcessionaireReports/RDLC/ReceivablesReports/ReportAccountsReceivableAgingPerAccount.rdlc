@@ -1088,7 +1088,7 @@
             <Top>3.15595cm</Top>
             <Left>0.31289cm</Left>
             <Height>1.26cm</Height>
-            <Width>19.86146cm</Width>
+            <Width>19.8615cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1209,7 +1209,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value EvaluationMode="Constant">Parameter</Value>
+                    <Value>="As of: " &amp; Parameters!ReportParameterDate.Value</Value>
                     <Style>
                       <FontFamily>calibri</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -1237,7 +1237,7 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>1.95833in</Height>
+        <Height>1.84375in</Height>
         <Style />
       </Body>
       <Width>8.08333in</Width>

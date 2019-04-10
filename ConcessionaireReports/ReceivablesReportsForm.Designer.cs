@@ -33,10 +33,10 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource10 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource11 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource12 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReceivablesReportsForm));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource13 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource14 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReceivablesReportsForm));
             this.AgingPerAccountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetReceivablesReports = new ConcessionaireReports.DataSetReceivablesReports();
             this.tabControlReceivablesReports = new System.Windows.Forms.TabControl();
@@ -75,6 +75,7 @@
             this.reportViewerReceivablesAccount = new Microsoft.Reporting.WinForms.ReportViewer();
             this.buttonReceivablesAccountSearch = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.pictureBoxLoadingDemandLetter = new System.Windows.Forms.PictureBox();
             this.dateTimePickerDemandLetterCutOff = new System.Windows.Forms.DateTimePicker();
             this.comboBoxDemandLetterBook = new System.Windows.Forms.ComboBox();
             this.comboBoxDemandLetterZone = new System.Windows.Forms.ComboBox();
@@ -100,7 +101,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.buttonOtherReceivablesSearch = new System.Windows.Forms.Button();
             this.reportViewerOtherReceivables = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.pictureBoxLoadingDemandLetter = new System.Windows.Forms.PictureBox();
+            this.DemandLetterBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.AgingPerAccountBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetReceivablesReports)).BeginInit();
             this.tabControlReceivablesReports.SuspendLayout();
@@ -110,10 +111,11 @@
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDemandLetter)).BeginInit();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDelinquentLimit)).BeginInit();
             this.tabPage7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDemandLetter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DemandLetterBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // AgingPerAccountBindingSource
@@ -552,6 +554,17 @@
             this.tabPage5.Text = "Demand Letter";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // pictureBoxLoadingDemandLetter
+            // 
+            this.pictureBoxLoadingDemandLetter.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingDemandLetter.Image")));
+            this.pictureBoxLoadingDemandLetter.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingDemandLetter.Name = "pictureBoxLoadingDemandLetter";
+            this.pictureBoxLoadingDemandLetter.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingDemandLetter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingDemandLetter.TabIndex = 70;
+            this.pictureBoxLoadingDemandLetter.TabStop = false;
+            this.pictureBoxLoadingDemandLetter.Visible = false;
+            // 
             // dateTimePickerDemandLetterCutOff
             // 
             this.dateTimePickerDemandLetterCutOff.CustomFormat = "MM/dd/yyyy";
@@ -626,10 +639,10 @@
             // 
             // reportViewerDemandLetter
             // 
-            reportDataSource8.Name = "DataSetConcessionaireReports";
-            reportDataSource8.Value = null;
+            reportDataSource8.Name = "DataSetReceivablesReports";
+            reportDataSource8.Value = this.DemandLetterBindingSource;
             this.reportViewerDemandLetter.LocalReport.DataSources.Add(reportDataSource8);
-            this.reportViewerDemandLetter.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportNewConnectionSummary.rdlc";
+            this.reportViewerDemandLetter.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportDemandLetter.rdlc";
             this.reportViewerDemandLetter.Location = new System.Drawing.Point(26, 49);
             this.reportViewerDemandLetter.Name = "reportViewerDemandLetter";
             this.reportViewerDemandLetter.ServerReport.BearerToken = null;
@@ -822,16 +835,10 @@
             this.reportViewerOtherReceivables.Size = new System.Drawing.Size(944, 481);
             this.reportViewerOtherReceivables.TabIndex = 7;
             // 
-            // pictureBoxLoadingDemandLetter
+            // DemandLetterBindingSource
             // 
-            this.pictureBoxLoadingDemandLetter.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingDemandLetter.Image")));
-            this.pictureBoxLoadingDemandLetter.Location = new System.Drawing.Point(26, 46);
-            this.pictureBoxLoadingDemandLetter.Name = "pictureBoxLoadingDemandLetter";
-            this.pictureBoxLoadingDemandLetter.Size = new System.Drawing.Size(944, 481);
-            this.pictureBoxLoadingDemandLetter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxLoadingDemandLetter.TabIndex = 70;
-            this.pictureBoxLoadingDemandLetter.TabStop = false;
-            this.pictureBoxLoadingDemandLetter.Visible = false;
+            this.DemandLetterBindingSource.DataMember = "DemandLetter";
+            this.DemandLetterBindingSource.DataSource = this.DataSetReceivablesReports;
             // 
             // ReceivablesReportsForm
             // 
@@ -859,12 +866,13 @@
             this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDemandLetter)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDelinquentLimit)).EndInit();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDemandLetter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DemandLetterBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -935,5 +943,6 @@
         private DataSetReceivablesReports DataSetReceivablesReports;
         private System.Windows.Forms.PictureBox pictureBoxLoadingAgingAccount;
         private System.Windows.Forms.PictureBox pictureBoxLoadingDemandLetter;
+        private System.Windows.Forms.BindingSource DemandLetterBindingSource;
     }
 }
