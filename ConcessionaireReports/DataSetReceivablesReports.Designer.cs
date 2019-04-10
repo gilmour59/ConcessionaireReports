@@ -459,7 +459,7 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public AgingPerAccountRow AddAgingPerAccountRow(string header_name, string header_address, string acct_no, string old_acct_no, string concessionaire_name, string Current, string Over30, string Over60, string Over90, string Over120, string total_balance) {
+            public AgingPerAccountRow AddAgingPerAccountRow(string header_name, string header_address, int acct_no, string old_acct_no, string concessionaire_name, decimal Current, decimal Over30, decimal Over60, decimal Over90, decimal Over120, decimal total_balance) {
                 AgingPerAccountRow rowAgingPerAccountRow = ((AgingPerAccountRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         header_name,
@@ -515,23 +515,23 @@ namespace ConcessionaireReports {
                 base.Columns.Add(this.columnheader_name);
                 this.columnheader_address = new global::System.Data.DataColumn("header_address", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnheader_address);
-                this.columnacct_no = new global::System.Data.DataColumn("acct_no", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnacct_no = new global::System.Data.DataColumn("acct_no", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnacct_no);
                 this.columnold_acct_no = new global::System.Data.DataColumn("old_acct_no", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnold_acct_no);
                 this.columnconcessionaire_name = new global::System.Data.DataColumn("concessionaire_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnconcessionaire_name);
-                this.columnCurrent = new global::System.Data.DataColumn("Current", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnCurrent = new global::System.Data.DataColumn("Current", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCurrent);
-                this.columnOver30 = new global::System.Data.DataColumn("Over30", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnOver30 = new global::System.Data.DataColumn("Over30", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOver30);
-                this.columnOver60 = new global::System.Data.DataColumn("Over60", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnOver60 = new global::System.Data.DataColumn("Over60", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOver60);
-                this.columnOver90 = new global::System.Data.DataColumn("Over90", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnOver90 = new global::System.Data.DataColumn("Over90", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOver90);
-                this.columnOver120 = new global::System.Data.DataColumn("Over120", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnOver120 = new global::System.Data.DataColumn("Over120", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOver120);
-                this.columntotal_balance = new global::System.Data.DataColumn("total_balance", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columntotal_balance = new global::System.Data.DataColumn("total_balance", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntotal_balance);
             }
             
@@ -707,10 +707,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string acct_no {
+            public int acct_no {
                 get {
                     try {
-                        return ((string)(this[this.tableAgingPerAccount.acct_noColumn]));
+                        return ((int)(this[this.tableAgingPerAccount.acct_noColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'acct_no\' in table \'AgingPerAccount\' is DBNull.", e);
@@ -755,10 +755,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Current {
+            public decimal Current {
                 get {
                     try {
-                        return ((string)(this[this.tableAgingPerAccount.CurrentColumn]));
+                        return ((decimal)(this[this.tableAgingPerAccount.CurrentColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Current\' in table \'AgingPerAccount\' is DBNull.", e);
@@ -771,10 +771,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Over30 {
+            public decimal Over30 {
                 get {
                     try {
-                        return ((string)(this[this.tableAgingPerAccount.Over30Column]));
+                        return ((decimal)(this[this.tableAgingPerAccount.Over30Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Over30\' in table \'AgingPerAccount\' is DBNull.", e);
@@ -787,10 +787,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Over60 {
+            public decimal Over60 {
                 get {
                     try {
-                        return ((string)(this[this.tableAgingPerAccount.Over60Column]));
+                        return ((decimal)(this[this.tableAgingPerAccount.Over60Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Over60\' in table \'AgingPerAccount\' is DBNull.", e);
@@ -803,10 +803,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Over90 {
+            public decimal Over90 {
                 get {
                     try {
-                        return ((string)(this[this.tableAgingPerAccount.Over90Column]));
+                        return ((decimal)(this[this.tableAgingPerAccount.Over90Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Over90\' in table \'AgingPerAccount\' is DBNull.", e);
@@ -819,10 +819,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Over120 {
+            public decimal Over120 {
                 get {
                     try {
-                        return ((string)(this[this.tableAgingPerAccount.Over120Column]));
+                        return ((decimal)(this[this.tableAgingPerAccount.Over120Column]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Over120\' in table \'AgingPerAccount\' is DBNull.", e);
@@ -835,10 +835,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string total_balance {
+            public decimal total_balance {
                 get {
                     try {
-                        return ((string)(this[this.tableAgingPerAccount.total_balanceColumn]));
+                        return ((decimal)(this[this.tableAgingPerAccount.total_balanceColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'total_balance\' in table \'AgingPerAccount\' is DBNull.", e);

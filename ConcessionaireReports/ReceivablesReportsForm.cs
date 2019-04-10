@@ -144,6 +144,8 @@ namespace ConcessionaireReports
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_getAgingPerAccount_", conn))
                     {
+                        adapter.SelectCommand.CommandTimeout = 5000;
+
                         DataSetReceivablesReports ds = new DataSetReceivablesReports();
 
                         adapter.SelectCommand.CommandType = CommandType.StoredProcedure;

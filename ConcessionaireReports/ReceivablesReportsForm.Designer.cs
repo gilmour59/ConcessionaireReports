@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource30 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource31 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource32 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource33 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource34 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource35 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource29 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.tabControlReceivablesReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dateTimePickerAgingAccountCutOff = new System.Windows.Forms.DateTimePicker();
@@ -95,6 +96,8 @@
             this.label18 = new System.Windows.Forms.Label();
             this.buttonOtherReceivablesSearch = new System.Windows.Forms.Button();
             this.reportViewerOtherReceivables = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.DataSetReceivablesReports = new ConcessionaireReports.DataSetReceivablesReports();
+            this.AgingPerAccountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlReceivablesReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -104,6 +107,8 @@
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDelinquentLimit)).BeginInit();
             this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetReceivablesReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AgingPerAccountBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlReceivablesReports
@@ -157,10 +162,11 @@
             // 
             // reportViewerAgingAccount
             // 
-            reportDataSource30.Name = "DataSetConcessionaireReports";
-            reportDataSource30.Value = null;
-            this.reportViewerAgingAccount.LocalReport.DataSources.Add(reportDataSource30);
-            this.reportViewerAgingAccount.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportAccountPerBook.rdlc";
+            reportDataSource1.Name = "DataSetReceivablesReports";
+            reportDataSource1.Value = this.AgingPerAccountBindingSource;
+            this.reportViewerAgingAccount.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewerAgingAccount.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportAccountsReceivableAgingPerAcc" +
+    "ount.rdlc";
             this.reportViewerAgingAccount.Location = new System.Drawing.Point(26, 49);
             this.reportViewerAgingAccount.Name = "reportViewerAgingAccount";
             this.reportViewerAgingAccount.ServerReport.BearerToken = null;
@@ -279,9 +285,9 @@
             // 
             // reportViewerAgingBook
             // 
-            reportDataSource31.Name = "DataSetConcessionaireReports";
-            reportDataSource31.Value = null;
-            this.reportViewerAgingBook.LocalReport.DataSources.Add(reportDataSource31);
+            reportDataSource2.Name = "DataSetConcessionaireReports";
+            reportDataSource2.Value = null;
+            this.reportViewerAgingBook.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewerAgingBook.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportAccountPerBarangay.rdlc";
             this.reportViewerAgingBook.Location = new System.Drawing.Point(26, 49);
             this.reportViewerAgingBook.Name = "reportViewerAgingBook";
@@ -379,9 +385,9 @@
             // 
             // reportViewerDetailedList
             // 
-            reportDataSource32.Name = "DataSetConcessionaireReports";
-            reportDataSource32.Value = null;
-            this.reportViewerDetailedList.LocalReport.DataSources.Add(reportDataSource32);
+            reportDataSource3.Name = "DataSetConcessionaireReports";
+            reportDataSource3.Value = null;
+            this.reportViewerDetailedList.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewerDetailedList.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportAccountPerClassification.r" +
     "dlc";
             this.reportViewerDetailedList.Location = new System.Drawing.Point(26, 49);
@@ -480,9 +486,9 @@
             // 
             // reportViewerReceivablesAccount
             // 
-            reportDataSource33.Name = "DataSetConcessionaireReports";
-            reportDataSource33.Value = null;
-            this.reportViewerReceivablesAccount.LocalReport.DataSources.Add(reportDataSource33);
+            reportDataSource4.Name = "DataSetConcessionaireReports";
+            reportDataSource4.Value = null;
+            this.reportViewerReceivablesAccount.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewerReceivablesAccount.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportAccountPerClassification.r" +
     "dlc";
             this.reportViewerReceivablesAccount.Location = new System.Drawing.Point(27, 49);
@@ -591,9 +597,9 @@
             // 
             // reportViewerDemandLetter
             // 
-            reportDataSource34.Name = "DataSetConcessionaireReports";
-            reportDataSource34.Value = null;
-            this.reportViewerDemandLetter.LocalReport.DataSources.Add(reportDataSource34);
+            reportDataSource5.Name = "DataSetConcessionaireReports";
+            reportDataSource5.Value = null;
+            this.reportViewerDemandLetter.LocalReport.DataSources.Add(reportDataSource5);
             this.reportViewerDemandLetter.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportNewConnectionSummary.rdlc";
             this.reportViewerDemandLetter.Location = new System.Drawing.Point(26, 49);
             this.reportViewerDemandLetter.Name = "reportViewerDemandLetter";
@@ -626,9 +632,9 @@
             // 
             // reportViewerDelinquent
             // 
-            reportDataSource35.Name = "DataSetConcessionaireReports";
-            reportDataSource35.Value = null;
-            this.reportViewerDelinquent.LocalReport.DataSources.Add(reportDataSource35);
+            reportDataSource6.Name = "DataSetConcessionaireReports";
+            reportDataSource6.Value = null;
+            this.reportViewerDelinquent.LocalReport.DataSources.Add(reportDataSource6);
             this.reportViewerDelinquent.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportAccountByStatus.rdlc";
             this.reportViewerDelinquent.Location = new System.Drawing.Point(26, 49);
             this.reportViewerDelinquent.Name = "reportViewerDelinquent";
@@ -776,9 +782,9 @@
             // 
             // reportViewerOtherReceivables
             // 
-            reportDataSource29.Name = "DataSetConcessionaireReports";
-            reportDataSource29.Value = null;
-            this.reportViewerOtherReceivables.LocalReport.DataSources.Add(reportDataSource29);
+            reportDataSource7.Name = "DataSetConcessionaireReports";
+            reportDataSource7.Value = null;
+            this.reportViewerOtherReceivables.LocalReport.DataSources.Add(reportDataSource7);
             this.reportViewerOtherReceivables.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportSeniorCitizenAccounts.rdlc" +
     "";
             this.reportViewerOtherReceivables.Location = new System.Drawing.Point(26, 49);
@@ -786,6 +792,16 @@
             this.reportViewerOtherReceivables.ServerReport.BearerToken = null;
             this.reportViewerOtherReceivables.Size = new System.Drawing.Size(944, 481);
             this.reportViewerOtherReceivables.TabIndex = 7;
+            // 
+            // DataSetReceivablesReports
+            // 
+            this.DataSetReceivablesReports.DataSetName = "DataSetReceivablesReports";
+            this.DataSetReceivablesReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // AgingPerAccountBindingSource
+            // 
+            this.AgingPerAccountBindingSource.DataMember = "AgingPerAccount";
+            this.AgingPerAccountBindingSource.DataSource = this.DataSetReceivablesReports;
             // 
             // ReceivablesReportsForm
             // 
@@ -815,6 +831,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDelinquentLimit)).EndInit();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetReceivablesReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AgingPerAccountBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -881,5 +899,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button buttonOtherReceivablesSearch;
+        private System.Windows.Forms.BindingSource AgingPerAccountBindingSource;
+        private DataSetReceivablesReports DataSetReceivablesReports;
     }
 }
