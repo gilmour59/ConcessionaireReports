@@ -23,7 +23,7 @@ namespace ConcessionaireReports
             InitializeComponent();
         }
 
-        private void tabControlConcessionaireReports_DrawItem(object sender, DrawItemEventArgs e)
+        private void tabControlReceivablesReports_DrawItem(object sender, DrawItemEventArgs e)
         {
             Graphics g = e.Graphics;
             Brush _textBrush;
@@ -46,7 +46,7 @@ namespace ConcessionaireReports
                 e.DrawBackground();
             }
             // Use our own font.
-            Font _tabFont = new Font("Comic Sans MS", (float)13.0, FontStyle.Bold, GraphicsUnit.Pixel);
+            Font _tabFont = new Font("Comic Sans MS", (float)12.0, FontStyle.Bold, GraphicsUnit.Pixel);
 
             // Draw string. Center the text.
             StringFormat _stringFlags = new StringFormat();
@@ -134,49 +134,85 @@ namespace ConcessionaireReports
             }
         }
 
-        private void buttonAgingAccountSearch_Click(object sender, EventArgs e)
+        private void beforeAwait(PictureBox pb, Button b)
         {
-            try
+            //tabControlCollectionReports.TabPages[0].Enabled = false;
+            foreach (TabPage tp in tabControlReceivablesReports.TabPages)
             {
-                using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                if (!(tp == tabControlReceivablesReports.SelectedTab))
                 {
-                    conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_getAgingPerAccount_", conn))
-                    {
-                        adapter.SelectCommand.CommandTimeout = 5000;
-
-                        DataSetReceivablesReports ds = new DataSetReceivablesReports();
-
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@cutOff", dateTimePickerAgingAccountCutOff.Value);
-                        adapter.SelectCommand.Parameters["@cutOff"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAgingAccountZone.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxAgingAccountBook.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@status", comboBoxAgingAccountStatus.SelectedIndex);
-                        adapter.SelectCommand.Parameters["@status"].Direction = ParameterDirection.Input;
-
-                        adapter.Fill(ds, "AgingPerAccount");
-
-                        ReportDataSource rds = new ReportDataSource("DataSetReceivablesReports", ds.Tables["AgingPerAccount"]);
-                        reportViewerAgingAccount.LocalReport.DataSources.Clear();
-                        reportViewerAgingAccount.LocalReport.DataSources.Add(rds);
-
-                        ReportParameter[] param = new ReportParameter[]
-                        {
-                            new ReportParameter("ReportParameterDate", dateTimePickerAgingAccountCutOff.Value.ToString())
-                        };
-                        reportViewerAgingAccount.LocalReport.SetParameters(param);
-                    }
-                    conn.Close();
+                    tp.Enabled = false;
                 }
             }
-            catch (MySqlException ex)
+            b.Enabled = false;
+            pb.Show();
+            pb.Update();
+        }
+
+        private void afterAwait(PictureBox pb, Button b)
+        {
+            foreach (TabPage tp in tabControlReceivablesReports.TabPages)
             {
-                MessageBox.Show("error: " + ex, "Error!");
+                tp.Enabled = true;
             }
+            b.Enabled = true;
+            pb.Hide();
+        }
+
+        private async void buttonAgingAccountSearch_Click(object sender, EventArgs e)
+        {
+            beforeAwait(pictureBoxLoadingAgingAccount, buttonAgingAccountSearch);
+
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                    {
+                        conn.Open();
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_getAgingPerAccount_", conn))
+                        {
+                            adapter.SelectCommand.CommandTimeout = 5000;
+
+                            DataSetReceivablesReports ds = new DataSetReceivablesReports();
+
+                            Invoke((MethodInvoker)delegate () 
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@cutOff", dateTimePickerAgingAccountCutOff.Value);
+                                adapter.SelectCommand.Parameters["@cutOff"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAgingAccountZone.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxAgingAccountBook.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@status", comboBoxAgingAccountStatus.SelectedIndex);
+                                adapter.SelectCommand.Parameters["@status"].Direction = ParameterDirection.Input;
+                            });
+                            
+                            adapter.Fill(ds, "AgingPerAccount");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetReceivablesReports", ds.Tables["AgingPerAccount"]);
+                            reportViewerAgingAccount.LocalReport.DataSources.Clear();
+                            reportViewerAgingAccount.LocalReport.DataSources.Add(rds);
+
+                            ReportParameter[] param = new ReportParameter[]
+                            {
+                            new ReportParameter("ReportParameterDate", dateTimePickerAgingAccountCutOff.Value.ToString())
+                            };
+                            reportViewerAgingAccount.LocalReport.SetParameters(param);
+                        }
+                        conn.Close();
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingAgingAccount, buttonAgingAccountSearch);
+            
             reportViewerAgingAccount.RefreshReport();
         }
 
@@ -204,5 +240,6 @@ namespace ConcessionaireReports
         {
             bindBook(comboBoxOtherReceivablesBook, comboBoxOtherReceivablesZone);
         }
+
     }
 }
