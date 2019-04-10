@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource30 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource31 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource32 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource33 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource34 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource35 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource29 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.tabControlReceivablesReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dateTimePickerAgingAccountCutOff = new System.Windows.Forms.DateTimePicker();
@@ -157,9 +157,9 @@
             // 
             // reportViewerAgingAccount
             // 
-            reportDataSource1.Name = "DataSetConcessionaireReports";
-            reportDataSource1.Value = null;
-            this.reportViewerAgingAccount.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource30.Name = "DataSetConcessionaireReports";
+            reportDataSource30.Value = null;
+            this.reportViewerAgingAccount.LocalReport.DataSources.Add(reportDataSource30);
             this.reportViewerAgingAccount.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportAccountPerBook.rdlc";
             this.reportViewerAgingAccount.Location = new System.Drawing.Point(26, 49);
             this.reportViewerAgingAccount.Name = "reportViewerAgingAccount";
@@ -183,6 +183,10 @@
             this.comboBoxAgingAccountStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAgingAccountStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxAgingAccountStatus.FormattingEnabled = true;
+            this.comboBoxAgingAccountStatus.Items.AddRange(new object[] {
+            "ALL",
+            "Connected",
+            "Disconnected"});
             this.comboBoxAgingAccountStatus.Location = new System.Drawing.Point(571, 15);
             this.comboBoxAgingAccountStatus.Name = "comboBoxAgingAccountStatus";
             this.comboBoxAgingAccountStatus.Size = new System.Drawing.Size(96, 24);
@@ -207,6 +211,7 @@
             this.comboBoxAgingAccountZone.Name = "comboBoxAgingAccountZone";
             this.comboBoxAgingAccountZone.Size = new System.Drawing.Size(50, 24);
             this.comboBoxAgingAccountZone.TabIndex = 1;
+            this.comboBoxAgingAccountZone.SelectedIndexChanged += new System.EventHandler(this.comboBoxAgingAccountZone_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -274,9 +279,9 @@
             // 
             // reportViewerAgingBook
             // 
-            reportDataSource2.Name = "DataSetConcessionaireReports";
-            reportDataSource2.Value = null;
-            this.reportViewerAgingBook.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource31.Name = "DataSetConcessionaireReports";
+            reportDataSource31.Value = null;
+            this.reportViewerAgingBook.LocalReport.DataSources.Add(reportDataSource31);
             this.reportViewerAgingBook.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportAccountPerBarangay.rdlc";
             this.reportViewerAgingBook.Location = new System.Drawing.Point(26, 49);
             this.reportViewerAgingBook.Name = "reportViewerAgingBook";
@@ -340,6 +345,7 @@
             this.comboBoxDetailedListZone.Name = "comboBoxDetailedListZone";
             this.comboBoxDetailedListZone.Size = new System.Drawing.Size(50, 24);
             this.comboBoxDetailedListZone.TabIndex = 20;
+            this.comboBoxDetailedListZone.SelectedIndexChanged += new System.EventHandler(this.comboBoxDetailedListZone_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -373,9 +379,9 @@
             // 
             // reportViewerDetailedList
             // 
-            reportDataSource3.Name = "DataSetConcessionaireReports";
-            reportDataSource3.Value = null;
-            this.reportViewerDetailedList.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource32.Name = "DataSetConcessionaireReports";
+            reportDataSource32.Value = null;
+            this.reportViewerDetailedList.LocalReport.DataSources.Add(reportDataSource32);
             this.reportViewerDetailedList.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportAccountPerClassification.r" +
     "dlc";
             this.reportViewerDetailedList.Location = new System.Drawing.Point(26, 49);
@@ -440,6 +446,7 @@
             this.comboBoxReceivablesAccountZone.Name = "comboBoxReceivablesAccountZone";
             this.comboBoxReceivablesAccountZone.Size = new System.Drawing.Size(50, 24);
             this.comboBoxReceivablesAccountZone.TabIndex = 28;
+            this.comboBoxReceivablesAccountZone.SelectedIndexChanged += new System.EventHandler(this.comboBoxReceivablesAccountZone_SelectedIndexChanged);
             // 
             // label14
             // 
@@ -473,9 +480,9 @@
             // 
             // reportViewerReceivablesAccount
             // 
-            reportDataSource4.Name = "DataSetConcessionaireReports";
-            reportDataSource4.Value = null;
-            this.reportViewerReceivablesAccount.LocalReport.DataSources.Add(reportDataSource4);
+            reportDataSource33.Name = "DataSetConcessionaireReports";
+            reportDataSource33.Value = null;
+            this.reportViewerReceivablesAccount.LocalReport.DataSources.Add(reportDataSource33);
             this.reportViewerReceivablesAccount.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportAccountPerClassification.r" +
     "dlc";
             this.reportViewerReceivablesAccount.Location = new System.Drawing.Point(27, 49);
@@ -540,6 +547,7 @@
             this.comboBoxDemandLetterZone.Name = "comboBoxDemandLetterZone";
             this.comboBoxDemandLetterZone.Size = new System.Drawing.Size(50, 24);
             this.comboBoxDemandLetterZone.TabIndex = 35;
+            this.comboBoxDemandLetterZone.SelectedIndexChanged += new System.EventHandler(this.comboBoxDemandLetterZone_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -583,9 +591,9 @@
             // 
             // reportViewerDemandLetter
             // 
-            reportDataSource5.Name = "DataSetConcessionaireReports";
-            reportDataSource5.Value = null;
-            this.reportViewerDemandLetter.LocalReport.DataSources.Add(reportDataSource5);
+            reportDataSource34.Name = "DataSetConcessionaireReports";
+            reportDataSource34.Value = null;
+            this.reportViewerDemandLetter.LocalReport.DataSources.Add(reportDataSource34);
             this.reportViewerDemandLetter.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportNewConnectionSummary.rdlc";
             this.reportViewerDemandLetter.Location = new System.Drawing.Point(26, 49);
             this.reportViewerDemandLetter.Name = "reportViewerDemandLetter";
@@ -618,9 +626,9 @@
             // 
             // reportViewerDelinquent
             // 
-            reportDataSource6.Name = "DataSetConcessionaireReports";
-            reportDataSource6.Value = null;
-            this.reportViewerDelinquent.LocalReport.DataSources.Add(reportDataSource6);
+            reportDataSource35.Name = "DataSetConcessionaireReports";
+            reportDataSource35.Value = null;
+            this.reportViewerDelinquent.LocalReport.DataSources.Add(reportDataSource35);
             this.reportViewerDelinquent.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportAccountByStatus.rdlc";
             this.reportViewerDelinquent.Location = new System.Drawing.Point(26, 49);
             this.reportViewerDelinquent.Name = "reportViewerDelinquent";
@@ -724,6 +732,7 @@
             this.comboBoxOtherReceivablesZone.Name = "comboBoxOtherReceivablesZone";
             this.comboBoxOtherReceivablesZone.Size = new System.Drawing.Size(50, 24);
             this.comboBoxOtherReceivablesZone.TabIndex = 42;
+            this.comboBoxOtherReceivablesZone.SelectedIndexChanged += new System.EventHandler(this.comboBoxOtherReceivablesZone_SelectedIndexChanged);
             // 
             // label12
             // 
@@ -767,9 +776,9 @@
             // 
             // reportViewerOtherReceivables
             // 
-            reportDataSource7.Name = "DataSetConcessionaireReports";
-            reportDataSource7.Value = null;
-            this.reportViewerOtherReceivables.LocalReport.DataSources.Add(reportDataSource7);
+            reportDataSource29.Name = "DataSetConcessionaireReports";
+            reportDataSource29.Value = null;
+            this.reportViewerOtherReceivables.LocalReport.DataSources.Add(reportDataSource29);
             this.reportViewerOtherReceivables.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportSeniorCitizenAccounts.rdlc" +
     "";
             this.reportViewerOtherReceivables.Location = new System.Drawing.Point(26, 49);
