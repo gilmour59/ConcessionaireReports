@@ -1,6 +1,6 @@
 ﻿namespace ConcessionaireReports
 {
-    partial class FormARMaintenanceReports
+    partial class ARMaintenanceReportsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,40 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormARMaintenanceReports));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ARMaintenanceReportsForm));
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource16 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource17 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource18 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.tabControlARMaintenanceReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dateTimePickerPromissoryNoteFrom = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerPromissoryNoteTo = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.buttonPromissoryNoteSearch = new System.Windows.Forms.Button();
             this.pictureBoxLoadingPromissoryNote = new System.Windows.Forms.PictureBox();
             this.reportViewerPromissoryNote = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pictureBoxLoadingOverduePromiNote = new System.Windows.Forms.PictureBox();
             this.dateTimePickerOverduePromiNoteAsOf = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.reportViewerOverduePromiNote = new Microsoft.Reporting.WinForms.ReportViewer();
             this.buttonOverduePromiNoteSearch = new System.Windows.Forms.Button();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.pictureBoxLoadingDebCredMemo = new System.Windows.Forms.PictureBox();
+            this.dateTimePickerDebCredMemoFrom = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerDebCredMemoTo = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.buttonDebCredMemoSearch = new System.Windows.Forms.Button();
             this.reportViewerDebCredMemo = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dateTimePickerDebCredMemoFrom = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerPromissoryNoteFrom = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerPromissoryNoteTo = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.buttonPromissoryNoteSearch = new System.Windows.Forms.Button();
-            this.pictureBoxLoadingOverduePromiNote = new System.Windows.Forms.PictureBox();
             this.tabControlARMaintenanceReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingPromissoryNote)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingOverduePromiNote)).BeginInit();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDebCredMemo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingOverduePromiNote)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlARMaintenanceReports
@@ -96,176 +96,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Summary of Promissory Notes";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // pictureBoxLoadingPromissoryNote
-            // 
-            this.pictureBoxLoadingPromissoryNote.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingPromissoryNote.Image")));
-            this.pictureBoxLoadingPromissoryNote.Location = new System.Drawing.Point(26, 49);
-            this.pictureBoxLoadingPromissoryNote.Name = "pictureBoxLoadingPromissoryNote";
-            this.pictureBoxLoadingPromissoryNote.Size = new System.Drawing.Size(944, 481);
-            this.pictureBoxLoadingPromissoryNote.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxLoadingPromissoryNote.TabIndex = 69;
-            this.pictureBoxLoadingPromissoryNote.TabStop = false;
-            this.pictureBoxLoadingPromissoryNote.Visible = false;
-            // 
-            // reportViewerPromissoryNote
-            // 
-            reportDataSource1.Name = "DataSetReceivablesReports";
-            reportDataSource1.Value = null;
-            this.reportViewerPromissoryNote.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewerPromissoryNote.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportAccountsReceivableAgingPerAcc" +
-    "ount.rdlc";
-            this.reportViewerPromissoryNote.Location = new System.Drawing.Point(26, 49);
-            this.reportViewerPromissoryNote.Name = "reportViewerPromissoryNote";
-            this.reportViewerPromissoryNote.ServerReport.BearerToken = null;
-            this.reportViewerPromissoryNote.Size = new System.Drawing.Size(944, 481);
-            this.reportViewerPromissoryNote.TabIndex = 3;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.pictureBoxLoadingOverduePromiNote);
-            this.tabPage2.Controls.Add(this.dateTimePickerOverduePromiNoteAsOf);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.reportViewerOverduePromiNote);
-            this.tabPage2.Controls.Add(this.buttonOverduePromiNoteSearch);
-            this.tabPage2.Location = new System.Drawing.Point(154, 4);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(994, 555);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Summary of Overdue Promissory Notes";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePickerOverduePromiNoteAsOf
-            // 
-            this.dateTimePickerOverduePromiNoteAsOf.CustomFormat = "MM/dd/yyyy";
-            this.dateTimePickerOverduePromiNoteAsOf.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerOverduePromiNoteAsOf.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerOverduePromiNoteAsOf.Location = new System.Drawing.Point(80, 13);
-            this.dateTimePickerOverduePromiNoteAsOf.Name = "dateTimePickerOverduePromiNoteAsOf";
-            this.dateTimePickerOverduePromiNoteAsOf.Size = new System.Drawing.Size(129, 24);
-            this.dateTimePickerOverduePromiNoteAsOf.TabIndex = 12;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 16);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "As Of:";
-            // 
-            // reportViewerOverduePromiNote
-            // 
-            reportDataSource2.Name = "DataSetConcessionaireReports";
-            reportDataSource2.Value = null;
-            this.reportViewerOverduePromiNote.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewerOverduePromiNote.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportAccountPerBarangay.rdlc";
-            this.reportViewerOverduePromiNote.Location = new System.Drawing.Point(26, 49);
-            this.reportViewerOverduePromiNote.Name = "reportViewerOverduePromiNote";
-            this.reportViewerOverduePromiNote.ServerReport.BearerToken = null;
-            this.reportViewerOverduePromiNote.Size = new System.Drawing.Size(944, 481);
-            this.reportViewerOverduePromiNote.TabIndex = 10;
-            // 
-            // buttonOverduePromiNoteSearch
-            // 
-            this.buttonOverduePromiNoteSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonOverduePromiNoteSearch.Location = new System.Drawing.Point(292, 5);
-            this.buttonOverduePromiNoteSearch.Name = "buttonOverduePromiNoteSearch";
-            this.buttonOverduePromiNoteSearch.Size = new System.Drawing.Size(74, 38);
-            this.buttonOverduePromiNoteSearch.TabIndex = 9;
-            this.buttonOverduePromiNoteSearch.Text = "Search";
-            this.buttonOverduePromiNoteSearch.UseVisualStyleBackColor = true;
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.Controls.Add(this.pictureBoxLoadingDebCredMemo);
-            this.tabPage7.Controls.Add(this.dateTimePickerDebCredMemoFrom);
-            this.tabPage7.Controls.Add(this.dateTimePickerDebCredMemoTo);
-            this.tabPage7.Controls.Add(this.label12);
-            this.tabPage7.Controls.Add(this.label18);
-            this.tabPage7.Controls.Add(this.buttonDebCredMemoSearch);
-            this.tabPage7.Controls.Add(this.reportViewerDebCredMemo);
-            this.tabPage7.Location = new System.Drawing.Point(154, 4);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(994, 555);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "Summary of Debit/Credit Memorandum";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // pictureBoxLoadingDebCredMemo
-            // 
-            this.pictureBoxLoadingDebCredMemo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingDebCredMemo.Image")));
-            this.pictureBoxLoadingDebCredMemo.Location = new System.Drawing.Point(26, 49);
-            this.pictureBoxLoadingDebCredMemo.Name = "pictureBoxLoadingDebCredMemo";
-            this.pictureBoxLoadingDebCredMemo.Size = new System.Drawing.Size(944, 481);
-            this.pictureBoxLoadingDebCredMemo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxLoadingDebCredMemo.TabIndex = 70;
-            this.pictureBoxLoadingDebCredMemo.TabStop = false;
-            this.pictureBoxLoadingDebCredMemo.Visible = false;
-            // 
-            // dateTimePickerDebCredMemoTo
-            // 
-            this.dateTimePickerDebCredMemoTo.CustomFormat = "MM/dd/yyyy";
-            this.dateTimePickerDebCredMemoTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerDebCredMemoTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerDebCredMemoTo.Location = new System.Drawing.Point(290, 16);
-            this.dateTimePickerDebCredMemoTo.Name = "dateTimePickerDebCredMemoTo";
-            this.dateTimePickerDebCredMemoTo.Size = new System.Drawing.Size(129, 24);
-            this.dateTimePickerDebCredMemoTo.TabIndex = 43;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(256, 19);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(28, 16);
-            this.label12.TabIndex = 38;
-            this.label12.Text = "To:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(23, 19);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(42, 16);
-            this.label18.TabIndex = 40;
-            this.label18.Text = "From:";
-            // 
-            // buttonDebCredMemoSearch
-            // 
-            this.buttonDebCredMemoSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDebCredMemoSearch.Location = new System.Drawing.Point(534, 8);
-            this.buttonDebCredMemoSearch.Name = "buttonDebCredMemoSearch";
-            this.buttonDebCredMemoSearch.Size = new System.Drawing.Size(74, 38);
-            this.buttonDebCredMemoSearch.TabIndex = 37;
-            this.buttonDebCredMemoSearch.Text = "Search";
-            this.buttonDebCredMemoSearch.UseVisualStyleBackColor = true;
-            // 
-            // reportViewerDebCredMemo
-            // 
-            reportDataSource3.Name = "DataSetReceivablesReports";
-            reportDataSource3.Value = null;
-            this.reportViewerDebCredMemo.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewerDebCredMemo.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportOtherReceivables.rdlc";
-            this.reportViewerDebCredMemo.Location = new System.Drawing.Point(26, 49);
-            this.reportViewerDebCredMemo.Name = "reportViewerDebCredMemo";
-            this.reportViewerDebCredMemo.ServerReport.BearerToken = null;
-            this.reportViewerDebCredMemo.Size = new System.Drawing.Size(944, 481);
-            this.reportViewerDebCredMemo.TabIndex = 7;
-            // 
-            // dateTimePickerDebCredMemoFrom
-            // 
-            this.dateTimePickerDebCredMemoFrom.CustomFormat = "MM/dd/yyyy";
-            this.dateTimePickerDebCredMemoFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerDebCredMemoFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerDebCredMemoFrom.Location = new System.Drawing.Point(71, 16);
-            this.dateTimePickerDebCredMemoFrom.Name = "dateTimePickerDebCredMemoFrom";
-            this.dateTimePickerDebCredMemoFrom.Size = new System.Drawing.Size(129, 24);
-            this.dateTimePickerDebCredMemoFrom.TabIndex = 43;
             // 
             // dateTimePickerPromissoryNoteFrom
             // 
@@ -317,6 +147,45 @@
             this.buttonPromissoryNoteSearch.Text = "Search";
             this.buttonPromissoryNoteSearch.UseVisualStyleBackColor = true;
             // 
+            // pictureBoxLoadingPromissoryNote
+            // 
+            this.pictureBoxLoadingPromissoryNote.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingPromissoryNote.Image")));
+            this.pictureBoxLoadingPromissoryNote.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingPromissoryNote.Name = "pictureBoxLoadingPromissoryNote";
+            this.pictureBoxLoadingPromissoryNote.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingPromissoryNote.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingPromissoryNote.TabIndex = 69;
+            this.pictureBoxLoadingPromissoryNote.TabStop = false;
+            this.pictureBoxLoadingPromissoryNote.Visible = false;
+            // 
+            // reportViewerPromissoryNote
+            // 
+            reportDataSource16.Name = "DataSetReceivablesReports";
+            reportDataSource16.Value = null;
+            this.reportViewerPromissoryNote.LocalReport.DataSources.Add(reportDataSource16);
+            this.reportViewerPromissoryNote.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportAccountsReceivableAgingPerAcc" +
+    "ount.rdlc";
+            this.reportViewerPromissoryNote.Location = new System.Drawing.Point(26, 49);
+            this.reportViewerPromissoryNote.Name = "reportViewerPromissoryNote";
+            this.reportViewerPromissoryNote.ServerReport.BearerToken = null;
+            this.reportViewerPromissoryNote.Size = new System.Drawing.Size(944, 481);
+            this.reportViewerPromissoryNote.TabIndex = 3;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.pictureBoxLoadingOverduePromiNote);
+            this.tabPage2.Controls.Add(this.dateTimePickerOverduePromiNoteAsOf);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.reportViewerOverduePromiNote);
+            this.tabPage2.Controls.Add(this.buttonOverduePromiNoteSearch);
+            this.tabPage2.Location = new System.Drawing.Point(154, 4);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(994, 555);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Summary of Overdue Promissory Notes";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // pictureBoxLoadingOverduePromiNote
             // 
             this.pictureBoxLoadingOverduePromiNote.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingOverduePromiNote.Image")));
@@ -328,7 +197,138 @@
             this.pictureBoxLoadingOverduePromiNote.TabStop = false;
             this.pictureBoxLoadingOverduePromiNote.Visible = false;
             // 
-            // FormARMaintenanceReports
+            // dateTimePickerOverduePromiNoteAsOf
+            // 
+            this.dateTimePickerOverduePromiNoteAsOf.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePickerOverduePromiNoteAsOf.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerOverduePromiNoteAsOf.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerOverduePromiNoteAsOf.Location = new System.Drawing.Point(80, 13);
+            this.dateTimePickerOverduePromiNoteAsOf.Name = "dateTimePickerOverduePromiNoteAsOf";
+            this.dateTimePickerOverduePromiNoteAsOf.Size = new System.Drawing.Size(129, 24);
+            this.dateTimePickerOverduePromiNoteAsOf.TabIndex = 12;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(23, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 16);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "As Of:";
+            // 
+            // reportViewerOverduePromiNote
+            // 
+            reportDataSource17.Name = "DataSetConcessionaireReports";
+            reportDataSource17.Value = null;
+            this.reportViewerOverduePromiNote.LocalReport.DataSources.Add(reportDataSource17);
+            this.reportViewerOverduePromiNote.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportAccountPerBarangay.rdlc";
+            this.reportViewerOverduePromiNote.Location = new System.Drawing.Point(26, 49);
+            this.reportViewerOverduePromiNote.Name = "reportViewerOverduePromiNote";
+            this.reportViewerOverduePromiNote.ServerReport.BearerToken = null;
+            this.reportViewerOverduePromiNote.Size = new System.Drawing.Size(944, 481);
+            this.reportViewerOverduePromiNote.TabIndex = 10;
+            // 
+            // buttonOverduePromiNoteSearch
+            // 
+            this.buttonOverduePromiNoteSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonOverduePromiNoteSearch.Location = new System.Drawing.Point(292, 5);
+            this.buttonOverduePromiNoteSearch.Name = "buttonOverduePromiNoteSearch";
+            this.buttonOverduePromiNoteSearch.Size = new System.Drawing.Size(74, 38);
+            this.buttonOverduePromiNoteSearch.TabIndex = 9;
+            this.buttonOverduePromiNoteSearch.Text = "Search";
+            this.buttonOverduePromiNoteSearch.UseVisualStyleBackColor = true;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.pictureBoxLoadingDebCredMemo);
+            this.tabPage7.Controls.Add(this.dateTimePickerDebCredMemoFrom);
+            this.tabPage7.Controls.Add(this.dateTimePickerDebCredMemoTo);
+            this.tabPage7.Controls.Add(this.label12);
+            this.tabPage7.Controls.Add(this.label18);
+            this.tabPage7.Controls.Add(this.buttonDebCredMemoSearch);
+            this.tabPage7.Controls.Add(this.reportViewerDebCredMemo);
+            this.tabPage7.Location = new System.Drawing.Point(154, 4);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(994, 555);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Summary of Debit/Credit Memorandum";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // pictureBoxLoadingDebCredMemo
+            // 
+            this.pictureBoxLoadingDebCredMemo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingDebCredMemo.Image")));
+            this.pictureBoxLoadingDebCredMemo.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingDebCredMemo.Name = "pictureBoxLoadingDebCredMemo";
+            this.pictureBoxLoadingDebCredMemo.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingDebCredMemo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingDebCredMemo.TabIndex = 70;
+            this.pictureBoxLoadingDebCredMemo.TabStop = false;
+            this.pictureBoxLoadingDebCredMemo.Visible = false;
+            // 
+            // dateTimePickerDebCredMemoFrom
+            // 
+            this.dateTimePickerDebCredMemoFrom.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePickerDebCredMemoFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerDebCredMemoFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerDebCredMemoFrom.Location = new System.Drawing.Point(71, 16);
+            this.dateTimePickerDebCredMemoFrom.Name = "dateTimePickerDebCredMemoFrom";
+            this.dateTimePickerDebCredMemoFrom.Size = new System.Drawing.Size(129, 24);
+            this.dateTimePickerDebCredMemoFrom.TabIndex = 43;
+            // 
+            // dateTimePickerDebCredMemoTo
+            // 
+            this.dateTimePickerDebCredMemoTo.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePickerDebCredMemoTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerDebCredMemoTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerDebCredMemoTo.Location = new System.Drawing.Point(290, 16);
+            this.dateTimePickerDebCredMemoTo.Name = "dateTimePickerDebCredMemoTo";
+            this.dateTimePickerDebCredMemoTo.Size = new System.Drawing.Size(129, 24);
+            this.dateTimePickerDebCredMemoTo.TabIndex = 43;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(256, 19);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(28, 16);
+            this.label12.TabIndex = 38;
+            this.label12.Text = "To:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(23, 19);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(42, 16);
+            this.label18.TabIndex = 40;
+            this.label18.Text = "From:";
+            // 
+            // buttonDebCredMemoSearch
+            // 
+            this.buttonDebCredMemoSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDebCredMemoSearch.Location = new System.Drawing.Point(534, 8);
+            this.buttonDebCredMemoSearch.Name = "buttonDebCredMemoSearch";
+            this.buttonDebCredMemoSearch.Size = new System.Drawing.Size(74, 38);
+            this.buttonDebCredMemoSearch.TabIndex = 37;
+            this.buttonDebCredMemoSearch.Text = "Search";
+            this.buttonDebCredMemoSearch.UseVisualStyleBackColor = true;
+            // 
+            // reportViewerDebCredMemo
+            // 
+            reportDataSource18.Name = "DataSetReceivablesReports";
+            reportDataSource18.Value = null;
+            this.reportViewerDebCredMemo.LocalReport.DataSources.Add(reportDataSource18);
+            this.reportViewerDebCredMemo.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportOtherReceivables.rdlc";
+            this.reportViewerDebCredMemo.Location = new System.Drawing.Point(26, 49);
+            this.reportViewerDebCredMemo.Name = "reportViewerDebCredMemo";
+            this.reportViewerDebCredMemo.ServerReport.BearerToken = null;
+            this.reportViewerDebCredMemo.Size = new System.Drawing.Size(944, 481);
+            this.reportViewerDebCredMemo.TabIndex = 7;
+            // 
+            // ARMaintenanceReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -336,20 +336,20 @@
             this.Controls.Add(this.tabControlARMaintenanceReports);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "FormARMaintenanceReports";
+            this.Name = "ARMaintenanceReportsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AR Maintenance Reports";
-            this.Load += new System.EventHandler(this.FormARMaintenanceReports_Load);
+            this.Load += new System.EventHandler(this.ARMaintenanceReportsForm_Load);
             this.tabControlARMaintenanceReports.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingPromissoryNote)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingOverduePromiNote)).EndInit();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDebCredMemo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingOverduePromiNote)).EndInit();
             this.ResumeLayout(false);
 
         }

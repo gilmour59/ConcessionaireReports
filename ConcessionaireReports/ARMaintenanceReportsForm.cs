@@ -14,11 +14,11 @@ using MySql.Data.MySqlClient;
 
 namespace ConcessionaireReports
 {
-    public partial class FormARMaintenanceReports : Form
+    public partial class ARMaintenanceReportsForm : Form
     {
         private string connStr;
 
-        public FormARMaintenanceReports()
+        public ARMaintenanceReportsForm()
         {
             InitializeComponent();
         }
@@ -55,7 +55,7 @@ namespace ConcessionaireReports
             g.DrawString(_tabPage.Text, _tabFont, _textBrush, _tabBounds, new StringFormat(_stringFlags));
         }
 
-        private void FormARMaintenanceReports_Load(object sender, EventArgs e)
+        private void ARMaintenanceReportsForm_Load(object sender, EventArgs e)
         {
             connStr = "server=localhost;user=root;database=mrwdbcsys;port=3306;password=";
 
