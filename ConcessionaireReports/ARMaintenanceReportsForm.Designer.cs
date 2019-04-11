@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ARMaintenanceReportsForm));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
@@ -55,6 +56,8 @@
             this.label18 = new System.Windows.Forms.Label();
             this.buttonDebCredMemoSearch = new System.Windows.Forms.Button();
             this.reportViewerDebCredMemo = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.DataSetARMaintenanceReports = new ConcessionaireReports.DataSetARMaintenanceReports();
+            this.PromissoryNotesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlARMaintenanceReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingPromissoryNote)).BeginInit();
@@ -62,6 +65,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingOverduePromiNote)).BeginInit();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDebCredMemo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetARMaintenanceReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PromissoryNotesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlARMaintenanceReports
@@ -161,11 +166,10 @@
             // 
             // reportViewerPromissoryNote
             // 
-            reportDataSource1.Name = "DataSetReceivablesReports";
-            reportDataSource1.Value = null;
+            reportDataSource1.Name = "DataSetARMaintenanceReports";
+            reportDataSource1.Value = this.PromissoryNotesBindingSource;
             this.reportViewerPromissoryNote.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewerPromissoryNote.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportAccountsReceivableAgingPerAcc" +
-    "ount.rdlc";
+            this.reportViewerPromissoryNote.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ARMaintenanceReports.ReportPromissoryNotes.rdlc";
             this.reportViewerPromissoryNote.Location = new System.Drawing.Point(26, 49);
             this.reportViewerPromissoryNote.Name = "reportViewerPromissoryNote";
             this.reportViewerPromissoryNote.ServerReport.BearerToken = null;
@@ -329,6 +333,16 @@
             this.reportViewerDebCredMemo.Size = new System.Drawing.Size(944, 481);
             this.reportViewerDebCredMemo.TabIndex = 7;
             // 
+            // DataSetARMaintenanceReports
+            // 
+            this.DataSetARMaintenanceReports.DataSetName = "DataSetARMaintenanceReports";
+            this.DataSetARMaintenanceReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // PromissoryNotesBindingSource
+            // 
+            this.PromissoryNotesBindingSource.DataMember = "PromissoryNotes";
+            this.PromissoryNotesBindingSource.DataSource = this.DataSetARMaintenanceReports;
+            // 
             // ARMaintenanceReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,6 +365,8 @@
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDebCredMemo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetARMaintenanceReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PromissoryNotesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -380,5 +396,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonPromissoryNoteSearch;
         private System.Windows.Forms.PictureBox pictureBoxLoadingOverduePromiNote;
+        private System.Windows.Forms.BindingSource PromissoryNotesBindingSource;
+        private DataSetARMaintenanceReports DataSetARMaintenanceReports;
     }
 }
