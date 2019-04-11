@@ -61,5 +61,84 @@ namespace ConcessionaireReports
 
             tabControlARMaintenanceReports.DrawMode = TabDrawMode.OwnerDrawFixed;
         }
+
+        private void beforeAwait(PictureBox pb, Button b)
+        {
+            //tabControlCollectionReports.TabPages[0].Enabled = false;
+            foreach (TabPage tp in tabControlARMaintenanceReports.TabPages)
+            {
+                if (!(tp == tabControlARMaintenanceReports.SelectedTab))
+                {
+                    tp.Enabled = false;
+                }
+            }
+            b.Enabled = false;
+            pb.Show();
+            pb.Update();
+        }
+
+        private void afterAwait(PictureBox pb, Button b)
+        {
+            foreach (TabPage tp in tabControlARMaintenanceReports.TabPages)
+            {
+                tp.Enabled = true;
+            }
+            b.Enabled = true;
+            pb.Hide();
+        }
+
+        private async void buttonPromissoryNoteSearch_Click(object sender, EventArgs e)
+        {
+            beforeAwait(pictureBoxLoadingPromissoryNote, buttonPromissoryNoteSearch);
+
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                    {
+                        conn.Open();
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetPromissoryNotesSummary_", conn))
+                        {
+                            adapter.SelectCommand.CommandTimeout = 5000;
+
+                            DataSetARMaintenanceReports ds = new DataSetARMaintenanceReports();
+
+                            Invoke((MethodInvoker)delegate () 
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@startDate", dateTimePickerPromissoryNoteFrom.Value);
+                                adapter.SelectCommand.Parameters["@startDate"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@endDate", dateTimePickerPromissoryNoteTo.Value);
+                                adapter.SelectCommand.Parameters["@endDate"].Direction = ParameterDirection.Input;
+                            });
+                            
+                            adapter.Fill(ds, "PromissoryNotes");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetARMaintenanceReports", ds.Tables["PromissoryNotes"]);
+                            reportViewerPromissoryNote.LocalReport.DataSources.Clear();
+                            reportViewerPromissoryNote.LocalReport.DataSources.Add(rds);
+
+                            ReportParameter[] param = new ReportParameter[]
+                            {
+                                new ReportParameter("ReportParameterFrom", dateTimePickerPromissoryNoteFrom.Value.ToString()),
+                                new ReportParameter("ReportParameterTo", dateTimePickerPromissoryNoteTo.Value.ToString())
+                            };
+                            reportViewerPromissoryNote.LocalReport.SetParameters(param);
+                        }
+                        conn.Close();
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingPromissoryNote, buttonPromissoryNoteSearch);
+            
+            reportViewerPromissoryNote.RefreshReport();
+        }
     }
 }

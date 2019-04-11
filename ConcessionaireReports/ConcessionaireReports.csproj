@@ -87,6 +87,11 @@
     <Compile Include="ConcessionaireReportsForm.Designer.cs">
       <DependentUpon>ConcessionaireReportsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSetARMaintenanceReports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetARMaintenanceReports.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetBillingReports.cs">
       <DependentUpon>DataSetBillingReports.xsd</DependentUpon>
     </Compile>
@@ -204,6 +209,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RDLC\ARMaintenanceReports\ReportPromissoryNotes.rdlc" />
     <EmbeddedResource Include="RDLC\CollectionReports\ReportCashCollectionReport.rdlc" />
     <EmbeddedResource Include="RDLC\CollectionReports\ReportCashierDailyCollectionReport.rdlc" />
     <EmbeddedResource Include="RDLC\CollectionReports\ReportDailyCollectionSummary.rdlc" />
@@ -252,6 +258,17 @@
     <EmbeddedResource Include="ReceivablesReportsForm.resx">
       <DependentUpon>ReceivablesReportsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DataSetARMaintenanceReports.xsc">
+      <DependentUpon>DataSetARMaintenanceReports.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetARMaintenanceReports.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetARMaintenanceReports.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetARMaintenanceReports.xss">
+      <DependentUpon>DataSetARMaintenanceReports.xsd</DependentUpon>
+    </None>
     <None Include="DataSetBillingReports.xsc">
       <DependentUpon>DataSetBillingReports.xsd</DependentUpon>
     </None>

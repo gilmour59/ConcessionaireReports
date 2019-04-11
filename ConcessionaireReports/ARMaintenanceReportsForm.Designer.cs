@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ARMaintenanceReportsForm));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource16 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource17 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource18 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.tabControlARMaintenanceReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dateTimePickerPromissoryNoteFrom = new System.Windows.Forms.DateTimePicker();
@@ -146,6 +146,7 @@
             this.buttonPromissoryNoteSearch.TabIndex = 70;
             this.buttonPromissoryNoteSearch.Text = "Search";
             this.buttonPromissoryNoteSearch.UseVisualStyleBackColor = true;
+            this.buttonPromissoryNoteSearch.Click += new System.EventHandler(this.buttonPromissoryNoteSearch_Click);
             // 
             // pictureBoxLoadingPromissoryNote
             // 
@@ -160,9 +161,9 @@
             // 
             // reportViewerPromissoryNote
             // 
-            reportDataSource16.Name = "DataSetReceivablesReports";
-            reportDataSource16.Value = null;
-            this.reportViewerPromissoryNote.LocalReport.DataSources.Add(reportDataSource16);
+            reportDataSource1.Name = "DataSetReceivablesReports";
+            reportDataSource1.Value = null;
+            this.reportViewerPromissoryNote.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewerPromissoryNote.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportAccountsReceivableAgingPerAcc" +
     "ount.rdlc";
             this.reportViewerPromissoryNote.Location = new System.Drawing.Point(26, 49);
@@ -219,9 +220,9 @@
             // 
             // reportViewerOverduePromiNote
             // 
-            reportDataSource17.Name = "DataSetConcessionaireReports";
-            reportDataSource17.Value = null;
-            this.reportViewerOverduePromiNote.LocalReport.DataSources.Add(reportDataSource17);
+            reportDataSource2.Name = "DataSetConcessionaireReports";
+            reportDataSource2.Value = null;
+            this.reportViewerOverduePromiNote.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewerOverduePromiNote.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportAccountPerBarangay.rdlc";
             this.reportViewerOverduePromiNote.Location = new System.Drawing.Point(26, 49);
             this.reportViewerOverduePromiNote.Name = "reportViewerOverduePromiNote";
@@ -318,9 +319,9 @@
             // 
             // reportViewerDebCredMemo
             // 
-            reportDataSource18.Name = "DataSetReceivablesReports";
-            reportDataSource18.Value = null;
-            this.reportViewerDebCredMemo.LocalReport.DataSources.Add(reportDataSource18);
+            reportDataSource3.Name = "DataSetReceivablesReports";
+            reportDataSource3.Value = null;
+            this.reportViewerDebCredMemo.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewerDebCredMemo.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportOtherReceivables.rdlc";
             this.reportViewerDebCredMemo.Location = new System.Drawing.Point(26, 49);
             this.reportViewerDebCredMemo.Name = "reportViewerDebCredMemo";
