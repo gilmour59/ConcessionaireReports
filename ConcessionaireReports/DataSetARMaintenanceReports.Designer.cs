@@ -489,7 +489,7 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PromissoryNotesRow AddPromissoryNotesRow(string header_name, string header_address, string pn_no, string remarks, string acct_no, string old_acct_no, string concessionaire_name, string issued_by, string month_, string bill_no, string balance, string bill_due_date, string pn_date, string extension) {
+            public PromissoryNotesRow AddPromissoryNotesRow(string header_name, string header_address, string pn_no, string remarks, int acct_no, string old_acct_no, string concessionaire_name, string issued_by, string month_, int bill_no, decimal balance, string bill_due_date, string pn_date, string extension) {
                 PromissoryNotesRow rowPromissoryNotesRow = ((PromissoryNotesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         header_name,
@@ -555,7 +555,7 @@ namespace ConcessionaireReports {
                 base.Columns.Add(this.columnpn_no);
                 this.columnremarks = new global::System.Data.DataColumn("remarks", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnremarks);
-                this.columnacct_no = new global::System.Data.DataColumn("acct_no", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnacct_no = new global::System.Data.DataColumn("acct_no", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnacct_no);
                 this.columnold_acct_no = new global::System.Data.DataColumn("old_acct_no", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnold_acct_no);
@@ -565,9 +565,9 @@ namespace ConcessionaireReports {
                 base.Columns.Add(this.columnissued_by);
                 this.columnmonth_ = new global::System.Data.DataColumn("month_", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmonth_);
-                this.columnbill_no = new global::System.Data.DataColumn("bill_no", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnbill_no = new global::System.Data.DataColumn("bill_no", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnbill_no);
-                this.columnbalance = new global::System.Data.DataColumn("balance", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnbalance = new global::System.Data.DataColumn("balance", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnbalance);
                 this.columnbill_due_date = new global::System.Data.DataColumn("bill_due_date", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnbill_due_date);
@@ -781,10 +781,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string acct_no {
+            public int acct_no {
                 get {
                     try {
-                        return ((string)(this[this.tablePromissoryNotes.acct_noColumn]));
+                        return ((int)(this[this.tablePromissoryNotes.acct_noColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'acct_no\' in table \'PromissoryNotes\' is DBNull.", e);
@@ -861,10 +861,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string bill_no {
+            public int bill_no {
                 get {
                     try {
-                        return ((string)(this[this.tablePromissoryNotes.bill_noColumn]));
+                        return ((int)(this[this.tablePromissoryNotes.bill_noColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'bill_no\' in table \'PromissoryNotes\' is DBNull.", e);
@@ -877,10 +877,10 @@ namespace ConcessionaireReports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string balance {
+            public decimal balance {
                 get {
                     try {
-                        return ((string)(this[this.tablePromissoryNotes.balanceColumn]));
+                        return ((decimal)(this[this.tablePromissoryNotes.balanceColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'balance\' in table \'PromissoryNotes\' is DBNull.", e);
