@@ -308,7 +308,7 @@ namespace ConcessionaireReports
                     {
                         conn.Open();
 
-                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetSummaryOfOtherReceivables_", conn))
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetSummaryOfOtherReceivables_", conn))
                         {
                             adapter.SelectCommand.CommandTimeout = 5000;
 
