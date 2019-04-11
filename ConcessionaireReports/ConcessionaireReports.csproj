@@ -209,6 +209,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RDLC\ARMaintenanceReports\ReportOverduePN.rdlc" />
     <EmbeddedResource Include="RDLC\ARMaintenanceReports\ReportPromissoryNotes.rdlc" />
     <EmbeddedResource Include="RDLC\CollectionReports\ReportCashCollectionReport.rdlc" />
     <EmbeddedResource Include="RDLC\CollectionReports\ReportCashierDailyCollectionReport.rdlc" />

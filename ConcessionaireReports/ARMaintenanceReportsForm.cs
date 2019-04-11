@@ -140,5 +140,56 @@ namespace ConcessionaireReports
             
             reportViewerPromissoryNote.RefreshReport();
         }
+
+        private async void buttonOverduePromiNoteSearch_Click(object sender, EventArgs e)
+        {
+            beforeAwait(pictureBoxLoadingOverduePromiNote, buttonOverduePromiNoteSearch);
+
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                    {
+                        conn.Open();
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetOverDuePromissoryNotesSummary_", conn))
+                        {
+                            adapter.SelectCommand.CommandTimeout = 5000;
+
+                            DataSetARMaintenanceReports ds = new DataSetARMaintenanceReports();
+
+                            Invoke((MethodInvoker)delegate ()
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@asOfDate", dateTimePickerOverduePromiNoteAsOf.Value);
+                                adapter.SelectCommand.Parameters["@asOfDate"].Direction = ParameterDirection.Input;                               
+                            });
+
+                            adapter.Fill(ds, "OverduePN");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetARMaintenanceReports", ds.Tables["OverduePN"]);
+                            reportViewerOverduePromiNote.LocalReport.DataSources.Clear();
+                            reportViewerOverduePromiNote.LocalReport.DataSources.Add(rds);
+
+                            ReportParameter[] param = new ReportParameter[]
+                            {
+                                new ReportParameter("ReportParameterDate", dateTimePickerOverduePromiNoteAsOf.Value.ToString())
+                            };
+                            reportViewerOverduePromiNote.LocalReport.SetParameters(param);
+                        }
+                        conn.Close();
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingOverduePromiNote, buttonOverduePromiNoteSearch);
+
+            reportViewerOverduePromiNote.RefreshReport();
+        }
     }
 }

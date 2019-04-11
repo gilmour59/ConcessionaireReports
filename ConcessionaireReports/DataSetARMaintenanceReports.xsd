@@ -32,6 +32,24 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="OverduePN" msprop:Generator_TableClassName="OverduePNDataTable" msprop:Generator_TableVarName="tableOverduePN" msprop:Generator_RowChangedName="OverduePNRowChanged" msprop:Generator_TablePropName="OverduePN" msprop:Generator_RowDeletingName="OverduePNRowDeleting" msprop:Generator_RowChangingName="OverduePNRowChanging" msprop:Generator_RowEvHandlerName="OverduePNRowChangeEventHandler" msprop:Generator_RowDeletedName="OverduePNRowDeleted" msprop:Generator_RowClassName="OverduePNRow" msprop:Generator_UserTableName="OverduePN" msprop:Generator_RowEvArgName="OverduePNRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="header_name" msprop:Generator_ColumnVarNameInTable="columnheader_name" msprop:Generator_ColumnPropNameInRow="header_name" msprop:Generator_ColumnPropNameInTable="header_nameColumn" msprop:Generator_UserColumnName="header_name" type="xs:string" minOccurs="0" />
+              <xs:element name="header_address" msprop:Generator_ColumnVarNameInTable="columnheader_address" msprop:Generator_ColumnPropNameInRow="header_address" msprop:Generator_ColumnPropNameInTable="header_addressColumn" msprop:Generator_UserColumnName="header_address" type="xs:string" minOccurs="0" />
+              <xs:element name="pn_no" msprop:Generator_ColumnVarNameInTable="columnpn_no" msprop:Generator_ColumnPropNameInRow="pn_no" msprop:Generator_ColumnPropNameInTable="pn_noColumn" msprop:Generator_UserColumnName="pn_no" type="xs:string" minOccurs="0" />
+              <xs:element name="acct_no" msprop:Generator_ColumnVarNameInTable="columnacct_no" msprop:Generator_ColumnPropNameInRow="acct_no" msprop:Generator_ColumnPropNameInTable="acct_noColumn" msprop:Generator_UserColumnName="acct_no" type="xs:int" minOccurs="0" />
+              <xs:element name="old_acct_no" msprop:Generator_ColumnVarNameInTable="columnold_acct_no" msprop:Generator_ColumnPropNameInRow="old_acct_no" msprop:Generator_ColumnPropNameInTable="old_acct_noColumn" msprop:Generator_UserColumnName="old_acct_no" type="xs:string" minOccurs="0" />
+              <xs:element name="concessionaire_name" msprop:Generator_ColumnVarNameInTable="columnconcessionaire_name" msprop:Generator_ColumnPropNameInRow="concessionaire_name" msprop:Generator_ColumnPropNameInTable="concessionaire_nameColumn" msprop:Generator_UserColumnName="concessionaire_name" type="xs:string" minOccurs="0" />
+              <xs:element name="month_" msprop:Generator_ColumnVarNameInTable="columnmonth_" msprop:Generator_ColumnPropNameInRow="month_" msprop:Generator_ColumnPropNameInTable="month_Column" msprop:Generator_UserColumnName="month_" type="xs:string" minOccurs="0" />
+              <xs:element name="bill_no" msprop:Generator_ColumnVarNameInTable="columnbill_no" msprop:Generator_ColumnPropNameInRow="bill_no" msprop:Generator_ColumnPropNameInTable="bill_noColumn" msprop:Generator_UserColumnName="bill_no" type="xs:int" minOccurs="0" />
+              <xs:element name="balance" msprop:Generator_ColumnVarNameInTable="columnbalance" msprop:Generator_ColumnPropNameInRow="balance" msprop:Generator_ColumnPropNameInTable="balanceColumn" msprop:Generator_UserColumnName="balance" type="xs:decimal" minOccurs="0" />
+              <xs:element name="bill_due_date" msprop:Generator_ColumnVarNameInTable="columnbill_due_date" msprop:Generator_ColumnPropNameInRow="bill_due_date" msprop:Generator_ColumnPropNameInTable="bill_due_dateColumn" msprop:Generator_UserColumnName="bill_due_date" type="xs:string" minOccurs="0" />
+              <xs:element name="pn_date" msprop:Generator_ColumnVarNameInTable="columnpn_date" msprop:Generator_ColumnPropNameInRow="pn_date" msprop:Generator_ColumnPropNameInTable="pn_dateColumn" msprop:Generator_UserColumnName="pn_date" type="xs:string" minOccurs="0" />
+              <xs:element name="extension" msprop:Generator_ColumnVarNameInTable="columnextension" msprop:Generator_ColumnPropNameInRow="extension" msprop:Generator_ColumnPropNameInTable="extensionColumn" msprop:Generator_UserColumnName="extension" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>
