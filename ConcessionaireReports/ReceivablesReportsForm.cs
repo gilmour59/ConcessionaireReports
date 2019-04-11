@@ -198,7 +198,7 @@ namespace ConcessionaireReports
 
                             ReportParameter[] param = new ReportParameter[]
                             {
-                            new ReportParameter("ReportParameterDate", dateTimePickerAgingAccountCutOff.Value.ToString())
+                                new ReportParameter("ReportParameterDate", dateTimePickerAgingAccountCutOff.Value.ToString())
                             };
                             reportViewerAgingAccount.LocalReport.SetParameters(param);
                         }
@@ -278,7 +278,7 @@ namespace ConcessionaireReports
 
                             ReportParameter[] param = new ReportParameter[]
                             {
-                            new ReportParameter("ReportParameterDate", dateTimePickerDemandLetterCutOff.Value.ToString())
+                                new ReportParameter("ReportParameterDate", dateTimePickerDemandLetterCutOff.Value.ToString())
                             };
                             reportViewerDemandLetter.LocalReport.SetParameters(param);
                         }
@@ -294,6 +294,61 @@ namespace ConcessionaireReports
             afterAwait(pictureBoxLoadingDemandLetter, buttonDemandLetterSearch);
 
             reportViewerDemandLetter.RefreshReport();
+        }
+
+        private async void buttonOtherReceivablesSearch_Click(object sender, EventArgs e)
+        {
+            beforeAwait(pictureBoxLoadingDemandLetter, buttonDemandLetterSearch);
+
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                    {
+                        conn.Open();
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetSummaryOfOtherReceivables_", conn))
+                        {
+                            adapter.SelectCommand.CommandTimeout = 5000;
+
+                            DataSetReceivablesReports ds = new DataSetReceivablesReports();
+
+                            Invoke((MethodInvoker)delegate ()
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@cutOffDate", dateTimePickerOtherReceivablesCutOff.Value);
+                                adapter.SelectCommand.Parameters["@cutOffDate"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxOtherReceivablesBook.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxOtherReceivablesZone.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
+                            });
+
+                            adapter.Fill(ds, "OtherReceivables");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetReceivablesReports", ds.Tables["OtherReceivables"]);
+                            reportViewerOtherReceivables.LocalReport.DataSources.Clear();
+                            reportViewerOtherReceivables.LocalReport.DataSources.Add(rds);
+
+                            ReportParameter[] param = new ReportParameter[]
+                            {
+                            new ReportParameter("ReportParameterDate", dateTimePickerOtherReceivablesCutOff.Value.ToString())
+                            };
+                            reportViewerOtherReceivables.LocalReport.SetParameters(param);
+                        }
+                        conn.Close();
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingDemandLetter, buttonDemandLetterSearch);
+
+            reportViewerOtherReceivables.RefreshReport();
         }
     }
 }

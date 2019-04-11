@@ -123,11 +123,11 @@
   <metadata name="DataSetReceivablesReports.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="DataSetReceivablesReports.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+  <metadata name="DemandLetterBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>441, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBoxLoadingDemandLetter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBoxLoadingAgingAccount.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhAAEAAff/AJPk5K/r68Dv76bp6Y/j48bx8Xre3ifJyavq6uD39zvOznLc3DLMzJbl5SDIyFLU
         1GLY2Hje3kfR0bLs7DbNzV7X177v70rS0qPo6Gva2kPQ0DDMzGbZ2cjx8U/T01vW1lbV1SjJyajp6RDD
@@ -1718,10 +1718,7 @@
         AAEAAAgEAP8FBAA7
 </value>
   </data>
-  <metadata name="DemandLetterBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>441, 17</value>
-  </metadata>
-  <data name="pictureBoxLoadingAgingAccount.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBoxLoadingDemandLetter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhAAEAAff/AJPk5K/r68Dv76bp6Y/j48bx8Xre3ifJyavq6uD39zvOznLc3DLMzJbl5SDIyFLU
         1GLY2Hje3kfR0bLs7DbNzV7X177v70rS0qPo6Gva2kPQ0DDMzGbZ2cjx8U/T01vW1lbV1SjJyajp6RDD
