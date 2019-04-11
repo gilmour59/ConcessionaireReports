@@ -37,9 +37,6 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.AgingPerAccountBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DataSetReceivablesReports = new ConcessionaireReports.DataSetReceivablesReports();
-            this.DemandLetterBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlReceivablesReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pictureBoxLoadingAgingAccount = new System.Windows.Forms.PictureBox();
@@ -102,9 +99,11 @@
             this.label18 = new System.Windows.Forms.Label();
             this.buttonOtherReceivablesSearch = new System.Windows.Forms.Button();
             this.reportViewerOtherReceivables = new Microsoft.Reporting.WinForms.ReportViewer();
-            ((System.ComponentModel.ISupportInitialize)(this.AgingPerAccountBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetReceivablesReports)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DemandLetterBindingSource)).BeginInit();
+            this.AgingPerAccountBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSetReceivablesReports = new ConcessionaireReports.DataSetReceivablesReports();
+            this.DemandLetterBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.OtherReceivablesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBoxLoadingOtherReceivables = new System.Windows.Forms.PictureBox();
             this.tabControlReceivablesReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingAgingAccount)).BeginInit();
@@ -116,22 +115,12 @@
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDelinquentLimit)).BeginInit();
             this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AgingPerAccountBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetReceivablesReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DemandLetterBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OtherReceivablesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingOtherReceivables)).BeginInit();
             this.SuspendLayout();
-            // 
-            // AgingPerAccountBindingSource
-            // 
-            this.AgingPerAccountBindingSource.DataMember = "AgingPerAccount";
-            this.AgingPerAccountBindingSource.DataSource = this.DataSetReceivablesReports;
-            // 
-            // DataSetReceivablesReports
-            // 
-            this.DataSetReceivablesReports.DataSetName = "DataSetReceivablesReports";
-            this.DataSetReceivablesReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // DemandLetterBindingSource
-            // 
-            this.DemandLetterBindingSource.DataMember = "DemandLetter";
-            this.DemandLetterBindingSource.DataSource = this.DataSetReceivablesReports;
             // 
             // tabControlReceivablesReports
             // 
@@ -741,6 +730,7 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.pictureBoxLoadingOtherReceivables);
             this.tabPage7.Controls.Add(this.dateTimePickerOtherReceivablesCutOff);
             this.tabPage7.Controls.Add(this.comboBoxOtherReceivablesBook);
             this.tabPage7.Controls.Add(this.comboBoxOtherReceivablesZone);
@@ -830,16 +820,46 @@
             // 
             // reportViewerOtherReceivables
             // 
-            reportDataSource7.Name = "DataSetConcessionaireReports";
-            reportDataSource7.Value = null;
+            reportDataSource7.Name = "DataSetReceivablesReports";
+            reportDataSource7.Value = this.OtherReceivablesBindingSource;
             this.reportViewerOtherReceivables.LocalReport.DataSources.Add(reportDataSource7);
-            this.reportViewerOtherReceivables.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportSeniorCitizenAccounts.rdlc" +
-    "";
+            this.reportViewerOtherReceivables.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportOtherReceivables.rdlc";
             this.reportViewerOtherReceivables.Location = new System.Drawing.Point(26, 49);
             this.reportViewerOtherReceivables.Name = "reportViewerOtherReceivables";
             this.reportViewerOtherReceivables.ServerReport.BearerToken = null;
             this.reportViewerOtherReceivables.Size = new System.Drawing.Size(944, 481);
             this.reportViewerOtherReceivables.TabIndex = 7;
+            // 
+            // AgingPerAccountBindingSource
+            // 
+            this.AgingPerAccountBindingSource.DataMember = "AgingPerAccount";
+            this.AgingPerAccountBindingSource.DataSource = this.DataSetReceivablesReports;
+            // 
+            // DataSetReceivablesReports
+            // 
+            this.DataSetReceivablesReports.DataSetName = "DataSetReceivablesReports";
+            this.DataSetReceivablesReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // DemandLetterBindingSource
+            // 
+            this.DemandLetterBindingSource.DataMember = "DemandLetter";
+            this.DemandLetterBindingSource.DataSource = this.DataSetReceivablesReports;
+            // 
+            // OtherReceivablesBindingSource
+            // 
+            this.OtherReceivablesBindingSource.DataMember = "OtherReceivables";
+            this.OtherReceivablesBindingSource.DataSource = this.DataSetReceivablesReports;
+            // 
+            // pictureBoxLoadingOtherReceivables
+            // 
+            this.pictureBoxLoadingOtherReceivables.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingOtherReceivables.Image")));
+            this.pictureBoxLoadingOtherReceivables.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingOtherReceivables.Name = "pictureBoxLoadingOtherReceivables";
+            this.pictureBoxLoadingOtherReceivables.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingOtherReceivables.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingOtherReceivables.TabIndex = 70;
+            this.pictureBoxLoadingOtherReceivables.TabStop = false;
+            this.pictureBoxLoadingOtherReceivables.Visible = false;
             // 
             // ReceivablesReportsForm
             // 
@@ -853,9 +873,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Receivables Reports";
             this.Load += new System.EventHandler(this.ReceivablesReportsForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.AgingPerAccountBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetReceivablesReports)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DemandLetterBindingSource)).EndInit();
             this.tabControlReceivablesReports.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -874,6 +891,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDelinquentLimit)).EndInit();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AgingPerAccountBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetReceivablesReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DemandLetterBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OtherReceivablesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingOtherReceivables)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -945,5 +967,7 @@
         private System.Windows.Forms.PictureBox pictureBoxLoadingAgingAccount;
         private System.Windows.Forms.PictureBox pictureBoxLoadingDemandLetter;
         private System.Windows.Forms.BindingSource DemandLetterBindingSource;
+        private System.Windows.Forms.BindingSource OtherReceivablesBindingSource;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingOtherReceivables;
     }
 }

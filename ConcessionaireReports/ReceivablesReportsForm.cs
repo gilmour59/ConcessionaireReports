@@ -298,7 +298,7 @@ namespace ConcessionaireReports
 
         private async void buttonOtherReceivablesSearch_Click(object sender, EventArgs e)
         {
-            beforeAwait(pictureBoxLoadingDemandLetter, buttonDemandLetterSearch);
+            beforeAwait(pictureBoxLoadingOtherReceivables, buttonOtherReceivablesSearch);
 
             await Task.Run(() =>
             {
@@ -333,7 +333,7 @@ namespace ConcessionaireReports
 
                             ReportParameter[] param = new ReportParameter[]
                             {
-                            new ReportParameter("ReportParameterDate", dateTimePickerOtherReceivablesCutOff.Value.ToString())
+                                new ReportParameter("ReportParameterDate", dateTimePickerOtherReceivablesCutOff.Value.ToString())
                             };
                             reportViewerOtherReceivables.LocalReport.SetParameters(param);
                         }
@@ -346,7 +346,7 @@ namespace ConcessionaireReports
                 }
             });
 
-            afterAwait(pictureBoxLoadingDemandLetter, buttonDemandLetterSearch);
+            afterAwait(pictureBoxLoadingOtherReceivables, buttonOtherReceivablesSearch);
 
             reportViewerOtherReceivables.RefreshReport();
         }
