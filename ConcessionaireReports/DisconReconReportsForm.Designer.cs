@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisconReconReportsForm));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.ReconnectBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSetDisconReconReports = new ConcessionaireReports.DataSetDisconReconReports();
             this.tabControlDisconReconReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dateTimePickerReconnectFrom = new System.Windows.Forms.DateTimePicker();
@@ -49,16 +51,26 @@
             this.label18 = new System.Windows.Forms.Label();
             this.buttonDisconnectSearch = new System.Windows.Forms.Button();
             this.reportViewerDisconnect = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DataSetDisconReconReports = new ConcessionaireReports.DataSetDisconReconReports();
-            this.ReconnectBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DisconnectBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ReconnectBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetDisconReconReports)).BeginInit();
             this.tabControlDisconReconReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingReconnect)).BeginInit();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDisconnect)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetDisconReconReports)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ReconnectBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DisconnectBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ReconnectBindingSource
+            // 
+            this.ReconnectBindingSource.DataMember = "Reconnect";
+            this.ReconnectBindingSource.DataSource = this.DataSetDisconReconReports;
+            // 
+            // DataSetDisconReconReports
+            // 
+            this.DataSetDisconReconReports.DataSetName = "DataSetDisconReconReports";
+            this.DataSetDisconReconReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabControlDisconReconReports
             // 
@@ -111,6 +123,7 @@
             this.dateTimePickerReconnectTo.Name = "dateTimePickerReconnectTo";
             this.dateTimePickerReconnectTo.Size = new System.Drawing.Size(129, 24);
             this.dateTimePickerReconnectTo.TabIndex = 74;
+            this.dateTimePickerReconnectTo.ValueChanged += new System.EventHandler(this.dateTimePickerReconnectTo_ValueChanged);
             // 
             // label1
             // 
@@ -212,6 +225,7 @@
             this.dateTimePickerDisconnectTo.Name = "dateTimePickerDisconnectTo";
             this.dateTimePickerDisconnectTo.Size = new System.Drawing.Size(129, 24);
             this.dateTimePickerDisconnectTo.TabIndex = 43;
+            this.dateTimePickerDisconnectTo.ValueChanged += new System.EventHandler(this.dateTimePickerDisconnectTo_ValueChanged);
             // 
             // label12
             // 
@@ -242,28 +256,24 @@
             this.buttonDisconnectSearch.TabIndex = 37;
             this.buttonDisconnectSearch.Text = "Search";
             this.buttonDisconnectSearch.UseVisualStyleBackColor = true;
+            this.buttonDisconnectSearch.Click += new System.EventHandler(this.buttonDisconnectSearch_Click);
             // 
             // reportViewerDisconnect
             // 
-            reportDataSource2.Name = "DataSetReceivablesReports";
-            reportDataSource2.Value = null;
+            reportDataSource2.Name = "DataSetDisconReconReports";
+            reportDataSource2.Value = this.DisconnectBindingSource;
             this.reportViewerDisconnect.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewerDisconnect.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportOtherReceivables.rdlc";
+            this.reportViewerDisconnect.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.DisconReconReports.ReportDiscon.rdlc";
             this.reportViewerDisconnect.Location = new System.Drawing.Point(26, 49);
             this.reportViewerDisconnect.Name = "reportViewerDisconnect";
             this.reportViewerDisconnect.ServerReport.BearerToken = null;
             this.reportViewerDisconnect.Size = new System.Drawing.Size(944, 481);
             this.reportViewerDisconnect.TabIndex = 7;
             // 
-            // DataSetDisconReconReports
+            // DisconnectBindingSource
             // 
-            this.DataSetDisconReconReports.DataSetName = "DataSetDisconReconReports";
-            this.DataSetDisconReconReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ReconnectBindingSource
-            // 
-            this.ReconnectBindingSource.DataMember = "Reconnect";
-            this.ReconnectBindingSource.DataSource = this.DataSetDisconReconReports;
+            this.DisconnectBindingSource.DataMember = "Disconnect";
+            this.DisconnectBindingSource.DataSource = this.DataSetDisconReconReports;
             // 
             // DisconReconReportsForm
             // 
@@ -277,6 +287,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Disconnection Reconnection Reports";
             this.Load += new System.EventHandler(this.DisconReconReportsForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ReconnectBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetDisconReconReports)).EndInit();
             this.tabControlDisconReconReports.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -284,8 +296,7 @@
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDisconnect)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetDisconReconReports)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ReconnectBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DisconnectBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -311,5 +322,6 @@
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerDisconnect;
         private System.Windows.Forms.BindingSource ReconnectBindingSource;
         private DataSetDisconReconReports DataSetDisconReconReports;
+        private System.Windows.Forms.BindingSource DisconnectBindingSource;
     }
 }

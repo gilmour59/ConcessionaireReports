@@ -60,6 +60,8 @@ namespace ConcessionaireReports
             connStr = "server=localhost;user=root;database=mrwdbcsys;port=3306;password=";
 
             tabControlDisconReconReports.DrawMode = TabDrawMode.OwnerDrawFixed;
+            dateTimePickerDisconnectTo.MaxDate = DateTime.Today;
+            dateTimePickerReconnectTo.MaxDate = DateTime.Today;
         }
 
         private void beforeAwait(PictureBox pb, Button b)
@@ -132,6 +134,63 @@ namespace ConcessionaireReports
             afterAwait(pictureBoxLoadingReconnect, buttonReconnectSearch);
 
             reportViewerReconnect.RefreshReport();
+        }
+
+        private void dateTimePickerDisconnectTo_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerDisconnectFrom.MaxDate = dateTimePickerDisconnectTo.Value;
+        }
+
+        private void dateTimePickerReconnectTo_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerReconnectFrom.MaxDate = dateTimePickerReconnectTo.Value;
+        }
+
+        private async void buttonDisconnectSearch_Click(object sender, EventArgs e)
+        {
+            beforeAwait(pictureBoxLoadingDisconnect, buttonDisconnectSearch);
+
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                    {
+                        conn.Open();
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_getDisconnectionSummary_", conn))
+                        {
+                            adapter.SelectCommand.CommandTimeout = 5000;
+
+                            DataSetDisconReconReports ds = new DataSetDisconReconReports();
+
+                            Invoke((MethodInvoker)delegate ()
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@fromDate", dateTimePickerDisconnectFrom.Value);
+                                adapter.SelectCommand.Parameters["@fromDate"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@toDate", dateTimePickerDisconnectTo.Value);
+                                adapter.SelectCommand.Parameters["@toDate"].Direction = ParameterDirection.Input;
+                            });
+
+                            adapter.Fill(ds, "Disconnect");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetDisconReconReports", ds.Tables["Disconnect"]);
+                            reportViewerDisconnect.LocalReport.DataSources.Clear();
+                            reportViewerDisconnect.LocalReport.DataSources.Add(rds);
+                        }
+                        conn.Close();
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingDisconnect, buttonDisconnectSearch);
+
+            reportViewerDisconnect.RefreshReport();
         }
     }
 }
