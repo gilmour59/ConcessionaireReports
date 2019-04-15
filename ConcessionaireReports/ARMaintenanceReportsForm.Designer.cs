@@ -29,10 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ARMaintenanceReportsForm));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.PromissoryNotesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSetARMaintenanceReports = new ConcessionaireReports.DataSetARMaintenanceReports();
+            this.OverduePNBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlARMaintenanceReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dateTimePickerPromissoryNoteFrom = new System.Windows.Forms.DateTimePicker();
@@ -56,9 +59,10 @@
             this.label18 = new System.Windows.Forms.Label();
             this.buttonDebCredMemoSearch = new System.Windows.Forms.Button();
             this.reportViewerDebCredMemo = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.PromissoryNotesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DataSetARMaintenanceReports = new ConcessionaireReports.DataSetARMaintenanceReports();
-            this.OverduePNBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DMCMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.PromissoryNotesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetARMaintenanceReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OverduePNBindingSource)).BeginInit();
             this.tabControlARMaintenanceReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingPromissoryNote)).BeginInit();
@@ -66,10 +70,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingOverduePromiNote)).BeginInit();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDebCredMemo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PromissoryNotesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetARMaintenanceReports)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OverduePNBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DMCMBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // PromissoryNotesBindingSource
+            // 
+            this.PromissoryNotesBindingSource.DataMember = "PromissoryNotes";
+            this.PromissoryNotesBindingSource.DataSource = this.DataSetARMaintenanceReports;
+            // 
+            // DataSetARMaintenanceReports
+            // 
+            this.DataSetARMaintenanceReports.DataSetName = "DataSetARMaintenanceReports";
+            this.DataSetARMaintenanceReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // OverduePNBindingSource
+            // 
+            this.OverduePNBindingSource.DataMember = "OverduePN";
+            this.OverduePNBindingSource.DataSource = this.DataSetARMaintenanceReports;
             // 
             // tabControlARMaintenanceReports
             // 
@@ -168,9 +185,9 @@
             // 
             // reportViewerPromissoryNote
             // 
-            reportDataSource1.Name = "DataSetARMaintenanceReports";
-            reportDataSource1.Value = this.PromissoryNotesBindingSource;
-            this.reportViewerPromissoryNote.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource5.Name = "DataSetARMaintenanceReports";
+            reportDataSource5.Value = this.PromissoryNotesBindingSource;
+            this.reportViewerPromissoryNote.LocalReport.DataSources.Add(reportDataSource5);
             this.reportViewerPromissoryNote.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ARMaintenanceReports.ReportPromissoryNotes.rdlc";
             this.reportViewerPromissoryNote.Location = new System.Drawing.Point(26, 49);
             this.reportViewerPromissoryNote.Name = "reportViewerPromissoryNote";
@@ -226,9 +243,9 @@
             // 
             // reportViewerOverduePromiNote
             // 
-            reportDataSource2.Name = "DataSetARMaintenanceReports";
-            reportDataSource2.Value = this.OverduePNBindingSource;
-            this.reportViewerOverduePromiNote.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource6.Name = "DataSetARMaintenanceReports";
+            reportDataSource6.Value = this.OverduePNBindingSource;
+            this.reportViewerOverduePromiNote.LocalReport.DataSources.Add(reportDataSource6);
             this.reportViewerOverduePromiNote.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ARMaintenanceReports.ReportOverduePN.rdlc";
             this.reportViewerOverduePromiNote.Location = new System.Drawing.Point(26, 49);
             this.reportViewerOverduePromiNote.Name = "reportViewerOverduePromiNote";
@@ -323,33 +340,24 @@
             this.buttonDebCredMemoSearch.TabIndex = 37;
             this.buttonDebCredMemoSearch.Text = "Search";
             this.buttonDebCredMemoSearch.UseVisualStyleBackColor = true;
+            this.buttonDebCredMemoSearch.Click += new System.EventHandler(this.buttonDebCredMemoSearch_Click);
             // 
             // reportViewerDebCredMemo
             // 
-            reportDataSource3.Name = "DataSetReceivablesReports";
-            reportDataSource3.Value = null;
-            this.reportViewerDebCredMemo.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewerDebCredMemo.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportOtherReceivables.rdlc";
+            reportDataSource4.Name = "DataSetARMaintenanceReports";
+            reportDataSource4.Value = this.DMCMBindingSource;
+            this.reportViewerDebCredMemo.LocalReport.DataSources.Add(reportDataSource4);
+            this.reportViewerDebCredMemo.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ARMaintenanceReports.ReportDebitCreditMemo.rdlc";
             this.reportViewerDebCredMemo.Location = new System.Drawing.Point(26, 49);
             this.reportViewerDebCredMemo.Name = "reportViewerDebCredMemo";
             this.reportViewerDebCredMemo.ServerReport.BearerToken = null;
             this.reportViewerDebCredMemo.Size = new System.Drawing.Size(944, 481);
-            this.reportViewerDebCredMemo.TabIndex = 7;
+            this.reportViewerDebCredMemo.TabIndex = 71;
             // 
-            // PromissoryNotesBindingSource
+            // DMCMBindingSource
             // 
-            this.PromissoryNotesBindingSource.DataMember = "PromissoryNotes";
-            this.PromissoryNotesBindingSource.DataSource = this.DataSetARMaintenanceReports;
-            // 
-            // DataSetARMaintenanceReports
-            // 
-            this.DataSetARMaintenanceReports.DataSetName = "DataSetARMaintenanceReports";
-            this.DataSetARMaintenanceReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // OverduePNBindingSource
-            // 
-            this.OverduePNBindingSource.DataMember = "OverduePN";
-            this.OverduePNBindingSource.DataSource = this.DataSetARMaintenanceReports;
+            this.DMCMBindingSource.DataMember = "DMCM";
+            this.DMCMBindingSource.DataSource = this.DataSetARMaintenanceReports;
             // 
             // ARMaintenanceReportsForm
             // 
@@ -363,6 +371,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AR Maintenance Reports";
             this.Load += new System.EventHandler(this.ARMaintenanceReportsForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.PromissoryNotesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetARMaintenanceReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OverduePNBindingSource)).EndInit();
             this.tabControlARMaintenanceReports.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -373,9 +384,7 @@
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDebCredMemo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PromissoryNotesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetARMaintenanceReports)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.OverduePNBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DMCMBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -397,7 +406,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button buttonDebCredMemoSearch;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewerDebCredMemo;
         private System.Windows.Forms.DateTimePicker dateTimePickerDebCredMemoFrom;
         private System.Windows.Forms.DateTimePicker dateTimePickerPromissoryNoteFrom;
         private System.Windows.Forms.DateTimePicker dateTimePickerPromissoryNoteTo;
@@ -408,5 +416,7 @@
         private System.Windows.Forms.BindingSource PromissoryNotesBindingSource;
         private DataSetARMaintenanceReports DataSetARMaintenanceReports;
         private System.Windows.Forms.BindingSource OverduePNBindingSource;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerDebCredMemo;
+        private System.Windows.Forms.BindingSource DMCMBindingSource;
     }
 }

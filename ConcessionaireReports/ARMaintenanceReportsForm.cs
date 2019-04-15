@@ -191,5 +191,59 @@ namespace ConcessionaireReports
 
             reportViewerOverduePromiNote.RefreshReport();
         }
+
+        private async void buttonDebCredMemoSearch_Click(object sender, EventArgs e)
+        {
+            beforeAwait(pictureBoxLoadingDebCredMemo, buttonDebCredMemoSearch);
+
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                    {
+                        conn.Open();
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetDMCMSummary_", conn))
+                        {
+                            adapter.SelectCommand.CommandTimeout = 5000;
+
+                            DataSetARMaintenanceReports ds = new DataSetARMaintenanceReports();
+
+                            Invoke((MethodInvoker)delegate ()
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@startDate", dateTimePickerDebCredMemoFrom.Value);
+                                adapter.SelectCommand.Parameters["@startDate"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@endDate", dateTimePickerDebCredMemoTo.Value);
+                                adapter.SelectCommand.Parameters["@endDate"].Direction = ParameterDirection.Input;
+                            });
+
+                            adapter.Fill(ds, "DMCM");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetARMaintenanceReports", ds.Tables["DMCM"]);
+                            reportViewerDebCredMemo.LocalReport.DataSources.Clear();
+                            reportViewerDebCredMemo.LocalReport.DataSources.Add(rds);
+
+                            ReportParameter[] param = new ReportParameter[]
+                            {
+                                new ReportParameter("ReportParameterFrom", dateTimePickerDebCredMemoFrom.Value.ToString()),
+                                new ReportParameter("ReportParameterTo", dateTimePickerDebCredMemoTo.Value.ToString())
+                            };
+                            reportViewerDebCredMemo.LocalReport.SetParameters(param);
+                        }
+                        conn.Close();
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingDebCredMemo, buttonDebCredMemoSearch);
+
+            reportViewerDebCredMemo.RefreshReport();
+        }
     }
 }
