@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Summary of Debit/Credit Memorandum</Value>
+                <Value>Reconnection Summary</Value>
                 <Style>
                   <FontFamily>calibri</FontFamily>
                   <FontSize>11pt</FontSize>
@@ -115,7 +115,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Format(Parameters!ReportParameterFrom.Value, "D") &amp; " - " &amp; Format(Parameters!ReportParameterTo.Value, "D")</Value>
+                <Value>=First(Fields!sub_title.Value, "DataSetDisconReconReports")</Value>
                 <Style>
                   <FontFamily>calibri</FontFamily>
                   <FontWeight>Bold</FontWeight>
@@ -146,31 +146,31 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2cm</Width>
+              <Width>2.71431cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2cm</Width>
+              <Width>1.76717cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2cm</Width>
+              <Width>3.71431cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2cm</Width>
+              <Width>3.71431cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2cm</Width>
+              <Width>2.45508cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2cm</Width>
+              <Width>2.71431cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2cm</Width>
+              <Width>2.71431cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2cm</Width>
+              <Width>2.71431cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2cm</Width>
+              <Width>1.58196cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -246,7 +246,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox29">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -280,7 +279,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox30">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -347,7 +345,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox31">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -381,7 +378,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox32">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -415,7 +411,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox33">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -449,7 +444,6 @@
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox34">
-                      <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
@@ -794,10 +788,9 @@
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>2.5cm</Size>
+                <Size>2.71431cm</Size>
                 <CellContents>
                   <Textbox Name="Textbox27">
-                    <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
                       <Paragraph>
@@ -832,6 +825,7 @@
                 <TablixMember />
               </TablixMembers>
               <KeepWithGroup>After</KeepWithGroup>
+              <RepeatOnNewPage>true</RepeatOnNewPage>
             </TablixMember>
             <TablixMember>
               <Group Name="date_reconnected">
@@ -845,10 +839,9 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>2.5cm</Size>
+                <Size>2.71431cm</Size>
                 <CellContents>
                   <Textbox Name="date_reconnected">
-                    <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
                       <Paragraph>
@@ -858,6 +851,7 @@
                             <Style>
                               <FontFamily>calibri</FontFamily>
                               <FontSize>8pt</FontSize>
+                              <Format>d</Format>
                             </Style>
                           </TextRun>
                         </TextRuns>
@@ -888,9 +882,9 @@
         </TablixRowHierarchy>
         <DataSetName>DataSetDisconReconReports</DataSetName>
         <Top>3.10303cm</Top>
-        <Left>0.73766cm</Left>
+        <Left>0.44662cm</Left>
         <Height>0.84cm</Height>
-        <Width>20.5cm</Width>
+        <Width>26.80438cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -898,16 +892,219 @@
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Commercial: " &amp; System.Environment.NewLine + Format(Sum(Fields!commercial.Value, "DataSetDisconReconReports"), "#,0.00")</Value>
+                <Style>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>4.26141cm</Top>
+        <Left>15.45874cm</Left>
+        <Height>0.49417cm</Height>
+        <Width>3.54628cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox19">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Total Reconnections:" &amp; System.Environment.NewLine + Format(Count(Fields!ref_no.Value, "DataSetDisconReconReports"), "#,0.00")</Value>
+                <Style>
+                  <FontFamily>calibri</FontFamily>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox17</rd:DefaultName>
+        <Top>4.26141cm</Top>
+        <Left>8.29563cm</Left>
+        <Height>0.49417cm</Height>
+        <Width>3.54628cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Line Name="Line10">
+        <Top>4.15558cm</Top>
+        <Left>0.44662cm</Left>
+        <Height>0cm</Height>
+        <Width>26.8044cm</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Residential: " &amp; System.Environment.NewLine + Format(Sum(Fields!residential.Value, "DataSetDisconReconReports"), "#,0.00")</Value>
+                <Style>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>4.26141cm</Top>
+        <Left>11.87718cm</Left>
+        <Height>0.49417cm</Height>
+        <Width>3.54628cm</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>2.95833in</Height>
+    <Height>1.97917in</Height>
     <Style />
   </Body>
   <Width>10.88542in</Width>
   <Page>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>1.05833cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Rectangle Name="Rectangle3">
+          <ReportItems>
+            <Textbox Name="footer_DateTime">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Today()</Value>
+                      <Style>
+                        <FontFamily>calibri</FontFamily>
+                        <FontWeight>Bold</FontWeight>
+                        <Format>d</Format>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>0.17639cm</Top>
+              <Left>0.28671cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>2.47242cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="footer_PageNumber">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Globals.PageNumber &amp; " of " &amp; Globals.TotalPages</Value>
+                      <Style>
+                        <FontFamily>calibri</FontFamily>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>0.17639cm</Top>
+              <Left>14.03561cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>2.4275cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <KeepTogether>true</KeepTogether>
+          <Left>5.41526cm</Left>
+          <Height>0.83312cm</Height>
+          <Width>16.81843cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Rectangle>
+      </ReportItems>
       <Style>
         <Border>
           <Style>None</Style>

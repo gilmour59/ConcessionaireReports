@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisconReconReportsForm));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
@@ -48,11 +49,15 @@
             this.label18 = new System.Windows.Forms.Label();
             this.buttonDisconnectSearch = new System.Windows.Forms.Button();
             this.reportViewerDisconnect = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.DataSetDisconReconReports = new ConcessionaireReports.DataSetDisconReconReports();
+            this.ReconnectBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlDisconReconReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingReconnect)).BeginInit();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDisconnect)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetDisconReconReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReconnectBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlDisconReconReports
@@ -151,11 +156,10 @@
             // 
             // reportViewerReconnect
             // 
-            reportDataSource1.Name = "DataSetReceivablesReports";
-            reportDataSource1.Value = null;
+            reportDataSource1.Name = "DataSetDisconReconReports";
+            reportDataSource1.Value = this.ReconnectBindingSource;
             this.reportViewerReconnect.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewerReconnect.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportAccountsReceivableAgingPerAcc" +
-    "ount.rdlc";
+            this.reportViewerReconnect.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.DisconReconReports.ReportRecon.rdlc";
             this.reportViewerReconnect.Location = new System.Drawing.Point(26, 49);
             this.reportViewerReconnect.Name = "reportViewerReconnect";
             this.reportViewerReconnect.ServerReport.BearerToken = null;
@@ -251,6 +255,16 @@
             this.reportViewerDisconnect.Size = new System.Drawing.Size(944, 481);
             this.reportViewerDisconnect.TabIndex = 7;
             // 
+            // DataSetDisconReconReports
+            // 
+            this.DataSetDisconReconReports.DataSetName = "DataSetDisconReconReports";
+            this.DataSetDisconReconReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ReconnectBindingSource
+            // 
+            this.ReconnectBindingSource.DataMember = "Reconnect";
+            this.ReconnectBindingSource.DataSource = this.DataSetDisconReconReports;
+            // 
             // DisconReconReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,6 +284,8 @@
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDisconnect)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetDisconReconReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ReconnectBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -293,5 +309,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button buttonDisconnectSearch;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerDisconnect;
+        private System.Windows.Forms.BindingSource ReconnectBindingSource;
+        private DataSetDisconReconReports DataSetDisconReconReports;
     }
 }

@@ -16,7 +16,6 @@ namespace ConcessionaireReports
 {
     public partial class DisconReconReportsForm : Form
     {
-
         private string connStr;
 
         public DisconReconReportsForm()
@@ -63,9 +62,76 @@ namespace ConcessionaireReports
             tabControlDisconReconReports.DrawMode = TabDrawMode.OwnerDrawFixed;
         }
 
-        private void buttonReconnectSearch_Click(object sender, EventArgs e)
+        private void beforeAwait(PictureBox pb, Button b)
         {
+            //tabControlCollectionReports.TabPages[0].Enabled = false;
+            foreach (TabPage tp in tabControlDisconReconReports.TabPages)
+            {
+                if (!(tp == tabControlDisconReconReports.SelectedTab))
+                {
+                    tp.Enabled = false;
+                }
+            }
+            b.Enabled = false;
+            pb.Show();
+            pb.Update();
+        }
 
+        private void afterAwait(PictureBox pb, Button b)
+        {
+            foreach (TabPage tp in tabControlDisconReconReports.TabPages)
+            {
+                tp.Enabled = true;
+            }
+            b.Enabled = true;
+            pb.Hide();
+        }
+
+        private async void buttonReconnectSearch_Click(object sender, EventArgs e)
+        {
+            beforeAwait(pictureBoxLoadingReconnect, buttonReconnectSearch);
+
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                    {
+                        conn.Open();
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetReConnectionSummary_", conn))
+                        {
+                            adapter.SelectCommand.CommandTimeout = 5000;
+
+                            DataSetDisconReconReports ds = new DataSetDisconReconReports();
+
+                            Invoke((MethodInvoker)delegate ()
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@fromDate", dateTimePickerReconnectFrom.Value);
+                                adapter.SelectCommand.Parameters["@fromDate"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@toDate", dateTimePickerReconnectTo.Value);
+                                adapter.SelectCommand.Parameters["@toDate"].Direction = ParameterDirection.Input;
+                            });
+
+                            adapter.Fill(ds, "Reconnect");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetDisconReconReports", ds.Tables["Reconnect"]);
+                            reportViewerReconnect.LocalReport.DataSources.Clear();
+                            reportViewerReconnect.LocalReport.DataSources.Add(rds);                        
+                        }
+                        conn.Close();
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingReconnect, buttonReconnectSearch);
+
+            reportViewerReconnect.RefreshReport();
         }
     }
 }
