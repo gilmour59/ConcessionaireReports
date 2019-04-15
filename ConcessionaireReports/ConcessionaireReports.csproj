@@ -236,6 +236,7 @@
     <EmbeddedResource Include="RDLC\ConcessionaireReports\ReportAccountPerClassification.rdlc" />
     <EmbeddedResource Include="RDLC\ConcessionaireReports\ReportAccountPerMeterSize.rdlc" />
     <EmbeddedResource Include="RDLC\BillingReports\ReportAccountsLargeConsumption.rdlc" />
+    <EmbeddedResource Include="RDLC\DisconReconReports\ReportDiscon.rdlc" />
     <EmbeddedResource Include="RDLC\DisconReconReports\ReportRecon.rdlc" />
     <EmbeddedResource Include="RDLC\MeterReadingReports\ReportAccountsMinimumConsumption.rdlc" />
     <EmbeddedResource Include="RDLC\MeterReadingReports\ReportAccountsSuddenIncDecConsumption.rdlc" />

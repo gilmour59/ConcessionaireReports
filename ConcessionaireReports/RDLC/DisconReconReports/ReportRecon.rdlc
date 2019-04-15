@@ -899,11 +899,12 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>="Commercial: " &amp; System.Environment.NewLine + Format(Sum(Fields!commercial.Value, "DataSetDisconReconReports"), "#,0.00")</Value>
+                <Value>="Commercial: " &amp; System.Environment.NewLine + Format(Sum(Fields!commercial.Value, "DataSetDisconReconReports"), "#,0;(#,0)")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
                   <FontWeight>Bold</FontWeight>
+                  <Format>#,0;(#,0)</Format>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -935,7 +936,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>="Total Reconnections:" &amp; System.Environment.NewLine + Format(Count(Fields!ref_no.Value, "DataSetDisconReconReports"), "#,0.00")</Value>
+                <Value>="Total Reconnections:" &amp; System.Environment.NewLine + Format(Count(Fields!ref_no.Value, "DataSetDisconReconReports"), "#,0;(#,0)")</Value>
                 <Style>
                   <FontFamily>calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -983,7 +984,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>="Residential: " &amp; System.Environment.NewLine + Format(Sum(Fields!residential.Value, "DataSetDisconReconReports"), "#,0.00")</Value>
+                <Value>="Residential: " &amp; System.Environment.NewLine + Format(Sum(Fields!residential.Value, "DataSetDisconReconReports"), "#,0;(#,0)")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
