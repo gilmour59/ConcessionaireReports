@@ -136,6 +136,7 @@
             this.buttonReconnectSearch.TabIndex = 70;
             this.buttonReconnectSearch.Text = "Search";
             this.buttonReconnectSearch.UseVisualStyleBackColor = true;
+            this.buttonReconnectSearch.Click += new System.EventHandler(this.buttonReconnectSearch_Click);
             // 
             // pictureBoxLoadingReconnect
             // 

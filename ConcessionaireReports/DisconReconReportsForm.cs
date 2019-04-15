@@ -62,5 +62,10 @@ namespace ConcessionaireReports
 
             tabControlDisconReconReports.DrawMode = TabDrawMode.OwnerDrawFixed;
         }
+
+        private void buttonReconnectSearch_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
