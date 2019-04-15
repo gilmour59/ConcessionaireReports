@@ -124,6 +124,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetDisconReconReports.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetJobOrdersReports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetJobOrdersReports.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetMeterReadingReports.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -238,6 +243,7 @@
     <EmbeddedResource Include="RDLC\BillingReports\ReportAccountsLargeConsumption.rdlc" />
     <EmbeddedResource Include="RDLC\DisconReconReports\ReportDiscon.rdlc" />
     <EmbeddedResource Include="RDLC\DisconReconReports\ReportRecon.rdlc" />
+    <EmbeddedResource Include="RDLC\JobOrdersReports\ReportJOSummary.rdlc" />
     <EmbeddedResource Include="RDLC\MeterReadingReports\ReportAccountsMinimumConsumption.rdlc" />
     <EmbeddedResource Include="RDLC\MeterReadingReports\ReportAccountsSuddenIncDecConsumption.rdlc" />
     <EmbeddedResource Include="RDLC\BillingReports\ReportBillComputationRegister.rdlc" />
@@ -324,6 +330,17 @@
     </None>
     <None Include="DataSetDisconReconReports.xss">
       <DependentUpon>DataSetDisconReconReports.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetJobOrdersReports.xsc">
+      <DependentUpon>DataSetJobOrdersReports.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetJobOrdersReports.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetJobOrdersReports.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetJobOrdersReports.xss">
+      <DependentUpon>DataSetJobOrdersReports.xsd</DependentUpon>
     </None>
     <None Include="DataSetMeterReadingReports.xsc">
       <DependentUpon>DataSetMeterReadingReports.xsd</DependentUpon>

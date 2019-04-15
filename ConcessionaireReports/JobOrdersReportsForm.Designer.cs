@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JobOrdersReportsForm));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.tabControlJobOrdersReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dateTimePickerJobOrderSumFrom = new System.Windows.Forms.DateTimePicker();
@@ -51,14 +51,14 @@
             this.buttonJobOrderWorkSearch = new System.Windows.Forms.Button();
             this.reportViewerJobOrderWork = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.reportViewerPendingJO = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.buttonPendingJOSearch = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePickerPendingJOTo = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerPendingJOFrom = new System.Windows.Forms.DateTimePicker();
             this.pictureBoxLoadingPendingJO = new System.Windows.Forms.PictureBox();
+            this.dateTimePickerPendingJOFrom = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerPendingJOTo = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.buttonPendingJOSearch = new System.Windows.Forms.Button();
+            this.reportViewerPendingJO = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.pictureBoxLoadingAccomplishedJO = new System.Windows.Forms.PictureBox();
             this.dateTimePickerAccomplishedJOFrom = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerAccomplishedJOTo = new System.Windows.Forms.DateTimePicker();
@@ -72,8 +72,8 @@
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingJobOrderWork)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingPendingJO)).BeginInit();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingAccomplishedJO)).BeginInit();
             this.SuspendLayout();
             // 
@@ -160,6 +160,7 @@
             this.buttonJobOrderSumSearch.TabIndex = 70;
             this.buttonJobOrderSumSearch.Text = "Search";
             this.buttonJobOrderSumSearch.UseVisualStyleBackColor = true;
+            this.buttonJobOrderSumSearch.Click += new System.EventHandler(this.buttonJobOrderSumSearch_Click);
             // 
             // pictureBoxLoadingJobOrderSum
             // 
@@ -174,9 +175,9 @@
             // 
             // reportViewerJobOrderSum
             // 
-            reportDataSource1.Name = "DataSetReceivablesReports";
-            reportDataSource1.Value = null;
-            this.reportViewerJobOrderSum.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource5.Name = "DataSetReceivablesReports";
+            reportDataSource5.Value = null;
+            this.reportViewerJobOrderSum.LocalReport.DataSources.Add(reportDataSource5);
             this.reportViewerJobOrderSum.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportAccountsReceivableAgingPerAcc" +
     "ount.rdlc";
             this.reportViewerJobOrderSum.Location = new System.Drawing.Point(26, 49);
@@ -264,9 +265,9 @@
             // 
             // reportViewerJobOrderWork
             // 
-            reportDataSource2.Name = "DataSetReceivablesReports";
-            reportDataSource2.Value = null;
-            this.reportViewerJobOrderWork.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource6.Name = "DataSetReceivablesReports";
+            reportDataSource6.Value = null;
+            this.reportViewerJobOrderWork.LocalReport.DataSources.Add(reportDataSource6);
             this.reportViewerJobOrderWork.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportOtherReceivables.rdlc";
             this.reportViewerJobOrderWork.Location = new System.Drawing.Point(26, 49);
             this.reportViewerJobOrderWork.Name = "reportViewerJobOrderWork";
@@ -290,6 +291,79 @@
             this.tabPage2.Text = "Summary of Pending Job Orders";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // pictureBoxLoadingPendingJO
+            // 
+            this.pictureBoxLoadingPendingJO.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingPendingJO.Image")));
+            this.pictureBoxLoadingPendingJO.Location = new System.Drawing.Point(27, 49);
+            this.pictureBoxLoadingPendingJO.Name = "pictureBoxLoadingPendingJO";
+            this.pictureBoxLoadingPendingJO.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingPendingJO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingPendingJO.TabIndex = 77;
+            this.pictureBoxLoadingPendingJO.TabStop = false;
+            this.pictureBoxLoadingPendingJO.Visible = false;
+            // 
+            // dateTimePickerPendingJOFrom
+            // 
+            this.dateTimePickerPendingJOFrom.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePickerPendingJOFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerPendingJOFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerPendingJOFrom.Location = new System.Drawing.Point(72, 16);
+            this.dateTimePickerPendingJOFrom.Name = "dateTimePickerPendingJOFrom";
+            this.dateTimePickerPendingJOFrom.Size = new System.Drawing.Size(129, 24);
+            this.dateTimePickerPendingJOFrom.TabIndex = 75;
+            // 
+            // dateTimePickerPendingJOTo
+            // 
+            this.dateTimePickerPendingJOTo.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePickerPendingJOTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerPendingJOTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerPendingJOTo.Location = new System.Drawing.Point(291, 16);
+            this.dateTimePickerPendingJOTo.Name = "dateTimePickerPendingJOTo";
+            this.dateTimePickerPendingJOTo.Size = new System.Drawing.Size(129, 24);
+            this.dateTimePickerPendingJOTo.TabIndex = 76;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(257, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(28, 16);
+            this.label3.TabIndex = 73;
+            this.label3.Text = "To:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(24, 19);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(42, 16);
+            this.label4.TabIndex = 74;
+            this.label4.Text = "From:";
+            // 
+            // buttonPendingJOSearch
+            // 
+            this.buttonPendingJOSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPendingJOSearch.Location = new System.Drawing.Point(535, 8);
+            this.buttonPendingJOSearch.Name = "buttonPendingJOSearch";
+            this.buttonPendingJOSearch.Size = new System.Drawing.Size(74, 38);
+            this.buttonPendingJOSearch.TabIndex = 72;
+            this.buttonPendingJOSearch.Text = "Search";
+            this.buttonPendingJOSearch.UseVisualStyleBackColor = true;
+            // 
+            // reportViewerPendingJO
+            // 
+            reportDataSource7.Name = "DataSetReceivablesReports";
+            reportDataSource7.Value = null;
+            this.reportViewerPendingJO.LocalReport.DataSources.Add(reportDataSource7);
+            this.reportViewerPendingJO.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportOtherReceivables.rdlc";
+            this.reportViewerPendingJO.Location = new System.Drawing.Point(27, 49);
+            this.reportViewerPendingJO.Name = "reportViewerPendingJO";
+            this.reportViewerPendingJO.ServerReport.BearerToken = null;
+            this.reportViewerPendingJO.Size = new System.Drawing.Size(944, 481);
+            this.reportViewerPendingJO.TabIndex = 71;
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.pictureBoxLoadingAccomplishedJO);
@@ -305,79 +379,6 @@
             this.tabPage3.TabIndex = 8;
             this.tabPage3.Text = "Summary of Accomplished Job Orders";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // reportViewerPendingJO
-            // 
-            reportDataSource3.Name = "DataSetReceivablesReports";
-            reportDataSource3.Value = null;
-            this.reportViewerPendingJO.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewerPendingJO.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportOtherReceivables.rdlc";
-            this.reportViewerPendingJO.Location = new System.Drawing.Point(27, 49);
-            this.reportViewerPendingJO.Name = "reportViewerPendingJO";
-            this.reportViewerPendingJO.ServerReport.BearerToken = null;
-            this.reportViewerPendingJO.Size = new System.Drawing.Size(944, 481);
-            this.reportViewerPendingJO.TabIndex = 71;
-            // 
-            // buttonPendingJOSearch
-            // 
-            this.buttonPendingJOSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPendingJOSearch.Location = new System.Drawing.Point(535, 8);
-            this.buttonPendingJOSearch.Name = "buttonPendingJOSearch";
-            this.buttonPendingJOSearch.Size = new System.Drawing.Size(74, 38);
-            this.buttonPendingJOSearch.TabIndex = 72;
-            this.buttonPendingJOSearch.Text = "Search";
-            this.buttonPendingJOSearch.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(24, 19);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 16);
-            this.label4.TabIndex = 74;
-            this.label4.Text = "From:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(257, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 16);
-            this.label3.TabIndex = 73;
-            this.label3.Text = "To:";
-            // 
-            // dateTimePickerPendingJOTo
-            // 
-            this.dateTimePickerPendingJOTo.CustomFormat = "MM/dd/yyyy";
-            this.dateTimePickerPendingJOTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerPendingJOTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerPendingJOTo.Location = new System.Drawing.Point(291, 16);
-            this.dateTimePickerPendingJOTo.Name = "dateTimePickerPendingJOTo";
-            this.dateTimePickerPendingJOTo.Size = new System.Drawing.Size(129, 24);
-            this.dateTimePickerPendingJOTo.TabIndex = 76;
-            // 
-            // dateTimePickerPendingJOFrom
-            // 
-            this.dateTimePickerPendingJOFrom.CustomFormat = "MM/dd/yyyy";
-            this.dateTimePickerPendingJOFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerPendingJOFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerPendingJOFrom.Location = new System.Drawing.Point(72, 16);
-            this.dateTimePickerPendingJOFrom.Name = "dateTimePickerPendingJOFrom";
-            this.dateTimePickerPendingJOFrom.Size = new System.Drawing.Size(129, 24);
-            this.dateTimePickerPendingJOFrom.TabIndex = 75;
-            // 
-            // pictureBoxLoadingPendingJO
-            // 
-            this.pictureBoxLoadingPendingJO.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingPendingJO.Image")));
-            this.pictureBoxLoadingPendingJO.Location = new System.Drawing.Point(27, 49);
-            this.pictureBoxLoadingPendingJO.Name = "pictureBoxLoadingPendingJO";
-            this.pictureBoxLoadingPendingJO.Size = new System.Drawing.Size(944, 481);
-            this.pictureBoxLoadingPendingJO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxLoadingPendingJO.TabIndex = 77;
-            this.pictureBoxLoadingPendingJO.TabStop = false;
-            this.pictureBoxLoadingPendingJO.Visible = false;
             // 
             // pictureBoxLoadingAccomplishedJO
             // 
@@ -442,9 +443,9 @@
             // 
             // reportViewerAccomplishedJO
             // 
-            reportDataSource4.Name = "DataSetReceivablesReports";
-            reportDataSource4.Value = null;
-            this.reportViewerAccomplishedJO.LocalReport.DataSources.Add(reportDataSource4);
+            reportDataSource8.Name = "DataSetReceivablesReports";
+            reportDataSource8.Value = null;
+            this.reportViewerAccomplishedJO.LocalReport.DataSources.Add(reportDataSource8);
             this.reportViewerAccomplishedJO.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportOtherReceivables.rdlc";
             this.reportViewerAccomplishedJO.Location = new System.Drawing.Point(27, 49);
             this.reportViewerAccomplishedJO.Name = "reportViewerAccomplishedJO";
@@ -463,6 +464,7 @@
             this.Name = "JobOrdersReportsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JobOrdersReportsForm";
+            this.Load += new System.EventHandler(this.JobOrdersReportsForm_Load);
             this.tabControlJobOrdersReports.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -472,9 +474,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingJobOrderWork)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingPendingJO)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingPendingJO)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingAccomplishedJO)).EndInit();
             this.ResumeLayout(false);
 

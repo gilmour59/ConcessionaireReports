@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetJobOrdersReports" targetNamespace="http://tempuri.org/DataSetJobOrdersReports.xsd" xmlns:mstns="http://tempuri.org/DataSetJobOrdersReports.xsd" xmlns="http://tempuri.org/DataSetJobOrdersReports.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetJobOrdersReports" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetJobOrdersReports" msprop:Generator_UserDSName="DataSetJobOrdersReports">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="JOSummary" msprop:Generator_TableClassName="JOSummaryDataTable" msprop:Generator_TableVarName="tableJOSummary" msprop:Generator_TablePropName="JOSummary" msprop:Generator_RowDeletingName="JOSummaryRowDeleting" msprop:Generator_RowChangingName="JOSummaryRowChanging" msprop:Generator_RowEvHandlerName="JOSummaryRowChangeEventHandler" msprop:Generator_RowDeletedName="JOSummaryRowDeleted" msprop:Generator_UserTableName="JOSummary" msprop:Generator_RowChangedName="JOSummaryRowChanged" msprop:Generator_RowEvArgName="JOSummaryRowChangeEvent" msprop:Generator_RowClassName="JOSummaryRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="acct_code" msprop:Generator_ColumnVarNameInTable="columnacct_code" msprop:Generator_ColumnPropNameInRow="acct_code" msprop:Generator_ColumnPropNameInTable="acct_codeColumn" msprop:Generator_UserColumnName="acct_code" type="xs:string" minOccurs="0" />
+              <xs:element name="trans_date" msprop:Generator_ColumnVarNameInTable="columntrans_date" msprop:Generator_ColumnPropNameInRow="trans_date" msprop:Generator_ColumnPropNameInTable="trans_dateColumn" msprop:Generator_UserColumnName="trans_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="jo_no" msprop:Generator_ColumnVarNameInTable="columnjo_no" msprop:Generator_ColumnPropNameInRow="jo_no" msprop:Generator_ColumnPropNameInTable="jo_noColumn" msprop:Generator_UserColumnName="jo_no" type="xs:string" minOccurs="0" />
+              <xs:element name="ref_no_" msprop:Generator_ColumnVarNameInTable="columnref_no_" msprop:Generator_ColumnPropNameInRow="ref_no_" msprop:Generator_ColumnPropNameInTable="ref_no_Column" msprop:Generator_UserColumnName="ref_no_" type="xs:int" minOccurs="0" />
+              <xs:element name="old_acct_no" msprop:Generator_ColumnVarNameInTable="columnold_acct_no" msprop:Generator_ColumnPropNameInRow="old_acct_no" msprop:Generator_ColumnPropNameInTable="old_acct_noColumn" msprop:Generator_UserColumnName="old_acct_no" type="xs:string" minOccurs="0" />
+              <xs:element name="concessionaire_name" msprop:Generator_ColumnVarNameInTable="columnconcessionaire_name" msprop:Generator_ColumnPropNameInRow="concessionaire_name" msprop:Generator_ColumnPropNameInTable="concessionaire_nameColumn" msprop:Generator_UserColumnName="concessionaire_name" type="xs:string" minOccurs="0" />
+              <xs:element name="work_desc" msprop:Generator_ColumnVarNameInTable="columnwork_desc" msprop:Generator_ColumnPropNameInRow="work_desc" msprop:Generator_ColumnPropNameInTable="work_descColumn" msprop:Generator_UserColumnName="work_desc" type="xs:string" minOccurs="0" />
+              <xs:element name="meter_sn" msprop:Generator_ColumnVarNameInTable="columnmeter_sn" msprop:Generator_ColumnPropNameInRow="meter_sn" msprop:Generator_ColumnPropNameInTable="meter_snColumn" msprop:Generator_UserColumnName="meter_sn" type="xs:string" minOccurs="0" />
+              <xs:element name="pres_rdng" msprop:Generator_ColumnVarNameInTable="columnpres_rdng" msprop:Generator_ColumnPropNameInRow="pres_rdng" msprop:Generator_ColumnPropNameInTable="pres_rdngColumn" msprop:Generator_UserColumnName="pres_rdng" type="xs:string" minOccurs="0" />
+              <xs:element name="crew_name" msprop:Generator_ColumnVarNameInTable="columncrew_name" msprop:Generator_ColumnPropNameInRow="crew_name" msprop:Generator_ColumnPropNameInTable="crew_nameColumn" msprop:Generator_UserColumnName="crew_name" type="xs:string" minOccurs="0" />
+              <xs:element name="prepared_by" msprop:Generator_ColumnVarNameInTable="columnprepared_by" msprop:Generator_ColumnPropNameInRow="prepared_by" msprop:Generator_ColumnPropNameInTable="prepared_byColumn" msprop:Generator_UserColumnName="prepared_by" type="xs:string" minOccurs="0" />
+              <xs:element name="header_name" msprop:Generator_ColumnVarNameInTable="columnheader_name" msprop:Generator_ColumnPropNameInRow="header_name" msprop:Generator_ColumnPropNameInTable="header_nameColumn" msprop:Generator_UserColumnName="header_name" type="xs:string" minOccurs="0" />
+              <xs:element name="header_address" msprop:Generator_ColumnVarNameInTable="columnheader_address" msprop:Generator_ColumnPropNameInRow="header_address" msprop:Generator_ColumnPropNameInTable="header_addressColumn" msprop:Generator_UserColumnName="header_address" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
