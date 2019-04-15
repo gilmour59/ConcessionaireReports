@@ -60,6 +60,10 @@ namespace ConcessionaireReports
             connStr = "server=localhost;user=root;database=mrwdbcsys;port=3306;password=";
 
             tabControlARMaintenanceReports.DrawMode = TabDrawMode.OwnerDrawFixed;
+
+            dateTimePickerPromissoryNoteTo.MaxDate = DateTime.Today;
+            dateTimePickerOverduePromiNoteAsOf.MaxDate = DateTime.Today;
+            dateTimePickerDebCredMemoTo.MaxDate = DateTime.Today;
         }
 
         private void beforeAwait(PictureBox pb, Button b)
@@ -244,6 +248,16 @@ namespace ConcessionaireReports
             afterAwait(pictureBoxLoadingDebCredMemo, buttonDebCredMemoSearch);
 
             reportViewerDebCredMemo.RefreshReport();
+        }
+
+        private void dateTimePickerPromissoryNoteTo_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerPromissoryNoteFrom.MaxDate = dateTimePickerPromissoryNoteTo.Value;
+        }
+
+        private void dateTimePickerDebCredMemoTo_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerDebCredMemoFrom.MaxDate = dateTimePickerDebCredMemoTo.Value;
         }
     }
 }

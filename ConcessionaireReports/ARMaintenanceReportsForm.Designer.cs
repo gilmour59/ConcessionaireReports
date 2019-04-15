@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ARMaintenanceReportsForm));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ARMaintenanceReportsForm));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.PromissoryNotesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetARMaintenanceReports = new ConcessionaireReports.DataSetARMaintenanceReports();
             this.OverduePNBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DMCMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlARMaintenanceReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dateTimePickerPromissoryNoteFrom = new System.Windows.Forms.DateTimePicker();
@@ -59,10 +60,10 @@
             this.label18 = new System.Windows.Forms.Label();
             this.buttonDebCredMemoSearch = new System.Windows.Forms.Button();
             this.reportViewerDebCredMemo = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DMCMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.PromissoryNotesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetARMaintenanceReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OverduePNBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DMCMBindingSource)).BeginInit();
             this.tabControlARMaintenanceReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingPromissoryNote)).BeginInit();
@@ -70,7 +71,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingOverduePromiNote)).BeginInit();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDebCredMemo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DMCMBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // PromissoryNotesBindingSource
@@ -87,6 +87,11 @@
             // 
             this.OverduePNBindingSource.DataMember = "OverduePN";
             this.OverduePNBindingSource.DataSource = this.DataSetARMaintenanceReports;
+            // 
+            // DMCMBindingSource
+            // 
+            this.DMCMBindingSource.DataMember = "DMCM";
+            this.DMCMBindingSource.DataSource = this.DataSetARMaintenanceReports;
             // 
             // tabControlARMaintenanceReports
             // 
@@ -140,6 +145,7 @@
             this.dateTimePickerPromissoryNoteTo.Name = "dateTimePickerPromissoryNoteTo";
             this.dateTimePickerPromissoryNoteTo.Size = new System.Drawing.Size(129, 24);
             this.dateTimePickerPromissoryNoteTo.TabIndex = 74;
+            this.dateTimePickerPromissoryNoteTo.ValueChanged += new System.EventHandler(this.dateTimePickerPromissoryNoteTo_ValueChanged);
             // 
             // label1
             // 
@@ -310,6 +316,7 @@
             this.dateTimePickerDebCredMemoTo.Name = "dateTimePickerDebCredMemoTo";
             this.dateTimePickerDebCredMemoTo.Size = new System.Drawing.Size(129, 24);
             this.dateTimePickerDebCredMemoTo.TabIndex = 43;
+            this.dateTimePickerDebCredMemoTo.ValueChanged += new System.EventHandler(this.dateTimePickerDebCredMemoTo_ValueChanged);
             // 
             // label12
             // 
@@ -354,11 +361,6 @@
             this.reportViewerDebCredMemo.Size = new System.Drawing.Size(944, 481);
             this.reportViewerDebCredMemo.TabIndex = 71;
             // 
-            // DMCMBindingSource
-            // 
-            this.DMCMBindingSource.DataMember = "DMCM";
-            this.DMCMBindingSource.DataSource = this.DataSetARMaintenanceReports;
-            // 
             // ARMaintenanceReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -374,6 +376,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PromissoryNotesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetARMaintenanceReports)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OverduePNBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DMCMBindingSource)).EndInit();
             this.tabControlARMaintenanceReports.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -384,7 +387,6 @@
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDebCredMemo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DMCMBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
