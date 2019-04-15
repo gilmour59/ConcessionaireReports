@@ -90,9 +90,58 @@ namespace ConcessionaireReports
             pb.Hide();
         }
 
-        private void buttonJobOrderSumSearch_Click(object sender, EventArgs e)
+        private async void buttonJobOrderSumSearch_Click(object sender, EventArgs e)
         {
+            beforeAwait(pictureBoxLoadingJobOrderSum, buttonJobOrderSumSearch);
 
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                    {
+                        conn.Open();
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetJobOrderSummary_", conn))
+                        {
+                            adapter.SelectCommand.CommandTimeout = 5000;
+
+                            DataSetJobOrdersReports ds = new DataSetJobOrdersReports();
+
+                            Invoke((MethodInvoker)delegate ()
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@startDate", dateTimePickerJobOrderSumFrom.Value);
+                                adapter.SelectCommand.Parameters["@startDate"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@endDate", dateTimePickerJobOrderSumTo.Value);
+                                adapter.SelectCommand.Parameters["@endDate"].Direction = ParameterDirection.Input;
+                            });
+
+                            adapter.Fill(ds, "JOSummary");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetJobOrdersReports", ds.Tables["JOSummary"]);
+                            reportViewerJobOrderSum.LocalReport.DataSources.Clear();
+                            reportViewerJobOrderSum.LocalReport.DataSources.Add(rds);
+
+                            ReportParameter[] param = new ReportParameter[]
+                            {
+                                new ReportParameter("ReportParameterFrom", dateTimePickerJobOrderSumFrom.Value.ToString()),
+                                new ReportParameter("ReportParameterTo", dateTimePickerJobOrderSumTo.Value.ToString())
+                            };
+                            reportViewerJobOrderSum.LocalReport.SetParameters(param);
+                        }
+                        conn.Close();
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingJobOrderSum, buttonJobOrderSumSearch);
+
+            reportViewerJobOrderSum.RefreshReport();
         }
     }
 }

@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JobOrdersReportsForm));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.tabControlJobOrdersReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dateTimePickerJobOrderSumFrom = new System.Windows.Forms.DateTimePicker();
@@ -66,6 +67,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.buttonAccomplishedJOSearch = new System.Windows.Forms.Button();
             this.reportViewerAccomplishedJO = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.DataSetJobOrdersReports = new ConcessionaireReports.DataSetJobOrdersReports();
+            this.JOSummaryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlJobOrdersReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingJobOrderSum)).BeginInit();
@@ -75,6 +78,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingPendingJO)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingAccomplishedJO)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetJobOrdersReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.JOSummaryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlJobOrdersReports
@@ -175,11 +180,10 @@
             // 
             // reportViewerJobOrderSum
             // 
-            reportDataSource5.Name = "DataSetReceivablesReports";
-            reportDataSource5.Value = null;
-            this.reportViewerJobOrderSum.LocalReport.DataSources.Add(reportDataSource5);
-            this.reportViewerJobOrderSum.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportAccountsReceivableAgingPerAcc" +
-    "ount.rdlc";
+            reportDataSource1.Name = "DataSetJobOrdersReports";
+            reportDataSource1.Value = this.JOSummaryBindingSource;
+            this.reportViewerJobOrderSum.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewerJobOrderSum.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.JobOrdersReports.ReportJOSummary.rdlc";
             this.reportViewerJobOrderSum.Location = new System.Drawing.Point(26, 49);
             this.reportViewerJobOrderSum.Name = "reportViewerJobOrderSum";
             this.reportViewerJobOrderSum.ServerReport.BearerToken = null;
@@ -265,9 +269,9 @@
             // 
             // reportViewerJobOrderWork
             // 
-            reportDataSource6.Name = "DataSetReceivablesReports";
-            reportDataSource6.Value = null;
-            this.reportViewerJobOrderWork.LocalReport.DataSources.Add(reportDataSource6);
+            reportDataSource2.Name = "DataSetReceivablesReports";
+            reportDataSource2.Value = null;
+            this.reportViewerJobOrderWork.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewerJobOrderWork.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportOtherReceivables.rdlc";
             this.reportViewerJobOrderWork.Location = new System.Drawing.Point(26, 49);
             this.reportViewerJobOrderWork.Name = "reportViewerJobOrderWork";
@@ -354,9 +358,9 @@
             // 
             // reportViewerPendingJO
             // 
-            reportDataSource7.Name = "DataSetReceivablesReports";
-            reportDataSource7.Value = null;
-            this.reportViewerPendingJO.LocalReport.DataSources.Add(reportDataSource7);
+            reportDataSource3.Name = "DataSetReceivablesReports";
+            reportDataSource3.Value = null;
+            this.reportViewerPendingJO.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewerPendingJO.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportOtherReceivables.rdlc";
             this.reportViewerPendingJO.Location = new System.Drawing.Point(27, 49);
             this.reportViewerPendingJO.Name = "reportViewerPendingJO";
@@ -443,15 +447,25 @@
             // 
             // reportViewerAccomplishedJO
             // 
-            reportDataSource8.Name = "DataSetReceivablesReports";
-            reportDataSource8.Value = null;
-            this.reportViewerAccomplishedJO.LocalReport.DataSources.Add(reportDataSource8);
+            reportDataSource4.Name = "DataSetReceivablesReports";
+            reportDataSource4.Value = null;
+            this.reportViewerAccomplishedJO.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewerAccomplishedJO.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportOtherReceivables.rdlc";
             this.reportViewerAccomplishedJO.Location = new System.Drawing.Point(27, 49);
             this.reportViewerAccomplishedJO.Name = "reportViewerAccomplishedJO";
             this.reportViewerAccomplishedJO.ServerReport.BearerToken = null;
             this.reportViewerAccomplishedJO.Size = new System.Drawing.Size(944, 481);
             this.reportViewerAccomplishedJO.TabIndex = 71;
+            // 
+            // DataSetJobOrdersReports
+            // 
+            this.DataSetJobOrdersReports.DataSetName = "DataSetJobOrdersReports";
+            this.DataSetJobOrdersReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // JOSummaryBindingSource
+            // 
+            this.JOSummaryBindingSource.DataMember = "JOSummary";
+            this.JOSummaryBindingSource.DataSource = this.DataSetJobOrdersReports;
             // 
             // JobOrdersReportsForm
             // 
@@ -478,6 +492,8 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingAccomplishedJO)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetJobOrdersReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.JOSummaryBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -517,5 +533,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button buttonAccomplishedJOSearch;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerAccomplishedJO;
+        private System.Windows.Forms.BindingSource JOSummaryBindingSource;
+        private DataSetJobOrdersReports DataSetJobOrdersReports;
     }
 }
