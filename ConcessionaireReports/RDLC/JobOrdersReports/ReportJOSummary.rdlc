@@ -228,31 +228,31 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.5795cm</Width>
+                  <Width>2.51058cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5795cm</Width>
+                  <Width>2.22489cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5795cm</Width>
+                  <Width>2.51058cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5795cm</Width>
+                  <Width>3.72489cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5795cm</Width>
+                  <Width>3.22489cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5795cm</Width>
+                  <Width>2.22489cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5795cm</Width>
+                  <Width>2.22489cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5795cm</Width>
+                  <Width>3.22489cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5795cm</Width>
+                  <Width>3.22489cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -906,7 +906,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>2.5795cm</Size>
+                    <Size>1.84571cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox28">
                         <KeepTogether>true</KeepTogether>
@@ -950,7 +950,7 @@
                 <TablixMember>
                   <Group Name="trans_date">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!trans_date.Value</GroupExpression>
+                      <GroupExpression>=Format(Fields!trans_date.Value, "d")</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
@@ -959,7 +959,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>2.5795cm</Size>
+                    <Size>1.84571cm</Size>
                     <CellContents>
                       <Textbox Name="trans_date">
                         <KeepTogether>true</KeepTogether>
@@ -971,6 +971,7 @@
                                 <Style>
                                   <FontFamily>calibri</FontFamily>
                                   <FontSize>8pt</FontSize>
+                                  <Format>d</Format>
                                 </Style>
                               </TextRun>
                             </TextRuns>
@@ -991,6 +992,7 @@
                           <PaddingBottom>2pt</PaddingBottom>
                         </Style>
                       </Textbox>
+                      <rd:Selected>true</rd:Selected>
                     </CellContents>
                   </TablixHeader>
                   <TablixMembers>
@@ -1003,9 +1005,9 @@
             </TablixRowHierarchy>
             <DataSetName>DataSetJobOrdersReports</DataSetName>
             <Top>3.15595cm</Top>
-            <Left>0.68762cm</Left>
+            <Left>0.39658cm</Left>
             <Height>0.84cm</Height>
-            <Width>25.795cm</Width>
+            <Width>26.94113cm</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -1096,6 +1098,7 @@
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
+              <Top>0cm</Top>
               <Left>5.42849cm</Left>
               <Height>0.83312cm</Height>
               <Width>16.81843cm</Width>
