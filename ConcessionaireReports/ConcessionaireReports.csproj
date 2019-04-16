@@ -188,6 +188,12 @@
     <Compile Include="ReceivablesReportsForm.Designer.cs">
       <DependentUpon>ReceivablesReportsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportMenuForm.Designer.cs">
+      <DependentUpon>ReportMenuForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="BillingReportsForm.resx">
       <DependentUpon>BillingReportsForm.cs</DependentUpon>
@@ -278,6 +284,9 @@
     <EmbeddedResource Include="RDLC\ReceivablesReports\ReportOtherReceivables.rdlc" />
     <EmbeddedResource Include="ReceivablesReportsForm.resx">
       <DependentUpon>ReceivablesReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportMenuForm.resx">
+      <DependentUpon>ReportMenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSetARMaintenanceReports.xsc">
       <DependentUpon>DataSetARMaintenanceReports.xsd</DependentUpon>
