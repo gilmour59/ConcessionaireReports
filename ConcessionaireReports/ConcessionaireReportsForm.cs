@@ -160,62 +160,100 @@ namespace ConcessionaireReports
             {
                 MessageBox.Show("error: " + ex, "Error!");
             }
+            reportViewerSummaryAccountsPerClass.RefreshReport();
         }
 
-        private void buttonAccountPerBookSearch_Click(object sender, EventArgs e)
+        private void beforeAwait(PictureBox pb, Button b)
         {
-            try
+            //tabControlCollectionReports.TabPages[0].Enabled = false;
+            foreach (TabPage tp in tabControlConcessionaireReports.TabPages)
             {
-                using (MySqlConnection conn = new MySqlConnection(connStr))
+                if (!(tp == tabControlConcessionaireReports.SelectedTab))
                 {
-                    conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetAccountPerBook_", conn))
-                    {
-                        DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
-
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxAccountPerBookBook.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountPerBookZone.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
-
-                        int meterStatus = comboBoxAccountPerBookMeterStatus.SelectedIndex;
-                        if (meterStatus == 0)
-                        {
-                            adapter.SelectCommand.Parameters.AddWithValue("@flag", "ALL");
-                            adapter.SelectCommand.Parameters["@flag"].Direction = ParameterDirection.Input;
-                            adapter.SelectCommand.Parameters.AddWithValue("@status_code", null);
-                            adapter.SelectCommand.Parameters["@status_code"].Direction = ParameterDirection.Input;
-                        }
-                        else
-                        {
-                            adapter.SelectCommand.Parameters.AddWithValue("@status_code", ((meterStatus == 1) ? 4 : 5));
-                            adapter.SelectCommand.Parameters["@status_code"].Direction = ParameterDirection.Input;
-                            adapter.SelectCommand.Parameters.AddWithValue("@flag", null);
-                            adapter.SelectCommand.Parameters["@flag"].Direction = ParameterDirection.Input;
-                        }                       
-                        adapter.Fill(ds, "AccountPerBook");
-
-                        ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountPerBook"]);
-                        reportViewerAccountPerBook.LocalReport.DataSources.Clear();
-                        reportViewerAccountPerBook.LocalReport.DataSources.Add(rds);
-
-                        ReportParameter[] param = new ReportParameter[]
-                        {
-                            new ReportParameter("ReportParameterZone", comboBoxAccountPerBookZone.SelectedValue.ToString()),
-                            new ReportParameter("ReportParameterBook", comboBoxAccountPerBookBook.SelectedValue.ToString())
-                        };
-                        reportViewerAccountPerBook.LocalReport.SetParameters(param);
-                        reportViewerAccountPerBook.LocalReport.Refresh();
-                    }
-                    conn.Close();
+                    tp.Enabled = false;
                 }
             }
-            catch (MySqlException ex)
+            b.Enabled = false;
+            pb.Show();
+            pb.Update();
+        }
+
+        private void afterAwait(PictureBox pb, Button b)
+        {
+            foreach (TabPage tp in tabControlConcessionaireReports.TabPages)
             {
-                MessageBox.Show("error: " + ex, "Error!");
-            } 
+                tp.Enabled = true;
+            }
+            b.Enabled = true;
+            pb.Hide();
+        }
+
+        private async void buttonAccountPerBookSearch_Click(object sender, EventArgs e)
+        {
+            beforeAwait(pictureBoxLoadingAccountPerBook, buttonAccountPerBookSearch);
+
+            await Task.Run(() => 
+            {
+                try
+                {
+                    using (MySqlConnection conn = new MySqlConnection(connStr))
+                    {
+                        conn.Open();
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetAccountPerBook_", conn))
+                        {
+                            DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
+
+                            Invoke((MethodInvoker)delegate () 
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxAccountPerBookBook.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountPerBookZone.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
+
+                                int meterStatus = comboBoxAccountPerBookMeterStatus.SelectedIndex;
+                                if (meterStatus == 0)
+                                {
+                                    adapter.SelectCommand.Parameters.AddWithValue("@flag", "ALL");
+                                    adapter.SelectCommand.Parameters["@flag"].Direction = ParameterDirection.Input;
+                                    adapter.SelectCommand.Parameters.AddWithValue("@status_code", null);
+                                    adapter.SelectCommand.Parameters["@status_code"].Direction = ParameterDirection.Input;
+                                }
+                                else
+                                {
+                                    adapter.SelectCommand.Parameters.AddWithValue("@status_code", ((meterStatus == 1) ? 4 : 5));
+                                    adapter.SelectCommand.Parameters["@status_code"].Direction = ParameterDirection.Input;
+                                    adapter.SelectCommand.Parameters.AddWithValue("@flag", null);
+                                    adapter.SelectCommand.Parameters["@flag"].Direction = ParameterDirection.Input;
+                                }
+
+                                adapter.Fill(ds, "AccountPerBook");
+
+                                ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountPerBook"]);
+                                reportViewerAccountPerBook.LocalReport.DataSources.Clear();
+                                reportViewerAccountPerBook.LocalReport.DataSources.Add(rds);
+
+                                ReportParameter[] param = new ReportParameter[]
+                                {
+                                    new ReportParameter("ReportParameterZone", comboBoxAccountPerBookZone.SelectedValue.ToString()),
+                                    new ReportParameter("ReportParameterBook", comboBoxAccountPerBookBook.SelectedValue.ToString())
+                                };
+                                reportViewerAccountPerBook.LocalReport.SetParameters(param);
+                                reportViewerAccountPerBook.LocalReport.Refresh();
+                            });                                                   
+                        }
+                        conn.Close();
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingAccountPerBook, buttonAccountPerBookSearch);
+            
             this.reportViewerAccountPerBook.RefreshReport();
         }
 
@@ -306,131 +344,161 @@ namespace ConcessionaireReports
             }
         }
 
-        private void buttonAccountPerBarangaySearch_Click(object sender, EventArgs e)
+        private async void buttonAccountPerBarangaySearch_Click(object sender, EventArgs e)
         {
-            try
+            beforeAwait(pictureBoxLoadingAccountPerBarangay, buttonAccountPerBarangaySearch);
+
+            await Task.Run(() =>
             {
-                using (MySqlConnection conn = new MySqlConnection(connStr))
+                try
                 {
-                    conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetAccountPerBrgy_", conn))
+                    using (MySqlConnection conn = new MySqlConnection(connStr))
                     {
-                        DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
+                        conn.Open();
 
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@townId", comboBoxAccountPerBarangayTown.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@townId"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@brgyId", comboBoxAccountPerBarangayBarangay.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@brgyId"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@connectedCode", 4);
-                        adapter.SelectCommand.Parameters["@connectedCode"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@disconnectedCode", 5);
-                        adapter.SelectCommand.Parameters["@disconnectedCode"].Direction = ParameterDirection.Input;
-
-                        adapter.Fill(ds, "AccountPerBarangay");
-
-                        ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountPerBarangay"]);
-                        reportViewerAccountPerBarangay.LocalReport.DataSources.Clear();
-                        reportViewerAccountPerBarangay.LocalReport.DataSources.Add(rds);
-
-                        ReportParameter[] param = new ReportParameter[]
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetAccountPerBrgy_", conn))
                         {
-                            new ReportParameter("ReportParameterTown", comboBoxAccountPerBarangayTown.Text),
-                            new ReportParameter("ReportParameterBarangay", (comboBoxAccountPerBarangayBarangay.SelectedIndex == 0 || comboBoxAccountPerBarangayBarangay.SelectedIndex == 1 ? "ALL" : comboBoxAccountPerBarangayBarangay.Text))
-                        };
-                        reportViewerAccountPerBarangay.LocalReport.SetParameters(param);
-                        reportViewerAccountPerBarangay.LocalReport.Refresh();
+                            DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
+
+                            Invoke((MethodInvoker)delegate ()
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@townId", comboBoxAccountPerBarangayTown.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@townId"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@brgyId", comboBoxAccountPerBarangayBarangay.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@brgyId"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@connectedCode", 4);
+                                adapter.SelectCommand.Parameters["@connectedCode"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@disconnectedCode", 5);
+                                adapter.SelectCommand.Parameters["@disconnectedCode"].Direction = ParameterDirection.Input;
+
+                                adapter.Fill(ds, "AccountPerBarangay");
+
+                                ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountPerBarangay"]);
+                                reportViewerAccountPerBarangay.LocalReport.DataSources.Clear();
+                                reportViewerAccountPerBarangay.LocalReport.DataSources.Add(rds);
+
+                                ReportParameter[] param = new ReportParameter[]
+                                {
+                                    new ReportParameter("ReportParameterTown", comboBoxAccountPerBarangayTown.Text),
+                                    new ReportParameter("ReportParameterBarangay", (comboBoxAccountPerBarangayBarangay.SelectedIndex == 0 || comboBoxAccountPerBarangayBarangay.SelectedIndex == 1 ? "ALL" : comboBoxAccountPerBarangayBarangay.Text))
+                                };
+                                reportViewerAccountPerBarangay.LocalReport.SetParameters(param);
+                                reportViewerAccountPerBarangay.LocalReport.Refresh();
+                            });                           
+                        }
+                        conn.Close();
                     }
-                    conn.Close();
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingAccountPerBarangay, buttonAccountPerBarangaySearch);
+
             this.reportViewerAccountPerBarangay.RefreshReport();
         }
 
-        private void buttonAccountPerClassificationSearch_Click(object sender, EventArgs e)
+        private async void buttonAccountPerClassificationSearch_Click(object sender, EventArgs e)
         {
-            try
+            beforeAwait(pictureBoxLoadingAccountPerClassification, buttonAccountPerClassificationSearch);
+
+            await Task.Run(() => 
             {
-                using (MySqlConnection conn = new MySqlConnection(connStr))
+                try
                 {
-                    conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetAccountPerClass_", conn))
+                    using (MySqlConnection conn = new MySqlConnection(connStr))
                     {
-                        DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
+                        conn.Open();
 
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountPerClassificationZone.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@classId", Convert.ToByte(comboBoxAccountPerClassificationClassification.SelectedValue.ToString()));
-                        adapter.SelectCommand.Parameters["@classId"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@class_desc", comboBoxAccountPerClassificationClassification.Text);
-                        adapter.SelectCommand.Parameters["@class_desc"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@connectedCode", 4);
-                        adapter.SelectCommand.Parameters["@connectedCode"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@disconnectedCode", 5);
-                        adapter.SelectCommand.Parameters["@disconnectedCode"].Direction = ParameterDirection.Input;
-
-                        adapter.Fill(ds, "AccountPerClassification");
-
-                        ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountPerClassification"]);
-                        reportViewerAccountPerClassification.LocalReport.DataSources.Clear();
-                        reportViewerAccountPerClassification.LocalReport.DataSources.Add(rds);
-
-                        ReportParameter[] param = new ReportParameter[]
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetAccountPerClass_", conn))
                         {
-                            new ReportParameter("ReportParameterZone", comboBoxAccountPerClassificationZone.Text),
-                            new ReportParameter("ReportParameterClassification", comboBoxAccountPerClassificationClassification.Text)
-                        };
-                        reportViewerAccountPerClassification.LocalReport.SetParameters(param);
-                        reportViewerAccountPerClassification.LocalReport.Refresh();
+                            DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
+
+                            Invoke((MethodInvoker)delegate ()
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountPerClassificationZone.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@classId", Convert.ToByte(comboBoxAccountPerClassificationClassification.SelectedValue.ToString()));
+                                adapter.SelectCommand.Parameters["@classId"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@class_desc", comboBoxAccountPerClassificationClassification.Text);
+                                adapter.SelectCommand.Parameters["@class_desc"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@connectedCode", 4);
+                                adapter.SelectCommand.Parameters["@connectedCode"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@disconnectedCode", 5);
+                                adapter.SelectCommand.Parameters["@disconnectedCode"].Direction = ParameterDirection.Input;
+
+                                adapter.Fill(ds, "AccountPerClassification");
+
+                                ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountPerClassification"]);
+                                reportViewerAccountPerClassification.LocalReport.DataSources.Clear();
+                                reportViewerAccountPerClassification.LocalReport.DataSources.Add(rds);
+
+                                ReportParameter[] param = new ReportParameter[]
+                                {
+                                    new ReportParameter("ReportParameterZone", comboBoxAccountPerClassificationZone.Text),
+                                    new ReportParameter("ReportParameterClassification", comboBoxAccountPerClassificationClassification.Text)
+                                };
+                                reportViewerAccountPerClassification.LocalReport.SetParameters(param);
+                                reportViewerAccountPerClassification.LocalReport.Refresh();
+                            });
+                        }
+                        conn.Close();
                     }
-                    conn.Close();
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingAccountPerClassification, buttonAccountPerClassificationSearch);
+
             this.reportViewerAccountPerClassification.RefreshReport();
         }
 
-        private void buttonNewConnectionSearch_Click(object sender, EventArgs e)
+        private async void buttonNewConnectionSearch_Click(object sender, EventArgs e)
         {
-            try
+            beforeAwait(pictureBoxLoadingNewConnection, buttonNewConnectionSearch);
+
+            await Task.Run(() => 
             {
-                using (MySqlConnection conn = new MySqlConnection(connStr))
+                try
                 {
-                    conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetNewConnectionSummary_", conn))
+                    using (MySqlConnection conn = new MySqlConnection(connStr))
                     {
-                        DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
+                        conn.Open();
 
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@asOfFrom", dateTimePickerNewConnectionFrom.Value.Date);
-                        adapter.SelectCommand.Parameters["@asOfFrom"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@asOfTo", dateTimePickerNewConnectionTo.Value.Date);
-                        adapter.SelectCommand.Parameters["@asOfTo"].Direction = ParameterDirection.Input;
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetNewConnectionSummary_", conn))
+                        {
+                            DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
 
-                        adapter.Fill(ds, "NewConnectionSummary");
+                            adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                            adapter.SelectCommand.Parameters.AddWithValue("@asOfFrom", dateTimePickerNewConnectionFrom.Value.Date);
+                            adapter.SelectCommand.Parameters["@asOfFrom"].Direction = ParameterDirection.Input;
+                            adapter.SelectCommand.Parameters.AddWithValue("@asOfTo", dateTimePickerNewConnectionTo.Value.Date);
+                            adapter.SelectCommand.Parameters["@asOfTo"].Direction = ParameterDirection.Input;
 
-                        ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["NewConnectionSummary"]);
-                        reportViewerNewConnectionSummary.LocalReport.DataSources.Clear();
-                        reportViewerNewConnectionSummary.LocalReport.DataSources.Add(rds);
+                            adapter.Fill(ds, "NewConnectionSummary");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["NewConnectionSummary"]);
+                            reportViewerNewConnectionSummary.LocalReport.DataSources.Clear();
+                            reportViewerNewConnectionSummary.LocalReport.DataSources.Add(rds);
+                        }
+                        conn.Close();
                     }
-                    conn.Close();
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingNewConnection, buttonNewConnectionSearch);
+
             this.reportViewerNewConnectionSummary.RefreshReport();
         }
 
@@ -439,45 +507,56 @@ namespace ConcessionaireReports
             dateTimePickerNewConnectionFrom.MaxDate = dateTimePickerNewConnectionTo.Value.Date;
         }
 
-        private void buttonAccountByStatusSearch_Click(object sender, EventArgs e)
+        private async void buttonAccountByStatusSearch_Click(object sender, EventArgs e)
         {
-            try
+            beforeAwait(pictureBoxLoadingAccountStatus, buttonAccountByStatusSearch);
+
+            await Task.Run(() => 
             {
-                using (MySqlConnection conn = new MySqlConnection(connStr))
+                try
                 {
-                    conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetAccountListByStatus_", conn))
+                    using (MySqlConnection conn = new MySqlConnection(connStr))
                     {
-                        DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
+                        conn.Open();
 
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@asOfDate", dateTimePickerAccountByStatusAsOf.Value.Date);
-                        adapter.SelectCommand.Parameters["@asOfDate"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountByStatusZone.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
-
-                        adapter.Fill(ds, "AccountByStatus");
-
-                        ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountByStatus"]);
-                        reportViewerAccountByStatus.LocalReport.DataSources.Clear();
-                        reportViewerAccountByStatus.LocalReport.DataSources.Add(rds);
-
-                        ReportParameter[] param = new ReportParameter[]
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetAccountListByStatus_", conn))
                         {
-                            new ReportParameter("ReportParameterZone", comboBoxAccountByStatusZone.Text),
-                            new ReportParameter("ReportParameterAsOf", dateTimePickerAccountByStatusAsOf.Value.Date.ToString("MM/dd/yyyy"))
-                        };
-                        reportViewerAccountByStatus.LocalReport.SetParameters(param);
-                        reportViewerAccountByStatus.LocalReport.Refresh();
+                            DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
+
+                            Invoke((MethodInvoker)delegate ()
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@asOfDate", dateTimePickerAccountByStatusAsOf.Value.Date);
+                                adapter.SelectCommand.Parameters["@asOfDate"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountByStatusZone.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
+
+                                adapter.Fill(ds, "AccountByStatus");
+
+                                ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountByStatus"]);
+                                reportViewerAccountByStatus.LocalReport.DataSources.Clear();
+                                reportViewerAccountByStatus.LocalReport.DataSources.Add(rds);
+
+                                ReportParameter[] param = new ReportParameter[]
+                                {
+                                    new ReportParameter("ReportParameterZone", comboBoxAccountByStatusZone.Text),
+                                    new ReportParameter("ReportParameterAsOf", dateTimePickerAccountByStatusAsOf.Value.Date.ToString("MM/dd/yyyy"))
+                                };
+                                reportViewerAccountByStatus.LocalReport.SetParameters(param);
+                                reportViewerAccountByStatus.LocalReport.Refresh();
+                            });
+                        }
+                        conn.Close();
                     }
-                    conn.Close();
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingAccountStatus, buttonAccountByStatusSearch);
+
             this.reportViewerAccountByStatus.RefreshReport();
         }
 
@@ -515,45 +594,56 @@ namespace ConcessionaireReports
             }
         }
 
-        private void buttonSeniorCitizenSearch_Click(object sender, EventArgs e)
+        private async void buttonSeniorCitizenSearch_Click(object sender, EventArgs e)
         {
-            try
+            beforeAwait(pictureBoxLoadingSeniorAccounts, buttonSeniorCitizenSearch);
+
+            await Task.Run(() =>
             {
-                using (MySqlConnection conn = new MySqlConnection(connStr))
+                try
                 {
-                    conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetSeniorCitizenAccounts_", conn))
+                    using (MySqlConnection conn = new MySqlConnection(connStr))
                     {
-                        DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
+                        conn.Open();
 
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxSeniorCitizenZone.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxSeniorCitizenBook.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
-
-                        adapter.Fill(ds, "SeniorCitizenAccounts");
-
-                        ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["SeniorCitizenAccounts"]);
-                        reportViewerSeniorCitizenAccounts.LocalReport.DataSources.Clear();
-                        reportViewerSeniorCitizenAccounts.LocalReport.DataSources.Add(rds);
-
-                        ReportParameter[] param = new ReportParameter[]
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetSeniorCitizenAccounts_", conn))
                         {
-                            new ReportParameter("ReportParameterZone", comboBoxSeniorCitizenZone.SelectedValue.ToString()),
-                            new ReportParameter("ReportParameterBook", comboBoxSeniorCitizenBook.SelectedValue.ToString())
-                        };
-                        reportViewerSeniorCitizenAccounts.LocalReport.SetParameters(param);
-                        reportViewerSeniorCitizenAccounts.LocalReport.Refresh();
+                            DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
+
+                            Invoke((MethodInvoker)delegate ()
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxSeniorCitizenZone.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxSeniorCitizenBook.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
+
+                                adapter.Fill(ds, "SeniorCitizenAccounts");
+
+                                ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["SeniorCitizenAccounts"]);
+                                reportViewerSeniorCitizenAccounts.LocalReport.DataSources.Clear();
+                                reportViewerSeniorCitizenAccounts.LocalReport.DataSources.Add(rds);
+
+                                ReportParameter[] param = new ReportParameter[]
+                                {
+                                    new ReportParameter("ReportParameterZone", comboBoxSeniorCitizenZone.SelectedValue.ToString()),
+                                    new ReportParameter("ReportParameterBook", comboBoxSeniorCitizenBook.SelectedValue.ToString())
+                                };
+                                reportViewerSeniorCitizenAccounts.LocalReport.SetParameters(param);
+                                reportViewerSeniorCitizenAccounts.LocalReport.Refresh();
+                            });                           
+                        }
+                        conn.Close();
                     }
-                    conn.Close();
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingSeniorAccounts, buttonSeniorCitizenSearch);
+
             this.reportViewerSeniorCitizenAccounts.RefreshReport();
         }
 
@@ -589,60 +679,71 @@ namespace ConcessionaireReports
             }
         }
 
-        private void buttonAccountPerMeterSizeSearch_Click(object sender, EventArgs e)
+        private async void buttonAccountPerMeterSizeSearch_Click(object sender, EventArgs e)
         {
-            try
+            beforeAwait(pictureBoxLoadingAccountMeterSize, buttonAccountPerMeterSizeSearch);
+
+            await Task.Run(() =>
             {
-                using (MySqlConnection conn = new MySqlConnection(connStr))
+                try
                 {
-                    conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetAccountPerMeterSize_", conn))
+                    using (MySqlConnection conn = new MySqlConnection(connStr))
                     {
-                        DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
+                        conn.Open();
 
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountPerMeterSizeZone.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@sizeCode", comboBoxAccountPerMeterSizeMeterSize.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@sizeCode"].Direction = ParameterDirection.Input;
-
-                        int meterStatus = comboBoxAccountPerMeterSizeMeterStatus.SelectedIndex;
-                        if (meterStatus == 0)
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetAccountPerMeterSize_", conn))
                         {
-                            adapter.SelectCommand.Parameters.AddWithValue("@flag", "ALL");
-                            adapter.SelectCommand.Parameters["@flag"].Direction = ParameterDirection.Input;
-                            adapter.SelectCommand.Parameters.AddWithValue("@status_code", null);
-                            adapter.SelectCommand.Parameters["@status_code"].Direction = ParameterDirection.Input;
+                            DataSetConcessionaireReports ds = new DataSetConcessionaireReports();
+
+                            Invoke((MethodInvoker)delegate ()
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountPerMeterSizeZone.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@sizeCode", comboBoxAccountPerMeterSizeMeterSize.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@sizeCode"].Direction = ParameterDirection.Input;
+
+                                int meterStatus = comboBoxAccountPerMeterSizeMeterStatus.SelectedIndex;
+                                if (meterStatus == 0)
+                                {
+                                    adapter.SelectCommand.Parameters.AddWithValue("@flag", "ALL");
+                                    adapter.SelectCommand.Parameters["@flag"].Direction = ParameterDirection.Input;
+                                    adapter.SelectCommand.Parameters.AddWithValue("@status_code", null);
+                                    adapter.SelectCommand.Parameters["@status_code"].Direction = ParameterDirection.Input;
+                                }
+                                else
+                                {
+                                    adapter.SelectCommand.Parameters.AddWithValue("@status_code", ((meterStatus == 1) ? 4 : 5));
+                                    adapter.SelectCommand.Parameters["@status_code"].Direction = ParameterDirection.Input;
+                                    adapter.SelectCommand.Parameters.AddWithValue("@flag", null);
+                                    adapter.SelectCommand.Parameters["@flag"].Direction = ParameterDirection.Input;
+                                }
+                                adapter.Fill(ds, "AccountPerMeterSize");
+
+                                ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountPerMeterSize"]);
+                                reportViewerAccountPerMeterSize.LocalReport.DataSources.Clear();
+                                reportViewerAccountPerMeterSize.LocalReport.DataSources.Add(rds);
+
+                                ReportParameter[] param = new ReportParameter[]
+                                {
+                                    new ReportParameter("ReportParameterZone", comboBoxAccountPerMeterSizeZone.Text),
+                                    new ReportParameter("ReportParameterMeterSize", comboBoxAccountPerMeterSizeMeterSize.SelectedValue.ToString())
+                                };
+                                reportViewerAccountPerMeterSize.LocalReport.SetParameters(param);
+                                reportViewerAccountPerMeterSize.LocalReport.Refresh();
+                            });                          
                         }
-                        else
-                        {
-                            adapter.SelectCommand.Parameters.AddWithValue("@status_code", ((meterStatus == 1) ? 4 : 5));
-                            adapter.SelectCommand.Parameters["@status_code"].Direction = ParameterDirection.Input;
-                            adapter.SelectCommand.Parameters.AddWithValue("@flag", null);
-                            adapter.SelectCommand.Parameters["@flag"].Direction = ParameterDirection.Input;
-                        }
-                        adapter.Fill(ds, "AccountPerMeterSize");
-
-                        ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountPerMeterSize"]);
-                        reportViewerAccountPerMeterSize.LocalReport.DataSources.Clear();
-                        reportViewerAccountPerMeterSize.LocalReport.DataSources.Add(rds);
-
-                        ReportParameter[] param = new ReportParameter[]
-                        {
-                            new ReportParameter("ReportParameterZone", comboBoxAccountPerMeterSizeZone.Text),
-                            new ReportParameter("ReportParameterMeterSize", comboBoxAccountPerMeterSizeMeterSize.SelectedValue.ToString())
-                        };
-                        reportViewerAccountPerMeterSize.LocalReport.SetParameters(param);
-                        reportViewerAccountPerMeterSize.LocalReport.Refresh();
+                        conn.Close();
                     }
-                    conn.Close();
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingAccountMeterSize, buttonAccountPerMeterSizeSearch);
+
             this.reportViewerAccountPerMeterSize.RefreshReport();
         }
     }

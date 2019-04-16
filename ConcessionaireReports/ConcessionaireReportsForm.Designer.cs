@@ -37,6 +37,7 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConcessionaireReportsForm));
             this.AccountPerBookBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetConcessionaireReports = new ConcessionaireReports.DataSetConcessionaireReports();
             this.AccountPerBarangayBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -102,6 +103,13 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.pictureBoxLoadingAccountPerBook = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoadingAccountPerBarangay = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoadingAccountPerClassification = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoadingNewConnection = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoadingAccountStatus = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoadingSeniorAccounts = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoadingAccountMeterSize = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.AccountPerBookBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetConcessionaireReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountPerBarangayBindingSource)).BeginInit();
@@ -120,6 +128,13 @@
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingAccountPerBook)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingAccountPerBarangay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingAccountPerClassification)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingNewConnection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingAccountStatus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingSeniorAccounts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingAccountMeterSize)).BeginInit();
             this.SuspendLayout();
             // 
             // AccountPerBookBindingSource
@@ -190,6 +205,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.pictureBoxLoadingAccountPerBook);
             this.tabPage1.Controls.Add(this.reportViewerAccountPerBook);
             this.tabPage1.Controls.Add(this.buttonAccountPerBookSearch);
             this.tabPage1.Controls.Add(this.comboBoxAccountPerBookMeterStatus);
@@ -292,6 +308,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.pictureBoxLoadingAccountPerBarangay);
             this.tabPage2.Controls.Add(this.reportViewerAccountPerBarangay);
             this.tabPage2.Controls.Add(this.buttonAccountPerBarangaySearch);
             this.tabPage2.Controls.Add(this.comboBoxAccountPerBarangayBarangay);
@@ -372,6 +389,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.pictureBoxLoadingAccountPerClassification);
             this.tabPage3.Controls.Add(this.reportViewerAccountPerClassification);
             this.tabPage3.Controls.Add(this.buttonAccountPerClassificationSearch);
             this.tabPage3.Controls.Add(this.comboBoxAccountPerClassificationClassification);
@@ -390,7 +408,8 @@
             reportDataSource3.Name = "DataSetConcessionaireReports";
             reportDataSource3.Value = this.AccountPerClassificationBindingSource;
             this.reportViewerAccountPerClassification.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewerAccountPerClassification.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportAccountPerClassification.rdlc";
+            this.reportViewerAccountPerClassification.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportAccountPerClassification.r" +
+    "dlc";
             this.reportViewerAccountPerClassification.Location = new System.Drawing.Point(26, 49);
             this.reportViewerAccountPerClassification.Name = "reportViewerAccountPerClassification";
             this.reportViewerAccountPerClassification.ServerReport.BearerToken = null;
@@ -463,7 +482,8 @@
             reportDataSource4.Name = "DataSetConcessionaireReports";
             reportDataSource4.Value = this.SummaryAccountPerClassBindingSource;
             this.reportViewerSummaryAccountsPerClass.LocalReport.DataSources.Add(reportDataSource4);
-            this.reportViewerSummaryAccountsPerClass.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportSummaryAccountsPerClass.rdlc";
+            this.reportViewerSummaryAccountsPerClass.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportSummaryAccountsPerClass.rd" +
+    "lc";
             this.reportViewerSummaryAccountsPerClass.Location = new System.Drawing.Point(23, 24);
             this.reportViewerSummaryAccountsPerClass.Name = "reportViewerSummaryAccountsPerClass";
             this.reportViewerSummaryAccountsPerClass.ServerReport.BearerToken = null;
@@ -472,6 +492,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.pictureBoxLoadingNewConnection);
             this.tabPage5.Controls.Add(this.reportViewerNewConnectionSummary);
             this.tabPage5.Controls.Add(this.buttonNewConnectionSearch);
             this.tabPage5.Controls.Add(this.label9);
@@ -551,6 +572,7 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.pictureBoxLoadingAccountStatus);
             this.tabPage6.Controls.Add(this.reportViewerAccountByStatus);
             this.tabPage6.Controls.Add(this.buttonAccountByStatusSearch);
             this.tabPage6.Controls.Add(this.comboBoxAccountByStatusZone);
@@ -629,6 +651,7 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.pictureBoxLoadingSeniorAccounts);
             this.tabPage7.Controls.Add(this.reportViewerSeniorCitizenAccounts);
             this.tabPage7.Controls.Add(this.buttonSeniorCitizenSearch);
             this.tabPage7.Controls.Add(this.comboBoxSeniorCitizenBook);
@@ -647,7 +670,8 @@
             reportDataSource7.Name = "DataSetConcessionaireReports";
             reportDataSource7.Value = this.SeniorCitizenAccountsBindingSource;
             this.reportViewerSeniorCitizenAccounts.LocalReport.DataSources.Add(reportDataSource7);
-            this.reportViewerSeniorCitizenAccounts.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportSeniorCitizenAccounts.rdlc";
+            this.reportViewerSeniorCitizenAccounts.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ConcessionaireReports.ReportSeniorCitizenAccounts.rdlc" +
+    "";
             this.reportViewerSeniorCitizenAccounts.Location = new System.Drawing.Point(26, 49);
             this.reportViewerSeniorCitizenAccounts.Name = "reportViewerSeniorCitizenAccounts";
             this.reportViewerSeniorCitizenAccounts.ServerReport.BearerToken = null;
@@ -708,6 +732,7 @@
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.pictureBoxLoadingAccountMeterSize);
             this.tabPage8.Controls.Add(this.reportViewerAccountPerMeterSize);
             this.tabPage8.Controls.Add(this.comboBoxAccountPerMeterSizeMeterStatus);
             this.tabPage8.Controls.Add(this.buttonAccountPerMeterSizeSearch);
@@ -807,6 +832,83 @@
             this.label16.TabIndex = 5;
             this.label16.Text = "Zone:";
             // 
+            // pictureBoxLoadingAccountPerBook
+            // 
+            this.pictureBoxLoadingAccountPerBook.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingAccountPerBook.Image")));
+            this.pictureBoxLoadingAccountPerBook.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingAccountPerBook.Name = "pictureBoxLoadingAccountPerBook";
+            this.pictureBoxLoadingAccountPerBook.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingAccountPerBook.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingAccountPerBook.TabIndex = 70;
+            this.pictureBoxLoadingAccountPerBook.TabStop = false;
+            this.pictureBoxLoadingAccountPerBook.Visible = false;
+            // 
+            // pictureBoxLoadingAccountPerBarangay
+            // 
+            this.pictureBoxLoadingAccountPerBarangay.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingAccountPerBarangay.Image")));
+            this.pictureBoxLoadingAccountPerBarangay.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingAccountPerBarangay.Name = "pictureBoxLoadingAccountPerBarangay";
+            this.pictureBoxLoadingAccountPerBarangay.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingAccountPerBarangay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingAccountPerBarangay.TabIndex = 71;
+            this.pictureBoxLoadingAccountPerBarangay.TabStop = false;
+            this.pictureBoxLoadingAccountPerBarangay.Visible = false;
+            // 
+            // pictureBoxLoadingAccountPerClassification
+            // 
+            this.pictureBoxLoadingAccountPerClassification.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingAccountPerClassification.Image")));
+            this.pictureBoxLoadingAccountPerClassification.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingAccountPerClassification.Name = "pictureBoxLoadingAccountPerClassification";
+            this.pictureBoxLoadingAccountPerClassification.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingAccountPerClassification.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingAccountPerClassification.TabIndex = 72;
+            this.pictureBoxLoadingAccountPerClassification.TabStop = false;
+            this.pictureBoxLoadingAccountPerClassification.Visible = false;
+            // 
+            // pictureBoxLoadingNewConnection
+            // 
+            this.pictureBoxLoadingNewConnection.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingNewConnection.Image")));
+            this.pictureBoxLoadingNewConnection.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingNewConnection.Name = "pictureBoxLoadingNewConnection";
+            this.pictureBoxLoadingNewConnection.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingNewConnection.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingNewConnection.TabIndex = 73;
+            this.pictureBoxLoadingNewConnection.TabStop = false;
+            this.pictureBoxLoadingNewConnection.Visible = false;
+            // 
+            // pictureBoxLoadingAccountStatus
+            // 
+            this.pictureBoxLoadingAccountStatus.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingAccountStatus.Image")));
+            this.pictureBoxLoadingAccountStatus.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingAccountStatus.Name = "pictureBoxLoadingAccountStatus";
+            this.pictureBoxLoadingAccountStatus.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingAccountStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingAccountStatus.TabIndex = 73;
+            this.pictureBoxLoadingAccountStatus.TabStop = false;
+            this.pictureBoxLoadingAccountStatus.Visible = false;
+            // 
+            // pictureBoxLoadingSeniorAccounts
+            // 
+            this.pictureBoxLoadingSeniorAccounts.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingSeniorAccounts.Image")));
+            this.pictureBoxLoadingSeniorAccounts.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingSeniorAccounts.Name = "pictureBoxLoadingSeniorAccounts";
+            this.pictureBoxLoadingSeniorAccounts.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingSeniorAccounts.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingSeniorAccounts.TabIndex = 74;
+            this.pictureBoxLoadingSeniorAccounts.TabStop = false;
+            this.pictureBoxLoadingSeniorAccounts.Visible = false;
+            // 
+            // pictureBoxLoadingAccountMeterSize
+            // 
+            this.pictureBoxLoadingAccountMeterSize.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingAccountMeterSize.Image")));
+            this.pictureBoxLoadingAccountMeterSize.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingAccountMeterSize.Name = "pictureBoxLoadingAccountMeterSize";
+            this.pictureBoxLoadingAccountMeterSize.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingAccountMeterSize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingAccountMeterSize.TabIndex = 74;
+            this.pictureBoxLoadingAccountMeterSize.TabStop = false;
+            this.pictureBoxLoadingAccountMeterSize.Visible = false;
+            // 
             // ConcessionaireReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -844,6 +946,13 @@
             this.tabPage7.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingAccountPerBook)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingAccountPerBarangay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingAccountPerClassification)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingNewConnection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingAccountStatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingSeniorAccounts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingAccountMeterSize)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -915,6 +1024,13 @@
         private System.Windows.Forms.BindingSource SeniorCitizenAccountsBindingSource;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerAccountPerMeterSize;
         private System.Windows.Forms.BindingSource AccountPerMeterSizeBindingSource;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingAccountPerBook;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingAccountPerBarangay;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingAccountPerClassification;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingNewConnection;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingAccountStatus;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingSeniorAccounts;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingAccountMeterSize;
     }
 }
 
