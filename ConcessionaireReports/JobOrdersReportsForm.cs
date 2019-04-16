@@ -62,7 +62,7 @@ namespace ConcessionaireReports
             dateTimePickerJobOrderSumTo.MaxDate = DateTime.Today;
             dateTimePickerJobOrderWorkTo.MaxDate = DateTime.Today;
             dateTimePickerAccomplishedJOTo.MaxDate = DateTime.Today;
-            dateTimePickerPendingJOTo.MaxDate = DateTime.Today;
+            dateTimePickerPendingJOAsOf.MaxDate = DateTime.Today;
         }
 
         private void beforeAwait(PictureBox pb, Button b)
