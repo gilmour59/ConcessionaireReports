@@ -243,6 +243,7 @@
     <EmbeddedResource Include="RDLC\BillingReports\ReportAccountsLargeConsumption.rdlc" />
     <EmbeddedResource Include="RDLC\DisconReconReports\ReportDiscon.rdlc" />
     <EmbeddedResource Include="RDLC\DisconReconReports\ReportRecon.rdlc" />
+    <EmbeddedResource Include="RDLC\JobOrdersReports\ReportAccomplishedJO.rdlc" />
     <EmbeddedResource Include="RDLC\JobOrdersReports\ReportJOSummary.rdlc" />
     <EmbeddedResource Include="RDLC\JobOrdersReports\ReportJOSummaryWork.rdlc" />
     <EmbeddedResource Include="RDLC\JobOrdersReports\ReportPendingJobOrders.rdlc" />

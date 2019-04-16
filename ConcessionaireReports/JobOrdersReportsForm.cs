@@ -267,5 +267,59 @@ namespace ConcessionaireReports
 
             reportViewerPendingJO.RefreshReport();
         }
+
+        private async void buttonAccomplishedJOSearch_Click(object sender, EventArgs e)
+        {
+            beforeAwait(pictureBoxLoadingAccomplishedJO, buttonAccomplishedJOSearch);
+
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                    {
+                        conn.Open();
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetAccomplishedJobOrderSummary_", conn))
+                        {
+                            adapter.SelectCommand.CommandTimeout = 5000;
+
+                            DataSetJobOrdersReports ds = new DataSetJobOrdersReports();
+
+                            Invoke((MethodInvoker)delegate ()
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@startDate", dateTimePickerAccomplishedJOFrom.Value);
+                                adapter.SelectCommand.Parameters["@startDate"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@endDate", dateTimePickerAccomplishedJOTo.Value);
+                                adapter.SelectCommand.Parameters["@endDate"].Direction = ParameterDirection.Input;
+                            });
+
+                            adapter.Fill(ds, "AccomplishedJO");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetJobOrdersReports", ds.Tables["AccomplishedJO"]);
+                            reportViewerAccomplishedJO.LocalReport.DataSources.Clear();
+                            reportViewerAccomplishedJO.LocalReport.DataSources.Add(rds);
+
+                            ReportParameter[] param = new ReportParameter[]
+                            {
+                                new ReportParameter("ReportParameterFrom", dateTimePickerAccomplishedJOFrom.Value.ToString()),
+                                new ReportParameter("ReportParameterTo", dateTimePickerAccomplishedJOTo.Value.ToString())
+                            };
+                            reportViewerAccomplishedJO.LocalReport.SetParameters(param);
+                        }
+                        conn.Close();
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingAccomplishedJO, buttonAccomplishedJOSearch);
+
+            reportViewerAccomplishedJO.RefreshReport();
+        }
     }
 }
