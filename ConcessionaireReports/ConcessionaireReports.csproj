@@ -245,6 +245,7 @@
     <EmbeddedResource Include="RDLC\DisconReconReports\ReportRecon.rdlc" />
     <EmbeddedResource Include="RDLC\JobOrdersReports\ReportJOSummary.rdlc" />
     <EmbeddedResource Include="RDLC\JobOrdersReports\ReportJOSummaryWork.rdlc" />
+    <EmbeddedResource Include="RDLC\JobOrdersReports\ReportPendingJobOrders.rdlc" />
     <EmbeddedResource Include="RDLC\MeterReadingReports\ReportAccountsMinimumConsumption.rdlc" />
     <EmbeddedResource Include="RDLC\MeterReadingReports\ReportAccountsSuddenIncDecConsumption.rdlc" />
     <EmbeddedResource Include="RDLC\BillingReports\ReportBillComputationRegister.rdlc" />

@@ -7,7 +7,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>dfb1af03-a31a-4db3-9032-f1070ebd3302</rd:DataSourceID>
+      <rd:DataSourceID>f33c7940-4116-4379-a468-2eb285e80338</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -73,7 +73,7 @@
       <rd:DataSetInfo>
         <rd:DataSetName>DataSetJobOrdersReports</rd:DataSetName>
         <rd:SchemaPath>C:\Users\Gilmour\Source\Repos\gilmour59\ConcessionaireReports\ConcessionaireReports\DataSetJobOrdersReports.xsd</rd:SchemaPath>
-        <rd:TableName>JOSummary</rd:TableName>
+        <rd:TableName>PendingJO</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
@@ -105,8 +105,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox16</rd:DefaultName>
-            <Top>1.33262cm</Top>
-            <Left>7.33771cm</Left>
+            <Top>1.34787cm</Top>
+            <Left>7.30829cm</Left>
             <Height>0.6cm</Height>
             <Width>13cm</Width>
             <Style>
@@ -139,8 +139,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>header_address</rd:DefaultName>
-            <Top>0.69734cm</Top>
-            <Left>7.33771cm</Left>
+            <Top>0.71259cm</Top>
+            <Left>7.30829cm</Left>
             <Height>0.6cm</Height>
             <Width>13cm</Width>
             <ZIndex>1</ZIndex>
@@ -175,8 +175,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>header_name</rd:DefaultName>
-            <Top>0.06206cm</Top>
-            <Left>7.33771cm</Left>
+            <Top>0.07731cm</Top>
+            <Left>7.30829cm</Left>
             <Height>0.6cm</Height>
             <Width>13cm</Width>
             <ZIndex>2</ZIndex>
@@ -197,7 +197,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Format(Parameters!ReportParameterFrom.Value, "D") &amp; " - " &amp; Format(Parameters!ReportParameterTo.Value, "D")</Value>
+                    <Value>="As Of: " &amp; Format(Parameters!ReportParameterDate.Value, "D")</Value>
                     <Style>
                       <FontFamily>calibri</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -209,8 +209,8 @@
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <Top>1.9679cm</Top>
-            <Left>7.33771cm</Left>
+            <Top>1.98315cm</Top>
+            <Left>7.30829cm</Left>
             <Height>0.6cm</Height>
             <Width>13cm</Width>
             <ZIndex>3</ZIndex>
@@ -1003,8 +1003,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSetJobOrdersReports</DataSetName>
-            <Top>3.15595cm</Top>
-            <Left>0.39658cm</Left>
+            <Top>3.1712cm</Top>
+            <Left>0.36716cm</Left>
             <Height>0.84cm</Height>
             <Width>26.9411cm</Width>
             <ZIndex>4</ZIndex>
@@ -1034,8 +1034,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>4.16621cm</Top>
-            <Left>0.38711cm</Left>
+            <Top>4.2037cm</Top>
+            <Left>0.36716cm</Left>
             <Height>0.42cm</Height>
             <Width>6.58118cm</Width>
             <ZIndex>5</ZIndex>
@@ -1050,13 +1050,13 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>1.875in</Height>
+        <Height>1.91667in</Height>
         <Style />
       </Body>
       <Width>10.89583in</Width>
       <Page>
         <PageFooter>
-          <Height>1.05833cm</Height>
+          <Height>1.00542cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1161,12 +1161,7 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="ReportParameterFrom">
-      <DataType>DateTime</DataType>
-      <Nullable>true</Nullable>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="ReportParameterTo">
+    <ReportParameter Name="ReportParameterDate">
       <DataType>DateTime</DataType>
       <Nullable>true</Nullable>
       <Prompt>ReportParameter1</Prompt>
@@ -1180,16 +1175,11 @@
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>ReportParameterFrom</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>1</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>ReportParameterTo</ParameterName>
+          <ParameterName>ReportParameterDate</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>53571874-a078-49d8-98a2-176afc37db00</rd:ReportID>
+  <rd:ReportID>e51f57c4-00dd-479e-83e6-e2d95c92b1b1</rd:ReportID>
 </Report>

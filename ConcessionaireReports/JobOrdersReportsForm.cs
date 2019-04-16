@@ -216,5 +216,56 @@ namespace ConcessionaireReports
 
             reportViewerJobOrderWork.RefreshReport();
         }
+
+        private async void buttonPendingJOSearch_Click(object sender, EventArgs e)
+        {
+            beforeAwait(pictureBoxLoadingPendingJO, buttonPendingJOSearch);
+
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                    {
+                        conn.Open();
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetPendingJobOrderSummary_", conn))
+                        {
+                            adapter.SelectCommand.CommandTimeout = 5000;
+
+                            DataSetJobOrdersReports ds = new DataSetJobOrdersReports();
+
+                            Invoke((MethodInvoker)delegate ()
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@asOfDate", dateTimePickerPendingJOAsOf.Value);
+                                adapter.SelectCommand.Parameters["@asOfDate"].Direction = ParameterDirection.Input;
+                            });
+
+                            adapter.Fill(ds, "PendingJO");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetJobOrdersReports", ds.Tables["PendingJO"]);
+                            reportViewerPendingJO.LocalReport.DataSources.Clear();
+                            reportViewerPendingJO.LocalReport.DataSources.Add(rds);
+
+                            ReportParameter[] param = new ReportParameter[]
+                            {
+                                new ReportParameter("ReportParameterDate", dateTimePickerPendingJOAsOf.Value.ToString())                           
+                            };
+                            reportViewerPendingJO.LocalReport.SetParameters(param);
+                        }
+                        conn.Close();
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingPendingJO, buttonPendingJOSearch);
+
+            reportViewerPendingJO.RefreshReport();
+        }
     }
 }

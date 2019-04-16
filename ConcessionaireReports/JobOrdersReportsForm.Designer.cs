@@ -30,12 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JobOrdersReportsForm));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.JOSummaryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetJobOrdersReports = new ConcessionaireReports.DataSetJobOrdersReports();
+            this.JOSummaryWorkBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlJobOrdersReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dateTimePickerJobOrderSumFrom = new System.Windows.Forms.DateTimePicker();
@@ -69,9 +70,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.buttonAccomplishedJOSearch = new System.Windows.Forms.Button();
             this.reportViewerAccomplishedJO = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.JOSummaryWorkBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PendingJOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.JOSummaryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetJobOrdersReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.JOSummaryWorkBindingSource)).BeginInit();
             this.tabControlJobOrdersReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingJobOrderSum)).BeginInit();
@@ -81,7 +83,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingPendingJO)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingAccomplishedJO)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.JOSummaryWorkBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PendingJOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // JOSummaryBindingSource
@@ -93,6 +95,11 @@
             // 
             this.DataSetJobOrdersReports.DataSetName = "DataSetJobOrdersReports";
             this.DataSetJobOrdersReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // JOSummaryWorkBindingSource
+            // 
+            this.JOSummaryWorkBindingSource.DataMember = "JOSummaryWork";
+            this.JOSummaryWorkBindingSource.DataSource = this.DataSetJobOrdersReports;
             // 
             // tabControlJobOrdersReports
             // 
@@ -192,9 +199,9 @@
             // 
             // reportViewerJobOrderSum
             // 
-            reportDataSource1.Name = "DataSetJobOrdersReports";
-            reportDataSource1.Value = this.JOSummaryBindingSource;
-            this.reportViewerJobOrderSum.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource6.Name = "DataSetJobOrdersReports";
+            reportDataSource6.Value = this.JOSummaryBindingSource;
+            this.reportViewerJobOrderSum.LocalReport.DataSources.Add(reportDataSource6);
             this.reportViewerJobOrderSum.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.JobOrdersReports.ReportJOSummary.rdlc";
             this.reportViewerJobOrderSum.Location = new System.Drawing.Point(26, 49);
             this.reportViewerJobOrderSum.Name = "reportViewerJobOrderSum";
@@ -308,9 +315,9 @@
             // 
             // reportViewerJobOrderWork
             // 
-            reportDataSource2.Name = "DataSetJobOrdersReports";
-            reportDataSource2.Value = this.JOSummaryWorkBindingSource;
-            this.reportViewerJobOrderWork.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource7.Name = "DataSetJobOrdersReports";
+            reportDataSource7.Value = this.JOSummaryWorkBindingSource;
+            this.reportViewerJobOrderWork.LocalReport.DataSources.Add(reportDataSource7);
             this.reportViewerJobOrderWork.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.JobOrdersReports.ReportJOSummaryWork.rdlc";
             this.reportViewerJobOrderWork.Location = new System.Drawing.Point(26, 49);
             this.reportViewerJobOrderWork.Name = "reportViewerJobOrderWork";
@@ -372,13 +379,14 @@
             this.buttonPendingJOSearch.TabIndex = 72;
             this.buttonPendingJOSearch.Text = "Search";
             this.buttonPendingJOSearch.UseVisualStyleBackColor = true;
+            this.buttonPendingJOSearch.Click += new System.EventHandler(this.buttonPendingJOSearch_Click);
             // 
             // reportViewerPendingJO
             // 
-            reportDataSource3.Name = "DataSetReceivablesReports";
-            reportDataSource3.Value = null;
-            this.reportViewerPendingJO.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewerPendingJO.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportOtherReceivables.rdlc";
+            reportDataSource5.Name = "DataSetJobOrdersReports";
+            reportDataSource5.Value = this.PendingJOBindingSource;
+            this.reportViewerPendingJO.LocalReport.DataSources.Add(reportDataSource5);
+            this.reportViewerPendingJO.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.JobOrdersReports.ReportPendingJobOrders.rdlc";
             this.reportViewerPendingJO.Location = new System.Drawing.Point(27, 49);
             this.reportViewerPendingJO.Name = "reportViewerPendingJO";
             this.reportViewerPendingJO.ServerReport.BearerToken = null;
@@ -464,9 +472,9 @@
             // 
             // reportViewerAccomplishedJO
             // 
-            reportDataSource4.Name = "DataSetReceivablesReports";
-            reportDataSource4.Value = null;
-            this.reportViewerAccomplishedJO.LocalReport.DataSources.Add(reportDataSource4);
+            reportDataSource8.Name = "DataSetReceivablesReports";
+            reportDataSource8.Value = null;
+            this.reportViewerAccomplishedJO.LocalReport.DataSources.Add(reportDataSource8);
             this.reportViewerAccomplishedJO.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportOtherReceivables.rdlc";
             this.reportViewerAccomplishedJO.Location = new System.Drawing.Point(27, 49);
             this.reportViewerAccomplishedJO.Name = "reportViewerAccomplishedJO";
@@ -474,10 +482,10 @@
             this.reportViewerAccomplishedJO.Size = new System.Drawing.Size(944, 481);
             this.reportViewerAccomplishedJO.TabIndex = 71;
             // 
-            // JOSummaryWorkBindingSource
+            // PendingJOBindingSource
             // 
-            this.JOSummaryWorkBindingSource.DataMember = "JOSummaryWork";
-            this.JOSummaryWorkBindingSource.DataSource = this.DataSetJobOrdersReports;
+            this.PendingJOBindingSource.DataMember = "PendingJO";
+            this.PendingJOBindingSource.DataSource = this.DataSetJobOrdersReports;
             // 
             // JobOrdersReportsForm
             // 
@@ -493,6 +501,7 @@
             this.Load += new System.EventHandler(this.JobOrdersReportsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.JOSummaryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetJobOrdersReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.JOSummaryWorkBindingSource)).EndInit();
             this.tabControlJobOrdersReports.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -506,7 +515,7 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingAccomplishedJO)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.JOSummaryWorkBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PendingJOBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -549,5 +558,6 @@
         private System.Windows.Forms.ComboBox comboBoxJobOrderWorkWork;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.BindingSource JOSummaryWorkBindingSource;
+        private System.Windows.Forms.BindingSource PendingJOBindingSource;
     }
 }
