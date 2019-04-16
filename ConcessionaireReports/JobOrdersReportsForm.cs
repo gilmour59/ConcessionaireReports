@@ -59,6 +59,30 @@ namespace ConcessionaireReports
         {
             connStr = "server=localhost;user=root;database=mrwdbcsys;port=3306;password=";
 
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                {
+                    conn.Open();
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetWork", conn))
+                    {
+                        DataSet dsWork = new DataSet();
+                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adapter.Fill(dsWork);
+
+                        comboBoxJobOrderWorkWork.ValueMember = "work_code";
+                        comboBoxJobOrderWorkWork.DisplayMember = "work_desc";
+                        comboBoxJobOrderWorkWork.DataSource = dsWork.Tables[0]; 
+                    }
+                    conn.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("error: " + ex, "Error!");
+            }
+
             dateTimePickerJobOrderSumTo.MaxDate = DateTime.Today;
             dateTimePickerJobOrderWorkTo.MaxDate = DateTime.Today;
             dateTimePickerAccomplishedJOTo.MaxDate = DateTime.Today;
@@ -142,6 +166,55 @@ namespace ConcessionaireReports
             afterAwait(pictureBoxLoadingJobOrderSum, buttonJobOrderSumSearch);
 
             reportViewerJobOrderSum.RefreshReport();
+        }
+
+        private async void buttonJobOrderWorkSearch_Click(object sender, EventArgs e)
+        {
+            beforeAwait(pictureBoxLoadingJobOrderWork, buttonJobOrderWorkSearch);
+
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                    {
+                        conn.Open();
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetJOSummaryPerWork", conn))
+                        {
+                            adapter.SelectCommand.CommandTimeout = 5000;
+
+                            DataSetJobOrdersReports ds = new DataSetJobOrdersReports();
+
+                            Invoke((MethodInvoker)delegate ()
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@workCode", comboBoxJobOrderWorkWork.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@workCode"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@startDate", dateTimePickerJobOrderWorkFrom.Value);
+                                adapter.SelectCommand.Parameters["@startDate"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@endDate", dateTimePickerJobOrderWorkTo.Value);
+                                adapter.SelectCommand.Parameters["@endDate"].Direction = ParameterDirection.Input;
+                            });
+
+                            adapter.Fill(ds, "JOSummaryWork");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetJobOrdersReports", ds.Tables["JOSummaryWork"]);
+                            reportViewerJobOrderWork.LocalReport.DataSources.Clear();
+                            reportViewerJobOrderWork.LocalReport.DataSources.Add(rds);
+                        }
+                        conn.Close();
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingJobOrderWork, buttonJobOrderWorkSearch);
+
+            reportViewerJobOrderWork.RefreshReport();
         }
     }
 }

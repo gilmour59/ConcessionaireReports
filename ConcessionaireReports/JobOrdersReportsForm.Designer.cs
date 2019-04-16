@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JobOrdersReportsForm));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource10 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource11 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource12 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.JOSummaryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetJobOrdersReports = new ConcessionaireReports.DataSetJobOrdersReports();
             this.tabControlJobOrdersReports = new System.Windows.Forms.TabControl();
@@ -46,6 +46,8 @@
             this.pictureBoxLoadingJobOrderSum = new System.Windows.Forms.PictureBox();
             this.reportViewerJobOrderSum = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBoxJobOrderWorkWork = new System.Windows.Forms.ComboBox();
             this.pictureBoxLoadingJobOrderWork = new System.Windows.Forms.PictureBox();
             this.dateTimePickerJobOrderWorkFrom = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerJobOrderWorkTo = new System.Windows.Forms.DateTimePicker();
@@ -67,8 +69,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.buttonAccomplishedJOSearch = new System.Windows.Forms.Button();
             this.reportViewerAccomplishedJO = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.comboBoxJobOrderWorkWork = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.JOSummaryWorkBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.JOSummaryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetJobOrdersReports)).BeginInit();
             this.tabControlJobOrdersReports.SuspendLayout();
@@ -80,6 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingPendingJO)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingAccomplishedJO)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.JOSummaryWorkBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // JOSummaryBindingSource
@@ -190,9 +192,9 @@
             // 
             // reportViewerJobOrderSum
             // 
-            reportDataSource10.Name = "DataSetJobOrdersReports";
-            reportDataSource10.Value = this.JOSummaryBindingSource;
-            this.reportViewerJobOrderSum.LocalReport.DataSources.Add(reportDataSource10);
+            reportDataSource1.Name = "DataSetJobOrdersReports";
+            reportDataSource1.Value = this.JOSummaryBindingSource;
+            this.reportViewerJobOrderSum.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewerJobOrderSum.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.JobOrdersReports.ReportJOSummary.rdlc";
             this.reportViewerJobOrderSum.Location = new System.Drawing.Point(26, 49);
             this.reportViewerJobOrderSum.Name = "reportViewerJobOrderSum";
@@ -217,6 +219,30 @@
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Job Order Summary Per Work";
             this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(475, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 16);
+            this.label3.TabIndex = 72;
+            this.label3.Text = "Work:";
+            // 
+            // comboBoxJobOrderWorkWork
+            // 
+            this.comboBoxJobOrderWorkWork.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxJobOrderWorkWork.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxJobOrderWorkWork.FormattingEnabled = true;
+            this.comboBoxJobOrderWorkWork.Items.AddRange(new object[] {
+            "ALL",
+            "Connected",
+            "Disconnected"});
+            this.comboBoxJobOrderWorkWork.Location = new System.Drawing.Point(522, 16);
+            this.comboBoxJobOrderWorkWork.Name = "comboBoxJobOrderWorkWork";
+            this.comboBoxJobOrderWorkWork.Size = new System.Drawing.Size(174, 24);
+            this.comboBoxJobOrderWorkWork.TabIndex = 71;
             // 
             // pictureBoxLoadingJobOrderWork
             // 
@@ -278,13 +304,14 @@
             this.buttonJobOrderWorkSearch.TabIndex = 37;
             this.buttonJobOrderWorkSearch.Text = "Search";
             this.buttonJobOrderWorkSearch.UseVisualStyleBackColor = true;
+            this.buttonJobOrderWorkSearch.Click += new System.EventHandler(this.buttonJobOrderWorkSearch_Click);
             // 
             // reportViewerJobOrderWork
             // 
-            reportDataSource9.Name = "DataSetReceivablesReports";
-            reportDataSource9.Value = null;
-            this.reportViewerJobOrderWork.LocalReport.DataSources.Add(reportDataSource9);
-            this.reportViewerJobOrderWork.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportOtherReceivables.rdlc";
+            reportDataSource2.Name = "DataSetJobOrdersReports";
+            reportDataSource2.Value = this.JOSummaryWorkBindingSource;
+            this.reportViewerJobOrderWork.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewerJobOrderWork.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.JobOrdersReports.ReportJOSummaryWork.rdlc";
             this.reportViewerJobOrderWork.Location = new System.Drawing.Point(26, 49);
             this.reportViewerJobOrderWork.Name = "reportViewerJobOrderWork";
             this.reportViewerJobOrderWork.ServerReport.BearerToken = null;
@@ -348,9 +375,9 @@
             // 
             // reportViewerPendingJO
             // 
-            reportDataSource11.Name = "DataSetReceivablesReports";
-            reportDataSource11.Value = null;
-            this.reportViewerPendingJO.LocalReport.DataSources.Add(reportDataSource11);
+            reportDataSource3.Name = "DataSetReceivablesReports";
+            reportDataSource3.Value = null;
+            this.reportViewerPendingJO.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewerPendingJO.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportOtherReceivables.rdlc";
             this.reportViewerPendingJO.Location = new System.Drawing.Point(27, 49);
             this.reportViewerPendingJO.Name = "reportViewerPendingJO";
@@ -437,9 +464,9 @@
             // 
             // reportViewerAccomplishedJO
             // 
-            reportDataSource12.Name = "DataSetReceivablesReports";
-            reportDataSource12.Value = null;
-            this.reportViewerAccomplishedJO.LocalReport.DataSources.Add(reportDataSource12);
+            reportDataSource4.Name = "DataSetReceivablesReports";
+            reportDataSource4.Value = null;
+            this.reportViewerAccomplishedJO.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewerAccomplishedJO.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReceivablesReports.ReportOtherReceivables.rdlc";
             this.reportViewerAccomplishedJO.Location = new System.Drawing.Point(27, 49);
             this.reportViewerAccomplishedJO.Name = "reportViewerAccomplishedJO";
@@ -447,29 +474,10 @@
             this.reportViewerAccomplishedJO.Size = new System.Drawing.Size(944, 481);
             this.reportViewerAccomplishedJO.TabIndex = 71;
             // 
-            // comboBoxJobOrderWorkWork
+            // JOSummaryWorkBindingSource
             // 
-            this.comboBoxJobOrderWorkWork.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxJobOrderWorkWork.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxJobOrderWorkWork.FormattingEnabled = true;
-            this.comboBoxJobOrderWorkWork.Items.AddRange(new object[] {
-            "ALL",
-            "Connected",
-            "Disconnected"});
-            this.comboBoxJobOrderWorkWork.Location = new System.Drawing.Point(522, 16);
-            this.comboBoxJobOrderWorkWork.Name = "comboBoxJobOrderWorkWork";
-            this.comboBoxJobOrderWorkWork.Size = new System.Drawing.Size(174, 24);
-            this.comboBoxJobOrderWorkWork.TabIndex = 71;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(475, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 16);
-            this.label3.TabIndex = 72;
-            this.label3.Text = "Work:";
+            this.JOSummaryWorkBindingSource.DataMember = "JOSummaryWork";
+            this.JOSummaryWorkBindingSource.DataSource = this.DataSetJobOrdersReports;
             // 
             // JobOrdersReportsForm
             // 
@@ -498,6 +506,7 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingAccomplishedJO)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.JOSummaryWorkBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -539,5 +548,6 @@
         private DataSetJobOrdersReports DataSetJobOrdersReports;
         private System.Windows.Forms.ComboBox comboBoxJobOrderWorkWork;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.BindingSource JOSummaryWorkBindingSource;
     }
 }
