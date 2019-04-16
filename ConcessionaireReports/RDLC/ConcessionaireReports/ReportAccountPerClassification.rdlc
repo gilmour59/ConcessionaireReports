@@ -85,7 +85,7 @@
       <Body>
         <ReportItems>
           <Line Name="Line10">
-            <Top>4.41028cm</Top>
+            <Top>3.99753cm</Top>
             <Left>0.31136cm</Left>
             <Height>0cm</Height>
             <Width>19.88505cm</Width>
@@ -102,9 +102,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="Total Accounts: " &amp; Count(Fields!account_number.Value,"DataSetConcessionaireReports")</Value>
+                    <Value>="Total Accounts: " &amp; System.Environment.NewLine + Format(Count(Fields!account_number.Value,"DataSetConcessionaireReports"), "#,0")</Value>
                     <Style>
                       <FontFamily>calibri</FontFamily>
+                      <FontSize>8pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -115,9 +116,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
-            <Top>4.51611cm</Top>
+            <Top>4.10336cm</Top>
             <Left>4.97558cm</Left>
-            <Height>0.49417cm</Height>
+            <Height>0.42cm</Height>
             <Width>3.54628cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
@@ -137,9 +138,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="Connected: " &amp; SUM(IIF(Fields!meter_stat.Value = "Connected", 1, 0),"DataSetConcessionaireReports")</Value>
+                    <Value>="Connected: " &amp; System.Environment.NewLine + Format(SUM(IIF(Fields!meter_stat.Value = "Connected", 1, 0),"DataSetConcessionaireReports"), "#,0")</Value>
                     <Style>
                       <FontFamily>Calibri</FontFamily>
+                      <FontSize>8pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -150,9 +152,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>4.51611cm</Top>
+            <Top>4.10336cm</Top>
             <Left>8.55714cm</Left>
-            <Height>0.49417cm</Height>
+            <Height>0.42cm</Height>
             <Width>3.54628cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
@@ -172,9 +174,10 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="Disconnected: " &amp; Sum(IIF(Fields!meter_stat.Value = "Disconnected", 1, 0), "DataSetConcessionaireReports")</Value>
+                    <Value>="Disconnected: " &amp; System.Environment.NewLine + Format(Sum(IIF(Fields!meter_stat.Value = "Disconnected", 1, 0), "DataSetConcessionaireReports"), "#,0")</Value>
                     <Style>
                       <FontFamily>Calibri</FontFamily>
+                      <FontSize>8pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -185,9 +188,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>4.51611cm</Top>
+            <Top>4.10336cm</Top>
             <Left>12.1387cm</Left>
-            <Height>0.49417cm</Height>
+            <Height>0.42cm</Height>
             <Width>3.54628cm</Width>
             <ZIndex>3</ZIndex>
             <Style>
@@ -224,7 +227,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.5cm</Height>
+                  <Height>0.42cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -237,12 +240,14 @@
                                   <Value>Seq.</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox6</rd:DefaultName>
@@ -270,12 +275,14 @@
                                   <Value>Account No.</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox12</rd:DefaultName>
@@ -303,7 +310,7 @@
                                   <Value>Name</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -336,7 +343,7 @@
                                   <Value>Address</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -369,12 +376,14 @@
                                   <Value>Meter Status</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox24</rd:DefaultName>
@@ -402,12 +411,14 @@
                                   <Value>Date Connected</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox21</rd:DefaultName>
@@ -427,7 +438,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.5cm</Height>
+                  <Height>0.42cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -440,12 +451,12 @@
                                   <Value>=Fields!seq_no.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Left</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -474,11 +485,13 @@
                                   <Value>=Fields!ref_no.Value &amp; " / " &amp; Fields!account_number.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>account_number</rd:DefaultName>
@@ -506,7 +519,7 @@
                                   <Value>=Fields!concessionaire_name.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -538,7 +551,7 @@
                                   <Value>=Fields!address.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -570,11 +583,13 @@
                                   <Value>=Fields!meter_stat.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>meter_stat</rd:DefaultName>
@@ -602,12 +617,14 @@
                                   <Value>=Fields!date_connected.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <Format>d</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>date_connected</rd:DefaultName>
@@ -652,7 +669,7 @@
             <DataSetName>DataSetConcessionaireReports</DataSetName>
             <Top>3.03389cm</Top>
             <Left>0.29786cm</Left>
-            <Height>1cm</Height>
+            <Height>0.84cm</Height>
             <Width>19.89855cm</Width>
             <ZIndex>4</ZIndex>
             <Style>
@@ -803,7 +820,7 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>2.03505in</Height>
+        <Height>1.83713in</Height>
         <Style />
       </Body>
       <Width>8.07872in</Width>
