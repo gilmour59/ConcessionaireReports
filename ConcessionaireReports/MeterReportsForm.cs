@@ -93,23 +93,56 @@ namespace ConcessionaireReports
             }
         }
 
-        private void buttonSummaryChangedMetersSearch_Click(object sender, EventArgs e)
+        private void beforeAwait(PictureBox pb, Button b)
         {
-            try
+            //tabControlCollectionReports.TabPages[0].Enabled = false;
+            foreach (TabPage tp in tabControlMeterReports.TabPages)
             {
-                using (MySqlConnection conn = new MySqlConnection(connStr))
+                if (!(tp == tabControlMeterReports.SelectedTab))
                 {
-                    conn.Open();
-
-                    bindDate(conn, "sp_GilGetChangedMeterSummary_", "@asOfFrom", "@asOfTo", dateTimePickerSummaryChangedMetersFrom, dateTimePickerSummaryChangedMetersTo, "SummaryChangedMeters", reportViewerSummaryChangedMeters);
-
-                    conn.Close();
+                    tp.Enabled = false;
                 }
             }
-            catch (MySqlException ex)
+            b.Enabled = false;
+            pb.Show();
+            pb.Update();
+        }
+
+        private void afterAwait(PictureBox pb, Button b)
+        {
+            foreach (TabPage tp in tabControlMeterReports.TabPages)
             {
-                MessageBox.Show("error: " + ex, "Error!");
+                tp.Enabled = true;
             }
+            b.Enabled = true;
+            pb.Hide();
+        }
+
+        private async void buttonSummaryChangedMetersSearch_Click(object sender, EventArgs e)
+        {
+            beforeAwait(pictureBoxLoadingChangedMeters, buttonSummaryChangedMetersSearch);
+
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (MySqlConnection conn = new MySqlConnection(connStr))
+                    {
+                        conn.Open();
+
+                        bindDate(conn, "sp_GilGetChangedMeterSummary_", "@asOfFrom", "@asOfTo", dateTimePickerSummaryChangedMetersFrom, dateTimePickerSummaryChangedMetersTo, "SummaryChangedMeters", reportViewerSummaryChangedMeters);
+
+                        conn.Close();
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingChangedMeters, buttonSummaryChangedMetersSearch);
+
             this.reportViewerSummaryChangedMeters.RefreshReport();
         }
 
@@ -133,93 +166,117 @@ namespace ConcessionaireReports
             dateTimePickerSummaryTestedMetersFrom.MaxDate = dateTimePickerSummaryTestedMetersTo.Value.Date;
         }
 
-        private void buttonSummaryTestedMetersSearch_Click(object sender, EventArgs e)
+        private async void buttonSummaryTestedMetersSearch_Click(object sender, EventArgs e)
         {
-            try
-            {
-                using (MySqlConnection conn = new MySqlConnection(connStr))
-                {
-                    conn.Open();
+            beforeAwait(pictureBoxLoadingTestedMeters, buttonSummaryTestedMetersSearch);
 
-                    bindDate(conn, "sp_getTestedMetersSummary_", "@fromDate", "@toDate", dateTimePickerSummaryTestedMetersFrom, dateTimePickerSummaryTestedMetersTo, "SummaryTestedMeters", reportViewerSummaryTestedMeters);
-                  
-                    conn.Close();
-                }
-            }
-            catch (MySqlException ex)
+            await Task.Run(() =>
             {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                try
+                {
+                    using (MySqlConnection conn = new MySqlConnection(connStr))
+                    {
+                        conn.Open();
+
+                        bindDate(conn, "sp_getTestedMetersSummary_", "@fromDate", "@toDate", dateTimePickerSummaryTestedMetersFrom, dateTimePickerSummaryTestedMetersTo, "SummaryTestedMeters", reportViewerSummaryTestedMeters);
+
+                        conn.Close();
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingTestedMeters, buttonSummaryTestedMetersSearch);
+
             this.reportViewerSummaryTestedMeters.RefreshReport();
         }
 
-        private void buttonChangedMeterPreviousReadSearch_Click(object sender, EventArgs e)
+        private async void buttonChangedMeterPreviousReadSearch_Click(object sender, EventArgs e)
         {
-            try
+            beforeAwait(pictureBoxLoadingChangedMeterPrevReading, buttonChangedMeterPreviousReadSearch);
+
+            await Task.Run(() =>
             {
-                using (MySqlConnection conn = new MySqlConnection(connStr))
+                try
                 {
-                    conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_getChangedMeterSummaryWithPrevRdng_", conn))
+                    using (MySqlConnection conn = new MySqlConnection(connStr))
                     {
-                        //label5.Text = dateTimePickerChangedMeterPreviousReadMonth.Value.ToString("MM") + dateTimePickerChangedMeterPreviousReadYear.Value.ToString("yyyy");
-                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+                        conn.Open();
 
-                        DataSetMeterReports ds = new DataSetMeterReports();
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_getChangedMeterSummaryWithPrevRdng_", conn))
+                        {
+                            //label5.Text = dateTimePickerChangedMeterPreviousReadMonth.Value.ToString("MM") + dateTimePickerChangedMeterPreviousReadYear.Value.ToString("yyyy");
+                            adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
 
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@asOfMonth", (dateTimePickerChangedMeterPreviousReadMonth.Value.ToString("MM") + dateTimePickerChangedMeterPreviousReadYear.Value.ToString("yyyy")));
-                        adapter.SelectCommand.Parameters["@asOfMonth"].Direction = ParameterDirection.Input;
+                            DataSetMeterReports ds = new DataSetMeterReports();
 
-                        adapter.Fill(ds, "ChangedMeterPreviousRead");
+                            adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                            adapter.SelectCommand.Parameters.AddWithValue("@asOfMonth", (dateTimePickerChangedMeterPreviousReadMonth.Value.ToString("MM") + dateTimePickerChangedMeterPreviousReadYear.Value.ToString("yyyy")));
+                            adapter.SelectCommand.Parameters["@asOfMonth"].Direction = ParameterDirection.Input;
 
-                        ReportDataSource rds = new ReportDataSource("DataSetMeterReports", ds.Tables["ChangedMeterPreviousRead"]);
-                        reportViewerChangedMeterPreviousRead.LocalReport.DataSources.Clear();
-                        reportViewerChangedMeterPreviousRead.LocalReport.DataSources.Add(rds);
+                            adapter.Fill(ds, "ChangedMeterPreviousRead");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetMeterReports", ds.Tables["ChangedMeterPreviousRead"]);
+                            reportViewerChangedMeterPreviousRead.LocalReport.DataSources.Clear();
+                            reportViewerChangedMeterPreviousRead.LocalReport.DataSources.Add(rds);
+                        }
+                        conn.Close();
                     }
-                    conn.Close();
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingChangedMeterPrevReading, buttonChangedMeterPreviousReadSearch);
+
             this.reportViewerChangedMeterPreviousRead.RefreshReport();
         }
 
-        private void buttonSummaryPulledOutMetersSearch_Click(object sender, EventArgs e)
+        private async void buttonSummaryPulledOutMetersSearch_Click(object sender, EventArgs e)
         {
-            try
+            beforeAwait(pictureBoxLoadingPulledOutMeters, buttonSummaryPulledOutMetersSearch);
+
+            await Task.Run(() =>
             {
-                using (MySqlConnection conn = new MySqlConnection(connStr))
+                try
                 {
-                    conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_getPulledOutMeterSummary_", conn))
+                    using (MySqlConnection conn = new MySqlConnection(connStr))
                     {
-                        //label5.Text = dateTimePickerChangedMeterPreviousReadMonth.Value.ToString("MM") + dateTimePickerChangedMeterPreviousReadYear.Value.ToString("yyyy");
-                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+                        conn.Open();
 
-                        DataSetMeterReports ds = new DataSetMeterReports();
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_getPulledOutMeterSummary_", conn))
+                        {
+                            //label5.Text = dateTimePickerChangedMeterPreviousReadMonth.Value.ToString("MM") + dateTimePickerChangedMeterPreviousReadYear.Value.ToString("yyyy");
+                            adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
 
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@asOfMonth", (dateTimePickerSummaryPulledOutMetersMonth.Value.ToString("MM") + dateTimePickerSummaryPulledOutMetersYear.Value.ToString("yyyy")));
-                        adapter.SelectCommand.Parameters["@asOfMonth"].Direction = ParameterDirection.Input;
+                            DataSetMeterReports ds = new DataSetMeterReports();
 
-                        adapter.Fill(ds, "SummaryPulledOutMeters");
+                            adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                            adapter.SelectCommand.Parameters.AddWithValue("@asOfMonth", (dateTimePickerSummaryPulledOutMetersMonth.Value.ToString("MM") + dateTimePickerSummaryPulledOutMetersYear.Value.ToString("yyyy")));
+                            adapter.SelectCommand.Parameters["@asOfMonth"].Direction = ParameterDirection.Input;
 
-                        ReportDataSource rds = new ReportDataSource("DataSetMeterReports", ds.Tables["SummaryPulledOutMeters"]);
-                        reportViewerSummaryPulledOutMeters.LocalReport.DataSources.Clear();
-                        reportViewerSummaryPulledOutMeters.LocalReport.DataSources.Add(rds);
+                            adapter.Fill(ds, "SummaryPulledOutMeters");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetMeterReports", ds.Tables["SummaryPulledOutMeters"]);
+                            reportViewerSummaryPulledOutMeters.LocalReport.DataSources.Clear();
+                            reportViewerSummaryPulledOutMeters.LocalReport.DataSources.Add(rds);
+                        }
+                        conn.Close();
                     }
-                    conn.Close();
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingPulledOutMeters, buttonSummaryPulledOutMetersSearch);
+
             this.reportViewerSummaryPulledOutMeters.RefreshReport();
         }
 
@@ -228,71 +285,95 @@ namespace ConcessionaireReports
             dateTimePickerSummaryAlterationFrom.MaxDate = dateTimePickerSummaryAlterationTo.Value.Date;
         }
 
-        private void buttonSummaryAlterationSearch_Click(object sender, EventArgs e)
+        private async void buttonSummaryAlterationSearch_Click(object sender, EventArgs e)
         {
-            try
+            beforeAwait(pictureBoxLoadingAlteration, buttonSummaryAlterationSearch);
+
+            await Task.Run(() =>
             {
-                using (MySqlConnection conn = new MySqlConnection(connStr))
+                try
                 {
-                    conn.Open();
-
-                    bindDate(conn, "sp_GilGetAlterationByDate", "@asOfFrom", "@asOfTo", dateTimePickerSummaryAlterationFrom, dateTimePickerSummaryAlterationTo, "SummaryAlteration", reportViewerSummaryAlteration);
-
-                    ReportParameter[] param = new ReportParameter[]
+                    using (MySqlConnection conn = new MySqlConnection(connStr))
                     {
+                        conn.Open();
+
+                        bindDate(conn, "sp_GilGetAlterationByDate", "@asOfFrom", "@asOfTo", dateTimePickerSummaryAlterationFrom, dateTimePickerSummaryAlterationTo, "SummaryAlteration", reportViewerSummaryAlteration);
+
+                        ReportParameter[] param = new ReportParameter[]
+                        {
                         new ReportParameter("ReportParameterFrom", dateTimePickerSummaryAlterationFrom.Value.Date.ToString("MMMM dd, yyyy")),
                         new ReportParameter("ReportParameterTo", dateTimePickerSummaryAlterationTo.Value.Date.ToString("MMMM dd, yyyy"))
-                    };
-                    reportViewerSummaryAlteration.LocalReport.SetParameters(param);
-                    reportViewerSummaryAlteration.LocalReport.Refresh();
-                    
-                    conn.Close();
+                        };
+                        reportViewerSummaryAlteration.LocalReport.SetParameters(param);
+                        reportViewerSummaryAlteration.LocalReport.Refresh();
+
+                        conn.Close();
+                    }
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingAlteration, buttonSummaryAlterationSearch);
+
             this.reportViewerSummaryAlteration.RefreshReport();
         }
 
-        private void buttonSummaryReceivedMetersSearch_Click(object sender, EventArgs e)
+        private async void buttonSummaryReceivedMetersSearch_Click(object sender, EventArgs e)
         {
-            try
-            {
-                using (MySqlConnection conn = new MySqlConnection(connStr))
-                {
-                    conn.Open();
+            beforeAwait(pictureBoxLoadingReceivedMeters, buttonSummaryReceivedMetersSearch);
 
-                    bindDate(conn, "sp_getReceivedMetersSummary_", "@fromDate", "@toDate", dateTimePickerSummaryReceivedMetersFrom, dateTimePickerSummaryReceivedMetersTo, "SummaryReceivedMeters", reportViewerSummaryReceivedMeters);
-                   
-                    conn.Close();
-                }
-            }
-            catch (MySqlException ex)
+            await Task.Run(() =>
             {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                try
+                {
+                    using (MySqlConnection conn = new MySqlConnection(connStr))
+                    {
+                        conn.Open();
+
+                        bindDate(conn, "sp_getReceivedMetersSummary_", "@fromDate", "@toDate", dateTimePickerSummaryReceivedMetersFrom, dateTimePickerSummaryReceivedMetersTo, "SummaryReceivedMeters", reportViewerSummaryReceivedMeters);
+
+                        conn.Close();
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingReceivedMeters, buttonSummaryReceivedMetersSearch);
+
             this.reportViewerSummaryReceivedMeters.RefreshReport();
         }
 
-        private void buttonSummaryDisposedMetersSearch_Click(object sender, EventArgs e)
+        private async void buttonSummaryDisposedMetersSearch_Click(object sender, EventArgs e)
         {
-            try
-            {
-                using (MySqlConnection conn = new MySqlConnection(connStr))
-                {
-                    conn.Open();
+            beforeAwait(pictureBoxLoadingDisposedMeters, buttonSummaryDisposedMetersSearch);
 
-                    bindDate(conn, "sp_getDisposedMetersSummary_", "@fromDate", "@toDate", dateTimePickerSummaryDisposedMetersFrom, dateTimePickerSummaryDisposedMetersTo, "SummaryDisposedMeters", reportViewerSummaryDisposedMeters);
-                 
-                    conn.Close();
-                }
-            }
-            catch (MySqlException ex)
+            await Task.Run(() =>
             {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                try
+                {
+                    using (MySqlConnection conn = new MySqlConnection(connStr))
+                    {
+                        conn.Open();
+
+                        bindDate(conn, "sp_getDisposedMetersSummary_", "@fromDate", "@toDate", dateTimePickerSummaryDisposedMetersFrom, dateTimePickerSummaryDisposedMetersTo, "SummaryDisposedMeters", reportViewerSummaryDisposedMeters);
+
+                        conn.Close();
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingDisposedMeters, buttonSummaryDisposedMetersSearch);
+
             this.reportViewerSummaryDisposedMeters.RefreshReport();
         }
     }

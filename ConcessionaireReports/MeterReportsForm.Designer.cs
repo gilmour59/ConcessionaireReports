@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource16 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource17 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource18 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource19 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource20 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource21 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource15 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MeterReportsForm));
             this.SummaryChangedMetersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetMeterReports = new ConcessionaireReports.DataSetMeterReports();
             this.ChangedMeterPreviousReadBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -94,6 +95,13 @@
             this.label13 = new System.Windows.Forms.Label();
             this.dateTimePickerSummaryTestedMetersTo = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerSummaryTestedMetersFrom = new System.Windows.Forms.DateTimePicker();
+            this.pictureBoxLoadingChangedMeters = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoadingChangedMeterPrevReading = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoadingPulledOutMeters = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoadingAlteration = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoadingReceivedMeters = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoadingDisposedMeters = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoadingTestedMeters = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.SummaryChangedMetersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetMeterReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChangedMeterPreviousReadBindingSource)).BeginInit();
@@ -110,6 +118,13 @@
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingChangedMeters)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingChangedMeterPrevReading)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingPulledOutMeters)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingAlteration)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingReceivedMeters)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDisposedMeters)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingTestedMeters)).BeginInit();
             this.SuspendLayout();
             // 
             // SummaryChangedMetersBindingSource
@@ -174,6 +189,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.pictureBoxLoadingChangedMeters);
             this.tabPage1.Controls.Add(this.reportViewerSummaryChangedMeters);
             this.tabPage1.Controls.Add(this.buttonSummaryChangedMetersSearch);
             this.tabPage1.Controls.Add(this.label1);
@@ -190,9 +206,9 @@
             // 
             // reportViewerSummaryChangedMeters
             // 
-            reportDataSource16.Name = "DataSetMeterReports";
-            reportDataSource16.Value = this.SummaryChangedMetersBindingSource;
-            this.reportViewerSummaryChangedMeters.LocalReport.DataSources.Add(reportDataSource16);
+            reportDataSource1.Name = "DataSetMeterReports";
+            reportDataSource1.Value = this.SummaryChangedMetersBindingSource;
+            this.reportViewerSummaryChangedMeters.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewerSummaryChangedMeters.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReports.ReportSummaryChangedMeters.rdlc";
             this.reportViewerSummaryChangedMeters.Location = new System.Drawing.Point(26, 49);
             this.reportViewerSummaryChangedMeters.Name = "reportViewerSummaryChangedMeters";
@@ -254,6 +270,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.pictureBoxLoadingChangedMeterPrevReading);
             this.tabPage2.Controls.Add(this.reportViewerChangedMeterPreviousRead);
             this.tabPage2.Controls.Add(this.buttonChangedMeterPreviousReadSearch);
             this.tabPage2.Controls.Add(this.label3);
@@ -270,9 +287,9 @@
             // 
             // reportViewerChangedMeterPreviousRead
             // 
-            reportDataSource17.Name = "DataSetMeterReports";
-            reportDataSource17.Value = this.ChangedMeterPreviousReadBindingSource;
-            this.reportViewerChangedMeterPreviousRead.LocalReport.DataSources.Add(reportDataSource17);
+            reportDataSource2.Name = "DataSetMeterReports";
+            reportDataSource2.Value = this.ChangedMeterPreviousReadBindingSource;
+            this.reportViewerChangedMeterPreviousRead.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewerChangedMeterPreviousRead.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReports.ReportChangedMeterPreviousRead.rdlc";
             this.reportViewerChangedMeterPreviousRead.Location = new System.Drawing.Point(26, 49);
             this.reportViewerChangedMeterPreviousRead.Name = "reportViewerChangedMeterPreviousRead";
@@ -335,6 +352,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.pictureBoxLoadingPulledOutMeters);
             this.tabPage3.Controls.Add(this.reportViewerSummaryPulledOutMeters);
             this.tabPage3.Controls.Add(this.buttonSummaryPulledOutMetersSearch);
             this.tabPage3.Controls.Add(this.label4);
@@ -350,9 +368,9 @@
             // 
             // reportViewerSummaryPulledOutMeters
             // 
-            reportDataSource18.Name = "DataSetMeterReports";
-            reportDataSource18.Value = this.SummaryPulledOutMetersBindingSource;
-            this.reportViewerSummaryPulledOutMeters.LocalReport.DataSources.Add(reportDataSource18);
+            reportDataSource3.Name = "DataSetMeterReports";
+            reportDataSource3.Value = this.SummaryPulledOutMetersBindingSource;
+            this.reportViewerSummaryPulledOutMeters.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewerSummaryPulledOutMeters.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReports.ReportSummaryPulledOutMeters.rdlc";
             this.reportViewerSummaryPulledOutMeters.Location = new System.Drawing.Point(26, 49);
             this.reportViewerSummaryPulledOutMeters.Name = "reportViewerSummaryPulledOutMeters";
@@ -415,6 +433,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.pictureBoxLoadingAlteration);
             this.tabPage4.Controls.Add(this.label7);
             this.tabPage4.Controls.Add(this.label14);
             this.tabPage4.Controls.Add(this.dateTimePickerSummaryAlterationTo);
@@ -471,9 +490,9 @@
             // 
             // reportViewerSummaryAlteration
             // 
-            reportDataSource19.Name = "DataSetMeterReports";
-            reportDataSource19.Value = this.SummaryAlterationBindingSource;
-            this.reportViewerSummaryAlteration.LocalReport.DataSources.Add(reportDataSource19);
+            reportDataSource4.Name = "DataSetMeterReports";
+            reportDataSource4.Value = this.SummaryAlterationBindingSource;
+            this.reportViewerSummaryAlteration.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewerSummaryAlteration.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReports.ReportSummaryAlteration.rdlc";
             this.reportViewerSummaryAlteration.Location = new System.Drawing.Point(26, 49);
             this.reportViewerSummaryAlteration.Name = "reportViewerSummaryAlteration";
@@ -494,6 +513,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.pictureBoxLoadingReceivedMeters);
             this.tabPage5.Controls.Add(this.reportViewerSummaryReceivedMeters);
             this.tabPage5.Controls.Add(this.buttonSummaryReceivedMetersSearch);
             this.tabPage5.Controls.Add(this.label9);
@@ -509,9 +529,9 @@
             // 
             // reportViewerSummaryReceivedMeters
             // 
-            reportDataSource20.Name = "DataSetMeterReports";
-            reportDataSource20.Value = this.SummaryReceivedMetersBindingSource;
-            this.reportViewerSummaryReceivedMeters.LocalReport.DataSources.Add(reportDataSource20);
+            reportDataSource5.Name = "DataSetMeterReports";
+            reportDataSource5.Value = this.SummaryReceivedMetersBindingSource;
+            this.reportViewerSummaryReceivedMeters.LocalReport.DataSources.Add(reportDataSource5);
             this.reportViewerSummaryReceivedMeters.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReports.ReportSummaryReceivedMeters.rdlc";
             this.reportViewerSummaryReceivedMeters.Location = new System.Drawing.Point(26, 49);
             this.reportViewerSummaryReceivedMeters.Name = "reportViewerSummaryReceivedMeters";
@@ -573,6 +593,7 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.pictureBoxLoadingDisposedMeters);
             this.tabPage6.Controls.Add(this.reportViewerSummaryDisposedMeters);
             this.tabPage6.Controls.Add(this.buttonSummaryDisposedMetersSearch);
             this.tabPage6.Controls.Add(this.label10);
@@ -588,9 +609,9 @@
             // 
             // reportViewerSummaryDisposedMeters
             // 
-            reportDataSource21.Name = "DataSetMeterReports";
-            reportDataSource21.Value = this.SummaryDisposedMetersBindingSource;
-            this.reportViewerSummaryDisposedMeters.LocalReport.DataSources.Add(reportDataSource21);
+            reportDataSource6.Name = "DataSetMeterReports";
+            reportDataSource6.Value = this.SummaryDisposedMetersBindingSource;
+            this.reportViewerSummaryDisposedMeters.LocalReport.DataSources.Add(reportDataSource6);
             this.reportViewerSummaryDisposedMeters.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReports.ReportSummaryDisposedMeters.rdlc";
             this.reportViewerSummaryDisposedMeters.Location = new System.Drawing.Point(26, 49);
             this.reportViewerSummaryDisposedMeters.Name = "reportViewerSummaryDisposedMeters";
@@ -652,6 +673,7 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.pictureBoxLoadingTestedMeters);
             this.tabPage7.Controls.Add(this.reportViewerSummaryTestedMeters);
             this.tabPage7.Controls.Add(this.buttonSummaryTestedMetersSearch);
             this.tabPage7.Controls.Add(this.label12);
@@ -667,9 +689,9 @@
             // 
             // reportViewerSummaryTestedMeters
             // 
-            reportDataSource15.Name = "DataSetMeterReports";
-            reportDataSource15.Value = this.SummaryTestedMetersBindingSource;
-            this.reportViewerSummaryTestedMeters.LocalReport.DataSources.Add(reportDataSource15);
+            reportDataSource7.Name = "DataSetMeterReports";
+            reportDataSource7.Value = this.SummaryTestedMetersBindingSource;
+            this.reportViewerSummaryTestedMeters.LocalReport.DataSources.Add(reportDataSource7);
             this.reportViewerSummaryTestedMeters.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReports.ReportSummaryTestedMeters.rdlc";
             this.reportViewerSummaryTestedMeters.Location = new System.Drawing.Point(26, 49);
             this.reportViewerSummaryTestedMeters.Name = "reportViewerSummaryTestedMeters";
@@ -729,6 +751,83 @@
             this.dateTimePickerSummaryTestedMetersFrom.Size = new System.Drawing.Size(118, 24);
             this.dateTimePickerSummaryTestedMetersFrom.TabIndex = 35;
             // 
+            // pictureBoxLoadingChangedMeters
+            // 
+            this.pictureBoxLoadingChangedMeters.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingChangedMeters.Image")));
+            this.pictureBoxLoadingChangedMeters.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingChangedMeters.Name = "pictureBoxLoadingChangedMeters";
+            this.pictureBoxLoadingChangedMeters.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingChangedMeters.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingChangedMeters.TabIndex = 71;
+            this.pictureBoxLoadingChangedMeters.TabStop = false;
+            this.pictureBoxLoadingChangedMeters.Visible = false;
+            // 
+            // pictureBoxLoadingChangedMeterPrevReading
+            // 
+            this.pictureBoxLoadingChangedMeterPrevReading.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingChangedMeterPrevReading.Image")));
+            this.pictureBoxLoadingChangedMeterPrevReading.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingChangedMeterPrevReading.Name = "pictureBoxLoadingChangedMeterPrevReading";
+            this.pictureBoxLoadingChangedMeterPrevReading.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingChangedMeterPrevReading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingChangedMeterPrevReading.TabIndex = 71;
+            this.pictureBoxLoadingChangedMeterPrevReading.TabStop = false;
+            this.pictureBoxLoadingChangedMeterPrevReading.Visible = false;
+            // 
+            // pictureBoxLoadingPulledOutMeters
+            // 
+            this.pictureBoxLoadingPulledOutMeters.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingPulledOutMeters.Image")));
+            this.pictureBoxLoadingPulledOutMeters.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingPulledOutMeters.Name = "pictureBoxLoadingPulledOutMeters";
+            this.pictureBoxLoadingPulledOutMeters.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingPulledOutMeters.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingPulledOutMeters.TabIndex = 71;
+            this.pictureBoxLoadingPulledOutMeters.TabStop = false;
+            this.pictureBoxLoadingPulledOutMeters.Visible = false;
+            // 
+            // pictureBoxLoadingAlteration
+            // 
+            this.pictureBoxLoadingAlteration.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingAlteration.Image")));
+            this.pictureBoxLoadingAlteration.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingAlteration.Name = "pictureBoxLoadingAlteration";
+            this.pictureBoxLoadingAlteration.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingAlteration.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingAlteration.TabIndex = 71;
+            this.pictureBoxLoadingAlteration.TabStop = false;
+            this.pictureBoxLoadingAlteration.Visible = false;
+            // 
+            // pictureBoxLoadingReceivedMeters
+            // 
+            this.pictureBoxLoadingReceivedMeters.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingReceivedMeters.Image")));
+            this.pictureBoxLoadingReceivedMeters.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingReceivedMeters.Name = "pictureBoxLoadingReceivedMeters";
+            this.pictureBoxLoadingReceivedMeters.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingReceivedMeters.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingReceivedMeters.TabIndex = 71;
+            this.pictureBoxLoadingReceivedMeters.TabStop = false;
+            this.pictureBoxLoadingReceivedMeters.Visible = false;
+            // 
+            // pictureBoxLoadingDisposedMeters
+            // 
+            this.pictureBoxLoadingDisposedMeters.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingDisposedMeters.Image")));
+            this.pictureBoxLoadingDisposedMeters.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingDisposedMeters.Name = "pictureBoxLoadingDisposedMeters";
+            this.pictureBoxLoadingDisposedMeters.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingDisposedMeters.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingDisposedMeters.TabIndex = 71;
+            this.pictureBoxLoadingDisposedMeters.TabStop = false;
+            this.pictureBoxLoadingDisposedMeters.Visible = false;
+            // 
+            // pictureBoxLoadingTestedMeters
+            // 
+            this.pictureBoxLoadingTestedMeters.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingTestedMeters.Image")));
+            this.pictureBoxLoadingTestedMeters.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingTestedMeters.Name = "pictureBoxLoadingTestedMeters";
+            this.pictureBoxLoadingTestedMeters.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingTestedMeters.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingTestedMeters.TabIndex = 71;
+            this.pictureBoxLoadingTestedMeters.TabStop = false;
+            this.pictureBoxLoadingTestedMeters.Visible = false;
+            // 
             // MeterReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -764,6 +863,13 @@
             this.tabPage6.PerformLayout();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingChangedMeters)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingChangedMeterPrevReading)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingPulledOutMeters)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingAlteration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingReceivedMeters)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDisposedMeters)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingTestedMeters)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -828,5 +934,12 @@
         private System.Windows.Forms.BindingSource SummaryReceivedMetersBindingSource;
         private System.Windows.Forms.BindingSource SummaryDisposedMetersBindingSource;
         private System.Windows.Forms.BindingSource SummaryTestedMetersBindingSource;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingChangedMeters;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingChangedMeterPrevReading;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingPulledOutMeters;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingAlteration;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingReceivedMeters;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingDisposedMeters;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingTestedMeters;
     }
 }
