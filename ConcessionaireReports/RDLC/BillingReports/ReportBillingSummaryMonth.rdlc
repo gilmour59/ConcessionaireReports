@@ -228,21 +228,21 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>3cm</Width>
+                  <Width>3.35278cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2cm</Width>
+                  <Width>2.35278cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.7cm</Width>
+                  <Width>4.05278cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.7cm</Width>
+                  <Width>4.05278cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.5cm</Height>
+                  <Height>0.42cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -255,7 +255,7 @@
                                   <Value>Date</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -290,7 +290,7 @@
                                   <Value>Zone-Book</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -325,13 +325,13 @@
                                   <Value>No. Service Connection</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -360,13 +360,13 @@
                                   <Value>Sales in Cubic Meter</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -387,7 +387,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.5cm</Height>
+                  <Height>0.42cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -400,7 +400,7 @@
                                   <Value>=Fields!bill_date.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <Format>d</Format>
                                   </Style>
                                 </TextRun>
@@ -435,7 +435,7 @@
                                   <Value>=Fields!zone_book.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -469,12 +469,12 @@
                                   <Value>=Fields!cons_count.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -503,12 +503,12 @@
                                   <Value>=Fields!consumption.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -529,7 +529,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.42cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -542,7 +542,7 @@
                                   <Value />
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -577,7 +577,7 @@
                                   <Value />
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -612,13 +612,13 @@
                                   <Value>=Sum(Fields!cons_count.Value)</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <Format>#,0;(#,0)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -648,13 +648,13 @@
                                   <Value>=Sum(Fields!consumption.Value)</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <Format>#,0;(#,0)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -676,7 +676,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.42cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -689,7 +689,7 @@
                                   <Value />
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -724,7 +724,7 @@
                                   <Value />
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -759,13 +759,13 @@
                                   <Value>=Sum(Fields!cons_count.Value)</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <Format>#,0;(#,0)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -795,13 +795,13 @@
                                   <Value>=Sum(Fields!consumption.Value)</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <Format>#,0;(#,0)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -836,7 +836,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>2.5cm</Size>
+                    <Size>2.85278cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox35">
                         <KeepTogether>true</KeepTogether>
@@ -847,7 +847,7 @@
                                 <Value>DR Desc</Value>
                                 <Style>
                                   <FontFamily>calibri</FontFamily>
-                                  <FontSize>9pt</FontSize>
+                                  <FontSize>8pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
                               </TextRun>
@@ -874,7 +874,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>2.5cm</Size>
+                        <Size>2.85278cm</Size>
                         <CellContents>
                           <Textbox Name="Textbox37">
                             <KeepTogether>true</KeepTogether>
@@ -885,7 +885,7 @@
                                     <Value>CR Desc</Value>
                                     <Style>
                                       <FontFamily>calibri</FontFamily>
-                                      <FontSize>9pt</FontSize>
+                                      <FontSize>8pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
                                     </Style>
                                   </TextRun>
@@ -929,7 +929,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>2.5cm</Size>
+                    <Size>2.85278cm</Size>
                     <CellContents>
                       <Textbox Name="DR_Desc">
                         <KeepTogether>true</KeepTogether>
@@ -940,7 +940,7 @@
                                 <Value>=Fields!DR_Desc.Value</Value>
                                 <Style>
                                   <FontFamily>calibri</FontFamily>
-                                  <FontSize>9pt</FontSize>
+                                  <FontSize>8pt</FontSize>
                                 </Style>
                               </TextRun>
                             </TextRuns>
@@ -976,7 +976,7 @@
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
-                        <Size>2.5cm</Size>
+                        <Size>2.85278cm</Size>
                         <CellContents>
                           <Textbox Name="CR_Desc">
                             <KeepTogether>true</KeepTogether>
@@ -987,7 +987,7 @@
                                     <Value>=Fields!CR_Desc.Value</Value>
                                     <Style>
                                       <FontFamily>calibri</FontFamily>
-                                      <FontSize>9pt</FontSize>
+                                      <FontSize>8pt</FontSize>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
@@ -1018,7 +1018,7 @@
                     </TablixMember>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>2.5cm</Size>
+                        <Size>2.85278cm</Size>
                         <CellContents>
                           <Textbox Name="Textbox95">
                             <KeepTogether>true</KeepTogether>
@@ -1029,13 +1029,13 @@
                                     <Value>Total</Value>
                                     <Style>
                                       <FontFamily>calibri</FontFamily>
-                                      <FontSize>9pt</FontSize>
+                                      <FontSize>8pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
                                 <Style>
-                                  <TextAlign>Center</TextAlign>
+                                  <TextAlign>Right</TextAlign>
                                 </Style>
                               </Paragraph>
                             </Paragraphs>
@@ -1060,7 +1060,7 @@
                 </TablixMember>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>2.5cm</Size>
+                    <Size>2.85278cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox100">
                         <KeepTogether>true</KeepTogether>
@@ -1071,13 +1071,13 @@
                                 <Value>Grand Total</Value>
                                 <Style>
                                   <FontFamily>calibri</FontFamily>
-                                  <FontSize>9pt</FontSize>
+                                  <FontSize>8pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
                                 </Style>
                               </TextRun>
                             </TextRuns>
                             <Style>
-                              <TextAlign>Center</TextAlign>
+                              <TextAlign>Right</TextAlign>
                             </Style>
                           </Paragraph>
                         </Paragraphs>
@@ -1099,7 +1099,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>2.5cm</Size>
+                        <Size>2.85278cm</Size>
                         <CellContents>
                           <Textbox Name="Textbox101">
                             <KeepTogether>true</KeepTogether>
@@ -1110,7 +1110,7 @@
                                     <Value />
                                     <Style>
                                       <FontFamily>calibri</FontFamily>
-                                      <FontSize>9pt</FontSize>
+                                      <FontSize>8pt</FontSize>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
@@ -1143,8 +1143,8 @@
             <DataSetName>DataSetBillingReports</DataSetName>
             <Top>2.88349cm</Top>
             <Left>0.47307cm</Left>
-            <Height>2.2cm</Height>
-            <Width>17.4cm</Width>
+            <Height>1.68cm</Height>
+            <Width>19.51667cm</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -1153,7 +1153,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>2.0625in</Height>
+        <Height>1.86458in</Height>
         <Style />
       </Body>
       <Width>8.08663in</Width>
