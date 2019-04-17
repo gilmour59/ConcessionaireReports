@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource10 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MeterReadingReportsForm));
             this.ReadingSlipBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetMeterReadingReports = new ConcessionaireReports.DataSetMeterReadingReports();
             this.MeterReaderAccomplishmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -84,6 +85,11 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.reportViewerUnreadMeters = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.pictureBoxLoadingReadingSlip = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoadingMeterReaderAccomplishment = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoadingIncDecCons = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoadingMinimumCons = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoadingUnreadMeters = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ReadingSlipBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetMeterReadingReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MeterReaderAccomplishmentBindingSource)).BeginInit();
@@ -97,6 +103,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAccountsSuddenIncDecConsumptionChange)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingReadingSlip)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingMeterReaderAccomplishment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingIncDecCons)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingMinimumCons)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingUnreadMeters)).BeginInit();
             this.SuspendLayout();
             // 
             // ReadingSlipBindingSource
@@ -149,6 +160,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.pictureBoxLoadingReadingSlip);
             this.tabPage1.Controls.Add(this.comboBoxReadingSlipBook);
             this.tabPage1.Controls.Add(this.comboBoxReadingSlipZone);
             this.tabPage1.Controls.Add(this.comboBoxReadingSlipBillingMonth);
@@ -198,9 +210,9 @@
             // 
             // reportViewerReadingSlip
             // 
-            reportDataSource7.Name = "DataSetMeterReadingReports";
-            reportDataSource7.Value = this.ReadingSlipBindingSource;
-            this.reportViewerReadingSlip.LocalReport.DataSources.Add(reportDataSource7);
+            reportDataSource1.Name = "DataSetMeterReadingReports";
+            reportDataSource1.Value = this.ReadingSlipBindingSource;
+            this.reportViewerReadingSlip.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewerReadingSlip.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReadingReports.ReportReadingSlip.rdlc";
             this.reportViewerReadingSlip.Location = new System.Drawing.Point(26, 49);
             this.reportViewerReadingSlip.Name = "reportViewerReadingSlip";
@@ -251,6 +263,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.pictureBoxLoadingMeterReaderAccomplishment);
             this.tabPage3.Controls.Add(this.buttonMeterReaderAccomplishmentSearch);
             this.tabPage3.Controls.Add(this.comboBoxMeterReaderAccomplishmentBillingMonth);
             this.tabPage3.Controls.Add(this.label3);
@@ -295,9 +308,9 @@
             // 
             // reportViewerMeterReaderAccomplishment
             // 
-            reportDataSource8.Name = "DataSetMeterReadingReports";
-            reportDataSource8.Value = this.MeterReaderAccomplishmentBindingSource;
-            this.reportViewerMeterReaderAccomplishment.LocalReport.DataSources.Add(reportDataSource8);
+            reportDataSource2.Name = "DataSetMeterReadingReports";
+            reportDataSource2.Value = this.MeterReaderAccomplishmentBindingSource;
+            this.reportViewerMeterReaderAccomplishment.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewerMeterReaderAccomplishment.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReadingReports.ReportMeterReaderAccomplishment.rd" +
     "lc";
             this.reportViewerMeterReaderAccomplishment.Location = new System.Drawing.Point(26, 49);
@@ -308,6 +321,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.pictureBoxLoadingIncDecCons);
             this.tabPage4.Controls.Add(this.numericUpDownAccountsSuddenIncDecConsumptionChange);
             this.tabPage4.Controls.Add(this.comboBoxAccountsSuddenIncDecConsumptionBook);
             this.tabPage4.Controls.Add(this.comboBoxAccountsSuddenIncDecConsumptionZone);
@@ -410,9 +424,9 @@
             // 
             // reportViewerAccountsSuddenIncDecConsumption
             // 
-            reportDataSource6.Name = "DataSetMeterReadingReports";
-            reportDataSource6.Value = this.AccountsSuddenIncDecConsumptionBindingSource;
-            this.reportViewerAccountsSuddenIncDecConsumption.LocalReport.DataSources.Add(reportDataSource6);
+            reportDataSource3.Name = "DataSetMeterReadingReports";
+            reportDataSource3.Value = this.AccountsSuddenIncDecConsumptionBindingSource;
+            this.reportViewerAccountsSuddenIncDecConsumption.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewerAccountsSuddenIncDecConsumption.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReadingReports.ReportAccountsSuddenIncDecConsumpt" +
     "ion.rdlc";
             this.reportViewerAccountsSuddenIncDecConsumption.Location = new System.Drawing.Point(26, 49);
@@ -434,6 +448,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.pictureBoxLoadingMinimumCons);
             this.tabPage5.Controls.Add(this.comboBoxAccountsMinimumConsumptionBook);
             this.tabPage5.Controls.Add(this.reportViewerAccountsMinimumConsumption);
             this.tabPage5.Controls.Add(this.comboBoxAccountsMinimumConsumptionZone);
@@ -461,9 +476,9 @@
             // 
             // reportViewerAccountsMinimumConsumption
             // 
-            reportDataSource9.Name = "DataSetMeterReadingReports";
-            reportDataSource9.Value = this.AccountsMinimumConsumptionBindingSource;
-            this.reportViewerAccountsMinimumConsumption.LocalReport.DataSources.Add(reportDataSource9);
+            reportDataSource4.Name = "DataSetMeterReadingReports";
+            reportDataSource4.Value = this.AccountsMinimumConsumptionBindingSource;
+            this.reportViewerAccountsMinimumConsumption.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewerAccountsMinimumConsumption.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReadingReports.ReportAccountsMinimumConsumption.r" +
     "dlc";
             this.reportViewerAccountsMinimumConsumption.Location = new System.Drawing.Point(26, 49);
@@ -536,6 +551,7 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.pictureBoxLoadingUnreadMeters);
             this.tabPage6.Controls.Add(this.comboBoxUnreadMetersBook);
             this.tabPage6.Controls.Add(this.comboBoxUnreadMetersZone);
             this.tabPage6.Controls.Add(this.buttonUnreadMetersSearch);
@@ -625,15 +641,70 @@
             // 
             // reportViewerUnreadMeters
             // 
-            reportDataSource10.Name = "DataSetMeterReadingReports";
-            reportDataSource10.Value = this.UnreadMetersBindingSource;
-            this.reportViewerUnreadMeters.LocalReport.DataSources.Add(reportDataSource10);
+            reportDataSource5.Name = "DataSetMeterReadingReports";
+            reportDataSource5.Value = this.UnreadMetersBindingSource;
+            this.reportViewerUnreadMeters.LocalReport.DataSources.Add(reportDataSource5);
             this.reportViewerUnreadMeters.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.MeterReadingReports.ReportUnreadMeters.rdlc";
             this.reportViewerUnreadMeters.Location = new System.Drawing.Point(26, 49);
             this.reportViewerUnreadMeters.Name = "reportViewerUnreadMeters";
             this.reportViewerUnreadMeters.ServerReport.BearerToken = null;
             this.reportViewerUnreadMeters.Size = new System.Drawing.Size(944, 481);
             this.reportViewerUnreadMeters.TabIndex = 35;
+            // 
+            // pictureBoxLoadingReadingSlip
+            // 
+            this.pictureBoxLoadingReadingSlip.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingReadingSlip.Image")));
+            this.pictureBoxLoadingReadingSlip.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingReadingSlip.Name = "pictureBoxLoadingReadingSlip";
+            this.pictureBoxLoadingReadingSlip.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingReadingSlip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingReadingSlip.TabIndex = 72;
+            this.pictureBoxLoadingReadingSlip.TabStop = false;
+            this.pictureBoxLoadingReadingSlip.Visible = false;
+            // 
+            // pictureBoxLoadingMeterReaderAccomplishment
+            // 
+            this.pictureBoxLoadingMeterReaderAccomplishment.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingMeterReaderAccomplishment.Image")));
+            this.pictureBoxLoadingMeterReaderAccomplishment.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingMeterReaderAccomplishment.Name = "pictureBoxLoadingMeterReaderAccomplishment";
+            this.pictureBoxLoadingMeterReaderAccomplishment.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingMeterReaderAccomplishment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingMeterReaderAccomplishment.TabIndex = 72;
+            this.pictureBoxLoadingMeterReaderAccomplishment.TabStop = false;
+            this.pictureBoxLoadingMeterReaderAccomplishment.Visible = false;
+            // 
+            // pictureBoxLoadingIncDecCons
+            // 
+            this.pictureBoxLoadingIncDecCons.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingIncDecCons.Image")));
+            this.pictureBoxLoadingIncDecCons.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingIncDecCons.Name = "pictureBoxLoadingIncDecCons";
+            this.pictureBoxLoadingIncDecCons.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingIncDecCons.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingIncDecCons.TabIndex = 72;
+            this.pictureBoxLoadingIncDecCons.TabStop = false;
+            this.pictureBoxLoadingIncDecCons.Visible = false;
+            // 
+            // pictureBoxLoadingMinimumCons
+            // 
+            this.pictureBoxLoadingMinimumCons.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingMinimumCons.Image")));
+            this.pictureBoxLoadingMinimumCons.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingMinimumCons.Name = "pictureBoxLoadingMinimumCons";
+            this.pictureBoxLoadingMinimumCons.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingMinimumCons.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingMinimumCons.TabIndex = 72;
+            this.pictureBoxLoadingMinimumCons.TabStop = false;
+            this.pictureBoxLoadingMinimumCons.Visible = false;
+            // 
+            // pictureBoxLoadingUnreadMeters
+            // 
+            this.pictureBoxLoadingUnreadMeters.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingUnreadMeters.Image")));
+            this.pictureBoxLoadingUnreadMeters.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingUnreadMeters.Name = "pictureBoxLoadingUnreadMeters";
+            this.pictureBoxLoadingUnreadMeters.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingUnreadMeters.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingUnreadMeters.TabIndex = 72;
+            this.pictureBoxLoadingUnreadMeters.TabStop = false;
+            this.pictureBoxLoadingUnreadMeters.Visible = false;
             // 
             // MeterReadingReportsForm
             // 
@@ -665,6 +736,11 @@
             this.tabPage5.PerformLayout();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingReadingSlip)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingMeterReaderAccomplishment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingIncDecCons)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingMinimumCons)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingUnreadMeters)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -721,5 +797,10 @@
         private System.Windows.Forms.ComboBox comboBoxMeterReaderAccomplishmentBillingMonth;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.BindingSource MeterReaderAccomplishmentBindingSource;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingReadingSlip;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingMeterReaderAccomplishment;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingIncDecCons;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingMinimumCons;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingUnreadMeters;
     }
 }
