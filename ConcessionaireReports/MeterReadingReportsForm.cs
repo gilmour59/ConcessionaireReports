@@ -160,97 +160,144 @@ namespace ConcessionaireReports
             }
         }
 
-        private void buttonReadingSlipSearch_Click(object sender, EventArgs e)
+        private void beforeAwait(PictureBox pb, Button b)
         {
-            try
+            //tabControlCollectionReports.TabPages[0].Enabled = false;
+            foreach (TabPage tp in tabControlMeterReadingReports.TabPages)
             {
-                using (MySqlConnection conn = new MySqlConnection(connStr))
+                if (!(tp == tabControlMeterReadingReports.SelectedTab))
                 {
-                    conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetReadingSlipData_", conn))
-                    {
-                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
-
-                        DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
-
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@zone", comboBoxReadingSlipZone.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@zone"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@book", comboBoxReadingSlipBook.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@book"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@bill_month_id", comboBoxReadingSlipBillingMonth.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@bill_month_id"].Direction = ParameterDirection.Input;
-
-                        adapter.Fill(ds, "ReadingSlip");
-
-                        ReportDataSource rds = new ReportDataSource("DataSetMeterReadingReports", ds.Tables["ReadingSlip"]);
-                        reportViewerReadingSlip.LocalReport.DataSources.Clear();
-                        reportViewerReadingSlip.LocalReport.DataSources.Add(rds);
-
-                        ReportParameter[] param = new ReportParameter[]
-                        {
-                            new ReportParameter("ReportParameterDate", comboBoxReadingSlipBillingMonth.Text),
-                        };
-                        reportViewerReadingSlip.LocalReport.SetParameters(param);
-                        reportViewerReadingSlip.LocalReport.Refresh();
-                    }
-                    conn.Close();
+                    tp.Enabled = false;
                 }
             }
-            catch (MySqlException ex)
+            b.Enabled = false;
+            pb.Show();
+            pb.Update();
+        }
+
+        private void afterAwait(PictureBox pb, Button b)
+        {
+            foreach (TabPage tp in tabControlMeterReadingReports.TabPages)
             {
-                MessageBox.Show("error: " + ex, "Error!");
+                tp.Enabled = true;
             }
+            b.Enabled = true;
+            pb.Hide();
+        }
+
+        private async void buttonReadingSlipSearch_Click(object sender, EventArgs e)
+        {
+            beforeAwait(pictureBoxLoadingReadingSlip, buttonReadingSlipSearch);
+
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (MySqlConnection conn = new MySqlConnection(connStr))
+                    {
+                        conn.Open();
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetReadingSlipData_", conn))
+                        {
+                            adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+
+                            DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
+
+                            Invoke((MethodInvoker)delegate () 
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@zone", comboBoxReadingSlipZone.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@zone"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@book", comboBoxReadingSlipBook.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@book"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@bill_month_id", comboBoxReadingSlipBillingMonth.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@bill_month_id"].Direction = ParameterDirection.Input;
+
+                                adapter.Fill(ds, "ReadingSlip");
+
+                                ReportDataSource rds = new ReportDataSource("DataSetMeterReadingReports", ds.Tables["ReadingSlip"]);
+                                reportViewerReadingSlip.LocalReport.DataSources.Clear();
+                                reportViewerReadingSlip.LocalReport.DataSources.Add(rds);
+
+                                ReportParameter[] param = new ReportParameter[]
+                                {
+                                    new ReportParameter("ReportParameterDate", comboBoxReadingSlipBillingMonth.Text),
+                                };
+                                reportViewerReadingSlip.LocalReport.SetParameters(param);
+                                reportViewerReadingSlip.LocalReport.Refresh();
+                            });                                                      
+                        }
+                        conn.Close();
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingReadingSlip, buttonReadingSlipSearch);
+
             this.reportViewerReadingSlip.RefreshReport();
         }
 
-        private void buttonAccountsSuddenIncDecConsumptionSearch_Click(object sender, EventArgs e)
+        private async void buttonAccountsSuddenIncDecConsumptionSearch_Click(object sender, EventArgs e)
         {
-            try
+            beforeAwait(pictureBoxLoadingIncDecCons, buttonAccountsSuddenIncDecConsumptionSearch);
+
+            await Task.Run(() =>
             {
-                using (MySqlConnection conn = new MySqlConnection(connStr))
+                try
                 {
-                    conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetSuddenUpDownInComsumption_", conn))
+                    using (MySqlConnection conn = new MySqlConnection(connStr))
                     {
-                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+                        conn.Open();
 
-                        DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
-
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@billMonth", comboBoxAccountsSuddenIncDecConsumptionBillingMonth.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@billMonth"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountsSuddenIncDecConsumptionZone.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxAccountsSuddenIncDecConsumptionBook.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@in_change", numericUpDownAccountsSuddenIncDecConsumptionChange.Value);
-                        adapter.SelectCommand.Parameters["@in_change"].Direction = ParameterDirection.Input;
-
-                        adapter.Fill(ds, "AccountsSuddenIncDecConsumption");
-
-                        ReportDataSource rds = new ReportDataSource("DataSetMeterReadingReports", ds.Tables["AccountsSuddenIncDecConsumption"]);
-                        reportViewerAccountsSuddenIncDecConsumption.LocalReport.DataSources.Clear();
-                        reportViewerAccountsSuddenIncDecConsumption.LocalReport.DataSources.Add(rds);
-
-                        ReportParameter[] param = new ReportParameter[]
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetSuddenUpDownInComsumption_", conn))
                         {
-                            new ReportParameter("ReportParameterDate", comboBoxAccountsSuddenIncDecConsumptionBillingMonth.Text),
-                            new ReportParameter("ReportParameterZone", comboBoxAccountsSuddenIncDecConsumptionZone.Text),
-                            new ReportParameter("ReportParameterBook", comboBoxAccountsSuddenIncDecConsumptionBook.Text)
-                        };
-                        reportViewerAccountsSuddenIncDecConsumption.LocalReport.SetParameters(param);
-                        reportViewerAccountsSuddenIncDecConsumption.LocalReport.Refresh();
+                            adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+
+                            DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
+
+                            Invoke((MethodInvoker)delegate ()
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@billMonth", comboBoxAccountsSuddenIncDecConsumptionBillingMonth.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@billMonth"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountsSuddenIncDecConsumptionZone.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxAccountsSuddenIncDecConsumptionBook.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@in_change", numericUpDownAccountsSuddenIncDecConsumptionChange.Value);
+                                adapter.SelectCommand.Parameters["@in_change"].Direction = ParameterDirection.Input;
+
+                                adapter.Fill(ds, "AccountsSuddenIncDecConsumption");
+
+                                ReportDataSource rds = new ReportDataSource("DataSetMeterReadingReports", ds.Tables["AccountsSuddenIncDecConsumption"]);
+                                reportViewerAccountsSuddenIncDecConsumption.LocalReport.DataSources.Clear();
+                                reportViewerAccountsSuddenIncDecConsumption.LocalReport.DataSources.Add(rds);
+
+                                ReportParameter[] param = new ReportParameter[]
+                                {
+                                    new ReportParameter("ReportParameterDate", comboBoxAccountsSuddenIncDecConsumptionBillingMonth.Text),
+                                    new ReportParameter("ReportParameterZone", comboBoxAccountsSuddenIncDecConsumptionZone.Text),
+                                    new ReportParameter("ReportParameterBook", comboBoxAccountsSuddenIncDecConsumptionBook.Text)
+                                };
+                                reportViewerAccountsSuddenIncDecConsumption.LocalReport.SetParameters(param);
+                                reportViewerAccountsSuddenIncDecConsumption.LocalReport.Refresh();
+                            });                            
+                        }
+                        conn.Close();
                     }
-                    conn.Close();
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingIncDecCons, buttonAccountsSuddenIncDecConsumptionSearch);
+            
             this.reportViewerAccountsSuddenIncDecConsumption.RefreshReport();
         }
 
@@ -312,50 +359,61 @@ namespace ConcessionaireReports
             }
         }
 
-        private void buttonAccountsMinimumConsumptionSearch_Click(object sender, EventArgs e)
+        private async void buttonAccountsMinimumConsumptionSearch_Click(object sender, EventArgs e)
         {
-            try
+            beforeAwait(pictureBoxLoadingMinimumCons, buttonAccountsMinimumConsumptionSearch);
+
+            await Task.Run(() =>
             {
-                using (MySqlConnection conn = new MySqlConnection(connStr))
+                try
                 {
-                    conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetAccountsWithMinConsumption_", conn))
+                    using (MySqlConnection conn = new MySqlConnection(connStr))
                     {
-                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+                        conn.Open();
 
-                        DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
-
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@billMonth", comboBoxAccountsMinimumConsumptionBillingMonth.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@billMonth"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountsMinimumConsumptionZone.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxAccountsMinimumConsumptionBook.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
-
-                        adapter.Fill(ds, "AccountsMinimumConsumption");
-
-                        ReportDataSource rds = new ReportDataSource("DataSetMeterReadingReports", ds.Tables["AccountsMinimumConsumption"]);
-                        reportViewerAccountsMinimumConsumption.LocalReport.DataSources.Clear();
-                        reportViewerAccountsMinimumConsumption.LocalReport.DataSources.Add(rds);
-
-                        ReportParameter[] param = new ReportParameter[]
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetAccountsWithMinConsumption_", conn))
                         {
-                            new ReportParameter("ReportParameterDate", comboBoxAccountsMinimumConsumptionBillingMonth.Text),
-                            new ReportParameter("ReportParameterZone", comboBoxAccountsMinimumConsumptionZone.Text),
-                            new ReportParameter("ReportParameterBook", comboBoxAccountsMinimumConsumptionBook.Text)
-                        };
-                        reportViewerAccountsMinimumConsumption.LocalReport.SetParameters(param);
-                        reportViewerAccountsMinimumConsumption.LocalReport.Refresh();
+                            adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+
+                            DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
+
+                            Invoke((MethodInvoker)delegate ()
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@billMonth", comboBoxAccountsMinimumConsumptionBillingMonth.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@billMonth"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountsMinimumConsumptionZone.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxAccountsMinimumConsumptionBook.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
+
+                                adapter.Fill(ds, "AccountsMinimumConsumption");
+
+                                ReportDataSource rds = new ReportDataSource("DataSetMeterReadingReports", ds.Tables["AccountsMinimumConsumption"]);
+                                reportViewerAccountsMinimumConsumption.LocalReport.DataSources.Clear();
+                                reportViewerAccountsMinimumConsumption.LocalReport.DataSources.Add(rds);
+
+                                ReportParameter[] param = new ReportParameter[]
+                                {
+                                    new ReportParameter("ReportParameterDate", comboBoxAccountsMinimumConsumptionBillingMonth.Text),
+                                    new ReportParameter("ReportParameterZone", comboBoxAccountsMinimumConsumptionZone.Text),
+                                    new ReportParameter("ReportParameterBook", comboBoxAccountsMinimumConsumptionBook.Text)
+                                };
+                                reportViewerAccountsMinimumConsumption.LocalReport.SetParameters(param);
+                                reportViewerAccountsMinimumConsumption.LocalReport.Refresh();
+                            });                            
+                        }
+                        conn.Close();
                     }
-                    conn.Close();
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingMinimumCons, buttonAccountsMinimumConsumptionSearch);
+            
             this.reportViewerAccountsMinimumConsumption.RefreshReport();
         }
 
@@ -388,91 +446,113 @@ namespace ConcessionaireReports
             }
         }
 
-        private void buttonUnreadMetersSearch_Click(object sender, EventArgs e)
+        private async void buttonUnreadMetersSearch_Click(object sender, EventArgs e)
         {
-            try
+            beforeAwait(pictureBoxLoadingUnreadMeters, buttonUnreadMetersSearch);
+
+            await Task.Run(() =>
             {
-                using (MySqlConnection conn = new MySqlConnection(connStr))
+                try
                 {
-                    conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetUnreadMeters_", conn))
+                    using (MySqlConnection conn = new MySqlConnection(connStr))
                     {
-                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+                        conn.Open();
 
-                        DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
-
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@billMonth", comboBoxUnreadMetersBillingMonth.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@billMonth"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxUnreadMetersZone.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxUnreadMetersBook.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
-
-                        adapter.Fill(ds, "UnreadMeters");
-
-                        ReportDataSource rds = new ReportDataSource("DataSetMeterReadingReports", ds.Tables["UnreadMeters"]);
-                        reportViewerUnreadMeters.LocalReport.DataSources.Clear();
-                        reportViewerUnreadMeters.LocalReport.DataSources.Add(rds);
-
-                        ReportParameter[] param = new ReportParameter[]
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetUnreadMeters_", conn))
                         {
-                            new ReportParameter("ReportParameterDate", comboBoxUnreadMetersBillingMonth.Text),
-                            new ReportParameter("ReportParameterZone", comboBoxUnreadMetersZone.Text),
-                            new ReportParameter("ReportParameterBook", comboBoxUnreadMetersBook.Text)
-                        };
-                        reportViewerUnreadMeters.LocalReport.SetParameters(param);
-                        reportViewerUnreadMeters.LocalReport.Refresh();
+                            adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+
+                            DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
+
+                            Invoke((MethodInvoker)delegate ()
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@billMonth", comboBoxUnreadMetersBillingMonth.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@billMonth"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxUnreadMetersZone.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxUnreadMetersBook.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
+
+                                adapter.Fill(ds, "UnreadMeters");
+
+                                ReportDataSource rds = new ReportDataSource("DataSetMeterReadingReports", ds.Tables["UnreadMeters"]);
+                                reportViewerUnreadMeters.LocalReport.DataSources.Clear();
+                                reportViewerUnreadMeters.LocalReport.DataSources.Add(rds);
+
+                                ReportParameter[] param = new ReportParameter[]
+                                {
+                                new ReportParameter("ReportParameterDate", comboBoxUnreadMetersBillingMonth.Text),
+                                new ReportParameter("ReportParameterZone", comboBoxUnreadMetersZone.Text),
+                                new ReportParameter("ReportParameterBook", comboBoxUnreadMetersBook.Text)
+                                };
+                                reportViewerUnreadMeters.LocalReport.SetParameters(param);
+                                reportViewerUnreadMeters.LocalReport.Refresh();
+                            });                            
+                        }
+                        conn.Close();
                     }
-                    conn.Close();
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingUnreadMeters, buttonUnreadMetersSearch);
+
             this.reportViewerUnreadMeters.RefreshReport();
         }
 
-        private void buttonMeterReaderAccomplishmentSearch_Click(object sender, EventArgs e)
+        private async void buttonMeterReaderAccomplishmentSearch_Click(object sender, EventArgs e)
         {
-            try
+            beforeAwait(pictureBoxLoadingMeterReaderAccomplishment, buttonMeterReaderAccomplishmentSearch);
+
+            await Task.Run(() =>
             {
-                using (MySqlConnection conn = new MySqlConnection(connStr))
+                try
                 {
-                    conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetMeterReaderAccomplishment_", conn))
+                    using (MySqlConnection conn = new MySqlConnection(connStr))
                     {
-                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+                        conn.Open();
 
-                        DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
-
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@billMonth", comboBoxMeterReaderAccomplishmentBillingMonth.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@billMonth"].Direction = ParameterDirection.Input;
-
-                        adapter.Fill(ds, "MeterReaderAccomplishment");
-
-                        ReportDataSource rds = new ReportDataSource("DataSetMeterReadingReports", ds.Tables["MeterReaderAccomplishment"]);
-                        reportViewerMeterReaderAccomplishment.LocalReport.DataSources.Clear();
-                        reportViewerMeterReaderAccomplishment.LocalReport.DataSources.Add(rds);
-
-                        ReportParameter[] param = new ReportParameter[]
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetMeterReaderAccomplishment_", conn))
                         {
-                            new ReportParameter("ReportParameterDate", comboBoxMeterReaderAccomplishmentBillingMonth.Text)
-                        };
-                        reportViewerMeterReaderAccomplishment.LocalReport.SetParameters(param);
-                        reportViewerMeterReaderAccomplishment.LocalReport.Refresh();
+                            adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+
+                            DataSetMeterReadingReports ds = new DataSetMeterReadingReports();
+
+                            Invoke((MethodInvoker)delegate ()
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@billMonth", comboBoxMeterReaderAccomplishmentBillingMonth.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@billMonth"].Direction = ParameterDirection.Input;
+
+                                adapter.Fill(ds, "MeterReaderAccomplishment");
+
+                                ReportDataSource rds = new ReportDataSource("DataSetMeterReadingReports", ds.Tables["MeterReaderAccomplishment"]);
+                                reportViewerMeterReaderAccomplishment.LocalReport.DataSources.Clear();
+                                reportViewerMeterReaderAccomplishment.LocalReport.DataSources.Add(rds);
+
+                                ReportParameter[] param = new ReportParameter[]
+                                {
+                                    new ReportParameter("ReportParameterDate", comboBoxMeterReaderAccomplishmentBillingMonth.Text)
+                                };
+                                reportViewerMeterReaderAccomplishment.LocalReport.SetParameters(param);
+                                reportViewerMeterReaderAccomplishment.LocalReport.Refresh();
+                            });                            
+                        }
+                        conn.Close();
                     }
-                    conn.Close();
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingMeterReaderAccomplishment, buttonMeterReaderAccomplishmentSearch);
+
             this.reportViewerMeterReaderAccomplishment.RefreshReport();
         }
     }
