@@ -88,7 +88,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.5cm</Height>
+                  <Height>0.42cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -102,12 +102,14 @@
                                   <Value>Reader Name</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox73</rd:DefaultName>
@@ -136,7 +138,7 @@
                                   <Value>Zone-Book</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -172,7 +174,7 @@
                                   <Value>Meters Read</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -208,7 +210,7 @@
                                   <Value>Connected</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -244,7 +246,7 @@
                                   <Value>Disconnected</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -280,7 +282,7 @@
                                   <Value>Unread</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -307,7 +309,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.5cm</Height>
+                  <Height>0.42cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -320,7 +322,7 @@
                                   <Value>=Fields!reader_name.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -341,7 +343,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -355,7 +356,7 @@
                                   <Value>=Fields!zone_book.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -389,7 +390,7 @@
                                   <Value>=Fields!read_meter.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -423,7 +424,7 @@
                                   <Value>=Fields!connected.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -457,7 +458,7 @@
                                   <Value>=Fields!dicconnected.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -491,7 +492,7 @@
                                   <Value>=Fields!unread.Value</Value>
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
-                                    <FontSize>9pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <Format>d</Format>
                                   </Style>
                                 </TextRun>
@@ -543,7 +544,7 @@
             <DataSetName>DataSetMeterReadingReports</DataSetName>
             <Top>2.99286cm</Top>
             <Left>0.32186cm</Left>
-            <Height>1cm</Height>
+            <Height>0.84cm</Height>
             <Width>19.9368cm</Width>
             <Style>
               <Border>
@@ -558,22 +559,23 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>="Total: " &amp; Count(Fields!reader_name.Value, "DataSetMeterReadingReports")</Value>
+                    <Value>="Total: " &amp; System.Environment.NewLine + Format(Count(Fields!reader_name.Value, "DataSetMeterReadingReports"), "#,0")</Value>
                     <Style>
                       <FontFamily>calibri</FontFamily>
+                      <FontSize>8pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Left</TextAlign>
+                  <TextAlign>Center</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
-            <Top>4.22039cm</Top>
+            <Top>4.06164cm</Top>
             <Left>0.32186cm</Left>
-            <Height>0.49417cm</Height>
+            <Height>0.42cm</Height>
             <Width>5.8217cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
@@ -729,7 +731,7 @@
             </Style>
           </Textbox>
           <Line Name="Line1">
-            <Top>4.08252cm</Top>
+            <Top>3.95552cm</Top>
             <Left>0.29945cm</Left>
             <Height>0cm</Height>
             <Width>19.95922cm</Width>
@@ -741,7 +743,7 @@
             </Style>
           </Line>
         </ReportItems>
-        <Height>1.95833in</Height>
+        <Height>1.83333in</Height>
         <Style />
       </Body>
       <Width>8.09375in</Width>
