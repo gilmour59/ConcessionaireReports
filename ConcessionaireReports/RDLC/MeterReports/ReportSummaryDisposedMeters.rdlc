@@ -166,7 +166,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.5cm</Height>
+              <Height>0.42cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -180,7 +180,7 @@
                               <Value>Date Disposed</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -216,7 +216,7 @@
                               <Value>Meter Serial</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -252,7 +252,7 @@
                               <Value>Brand Name</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -288,7 +288,7 @@
                               <Value>Reading</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -324,7 +324,7 @@
                               <Value>Accuracy</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -360,13 +360,13 @@
                               <Value>Remarks</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Left</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -387,7 +387,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.5cm</Height>
+              <Height>0.42cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -401,7 +401,7 @@
                               <Value>=Fields!date_changed.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <Format>d</Format>
                               </Style>
                             </TextRun>
@@ -437,7 +437,7 @@
                               <Value>=Fields!new_meter.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -472,7 +472,7 @@
                               <Value>=Fields!brand_name.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -507,7 +507,7 @@
                               <Value>=Fields!pres_reading.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -542,7 +542,7 @@
                               <Value>=Fields!accuracy.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -577,12 +577,12 @@
                               <Value>=Fields!remarks.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Left</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -627,7 +627,7 @@
         <DataSetName>DataSetMeterReports</DataSetName>
         <Top>3.19017cm</Top>
         <Left>0.50333cm</Left>
-        <Height>1cm</Height>
+        <Height>0.84cm</Height>
         <Width>19.525cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
@@ -637,7 +637,7 @@
         </Style>
       </Tablix>
       <Line Name="Line2">
-        <Top>4.32259cm</Top>
+        <Top>4.13209cm</Top>
         <Left>0.50333cm</Left>
         <Height>0cm</Height>
         <Width>19.525cm</Width>
@@ -655,9 +655,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>="Total Disposed Meters: " &amp; Count(Fields!new_meter.Value, "DataSetMeterReports")</Value>
+                <Value>="Total Disposed Meters: " &amp; System.Environment.NewLine + Format(Count(Fields!new_meter.Value, "DataSetMeterReports"), "#,0")</Value>
                 <Style>
                   <FontFamily>calibri</FontFamily>
+                  <FontSize>8pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -668,9 +669,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox17</rd:DefaultName>
-        <Top>4.44253cm</Top>
+        <Top>4.18853cm</Top>
         <Left>0.50333cm</Left>
-        <Height>0.49417cm</Height>
+        <Height>0.42cm</Height>
         <Width>6.94605cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
@@ -684,7 +685,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>2.02083in</Height>
+    <Height>1.86458in</Height>
     <Style />
   </Body>
   <Width>8.08333in</Width>

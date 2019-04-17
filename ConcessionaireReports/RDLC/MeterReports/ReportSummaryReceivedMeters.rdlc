@@ -160,7 +160,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.5cm</Height>
+              <Height>0.42cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -174,7 +174,7 @@
                               <Value>Date Received</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -210,7 +210,7 @@
                               <Value>Meter Serial</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -246,7 +246,7 @@
                               <Value>Brand Name</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -282,13 +282,13 @@
                               <Value>Remarks</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Left</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -309,7 +309,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.5cm</Height>
+              <Height>0.42cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -323,7 +323,7 @@
                               <Value>=Fields!date_changed.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <Format>d</Format>
                               </Style>
                             </TextRun>
@@ -345,7 +345,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -360,7 +359,7 @@
                               <Value>=Fields!new_meter.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -395,7 +394,7 @@
                               <Value>=Fields!brand_name.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -430,12 +429,12 @@
                               <Value>=Fields!remarks.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Left</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -478,7 +477,7 @@
         <DataSetName>DataSetMeterReports</DataSetName>
         <Top>3.19828cm</Top>
         <Left>0.50867cm</Left>
-        <Height>1cm</Height>
+        <Height>0.84cm</Height>
         <Width>19.525cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
@@ -488,7 +487,7 @@
         </Style>
       </Tablix>
       <Line Name="Line2">
-        <Top>4.3307cm</Top>
+        <Top>4.1402cm</Top>
         <Left>0.50867cm</Left>
         <Height>0cm</Height>
         <Width>19.525cm</Width>
@@ -506,9 +505,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>="Total Received Meters: " &amp; Count(Fields!new_meter.Value, "DataSetMeterReports")</Value>
+                <Value>="Total Received Meters: " &amp; System.Environment.NewLine + Format(Count(Fields!new_meter.Value, "DataSetMeterReports"), "#,0")</Value>
                 <Style>
                   <FontFamily>calibri</FontFamily>
+                  <FontSize>8pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -519,9 +519,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox17</rd:DefaultName>
-        <Top>4.45064cm</Top>
+        <Top>4.26014cm</Top>
         <Left>0.50867cm</Left>
-        <Height>0.49417cm</Height>
+        <Height>0.42cm</Height>
         <Width>6.94605cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
@@ -535,7 +535,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>2.00723in</Height>
+    <Height>1.88223in</Height>
     <Style />
   </Body>
   <Width>8.08333in</Width>
