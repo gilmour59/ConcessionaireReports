@@ -226,13 +226,7 @@ namespace ConcessionaireReports
                                     adapter.SelectCommand.Parameters["@status_code"].Direction = ParameterDirection.Input;
                                     adapter.SelectCommand.Parameters.AddWithValue("@flag", null);
                                     adapter.SelectCommand.Parameters["@flag"].Direction = ParameterDirection.Input;
-                                }
-
-                                adapter.Fill(ds, "AccountPerBook");
-
-                                ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountPerBook"]);
-                                reportViewerAccountPerBook.LocalReport.DataSources.Clear();
-                                reportViewerAccountPerBook.LocalReport.DataSources.Add(rds);
+                                }                                
 
                                 ReportParameter[] param = new ReportParameter[]
                                 {
@@ -241,7 +235,13 @@ namespace ConcessionaireReports
                                 };
                                 reportViewerAccountPerBook.LocalReport.SetParameters(param);
                                 reportViewerAccountPerBook.LocalReport.Refresh();
-                            });                                                   
+                            });
+
+                            adapter.Fill(ds, "AccountPerBook");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountPerBook"]);
+                            reportViewerAccountPerBook.LocalReport.DataSources.Clear();
+                            reportViewerAccountPerBook.LocalReport.DataSources.Add(rds);
                         }
                         conn.Close();
                     }
@@ -370,13 +370,7 @@ namespace ConcessionaireReports
                                 adapter.SelectCommand.Parameters.AddWithValue("@connectedCode", 4);
                                 adapter.SelectCommand.Parameters["@connectedCode"].Direction = ParameterDirection.Input;
                                 adapter.SelectCommand.Parameters.AddWithValue("@disconnectedCode", 5);
-                                adapter.SelectCommand.Parameters["@disconnectedCode"].Direction = ParameterDirection.Input;
-
-                                adapter.Fill(ds, "AccountPerBarangay");
-
-                                ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountPerBarangay"]);
-                                reportViewerAccountPerBarangay.LocalReport.DataSources.Clear();
-                                reportViewerAccountPerBarangay.LocalReport.DataSources.Add(rds);
+                                adapter.SelectCommand.Parameters["@disconnectedCode"].Direction = ParameterDirection.Input;                               
 
                                 ReportParameter[] param = new ReportParameter[]
                                 {
@@ -385,7 +379,13 @@ namespace ConcessionaireReports
                                 };
                                 reportViewerAccountPerBarangay.LocalReport.SetParameters(param);
                                 reportViewerAccountPerBarangay.LocalReport.Refresh();
-                            });                           
+                            });
+
+                            adapter.Fill(ds, "AccountPerBarangay");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountPerBarangay"]);
+                            reportViewerAccountPerBarangay.LocalReport.DataSources.Clear();
+                            reportViewerAccountPerBarangay.LocalReport.DataSources.Add(rds);
                         }
                         conn.Close();
                     }
@@ -429,13 +429,7 @@ namespace ConcessionaireReports
                                 adapter.SelectCommand.Parameters.AddWithValue("@connectedCode", 4);
                                 adapter.SelectCommand.Parameters["@connectedCode"].Direction = ParameterDirection.Input;
                                 adapter.SelectCommand.Parameters.AddWithValue("@disconnectedCode", 5);
-                                adapter.SelectCommand.Parameters["@disconnectedCode"].Direction = ParameterDirection.Input;
-
-                                adapter.Fill(ds, "AccountPerClassification");
-
-                                ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountPerClassification"]);
-                                reportViewerAccountPerClassification.LocalReport.DataSources.Clear();
-                                reportViewerAccountPerClassification.LocalReport.DataSources.Add(rds);
+                                adapter.SelectCommand.Parameters["@disconnectedCode"].Direction = ParameterDirection.Input;                               
 
                                 ReportParameter[] param = new ReportParameter[]
                                 {
@@ -445,6 +439,12 @@ namespace ConcessionaireReports
                                 reportViewerAccountPerClassification.LocalReport.SetParameters(param);
                                 reportViewerAccountPerClassification.LocalReport.Refresh();
                             });
+
+                            adapter.Fill(ds, "AccountPerClassification");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountPerClassification"]);
+                            reportViewerAccountPerClassification.LocalReport.DataSources.Clear();
+                            reportViewerAccountPerClassification.LocalReport.DataSources.Add(rds);
                         }
                         conn.Close();
                     }
@@ -529,13 +529,7 @@ namespace ConcessionaireReports
                                 adapter.SelectCommand.Parameters.AddWithValue("@asOfDate", dateTimePickerAccountByStatusAsOf.Value.Date);
                                 adapter.SelectCommand.Parameters["@asOfDate"].Direction = ParameterDirection.Input;
                                 adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountByStatusZone.SelectedValue.ToString());
-                                adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
-
-                                adapter.Fill(ds, "AccountByStatus");
-
-                                ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountByStatus"]);
-                                reportViewerAccountByStatus.LocalReport.DataSources.Clear();
-                                reportViewerAccountByStatus.LocalReport.DataSources.Add(rds);
+                                adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;                               
 
                                 ReportParameter[] param = new ReportParameter[]
                                 {
@@ -545,6 +539,12 @@ namespace ConcessionaireReports
                                 reportViewerAccountByStatus.LocalReport.SetParameters(param);
                                 reportViewerAccountByStatus.LocalReport.Refresh();
                             });
+
+                            adapter.Fill(ds, "AccountByStatus");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountByStatus"]);
+                            reportViewerAccountByStatus.LocalReport.DataSources.Clear();
+                            reportViewerAccountByStatus.LocalReport.DataSources.Add(rds);
                         }
                         conn.Close();
                     }
@@ -616,13 +616,7 @@ namespace ConcessionaireReports
                                 adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxSeniorCitizenZone.SelectedValue.ToString());
                                 adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
                                 adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxSeniorCitizenBook.SelectedValue.ToString());
-                                adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
-
-                                adapter.Fill(ds, "SeniorCitizenAccounts");
-
-                                ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["SeniorCitizenAccounts"]);
-                                reportViewerSeniorCitizenAccounts.LocalReport.DataSources.Clear();
-                                reportViewerSeniorCitizenAccounts.LocalReport.DataSources.Add(rds);
+                                adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;                              
 
                                 ReportParameter[] param = new ReportParameter[]
                                 {
@@ -631,7 +625,13 @@ namespace ConcessionaireReports
                                 };
                                 reportViewerSeniorCitizenAccounts.LocalReport.SetParameters(param);
                                 reportViewerSeniorCitizenAccounts.LocalReport.Refresh();
-                            });                           
+                            });
+
+                            adapter.Fill(ds, "SeniorCitizenAccounts");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["SeniorCitizenAccounts"]);
+                            reportViewerSeniorCitizenAccounts.LocalReport.DataSources.Clear();
+                            reportViewerSeniorCitizenAccounts.LocalReport.DataSources.Add(rds);
                         }
                         conn.Close();
                     }
@@ -717,12 +717,7 @@ namespace ConcessionaireReports
                                     adapter.SelectCommand.Parameters["@status_code"].Direction = ParameterDirection.Input;
                                     adapter.SelectCommand.Parameters.AddWithValue("@flag", null);
                                     adapter.SelectCommand.Parameters["@flag"].Direction = ParameterDirection.Input;
-                                }
-                                adapter.Fill(ds, "AccountPerMeterSize");
-
-                                ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountPerMeterSize"]);
-                                reportViewerAccountPerMeterSize.LocalReport.DataSources.Clear();
-                                reportViewerAccountPerMeterSize.LocalReport.DataSources.Add(rds);
+                                }                              
 
                                 ReportParameter[] param = new ReportParameter[]
                                 {
@@ -731,7 +726,13 @@ namespace ConcessionaireReports
                                 };
                                 reportViewerAccountPerMeterSize.LocalReport.SetParameters(param);
                                 reportViewerAccountPerMeterSize.LocalReport.Refresh();
-                            });                          
+                            });
+
+                            adapter.Fill(ds, "AccountPerMeterSize");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetConcessionaireReports", ds.Tables["AccountPerMeterSize"]);
+                            reportViewerAccountPerMeterSize.LocalReport.DataSources.Clear();
+                            reportViewerAccountPerMeterSize.LocalReport.DataSources.Add(rds);
                         }
                         conn.Close();
                     }
