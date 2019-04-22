@@ -183,6 +183,7 @@ namespace ConcessionaireReports
             {
                 tp.Enabled = true;
             }
+            ((Control)this.tabPage3).Enabled = false;
             b.Enabled = true;
             pb.Hide();
         }
