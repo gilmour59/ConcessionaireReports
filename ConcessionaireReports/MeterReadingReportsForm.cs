@@ -24,6 +24,8 @@ namespace ConcessionaireReports
 
         private void MeterReadingReportsForm_Load(object sender, EventArgs e)
         {
+            ((Control)this.tabPage3).Enabled = false;
+
             tabControlMeterReadingReports.DrawMode = TabDrawMode.OwnerDrawFixed;
 
             connStr = "server=localhost;user=root;database=mrwdbcsys;port=3306;password=";

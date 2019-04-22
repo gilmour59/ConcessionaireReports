@@ -56,6 +56,10 @@ namespace ConcessionaireReports
 
         private void BillingReportsForm_Load(object sender, EventArgs e)
         {
+            ((Control)this.tabPage10).Enabled = false;
+            ((Control)this.tabPage4).Enabled = false;
+            ((Control)this.tabPage6).Enabled = false;
+
             dateTimePickerBillingAdjustmentSummaryYear.MaxDate = DateTime.Today;
 
             tabControlBillingReports.DrawMode = TabDrawMode.OwnerDrawFixed;

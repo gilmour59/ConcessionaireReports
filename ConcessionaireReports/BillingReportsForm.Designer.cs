@@ -29,17 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource12 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource13 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource14 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource15 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource16 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource17 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource18 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource19 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource20 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource21 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource22 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource10 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource11 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BillingReportsForm));
             this.BillComputationRegisterBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetBillingReports = new ConcessionaireReports.DataSetBillingReports();
             this.BillingSummaryPerBookBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -118,6 +119,16 @@
             this.comboBoxDailyBillingSummaryBillingMonth = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.reportViewerDailyBillingSummary = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.pictureBoxLoadingBillCompuReg = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoadingBillSumBook = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoadingBillSumMonth = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoadingBillPrevMonths = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoadingPenaltyBillReport = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoadingPenaltyPerMonth = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoadingBillingSummaryMaterials = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoadingBillingAdjustmentSummary = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoadingAccountsLargeCons = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoadingDailyBillingSum = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.BillComputationRegisterBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetBillingReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BillingSummaryPerBookBindingSource)).BeginInit();
@@ -139,6 +150,16 @@
             this.tabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAccountsLargeConsConsumption)).BeginInit();
             this.tabPage10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingBillCompuReg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingBillSumBook)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingBillSumMonth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingBillPrevMonths)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingPenaltyBillReport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingPenaltyPerMonth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingBillingSummaryMaterials)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingBillingAdjustmentSummary)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingAccountsLargeCons)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDailyBillingSum)).BeginInit();
             this.SuspendLayout();
             // 
             // BillComputationRegisterBindingSource
@@ -211,6 +232,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.pictureBoxLoadingBillCompuReg);
             this.tabPage1.Controls.Add(this.comboBoxBillComputationRegBook);
             this.tabPage1.Controls.Add(this.comboBoxBillComputationRegZone);
             this.tabPage1.Controls.Add(this.comboBoxBillComputationRegBillingMonth);
@@ -260,9 +282,9 @@
             // 
             // reportViewerBillComputationReg
             // 
-            reportDataSource12.Name = "DataSetBillingReports";
-            reportDataSource12.Value = this.BillComputationRegisterBindingSource;
-            this.reportViewerBillComputationReg.LocalReport.DataSources.Add(reportDataSource12);
+            reportDataSource1.Name = "DataSetBillingReports";
+            reportDataSource1.Value = this.BillComputationRegisterBindingSource;
+            this.reportViewerBillComputationReg.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewerBillComputationReg.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.BillingReports.ReportBillComputationRegister.rdlc";
             this.reportViewerBillComputationReg.Location = new System.Drawing.Point(26, 49);
             this.reportViewerBillComputationReg.Name = "reportViewerBillComputationReg";
@@ -313,6 +335,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.pictureBoxLoadingBillSumBook);
             this.tabPage2.Controls.Add(this.reportViewerBillSummaryBook);
             this.tabPage2.Controls.Add(this.comboBoxBillSummaryBookBook);
             this.tabPage2.Controls.Add(this.comboBoxBillSummaryBookZone);
@@ -330,9 +353,9 @@
             // 
             // reportViewerBillSummaryBook
             // 
-            reportDataSource13.Name = "DataSetBillingReports";
-            reportDataSource13.Value = this.BillingSummaryPerBookBindingSource;
-            this.reportViewerBillSummaryBook.LocalReport.DataSources.Add(reportDataSource13);
+            reportDataSource2.Name = "DataSetBillingReports";
+            reportDataSource2.Value = this.BillingSummaryPerBookBindingSource;
+            this.reportViewerBillSummaryBook.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewerBillSummaryBook.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.BillingReports.ReportBillingSummaryBook.rdlc";
             this.reportViewerBillSummaryBook.Location = new System.Drawing.Point(26, 49);
             this.reportViewerBillSummaryBook.Name = "reportViewerBillSummaryBook";
@@ -414,6 +437,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.pictureBoxLoadingBillSumMonth);
             this.tabPage3.Controls.Add(this.buttonBillSummaryMonthSearch);
             this.tabPage3.Controls.Add(this.comboBoxBillSummaryMonthBillingMonth);
             this.tabPage3.Controls.Add(this.label3);
@@ -458,9 +482,9 @@
             // 
             // reportViewerBillSummaryMonth
             // 
-            reportDataSource14.Name = "DataSetBillingReports";
-            reportDataSource14.Value = this.BillingSummaryPerMonthBindingSource;
-            this.reportViewerBillSummaryMonth.LocalReport.DataSources.Add(reportDataSource14);
+            reportDataSource3.Name = "DataSetBillingReports";
+            reportDataSource3.Value = this.BillingSummaryPerMonthBindingSource;
+            this.reportViewerBillSummaryMonth.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewerBillSummaryMonth.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.BillingReports.ReportBillingSummaryMonth.rdlc";
             this.reportViewerBillSummaryMonth.Location = new System.Drawing.Point(26, 49);
             this.reportViewerBillSummaryMonth.Name = "reportViewerBillSummaryMonth";
@@ -470,6 +494,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.pictureBoxLoadingBillPrevMonths);
             this.tabPage4.Controls.Add(this.buttonBillPreviousMonthSearch);
             this.tabPage4.Controls.Add(this.comboBoxBillPreviousMonthBillingMonth);
             this.tabPage4.Controls.Add(this.label7);
@@ -513,9 +538,9 @@
             // 
             // reportViewerBillPreviousMonth
             // 
-            reportDataSource15.Name = "DataSetMeterReadingReports";
-            reportDataSource15.Value = null;
-            this.reportViewerBillPreviousMonth.LocalReport.DataSources.Add(reportDataSource15);
+            reportDataSource4.Name = "DataSetMeterReadingReports";
+            reportDataSource4.Value = null;
+            this.reportViewerBillPreviousMonth.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewerBillPreviousMonth.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportAccountsSuddenIncDecConsumption.rdlc";
             this.reportViewerBillPreviousMonth.Location = new System.Drawing.Point(26, 49);
             this.reportViewerBillPreviousMonth.Name = "reportViewerBillPreviousMonth";
@@ -525,6 +550,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.pictureBoxLoadingPenaltyBillReport);
             this.tabPage5.Controls.Add(this.comboBoxPenaltyBillingReportBook);
             this.tabPage5.Controls.Add(this.reportViewerPenaltyBillingReport);
             this.tabPage5.Controls.Add(this.comboBoxPenaltyBillingReportZone);
@@ -552,9 +578,9 @@
             // 
             // reportViewerPenaltyBillingReport
             // 
-            reportDataSource16.Name = "DataSetBillingReports";
-            reportDataSource16.Value = this.PenaltyBillingReportBindingSource;
-            this.reportViewerPenaltyBillingReport.LocalReport.DataSources.Add(reportDataSource16);
+            reportDataSource5.Name = "DataSetBillingReports";
+            reportDataSource5.Value = this.PenaltyBillingReportBindingSource;
+            this.reportViewerPenaltyBillingReport.LocalReport.DataSources.Add(reportDataSource5);
             this.reportViewerPenaltyBillingReport.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.BillingReports.ReportPenaltyBillingReport.rdlc";
             this.reportViewerPenaltyBillingReport.Location = new System.Drawing.Point(26, 49);
             this.reportViewerPenaltyBillingReport.Name = "reportViewerPenaltyBillingReport";
@@ -626,6 +652,7 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.pictureBoxLoadingPenaltyPerMonth);
             this.tabPage6.Controls.Add(this.buttonPenaltySummaryMonthSearch);
             this.tabPage6.Controls.Add(this.comboBoxPenaltySummaryMonthBillingMonth);
             this.tabPage6.Controls.Add(this.label10);
@@ -669,9 +696,9 @@
             // 
             // reportViewerPenaltySummaryMonth
             // 
-            reportDataSource17.Name = "DataSetMeterReadingReports";
-            reportDataSource17.Value = null;
-            this.reportViewerPenaltySummaryMonth.LocalReport.DataSources.Add(reportDataSource17);
+            reportDataSource6.Name = "DataSetMeterReadingReports";
+            reportDataSource6.Value = null;
+            this.reportViewerPenaltySummaryMonth.LocalReport.DataSources.Add(reportDataSource6);
             this.reportViewerPenaltySummaryMonth.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportUnreadMeters.rdlc";
             this.reportViewerPenaltySummaryMonth.Location = new System.Drawing.Point(26, 49);
             this.reportViewerPenaltySummaryMonth.Name = "reportViewerPenaltySummaryMonth";
@@ -681,6 +708,7 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.pictureBoxLoadingBillingSummaryMaterials);
             this.tabPage7.Controls.Add(this.buttonBillingSummaryMaterialsSearch);
             this.tabPage7.Controls.Add(this.comboBoxBillingSummaryMaterialsBillingMonth);
             this.tabPage7.Controls.Add(this.label11);
@@ -725,9 +753,9 @@
             // 
             // reportViewerBillingSummaryMaterials
             // 
-            reportDataSource18.Name = "DataSetBillingReports";
-            reportDataSource18.Value = this.BillingSummaryMaterialsFeesBindingSource;
-            this.reportViewerBillingSummaryMaterials.LocalReport.DataSources.Add(reportDataSource18);
+            reportDataSource7.Name = "DataSetBillingReports";
+            reportDataSource7.Value = this.BillingSummaryMaterialsFeesBindingSource;
+            this.reportViewerBillingSummaryMaterials.LocalReport.DataSources.Add(reportDataSource7);
             this.reportViewerBillingSummaryMaterials.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.BillingReports.ReportBillingSummaryMaterialsOtherFees." +
     "rdlc";
             this.reportViewerBillingSummaryMaterials.Location = new System.Drawing.Point(26, 49);
@@ -738,6 +766,7 @@
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.pictureBoxLoadingBillingAdjustmentSummary);
             this.tabPage8.Controls.Add(this.reportViewerBillingAdjustmentSummary);
             this.tabPage8.Controls.Add(this.buttonBillingAdjustmentSummarySearch);
             this.tabPage8.Controls.Add(this.label13);
@@ -753,12 +782,12 @@
             // 
             // reportViewerBillingAdjustmentSummary
             // 
-            reportDataSource19.Name = "DataSetBillingReports";
-            reportDataSource19.Value = this.BillingAdjustmentSummaryBindingSource;
-            reportDataSource20.Name = "DataSetBillingReports2";
-            reportDataSource20.Value = this.BillingAdjustmentSummaryRecapBindingSource;
-            this.reportViewerBillingAdjustmentSummary.LocalReport.DataSources.Add(reportDataSource19);
-            this.reportViewerBillingAdjustmentSummary.LocalReport.DataSources.Add(reportDataSource20);
+            reportDataSource8.Name = "DataSetBillingReports";
+            reportDataSource8.Value = this.BillingAdjustmentSummaryBindingSource;
+            reportDataSource9.Name = "DataSetBillingReports2";
+            reportDataSource9.Value = this.BillingAdjustmentSummaryRecapBindingSource;
+            this.reportViewerBillingAdjustmentSummary.LocalReport.DataSources.Add(reportDataSource8);
+            this.reportViewerBillingAdjustmentSummary.LocalReport.DataSources.Add(reportDataSource9);
             this.reportViewerBillingAdjustmentSummary.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.BillingReports.ReportBillingAdjustmentSummary.rdlc";
             this.reportViewerBillingAdjustmentSummary.Location = new System.Drawing.Point(26, 49);
             this.reportViewerBillingAdjustmentSummary.Name = "reportViewerBillingAdjustmentSummary";
@@ -821,6 +850,7 @@
             // 
             // tabPage9
             // 
+            this.tabPage9.Controls.Add(this.pictureBoxLoadingAccountsLargeCons);
             this.tabPage9.Controls.Add(this.numericUpDownAccountsLargeConsConsumption);
             this.tabPage9.Controls.Add(this.reportViewerAccountsLargeCons);
             this.tabPage9.Controls.Add(this.comboBoxAccountsLargeConsClass);
@@ -850,9 +880,9 @@
             // 
             // reportViewerAccountsLargeCons
             // 
-            reportDataSource21.Name = "DataSetBillingReports";
-            reportDataSource21.Value = this.AccountsLargeConsPerClassificationBindingSource;
-            this.reportViewerAccountsLargeCons.LocalReport.DataSources.Add(reportDataSource21);
+            reportDataSource10.Name = "DataSetBillingReports";
+            reportDataSource10.Value = this.AccountsLargeConsPerClassificationBindingSource;
+            this.reportViewerAccountsLargeCons.LocalReport.DataSources.Add(reportDataSource10);
             this.reportViewerAccountsLargeCons.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.BillingReports.ReportAccountsLargeConsumption.rdlc";
             this.reportViewerAccountsLargeCons.Location = new System.Drawing.Point(26, 49);
             this.reportViewerAccountsLargeCons.Name = "reportViewerAccountsLargeCons";
@@ -923,6 +953,7 @@
             // 
             // tabPage10
             // 
+            this.tabPage10.Controls.Add(this.pictureBoxLoadingDailyBillingSum);
             this.tabPage10.Controls.Add(this.buttonDailyBillingSummarySearch);
             this.tabPage10.Controls.Add(this.comboBoxDailyBillingSummaryBillingMonth);
             this.tabPage10.Controls.Add(this.label15);
@@ -966,15 +997,125 @@
             // 
             // reportViewerDailyBillingSummary
             // 
-            reportDataSource22.Name = "DataSetMeterReadingReports";
-            reportDataSource22.Value = null;
-            this.reportViewerDailyBillingSummary.LocalReport.DataSources.Add(reportDataSource22);
+            reportDataSource11.Name = "DataSetMeterReadingReports";
+            reportDataSource11.Value = null;
+            this.reportViewerDailyBillingSummary.LocalReport.DataSources.Add(reportDataSource11);
             this.reportViewerDailyBillingSummary.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.ReportUnreadMeters.rdlc";
             this.reportViewerDailyBillingSummary.Location = new System.Drawing.Point(26, 49);
             this.reportViewerDailyBillingSummary.Name = "reportViewerDailyBillingSummary";
             this.reportViewerDailyBillingSummary.ServerReport.BearerToken = null;
             this.reportViewerDailyBillingSummary.Size = new System.Drawing.Size(944, 481);
             this.reportViewerDailyBillingSummary.TabIndex = 58;
+            // 
+            // pictureBoxLoadingBillCompuReg
+            // 
+            this.pictureBoxLoadingBillCompuReg.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingBillCompuReg.Image")));
+            this.pictureBoxLoadingBillCompuReg.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingBillCompuReg.Name = "pictureBoxLoadingBillCompuReg";
+            this.pictureBoxLoadingBillCompuReg.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingBillCompuReg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingBillCompuReg.TabIndex = 73;
+            this.pictureBoxLoadingBillCompuReg.TabStop = false;
+            this.pictureBoxLoadingBillCompuReg.Visible = false;
+            // 
+            // pictureBoxLoadingBillSumBook
+            // 
+            this.pictureBoxLoadingBillSumBook.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingBillSumBook.Image")));
+            this.pictureBoxLoadingBillSumBook.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingBillSumBook.Name = "pictureBoxLoadingBillSumBook";
+            this.pictureBoxLoadingBillSumBook.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingBillSumBook.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingBillSumBook.TabIndex = 73;
+            this.pictureBoxLoadingBillSumBook.TabStop = false;
+            this.pictureBoxLoadingBillSumBook.Visible = false;
+            // 
+            // pictureBoxLoadingBillSumMonth
+            // 
+            this.pictureBoxLoadingBillSumMonth.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingBillSumMonth.Image")));
+            this.pictureBoxLoadingBillSumMonth.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingBillSumMonth.Name = "pictureBoxLoadingBillSumMonth";
+            this.pictureBoxLoadingBillSumMonth.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingBillSumMonth.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingBillSumMonth.TabIndex = 73;
+            this.pictureBoxLoadingBillSumMonth.TabStop = false;
+            this.pictureBoxLoadingBillSumMonth.Visible = false;
+            // 
+            // pictureBoxLoadingBillPrevMonths
+            // 
+            this.pictureBoxLoadingBillPrevMonths.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingBillPrevMonths.Image")));
+            this.pictureBoxLoadingBillPrevMonths.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingBillPrevMonths.Name = "pictureBoxLoadingBillPrevMonths";
+            this.pictureBoxLoadingBillPrevMonths.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingBillPrevMonths.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingBillPrevMonths.TabIndex = 73;
+            this.pictureBoxLoadingBillPrevMonths.TabStop = false;
+            this.pictureBoxLoadingBillPrevMonths.Visible = false;
+            // 
+            // pictureBoxLoadingPenaltyBillReport
+            // 
+            this.pictureBoxLoadingPenaltyBillReport.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingPenaltyBillReport.Image")));
+            this.pictureBoxLoadingPenaltyBillReport.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingPenaltyBillReport.Name = "pictureBoxLoadingPenaltyBillReport";
+            this.pictureBoxLoadingPenaltyBillReport.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingPenaltyBillReport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingPenaltyBillReport.TabIndex = 73;
+            this.pictureBoxLoadingPenaltyBillReport.TabStop = false;
+            this.pictureBoxLoadingPenaltyBillReport.Visible = false;
+            // 
+            // pictureBoxLoadingPenaltyPerMonth
+            // 
+            this.pictureBoxLoadingPenaltyPerMonth.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingPenaltyPerMonth.Image")));
+            this.pictureBoxLoadingPenaltyPerMonth.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingPenaltyPerMonth.Name = "pictureBoxLoadingPenaltyPerMonth";
+            this.pictureBoxLoadingPenaltyPerMonth.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingPenaltyPerMonth.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingPenaltyPerMonth.TabIndex = 73;
+            this.pictureBoxLoadingPenaltyPerMonth.TabStop = false;
+            this.pictureBoxLoadingPenaltyPerMonth.Visible = false;
+            // 
+            // pictureBoxLoadingBillingSummaryMaterials
+            // 
+            this.pictureBoxLoadingBillingSummaryMaterials.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingBillingSummaryMaterials.Image")));
+            this.pictureBoxLoadingBillingSummaryMaterials.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingBillingSummaryMaterials.Name = "pictureBoxLoadingBillingSummaryMaterials";
+            this.pictureBoxLoadingBillingSummaryMaterials.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingBillingSummaryMaterials.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingBillingSummaryMaterials.TabIndex = 73;
+            this.pictureBoxLoadingBillingSummaryMaterials.TabStop = false;
+            this.pictureBoxLoadingBillingSummaryMaterials.Visible = false;
+            // 
+            // pictureBoxLoadingBillingAdjustmentSummary
+            // 
+            this.pictureBoxLoadingBillingAdjustmentSummary.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingBillingAdjustmentSummary.Image")));
+            this.pictureBoxLoadingBillingAdjustmentSummary.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingBillingAdjustmentSummary.Name = "pictureBoxLoadingBillingAdjustmentSummary";
+            this.pictureBoxLoadingBillingAdjustmentSummary.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingBillingAdjustmentSummary.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingBillingAdjustmentSummary.TabIndex = 73;
+            this.pictureBoxLoadingBillingAdjustmentSummary.TabStop = false;
+            this.pictureBoxLoadingBillingAdjustmentSummary.Visible = false;
+            // 
+            // pictureBoxLoadingAccountsLargeCons
+            // 
+            this.pictureBoxLoadingAccountsLargeCons.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingAccountsLargeCons.Image")));
+            this.pictureBoxLoadingAccountsLargeCons.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingAccountsLargeCons.Name = "pictureBoxLoadingAccountsLargeCons";
+            this.pictureBoxLoadingAccountsLargeCons.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingAccountsLargeCons.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingAccountsLargeCons.TabIndex = 73;
+            this.pictureBoxLoadingAccountsLargeCons.TabStop = false;
+            this.pictureBoxLoadingAccountsLargeCons.Visible = false;
+            // 
+            // pictureBoxLoadingDailyBillingSum
+            // 
+            this.pictureBoxLoadingDailyBillingSum.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingDailyBillingSum.Image")));
+            this.pictureBoxLoadingDailyBillingSum.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingDailyBillingSum.Name = "pictureBoxLoadingDailyBillingSum";
+            this.pictureBoxLoadingDailyBillingSum.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingDailyBillingSum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingDailyBillingSum.TabIndex = 73;
+            this.pictureBoxLoadingDailyBillingSum.TabStop = false;
+            this.pictureBoxLoadingDailyBillingSum.Visible = false;
             // 
             // BillingReportsForm
             // 
@@ -1019,6 +1160,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAccountsLargeConsConsumption)).EndInit();
             this.tabPage10.ResumeLayout(false);
             this.tabPage10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingBillCompuReg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingBillSumBook)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingBillSumMonth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingBillPrevMonths)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingPenaltyBillReport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingPenaltyPerMonth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingBillingSummaryMaterials)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingBillingAdjustmentSummary)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingAccountsLargeCons)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDailyBillingSum)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1103,5 +1254,15 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.NumericUpDown numericUpDownAccountsLargeConsConsumption;
         private System.Windows.Forms.BindingSource AccountsLargeConsPerClassificationBindingSource;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingBillCompuReg;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingBillSumBook;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingBillSumMonth;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingBillPrevMonths;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingPenaltyBillReport;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingPenaltyPerMonth;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingBillingSummaryMaterials;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingBillingAdjustmentSummary;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingAccountsLargeCons;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingDailyBillingSum;
     }
 }
