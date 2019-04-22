@@ -57,6 +57,8 @@ namespace ConcessionaireReports
 
         private void JobOrdersReportsForm_Load(object sender, EventArgs e)
         {
+            tabControlJobOrdersReports.DrawMode = TabDrawMode.OwnerDrawFixed;
+
             connStr = "server=localhost;user=root;database=mrwdbcsys;port=3306;password=";
 
             try
