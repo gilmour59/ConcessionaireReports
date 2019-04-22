@@ -142,49 +142,85 @@ namespace ConcessionaireReports
             cb.DataSource = dsBooksOfZone.Tables[0];
         }
 
-        private void buttonBillComputationRegSearch_Click(object sender, EventArgs e)
+        private void beforeAwait(PictureBox pb, Button b)
         {
-            try
+            //tabControlCollectionReports.TabPages[0].Enabled = false;
+            foreach (TabPage tp in tabControlBillingReports.TabPages)
             {
-                using (MySqlConnection conn = new MySqlConnection(connStr))
+                if (!(tp == tabControlBillingReports.SelectedTab))
                 {
-                    conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetComputationRegister_", conn))
-                    {
-                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
-
-                        DataSetBillingReports ds = new DataSetBillingReports();
-
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@billMonth", comboBoxBillComputationRegBillingMonth.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@billMonth"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxBillComputationRegZone.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxBillComputationRegBook.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
-
-                        adapter.Fill(ds, "BillComputationRegister");
-
-                        ReportDataSource rds = new ReportDataSource("DataSetBillingReports", ds.Tables["BillComputationRegister"]);
-                        reportViewerBillComputationReg.LocalReport.DataSources.Clear();
-                        reportViewerBillComputationReg.LocalReport.DataSources.Add(rds);
-
-                        ReportParameter[] param = new ReportParameter[]
-                        {
-                            new ReportParameter("ReportParameterZone", comboBoxBillComputationRegZone.Text),
-                            new ReportParameter("ReportParameterBook", comboBoxBillComputationRegBook.Text)
-                        };
-                        reportViewerBillComputationReg.LocalReport.SetParameters(param);
-                        reportViewerBillComputationReg.LocalReport.Refresh();
-                    }
-                    conn.Close();
+                    tp.Enabled = false;
                 }
             }
-            catch (MySqlException ex)
+            b.Enabled = false;
+            pb.Show();
+            pb.Update();
+        }
+
+        private void afterAwait(PictureBox pb, Button b)
+        {
+            foreach (TabPage tp in tabControlBillingReports.TabPages)
             {
-                MessageBox.Show("error: " + ex, "Error!");
+                tp.Enabled = true;
             }
+            b.Enabled = true;
+            pb.Hide();
+        }
+
+        private async void buttonBillComputationRegSearch_Click(object sender, EventArgs e)
+        {
+            beforeAwait(pictureBoxLoadingBillCompuReg, buttonBillComputationRegSearch);
+
+            await Task.Run(() => 
+            {
+                try
+                {
+                    using (MySqlConnection conn = new MySqlConnection(connStr))
+                    {
+                        conn.Open();
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetComputationRegister_", conn))
+                        {
+                            adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+
+                            DataSetBillingReports ds = new DataSetBillingReports();
+
+                            Invoke((MethodInvoker)delegate ()
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@billMonth", comboBoxBillComputationRegBillingMonth.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@billMonth"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxBillComputationRegZone.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxBillComputationRegBook.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
+
+                                ReportParameter[] param = new ReportParameter[]
+                                {
+                                    new ReportParameter("ReportParameterZone", comboBoxBillComputationRegZone.Text),
+                                    new ReportParameter("ReportParameterBook", comboBoxBillComputationRegBook.Text)
+                                };
+                                reportViewerBillComputationReg.LocalReport.SetParameters(param);
+                                reportViewerBillComputationReg.LocalReport.Refresh();                                                               
+                            });
+
+                            adapter.Fill(ds, "BillComputationRegister");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetBillingReports", ds.Tables["BillComputationRegister"]);
+                            reportViewerBillComputationReg.LocalReport.DataSources.Clear();
+                            reportViewerBillComputationReg.LocalReport.DataSources.Add(rds);
+                        }
+                        conn.Close();
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingBillCompuReg, buttonBillComputationRegSearch);
+
             this.reportViewerBillComputationReg.RefreshReport();
         }
 
@@ -230,48 +266,61 @@ namespace ConcessionaireReports
             }
         }
 
-        private void buttonBillSummaryBookSearch_Click(object sender, EventArgs e)
+        private async void buttonBillSummaryBookSearch_Click(object sender, EventArgs e)
         {
-            try
+            beforeAwait(pictureBoxLoadingBillSumBook, buttonBillSummaryBookSearch);
+
+            await Task.Run(() =>
             {
-                using (MySqlConnection conn = new MySqlConnection(connStr))
+                try
                 {
-                    conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetBillingSummaryPerBook", conn))
+                    using (MySqlConnection conn = new MySqlConnection(connStr))
                     {
-                        adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+                        conn.Open();
 
-                        DataSetBillingReports ds = new DataSetBillingReports();
-
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@in_bill_month_id", comboBoxBillSummaryBookBillingMonth.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@in_bill_month_id"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@in_zone_id", comboBoxBillSummaryBookZone.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@in_zone_id"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@in_book_id", comboBoxBillSummaryBookBook.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@in_book_id"].Direction = ParameterDirection.Input;
-
-                        adapter.Fill(ds, "BillingSummaryPerBook");
-
-                        ReportDataSource rds = new ReportDataSource("DataSetBillingReports", ds.Tables["BillingSummaryPerBook"]);
-                        reportViewerBillSummaryBook.LocalReport.DataSources.Clear();
-                        reportViewerBillSummaryBook.LocalReport.DataSources.Add(rds);
-
-                        ReportParameter[] param = new ReportParameter[]
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetBillingSummaryPerBook", conn))
                         {
-                            new ReportParameter("ReportParameterDate", comboBoxBillSummaryBookBillingMonth.Text),
-                        };
-                        reportViewerBillSummaryBook.LocalReport.SetParameters(param);
-                        reportViewerBillSummaryBook.LocalReport.Refresh();
+                            adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+
+                            DataSetBillingReports ds = new DataSetBillingReports();
+
+                            Invoke((MethodInvoker)delegate ()
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@in_bill_month_id", comboBoxBillSummaryBookBillingMonth.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@in_bill_month_id"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@in_zone_id", comboBoxBillSummaryBookZone.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@in_zone_id"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@in_book_id", comboBoxBillSummaryBookBook.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@in_book_id"].Direction = ParameterDirection.Input;
+
+                                ReportParameter[] param = new ReportParameter[]
+                                {
+                                    new ReportParameter("ReportParameterDate", comboBoxBillSummaryBookBillingMonth.Text),
+                                };
+
+                                reportViewerBillSummaryBook.LocalReport.SetParameters(param);
+                                reportViewerBillSummaryBook.LocalReport.Refresh();
+
+                            });
+
+                            adapter.Fill(ds, "BillingSummaryPerBook");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetBillingReports", ds.Tables["BillingSummaryPerBook"]);
+                            reportViewerBillSummaryBook.LocalReport.DataSources.Clear();
+                            reportViewerBillSummaryBook.LocalReport.DataSources.Add(rds);                                                                                                                   
+                        }
+                        conn.Close();
                     }
-                    conn.Close();
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingBillSumBook, buttonBillSummaryBookSearch);
+
             this.reportViewerBillSummaryBook.RefreshReport();
         }
 
