@@ -213,13 +213,7 @@ namespace ConcessionaireReports
                                 adapter.SelectCommand.Parameters.AddWithValue("@book", comboBoxReadingSlipBook.SelectedValue.ToString());
                                 adapter.SelectCommand.Parameters["@book"].Direction = ParameterDirection.Input;
                                 adapter.SelectCommand.Parameters.AddWithValue("@bill_month_id", comboBoxReadingSlipBillingMonth.SelectedValue.ToString());
-                                adapter.SelectCommand.Parameters["@bill_month_id"].Direction = ParameterDirection.Input;
-
-                                adapter.Fill(ds, "ReadingSlip");
-
-                                ReportDataSource rds = new ReportDataSource("DataSetMeterReadingReports", ds.Tables["ReadingSlip"]);
-                                reportViewerReadingSlip.LocalReport.DataSources.Clear();
-                                reportViewerReadingSlip.LocalReport.DataSources.Add(rds);
+                                adapter.SelectCommand.Parameters["@bill_month_id"].Direction = ParameterDirection.Input;                                
 
                                 ReportParameter[] param = new ReportParameter[]
                                 {
@@ -227,7 +221,13 @@ namespace ConcessionaireReports
                                 };
                                 reportViewerReadingSlip.LocalReport.SetParameters(param);
                                 reportViewerReadingSlip.LocalReport.Refresh();
-                            });                                                      
+                            });
+
+                            adapter.Fill(ds, "ReadingSlip");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetMeterReadingReports", ds.Tables["ReadingSlip"]);
+                            reportViewerReadingSlip.LocalReport.DataSources.Clear();
+                            reportViewerReadingSlip.LocalReport.DataSources.Add(rds);
                         }
                         conn.Close();
                     }
@@ -271,13 +271,7 @@ namespace ConcessionaireReports
                                 adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxAccountsSuddenIncDecConsumptionBook.SelectedValue.ToString());
                                 adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
                                 adapter.SelectCommand.Parameters.AddWithValue("@in_change", numericUpDownAccountsSuddenIncDecConsumptionChange.Value);
-                                adapter.SelectCommand.Parameters["@in_change"].Direction = ParameterDirection.Input;
-
-                                adapter.Fill(ds, "AccountsSuddenIncDecConsumption");
-
-                                ReportDataSource rds = new ReportDataSource("DataSetMeterReadingReports", ds.Tables["AccountsSuddenIncDecConsumption"]);
-                                reportViewerAccountsSuddenIncDecConsumption.LocalReport.DataSources.Clear();
-                                reportViewerAccountsSuddenIncDecConsumption.LocalReport.DataSources.Add(rds);
+                                adapter.SelectCommand.Parameters["@in_change"].Direction = ParameterDirection.Input;                                
 
                                 ReportParameter[] param = new ReportParameter[]
                                 {
@@ -287,7 +281,13 @@ namespace ConcessionaireReports
                                 };
                                 reportViewerAccountsSuddenIncDecConsumption.LocalReport.SetParameters(param);
                                 reportViewerAccountsSuddenIncDecConsumption.LocalReport.Refresh();
-                            });                            
+                            });
+
+                            adapter.Fill(ds, "AccountsSuddenIncDecConsumption");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetMeterReadingReports", ds.Tables["AccountsSuddenIncDecConsumption"]);
+                            reportViewerAccountsSuddenIncDecConsumption.LocalReport.DataSources.Clear();
+                            reportViewerAccountsSuddenIncDecConsumption.LocalReport.DataSources.Add(rds);
                         }
                         conn.Close();
                     }
@@ -387,13 +387,7 @@ namespace ConcessionaireReports
                                 adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxAccountsMinimumConsumptionZone.SelectedValue.ToString());
                                 adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
                                 adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxAccountsMinimumConsumptionBook.SelectedValue.ToString());
-                                adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
-
-                                adapter.Fill(ds, "AccountsMinimumConsumption");
-
-                                ReportDataSource rds = new ReportDataSource("DataSetMeterReadingReports", ds.Tables["AccountsMinimumConsumption"]);
-                                reportViewerAccountsMinimumConsumption.LocalReport.DataSources.Clear();
-                                reportViewerAccountsMinimumConsumption.LocalReport.DataSources.Add(rds);
+                                adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;                               
 
                                 ReportParameter[] param = new ReportParameter[]
                                 {
@@ -403,7 +397,13 @@ namespace ConcessionaireReports
                                 };
                                 reportViewerAccountsMinimumConsumption.LocalReport.SetParameters(param);
                                 reportViewerAccountsMinimumConsumption.LocalReport.Refresh();
-                            });                            
+                            });
+
+                            adapter.Fill(ds, "AccountsMinimumConsumption");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetMeterReadingReports", ds.Tables["AccountsMinimumConsumption"]);
+                            reportViewerAccountsMinimumConsumption.LocalReport.DataSources.Clear();
+                            reportViewerAccountsMinimumConsumption.LocalReport.DataSources.Add(rds);
                         }
                         conn.Close();
                     }
@@ -474,13 +474,7 @@ namespace ConcessionaireReports
                                 adapter.SelectCommand.Parameters.AddWithValue("@zoneCode", comboBoxUnreadMetersZone.SelectedValue.ToString());
                                 adapter.SelectCommand.Parameters["@zoneCode"].Direction = ParameterDirection.Input;
                                 adapter.SelectCommand.Parameters.AddWithValue("@bookCode", comboBoxUnreadMetersBook.SelectedValue.ToString());
-                                adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;
-
-                                adapter.Fill(ds, "UnreadMeters");
-
-                                ReportDataSource rds = new ReportDataSource("DataSetMeterReadingReports", ds.Tables["UnreadMeters"]);
-                                reportViewerUnreadMeters.LocalReport.DataSources.Clear();
-                                reportViewerUnreadMeters.LocalReport.DataSources.Add(rds);
+                                adapter.SelectCommand.Parameters["@bookCode"].Direction = ParameterDirection.Input;                               
 
                                 ReportParameter[] param = new ReportParameter[]
                                 {
@@ -490,7 +484,13 @@ namespace ConcessionaireReports
                                 };
                                 reportViewerUnreadMeters.LocalReport.SetParameters(param);
                                 reportViewerUnreadMeters.LocalReport.Refresh();
-                            });                            
+                            });
+
+                            adapter.Fill(ds, "UnreadMeters");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetMeterReadingReports", ds.Tables["UnreadMeters"]);
+                            reportViewerUnreadMeters.LocalReport.DataSources.Clear();
+                            reportViewerUnreadMeters.LocalReport.DataSources.Add(rds);
                         }
                         conn.Close();
                     }
@@ -528,13 +528,7 @@ namespace ConcessionaireReports
                             {
                                 adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
                                 adapter.SelectCommand.Parameters.AddWithValue("@billMonth", comboBoxMeterReaderAccomplishmentBillingMonth.SelectedValue.ToString());
-                                adapter.SelectCommand.Parameters["@billMonth"].Direction = ParameterDirection.Input;
-
-                                adapter.Fill(ds, "MeterReaderAccomplishment");
-
-                                ReportDataSource rds = new ReportDataSource("DataSetMeterReadingReports", ds.Tables["MeterReaderAccomplishment"]);
-                                reportViewerMeterReaderAccomplishment.LocalReport.DataSources.Clear();
-                                reportViewerMeterReaderAccomplishment.LocalReport.DataSources.Add(rds);
+                                adapter.SelectCommand.Parameters["@billMonth"].Direction = ParameterDirection.Input;                              
 
                                 ReportParameter[] param = new ReportParameter[]
                                 {
@@ -542,7 +536,13 @@ namespace ConcessionaireReports
                                 };
                                 reportViewerMeterReaderAccomplishment.LocalReport.SetParameters(param);
                                 reportViewerMeterReaderAccomplishment.LocalReport.Refresh();
-                            });                            
+                            });
+
+                            adapter.Fill(ds, "MeterReaderAccomplishment");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetMeterReadingReports", ds.Tables["MeterReaderAccomplishment"]);
+                            reportViewerMeterReaderAccomplishment.LocalReport.DataSources.Clear();
+                            reportViewerMeterReaderAccomplishment.LocalReport.DataSources.Add(rds);
                         }
                         conn.Close();
                     }
