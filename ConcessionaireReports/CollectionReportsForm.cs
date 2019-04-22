@@ -146,151 +146,194 @@ namespace ConcessionaireReports
             {
                 MessageBox.Show("error: " + ex, "Error!");
             }
-        }
+        }     
 
-        private void bindDCR(DateTimePicker dt, ComboBox cb, ReportViewer rv, string sp, string dataTable)
+        private async void bindDCR(DateTimePicker dt, ComboBox cb, ReportViewer rv, string sp, string dataTable)
         {
-            try
+            await Task.Run(() =>
             {
-                using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                try
                 {
-                    conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(sp, conn))
+                    using (MySqlConnection conn = new MySqlConnection(this.connStr))
                     {
-                        DataSetCollectionReports ds = new DataSetCollectionReports();
+                        conn.Open();
 
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@in_trans_date", dt.Value);
-                        adapter.SelectCommand.Parameters["@in_trans_date"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@in_user_id", cb.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@in_user_id"].Direction = ParameterDirection.Input;
-
-                        adapter.Fill(ds, dataTable);
-
-                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables[dataTable]);
-                        rv.LocalReport.DataSources.Clear();
-                        rv.LocalReport.DataSources.Add(rds);
-
-                        ReportParameter[] param = new ReportParameter[]
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(sp, conn))
                         {
-                            new ReportParameter("ReportParameterDate", dt.Value.ToString()),
-                            new ReportParameter("ReportParameterTeller", cb.Text)
-                        };
-                        rv.LocalReport.SetParameters(param);
-                        //reportViewerDailyCollectionReport.LocalReport.Refresh();
+                            DataSetCollectionReports ds = new DataSetCollectionReports();
+
+                            Invoke((MethodInvoker)delegate ()
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@in_trans_date", dt.Value);
+                                adapter.SelectCommand.Parameters["@in_trans_date"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@in_user_id", cb.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@in_user_id"].Direction = ParameterDirection.Input;                               
+
+                                ReportParameter[] param = new ReportParameter[]
+                                {
+                                    new ReportParameter("ReportParameterDate", dt.Value.ToString()),
+                                    new ReportParameter("ReportParameterTeller", cb.Text)
+                                };
+                                rv.LocalReport.SetParameters(param);
+                                //reportViewerDailyCollectionReport.LocalReport.Refresh();
+                            });
+
+                            adapter.Fill(ds, dataTable);
+
+                            ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables[dataTable]);
+                            rv.LocalReport.DataSources.Clear();
+                            rv.LocalReport.DataSources.Add(rds);
+                        }
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetDCRRecap", conn))
+                        {
+                            DataSetCollectionReports ds = new DataSetCollectionReports();
+
+                            Invoke((MethodInvoker)delegate ()
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@transDate", dt.Value);
+                                adapter.SelectCommand.Parameters["@transDate"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@userId", cb.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@userId"].Direction = ParameterDirection.Input;
+                            });
+                            
+                            adapter.Fill(ds, "DCRRecap");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetCollectionReports2", ds.Tables["DCRRecap"]);
+                            rv.LocalReport.DataSources.Add(rds);
+                            //reportViewerDailyCollectionReport.LocalReport.Refresh();
+                        }
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetCheckPayments", conn))
+                        {
+                            DataSetCollectionReports ds = new DataSetCollectionReports();
+
+                            Invoke((MethodInvoker)delegate ()
+                            {
+                                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                                adapter.SelectCommand.Parameters.AddWithValue("@transDate", dt.Value);
+                                adapter.SelectCommand.Parameters["@transDate"].Direction = ParameterDirection.Input;
+                                adapter.SelectCommand.Parameters.AddWithValue("@userId", cb.SelectedValue.ToString());
+                                adapter.SelectCommand.Parameters["@userId"].Direction = ParameterDirection.Input;
+                            });
+                            
+                            adapter.Fill(ds, "DCRCheckPayments");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetCollectionReports3", ds.Tables["DCRCheckPayments"]);
+                            rv.LocalReport.DataSources.Add(rds);
+                            rv.LocalReport.Refresh();
+                        }
+                        conn.Close();
                     }
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetDCRRecap", conn))
-                    {
-                        DataSetCollectionReports ds = new DataSetCollectionReports();
-
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@transDate", dt.Value);
-                        adapter.SelectCommand.Parameters["@transDate"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@userId", cb.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@userId"].Direction = ParameterDirection.Input;
-
-                        adapter.Fill(ds, "DCRRecap");
-
-                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports2", ds.Tables["DCRRecap"]);
-                        rv.LocalReport.DataSources.Add(rds);
-                        //reportViewerDailyCollectionReport.LocalReport.Refresh();
-                    }
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetCheckPayments", conn))
-                    {
-                        DataSetCollectionReports ds = new DataSetCollectionReports();
-
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@transDate", dt.Value);
-                        adapter.SelectCommand.Parameters["@transDate"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@userId", cb.SelectedValue.ToString());
-                        adapter.SelectCommand.Parameters["@userId"].Direction = ParameterDirection.Input;
-
-                        adapter.Fill(ds, "DCRCheckPayments");
-
-                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports3", ds.Tables["DCRCheckPayments"]);
-                        rv.LocalReport.DataSources.Add(rds);
-                        rv.LocalReport.Refresh();
-                    }
-                    conn.Close();
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+            
             rv.RefreshReport();
         }
 
         private void buttonDailyCollectionReportSearch_Click(object sender, EventArgs e)
         {
-            bindDCR(dateTimePickerDailyCollectionReportDate, comboBoxDailyCollectionReportTeller, reportViewerDailyCollectionReport, "sp_GilGetDCR2", "DailyCollectionReport");         
+            beforeAwait(pictureBoxLoadingDCR, buttonDailyCollectionReportSearch);
+
+            bindDCR(dateTimePickerDailyCollectionReportDate, comboBoxDailyCollectionReportTeller, reportViewerDailyCollectionReport, "sp_GilGetDCR2", "DailyCollectionReport");
+
+            afterAwait(pictureBoxLoadingDCR, buttonDailyCollectionReportSearch);
         }
 
         private void buttonDCR2Search_Click(object sender, EventArgs e)
         {
+            beforeAwait(pictureBoxLoadingDCR2, buttonDCR2Search);
+
             bindDCR(dateTimePickerDCR2Date, comboBoxDCR2Teller, reportViewerDCR2, "sp_GilGetDCR", "DailyCollectionReport2");
+
+            afterAwait(pictureBoxLoadingDCR2, buttonDCR2Search);
         }
 
-        private void buttonCollectionSummaryZoneBookSearch_Click(object sender, EventArgs e)
+        private async void buttonCollectionSummaryZoneBookSearch_Click(object sender, EventArgs e)
         {
-            try
+            beforeAwait(pictureBoxLoadingColSumPerBookZone, buttonCollectionSummaryZoneBookSearch);
+
+            await Task.Run(() =>
             {
-                using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                try
                 {
-                    conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetCollectionSummaryPerBook", conn))
+                    using (MySqlConnection conn = new MySqlConnection(this.connStr))
                     {
-                        DataSetCollectionReports ds = new DataSetCollectionReports();
+                        conn.Open();
 
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@in_trans_date", dateTimePickerCollectionSummaryZoneBookDate.Value);
-                        adapter.SelectCommand.Parameters["@in_trans_date"].Direction = ParameterDirection.Input;
-
-                        adapter.Fill(ds, "CollectionSummaryPerBookZone");
-
-                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["CollectionSummaryPerBookZone"]);
-                        reportViewerCollectionSummaryZoneBook.LocalReport.DataSources.Clear();
-                        reportViewerCollectionSummaryZoneBook.LocalReport.DataSources.Add(rds);
-
-                        ReportParameter[] param = new ReportParameter[]
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetCollectionSummaryPerBook", conn))
                         {
+                            DataSetCollectionReports ds = new DataSetCollectionReports();
+
+                            adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                            adapter.SelectCommand.Parameters.AddWithValue("@in_trans_date", dateTimePickerCollectionSummaryZoneBookDate.Value);
+                            adapter.SelectCommand.Parameters["@in_trans_date"].Direction = ParameterDirection.Input;
+
+                            adapter.Fill(ds, "CollectionSummaryPerBookZone");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["CollectionSummaryPerBookZone"]);
+                            reportViewerCollectionSummaryZoneBook.LocalReport.DataSources.Clear();
+                            reportViewerCollectionSummaryZoneBook.LocalReport.DataSources.Add(rds);
+
+                            ReportParameter[] param = new ReportParameter[]
+                            {
                             new ReportParameter("ReportParameterDate", dateTimePickerCollectionSummaryZoneBookDate.Value.ToString())
-                        };
-                        reportViewerCollectionSummaryZoneBook.LocalReport.SetParameters(param);
-                        //reportViewerDailyCollectionReport.LocalReport.Refresh();
+                            };
+                            reportViewerCollectionSummaryZoneBook.LocalReport.SetParameters(param);
+                            //reportViewerDailyCollectionReport.LocalReport.Refresh();
+                        }
+                        conn.Close();
                     }
-                    conn.Close();
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingColSumPerBookZone, buttonCollectionSummaryZoneBookSearch);
+
             reportViewerCollectionSummaryZoneBook.RefreshReport();
         }
 
-        private void buttonCashReceiptRecordSearch_Click(object sender, EventArgs e)
-        {            
-            try
+        private int buttonCashReceiptId { get; set; }
+
+        private async void buttonCashReceiptRecordSearch_Click(object sender, EventArgs e)
+        {                 
+            beforeAwait(pictureBoxLoadingCashReceipt, buttonCashReceiptRecordSearch);
+
+            await Task.Run(() =>
             {
-                using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                try
                 {
-                    conn.Open();
+                    using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                    {
+                        conn.Open();
 
-                    int id = (int)comboBoxCashReceiptRecordTeller.SelectedValue;
-                    bindTellerDate(dateTimePickerCashReceiptRecordDate, id, reportViewerCashReceiptRecord, "sp_GilGetCashReceiptAndRemittanceRecord", "CashReceiptRemittanceRecord", conn);
+                        Invoke((MethodInvoker)delegate ()
+                        {
+                            this.buttonCashReceiptId = (int)comboBoxCashReceiptRecordTeller.SelectedValue;                         
+                        });
 
-                    conn.Close();
+                        bindTellerDate(dateTimePickerCashReceiptRecordDate, buttonCashReceiptId, reportViewerCashReceiptRecord, "sp_GilGetCashReceiptAndRemittanceRecord", "CashReceiptRemittanceRecord", conn);
+
+                        conn.Close();
+                    }
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+            
+            afterAwait(pictureBoxLoadingCashReceipt, buttonCashReceiptRecordSearch);
+
             reportViewerCashReceiptRecord.RefreshReport();
         }
 
@@ -299,13 +342,13 @@ namespace ConcessionaireReports
             using (MySqlDataAdapter adapter = new MySqlDataAdapter(sp, con))
             {
                 DataSetCollectionReports ds = new DataSetCollectionReports();
-
-                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                adapter.SelectCommand.Parameters.AddWithValue("@in_trans_date", dt.Value);
-                adapter.SelectCommand.Parameters["@in_trans_date"].Direction = ParameterDirection.Input;
-                adapter.SelectCommand.Parameters.AddWithValue("@in_user_id", user_id);
-                adapter.SelectCommand.Parameters["@in_user_id"].Direction = ParameterDirection.Input;
-
+               
+                    adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    adapter.SelectCommand.Parameters.AddWithValue("@in_trans_date", dt.Value);
+                    adapter.SelectCommand.Parameters["@in_trans_date"].Direction = ParameterDirection.Input;
+                    adapter.SelectCommand.Parameters.AddWithValue("@in_user_id", user_id);
+                    adapter.SelectCommand.Parameters["@in_user_id"].Direction = ParameterDirection.Input;
+                
                 adapter.Fill(ds, dataTable);
 
                 ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables[dataTable]);
@@ -340,88 +383,104 @@ namespace ConcessionaireReports
             }
         }
 
-        private void buttonCDCRSearch_Click(object sender, EventArgs e)
+        private async void buttonCDCRSearch_Click(object sender, EventArgs e)
         {
-            try
+            beforeAwait(pictureBoxLoadingCDCR, buttonCDCRSearch);
+
+            await Task.Run(() =>
             {
-                using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                try
                 {
-                    conn.Open();
-
-                    bindTellerDate(dateTimePickerCDCRDate, 0, reportViewerCDCR, "sp_GetCDCR", "CashierDailyCollectionReport", conn);
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetCDCRRecap", conn))
+                    using (MySqlConnection conn = new MySqlConnection(this.connStr))
                     {
-                        DataSetCollectionReports ds = new DataSetCollectionReports();
+                        conn.Open();
 
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@in_trans_date", dateTimePickerCDCRDate.Value);
-                        adapter.SelectCommand.Parameters["@in_trans_date"].Direction = ParameterDirection.Input;
+                        bindTellerDate(dateTimePickerCDCRDate, 0, reportViewerCDCR, "sp_GetCDCR", "CashierDailyCollectionReport", conn);
 
-                        adapter.Fill(ds, "CDCRRecap");
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetCDCRRecap", conn))
+                        {
+                            DataSetCollectionReports ds = new DataSetCollectionReports();
 
-                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports2", ds.Tables["CDCRRecap"]);
-                        reportViewerCDCR.LocalReport.DataSources.Add(rds);
+                            adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                            adapter.SelectCommand.Parameters.AddWithValue("@in_trans_date", dateTimePickerCDCRDate.Value);
+                            adapter.SelectCommand.Parameters["@in_trans_date"].Direction = ParameterDirection.Input;
+
+                            adapter.Fill(ds, "CDCRRecap");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetCollectionReports2", ds.Tables["CDCRRecap"]);
+                            reportViewerCDCR.LocalReport.DataSources.Add(rds);
+                        }
+                        conn.Close();
                     }
-                    conn.Close();
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingCDCR, buttonCDCRSearch);
+
             reportViewerCDCR.RefreshReport();           
         }
 
-        private void buttonMonthlyCollectionReportSearch_Click(object sender, EventArgs e)
+        private async void buttonMonthlyCollectionReportSearch_Click(object sender, EventArgs e)
         {
-            try
+            beforeAwait(pictureBoxLoadingMonthlyColReport, buttonMonthlyCollectionReportSearch);
+
+            await Task.Run(() =>
             {
-                using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                try
                 {
-                    conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetMonthlyCollectionReport", conn))
+                    using (MySqlConnection conn = new MySqlConnection(this.connStr))
                     {
-                        DataSetCollectionReports ds = new DataSetCollectionReports();
+                        conn.Open();
 
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@in_start_date", dateTimePickerMonthlyCollectionReportFrom.Value);
-                        adapter.SelectCommand.Parameters["@in_start_date"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@in_end_date", dateTimePickerMonthlyCollectionReportTo.Value);
-                        adapter.SelectCommand.Parameters["@in_end_date"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@in_user_id", 0);
-                        adapter.SelectCommand.Parameters["@in_user_id"].Direction = ParameterDirection.Input;
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetMonthlyCollectionReport", conn))
+                        {
+                            DataSetCollectionReports ds = new DataSetCollectionReports();
 
-                        adapter.Fill(ds, "MonthlyCollectionReport");
+                            adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                            adapter.SelectCommand.Parameters.AddWithValue("@in_start_date", dateTimePickerMonthlyCollectionReportFrom.Value);
+                            adapter.SelectCommand.Parameters["@in_start_date"].Direction = ParameterDirection.Input;
+                            adapter.SelectCommand.Parameters.AddWithValue("@in_end_date", dateTimePickerMonthlyCollectionReportTo.Value);
+                            adapter.SelectCommand.Parameters["@in_end_date"].Direction = ParameterDirection.Input;
+                            adapter.SelectCommand.Parameters.AddWithValue("@in_user_id", 0);
+                            adapter.SelectCommand.Parameters["@in_user_id"].Direction = ParameterDirection.Input;
 
-                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["MonthlyCollectionReport"]);
-                        reportViewerMonthlyCollectionReport.LocalReport.DataSources.Clear();
-                        reportViewerMonthlyCollectionReport.LocalReport.DataSources.Add(rds);
+                            adapter.Fill(ds, "MonthlyCollectionReport");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["MonthlyCollectionReport"]);
+                            reportViewerMonthlyCollectionReport.LocalReport.DataSources.Clear();
+                            reportViewerMonthlyCollectionReport.LocalReport.DataSources.Add(rds);
+                        }
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetMonthlyCollectionReportTotal", conn))
+                        {
+                            DataSetCollectionReports ds = new DataSetCollectionReports();
+
+                            adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                            adapter.SelectCommand.Parameters.AddWithValue("@in_start_date", dateTimePickerMonthlyCollectionReportFrom.Value);
+                            adapter.SelectCommand.Parameters["@in_start_date"].Direction = ParameterDirection.Input;
+                            adapter.SelectCommand.Parameters.AddWithValue("@in_end_date", dateTimePickerMonthlyCollectionReportTo.Value);
+                            adapter.SelectCommand.Parameters["@in_end_date"].Direction = ParameterDirection.Input;
+
+                            adapter.Fill(ds, "MonthlyCollectionReportTotal");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetCollectionReports2", ds.Tables["MonthlyCollectionReportTotal"]);
+                            reportViewerMonthlyCollectionReport.LocalReport.DataSources.Add(rds);
+                        }
+                        conn.Close();
                     }
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetMonthlyCollectionReportTotal", conn))
-                    {
-                        DataSetCollectionReports ds = new DataSetCollectionReports();
-
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@in_start_date", dateTimePickerMonthlyCollectionReportFrom.Value);
-                        adapter.SelectCommand.Parameters["@in_start_date"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@in_end_date", dateTimePickerMonthlyCollectionReportTo.Value);
-                        adapter.SelectCommand.Parameters["@in_end_date"].Direction = ParameterDirection.Input;
-
-                        adapter.Fill(ds, "MonthlyCollectionReportTotal");
-
-                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports2", ds.Tables["MonthlyCollectionReportTotal"]);
-                        reportViewerMonthlyCollectionReport.LocalReport.DataSources.Add(rds);
-                    }
-                    conn.Close();
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingMonthlyColReport, buttonMonthlyCollectionReportSearch);
+            
             reportViewerMonthlyCollectionReport.RefreshReport();
         }
 
@@ -430,35 +489,43 @@ namespace ConcessionaireReports
             dateTimePickerMonthlyCollectionReportFrom.MaxDate = dateTimePickerMonthlyCollectionReportTo.Value;
         }
 
-        private void buttonPaymentSummaryMaterialsSearch_Click(object sender, EventArgs e)
+        private async void buttonPaymentSummaryMaterialsSearch_Click(object sender, EventArgs e)
         {
-            try
+            beforeAwait(pictureBoxLoadingMaterials, buttonPaymentSummaryMaterialsSearch);
+
+            await Task.Run(() =>
             {
-                using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                try
                 {
-                    conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetPaymentSummaryOfMaterials", conn))
+                    using (MySqlConnection conn = new MySqlConnection(this.connStr))
                     {
-                        DataSetCollectionReports ds = new DataSetCollectionReports();
+                        conn.Open();
 
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@in_trans_date", dateTimePickerPaymentSummaryMaterialsDate.Value);
-                        adapter.SelectCommand.Parameters["@in_trans_date"].Direction = ParameterDirection.Input;
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetPaymentSummaryOfMaterials", conn))
+                        {
+                            DataSetCollectionReports ds = new DataSetCollectionReports();
 
-                        adapter.Fill(ds, "PaymentSummaryMaterials");
+                            adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                            adapter.SelectCommand.Parameters.AddWithValue("@in_trans_date", dateTimePickerPaymentSummaryMaterialsDate.Value);
+                            adapter.SelectCommand.Parameters["@in_trans_date"].Direction = ParameterDirection.Input;
 
-                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["PaymentSummaryMaterials"]);
-                        reportViewerPaymentSummaryMaterials.LocalReport.DataSources.Clear();
-                        reportViewerPaymentSummaryMaterials.LocalReport.DataSources.Add(rds);
-                    }                   
-                    conn.Close();
+                            adapter.Fill(ds, "PaymentSummaryMaterials");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["PaymentSummaryMaterials"]);
+                            reportViewerPaymentSummaryMaterials.LocalReport.DataSources.Clear();
+                            reportViewerPaymentSummaryMaterials.LocalReport.DataSources.Add(rds);
+                        }
+                        conn.Close();
+                    }
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingMaterials, buttonPaymentSummaryMaterialsSearch);
+
             reportViewerPaymentSummaryMaterials.RefreshReport();
         }
 
@@ -530,37 +597,45 @@ namespace ConcessionaireReports
             reportViewerSummarySeniorCitizenDiscount.RefreshReport();
         }
 
-        private void buttonSummaryCancelledORSearch_Click(object sender, EventArgs e)
+        private async void buttonSummaryCancelledORSearch_Click(object sender, EventArgs e)
         {
-            try
+            beforeAwait(pictureBoxLoadingCancelledOR, buttonSummaryCancelledORSearch);
+
+            await Task.Run(() =>
             {
-                using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                try
                 {
-                    conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetSummaryCancelledOR", conn))
+                    using (MySqlConnection conn = new MySqlConnection(this.connStr))
                     {
-                        adapter.SelectCommand.CommandTimeout = 5000;
+                        conn.Open();
 
-                        DataSetCollectionReports ds = new DataSetCollectionReports();
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetSummaryCancelledOR", conn))
+                        {
+                            adapter.SelectCommand.CommandTimeout = 5000;
 
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@in_trans_date", dateTimePickerSummaryCancelledORDate.Value);
-                        adapter.SelectCommand.Parameters["@in_trans_date"].Direction = ParameterDirection.Input;
+                            DataSetCollectionReports ds = new DataSetCollectionReports();
 
-                        adapter.Fill(ds, "SummaryCancelledOR");
+                            adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                            adapter.SelectCommand.Parameters.AddWithValue("@in_trans_date", dateTimePickerSummaryCancelledORDate.Value);
+                            adapter.SelectCommand.Parameters["@in_trans_date"].Direction = ParameterDirection.Input;
 
-                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["SummaryCancelledOR"]);
-                        reportViewerSummaryCancelledOR.LocalReport.DataSources.Clear();
-                        reportViewerSummaryCancelledOR.LocalReport.DataSources.Add(rds);
+                            adapter.Fill(ds, "SummaryCancelledOR");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["SummaryCancelledOR"]);
+                            reportViewerSummaryCancelledOR.LocalReport.DataSources.Clear();
+                            reportViewerSummaryCancelledOR.LocalReport.DataSources.Add(rds);
+                        }
+                        conn.Close();
                     }
-                    conn.Close();
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingCancelledOR, buttonSummaryCancelledORSearch);
+
             reportViewerSummaryCancelledOR.RefreshReport();
         }
 
@@ -697,109 +772,133 @@ namespace ConcessionaireReports
             reportViewerSummaryMiscellaneousFees.RefreshReport();
         }
 
-        private void buttonDailyCollectionSummaryZoneSearch_Click(object sender, EventArgs e)
+        private async void buttonDailyCollectionSummaryZoneSearch_Click(object sender, EventArgs e)
         {
-            try
+            beforeAwait(pictureBoxLoadingSumPerZone, buttonDailyCollectionSummaryZoneSearch);
+
+            await Task.Run(() =>
             {
-                using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                try
                 {
-                    conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetDCR3", conn))
+                    using (MySqlConnection conn = new MySqlConnection(this.connStr))
                     {
-                        adapter.SelectCommand.CommandTimeout = 5000;
+                        conn.Open();
 
-                        DataSetCollectionReports ds = new DataSetCollectionReports();
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetDCR3", conn))
+                        {
+                            adapter.SelectCommand.CommandTimeout = 5000;
 
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@transDate", dateTimePickerDailyCollectionSummaryZoneDate.Value);
-                        adapter.SelectCommand.Parameters["@transDate"].Direction = ParameterDirection.Input;
+                            DataSetCollectionReports ds = new DataSetCollectionReports();
 
-                        adapter.Fill(ds, "DailyCollectionPerZone");
+                            adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                            adapter.SelectCommand.Parameters.AddWithValue("@transDate", dateTimePickerDailyCollectionSummaryZoneDate.Value);
+                            adapter.SelectCommand.Parameters["@transDate"].Direction = ParameterDirection.Input;
 
-                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["DailyCollectionPerZone"]);
-                        reportViewerDailyCollectionSummaryZone.LocalReport.DataSources.Clear();
-                        reportViewerDailyCollectionSummaryZone.LocalReport.DataSources.Add(rds);
+                            adapter.Fill(ds, "DailyCollectionPerZone");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["DailyCollectionPerZone"]);
+                            reportViewerDailyCollectionSummaryZone.LocalReport.DataSources.Clear();
+                            reportViewerDailyCollectionSummaryZone.LocalReport.DataSources.Add(rds);
+                        }
+                        conn.Close();
                     }
-                    conn.Close();
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingSumPerZone, buttonDailyCollectionSummaryZoneSearch);
+
             reportViewerDailyCollectionSummaryZone.RefreshReport();
         }
 
-        private void buttonDailyCollectionSummarySearch_Click(object sender, EventArgs e)
+        private async void buttonDailyCollectionSummarySearch_Click(object sender, EventArgs e)
         {
-            try
+            beforeAwait(pictureBoxLoadingDailyColSum, buttonDailyCollectionSummarySearch);
+
+            await Task.Run(() =>
             {
-                using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                try
                 {
-                    conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetDailyCollectionSummary", conn))
+                    using (MySqlConnection conn = new MySqlConnection(this.connStr))
                     {
-                        adapter.SelectCommand.CommandTimeout = 5000;
+                        conn.Open();
 
-                        DataSetCollectionReports ds = new DataSetCollectionReports();
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetDailyCollectionSummary", conn))
+                        {
+                            adapter.SelectCommand.CommandTimeout = 5000;
 
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@transDate", dateTimePickerDailyCollectionSummaryDate.Value);
-                        adapter.SelectCommand.Parameters["@transDate"].Direction = ParameterDirection.Input;
+                            DataSetCollectionReports ds = new DataSetCollectionReports();
 
-                        adapter.Fill(ds, "DailyCollectionSummary");
+                            adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                            adapter.SelectCommand.Parameters.AddWithValue("@transDate", dateTimePickerDailyCollectionSummaryDate.Value);
+                            adapter.SelectCommand.Parameters["@transDate"].Direction = ParameterDirection.Input;
 
-                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["DailyCollectionSummary"]);
-                        reportViewerDailyCollectionSummary.LocalReport.DataSources.Clear();
-                        reportViewerDailyCollectionSummary.LocalReport.DataSources.Add(rds);
+                            adapter.Fill(ds, "DailyCollectionSummary");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["DailyCollectionSummary"]);
+                            reportViewerDailyCollectionSummary.LocalReport.DataSources.Clear();
+                            reportViewerDailyCollectionSummary.LocalReport.DataSources.Add(rds);
+                        }
+                        conn.Close();
                     }
-                    conn.Close();
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingDailyColSum, buttonDailyCollectionSummarySearch);
+
             reportViewerDailyCollectionSummary.RefreshReport();
         }
 
-        private void buttonCashCollectionReportSearch_Click(object sender, EventArgs e)
+        private async void buttonCashCollectionReportSearch_Click(object sender, EventArgs e)
         {
-            try
+            beforeAwait(pictureBoxLoadingCCR, buttonCashCollectionReportSearch);
+
+            await Task.Run(() =>
             {
-                using (MySqlConnection conn = new MySqlConnection(this.connStr))
+                try
                 {
-                    conn.Open();
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetCashCollectionReport", conn))
+                    using (MySqlConnection conn = new MySqlConnection(this.connStr))
                     {
-                        adapter.SelectCommand.CommandTimeout = 5000;
+                        conn.Open();
 
-                        DataSetCollectionReports ds = new DataSetCollectionReports();
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GetCashCollectionReport", conn))
+                        {
+                            adapter.SelectCommand.CommandTimeout = 5000;
 
-                        adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
-                        adapter.SelectCommand.Parameters.AddWithValue("@paramYear", dateTimePickerCashCollectionReportDate.Value.Year);
-                        adapter.SelectCommand.Parameters["@paramYear"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@paramMonth", dateTimePickerCashCollectionReportDate.Value.Month);
-                        adapter.SelectCommand.Parameters["@paramMonth"].Direction = ParameterDirection.Input;
-                        adapter.SelectCommand.Parameters.AddWithValue("@userID", 0);
-                        adapter.SelectCommand.Parameters["@userID"].Direction = ParameterDirection.Input;
+                            DataSetCollectionReports ds = new DataSetCollectionReports();
 
-                        adapter.Fill(ds, "CashCollectionReport");
+                            adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                            adapter.SelectCommand.Parameters.AddWithValue("@paramYear", dateTimePickerCashCollectionReportDate.Value.Year);
+                            adapter.SelectCommand.Parameters["@paramYear"].Direction = ParameterDirection.Input;
+                            adapter.SelectCommand.Parameters.AddWithValue("@paramMonth", dateTimePickerCashCollectionReportDate.Value.Month);
+                            adapter.SelectCommand.Parameters["@paramMonth"].Direction = ParameterDirection.Input;
+                            adapter.SelectCommand.Parameters.AddWithValue("@userID", 0);
+                            adapter.SelectCommand.Parameters["@userID"].Direction = ParameterDirection.Input;
 
-                        ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["CashCollectionReport"]);
-                        reportViewerCashCollectionReport.LocalReport.DataSources.Clear();
-                        reportViewerCashCollectionReport.LocalReport.DataSources.Add(rds);
+                            adapter.Fill(ds, "CashCollectionReport");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetCollectionReports", ds.Tables["CashCollectionReport"]);
+                            reportViewerCashCollectionReport.LocalReport.DataSources.Clear();
+                            reportViewerCashCollectionReport.LocalReport.DataSources.Add(rds);
+                        }
+                        conn.Close();
                     }
-                    conn.Close();
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("error: " + ex, "Error!");
-            }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxLoadingCCR, buttonCashCollectionReportSearch);
+
             reportViewerCashCollectionReport.RefreshReport();
         }
     }
