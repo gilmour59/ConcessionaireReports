@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CollectionReportsForm));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
@@ -48,6 +47,7 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource16 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource17 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource18 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CollectionReportsForm));
             this.DailyCollectionReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetCollectionReports = new ConcessionaireReports.DataSetCollectionReports();
             this.DCRRecapBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -68,7 +68,6 @@
             this.CashCollectionReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlCollectionReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.pictureBoxLoadingDCR = new System.Windows.Forms.PictureBox();
             this.dateTimePickerDailyCollectionReportDate = new System.Windows.Forms.DateTimePicker();
             this.comboBoxDailyCollectionReportTeller = new System.Windows.Forms.ComboBox();
             this.reportViewerDailyCollectionReport = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -76,6 +75,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pictureBoxLoadingDCR2 = new System.Windows.Forms.PictureBox();
             this.dateTimePickerDCR2Date = new System.Windows.Forms.DateTimePicker();
             this.comboBoxDCR2Teller = new System.Windows.Forms.ComboBox();
             this.buttonDCR2Search = new System.Windows.Forms.Button();
@@ -83,11 +83,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.reportViewerDCR2 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.pictureBoxLoadingColSumPerBookZone = new System.Windows.Forms.PictureBox();
             this.dateTimePickerCollectionSummaryZoneBookDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.buttonCollectionSummaryZoneBookSearch = new System.Windows.Forms.Button();
             this.reportViewerCollectionSummaryZoneBook = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.pictureBoxLoadingCashReceipt = new System.Windows.Forms.PictureBox();
             this.dateTimePickerCashReceiptRecordDate = new System.Windows.Forms.DateTimePicker();
             this.comboBoxCashReceiptRecordTeller = new System.Windows.Forms.ComboBox();
             this.buttonCashReceiptRecordSearch = new System.Windows.Forms.Button();
@@ -95,11 +97,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.reportViewerCashReceiptRecord = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.pictureBoxLoadingCDCR = new System.Windows.Forms.PictureBox();
             this.dateTimePickerCDCRDate = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.reportViewerCDCR = new Microsoft.Reporting.WinForms.ReportViewer();
             this.buttonCDCRSearch = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.pictureBoxLoadingMonthlyColReport = new System.Windows.Forms.PictureBox();
             this.dateTimePickerMonthlyCollectionReportTo = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.dateTimePickerMonthlyCollectionReportFrom = new System.Windows.Forms.DateTimePicker();
@@ -107,6 +111,7 @@
             this.buttonMonthlyCollectionReportSearch = new System.Windows.Forms.Button();
             this.reportViewerMonthlyCollectionReport = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.pictureBoxLoadingMaterials = new System.Windows.Forms.PictureBox();
             this.dateTimePickerPaymentSummaryMaterialsDate = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.buttonPaymentSummaryMaterialsSearch = new System.Windows.Forms.Button();
@@ -120,6 +125,7 @@
             this.reportViewerSummarySeniorCitizenDiscount = new Microsoft.Reporting.WinForms.ReportViewer();
             this.buttonSummarySeniorCitizenDiscountSearch = new System.Windows.Forms.Button();
             this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.pictureBoxLoadingCancelledOR = new System.Windows.Forms.PictureBox();
             this.dateTimePickerSummaryCancelledORDate = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
             this.reportViewerSummaryCancelledOR = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -143,30 +149,24 @@
             this.buttonSummaryMiscellaneousFeesSearch = new System.Windows.Forms.Button();
             this.reportViewerSummaryMiscellaneousFees = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage12 = new System.Windows.Forms.TabPage();
+            this.pictureBoxLoadingSumPerZone = new System.Windows.Forms.PictureBox();
             this.buttonDailyCollectionSummaryZoneSearch = new System.Windows.Forms.Button();
             this.dateTimePickerDailyCollectionSummaryZoneDate = new System.Windows.Forms.DateTimePicker();
             this.label20 = new System.Windows.Forms.Label();
             this.reportViewerDailyCollectionSummaryZone = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage13 = new System.Windows.Forms.TabPage();
+            this.pictureBoxLoadingDailyColSum = new System.Windows.Forms.PictureBox();
             this.buttonDailyCollectionSummarySearch = new System.Windows.Forms.Button();
             this.dateTimePickerDailyCollectionSummaryDate = new System.Windows.Forms.DateTimePicker();
             this.label21 = new System.Windows.Forms.Label();
             this.reportViewerDailyCollectionSummary = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage14 = new System.Windows.Forms.TabPage();
+            this.pictureBoxLoadingCCR = new System.Windows.Forms.PictureBox();
             this.buttonCashCollectionReportSearch = new System.Windows.Forms.Button();
             this.dateTimePickerCashCollectionReportDate = new System.Windows.Forms.DateTimePicker();
             this.label22 = new System.Windows.Forms.Label();
             this.reportViewerCashCollectionReport = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.pictureBoxLoadingDCR2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLoadingColSumPerBookZone = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLoadingCashReceipt = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLoadingCDCR = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLoadingMonthlyColReport = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLoadingMaterials = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLoadingCancelledOR = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLoadingSumPerZone = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLoadingDailyColSum = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLoadingCCR = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLoadingDCR = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReportBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetCollectionReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DCRRecapBindingSource)).BeginInit();
@@ -187,33 +187,33 @@
             ((System.ComponentModel.ISupportInitialize)(this.CashCollectionReportBindingSource)).BeginInit();
             this.tabControlCollectionReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDCR)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDCR2)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingColSumPerBookZone)).BeginInit();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingCashReceipt)).BeginInit();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingCDCR)).BeginInit();
             this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingMonthlyColReport)).BeginInit();
             this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingMaterials)).BeginInit();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingSenior)).BeginInit();
             this.tabPage9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingCancelledOR)).BeginInit();
             this.tabPage10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingWithholdingTaxes)).BeginInit();
             this.tabPage11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingMisc)).BeginInit();
             this.tabPage12.SuspendLayout();
-            this.tabPage13.SuspendLayout();
-            this.tabPage14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDCR2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingColSumPerBookZone)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingCashReceipt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingCDCR)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingMonthlyColReport)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingMaterials)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingCancelledOR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingSumPerZone)).BeginInit();
+            this.tabPage13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDailyColSum)).BeginInit();
+            this.tabPage14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingCCR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDCR)).BeginInit();
             this.SuspendLayout();
             // 
             // DailyCollectionReportBindingSource
@@ -350,17 +350,6 @@
             this.tabPage1.Text = "Daily Collection Report";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // pictureBoxLoadingDCR
-            // 
-            this.pictureBoxLoadingDCR.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingDCR.Image")));
-            this.pictureBoxLoadingDCR.Location = new System.Drawing.Point(26, 49);
-            this.pictureBoxLoadingDCR.Name = "pictureBoxLoadingDCR";
-            this.pictureBoxLoadingDCR.Size = new System.Drawing.Size(944, 481);
-            this.pictureBoxLoadingDCR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxLoadingDCR.TabIndex = 70;
-            this.pictureBoxLoadingDCR.TabStop = false;
-            this.pictureBoxLoadingDCR.Visible = false;
-            // 
             // dateTimePickerDailyCollectionReportDate
             // 
             this.dateTimePickerDailyCollectionReportDate.CustomFormat = "MM/dd/yyyy";
@@ -443,6 +432,17 @@
             this.tabPage2.TabIndex = 6;
             this.tabPage2.Text = "Daily Collection Report 2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // pictureBoxLoadingDCR2
+            // 
+            this.pictureBoxLoadingDCR2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingDCR2.Image")));
+            this.pictureBoxLoadingDCR2.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingDCR2.Name = "pictureBoxLoadingDCR2";
+            this.pictureBoxLoadingDCR2.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingDCR2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingDCR2.TabIndex = 70;
+            this.pictureBoxLoadingDCR2.TabStop = false;
+            this.pictureBoxLoadingDCR2.Visible = false;
             // 
             // dateTimePickerDCR2Date
             // 
@@ -528,6 +528,17 @@
             this.tabPage3.Text = "Collection Summary Per Zone/Book";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // pictureBoxLoadingColSumPerBookZone
+            // 
+            this.pictureBoxLoadingColSumPerBookZone.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingColSumPerBookZone.Image")));
+            this.pictureBoxLoadingColSumPerBookZone.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingColSumPerBookZone.Name = "pictureBoxLoadingColSumPerBookZone";
+            this.pictureBoxLoadingColSumPerBookZone.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingColSumPerBookZone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingColSumPerBookZone.TabIndex = 70;
+            this.pictureBoxLoadingColSumPerBookZone.TabStop = false;
+            this.pictureBoxLoadingColSumPerBookZone.Visible = false;
+            // 
             // dateTimePickerCollectionSummaryZoneBookDate
             // 
             this.dateTimePickerCollectionSummaryZoneBookDate.CustomFormat = "MM/dd/yyyy";
@@ -587,6 +598,17 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Cash Receipt and Remittance Record";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // pictureBoxLoadingCashReceipt
+            // 
+            this.pictureBoxLoadingCashReceipt.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingCashReceipt.Image")));
+            this.pictureBoxLoadingCashReceipt.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingCashReceipt.Name = "pictureBoxLoadingCashReceipt";
+            this.pictureBoxLoadingCashReceipt.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingCashReceipt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingCashReceipt.TabIndex = 70;
+            this.pictureBoxLoadingCashReceipt.TabStop = false;
+            this.pictureBoxLoadingCashReceipt.Visible = false;
             // 
             // dateTimePickerCashReceiptRecordDate
             // 
@@ -667,6 +689,17 @@
             this.tabPage5.Text = "Cashier\'s Daily Collection Report";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // pictureBoxLoadingCDCR
+            // 
+            this.pictureBoxLoadingCDCR.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingCDCR.Image")));
+            this.pictureBoxLoadingCDCR.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingCDCR.Name = "pictureBoxLoadingCDCR";
+            this.pictureBoxLoadingCDCR.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingCDCR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingCDCR.TabIndex = 70;
+            this.pictureBoxLoadingCDCR.TabStop = false;
+            this.pictureBoxLoadingCDCR.Visible = false;
+            // 
             // dateTimePickerCDCRDate
             // 
             this.dateTimePickerCDCRDate.CustomFormat = "MM/dd/yyyy";
@@ -726,6 +759,17 @@
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Monthly Collection Report";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // pictureBoxLoadingMonthlyColReport
+            // 
+            this.pictureBoxLoadingMonthlyColReport.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingMonthlyColReport.Image")));
+            this.pictureBoxLoadingMonthlyColReport.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingMonthlyColReport.Name = "pictureBoxLoadingMonthlyColReport";
+            this.pictureBoxLoadingMonthlyColReport.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingMonthlyColReport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingMonthlyColReport.TabIndex = 70;
+            this.pictureBoxLoadingMonthlyColReport.TabStop = false;
+            this.pictureBoxLoadingMonthlyColReport.Visible = false;
             // 
             // dateTimePickerMonthlyCollectionReportTo
             // 
@@ -804,6 +848,17 @@
             this.tabPage7.TabIndex = 7;
             this.tabPage7.Text = "Payment Summary of  Materials and Other Fees";
             this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // pictureBoxLoadingMaterials
+            // 
+            this.pictureBoxLoadingMaterials.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingMaterials.Image")));
+            this.pictureBoxLoadingMaterials.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingMaterials.Name = "pictureBoxLoadingMaterials";
+            this.pictureBoxLoadingMaterials.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingMaterials.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingMaterials.TabIndex = 70;
+            this.pictureBoxLoadingMaterials.TabStop = false;
+            this.pictureBoxLoadingMaterials.Visible = false;
             // 
             // dateTimePickerPaymentSummaryMaterialsDate
             // 
@@ -952,6 +1007,17 @@
             this.tabPage9.TabIndex = 9;
             this.tabPage9.Text = "Summary of Cancelled Official Receipts";
             this.tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // pictureBoxLoadingCancelledOR
+            // 
+            this.pictureBoxLoadingCancelledOR.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingCancelledOR.Image")));
+            this.pictureBoxLoadingCancelledOR.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingCancelledOR.Name = "pictureBoxLoadingCancelledOR";
+            this.pictureBoxLoadingCancelledOR.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingCancelledOR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingCancelledOR.TabIndex = 70;
+            this.pictureBoxLoadingCancelledOR.TabStop = false;
+            this.pictureBoxLoadingCancelledOR.Visible = false;
             // 
             // dateTimePickerSummaryCancelledORDate
             // 
@@ -1217,6 +1283,17 @@
             this.tabPage12.Text = "Daily Collection Summary Per Zone";
             this.tabPage12.UseVisualStyleBackColor = true;
             // 
+            // pictureBoxLoadingSumPerZone
+            // 
+            this.pictureBoxLoadingSumPerZone.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingSumPerZone.Image")));
+            this.pictureBoxLoadingSumPerZone.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingSumPerZone.Name = "pictureBoxLoadingSumPerZone";
+            this.pictureBoxLoadingSumPerZone.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingSumPerZone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingSumPerZone.TabIndex = 75;
+            this.pictureBoxLoadingSumPerZone.TabStop = false;
+            this.pictureBoxLoadingSumPerZone.Visible = false;
+            // 
             // buttonDailyCollectionSummaryZoneSearch
             // 
             this.buttonDailyCollectionSummaryZoneSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1275,6 +1352,17 @@
             this.tabPage13.Text = "Daily Collection Summary";
             this.tabPage13.UseVisualStyleBackColor = true;
             // 
+            // pictureBoxLoadingDailyColSum
+            // 
+            this.pictureBoxLoadingDailyColSum.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingDailyColSum.Image")));
+            this.pictureBoxLoadingDailyColSum.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingDailyColSum.Name = "pictureBoxLoadingDailyColSum";
+            this.pictureBoxLoadingDailyColSum.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingDailyColSum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingDailyColSum.TabIndex = 79;
+            this.pictureBoxLoadingDailyColSum.TabStop = false;
+            this.pictureBoxLoadingDailyColSum.Visible = false;
+            // 
             // buttonDailyCollectionSummarySearch
             // 
             this.buttonDailyCollectionSummarySearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1332,6 +1420,17 @@
             this.tabPage14.Text = "Cash Collection Report";
             this.tabPage14.UseVisualStyleBackColor = true;
             // 
+            // pictureBoxLoadingCCR
+            // 
+            this.pictureBoxLoadingCCR.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingCCR.Image")));
+            this.pictureBoxLoadingCCR.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingCCR.Name = "pictureBoxLoadingCCR";
+            this.pictureBoxLoadingCCR.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingCCR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingCCR.TabIndex = 79;
+            this.pictureBoxLoadingCCR.TabStop = false;
+            this.pictureBoxLoadingCCR.Visible = false;
+            // 
             // buttonCashCollectionReportSearch
             // 
             this.buttonCashCollectionReportSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1376,115 +1475,16 @@
             this.reportViewerCashCollectionReport.Size = new System.Drawing.Size(944, 481);
             this.reportViewerCashCollectionReport.TabIndex = 75;
             // 
-            // pictureBoxLoadingDCR2
+            // pictureBoxLoadingDCR
             // 
-            this.pictureBoxLoadingDCR2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingDCR2.Image")));
-            this.pictureBoxLoadingDCR2.Location = new System.Drawing.Point(26, 49);
-            this.pictureBoxLoadingDCR2.Name = "pictureBoxLoadingDCR2";
-            this.pictureBoxLoadingDCR2.Size = new System.Drawing.Size(944, 481);
-            this.pictureBoxLoadingDCR2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxLoadingDCR2.TabIndex = 70;
-            this.pictureBoxLoadingDCR2.TabStop = false;
-            this.pictureBoxLoadingDCR2.Visible = false;
-            // 
-            // pictureBoxLoadingColSumPerBookZone
-            // 
-            this.pictureBoxLoadingColSumPerBookZone.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingColSumPerBookZone.Image")));
-            this.pictureBoxLoadingColSumPerBookZone.Location = new System.Drawing.Point(26, 49);
-            this.pictureBoxLoadingColSumPerBookZone.Name = "pictureBoxLoadingColSumPerBookZone";
-            this.pictureBoxLoadingColSumPerBookZone.Size = new System.Drawing.Size(944, 481);
-            this.pictureBoxLoadingColSumPerBookZone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxLoadingColSumPerBookZone.TabIndex = 70;
-            this.pictureBoxLoadingColSumPerBookZone.TabStop = false;
-            this.pictureBoxLoadingColSumPerBookZone.Visible = false;
-            // 
-            // pictureBoxLoadingCashReceipt
-            // 
-            this.pictureBoxLoadingCashReceipt.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingCashReceipt.Image")));
-            this.pictureBoxLoadingCashReceipt.Location = new System.Drawing.Point(26, 49);
-            this.pictureBoxLoadingCashReceipt.Name = "pictureBoxLoadingCashReceipt";
-            this.pictureBoxLoadingCashReceipt.Size = new System.Drawing.Size(944, 481);
-            this.pictureBoxLoadingCashReceipt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxLoadingCashReceipt.TabIndex = 70;
-            this.pictureBoxLoadingCashReceipt.TabStop = false;
-            this.pictureBoxLoadingCashReceipt.Visible = false;
-            // 
-            // pictureBoxLoadingCDCR
-            // 
-            this.pictureBoxLoadingCDCR.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingCDCR.Image")));
-            this.pictureBoxLoadingCDCR.Location = new System.Drawing.Point(26, 49);
-            this.pictureBoxLoadingCDCR.Name = "pictureBoxLoadingCDCR";
-            this.pictureBoxLoadingCDCR.Size = new System.Drawing.Size(944, 481);
-            this.pictureBoxLoadingCDCR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxLoadingCDCR.TabIndex = 70;
-            this.pictureBoxLoadingCDCR.TabStop = false;
-            this.pictureBoxLoadingCDCR.Visible = false;
-            // 
-            // pictureBoxLoadingMonthlyColReport
-            // 
-            this.pictureBoxLoadingMonthlyColReport.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingMonthlyColReport.Image")));
-            this.pictureBoxLoadingMonthlyColReport.Location = new System.Drawing.Point(26, 49);
-            this.pictureBoxLoadingMonthlyColReport.Name = "pictureBoxLoadingMonthlyColReport";
-            this.pictureBoxLoadingMonthlyColReport.Size = new System.Drawing.Size(944, 481);
-            this.pictureBoxLoadingMonthlyColReport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxLoadingMonthlyColReport.TabIndex = 70;
-            this.pictureBoxLoadingMonthlyColReport.TabStop = false;
-            this.pictureBoxLoadingMonthlyColReport.Visible = false;
-            // 
-            // pictureBoxLoadingMaterials
-            // 
-            this.pictureBoxLoadingMaterials.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingMaterials.Image")));
-            this.pictureBoxLoadingMaterials.Location = new System.Drawing.Point(26, 49);
-            this.pictureBoxLoadingMaterials.Name = "pictureBoxLoadingMaterials";
-            this.pictureBoxLoadingMaterials.Size = new System.Drawing.Size(944, 481);
-            this.pictureBoxLoadingMaterials.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxLoadingMaterials.TabIndex = 70;
-            this.pictureBoxLoadingMaterials.TabStop = false;
-            this.pictureBoxLoadingMaterials.Visible = false;
-            // 
-            // pictureBoxLoadingCancelledOR
-            // 
-            this.pictureBoxLoadingCancelledOR.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingCancelledOR.Image")));
-            this.pictureBoxLoadingCancelledOR.Location = new System.Drawing.Point(26, 49);
-            this.pictureBoxLoadingCancelledOR.Name = "pictureBoxLoadingCancelledOR";
-            this.pictureBoxLoadingCancelledOR.Size = new System.Drawing.Size(944, 481);
-            this.pictureBoxLoadingCancelledOR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxLoadingCancelledOR.TabIndex = 70;
-            this.pictureBoxLoadingCancelledOR.TabStop = false;
-            this.pictureBoxLoadingCancelledOR.Visible = false;
-            // 
-            // pictureBoxLoadingSumPerZone
-            // 
-            this.pictureBoxLoadingSumPerZone.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingSumPerZone.Image")));
-            this.pictureBoxLoadingSumPerZone.Location = new System.Drawing.Point(26, 49);
-            this.pictureBoxLoadingSumPerZone.Name = "pictureBoxLoadingSumPerZone";
-            this.pictureBoxLoadingSumPerZone.Size = new System.Drawing.Size(944, 481);
-            this.pictureBoxLoadingSumPerZone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxLoadingSumPerZone.TabIndex = 75;
-            this.pictureBoxLoadingSumPerZone.TabStop = false;
-            this.pictureBoxLoadingSumPerZone.Visible = false;
-            // 
-            // pictureBoxLoadingDailyColSum
-            // 
-            this.pictureBoxLoadingDailyColSum.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingDailyColSum.Image")));
-            this.pictureBoxLoadingDailyColSum.Location = new System.Drawing.Point(26, 49);
-            this.pictureBoxLoadingDailyColSum.Name = "pictureBoxLoadingDailyColSum";
-            this.pictureBoxLoadingDailyColSum.Size = new System.Drawing.Size(944, 481);
-            this.pictureBoxLoadingDailyColSum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxLoadingDailyColSum.TabIndex = 79;
-            this.pictureBoxLoadingDailyColSum.TabStop = false;
-            this.pictureBoxLoadingDailyColSum.Visible = false;
-            // 
-            // pictureBoxLoadingCCR
-            // 
-            this.pictureBoxLoadingCCR.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingCCR.Image")));
-            this.pictureBoxLoadingCCR.Location = new System.Drawing.Point(26, 49);
-            this.pictureBoxLoadingCCR.Name = "pictureBoxLoadingCCR";
-            this.pictureBoxLoadingCCR.Size = new System.Drawing.Size(944, 481);
-            this.pictureBoxLoadingCCR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxLoadingCCR.TabIndex = 79;
-            this.pictureBoxLoadingCCR.TabStop = false;
-            this.pictureBoxLoadingCCR.Visible = false;
+            this.pictureBoxLoadingDCR.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingDCR.Image")));
+            this.pictureBoxLoadingDCR.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingDCR.Name = "pictureBoxLoadingDCR";
+            this.pictureBoxLoadingDCR.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingDCR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingDCR.TabIndex = 71;
+            this.pictureBoxLoadingDCR.TabStop = false;
+            this.pictureBoxLoadingDCR.Visible = false;
             // 
             // CollectionReportsForm
             // 
@@ -1519,24 +1519,30 @@
             this.tabControlCollectionReports.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDCR)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDCR2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingColSumPerBookZone)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingCashReceipt)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingCDCR)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingMonthlyColReport)).EndInit();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingMaterials)).EndInit();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingSenior)).EndInit();
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingCancelledOR)).EndInit();
             this.tabPage10.ResumeLayout(false);
             this.tabPage10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingWithholdingTaxes)).EndInit();
@@ -1545,20 +1551,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingMisc)).EndInit();
             this.tabPage12.ResumeLayout(false);
             this.tabPage12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingSumPerZone)).EndInit();
             this.tabPage13.ResumeLayout(false);
             this.tabPage13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDailyColSum)).EndInit();
             this.tabPage14.ResumeLayout(false);
             this.tabPage14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDCR2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingColSumPerBookZone)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingCashReceipt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingCDCR)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingMonthlyColReport)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingMaterials)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingCancelledOR)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingSumPerZone)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDailyColSum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingCCR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDCR)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1673,7 +1673,6 @@
         private System.Windows.Forms.BindingSource DailyCollectionSummaryPerZoneBindingSource;
         private System.Windows.Forms.BindingSource DailyCollectionSummaryBindingSource;
         private System.Windows.Forms.BindingSource CashCollectionReportBindingSource;
-        private System.Windows.Forms.PictureBox pictureBoxLoadingDCR;
         private System.Windows.Forms.PictureBox pictureBoxLoadingDCR2;
         private System.Windows.Forms.PictureBox pictureBoxLoadingColSumPerBookZone;
         private System.Windows.Forms.PictureBox pictureBoxLoadingCashReceipt;
@@ -1684,5 +1683,6 @@
         private System.Windows.Forms.PictureBox pictureBoxLoadingSumPerZone;
         private System.Windows.Forms.PictureBox pictureBoxLoadingDailyColSum;
         private System.Windows.Forms.PictureBox pictureBoxLoadingCCR;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingDCR;
     }
 }

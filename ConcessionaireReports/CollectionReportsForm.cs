@@ -72,7 +72,7 @@ namespace ConcessionaireReports
         }
 
         private void CollectionReportsForm_Load(object sender, EventArgs e)
-        {
+        {          
             tabControlCollectionReports.DrawMode = TabDrawMode.OwnerDrawFixed;
 
             connStr = "server=localhost;user=root;database=mrwdbcsys;port=3306;password=";
@@ -127,6 +127,15 @@ namespace ConcessionaireReports
             {
                 MessageBox.Show("error: " + ex, "Error!");
             }
+
+            if (comboBoxDailyCollectionReportTeller.Items.Count > 0)
+            {
+                buttonDailyCollectionReportSearch.Enabled = true;
+            }
+            else
+            {
+                buttonDailyCollectionReportSearch.Enabled = false;
+            }
         }
 
         private void dateTimePickerDCR2Date_ValueChanged(object sender, EventArgs e)
@@ -145,6 +154,15 @@ namespace ConcessionaireReports
             catch (MySqlException ex)
             {
                 MessageBox.Show("error: " + ex, "Error!");
+            }
+
+            if (comboBoxDCR2Teller.Items.Count > 0)
+            {
+                buttonDCR2Search.Enabled = true;
+            }
+            else
+            {
+                buttonDCR2Search.Enabled = false;
             }
         }     
 
@@ -380,6 +398,15 @@ namespace ConcessionaireReports
             catch (MySqlException ex)
             {
                 MessageBox.Show("error: " + ex, "Error!");
+            }
+
+            if (comboBoxCashReceiptRecordTeller.Items.Count > 0)
+            {
+                buttonCashReceiptRecordSearch.Enabled = true;
+            }
+            else
+            {
+                buttonCashReceiptRecordSearch.Enabled = false;
             }
         }
 
