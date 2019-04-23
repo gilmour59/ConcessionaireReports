@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource14 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource15 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource16 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource13 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JobOrdersReportsForm));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.JOSummaryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetJobOrdersReports = new ConcessionaireReports.DataSetJobOrdersReports();
             this.JOSummaryWorkBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PendingJOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.AccomplishedJOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlJobOrdersReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dateTimePickerJobOrderSumFrom = new System.Windows.Forms.DateTimePicker();
@@ -45,7 +46,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonJobOrderSumSearch = new System.Windows.Forms.Button();
-            this.pictureBoxLoadingJobOrderSum = new System.Windows.Forms.PictureBox();
             this.reportViewerJobOrderSum = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
@@ -71,21 +71,21 @@
             this.label6 = new System.Windows.Forms.Label();
             this.buttonAccomplishedJOSearch = new System.Windows.Forms.Button();
             this.reportViewerAccomplishedJO = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.AccomplishedJOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBoxLoadingJobOrderSum = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.JOSummaryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetJobOrdersReports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.JOSummaryWorkBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PendingJOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AccomplishedJOBindingSource)).BeginInit();
             this.tabControlJobOrdersReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingJobOrderSum)).BeginInit();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingJobOrderWork)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingPendingJO)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingAccomplishedJO)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AccomplishedJOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingJobOrderSum)).BeginInit();
             this.SuspendLayout();
             // 
             // JOSummaryBindingSource
@@ -108,6 +108,11 @@
             this.PendingJOBindingSource.DataMember = "PendingJO";
             this.PendingJOBindingSource.DataSource = this.DataSetJobOrdersReports;
             // 
+            // AccomplishedJOBindingSource
+            // 
+            this.AccomplishedJOBindingSource.DataMember = "AccomplishedJO";
+            this.AccomplishedJOBindingSource.DataSource = this.DataSetJobOrdersReports;
+            // 
             // tabControlJobOrdersReports
             // 
             this.tabControlJobOrdersReports.Alignment = System.Windows.Forms.TabAlignment.Left;
@@ -127,12 +132,12 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.pictureBoxLoadingJobOrderSum);
             this.tabPage1.Controls.Add(this.dateTimePickerJobOrderSumFrom);
             this.tabPage1.Controls.Add(this.dateTimePickerJobOrderSumTo);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.buttonJobOrderSumSearch);
-            this.tabPage1.Controls.Add(this.pictureBoxLoadingJobOrderSum);
             this.tabPage1.Controls.Add(this.reportViewerJobOrderSum);
             this.tabPage1.Location = new System.Drawing.Point(154, 4);
             this.tabPage1.Name = "tabPage1";
@@ -161,6 +166,7 @@
             this.dateTimePickerJobOrderSumTo.Name = "dateTimePickerJobOrderSumTo";
             this.dateTimePickerJobOrderSumTo.Size = new System.Drawing.Size(129, 24);
             this.dateTimePickerJobOrderSumTo.TabIndex = 74;
+            this.dateTimePickerJobOrderSumTo.ValueChanged += new System.EventHandler(this.dateTimePickerJobOrderSumTo_ValueChanged);
             // 
             // label1
             // 
@@ -193,22 +199,11 @@
             this.buttonJobOrderSumSearch.UseVisualStyleBackColor = true;
             this.buttonJobOrderSumSearch.Click += new System.EventHandler(this.buttonJobOrderSumSearch_Click);
             // 
-            // pictureBoxLoadingJobOrderSum
-            // 
-            this.pictureBoxLoadingJobOrderSum.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingJobOrderSum.Image")));
-            this.pictureBoxLoadingJobOrderSum.Location = new System.Drawing.Point(26, 49);
-            this.pictureBoxLoadingJobOrderSum.Name = "pictureBoxLoadingJobOrderSum";
-            this.pictureBoxLoadingJobOrderSum.Size = new System.Drawing.Size(944, 481);
-            this.pictureBoxLoadingJobOrderSum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxLoadingJobOrderSum.TabIndex = 69;
-            this.pictureBoxLoadingJobOrderSum.TabStop = false;
-            this.pictureBoxLoadingJobOrderSum.Visible = false;
-            // 
             // reportViewerJobOrderSum
             // 
-            reportDataSource6.Name = "DataSetJobOrdersReports";
-            reportDataSource6.Value = this.JOSummaryBindingSource;
-            this.reportViewerJobOrderSum.LocalReport.DataSources.Add(reportDataSource6);
+            reportDataSource14.Name = "DataSetJobOrdersReports";
+            reportDataSource14.Value = this.JOSummaryBindingSource;
+            this.reportViewerJobOrderSum.LocalReport.DataSources.Add(reportDataSource14);
             this.reportViewerJobOrderSum.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.JobOrdersReports.ReportJOSummary.rdlc";
             this.reportViewerJobOrderSum.Location = new System.Drawing.Point(26, 49);
             this.reportViewerJobOrderSum.Name = "reportViewerJobOrderSum";
@@ -288,6 +283,7 @@
             this.dateTimePickerJobOrderWorkTo.Name = "dateTimePickerJobOrderWorkTo";
             this.dateTimePickerJobOrderWorkTo.Size = new System.Drawing.Size(129, 24);
             this.dateTimePickerJobOrderWorkTo.TabIndex = 43;
+            this.dateTimePickerJobOrderWorkTo.ValueChanged += new System.EventHandler(this.dateTimePickerJobOrderWorkTo_ValueChanged);
             // 
             // label12
             // 
@@ -322,9 +318,9 @@
             // 
             // reportViewerJobOrderWork
             // 
-            reportDataSource7.Name = "DataSetJobOrdersReports";
-            reportDataSource7.Value = this.JOSummaryWorkBindingSource;
-            this.reportViewerJobOrderWork.LocalReport.DataSources.Add(reportDataSource7);
+            reportDataSource15.Name = "DataSetJobOrdersReports";
+            reportDataSource15.Value = this.JOSummaryWorkBindingSource;
+            this.reportViewerJobOrderWork.LocalReport.DataSources.Add(reportDataSource15);
             this.reportViewerJobOrderWork.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.JobOrdersReports.ReportJOSummaryWork.rdlc";
             this.reportViewerJobOrderWork.Location = new System.Drawing.Point(26, 49);
             this.reportViewerJobOrderWork.Name = "reportViewerJobOrderWork";
@@ -390,9 +386,9 @@
             // 
             // reportViewerPendingJO
             // 
-            reportDataSource8.Name = "DataSetJobOrdersReports";
-            reportDataSource8.Value = this.PendingJOBindingSource;
-            this.reportViewerPendingJO.LocalReport.DataSources.Add(reportDataSource8);
+            reportDataSource16.Name = "DataSetJobOrdersReports";
+            reportDataSource16.Value = this.PendingJOBindingSource;
+            this.reportViewerPendingJO.LocalReport.DataSources.Add(reportDataSource16);
             this.reportViewerPendingJO.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.JobOrdersReports.ReportPendingJobOrders.rdlc";
             this.reportViewerPendingJO.Location = new System.Drawing.Point(27, 49);
             this.reportViewerPendingJO.Name = "reportViewerPendingJO";
@@ -446,6 +442,7 @@
             this.dateTimePickerAccomplishedJOTo.Name = "dateTimePickerAccomplishedJOTo";
             this.dateTimePickerAccomplishedJOTo.Size = new System.Drawing.Size(129, 24);
             this.dateTimePickerAccomplishedJOTo.TabIndex = 76;
+            this.dateTimePickerAccomplishedJOTo.ValueChanged += new System.EventHandler(this.dateTimePickerAccomplishedJOTo_ValueChanged);
             // 
             // label5
             // 
@@ -480,9 +477,9 @@
             // 
             // reportViewerAccomplishedJO
             // 
-            reportDataSource5.Name = "DataSetJobOrdersReports";
-            reportDataSource5.Value = this.AccomplishedJOBindingSource;
-            this.reportViewerAccomplishedJO.LocalReport.DataSources.Add(reportDataSource5);
+            reportDataSource13.Name = "DataSetJobOrdersReports";
+            reportDataSource13.Value = this.AccomplishedJOBindingSource;
+            this.reportViewerAccomplishedJO.LocalReport.DataSources.Add(reportDataSource13);
             this.reportViewerAccomplishedJO.LocalReport.ReportEmbeddedResource = "ConcessionaireReports.RDLC.JobOrdersReports.ReportAccomplishedJO.rdlc";
             this.reportViewerAccomplishedJO.Location = new System.Drawing.Point(27, 49);
             this.reportViewerAccomplishedJO.Name = "reportViewerAccomplishedJO";
@@ -490,10 +487,16 @@
             this.reportViewerAccomplishedJO.Size = new System.Drawing.Size(944, 481);
             this.reportViewerAccomplishedJO.TabIndex = 71;
             // 
-            // AccomplishedJOBindingSource
+            // pictureBoxLoadingJobOrderSum
             // 
-            this.AccomplishedJOBindingSource.DataMember = "AccomplishedJO";
-            this.AccomplishedJOBindingSource.DataSource = this.DataSetJobOrdersReports;
+            this.pictureBoxLoadingJobOrderSum.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingJobOrderSum.Image")));
+            this.pictureBoxLoadingJobOrderSum.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingJobOrderSum.Name = "pictureBoxLoadingJobOrderSum";
+            this.pictureBoxLoadingJobOrderSum.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingJobOrderSum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingJobOrderSum.TabIndex = 75;
+            this.pictureBoxLoadingJobOrderSum.TabStop = false;
+            this.pictureBoxLoadingJobOrderSum.Visible = false;
             // 
             // JobOrdersReportsForm
             // 
@@ -511,10 +514,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.DataSetJobOrdersReports)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.JOSummaryWorkBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PendingJOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AccomplishedJOBindingSource)).EndInit();
             this.tabControlJobOrdersReports.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingJobOrderSum)).EndInit();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingJobOrderWork)).EndInit();
@@ -524,7 +527,7 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingAccomplishedJO)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AccomplishedJOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingJobOrderSum)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -538,7 +541,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonJobOrderSumSearch;
-        private System.Windows.Forms.PictureBox pictureBoxLoadingJobOrderSum;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerJobOrderSum;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.PictureBox pictureBoxLoadingJobOrderWork;
@@ -569,5 +571,6 @@
         private System.Windows.Forms.BindingSource JOSummaryWorkBindingSource;
         private System.Windows.Forms.BindingSource PendingJOBindingSource;
         private System.Windows.Forms.BindingSource AccomplishedJOBindingSource;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingJobOrderSum;
     }
 }

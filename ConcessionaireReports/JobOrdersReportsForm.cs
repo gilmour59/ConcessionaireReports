@@ -323,5 +323,20 @@ namespace ConcessionaireReports
 
             reportViewerAccomplishedJO.RefreshReport();
         }
+
+        private void dateTimePickerJobOrderSumTo_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerJobOrderSumFrom.MaxDate = dateTimePickerJobOrderSumTo.Value;
+        }
+
+        private void dateTimePickerJobOrderWorkTo_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerJobOrderWorkFrom.MaxDate = dateTimePickerJobOrderWorkTo.Value;
+        }
+
+        private void dateTimePickerAccomplishedJOTo_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerAccomplishedJOFrom.MaxDate = dateTimePickerAccomplishedJOTo.Value;
+        }
     }
 }

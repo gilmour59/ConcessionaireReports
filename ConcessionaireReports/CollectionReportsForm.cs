@@ -83,6 +83,15 @@ namespace ConcessionaireReports
             dateTimePickerCollectionSummaryZoneBookDate.MaxDate = DateTime.Today;
             dateTimePickerCDCRDate.MaxDate = DateTime.Today;
             dateTimePickerMonthlyCollectionReportTo.MaxDate = DateTime.Today;
+            dateTimePickerCashReceiptRecordDate.MaxDate = DateTime.Today;
+            dateTimePickerPaymentSummaryMaterialsDate.MaxDate = DateTime.Today;
+            dateTimePickerSummarySeniorCitizenDiscountTo.MaxDate = DateTime.Today;
+            dateTimePickerSummaryCancelledORDate.MaxDate = DateTime.Today;
+            dateTimePickerSummaryWithholdingTaxesTo.MaxDate = DateTime.Today;
+            dateTimePickerSummaryMiscellaneousFeesTo.MaxDate = DateTime.Today;
+            dateTimePickerDailyCollectionSummaryZoneDate.MaxDate = DateTime.Today;
+            dateTimePickerDailyCollectionSummaryDate.MaxDate = DateTime.Today;
+            dateTimePickerCashCollectionReportDate.MaxDate = DateTime.Today;
 
             try
             {
@@ -927,6 +936,11 @@ namespace ConcessionaireReports
             afterAwait(pictureBoxLoadingCCR, buttonCashCollectionReportSearch);
 
             reportViewerCashCollectionReport.RefreshReport();
+        }
+
+        private void dateTimePickerSummaryWithholdingTaxesFrom_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerSummaryWithholdingTaxesFrom.MaxDate = dateTimePickerSummaryWithholdingTaxesTo.Value;
         }
     }
 }

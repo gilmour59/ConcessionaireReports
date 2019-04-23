@@ -48,24 +48,6 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource17 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource18 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CollectionReportsForm));
-            this.DailyCollectionReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DataSetCollectionReports = new ConcessionaireReports.DataSetCollectionReports();
-            this.DCRRecapBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DailyCollectionReport2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DCRCheckPaymentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.CollectionSummaryPerBookZoneBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.CashReceiptRemittanceRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.CashierDailyCollectionReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.MonthlyCollectionReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.PaymentSummaryMaterialsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.SummarySeniorDiscountBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.SummaryCancelledORBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.SummaryWithholdingTaxesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.SummaryWithholdingTaxesRecapBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.SummaryMiscellaneousFeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DailyCollectionSummaryPerZoneBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DailyCollectionSummaryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.CashCollectionReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlCollectionReports = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dateTimePickerDailyCollectionReportDate = new System.Windows.Forms.DateTimePicker();
@@ -89,7 +71,6 @@
             this.buttonCollectionSummaryZoneBookSearch = new System.Windows.Forms.Button();
             this.reportViewerCollectionSummaryZoneBook = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.pictureBoxLoadingCashReceipt = new System.Windows.Forms.PictureBox();
             this.dateTimePickerCashReceiptRecordDate = new System.Windows.Forms.DateTimePicker();
             this.comboBoxCashReceiptRecordTeller = new System.Windows.Forms.ComboBox();
             this.buttonCashReceiptRecordSearch = new System.Windows.Forms.Button();
@@ -166,25 +147,26 @@
             this.dateTimePickerCashCollectionReportDate = new System.Windows.Forms.DateTimePicker();
             this.label22 = new System.Windows.Forms.Label();
             this.reportViewerCashCollectionReport = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.DailyCollectionReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSetCollectionReports = new ConcessionaireReports.DataSetCollectionReports();
+            this.DCRRecapBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DailyCollectionReport2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DCRCheckPaymentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CollectionSummaryPerBookZoneBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CashReceiptRemittanceRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CashierDailyCollectionReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.MonthlyCollectionReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PaymentSummaryMaterialsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SummarySeniorDiscountBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SummaryCancelledORBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SummaryWithholdingTaxesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SummaryWithholdingTaxesRecapBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SummaryMiscellaneousFeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DailyCollectionSummaryPerZoneBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DailyCollectionSummaryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CashCollectionReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBoxLoadingCashReceipt = new System.Windows.Forms.PictureBox();
             this.pictureBoxLoadingDCR = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReportBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetCollectionReports)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DCRRecapBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReport2BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DCRCheckPaymentsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CollectionSummaryPerBookZoneBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CashReceiptRemittanceRecordBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CashierDailyCollectionReportBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MonthlyCollectionReportBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PaymentSummaryMaterialsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SummarySeniorDiscountBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SummaryCancelledORBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SummaryWithholdingTaxesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SummaryWithholdingTaxesRecapBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SummaryMiscellaneousFeesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionSummaryPerZoneBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionSummaryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CashCollectionReportBindingSource)).BeginInit();
             this.tabControlCollectionReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -192,7 +174,6 @@
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingColSumPerBookZone)).BeginInit();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingCashReceipt)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingCDCR)).BeginInit();
             this.tabPage6.SuspendLayout();
@@ -213,98 +194,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDailyColSum)).BeginInit();
             this.tabPage14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingCCR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReportBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetCollectionReports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DCRRecapBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReport2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DCRCheckPaymentsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CollectionSummaryPerBookZoneBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CashReceiptRemittanceRecordBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CashierDailyCollectionReportBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MonthlyCollectionReportBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PaymentSummaryMaterialsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SummarySeniorDiscountBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SummaryCancelledORBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SummaryWithholdingTaxesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SummaryWithholdingTaxesRecapBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SummaryMiscellaneousFeesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionSummaryPerZoneBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionSummaryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CashCollectionReportBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingCashReceipt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDCR)).BeginInit();
             this.SuspendLayout();
-            // 
-            // DailyCollectionReportBindingSource
-            // 
-            this.DailyCollectionReportBindingSource.DataMember = "DailyCollectionReport";
-            this.DailyCollectionReportBindingSource.DataSource = this.DataSetCollectionReports;
-            // 
-            // DataSetCollectionReports
-            // 
-            this.DataSetCollectionReports.DataSetName = "DataSetCollectionReports";
-            this.DataSetCollectionReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // DCRRecapBindingSource
-            // 
-            this.DCRRecapBindingSource.DataMember = "DCRRecap";
-            this.DCRRecapBindingSource.DataSource = this.DataSetCollectionReports;
-            // 
-            // DailyCollectionReport2BindingSource
-            // 
-            this.DailyCollectionReport2BindingSource.DataMember = "DailyCollectionReport2";
-            this.DailyCollectionReport2BindingSource.DataSource = this.DataSetCollectionReports;
-            // 
-            // DCRCheckPaymentsBindingSource
-            // 
-            this.DCRCheckPaymentsBindingSource.DataMember = "DCRCheckPayments";
-            this.DCRCheckPaymentsBindingSource.DataSource = this.DataSetCollectionReports;
-            // 
-            // CollectionSummaryPerBookZoneBindingSource
-            // 
-            this.CollectionSummaryPerBookZoneBindingSource.DataMember = "CollectionSummaryPerBookZone";
-            this.CollectionSummaryPerBookZoneBindingSource.DataSource = this.DataSetCollectionReports;
-            // 
-            // CashReceiptRemittanceRecordBindingSource
-            // 
-            this.CashReceiptRemittanceRecordBindingSource.DataMember = "CashReceiptRemittanceRecord";
-            this.CashReceiptRemittanceRecordBindingSource.DataSource = this.DataSetCollectionReports;
-            // 
-            // CashierDailyCollectionReportBindingSource
-            // 
-            this.CashierDailyCollectionReportBindingSource.DataMember = "CashierDailyCollectionReport";
-            this.CashierDailyCollectionReportBindingSource.DataSource = this.DataSetCollectionReports;
-            // 
-            // MonthlyCollectionReportBindingSource
-            // 
-            this.MonthlyCollectionReportBindingSource.DataMember = "MonthlyCollectionReport";
-            this.MonthlyCollectionReportBindingSource.DataSource = this.DataSetCollectionReports;
-            // 
-            // PaymentSummaryMaterialsBindingSource
-            // 
-            this.PaymentSummaryMaterialsBindingSource.DataMember = "PaymentSummaryMaterials";
-            this.PaymentSummaryMaterialsBindingSource.DataSource = this.DataSetCollectionReports;
-            // 
-            // SummarySeniorDiscountBindingSource
-            // 
-            this.SummarySeniorDiscountBindingSource.DataMember = "SummarySeniorDiscount";
-            this.SummarySeniorDiscountBindingSource.DataSource = this.DataSetCollectionReports;
-            // 
-            // SummaryCancelledORBindingSource
-            // 
-            this.SummaryCancelledORBindingSource.DataMember = "SummaryCancelledOR";
-            this.SummaryCancelledORBindingSource.DataSource = this.DataSetCollectionReports;
-            // 
-            // SummaryWithholdingTaxesBindingSource
-            // 
-            this.SummaryWithholdingTaxesBindingSource.DataMember = "SummaryWithholdingTaxes";
-            this.SummaryWithholdingTaxesBindingSource.DataSource = this.DataSetCollectionReports;
-            // 
-            // SummaryWithholdingTaxesRecapBindingSource
-            // 
-            this.SummaryWithholdingTaxesRecapBindingSource.DataMember = "SummaryWithholdingTaxesRecap";
-            this.SummaryWithholdingTaxesRecapBindingSource.DataSource = this.DataSetCollectionReports;
-            // 
-            // SummaryMiscellaneousFeesBindingSource
-            // 
-            this.SummaryMiscellaneousFeesBindingSource.DataMember = "SummaryMiscellaneousFees";
-            this.SummaryMiscellaneousFeesBindingSource.DataSource = this.DataSetCollectionReports;
-            // 
-            // DailyCollectionSummaryPerZoneBindingSource
-            // 
-            this.DailyCollectionSummaryPerZoneBindingSource.DataMember = "DailyCollectionSummaryPerZone";
-            this.DailyCollectionSummaryPerZoneBindingSource.DataSource = this.DataSetCollectionReports;
-            // 
-            // DailyCollectionSummaryBindingSource
-            // 
-            this.DailyCollectionSummaryBindingSource.DataMember = "DailyCollectionSummary";
-            this.DailyCollectionSummaryBindingSource.DataSource = this.DataSetCollectionReports;
-            // 
-            // CashCollectionReportBindingSource
-            // 
-            this.CashCollectionReportBindingSource.DataMember = "CashCollectionReport";
-            this.CashCollectionReportBindingSource.DataSource = this.DataSetCollectionReports;
             // 
             // tabControlCollectionReports
             // 
@@ -598,17 +508,6 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Cash Receipt and Remittance Record";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // pictureBoxLoadingCashReceipt
-            // 
-            this.pictureBoxLoadingCashReceipt.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingCashReceipt.Image")));
-            this.pictureBoxLoadingCashReceipt.Location = new System.Drawing.Point(26, 49);
-            this.pictureBoxLoadingCashReceipt.Name = "pictureBoxLoadingCashReceipt";
-            this.pictureBoxLoadingCashReceipt.Size = new System.Drawing.Size(944, 481);
-            this.pictureBoxLoadingCashReceipt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxLoadingCashReceipt.TabIndex = 70;
-            this.pictureBoxLoadingCashReceipt.TabStop = false;
-            this.pictureBoxLoadingCashReceipt.Visible = false;
             // 
             // dateTimePickerCashReceiptRecordDate
             // 
@@ -1119,6 +1018,7 @@
             this.dateTimePickerSummaryWithholdingTaxesFrom.Name = "dateTimePickerSummaryWithholdingTaxesFrom";
             this.dateTimePickerSummaryWithholdingTaxesFrom.Size = new System.Drawing.Size(118, 24);
             this.dateTimePickerSummaryWithholdingTaxesFrom.TabIndex = 65;
+            this.dateTimePickerSummaryWithholdingTaxesFrom.ValueChanged += new System.EventHandler(this.dateTimePickerSummaryWithholdingTaxesFrom_ValueChanged);
             // 
             // label16
             // 
@@ -1475,6 +1375,107 @@
             this.reportViewerCashCollectionReport.Size = new System.Drawing.Size(944, 481);
             this.reportViewerCashCollectionReport.TabIndex = 75;
             // 
+            // DailyCollectionReportBindingSource
+            // 
+            this.DailyCollectionReportBindingSource.DataMember = "DailyCollectionReport";
+            this.DailyCollectionReportBindingSource.DataSource = this.DataSetCollectionReports;
+            // 
+            // DataSetCollectionReports
+            // 
+            this.DataSetCollectionReports.DataSetName = "DataSetCollectionReports";
+            this.DataSetCollectionReports.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // DCRRecapBindingSource
+            // 
+            this.DCRRecapBindingSource.DataMember = "DCRRecap";
+            this.DCRRecapBindingSource.DataSource = this.DataSetCollectionReports;
+            // 
+            // DailyCollectionReport2BindingSource
+            // 
+            this.DailyCollectionReport2BindingSource.DataMember = "DailyCollectionReport2";
+            this.DailyCollectionReport2BindingSource.DataSource = this.DataSetCollectionReports;
+            // 
+            // DCRCheckPaymentsBindingSource
+            // 
+            this.DCRCheckPaymentsBindingSource.DataMember = "DCRCheckPayments";
+            this.DCRCheckPaymentsBindingSource.DataSource = this.DataSetCollectionReports;
+            // 
+            // CollectionSummaryPerBookZoneBindingSource
+            // 
+            this.CollectionSummaryPerBookZoneBindingSource.DataMember = "CollectionSummaryPerBookZone";
+            this.CollectionSummaryPerBookZoneBindingSource.DataSource = this.DataSetCollectionReports;
+            // 
+            // CashReceiptRemittanceRecordBindingSource
+            // 
+            this.CashReceiptRemittanceRecordBindingSource.DataMember = "CashReceiptRemittanceRecord";
+            this.CashReceiptRemittanceRecordBindingSource.DataSource = this.DataSetCollectionReports;
+            // 
+            // CashierDailyCollectionReportBindingSource
+            // 
+            this.CashierDailyCollectionReportBindingSource.DataMember = "CashierDailyCollectionReport";
+            this.CashierDailyCollectionReportBindingSource.DataSource = this.DataSetCollectionReports;
+            // 
+            // MonthlyCollectionReportBindingSource
+            // 
+            this.MonthlyCollectionReportBindingSource.DataMember = "MonthlyCollectionReport";
+            this.MonthlyCollectionReportBindingSource.DataSource = this.DataSetCollectionReports;
+            // 
+            // PaymentSummaryMaterialsBindingSource
+            // 
+            this.PaymentSummaryMaterialsBindingSource.DataMember = "PaymentSummaryMaterials";
+            this.PaymentSummaryMaterialsBindingSource.DataSource = this.DataSetCollectionReports;
+            // 
+            // SummarySeniorDiscountBindingSource
+            // 
+            this.SummarySeniorDiscountBindingSource.DataMember = "SummarySeniorDiscount";
+            this.SummarySeniorDiscountBindingSource.DataSource = this.DataSetCollectionReports;
+            // 
+            // SummaryCancelledORBindingSource
+            // 
+            this.SummaryCancelledORBindingSource.DataMember = "SummaryCancelledOR";
+            this.SummaryCancelledORBindingSource.DataSource = this.DataSetCollectionReports;
+            // 
+            // SummaryWithholdingTaxesBindingSource
+            // 
+            this.SummaryWithholdingTaxesBindingSource.DataMember = "SummaryWithholdingTaxes";
+            this.SummaryWithholdingTaxesBindingSource.DataSource = this.DataSetCollectionReports;
+            // 
+            // SummaryWithholdingTaxesRecapBindingSource
+            // 
+            this.SummaryWithholdingTaxesRecapBindingSource.DataMember = "SummaryWithholdingTaxesRecap";
+            this.SummaryWithholdingTaxesRecapBindingSource.DataSource = this.DataSetCollectionReports;
+            // 
+            // SummaryMiscellaneousFeesBindingSource
+            // 
+            this.SummaryMiscellaneousFeesBindingSource.DataMember = "SummaryMiscellaneousFees";
+            this.SummaryMiscellaneousFeesBindingSource.DataSource = this.DataSetCollectionReports;
+            // 
+            // DailyCollectionSummaryPerZoneBindingSource
+            // 
+            this.DailyCollectionSummaryPerZoneBindingSource.DataMember = "DailyCollectionSummaryPerZone";
+            this.DailyCollectionSummaryPerZoneBindingSource.DataSource = this.DataSetCollectionReports;
+            // 
+            // DailyCollectionSummaryBindingSource
+            // 
+            this.DailyCollectionSummaryBindingSource.DataMember = "DailyCollectionSummary";
+            this.DailyCollectionSummaryBindingSource.DataSource = this.DataSetCollectionReports;
+            // 
+            // CashCollectionReportBindingSource
+            // 
+            this.CashCollectionReportBindingSource.DataMember = "CashCollectionReport";
+            this.CashCollectionReportBindingSource.DataSource = this.DataSetCollectionReports;
+            // 
+            // pictureBoxLoadingCashReceipt
+            // 
+            this.pictureBoxLoadingCashReceipt.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingCashReceipt.Image")));
+            this.pictureBoxLoadingCashReceipt.Location = new System.Drawing.Point(26, 49);
+            this.pictureBoxLoadingCashReceipt.Name = "pictureBoxLoadingCashReceipt";
+            this.pictureBoxLoadingCashReceipt.Size = new System.Drawing.Size(944, 481);
+            this.pictureBoxLoadingCashReceipt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxLoadingCashReceipt.TabIndex = 71;
+            this.pictureBoxLoadingCashReceipt.TabStop = false;
+            this.pictureBoxLoadingCashReceipt.Visible = false;
+            // 
             // pictureBoxLoadingDCR
             // 
             this.pictureBoxLoadingDCR.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoadingDCR.Image")));
@@ -1482,7 +1483,7 @@
             this.pictureBoxLoadingDCR.Name = "pictureBoxLoadingDCR";
             this.pictureBoxLoadingDCR.Size = new System.Drawing.Size(944, 481);
             this.pictureBoxLoadingDCR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxLoadingDCR.TabIndex = 71;
+            this.pictureBoxLoadingDCR.TabIndex = 72;
             this.pictureBoxLoadingDCR.TabStop = false;
             this.pictureBoxLoadingDCR.Visible = false;
             // 
@@ -1498,24 +1499,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Collection Reports";
             this.Load += new System.EventHandler(this.CollectionReportsForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReportBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetCollectionReports)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DCRRecapBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReport2BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DCRCheckPaymentsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CollectionSummaryPerBookZoneBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CashReceiptRemittanceRecordBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CashierDailyCollectionReportBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MonthlyCollectionReportBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PaymentSummaryMaterialsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SummarySeniorDiscountBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SummaryCancelledORBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SummaryWithholdingTaxesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SummaryWithholdingTaxesRecapBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SummaryMiscellaneousFeesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionSummaryPerZoneBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionSummaryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CashCollectionReportBindingSource)).EndInit();
             this.tabControlCollectionReports.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1527,7 +1510,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingColSumPerBookZone)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingCashReceipt)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingCDCR)).EndInit();
@@ -1558,6 +1540,25 @@
             this.tabPage14.ResumeLayout(false);
             this.tabPage14.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingCCR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReportBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetCollectionReports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DCRRecapBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionReport2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DCRCheckPaymentsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CollectionSummaryPerBookZoneBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CashReceiptRemittanceRecordBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CashierDailyCollectionReportBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MonthlyCollectionReportBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PaymentSummaryMaterialsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SummarySeniorDiscountBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SummaryCancelledORBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SummaryWithholdingTaxesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SummaryWithholdingTaxesRecapBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SummaryMiscellaneousFeesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionSummaryPerZoneBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DailyCollectionSummaryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CashCollectionReportBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingCashReceipt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingDCR)).EndInit();
             this.ResumeLayout(false);
 
@@ -1675,7 +1676,6 @@
         private System.Windows.Forms.BindingSource CashCollectionReportBindingSource;
         private System.Windows.Forms.PictureBox pictureBoxLoadingDCR2;
         private System.Windows.Forms.PictureBox pictureBoxLoadingColSumPerBookZone;
-        private System.Windows.Forms.PictureBox pictureBoxLoadingCashReceipt;
         private System.Windows.Forms.PictureBox pictureBoxLoadingCDCR;
         private System.Windows.Forms.PictureBox pictureBoxLoadingMonthlyColReport;
         private System.Windows.Forms.PictureBox pictureBoxLoadingMaterials;
@@ -1683,6 +1683,7 @@
         private System.Windows.Forms.PictureBox pictureBoxLoadingSumPerZone;
         private System.Windows.Forms.PictureBox pictureBoxLoadingDailyColSum;
         private System.Windows.Forms.PictureBox pictureBoxLoadingCCR;
+        private System.Windows.Forms.PictureBox pictureBoxLoadingCashReceipt;
         private System.Windows.Forms.PictureBox pictureBoxLoadingDCR;
     }
 }

@@ -117,60 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="DailyCollectionReportBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>208, 17</value>
-  </metadata>
-  <metadata name="DataSetCollectionReports.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="DCRRecapBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>457, 17</value>
-  </metadata>
-  <metadata name="DailyCollectionReport2BindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>644, 17</value>
-  </metadata>
-  <metadata name="DCRCheckPaymentsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
-  <metadata name="CollectionSummaryPerBookZoneBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>257, 56</value>
-  </metadata>
-  <metadata name="CashReceiptRemittanceRecordBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>566, 56</value>
-  </metadata>
-  <metadata name="CashierDailyCollectionReportBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 95</value>
-  </metadata>
-  <metadata name="MonthlyCollectionReportBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>306, 95</value>
-  </metadata>
-  <metadata name="PaymentSummaryMaterialsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>573, 95</value>
-  </metadata>
-  <metadata name="SummarySeniorDiscountBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>852, 95</value>
-  </metadata>
-  <metadata name="SummaryCancelledORBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 134</value>
-  </metadata>
-  <metadata name="SummaryWithholdingTaxesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>268, 134</value>
-  </metadata>
-  <metadata name="SummaryWithholdingTaxesRecapBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>547, 134</value>
-  </metadata>
-  <metadata name="SummaryMiscellaneousFeesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>860, 134</value>
-  </metadata>
-  <metadata name="DailyCollectionSummaryPerZoneBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 173</value>
-  </metadata>
-  <metadata name="DailyCollectionSummaryBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>326, 173</value>
-  </metadata>
-  <metadata name="CashCollectionReportBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>589, 173</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBoxLoadingDCR.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1763,6 +1709,15 @@
         AAEAAAgEAP8FBAA7
 </value>
   </data>
+  <metadata name="DailyCollectionReportBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>208, 17</value>
+  </metadata>
+  <metadata name="DataSetCollectionReports.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="DCRRecapBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>457, 17</value>
+  </metadata>
   <data name="pictureBoxLoadingDCR2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhAAEAAff/AJPk5K/r68Dv76bp6Y/j48bx8Xre3ifJyavq6uD39zvOznLc3DLMzJbl5SDIyFLU
@@ -3354,6 +3309,12 @@
         AAEAAAgEAP8FBAA7
 </value>
   </data>
+  <metadata name="DailyCollectionReport2BindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>644, 17</value>
+  </metadata>
+  <metadata name="DCRCheckPaymentsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
   <data name="pictureBoxLoadingColSumPerBookZone.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhAAEAAff/AJPk5K/r68Dv76bp6Y/j48bx8Xre3ifJyavq6uD39zvOznLc3DLMzJbl5SDIyFLU
@@ -4945,6 +4906,9 @@
         AAEAAAgEAP8FBAA7
 </value>
   </data>
+  <metadata name="CollectionSummaryPerBookZoneBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>257, 56</value>
+  </metadata>
   <data name="pictureBoxLoadingCashReceipt.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhAAEAAff/AJPk5K/r68Dv76bp6Y/j48bx8Xre3ifJyavq6uD39zvOznLc3DLMzJbl5SDIyFLU
@@ -6536,6 +6500,9 @@
         AAEAAAgEAP8FBAA7
 </value>
   </data>
+  <metadata name="CashReceiptRemittanceRecordBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>566, 56</value>
+  </metadata>
   <data name="pictureBoxLoadingCDCR.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhAAEAAff/AJPk5K/r68Dv76bp6Y/j48bx8Xre3ifJyavq6uD39zvOznLc3DLMzJbl5SDIyFLU
@@ -8127,6 +8094,9 @@
         AAEAAAgEAP8FBAA7
 </value>
   </data>
+  <metadata name="CashierDailyCollectionReportBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 95</value>
+  </metadata>
   <data name="pictureBoxLoadingMonthlyColReport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhAAEAAff/AJPk5K/r68Dv76bp6Y/j48bx8Xre3ifJyavq6uD39zvOznLc3DLMzJbl5SDIyFLU
@@ -9718,6 +9688,9 @@
         AAEAAAgEAP8FBAA7
 </value>
   </data>
+  <metadata name="MonthlyCollectionReportBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>306, 95</value>
+  </metadata>
   <data name="pictureBoxLoadingMaterials.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhAAEAAff/AJPk5K/r68Dv76bp6Y/j48bx8Xre3ifJyavq6uD39zvOznLc3DLMzJbl5SDIyFLU
@@ -11309,6 +11282,9 @@
         AAEAAAgEAP8FBAA7
 </value>
   </data>
+  <metadata name="PaymentSummaryMaterialsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>573, 95</value>
+  </metadata>
   <data name="pictureBoxLoadingSenior.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhAAEAAff/AJPk5K/r68Dv76bp6Y/j48bx8Xre3ifJyavq6uD39zvOznLc3DLMzJbl5SDIyFLU
@@ -12900,6 +12876,9 @@
         AAEAAAgEAP8FBAA7
 </value>
   </data>
+  <metadata name="SummarySeniorDiscountBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>852, 95</value>
+  </metadata>
   <data name="pictureBoxLoadingCancelledOR.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhAAEAAff/AJPk5K/r68Dv76bp6Y/j48bx8Xre3ifJyavq6uD39zvOznLc3DLMzJbl5SDIyFLU
@@ -14491,6 +14470,9 @@
         AAEAAAgEAP8FBAA7
 </value>
   </data>
+  <metadata name="SummaryCancelledORBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 134</value>
+  </metadata>
   <data name="pictureBoxLoadingWithholdingTaxes.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhAAEAAff/AJPk5K/r68Dv76bp6Y/j48bx8Xre3ifJyavq6uD39zvOznLc3DLMzJbl5SDIyFLU
@@ -16082,6 +16064,12 @@
         AAEAAAgEAP8FBAA7
 </value>
   </data>
+  <metadata name="SummaryWithholdingTaxesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>268, 134</value>
+  </metadata>
+  <metadata name="SummaryWithholdingTaxesRecapBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>547, 134</value>
+  </metadata>
   <data name="pictureBoxLoadingMisc.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhAAEAAff/AJPk5K/r68Dv76bp6Y/j48bx8Xre3ifJyavq6uD39zvOznLc3DLMzJbl5SDIyFLU
@@ -17673,6 +17661,9 @@
         AAEAAAgEAP8FBAA7
 </value>
   </data>
+  <metadata name="SummaryMiscellaneousFeesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>860, 134</value>
+  </metadata>
   <data name="pictureBoxLoadingSumPerZone.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhAAEAAff/AJPk5K/r68Dv76bp6Y/j48bx8Xre3ifJyavq6uD39zvOznLc3DLMzJbl5SDIyFLU
@@ -19264,6 +19255,9 @@
         AAEAAAgEAP8FBAA7
 </value>
   </data>
+  <metadata name="DailyCollectionSummaryPerZoneBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 173</value>
+  </metadata>
   <data name="pictureBoxLoadingDailyColSum.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhAAEAAff/AJPk5K/r68Dv76bp6Y/j48bx8Xre3ifJyavq6uD39zvOznLc3DLMzJbl5SDIyFLU
@@ -20855,6 +20849,9 @@
         AAEAAAgEAP8FBAA7
 </value>
   </data>
+  <metadata name="DailyCollectionSummaryBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>326, 173</value>
+  </metadata>
   <data name="pictureBoxLoadingCCR.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhAAEAAff/AJPk5K/r68Dv76bp6Y/j48bx8Xre3ifJyavq6uD39zvOznLc3DLMzJbl5SDIyFLU
@@ -22446,4 +22443,7 @@
         AAEAAAgEAP8FBAA7
 </value>
   </data>
+  <metadata name="CashCollectionReportBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>589, 173</value>
+  </metadata>
 </root>
