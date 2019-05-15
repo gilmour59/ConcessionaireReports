@@ -61,7 +61,7 @@ namespace ConcessionaireReports
             ((Control)this.tabPage6).Enabled = false;
 
             dateTimePickerBillingAdjustmentSummaryYear.MaxDate = DateTime.Today;
-
+            dateTimePickerDailyBillingReport.MaxDate = DateTime.Today;
             tabControlBillingReports.DrawMode = TabDrawMode.OwnerDrawFixed;
 
             connStr = "server=localhost;user=root;database=mrwdbcsys;port=3306;password=";
@@ -624,6 +624,64 @@ namespace ConcessionaireReports
             afterAwait(pictureBoxLoadingAccountsLargeCons, buttonAccountsLargeConsSearch);
 
             this.reportViewerAccountsLargeCons.RefreshReport();
+        }
+
+        private async void buttonDailyBillingReport_Click(object sender, EventArgs e)
+        {
+            beforeAwait(pictureBoxDailyBillingReport, buttonDailyBillingReport);
+
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (MySqlConnection conn = new MySqlConnection(connStr))
+                    {
+                        conn.Open();
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetDailyBillingReport", conn))
+                        {
+                            adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+
+                            DataSetBillingReports ds = new DataSetBillingReports();
+
+                            adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                            adapter.SelectCommand.Parameters.AddWithValue("@transDate", dateTimePickerDailyBillingReport.Value.Date);
+                            adapter.SelectCommand.Parameters["@transDate"].Direction = ParameterDirection.Input;
+
+                            adapter.Fill(ds, "DailyBillingReport");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetBillingReports", ds.Tables["DailyBillingReport"]);
+                            reportViewerDailyBillingReport.LocalReport.DataSources.Clear();
+                            reportViewerDailyBillingReport.LocalReport.DataSources.Add(rds);
+                        }
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetDailyBillingReportRecap", conn))
+                        {
+                            adapter.SelectCommand.CommandTimeout = 5000; // default is 30 seconds
+
+                            DataSetBillingReports ds = new DataSetBillingReports();
+
+                            adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                            adapter.SelectCommand.Parameters.AddWithValue("@transDate", dateTimePickerDailyBillingReport.Value.Date);
+                            adapter.SelectCommand.Parameters["@transDate"].Direction = ParameterDirection.Input;
+
+                            adapter.Fill(ds, "DailyBillingReportRecap");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetBillingReports2", ds.Tables["DailyBillingReportRecap"]);
+                            reportViewerDailyBillingReport.LocalReport.DataSources.Add(rds);
+                        }
+                        conn.Close();
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("error: " + ex, "Error!");
+                }
+            });
+
+            afterAwait(pictureBoxDailyBillingReport, buttonDailyBillingReport);
+
+            this.reportViewerDailyBillingReport.RefreshReport();
         }
     }
 }
