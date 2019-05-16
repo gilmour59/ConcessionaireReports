@@ -650,19 +650,18 @@ namespace ConcessionaireReports
                                 adapter.SelectCommand.Parameters.AddWithValue("@transDate", dateTimePickerDailyBillingReport.Value.Date);
                                 adapter.SelectCommand.Parameters["@transDate"].Direction = ParameterDirection.Input;
 
-                                adapter.Fill(ds, "DailyBillingReport");
-
-                                ReportDataSource rds = new ReportDataSource("DataSetBillingReports", ds.Tables["DailyBillingReport"]);
-                                reportViewerDailyBillingReport.LocalReport.DataSources.Clear();
-                                reportViewerDailyBillingReport.LocalReport.DataSources.Add(rds);
-
                                 ReportParameter[] param = new ReportParameter[]
                                 {
                                     new ReportParameter("ReportParameterDate", dateTimePickerDailyBillingReport.Value.Date.ToString()),
                                 };
                                 reportViewerDailyBillingReport.LocalReport.SetParameters(param);
-                                reportViewerDailyBillingReport.LocalReport.Refresh();
                             });
+
+                            adapter.Fill(ds, "DailyBillingReport");
+
+                            ReportDataSource rds = new ReportDataSource("DataSetBillingReports", ds.Tables["DailyBillingReport"]);
+                            reportViewerDailyBillingReport.LocalReport.DataSources.Clear();
+                            reportViewerDailyBillingReport.LocalReport.DataSources.Add(rds);
                         }
 
                         using (MySqlDataAdapter adapter = new MySqlDataAdapter("sp_GilGetDailyBillingReportRecap", conn))
