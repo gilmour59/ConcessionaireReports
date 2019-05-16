@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -104,7 +105,7 @@ namespace ConcessionaireReports
             ((Control)this.tabPage4).Enabled = false;
             ((Control)this.tabPage6).Enabled = false;
 
-            connStr = "server=localhost;user=root;database=mrwdbcsys;port=3306;password=";
+            connStr = "server=" + ConfigurationManager.AppSettings["host"] + ";user=root;database=" + ConfigurationManager.AppSettings["dbname"] + ";port=" + ConfigurationManager.AppSettings["port"] + ";password=";
 
             tabControlReceivablesReports.DrawMode = TabDrawMode.OwnerDrawFixed;
 

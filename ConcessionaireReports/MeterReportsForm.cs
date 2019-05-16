@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -68,7 +69,7 @@ namespace ConcessionaireReports
 
             tabControlMeterReports.DrawMode = TabDrawMode.OwnerDrawFixed;
 
-            connStr = "server=localhost;user=root;database=mrwdbcsys;port=3306;password=";
+            connStr = "server=" + ConfigurationManager.AppSettings["host"] + ";user=root;database=" + ConfigurationManager.AppSettings["dbname"] + ";port=" + ConfigurationManager.AppSettings["port"] + ";password=";
         }
 
         private void bindDate(MySqlConnection con, string sp, string paramFrom, string paramTo, DateTimePicker dtFrom, DateTimePicker dtTo, string dataTable, ReportViewer rv)

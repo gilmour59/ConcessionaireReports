@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -64,7 +65,7 @@ namespace ConcessionaireReports
             dateTimePickerDailyBillingReport.MaxDate = DateTime.Today;
             tabControlBillingReports.DrawMode = TabDrawMode.OwnerDrawFixed;
 
-            connStr = "server=localhost;user=root;database=mrwdbcsys;port=3306;password=";
+            connStr = "server=" + ConfigurationManager.AppSettings["host"] + ";user=root;database=" + ConfigurationManager.AppSettings["dbname"] + ";port=" + ConfigurationManager.AppSettings["port"] + ";password=";
 
             try
             {
