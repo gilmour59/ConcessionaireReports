@@ -481,6 +481,7 @@
                                   <Style>
                                     <FontFamily>calibri</FontFamily>
                                     <FontSize>8pt</FontSize>
+                                    <Format>0.00</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -501,6 +502,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -532,7 +534,7 @@
             <Top>3.60405cm</Top>
             <Left>0.32906cm</Left>
             <Height>0.84cm</Height>
-            <Width>19.9cm</Width>
+            <Width>19.90001cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -847,7 +849,6 @@
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Top>0cm</Top>
               <Left>1.86985cm</Left>
               <Height>0.83312cm</Height>
               <Width>16.81843cm</Width>
